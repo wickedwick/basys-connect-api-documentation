@@ -2,21 +2,21 @@
 
 # Address
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassAddress {
 
     constructor() {
 
-    this.AddressLine1 = &#39;&#39;;
+    this.AddressLine1 = '';
 
-    this.AddressLine2 = &#39;&#39;;
+    this.AddressLine2 = '';
 
-    this.City = &#39;&#39;;
+    this.City = '';
 
-    this.State = &#39;&#39;;
+    this.State = '';
 
-    this.ZipCode = &#39;&#39;;
+    this.ZipCode = '';
 
     }
 
@@ -24,41 +24,41 @@
 
     if (data) {
 
-    obj = obj || newAddress();
+    obj = obj || new Address();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;AddressLine1&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'AddressLine1')) {
 
-    obj[&#39;AddressLine1&#39;] = ApiClient.convertToType(data[&#39;AddressLine1&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;AddressLine2&#39;)) {
-
-    obj[&#39;AddressLine2&#39;] = ApiClient.convertToType(data[&#39;AddressLine2&#39;], &#39;String&#39;);
+    obj['AddressLine1'] = ApiClient.convertToType(data['AddressLine1'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;City&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'AddressLine2')) {
 
-    obj[&#39;City&#39;] = ApiClient.convertToType(data[&#39;City&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;State&#39;)) {
-
-    obj[&#39;State&#39;] = ApiClient.convertToType(data[&#39;State&#39;], &#39;String&#39;);
+    obj['AddressLine2'] = ApiClient.convertToType(data['AddressLine2'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ZipCode&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'City')) {
 
-    obj[&#39;ZipCode&#39;] = ApiClient.convertToType(data[&#39;ZipCode&#39;], &#39;String&#39;);
+    obj['City'] = ApiClient.convertToType(data['City'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'State')) {
+
+    obj['State'] = ApiClient.convertToType(data['State'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'ZipCode')) {
+
+    obj['ZipCode'] = ApiClient.convertToType(data['ZipCode'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -66,23 +66,23 @@
 
 # Batch
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassBatch {
 
     constructor() {
 
-    this.BatchNumber = &#39;&#39;;
+    this.BatchNumber = '';
 
     this.Started = undefined;
 
     this.Completed = undefined;
 
-    this.SalesCount = &#39;&#39;;
+    this.SalesCount = '';
 
     this.SalesSum = 0;
 
-    this.ReturnCount = &#39;&#39;;
+    this.ReturnCount = '';
 
     this.ReturnSum = 0;
 
@@ -94,59 +94,59 @@
 
     if (data) {
 
-    obj = obj || newBatch();
+    obj = obj || new Batch();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BatchNumber&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'BatchNumber')) {
 
-    obj[&#39;BatchNumber&#39;] = ApiClient.convertToType(data[&#39;BatchNumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Started&#39;)) {
-
-    obj[&#39;Started&#39;] = ApiClient.convertToType(data[&#39;Started&#39;], &#39;Date&#39;);
+    obj['BatchNumber'] = ApiClient.convertToType(data['BatchNumber'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Completed&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Started')) {
 
-    obj[&#39;Completed&#39;] = ApiClient.convertToType(data[&#39;Completed&#39;], &#39;Date&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;SalesCount&#39;)) {
-
-    obj[&#39;SalesCount&#39;] = ApiClient.convertToType(data[&#39;SalesCount&#39;], &#39;String&#39;);
+    obj['Started'] = ApiClient.convertToType(data['Started'], 'Date');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;SalesSum&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Completed')) {
 
-    obj[&#39;SalesSum&#39;] = ApiClient.convertToType(data[&#39;SalesSum&#39;], &#39;Number&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ReturnCount&#39;)) {
-
-    obj[&#39;ReturnCount&#39;] = ApiClient.convertToType(data[&#39;ReturnCount&#39;], &#39;String&#39;);
+    obj['Completed'] = ApiClient.convertToType(data['Completed'], 'Date');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ReturnSum&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'SalesCount')) {
 
-    obj[&#39;ReturnSum&#39;] = ApiClient.convertToType(data[&#39;ReturnSum&#39;], &#39;Number&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BatchError&#39;)) {
-
-    obj[&#39;BatchError&#39;] = ApiClient.convertToType(data[&#39;BatchError&#39;], &#39;Boolean&#39;);
+    obj['SalesCount'] = ApiClient.convertToType(data['SalesCount'], 'String');
 
     }
 
+    if (Object.prototype.hasOwnProperty.call(data, 'SalesSum')) {
+
+    obj['SalesSum'] = ApiClient.convertToType(data['SalesSum'], 'Number');
+
     }
 
-    returnobj;
+    if (Object.prototype.hasOwnProperty.call(data, 'ReturnCount')) {
+
+    obj['ReturnCount'] = ApiClient.convertToType(data['ReturnCount'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'ReturnSum')) {
+
+    obj['ReturnSum'] = ApiClient.convertToType(data['ReturnSum'], 'Number');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'BatchError')) {
+
+    obj['BatchError'] = ApiClient.convertToType(data['BatchError'], 'Boolean');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -154,23 +154,23 @@
 
 # Business
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importAddressfrom&#39;./Address&#39;;
+    importAddressfrom'./Address';
 
     exportdefaultclassBusiness {
 
     constructor() {
 
-    this.Address = newAddress();
+    this.Address = new Address();
 
-    this.Name = &#39;&#39;;
+    this.Name = '';
 
-    this.Phone = &#39;&#39;;
+    this.Phone = '';
 
-    this.Fax = &#39;&#39;;
+    this.Fax = '';
 
-    this.WebSite = &#39;&#39;;
+    this.WebSite = '';
 
     }
 
@@ -178,41 +178,41 @@
 
     if (data) {
 
-    obj = obj || newBusiness();
+    obj = obj || new Business();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Address&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Address')) {
 
-    obj[&#39;Address&#39;] = Address.constructFromObject(data[&#39;Address&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Name&#39;)) {
-
-    obj[&#39;Name&#39;] = ApiClient.convertToType(data[&#39;Name&#39;], &#39;String&#39;);
+    obj['Address'] = Address.constructFromObject(data['Address']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Phone&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Name')) {
 
-    obj[&#39;Phone&#39;] = ApiClient.convertToType(data[&#39;Phone&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Fax&#39;)) {
-
-    obj[&#39;Fax&#39;] = ApiClient.convertToType(data[&#39;Fax&#39;], &#39;String&#39;);
+    obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;WebSite&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Phone')) {
 
-    obj[&#39;WebSite&#39;] = ApiClient.convertToType(data[&#39;WebSite&#39;], &#39;String&#39;);
+    obj['Phone'] = ApiClient.convertToType(data['Phone'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Fax')) {
+
+    obj['Fax'] = ApiClient.convertToType(data['Fax'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'WebSite')) {
+
+    obj['WebSite'] = ApiClient.convertToType(data['WebSite'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -220,43 +220,43 @@
 
 # CheckAccountType
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassCheckAccountType {
 
-    /\*\*
+    /**
 
-    \* value: &quot;Unknown&quot;
+    * value: "Unknown"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Unknown = &quot;Unknown&quot;;
+    Unknown = "Unknown";
 
-    /\*\*
+    /**
 
-    \* value: &quot;Checking&quot;
+    * value: "Checking"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Checking = &quot;Checking&quot;;
+    Checking = "Checking";
 
-    /\*\*
+    /**
 
-    \* value: &quot;Savings&quot;
+    * value: "Savings"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Savings = &quot;Savings&quot;;
+    Savings = "Savings";
 
     staticconstructFromObject(object) {
 
-    returnobject;
+    return object;
 
     }
 
@@ -264,81 +264,81 @@
 
 # CheckTransaction
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importCheckAccountTypefrom&#39;./CheckAccountType&#39;;
+    importCheckAccountTypefrom'./CheckAccountType';
 
-    importCheckTransactionTypefrom&#39;./CheckTransactionType&#39;;
+    importCheckTransactionTypefrom'./CheckTransactionType';
 
     exportdefaultclassCheckTransaction {
 
     constructor() {
 
-    this.Terminal\_ID = &#39;&#39;;
+    this.Terminal_ID = '';
 
-    this.Account\_Number = &#39;&#39;;
+    this.Account_Number = '';
 
-    this.Account\_Type = newCheckAccountType();
+    this.Account_Type = new CheckAccountType();
 
-    this.Check\_Number = &#39;&#39;;
+    this.Check_Number = '';
 
-    this.Routing\_Number = &#39;&#39;;
+    this.Routing_Number = '';
 
-    this.MICR\_Data = &#39;&#39;;
+    this.MICR_Data = '';
 
-    this.First\_Name = &#39;&#39;;
+    this.First_Name = '';
 
-    this.Last\_Name = &#39;&#39;;
+    this.Last_Name = '';
 
-    this.Company\_Name = &#39;&#39;;
+    this.Company_Name = '';
 
-    this.Address1 = &#39;&#39;;
+    this.Address1 = '';
 
-    this.Address2 = &#39;&#39;;
+    this.Address2 = '';
 
-    this.City = &#39;&#39;;
+    this.City = '';
 
-    this.State = &#39;&#39;;
+    this.State = '';
 
-    this.Zip = &#39;&#39;;
+    this.Zip = '';
 
-    this.Phone\_Number = &#39;&#39;;
+    this.Phone_Number = '';
 
-    this.DL\_Number = &#39;&#39;;
+    this.DL_Number = '';
 
-    this.DL\_State = &#39;&#39;;
+    this.DL_State = '';
 
-    this.Courtesy\_Card\_ID = &#39;&#39;;
+    this.Courtesy_Card_ID = '';
 
-    this.SSN4 = &#39;&#39;;
+    this.SSN4 = '';
 
-    this.DOB\_Year = &#39;&#39;;
+    this.DOB_Year = '';
 
-    this.Check\_Amount = &#39;&#39;;
+    this.Check_Amount = '';
 
-    this.Tran\_Type = &#39;&#39;;
+    this.Tran_Type = '';
 
-    this.Proc\_ID = &#39;&#39;;
+    this.Proc_ID = '';
 
-    this.IP\_Address = &#39;&#39;;
+    this.IP_Address = '';
 
-    this.CustomerNumber = &#39;&#39;;
+    this.CustomerNumber = '';
 
-    this.PONumber = &#39;&#39;;
+    this.PONumber = '';
 
-    this.InvoiceNumber = &#39;&#39;;
+    this.InvoiceNumber = '';
 
-    this.TranNote = &#39;&#39;;
+    this.TranNote = '';
 
-    this.EmailAddress = &#39;&#39;;
+    this.EmailAddress = '';
 
-    this.SEC\_Code = &#39;&#39;;
+    this.SEC_Code = '';
 
-    this.Proc\_Resp = &#39;&#39;;
+    this.Proc_Resp = '';
 
-    this.Proc\_Code = &#39;&#39;;
+    this.Proc_Code = '';
 
-    this.Proc\_Mess = &#39;&#39;;
+    this.Proc_Mess = '';
 
     }
 
@@ -346,209 +346,209 @@
 
     if (data) {
 
-    obj = obj || newCheckTransaction();
+    obj = obj || new CheckTransaction();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Terminal\_ID&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Terminal_ID')) {
 
-    obj[&#39;Terminal\_ID&#39;] = ApiClient.convertToType(data[&#39;Terminal\_ID&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Account\_Number&#39;)) {
-
-    obj[&#39;Account\_Number&#39;] = ApiClient.convertToType(data[&#39;Account\_Number&#39;], &#39;String&#39;);
+    obj['Terminal_ID'] = ApiClient.convertToType(data['Terminal_ID'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Account\_Type&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Account_Number')) {
 
-    obj[&#39;Account\_Type&#39;] = CheckAccountType.constructFromObject(data[&#39;Account\_Type&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Check\_Number&#39;)) {
-
-    obj[&#39;Check\_Number&#39;] = ApiClient.convertToType(data[&#39;Check\_Number&#39;], &#39;String&#39;);
+    obj['Account_Number'] = ApiClient.convertToType(data['Account_Number'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Routing\_Number&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Account_Type')) {
 
-    obj[&#39;Routing\_Number&#39;] = ApiClient.convertToType(data[&#39;Routing\_Number&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;MICR\_Data&#39;)) {
-
-    obj[&#39;MICR\_Data&#39;] = ApiClient.convertToType(data[&#39;MICR\_Data&#39;], &#39;String&#39;);
+    obj['Account_Type'] = CheckAccountType.constructFromObject(data['Account_Type']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;First\_Name&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Check_Number')) {
 
-    obj[&#39;First\_Name&#39;] = ApiClient.convertToType(data[&#39;First\_Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Last\_Name&#39;)) {
-
-    obj[&#39;Last\_Name&#39;] = ApiClient.convertToType(data[&#39;Last\_Name&#39;], &#39;String&#39;);
+    obj['Check_Number'] = ApiClient.convertToType(data['Check_Number'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Company\_Name&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Routing_Number')) {
 
-    obj[&#39;Company\_Name&#39;] = ApiClient.convertToType(data[&#39;Company\_Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Address1&#39;)) {
-
-    obj[&#39;Address1&#39;] = ApiClient.convertToType(data[&#39;Address1&#39;], &#39;String&#39;);
+    obj['Routing_Number'] = ApiClient.convertToType(data['Routing_Number'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Address2&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'MICR_Data')) {
 
-    obj[&#39;Address2&#39;] = ApiClient.convertToType(data[&#39;Address2&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;City&#39;)) {
-
-    obj[&#39;City&#39;] = ApiClient.convertToType(data[&#39;City&#39;], &#39;String&#39;);
+    obj['MICR_Data'] = ApiClient.convertToType(data['MICR_Data'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;State&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'First_Name')) {
 
-    obj[&#39;State&#39;] = ApiClient.convertToType(data[&#39;State&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Zip&#39;)) {
-
-    obj[&#39;Zip&#39;] = ApiClient.convertToType(data[&#39;Zip&#39;], &#39;String&#39;);
+    obj['First_Name'] = ApiClient.convertToType(data['First_Name'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Phone\_Number&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Last_Name')) {
 
-    obj[&#39;Phone\_Number&#39;] = ApiClient.convertToType(data[&#39;Phone\_Number&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;DL\_Number&#39;)) {
-
-    obj[&#39;DL\_Number&#39;] = ApiClient.convertToType(data[&#39;DL\_Number&#39;], &#39;String&#39;);
+    obj['Last_Name'] = ApiClient.convertToType(data['Last_Name'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;DL\_State&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Company_Name')) {
 
-    obj[&#39;DL\_State&#39;] = ApiClient.convertToType(data[&#39;DL\_State&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Courtesy\_Card\_ID&#39;)) {
-
-    obj[&#39;Courtesy\_Card\_ID&#39;] = ApiClient.convertToType(data[&#39;Courtesy\_Card\_ID&#39;], &#39;String&#39;);
+    obj['Company_Name'] = ApiClient.convertToType(data['Company_Name'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;SSN4&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Address1')) {
 
-    obj[&#39;SSN4&#39;] = ApiClient.convertToType(data[&#39;SSN4&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;DOB\_Year&#39;)) {
-
-    obj[&#39;DOB\_Year&#39;] = ApiClient.convertToType(data[&#39;DOB\_Year&#39;], &#39;String&#39;);
+    obj['Address1'] = ApiClient.convertToType(data['Address1'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Check\_Amount&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Address2')) {
 
-    obj[&#39;Check\_Amount&#39;] = ApiClient.convertToType(data[&#39;Check\_Amount&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Tran\_Type&#39;)) {
-
-    obj[&#39;Tran\_Type&#39;] = CheckTransactionType.constructFromObject(data[&#39;Tran\_Type&#39;]);
+    obj['Address2'] = ApiClient.convertToType(data['Address2'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Proc\_ID&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'City')) {
 
-    obj[&#39;Proc\_ID&#39;] = ApiClient.convertToType(data[&#39;Proc\_ID&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;IP\_Address&#39;)) {
-
-    obj[&#39;IP\_Address&#39;] = ApiClient.convertToType(data[&#39;IP\_Address&#39;], &#39;String&#39;);
+    obj['City'] = ApiClient.convertToType(data['City'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;CustomerNumber&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'State')) {
 
-    obj[&#39;CustomerNumber&#39;] = ApiClient.convertToType(data[&#39;CustomerNumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;PONumber&#39;)) {
-
-    obj[&#39;PONumber&#39;] = ApiClient.convertToType(data[&#39;PONumber&#39;], &#39;String&#39;);
+    obj['State'] = ApiClient.convertToType(data['State'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;InvoiceNumber&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Zip')) {
 
-    obj[&#39;InvoiceNumber&#39;] = ApiClient.convertToType(data[&#39;InvoiceNumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;TranNote&#39;)) {
-
-    obj[&#39;TranNote&#39;] = ApiClient.convertToType(data[&#39;TranNote&#39;], &#39;String&#39;);
+    obj['Zip'] = ApiClient.convertToType(data['Zip'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;EmailAddress&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Phone_Number')) {
 
-    obj[&#39;EmailAddress&#39;] = ApiClient.convertToType(data[&#39;EmailAddress&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;SEC\_Code&#39;)) {
-
-    obj[&#39;SEC\_Code&#39;] = ApiClient.convertToType(data[&#39;SEC\_Code&#39;], &#39;String&#39;);
+    obj['Phone_Number'] = ApiClient.convertToType(data['Phone_Number'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Proc\_Resp&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'DL_Number')) {
 
-    obj[&#39;Proc\_Resp&#39;] = ApiClient.convertToType(data[&#39;Proc\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Proc\_Code&#39;)) {
-
-    obj[&#39;Proc\_Code&#39;] = ApiClient.convertToType(data[&#39;Proc\_Code&#39;], &#39;String&#39;);
+    obj['DL_Number'] = ApiClient.convertToType(data['DL_Number'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Proc\_Mess&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'DL_State')) {
 
-    obj[&#39;Proc\_Mess&#39;] = ApiClient.convertToType(data[&#39;Proc\_Mess&#39;], &#39;String&#39;);
+    obj['DL_State'] = ApiClient.convertToType(data['DL_State'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Courtesy_Card_ID')) {
+
+    obj['Courtesy_Card_ID'] = ApiClient.convertToType(data['Courtesy_Card_ID'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'SSN4')) {
+
+    obj['SSN4'] = ApiClient.convertToType(data['SSN4'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'DOB_Year')) {
+
+    obj['DOB_Year'] = ApiClient.convertToType(data['DOB_Year'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Check_Amount')) {
+
+    obj['Check_Amount'] = ApiClient.convertToType(data['Check_Amount'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Tran_Type')) {
+
+    obj['Tran_Type'] = CheckTransactionType.constructFromObject(data['Tran_Type']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Proc_ID')) {
+
+    obj['Proc_ID'] = ApiClient.convertToType(data['Proc_ID'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'IP_Address')) {
+
+    obj['IP_Address'] = ApiClient.convertToType(data['IP_Address'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'CustomerNumber')) {
+
+    obj['CustomerNumber'] = ApiClient.convertToType(data['CustomerNumber'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'PONumber')) {
+
+    obj['PONumber'] = ApiClient.convertToType(data['PONumber'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'InvoiceNumber')) {
+
+    obj['InvoiceNumber'] = ApiClient.convertToType(data['InvoiceNumber'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'TranNote')) {
+
+    obj['TranNote'] = ApiClient.convertToType(data['TranNote'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'EmailAddress')) {
+
+    obj['EmailAddress'] = ApiClient.convertToType(data['EmailAddress'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'SEC_Code')) {
+
+    obj['SEC_Code'] = ApiClient.convertToType(data['SEC_Code'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Proc_Resp')) {
+
+    obj['Proc_Resp'] = ApiClient.convertToType(data['Proc_Resp'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Proc_Code')) {
+
+    obj['Proc_Code'] = ApiClient.convertToType(data['Proc_Code'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Proc_Mess')) {
+
+    obj['Proc_Mess'] = ApiClient.convertToType(data['Proc_Mess'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -556,47 +556,47 @@
 
 # CheckTransactionSettings
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importFieldInfofrom&#39;./FieldInfo&#39;;
+    importFieldInfofrom'./FieldInfo';
 
     exportdefaultclassCheckTransactionSettings {
 
     constructor() {
 
-    this.Reader = newFieldInfo();
+    this.Reader = new FieldInfo();
 
-    this.ContactName = newFieldInfo();
+    this.ContactName = new FieldInfo();
 
-    this.ContactTitle = newFieldInfo();
+    this.ContactTitle = new FieldInfo();
 
-    this.EmailAddress = newFieldInfo();
+    this.EmailAddress = new FieldInfo();
 
-    this.PhoneDefault = &#39;&#39;;
+    this.PhoneDefault = '';
 
-    this.Fax = newFieldInfo();
+    this.Fax = new FieldInfo();
 
-    this.BillingAddressDefault = &#39;&#39;;
+    this.BillingAddressDefault = '';
 
-    this.BillingAddress2 = newFieldInfo();
+    this.BillingAddress2 = new FieldInfo();
 
-    this.BillingCityDefault = &#39;&#39;;
+    this.BillingCityDefault = '';
 
-    this.BillingStateDefault = &#39;&#39;;
+    this.BillingStateDefault = '';
 
-    this.BillingZipDefault = &#39;&#39;;
+    this.BillingZipDefault = '';
 
-    this.PONumber = newFieldInfo();
+    this.PONumber = new FieldInfo();
 
-    this.InvoiceNumber = newFieldInfo();
+    this.InvoiceNumber = new FieldInfo();
 
-    this.BusinessName = newFieldInfo();
+    this.BusinessName = new FieldInfo();
 
-    this.CustomerNumber = newFieldInfo();
+    this.CustomerNumber = new FieldInfo();
 
-    this.ReferenceNote = newFieldInfo();
+    this.ReferenceNote = new FieldInfo();
 
-    this.DefaultSECCode = &#39;&#39;;
+    this.DefaultSECCode = '';
 
     }
 
@@ -604,113 +604,113 @@
 
     if (data) {
 
-    obj = obj || newCheckTransactionSettings();
+    obj = obj || new CheckTransactionSettings();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Reader&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Reader')) {
 
-    obj[&#39;Reader&#39;] = FieldInfo.constructFromObject(data[&#39;Reader&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ContactName&#39;)) {
-
-    obj[&#39;ContactName&#39;] = FieldInfo.constructFromObject(data[&#39;ContactName&#39;]);
+    obj['Reader'] = FieldInfo.constructFromObject(data['Reader']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ContactTitle&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'ContactName')) {
 
-    obj[&#39;ContactTitle&#39;] = FieldInfo.constructFromObject(data[&#39;ContactTitle&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;EmailAddress&#39;)) {
-
-    obj[&#39;EmailAddress&#39;] = FieldInfo.constructFromObject(data[&#39;EmailAddress&#39;]);
+    obj['ContactName'] = FieldInfo.constructFromObject(data['ContactName']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;PhoneDefault&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'ContactTitle')) {
 
-    obj[&#39;PhoneDefault&#39;] = ApiClient.convertToType(data[&#39;PhoneDefault&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Fax&#39;)) {
-
-    obj[&#39;Fax&#39;] = FieldInfo.constructFromObject(data[&#39;Fax&#39;]);
+    obj['ContactTitle'] = FieldInfo.constructFromObject(data['ContactTitle']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BillingAddressDefault&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'EmailAddress')) {
 
-    obj[&#39;BillingAddressDefault&#39;] = ApiClient.convertToType(data[&#39;BillingAddressDefault&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BillingAddress2&#39;)) {
-
-    obj[&#39;BillingAddress2&#39;] = FieldInfo.constructFromObject(data[&#39;BillingAddress2&#39;]);
+    obj['EmailAddress'] = FieldInfo.constructFromObject(data['EmailAddress']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BillingCityDefault&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'PhoneDefault')) {
 
-    obj[&#39;BillingCityDefault&#39;] = ApiClient.convertToType(data[&#39;BillingCityDefault&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BillingStateDefault&#39;)) {
-
-    obj[&#39;BillingStateDefault&#39;] = ApiClient.convertToType(data[&#39;BillingStateDefault&#39;], &#39;String&#39;);
+    obj['PhoneDefault'] = ApiClient.convertToType(data['PhoneDefault'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BillingZipDefault&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Fax')) {
 
-    obj[&#39;BillingZipDefault&#39;] = ApiClient.convertToType(data[&#39;BillingZipDefault&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;PONumber&#39;)) {
-
-    obj[&#39;PONumber&#39;] = FieldInfo.constructFromObject(data[&#39;PONumber&#39;]);
+    obj['Fax'] = FieldInfo.constructFromObject(data['Fax']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;InvoiceNumber&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'BillingAddressDefault')) {
 
-    obj[&#39;InvoiceNumber&#39;] = FieldInfo.constructFromObject(data[&#39;InvoiceNumber&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;BusinessName&#39;)) {
-
-    obj[&#39;BusinessName&#39;] = FieldInfo.constructFromObject(data[&#39;BusinessName&#39;]);
+    obj['BillingAddressDefault'] = ApiClient.convertToType(data['BillingAddressDefault'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;CustomerNumber&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'BillingAddress2')) {
 
-    obj[&#39;CustomerNumber&#39;] = FieldInfo.constructFromObject(data[&#39;CustomerNumber&#39;]);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;ReferenceNote&#39;)) {
-
-    obj[&#39;ReferenceNote&#39;] = FieldInfo.constructFromObject(data[&#39;ReferenceNote&#39;]);
+    obj['BillingAddress2'] = FieldInfo.constructFromObject(data['BillingAddress2']);
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;DefaultSECCode&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'BillingCityDefault')) {
 
-    obj[&#39;DefaultSECCode&#39;] = ApiClient.convertToType(data[&#39;DefaultSECCode&#39;], &#39;String&#39;);
+    obj['BillingCityDefault'] = ApiClient.convertToType(data['BillingCityDefault'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'BillingStateDefault')) {
+
+    obj['BillingStateDefault'] = ApiClient.convertToType(data['BillingStateDefault'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'BillingZipDefault')) {
+
+    obj['BillingZipDefault'] = ApiClient.convertToType(data['BillingZipDefault'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'PONumber')) {
+
+    obj['PONumber'] = FieldInfo.constructFromObject(data['PONumber']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'InvoiceNumber')) {
+
+    obj['InvoiceNumber'] = FieldInfo.constructFromObject(data['InvoiceNumber']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'BusinessName')) {
+
+    obj['BusinessName'] = FieldInfo.constructFromObject(data['BusinessName']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'CustomerNumber')) {
+
+    obj['CustomerNumber'] = FieldInfo.constructFromObject(data['CustomerNumber']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'ReferenceNote')) {
+
+    obj['ReferenceNote'] = FieldInfo.constructFromObject(data['ReferenceNote']);
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'DefaultSECCode')) {
+
+    obj['DefaultSECCode'] = ApiClient.convertToType(data['DefaultSECCode'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -720,79 +720,79 @@
 
     exportdefaultclassCheckTransactionType {
 
-    /\*\*
+    /**
 
-    \* value: &quot;Unknown&quot;
+    * value: "Unknown"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Unknown = &#39;Unknown&#39;;
+    Unknown = 'Unknown';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Authorize&quot;
+    * value: "Authorize"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Authorize = &#39;Authorize&#39;;
+    Authorize = 'Authorize';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Void&quot;
+    * value: "void "
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Void = &#39;Void&#39;;
+    void = 'void ';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Override&quot;
+    * value: "Override"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Override = &#39;Override&#39;;
+    Override = 'Override';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Payroll&quot;
+    * value: "Payroll"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Payroll = &#39;Payroll&#39;;
+    Payroll = 'Payroll';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Recurring&quot;
+    * value: "Recurring"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Recurring = &#39;Recurring&#39;;
+    Recurring = 'Recurring';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Refund&quot;
+    * value: "Refund"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Refund = &#39;Refund&#39;;
+    Refund = 'Refund';
 
     staticconstructFromObject(object) {
 
-    returnobject;
+    return object;
 
     }
 
@@ -800,23 +800,23 @@
 
 # Contact
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassContact {
 
     constructor() {
 
-    this.FirstName = &#39;&#39;;
+    this.FirstName = '';
 
-    this.LastName = &#39;&#39;;
+    this.LastName = '';
 
-    this.Name = &#39;&#39;;
+    this.Name = '';
 
-    this.Title = &#39;&#39;;
+    this.Title = '';
 
-    this.Phone = &#39;&#39;;
+    this.Phone = '';
 
-    this.Email = &#39;&#39;;
+    this.Email = '';
 
     }
 
@@ -824,47 +824,47 @@
 
     if (data) {
 
-    obj = obj || newContact();
+    obj = obj || new Contact();
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;FirstName&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'FirstName')) {
 
-    obj[&#39;FirstName&#39;] = ApiClient.convertToType(data[&#39;FirstName&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;LastName&#39;)) {
-
-    obj[&#39;LastName&#39;] = ApiClient.convertToType(data[&#39;LastName&#39;], &#39;String&#39;);
+    obj['FirstName'] = ApiClient.convertToType(data['FirstName'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Name&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'LastName')) {
 
-    obj[&#39;Name&#39;] = ApiClient.convertToType(data[&#39;Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Title&#39;)) {
-
-    obj[&#39;Title&#39;] = ApiClient.convertToType(data[&#39;Title&#39;], &#39;String&#39;);
+    obj['LastName'] = ApiClient.convertToType(data['LastName'], 'String');
 
     }
 
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Phone&#39;)) {
+    if (Object.prototype.hasOwnProperty.call(data, 'Name')) {
 
-    obj[&#39;Phone&#39;] = ApiClient.convertToType(data[&#39;Phone&#39;], &#39;String&#39;);
-
-    }
-
-    if (Object.prototype.hasOwnProperty.call(data, &#39;Email&#39;)) {
-
-    obj[&#39;Email&#39;] = ApiClient.convertToType(data[&#39;Email&#39;], &#39;String&#39;);
+    obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
 
     }
 
+    if (Object.prototype.hasOwnProperty.call(data, 'Title')) {
+
+    obj['Title'] = ApiClient.convertToType(data['Title'], 'String');
+
     }
 
-    returnobj;
+    if (Object.prototype.hasOwnProperty.call(data, 'Phone')) {
+
+    obj['Phone'] = ApiClient.convertToType(data['Phone'], 'String');
+
+    }
+
+    if (Object.prototype.hasOwnProperty.call(data, 'Email')) {
+
+    obj['Email'] = ApiClient.convertToType(data['Email'], 'String');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -872,61 +872,61 @@
 
 # CreditCardTransactionSettings
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importFieldInfofrom&#39;./FieldInfo&#39;;
+    importFieldInfofrom'./FieldInfo';
 
-    importTransactionTypefrom&#39;./TransactionType&#39;;
+    importTransactionTypefrom'./TransactionType';
 
     exportdefaultclassCreditCardTransactionSettings {
 
     constructor() {
 
-    this.CVV = newFieldInfo();
+    this.CVV = new FieldInfo();
 
-    this.ContactName = newFieldInfo();
+    this.ContactName = new FieldInfo();
 
-    this.ContactTitle = newFieldInfo();
+    this.ContactTitle = new FieldInfo();
 
-    this.EmailAddress = newFieldInfo();
+    this.EmailAddress = new FieldInfo();
 
-    this.Phone = newFieldInfo();
+    this.Phone = new FieldInfo();
 
-    this.Fax = newFieldInfo();
+    this.Fax = new FieldInfo();
 
-    this.BillingAddress = newFieldInfo();
+    this.BillingAddress = new FieldInfo();
 
-    this.BillingAddress2 = newFieldInfo();
+    this.BillingAddress2 = new FieldInfo();
 
-    this.BillingCity = newFieldInfo();
+    this.BillingCity = new FieldInfo();
 
-    this.BillingState = newFieldInfo();
+    this.BillingState = new FieldInfo();
 
-    this.BillingZip = newFieldInfo();
+    this.BillingZip = new FieldInfo();
 
-    this.PONumber = newFieldInfo();
+    this.PONumber = new FieldInfo();
 
-    this.InvoiceNumber = newFieldInfo();
+    this.InvoiceNumber = new FieldInfo();
 
-    this.BusinessName = newFieldInfo();
+    this.BusinessName = new FieldInfo();
 
-    this.CustomerNumber = newFieldInfo();
+    this.CustomerNumber = new FieldInfo();
 
-    this.ReferenceNote = newFieldInfo();
+    this.ReferenceNote = new FieldInfo();
 
-    this.SalesTax = newFieldInfo();
+    this.SalesTax = new FieldInfo();
 
-    this.TaxExempt = newFieldInfo();
+    this.TaxExempt = new FieldInfo();
 
-    this.CardTracks = newFieldInfo();
+    this.CardTracks = new FieldInfo();
 
-    this.CardZip = newFieldInfo();
+    this.CardZip = new FieldInfo();
 
-    this.CardAddress = newFieldInfo();
+    this.CardAddress = new FieldInfo();
 
-    this.ItemDescription = &#39;&#39;;
+    this.ItemDescription = '';
 
     this.DefaultTransactionType = TransactionType.Sale;
 
@@ -936,149 +936,149 @@
 
     if (data) {
 
-    obj = obj || newCreditCardTransactionSettings();
+    obj = obj || new CreditCardTransactionSettings();
 
-    if (data.hasOwnProperty(&#39;CVV&#39;)) {
+    if (data.hasOwnProperty('CVV')) {
 
-    obj[&#39;CVV&#39;] = FieldInfo.constructFromObject(data[&#39;CVV&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ContactName&#39;)) {
-
-    obj[&#39;ContactName&#39;] = FieldInfo.constructFromObject(data[&#39;ContactName&#39;]);
+    obj['CVV'] = FieldInfo.constructFromObject(data['CVV']);
 
     }
 
-    if (data.hasOwnProperty(&#39;ContactTitle&#39;)) {
+    if (data.hasOwnProperty('ContactName')) {
 
-    obj[&#39;ContactTitle&#39;] = FieldInfo.constructFromObject(data[&#39;ContactTitle&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;EmailAddress&#39;)) {
-
-    obj[&#39;EmailAddress&#39;] = FieldInfo.constructFromObject(data[&#39;EmailAddress&#39;]);
+    obj['ContactName'] = FieldInfo.constructFromObject(data['ContactName']);
 
     }
 
-    if (data.hasOwnProperty(&#39;Phone&#39;)) {
+    if (data.hasOwnProperty('ContactTitle')) {
 
-    obj[&#39;Phone&#39;] = FieldInfo.constructFromObject(data[&#39;Phone&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Fax&#39;)) {
-
-    obj[&#39;Fax&#39;] = FieldInfo.constructFromObject(data[&#39;Fax&#39;]);
+    obj['ContactTitle'] = FieldInfo.constructFromObject(data['ContactTitle']);
 
     }
 
-    if (data.hasOwnProperty(&#39;BillingAddress&#39;)) {
+    if (data.hasOwnProperty('EmailAddress')) {
 
-    obj[&#39;BillingAddress&#39;] = FieldInfo.constructFromObject(data[&#39;BillingAddress&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;BillingAddress2&#39;)) {
-
-    obj[&#39;BillingAddress2&#39;] = FieldInfo.constructFromObject(data[&#39;BillingAddress2&#39;]);
+    obj['EmailAddress'] = FieldInfo.constructFromObject(data['EmailAddress']);
 
     }
 
-    if (data.hasOwnProperty(&#39;BillingCity&#39;)) {
+    if (data.hasOwnProperty('Phone')) {
 
-    obj[&#39;BillingCity&#39;] = FieldInfo.constructFromObject(data[&#39;BillingCity&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;BillingState&#39;)) {
-
-    obj[&#39;BillingState&#39;] = FieldInfo.constructFromObject(data[&#39;BillingState&#39;]);
+    obj['Phone'] = FieldInfo.constructFromObject(data['Phone']);
 
     }
 
-    if (data.hasOwnProperty(&#39;BillingZip&#39;)) {
+    if (data.hasOwnProperty('Fax')) {
 
-    obj[&#39;BillingZip&#39;] = FieldInfo.constructFromObject(data[&#39;BillingZip&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;PONumber&#39;)) {
-
-    obj[&#39;PONumber&#39;] = FieldInfo.constructFromObject(data[&#39;PONumber&#39;]);
+    obj['Fax'] = FieldInfo.constructFromObject(data['Fax']);
 
     }
 
-    if (data.hasOwnProperty(&#39;InvoiceNumber&#39;)) {
+    if (data.hasOwnProperty('BillingAddress')) {
 
-    obj[&#39;InvoiceNumber&#39;] = FieldInfo.constructFromObject(data[&#39;InvoiceNumber&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;BusinessName&#39;)) {
-
-    obj[&#39;BusinessName&#39;] = FieldInfo.constructFromObject(data[&#39;BusinessName&#39;]);
+    obj['BillingAddress'] = FieldInfo.constructFromObject(data['BillingAddress']);
 
     }
 
-    if (data.hasOwnProperty(&#39;CustomerNumber&#39;)) {
+    if (data.hasOwnProperty('BillingAddress2')) {
 
-    obj[&#39;CustomerNumber&#39;] = FieldInfo.constructFromObject(data[&#39;CustomerNumber&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ReferenceNote&#39;)) {
-
-    obj[&#39;ReferenceNote&#39;] = FieldInfo.constructFromObject(data[&#39;ReferenceNote&#39;]);
+    obj['BillingAddress2'] = FieldInfo.constructFromObject(data['BillingAddress2']);
 
     }
 
-    if (data.hasOwnProperty(&#39;SalesTax&#39;)) {
+    if (data.hasOwnProperty('BillingCity')) {
 
-    obj[&#39;SalesTax&#39;] = FieldInfo.constructFromObject(data[&#39;SalesTax&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;TaxExempt&#39;)) {
-
-    obj[&#39;TaxExempt&#39;] = FieldInfo.constructFromObject(data[&#39;TaxExempt&#39;]);
+    obj['BillingCity'] = FieldInfo.constructFromObject(data['BillingCity']);
 
     }
 
-    if (data.hasOwnProperty(&#39;CardTracks&#39;)) {
+    if (data.hasOwnProperty('BillingState')) {
 
-    obj[&#39;CardTracks&#39;] = FieldInfo.constructFromObject(data[&#39;CardTracks&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CardZip&#39;)) {
-
-    obj[&#39;CardZip&#39;] = FieldInfo.constructFromObject(data[&#39;CardZip&#39;]);
+    obj['BillingState'] = FieldInfo.constructFromObject(data['BillingState']);
 
     }
 
-    if (data.hasOwnProperty(&#39;CardAddress&#39;)) {
+    if (data.hasOwnProperty('BillingZip')) {
 
-    obj[&#39;CardAddress&#39;] = FieldInfo.constructFromObject(data[&#39;CardAddress&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ItemDescription&#39;)) {
-
-    obj[&#39;ItemDescription&#39;] = ApiClient.convertToType(data[&#39;ItemDescription&#39;], &#39;String&#39;);
+    obj['BillingZip'] = FieldInfo.constructFromObject(data['BillingZip']);
 
     }
 
-    if (data.hasOwnProperty(&#39;DefaultTransactionType&#39;)) {
+    if (data.hasOwnProperty('PONumber')) {
 
-    obj[&#39;DefaultTransactionType&#39;] = TransactionType.constructFromObject(data[&#39;DefaultTransactionType&#39;]);
+    obj['PONumber'] = FieldInfo.constructFromObject(data['PONumber']);
+
+    }
+
+    if (data.hasOwnProperty('InvoiceNumber')) {
+
+    obj['InvoiceNumber'] = FieldInfo.constructFromObject(data['InvoiceNumber']);
+
+    }
+
+    if (data.hasOwnProperty('BusinessName')) {
+
+    obj['BusinessName'] = FieldInfo.constructFromObject(data['BusinessName']);
+
+    }
+
+    if (data.hasOwnProperty('CustomerNumber')) {
+
+    obj['CustomerNumber'] = FieldInfo.constructFromObject(data['CustomerNumber']);
+
+    }
+
+    if (data.hasOwnProperty('ReferenceNote')) {
+
+    obj['ReferenceNote'] = FieldInfo.constructFromObject(data['ReferenceNote']);
+
+    }
+
+    if (data.hasOwnProperty('SalesTax')) {
+
+    obj['SalesTax'] = FieldInfo.constructFromObject(data['SalesTax']);
+
+    }
+
+    if (data.hasOwnProperty('TaxExempt')) {
+
+    obj['TaxExempt'] = FieldInfo.constructFromObject(data['TaxExempt']);
+
+    }
+
+    if (data.hasOwnProperty('CardTracks')) {
+
+    obj['CardTracks'] = FieldInfo.constructFromObject(data['CardTracks']);
+
+    }
+
+    if (data.hasOwnProperty('CardZip')) {
+
+    obj['CardZip'] = FieldInfo.constructFromObject(data['CardZip']);
+
+    }
+
+    if (data.hasOwnProperty('CardAddress')) {
+
+    obj['CardAddress'] = FieldInfo.constructFromObject(data['CardAddress']);
+
+    }
+
+    if (data.hasOwnProperty('ItemDescription')) {
+
+    obj['ItemDescription'] = ApiClient.convertToType(data['ItemDescription'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('DefaultTransactionType')) {
+
+    obj['DefaultTransactionType'] = TransactionType.constructFromObject(data['DefaultTransactionType']);
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -1088,49 +1088,49 @@
 
     exportdefaultclassCVVPresenceType {
 
-    /\*\*
+    /**
 
-    \* value: &quot;Normal&quot;
+    * value: "Normal"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Normal = &#39;Normal&#39;;
+    Normal = 'Normal';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Bypass&quot;
+    * value: "Bypass"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Bypass = &#39;Bypass&#39;;
+    Bypass = 'Bypass';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Illegible&quot;
+    * value: "Illegible"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Illegible = &#39;Illegible&#39;;
+    Illegible = 'Illegible';
 
-    /\*\*
+    /**
 
-    \* value: &quot;NotAvailable&quot;
+    * value: "NotAvailable"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    NotAvailable = &#39;NotAvailable&#39;;
+    NotAvailable = 'NotAvailable';
 
     staticconstructFromObject(object) {
 
-    returnobject;
+    return object;
 
     }
 
@@ -1138,23 +1138,23 @@
 
 # EmailReceipt
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassEmailReceipt {
 
     constructor() {
 
-    this.TransactionID = &#39;&#39;;
+    this.TransactionID = '';
 
-    this.ToAddresses = &#39;&#39;;
+    this.ToAddresses = '';
 
-    this.Subject = &#39;&#39;;
+    this.Subject = '';
 
-    this.Header = &#39;&#39;;
+    this.Header = '';
 
-    this.Footer = &#39;&#39;;
+    this.Footer = '';
 
     }
 
@@ -1162,41 +1162,41 @@
 
     if (data) {
 
-    obj = obj || newEmailReceipt();
+    obj = obj || new EmailReceipt();
 
-    if (data.hasOwnProperty(&#39;TransactionID&#39;)) {
+    if (data.hasOwnProperty('TransactionID')) {
 
-    obj[&#39;TransactionID&#39;] = ApiClient.convertToType(data[&#39;TransactionID&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ToAddresses&#39;)) {
-
-    obj[&#39;ToAddresses&#39;] = ApiClient.convertToType(data[&#39;ToAddresses&#39;], &#39;String&#39;);
+    obj['TransactionID'] = ApiClient.convertToType(data['TransactionID'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Subject&#39;)) {
+    if (data.hasOwnProperty('ToAddresses')) {
 
-    obj[&#39;Subject&#39;] = ApiClient.convertToType(data[&#39;Subject&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Header&#39;)) {
-
-    obj[&#39;Header&#39;] = ApiClient.convertToType(data[&#39;Header&#39;], &#39;String&#39;);
+    obj['ToAddresses'] = ApiClient.convertToType(data['ToAddresses'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Footer&#39;)) {
+    if (data.hasOwnProperty('Subject')) {
 
-    obj[&#39;Footer&#39;] = ApiClient.convertToType(data[&#39;Footer&#39;], &#39;String&#39;);
+    obj['Subject'] = ApiClient.convertToType(data['Subject'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Header')) {
+
+    obj['Header'] = ApiClient.convertToType(data['Header'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Footer')) {
+
+    obj['Footer'] = ApiClient.convertToType(data['Footer'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -1206,39 +1206,39 @@
 
     exportdefaultclassFieldAccess {
 
-    /\*\*
+    /**
 
-    \* value: &quot;Disabled&quot;
+    * value: "Disabled"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Disabled = &#39;Disabled&#39;;
+    Disabled = 'Disabled';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Enabled&quot;
+    * value: "Enabled"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Enabled = &#39;Enabled&#39;;
+    Enabled = 'Enabled';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Required&quot;
+    * value: "Required"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Required = &#39;Required&#39;;
+    Required = 'Required';
 
     staticconstructFromObject(object) {
 
-    returnobject;
+    return object;
 
     }
 
@@ -1246,11 +1246,11 @@
 
 # FieldInfo
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importFieldAccessfrom&#39;./FieldAccess&#39;;
+    importFieldAccessfrom'./FieldAccess';
 
     exportdefaultclassFieldInfo {
 
@@ -1258,7 +1258,7 @@
 
     this.Access = FieldAccess.Enabled;
 
-    this.Default = &#39;&#39;;
+    this.Default = '';
 
     }
 
@@ -1266,23 +1266,23 @@
 
     if (data) {
 
-    obj = obj || newFieldInfo();
+    obj = obj || new FieldInfo();
 
-    if (data.hasOwnProperty(&#39;Access&#39;)) {
+    if (data.hasOwnProperty('Access')) {
 
-    obj[&#39;Access&#39;] = FieldAccess.constructFromObject(data[&#39;Access&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Default&#39;)) {
-
-    obj[&#39;Default&#39;] = ApiClient.convertToType(data[&#39;Default&#39;], &#39;String&#39;);
+    obj['Access'] = FieldAccess.constructFromObject(data['Access']);
 
     }
 
+    if (data.hasOwnProperty('Default')) {
+
+    obj['Default'] = ApiClient.convertToType(data['Default'], 'String');
+
     }
 
-    returnobj;
+    }
+
+    return obj;
 
     }
 
@@ -1290,101 +1290,101 @@
 
 # QueryTransaction
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importTransactionItemfrom&#39;./TransactionItem&#39;;
+    importTransactionItemfrom'./TransactionItem';
 
     exportdefaultclassQueryTransaction {
 
     constructor() {
 
-    this.Tran\_Sequence = &#39;&#39;;
+    this.Tran_Sequence = '';
 
-    this.Tran\_Batch = &#39;&#39;;
+    this.Tran_Batch = '';
 
-    this.Tran\_Modified = &#39;&#39;;
+    this.Tran_Modified = '';
 
-    this.Tran\_Processed = &#39;&#39;;
+    this.Tran_Processed = '';
 
-    this.Tran\_Settled = &#39;&#39;;
+    this.Tran_Settled = '';
 
-    this.Submit\_Time = &#39;&#39;;
+    this.Submit_Time = '';
 
-    this.Tran\_Type = &#39;&#39;;
+    this.Tran_Type = '';
 
-    this.Tran\_Amt = 0;
+    this.Tran_Amt = 0;
 
-    this.Tran\_Tax = 0;
+    this.Tran_Tax = 0;
 
-    this.Tran\_Inv = &#39;&#39;;
+    this.Tran_Inv = '';
 
-    this.Tran\_PO = &#39;&#39;;
+    this.Tran_PO = '';
 
-    this.Tran\_CNum = &#39;&#39;;
+    this.Tran_CNum = '';
 
-    this.Tran\_Note = &#39;&#39;;
+    this.Tran_Note = '';
 
-    this.Card\_Num = &#39;&#39;;
+    this.Card_Num = '';
 
-    this.Card\_Name = &#39;&#39;;
+    this.Card_Name = '';
 
-    this.Card\_Exp = &#39;&#39;;
+    this.Card_Exp = '';
 
-    this.AVS\_Street = &#39;&#39;;
+    this.AVS_Street = '';
 
-    this.AVS\_Zip = &#39;&#39;;
+    this.AVS_Zip = '';
 
-    this.CVV\_Num = &#39;&#39;;
+    this.CVV_Num = '';
 
-    this.Proc\_ID = &#39;&#39;;
+    this.Proc_ID = '';
 
-    this.Proc\_Resp = &#39;&#39;;
+    this.Proc_Resp = '';
 
-    this.Proc\_Code = &#39;&#39;;
+    this.Proc_Code = '';
 
-    this.Proc\_Mess = &#39;&#39;;
+    this.Proc_Mess = '';
 
-    this.AVS\_Code = &#39;&#39;;
+    this.AVS_Code = '';
 
-    this.AVS\_Resp = &#39;&#39;;
+    this.AVS_Resp = '';
 
-    this.CVV\_Code = &#39;&#39;;
+    this.CVV_Code = '';
 
-    this.CVV\_Resp = &#39;&#39;;
+    this.CVV_Resp = '';
 
     this.Items = [];
 
-    this.Business\_Name = &#39;&#39;;
+    this.Business_Name = '';
 
-    this.Business\_Address = &#39;&#39;;
+    this.Business_Address = '';
 
-    this.Business\_Address2 = &#39;&#39;;
+    this.Business_Address2 = '';
 
-    this.Business\_City = &#39;&#39;;
+    this.Business_City = '';
 
-    this.Business\_State = &#39;&#39;;
+    this.Business_State = '';
 
-    this.Business\_Zip = &#39;&#39;;
+    this.Business_Zip = '';
 
-    this.Business\_Country = &#39;&#39;;
+    this.Business_Country = '';
 
-    this.Business\_Website = &#39;&#39;;
+    this.Business_Website = '';
 
-    this.Contact\_FirstName = &#39;&#39;;
+    this.Contact_FirstName = '';
 
-    this.Contact\_LastName = &#39;&#39;;
+    this.Contact_LastName = '';
 
-    this.Contact\_Phone = &#39;&#39;;
+    this.Contact_Phone = '';
 
-    this.Contact\_Fax = &#39;&#39;;
+    this.Contact_Fax = '';
 
-    this.Contact\_Email = &#39;&#39;;
+    this.Contact_Email = '';
 
-    this.Contact\_Title = &#39;&#39;;
+    this.Contact_Title = '';
 
-    this.IP = &#39;&#39;;
+    this.IP = '';
 
     this.TaxExempt = false;
 
@@ -1394,275 +1394,275 @@
 
     if (data) {
 
-    obj = obj || newQueryTransaction();
+    obj = obj || new QueryTransaction();
 
-    if (data.hasOwnProperty(&#39;Tran\_Sequence&#39;)) {
+    if (data.hasOwnProperty('Tran_Sequence')) {
 
-    obj[&#39;Tran\_Sequence&#39;] = ApiClient.convertToType(data[&#39;Tran\_Sequence&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Batch&#39;)) {
-
-    obj[&#39;Tran\_Batch&#39;] = ApiClient.convertToType(data[&#39;Tran\_Batch&#39;], &#39;String&#39;);
+    obj['Tran_Sequence'] = ApiClient.convertToType(data['Tran_Sequence'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Modified&#39;)) {
+    if (data.hasOwnProperty('Tran_Batch')) {
 
-    obj[&#39;Tran\_Modified&#39;] = ApiClient.convertToType(data[&#39;Tran\_Modified&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Processed&#39;)) {
-
-    obj[&#39;Tran\_Processed&#39;] = ApiClient.convertToType(data[&#39;Tran\_Processed&#39;], &#39;String&#39;);
+    obj['Tran_Batch'] = ApiClient.convertToType(data['Tran_Batch'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Settled&#39;)) {
+    if (data.hasOwnProperty('Tran_Modified')) {
 
-    obj[&#39;Tran\_Settled&#39;] = ApiClient.convertToType(data[&#39;Tran\_Settled&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Submit\_Time&#39;)) {
-
-    obj[&#39;Submit\_Time&#39;] = ApiClient.convertToType(data[&#39;Submit\_Time&#39;], &#39;String&#39;);
+    obj['Tran_Modified'] = ApiClient.convertToType(data['Tran_Modified'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Type&#39;)) {
+    if (data.hasOwnProperty('Tran_Processed')) {
 
-    obj[&#39;Tran\_Type&#39;] = ApiClient.convertToType(data[&#39;Tran\_Type&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Amt&#39;)) {
-
-    obj[&#39;Tran\_Amt&#39;] = ApiClient.convertToType(data[&#39;Tran\_Amt&#39;], &#39;Number&#39;);
+    obj['Tran_Processed'] = ApiClient.convertToType(data['Tran_Processed'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Tax&#39;)) {
+    if (data.hasOwnProperty('Tran_Settled')) {
 
-    obj[&#39;Tran\_Tax&#39;] = ApiClient.convertToType(data[&#39;Tran\_Tax&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Inv&#39;)) {
-
-    obj[&#39;Tran\_Inv&#39;] = ApiClient.convertToType(data[&#39;Tran\_Inv&#39;], &#39;String&#39;);
+    obj['Tran_Settled'] = ApiClient.convertToType(data['Tran_Settled'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_PO&#39;)) {
+    if (data.hasOwnProperty('Submit_Time')) {
 
-    obj[&#39;Tran\_PO&#39;] = ApiClient.convertToType(data[&#39;Tran\_PO&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_CNum&#39;)) {
-
-    obj[&#39;Tran\_CNum&#39;] = ApiClient.convertToType(data[&#39;Tran\_CNum&#39;], &#39;String&#39;);
+    obj['Submit_Time'] = ApiClient.convertToType(data['Submit_Time'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Note&#39;)) {
+    if (data.hasOwnProperty('Tran_Type')) {
 
-    obj[&#39;Tran\_Note&#39;] = ApiClient.convertToType(data[&#39;Tran\_Note&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Card\_Num&#39;)) {
-
-    obj[&#39;Card\_Num&#39;] = ApiClient.convertToType(data[&#39;Card\_Num&#39;], &#39;String&#39;);
+    obj['Tran_Type'] = ApiClient.convertToType(data['Tran_Type'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Card\_Name&#39;)) {
+    if (data.hasOwnProperty('Tran_Amt')) {
 
-    obj[&#39;Card\_Name&#39;] = ApiClient.convertToType(data[&#39;Card\_Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Card\_Exp&#39;)) {
-
-    obj[&#39;Card\_Exp&#39;] = ApiClient.convertToType(data[&#39;Card\_Exp&#39;], &#39;String&#39;);
+    obj['Tran_Amt'] = ApiClient.convertToType(data['Tran_Amt'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;AVS\_Street&#39;)) {
+    if (data.hasOwnProperty('Tran_Tax')) {
 
-    obj[&#39;AVS\_Street&#39;] = ApiClient.convertToType(data[&#39;AVS\_Street&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AVS\_Zip&#39;)) {
-
-    obj[&#39;AVS\_Zip&#39;] = ApiClient.convertToType(data[&#39;AVS\_Zip&#39;], &#39;String&#39;);
+    obj['Tran\_Tax'] = ApiClient.convertToType(data['Tran\_Tax'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;CVV\_Num&#39;)) {
+    if (data.hasOwnProperty('Tran\_Inv')) {
 
-    obj[&#39;CVV\_Num&#39;] = ApiClient.convertToType(data[&#39;CVV\_Num&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Proc\_ID&#39;)) {
-
-    obj[&#39;Proc\_ID&#39;] = ApiClient.convertToType(data[&#39;Proc\_ID&#39;], &#39;String&#39;);
+    obj['Tran\_Inv'] = ApiClient.convertToType(data['Tran\_Inv'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Proc\_Resp&#39;)) {
+    if (data.hasOwnProperty('Tran\_PO')) {
 
-    obj[&#39;Proc\_Resp&#39;] = ApiClient.convertToType(data[&#39;Proc\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Proc\_Code&#39;)) {
-
-    obj[&#39;Proc\_Code&#39;] = ApiClient.convertToType(data[&#39;Proc\_Code&#39;], &#39;String&#39;);
+    obj['Tran\_PO'] = ApiClient.convertToType(data['Tran\_PO'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Proc\_Mess&#39;)) {
+    if (data.hasOwnProperty('Tran\_CNum')) {
 
-    obj[&#39;Proc\_Mess&#39;] = ApiClient.convertToType(data[&#39;Proc\_Mess&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AVS\_Code&#39;)) {
-
-    obj[&#39;AVS\_Code&#39;] = ApiClient.convertToType(data[&#39;AVS\_Code&#39;], &#39;String&#39;);
+    obj['Tran\_CNum'] = ApiClient.convertToType(data['Tran\_CNum'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;AVS\_Resp&#39;)) {
+    if (data.hasOwnProperty('Tran\_Note')) {
 
-    obj[&#39;AVS\_Resp&#39;] = ApiClient.convertToType(data[&#39;AVS\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CVV\_Code&#39;)) {
-
-    obj[&#39;CVV\_Code&#39;] = ApiClient.convertToType(data[&#39;CVV\_Code&#39;], &#39;String&#39;);
+    obj['Tran\_Note'] = ApiClient.convertToType(data['Tran\_Note'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;CVV\_Resp&#39;)) {
+    if (data.hasOwnProperty('Card\_Num')) {
 
-    obj[&#39;CVV\_Resp&#39;] = ApiClient.convertToType(data[&#39;CVV\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Items&#39;)) {
-
-    obj[&#39;Items&#39;] = ApiClient.convertToType(data[&#39;Items&#39;], [TransactionItem]);
+    obj['Card\_Num'] = ApiClient.convertToType(data['Card\_Num'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Name&#39;)) {
+    if (data.hasOwnProperty('Card\_Name')) {
 
-    obj[&#39;Business\_Name&#39;] = ApiClient.convertToType(data[&#39;Business\_Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Address&#39;)) {
-
-    obj[&#39;Business\_Address&#39;] = ApiClient.convertToType(data[&#39;Business\_Address&#39;], &#39;String&#39;);
+    obj['Card\_Name'] = ApiClient.convertToType(data['Card\_Name'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Address2&#39;)) {
+    if (data.hasOwnProperty('Card\_Exp')) {
 
-    obj[&#39;Business\_Address2&#39;] = ApiClient.convertToType(data[&#39;Business\_Address2&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_City&#39;)) {
-
-    obj[&#39;Business\_City&#39;] = ApiClient.convertToType(data[&#39;Business\_City&#39;], &#39;String&#39;);
+    obj['Card\_Exp'] = ApiClient.convertToType(data['Card\_Exp'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_State&#39;)) {
+    if (data.hasOwnProperty('AVS\_Street')) {
 
-    obj[&#39;Business\_State&#39;] = ApiClient.convertToType(data[&#39;Business\_State&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Zip&#39;)) {
-
-    obj[&#39;Business\_Zip&#39;] = ApiClient.convertToType(data[&#39;Business\_Zip&#39;], &#39;String&#39;);
+    obj['AVS\_Street'] = ApiClient.convertToType(data['AVS\_Street'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Country&#39;)) {
+    if (data.hasOwnProperty('AVS\_Zip')) {
 
-    obj[&#39;Business\_Country&#39;] = ApiClient.convertToType(data[&#39;Business\_Country&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Website&#39;)) {
-
-    obj[&#39;Business\_Website&#39;] = ApiClient.convertToType(data[&#39;Business\_Website&#39;], &#39;String&#39;);
+    obj['AVS\_Zip'] = ApiClient.convertToType(data['AVS\_Zip'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_FirstName&#39;)) {
+    if (data.hasOwnProperty('CVV\_Num')) {
 
-    obj[&#39;Contact\_FirstName&#39;] = ApiClient.convertToType(data[&#39;Contact\_FirstName&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_LastName&#39;)) {
-
-    obj[&#39;Contact\_LastName&#39;] = ApiClient.convertToType(data[&#39;Contact\_LastName&#39;], &#39;String&#39;);
+    obj['CVV\_Num'] = ApiClient.convertToType(data['CVV\_Num'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_Phone&#39;)) {
+    if (data.hasOwnProperty('Proc\_ID')) {
 
-    obj[&#39;Contact\_Phone&#39;] = ApiClient.convertToType(data[&#39;Contact\_Phone&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_Fax&#39;)) {
-
-    obj[&#39;Contact\_Fax&#39;] = ApiClient.convertToType(data[&#39;Contact\_Fax&#39;], &#39;String&#39;);
+    obj['Proc\_ID'] = ApiClient.convertToType(data['Proc\_ID'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_Email&#39;)) {
+    if (data.hasOwnProperty('Proc\_Resp')) {
 
-    obj[&#39;Contact\_Email&#39;] = ApiClient.convertToType(data[&#39;Contact\_Email&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_Title&#39;)) {
-
-    obj[&#39;Contact\_Title&#39;] = ApiClient.convertToType(data[&#39;Contact\_Title&#39;], &#39;String&#39;);
+    obj['Proc\_Resp'] = ApiClient.convertToType(data['Proc\_Resp'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;IP&#39;)) {
+    if (data.hasOwnProperty('Proc\_Code')) {
 
-    obj[&#39;IP&#39;] = ApiClient.convertToType(data[&#39;IP&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;TaxExempt&#39;)) {
-
-    obj[&#39;TaxExempt&#39;] = ApiClient.convertToType(data[&#39;TaxExempt&#39;], &#39;Boolean&#39;);
+    obj['Proc\_Code'] = ApiClient.convertToType(data['Proc\_Code'], 'String');
 
     }
 
+    if (data.hasOwnProperty('Proc\_Mess')) {
+
+    obj['Proc\_Mess'] = ApiClient.convertToType(data['Proc\_Mess'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('AVS\_Code')) {
+
+    obj['AVS\_Code'] = ApiClient.convertToType(data['AVS\_Code'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('AVS\_Resp')) {
+
+    obj['AVS\_Resp'] = ApiClient.convertToType(data['AVS\_Resp'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CVV\_Code')) {
+
+    obj['CVV\_Code'] = ApiClient.convertToType(data['CVV\_Code'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CVV\_Resp')) {
+
+    obj['CVV\_Resp'] = ApiClient.convertToType(data['CVV\_Resp'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Items')) {
+
+    obj['Items'] = ApiClient.convertToType(data['Items'], [TransactionItem]);
+
+    }
+
+    if (data.hasOwnProperty('Business\_Name')) {
+
+    obj['Business\_Name'] = ApiClient.convertToType(data['Business\_Name'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Address')) {
+
+    obj['Business\_Address'] = ApiClient.convertToType(data['Business\_Address'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Address2')) {
+
+    obj['Business\_Address2'] = ApiClient.convertToType(data['Business\_Address2'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_City')) {
+
+    obj['Business\_City'] = ApiClient.convertToType(data['Business\_City'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_State')) {
+
+    obj['Business\_State'] = ApiClient.convertToType(data['Business\_State'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Zip')) {
+
+    obj['Business\_Zip'] = ApiClient.convertToType(data['Business\_Zip'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Country')) {
+
+    obj['Business\_Country'] = ApiClient.convertToType(data['Business\_Country'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Website')) {
+
+    obj['Business\_Website'] = ApiClient.convertToType(data['Business\_Website'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_FirstName')) {
+
+    obj['Contact\_FirstName'] = ApiClient.convertToType(data['Contact\_FirstName'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_LastName')) {
+
+    obj['Contact\_LastName'] = ApiClient.convertToType(data['Contact\_LastName'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Phone')) {
+
+    obj['Contact\_Phone'] = ApiClient.convertToType(data['Contact\_Phone'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Fax')) {
+
+    obj['Contact\_Fax'] = ApiClient.convertToType(data['Contact\_Fax'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Email')) {
+
+    obj['Contact\_Email'] = ApiClient.convertToType(data['Contact\_Email'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Title')) {
+
+    obj['Contact\_Title'] = ApiClient.convertToType(data['Contact\_Title'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('IP')) {
+
+    obj['IP'] = ApiClient.convertToType(data['IP'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('TaxExempt')) {
+
+    obj['TaxExempt'] = ApiClient.convertToType(data['TaxExempt'], 'Boolean');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -1670,17 +1670,17 @@
 
 # Receipt
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importReceiptCustomLinesfrom&#39;./ReceiptCustomLines&#39;;
+    importReceiptCustomLinesfrom'./ReceiptCustomLines';
 
     exportdefaultclassReceipt {
 
     constructor() {
 
-    this.Header = newReceiptCustomLines();
+    this.Header = new ReceiptCustomLines();
 
-    this.Footer = newReceiptCustomLines();
+    this.Footer = new ReceiptCustomLines();
 
     }
 
@@ -1688,23 +1688,23 @@
 
     if (data) {
 
-    obj = obj || newReceipt();
+    obj = obj || new Receipt();
 
-    if (data.hasOwnProperty(&#39;Header&#39;)) {
+    if (data.hasOwnProperty('Header')) {
 
-    obj[&#39;Header&#39;] = ReceiptCustomLines.constructFromObject(data[&#39;Header&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Footer&#39;)) {
-
-    obj[&#39;Footer&#39;] = ReceiptCustomLines.constructFromObject(data[&#39;Footer&#39;]);
+    obj['Header'] = ReceiptCustomLines.constructFromObject(data['Header']);
 
     }
 
+    if (data.hasOwnProperty('Footer')) {
+
+    obj['Footer'] = ReceiptCustomLines.constructFromObject(data['Footer']);
+
     }
 
-    returnobj;
+    }
+
+    return obj;
 
     }
 
@@ -1712,21 +1712,21 @@
 
 # ReceiptCustomLines
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassReceiptCustomLines {
 
     constructor() {
 
-    this.CustomLine1 = &#39;&#39;;
+    this.CustomLine1 = '';
 
-    this.CustomLine2 = &#39;&#39;;
+    this.CustomLine2 = '';
 
-    this.CustomLine3 = &#39;&#39;;
+    this.CustomLine3 = '';
 
-    this.CustomLine4 = &#39;&#39;;
+    this.CustomLine4 = '';
 
     }
 
@@ -1734,35 +1734,35 @@
 
     if (data) {
 
-    obj = obj || newReceiptCustomLines();
+    obj = obj || new ReceiptCustomLines();
 
-    if (data.hasOwnProperty(&#39;CustomLine1&#39;)) {
+    if (data.hasOwnProperty('CustomLine1')) {
 
-    obj[&#39;CustomLine1&#39;] = ApiClient.convertToType(data[&#39;CustomLine1&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CustomLine2&#39;)) {
-
-    obj[&#39;CustomLine2&#39;] = ApiClient.convertToType(data[&#39;CustomLine2&#39;], &#39;String&#39;);
+    obj['CustomLine1'] = ApiClient.convertToType(data['CustomLine1'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;CustomLine3&#39;)) {
+    if (data.hasOwnProperty('CustomLine2')) {
 
-    obj[&#39;CustomLine3&#39;] = ApiClient.convertToType(data[&#39;CustomLine3&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CustomLine4&#39;)) {
-
-    obj[&#39;CustomLine4&#39;] = ApiClient.convertToType(data[&#39;CustomLine4&#39;], &#39;String&#39;);
+    obj['CustomLine2'] = ApiClient.convertToType(data['CustomLine2'], 'String');
 
     }
 
+    if (data.hasOwnProperty('CustomLine3')) {
+
+    obj['CustomLine3'] = ApiClient.convertToType(data['CustomLine3'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('CustomLine4')) {
+
+    obj['CustomLine4'] = ApiClient.convertToType(data['CustomLine4'], 'String');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -1770,47 +1770,47 @@
 
 # Record
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importBusinessfrom&#39;./Business&#39;;
+    importBusinessfrom'./Business';
 
-    importContactfrom&#39;./Contact&#39;;
+    importContactfrom'./Contact';
 
-    importResponsefrom&#39;./Response&#39;;
+    importResponsefrom'./Response';
 
-    importVaultCheckfrom&#39;./VaultCheck&#39;;
+    importVaultCheckfrom'./VaultCheck';
 
-    importVaultCreditCardfrom&#39;./VaultCreditCard&#39;;
+    importVaultCreditCardfrom'./VaultCreditCard';
 
     exportdefaultclassRecord {
 
     constructor() {
 
-    this.Response = newResponse();
+    this.Response = new Response();
 
     this.ID = 0;
 
-    this.Reference = &#39;&#39;;
+    this.Reference = '';
 
-    this.Business = newBusiness();
+    this.Business = new Business();
 
-    this.Contact = newContact();
+    this.Contact = new Contact();
 
-    this.PO = &#39;&#39;;
+    this.PO = '';
 
-    this.Invoice = &#39;&#39;;
+    this.Invoice = '';
 
-    this.Customer = &#39;&#39;;
+    this.Customer = '';
 
     this.TaxExempt = false;
 
-    this.Note = &#39;&#39;;
+    this.Note = '';
 
-    this.CreditCards = newVaultCreditCard();
+    this.CreditCards = new VaultCreditCard();
 
-    this.Checks = newVaultCheck();
+    this.Checks = new VaultCheck();
 
     }
 
@@ -1818,83 +1818,83 @@
 
     if (data) {
 
-    obj = obj || newRecord();
+    obj = obj || new Record();
 
-    if (data.hasOwnProperty(&#39;Response&#39;)) {
+    if (data.hasOwnProperty('Response')) {
 
-    obj[&#39;Response&#39;] = Response.constructFromObject(data[&#39;Response&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ID&#39;)) {
-
-    obj[&#39;ID&#39;] = ApiClient.convertToType(data[&#39;ID&#39;], &#39;Number&#39;);
+    obj['Response'] = Response.constructFromObject(data['Response']);
 
     }
 
-    if (data.hasOwnProperty(&#39;Reference&#39;)) {
+    if (data.hasOwnProperty('ID')) {
 
-    obj[&#39;Reference&#39;] = ApiClient.convertToType(data[&#39;Reference&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business&#39;)) {
-
-    obj[&#39;Business&#39;] = Business.constructFromObject(data[&#39;Business&#39;]);
+    obj['ID'] = ApiClient.convertToType(data['ID'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact&#39;)) {
+    if (data.hasOwnProperty('Reference')) {
 
-    obj[&#39;Contact&#39;] = Contact.constructFromObject(data[&#39;Contact&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;PO&#39;)) {
-
-    obj[&#39;PO&#39;] = ApiClient.convertToType(data[&#39;PO&#39;], &#39;String&#39;);
+    obj['Reference'] = ApiClient.convertToType(data['Reference'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Invoice&#39;)) {
+    if (data.hasOwnProperty('Business')) {
 
-    obj[&#39;Invoice&#39;] = ApiClient.convertToType(data[&#39;Invoice&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Customer&#39;)) {
-
-    obj[&#39;Customer&#39;] = ApiClient.convertToType(data[&#39;Customer&#39;], &#39;String&#39;);
+    obj['Business'] = Business.constructFromObject(data['Business']);
 
     }
 
-    if (data.hasOwnProperty(&#39;TaxExempt&#39;)) {
+    if (data.hasOwnProperty('Contact')) {
 
-    obj[&#39;TaxExempt&#39;] = ApiClient.convertToType(data[&#39;TaxExempt&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Note&#39;)) {
-
-    obj[&#39;Note&#39;] = ApiClient.convertToType(data[&#39;Note&#39;], &#39;String&#39;);
+    obj['Contact'] = Contact.constructFromObject(data['Contact']);
 
     }
 
-    if (data.hasOwnProperty(&#39;CreditCards&#39;)) {
+    if (data.hasOwnProperty('PO')) {
 
-    obj[&#39;CreditCards&#39;] = ApiClient.convertToType(data[&#39;CreditCards&#39;], [VaultCreditCard]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Checks&#39;)) {
-
-    obj[&#39;Checks&#39;] = ApiClient.convertToType(data[&#39;Checks&#39;], [VaultCheck]);
+    obj['PO'] = ApiClient.convertToType(data['PO'], 'String');
 
     }
 
+    if (data.hasOwnProperty('Invoice')) {
+
+    obj['Invoice'] = ApiClient.convertToType(data['Invoice'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('Customer')) {
+
+    obj['Customer'] = ApiClient.convertToType(data['Customer'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('TaxExempt')) {
+
+    obj['TaxExempt'] = ApiClient.convertToType(data['TaxExempt'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('Note')) {
+
+    obj['Note'] = ApiClient.convertToType(data['Note'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CreditCards')) {
+
+    obj['CreditCards'] = ApiClient.convertToType(data['CreditCards'], [VaultCreditCard]);
+
+    }
+
+    if (data.hasOwnProperty('Checks')) {
+
+    obj['Checks'] = ApiClient.convertToType(data['Checks'], [VaultCheck]);
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -1902,9 +1902,9 @@
 
 # Response
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassResponse {
 
@@ -1912,7 +1912,7 @@
 
     this.Error = false;
 
-    this.Message = &#39;&#39;;
+    this.Message = '';
 
     }
 
@@ -1920,23 +1920,23 @@
 
     if (data) {
 
-    obj = obj || newResponse();
+    obj = obj || new Response();
 
-    if (data.hasOwnProperty(&#39;Error&#39;)) {
+    if (data.hasOwnProperty('Error')) {
 
-    obj[&#39;Error&#39;] = ApiClient.convertToType(data[&#39;Error&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Message&#39;)) {
-
-    obj[&#39;Message&#39;] = ApiClient.convertToType(data[&#39;Message&#39;], &#39;String&#39;);
+    obj['Error'] = ApiClient.convertToType(data['Error'], 'Boolean');
 
     }
 
+    if (data.hasOwnProperty('Message')) {
+
+    obj['Message'] = ApiClient.convertToType(data['Message'], 'String');
+
     }
 
-    returnobj;
+    }
+
+    return obj;
 
     }
 
@@ -1944,21 +1944,21 @@
 
 # SearchVault
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassSearchVault {
 
     constructor() {
 
-    this.Reference = &#39;&#39;;
+    this.Reference = '';
 
-    this.BusinessName = &#39;&#39;;
+    this.BusinessName = '';
 
-    this.FirstName = &#39;&#39;;
+    this.FirstName = '';
 
-    this.LastName = &#39;&#39;;
+    this.LastName = '';
 
     }
 
@@ -1966,35 +1966,35 @@
 
     if (data) {
 
-    obj = obj || newSearchVault();
+    obj = obj || new SearchVault();
 
-    if (data.hasOwnProperty(&#39;Reference&#39;)) {
+    if (data.hasOwnProperty('Reference')) {
 
-    obj[&#39;Reference&#39;] = ApiClient.convertToType(data[&#39;Reference&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;BusinessName&#39;)) {
-
-    obj[&#39;BusinessName&#39;] = ApiClient.convertToType(data[&#39;BusinessName&#39;], &#39;String&#39;);
+    obj['Reference'] = ApiClient.convertToType(data['Reference'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;FirstName&#39;)) {
+    if (data.hasOwnProperty('BusinessName')) {
 
-    obj[&#39;FirstName&#39;] = ApiClient.convertToType(data[&#39;FirstName&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;LastName&#39;)) {
-
-    obj[&#39;LastName&#39;] = ApiClient.convertToType(data[&#39;LastName&#39;], &#39;String&#39;);
+    obj['BusinessName'] = ApiClient.convertToType(data['BusinessName'], 'String');
 
     }
 
+    if (data.hasOwnProperty('FirstName')) {
+
+    obj['FirstName'] = ApiClient.convertToType(data['FirstName'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('LastName')) {
+
+    obj['LastName'] = ApiClient.convertToType(data['LastName'], 'String');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -2002,47 +2002,47 @@
 
 # Settings
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importBusinessfrom&#39;./Business&#39;;
+    importBusinessfrom'./Business';
 
-    importCheckTransactionSettingsfrom&#39;./CheckTransactionSettings&#39;;
+    importCheckTransactionSettingsfrom'./CheckTransactionSettings';
 
-    importContactfrom&#39;./Contact&#39;;
+    importContactfrom'./Contact';
 
-    importCreditCardTransactionSettingsfrom&#39;./CreditCardTransactionSettings&#39;;
+    importCreditCardTransactionSettingsfrom'./CreditCardTransactionSettings';
 
-    importFieldInfofrom&#39;./FieldInfo&#39;;
+    importFieldInfofrom'./FieldInfo';
 
-    importReceiptfrom&#39;./Receipt&#39;;
+    importReceiptfrom'./Receipt';
 
-    importResponsefrom&#39;./Response&#39;;
+    importResponsefrom'./Response';
 
     exportdefaultclassSettings {
 
     constructor() {
 
-    this.CreditCardTransactionSettings = newCreditCardTransactionSettings();
+    this.CreditCardTransactionSettings = new CreditCardTransactionSettings();
 
-    this.CheckTransactionSettings = newCheckTransactionSettings();
+    this.CheckTransactionSettings = new CheckTransactionSettings();
 
-    this.Business = newBusiness();
+    this.Business = new Business();
 
-    this.MainContact = newContact();
+    this.MainContact = new Contact();
 
-    this.Receipt40 = newReceipt();
+    this.Receipt40 = new Receipt();
 
-    this.Receipt80 = newReceipt();
+    this.Receipt80 = new Receipt();
 
     this.PrintSignatureLine = false;
 
-    this.Response = newResponse();
+    this.Response = new Response();
 
-    this.AccountID = &#39;&#39;;
+    this.AccountID = '';
 
-    this.CopyEmailReceipt = newFieldInfo();
+    this.CopyEmailReceipt = new FieldInfo();
 
     }
 
@@ -2050,75 +2050,75 @@
 
     if (data) {
 
-    obj = obj || newSettings();
+    obj = obj || new Settings();
 
-    if (data.hasOwnProperty(&#39;CreditCardTransactionSettings&#39;)) {
+    if (data.hasOwnProperty('CreditCardTransactionSettings')) {
 
-    obj[&#39;CreditCardTransactionSettings&#39;] = CreditCardTransactionSettings.constructFromObject(
+    obj['CreditCardTransactionSettings'] = CreditCardTransactionSettings.constructFromObject(
 
-    data[&#39;CreditCardTransactionSettings&#39;]
+    data['CreditCardTransactionSettings']
 
     );
 
     }
 
-    if (data.hasOwnProperty(&#39;CheckTransactionSettings&#39;)) {
+    if (data.hasOwnProperty('CheckTransactionSettings')) {
 
-    obj[&#39;CheckTransactionSettings&#39;] = CheckTransactionSettings.constructFromObject(data[&#39;CheckTransactionSettings&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business&#39;)) {
-
-    obj[&#39;Business&#39;] = Business.constructFromObject(data[&#39;Business&#39;]);
+    obj['CheckTransactionSettings'] = CheckTransactionSettings.constructFromObject(data['CheckTransactionSettings']);
 
     }
 
-    if (data.hasOwnProperty(&#39;MainContact&#39;)) {
+    if (data.hasOwnProperty('Business')) {
 
-    obj[&#39;MainContact&#39;] = Contact.constructFromObject(data[&#39;MainContact&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Receipt40&#39;)) {
-
-    obj[&#39;Receipt40&#39;] = Receipt.constructFromObject(data[&#39;Receipt40&#39;]);
+    obj['Business'] = Business.constructFromObject(data['Business']);
 
     }
 
-    if (data.hasOwnProperty(&#39;Receipt80&#39;)) {
+    if (data.hasOwnProperty('MainContact')) {
 
-    obj[&#39;Receipt80&#39;] = Receipt.constructFromObject(data[&#39;Receipt80&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;PrintSignatureLine&#39;)) {
-
-    obj[&#39;PrintSignatureLine&#39;] = ApiClient.convertToType(data[&#39;PrintSignatureLine&#39;], &#39;Boolean&#39;);
+    obj['MainContact'] = Contact.constructFromObject(data['MainContact']);
 
     }
 
-    if (data.hasOwnProperty(&#39;Response&#39;)) {
+    if (data.hasOwnProperty('Receipt40')) {
 
-    obj[&#39;Response&#39;] = Response.constructFromObject(data[&#39;Response&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AccountID&#39;)) {
-
-    obj[&#39;AccountID&#39;] = ApiClient.convertToType(data[&#39;AccountID&#39;], &#39;String&#39;);
+    obj['Receipt40'] = Receipt.constructFromObject(data['Receipt40']);
 
     }
 
-    if (data.hasOwnProperty(&#39;CopyEmailReceipt&#39;)) {
+    if (data.hasOwnProperty('Receipt80')) {
 
-    obj[&#39;CopyEmailReceipt&#39;] = FieldInfo.constructFromObject(data[&#39;CopyEmailReceipt&#39;]);
+    obj['Receipt80'] = Receipt.constructFromObject(data['Receipt80']);
+
+    }
+
+    if (data.hasOwnProperty('PrintSignatureLine')) {
+
+    obj['PrintSignatureLine'] = ApiClient.convertToType(data['PrintSignatureLine'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('Response')) {
+
+    obj['Response'] = Response.constructFromObject(data['Response']);
+
+    }
+
+    if (data.hasOwnProperty('AccountID')) {
+
+    obj['AccountID'] = ApiClient.convertToType(data['AccountID'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CopyEmailReceipt')) {
+
+    obj['CopyEmailReceipt'] = FieldInfo.constructFromObject(data['CopyEmailReceipt']);
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -2126,9 +2126,9 @@
 
 # TerminalSettings
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassTerminalSettings {
 
@@ -2138,7 +2138,7 @@
 
     this.Terminal\_ID = 0;
 
-    this.SEC\_Code = &#39;&#39;;
+    this.SEC\_Code = '';
 
     this.Gateway\_Terminal = false;
 
@@ -2156,59 +2156,59 @@
 
     if (data) {
 
-    obj = obj || newTerminalSettings();
+    obj = obj || new TerminalSettings();
 
-    if (data.hasOwnProperty(&#39;ID&#39;)) {
+    if (data.hasOwnProperty('ID')) {
 
-    obj[&#39;ID&#39;] = ApiClient.convertToType(data[&#39;ID&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Terminal\_ID&#39;)) {
-
-    obj[&#39;Terminal\_ID&#39;] = ApiClient.convertToType(data[&#39;Terminal\_ID&#39;], &#39;Number&#39;);
+    obj['ID'] = ApiClient.convertToType(data['ID'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;SEC\_Code&#39;)) {
+    if (data.hasOwnProperty('Terminal\_ID')) {
 
-    obj[&#39;SEC\_Code&#39;] = ApiClient.convertToType(data[&#39;SEC\_Code&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Gateway\_Terminal&#39;)) {
-
-    obj[&#39;Gateway\_Terminal&#39;] = ApiClient.convertToType(data[&#39;Gateway\_Terminal&#39;], &#39;Boolean&#39;);
+    obj['Terminal\_ID'] = ApiClient.convertToType(data['Terminal\_ID'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;Consumer\_Credits&#39;)) {
+    if (data.hasOwnProperty('SEC\_Code')) {
 
-    obj[&#39;Consumer\_Credits&#39;] = ApiClient.convertToType(data[&#39;Consumer\_Credits&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;DL\_Required&#39;)) {
-
-    obj[&#39;DL\_Required&#39;] = ApiClient.convertToType(data[&#39;DL\_Required&#39;], &#39;Boolean&#39;);
+    obj['SEC\_Code'] = ApiClient.convertToType(data['SEC\_Code'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Check\_Verify&#39;)) {
+    if (data.hasOwnProperty('Gateway\_Terminal')) {
 
-    obj[&#39;Check\_Verify&#39;] = ApiClient.convertToType(data[&#39;Check\_Verify&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Identity\_Verify&#39;)) {
-
-    obj[&#39;Identity\_Verify&#39;] = ApiClient.convertToType(data[&#39;Identity\_Verify&#39;], &#39;Boolean&#39;);
+    obj['Gateway\_Terminal'] = ApiClient.convertToType(data['Gateway\_Terminal'], 'Boolean');
 
     }
 
+    if (data.hasOwnProperty('Consumer\_Credits')) {
+
+    obj['Consumer\_Credits'] = ApiClient.convertToType(data['Consumer\_Credits'], 'Boolean');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('DL\_Required')) {
+
+    obj['DL\_Required'] = ApiClient.convertToType(data['DL\_Required'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('Check\_Verify')) {
+
+    obj['Check\_Verify'] = ApiClient.convertToType(data['Check\_Verify'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('Identity\_Verify')) {
+
+    obj['Identity\_Verify'] = ApiClient.convertToType(data['Identity\_Verify'], 'Boolean');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -2216,11 +2216,11 @@
 
 # Transaction
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importTransactionItemfrom&#39;./TransactionItem&#39;;
+    importTransactionItemfrom'./TransactionItem';
 
     exportdefaultclassTransaction {
 
@@ -2228,81 +2228,81 @@
 
     this.Submit\_Time = undefined;
 
-    this.Tran\_Type = &#39;&#39;;
+    this.Tran\_Type = '';
 
     this.Tran\_Amt = 0;
 
     this.Tran\_Tax = 0;
 
-    this.Tran\_Inv = &#39;&#39;;
+    this.Tran\_Inv = '';
 
-    this.Tran\_PO = &#39;&#39;;
+    this.Tran\_PO = '';
 
-    this.Tran\_CNum = &#39;&#39;;
+    this.Tran\_CNum = '';
 
-    this.Tran\_Note = &#39;&#39;;
+    this.Tran\_Note = '';
 
-    this.Card\_Num = &#39;&#39;;
+    this.Card\_Num = '';
 
-    this.Card\_Name = &#39;&#39;;
+    this.Card\_Name = '';
 
-    this.Card\_Exp = &#39;&#39;;
+    this.Card\_Exp = '';
 
-    this.Card\_Type = &#39;&#39;;
+    this.Card\_Type = '';
 
-    this.AVS\_Street = &#39;&#39;;
+    this.AVS\_Street = '';
 
-    this.AVS\_Zip = &#39;&#39;;
+    this.AVS\_Zip = '';
 
-    this.CVV\_Num = &#39;&#39;;
+    this.CVV\_Num = '';
 
-    this.Proc\_ID = &#39;&#39;;
+    this.Proc\_ID = '';
 
-    this.Proc\_Resp = &#39;&#39;;
+    this.Proc\_Resp = '';
 
-    this.Proc\_Code = &#39;&#39;;
+    this.Proc\_Code = '';
 
-    this.Proc\_Mess = &#39;&#39;;
+    this.Proc\_Mess = '';
 
-    this.AVS\_Code = &#39;&#39;;
+    this.AVS\_Code = '';
 
-    this.AVS\_Resp = &#39;&#39;;
+    this.AVS\_Resp = '';
 
-    this.CVV\_Code = &#39;&#39;;
+    this.CVV\_Code = '';
 
-    this.CVV\_Resp = &#39;&#39;;
+    this.CVV\_Resp = '';
 
     this.Items = [];
 
-    this.Business\_Name = &#39;&#39;;
+    this.Business\_Name = '';
 
-    this.Business\_Address = &#39;&#39;;
+    this.Business\_Address = '';
 
-    this.Business\_Address2 = &#39;&#39;;
+    this.Business\_Address2 = '';
 
-    this.Business\_City = &#39;&#39;;
+    this.Business\_City = '';
 
-    this.Business\_State = &#39;&#39;;
+    this.Business\_State = '';
 
-    this.Business\_Zip = &#39;&#39;;
+    this.Business\_Zip = '';
 
-    this.Business\_Country = &#39;&#39;;
+    this.Business\_Country = '';
 
-    this.Business\_Website = &#39;&#39;;
+    this.Business\_Website = '';
 
-    this.Contact\_FirstName = &#39;&#39;;
+    this.Contact\_FirstName = '';
 
-    this.Contact\_LastName = &#39;&#39;;
+    this.Contact\_LastName = '';
 
-    this.Contact\_Phone = &#39;&#39;;
+    this.Contact\_Phone = '';
 
-    this.Contact\_Fax = &#39;&#39;;
+    this.Contact\_Fax = '';
 
-    this.Contact\_Email = &#39;&#39;;
+    this.Contact\_Email = '';
 
-    this.Contact\_Title = &#39;&#39;;
+    this.Contact\_Title = '';
 
-    this.IP = &#39;&#39;;
+    this.IP = '';
 
     this.TaxExempt = false;
 
@@ -2312,251 +2312,251 @@
 
     if (data) {
 
-    obj = obj || newTransaction();
+    obj = obj || new Transaction();
 
-    if (data.hasOwnProperty(&#39;Submit\_Time&#39;)) {
+    if (data.hasOwnProperty('Submit\_Time')) {
 
-    obj[&#39;Submit\_Time&#39;] = ApiClient.convertToType(data[&#39;Submit\_Time&#39;], &#39;Date&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Type&#39;)) {
-
-    obj[&#39;Tran\_Type&#39;] = ApiClient.convertToType(data[&#39;Tran\_Type&#39;], &#39;String&#39;);
+    obj['Submit\_Time'] = ApiClient.convertToType(data['Submit\_Time'], 'Date');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Amt&#39;)) {
+    if (data.hasOwnProperty('Tran\_Type')) {
 
-    obj[&#39;Tran\_Amt&#39;] = ApiClient.convertToType(data[&#39;Tran\_Amt&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Tax&#39;)) {
-
-    obj[&#39;Tran\_Tax&#39;] = ApiClient.convertToType(data[&#39;Tran\_Tax&#39;], &#39;Number&#39;);
+    obj['Tran\_Type'] = ApiClient.convertToType(data['Tran\_Type'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_Inv&#39;)) {
+    if (data.hasOwnProperty('Tran\_Amt')) {
 
-    obj[&#39;Tran\_Inv&#39;] = ApiClient.convertToType(data[&#39;Tran\_Inv&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_PO&#39;)) {
-
-    obj[&#39;Tran\_PO&#39;] = ApiClient.convertToType(data[&#39;Tran\_PO&#39;], &#39;String&#39;);
+    obj['Tran\_Amt'] = ApiClient.convertToType(data['Tran\_Amt'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tran\_CNum&#39;)) {
+    if (data.hasOwnProperty('Tran\_Tax')) {
 
-    obj[&#39;Tran\_CNum&#39;] = ApiClient.convertToType(data[&#39;Tran\_CNum&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Tran\_Note&#39;)) {
-
-    obj[&#39;Tran\_Note&#39;] = ApiClient.convertToType(data[&#39;Tran\_Note&#39;], &#39;String&#39;);
+    obj['Tran\_Tax'] = ApiClient.convertToType(data['Tran\_Tax'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;Card\_Num&#39;)) {
+    if (data.hasOwnProperty('Tran\_Inv')) {
 
-    obj[&#39;Card\_Num&#39;] = ApiClient.convertToType(data[&#39;Card\_Num&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Card\_Name&#39;)) {
-
-    obj[&#39;Card\_Name&#39;] = ApiClient.convertToType(data[&#39;Card\_Name&#39;], &#39;String&#39;);
+    obj['Tran\_Inv'] = ApiClient.convertToType(data['Tran\_Inv'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Card\_Exp&#39;)) {
+    if (data.hasOwnProperty('Tran\_PO')) {
 
-    obj[&#39;Card\_Exp&#39;] = ApiClient.convertToType(data[&#39;Card\_Exp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Card\_Type&#39;)) {
-
-    obj[&#39;Card\_Type&#39;] = ApiClient.convertToType(data[&#39;Card\_Type&#39;], &#39;String&#39;);
+    obj['Tran\_PO'] = ApiClient.convertToType(data['Tran\_PO'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;AVS\_Street&#39;)) {
+    if (data.hasOwnProperty('Tran\_CNum')) {
 
-    obj[&#39;AVS\_Street&#39;] = ApiClient.convertToType(data[&#39;AVS\_Street&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AVS\_Zip&#39;)) {
-
-    obj[&#39;AVS\_Zip&#39;] = ApiClient.convertToType(data[&#39;AVS\_Zip&#39;], &#39;String&#39;);
+    obj['Tran\_CNum'] = ApiClient.convertToType(data['Tran\_CNum'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;CVV\_Num&#39;)) {
+    if (data.hasOwnProperty('Tran\_Note')) {
 
-    obj[&#39;CVV\_Num&#39;] = ApiClient.convertToType(data[&#39;CVV\_Num&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Proc\_ID&#39;)) {
-
-    obj[&#39;Proc\_ID&#39;] = ApiClient.convertToType(data[&#39;Proc\_ID&#39;], &#39;String&#39;);
+    obj['Tran\_Note'] = ApiClient.convertToType(data['Tran\_Note'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Proc\_Resp&#39;)) {
+    if (data.hasOwnProperty('Card\_Num')) {
 
-    obj[&#39;Proc\_Resp&#39;] = ApiClient.convertToType(data[&#39;Proc\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Proc\_Code&#39;)) {
-
-    obj[&#39;Proc\_Code&#39;] = ApiClient.convertToType(data[&#39;Proc\_Code&#39;], &#39;String&#39;);
+    obj['Card\_Num'] = ApiClient.convertToType(data['Card\_Num'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Proc\_Mess&#39;)) {
+    if (data.hasOwnProperty('Card\_Name')) {
 
-    obj[&#39;Proc\_Mess&#39;] = ApiClient.convertToType(data[&#39;Proc\_Mess&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AVS\_Code&#39;)) {
-
-    obj[&#39;AVS\_Code&#39;] = ApiClient.convertToType(data[&#39;AVS\_Code&#39;], &#39;String&#39;);
+    obj['Card\_Name'] = ApiClient.convertToType(data['Card\_Name'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;AVS\_Resp&#39;)) {
+    if (data.hasOwnProperty('Card\_Exp')) {
 
-    obj[&#39;AVS\_Resp&#39;] = ApiClient.convertToType(data[&#39;AVS\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CVV\_Code&#39;)) {
-
-    obj[&#39;CVV\_Code&#39;] = ApiClient.convertToType(data[&#39;CVV\_Code&#39;], &#39;String&#39;);
+    obj['Card\_Exp'] = ApiClient.convertToType(data['Card\_Exp'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;CVV\_Resp&#39;)) {
+    if (data.hasOwnProperty('Card\_Type')) {
 
-    obj[&#39;CVV\_Resp&#39;] = ApiClient.convertToType(data[&#39;CVV\_Resp&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Items&#39;)) {
-
-    obj[&#39;Items&#39;] = ApiClient.convertToType(data[&#39;Items&#39;], [TransactionItem]);
+    obj['Card\_Type'] = ApiClient.convertToType(data['Card\_Type'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Name&#39;)) {
+    if (data.hasOwnProperty('AVS\_Street')) {
 
-    obj[&#39;Business\_Name&#39;] = ApiClient.convertToType(data[&#39;Business\_Name&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Address&#39;)) {
-
-    obj[&#39;Business\_Address&#39;] = ApiClient.convertToType(data[&#39;Business\_Address&#39;], &#39;String&#39;);
+    obj['AVS\_Street'] = ApiClient.convertToType(data['AVS\_Street'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Address2&#39;)) {
+    if (data.hasOwnProperty('AVS\_Zip')) {
 
-    obj[&#39;Business\_Address2&#39;] = ApiClient.convertToType(data[&#39;Business\_Address2&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_City&#39;)) {
-
-    obj[&#39;Business\_City&#39;] = ApiClient.convertToType(data[&#39;Business\_City&#39;], &#39;String&#39;);
+    obj['AVS\_Zip'] = ApiClient.convertToType(data['AVS\_Zip'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_State&#39;)) {
+    if (data.hasOwnProperty('CVV\_Num')) {
 
-    obj[&#39;Business\_State&#39;] = ApiClient.convertToType(data[&#39;Business\_State&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Zip&#39;)) {
-
-    obj[&#39;Business\_Zip&#39;] = ApiClient.convertToType(data[&#39;Business\_Zip&#39;], &#39;String&#39;);
+    obj['CVV\_Num'] = ApiClient.convertToType(data['CVV\_Num'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Business\_Country&#39;)) {
+    if (data.hasOwnProperty('Proc\_ID')) {
 
-    obj[&#39;Business\_Country&#39;] = ApiClient.convertToType(data[&#39;Business\_Country&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Business\_Website&#39;)) {
-
-    obj[&#39;Business\_Website&#39;] = ApiClient.convertToType(data[&#39;Business\_Website&#39;], &#39;String&#39;);
+    obj['Proc\_ID'] = ApiClient.convertToType(data['Proc\_ID'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_FirstName&#39;)) {
+    if (data.hasOwnProperty('Proc\_Resp')) {
 
-    obj[&#39;Contact\_FirstName&#39;] = ApiClient.convertToType(data[&#39;Contact\_FirstName&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_LastName&#39;)) {
-
-    obj[&#39;Contact\_LastName&#39;] = ApiClient.convertToType(data[&#39;Contact\_LastName&#39;], &#39;String&#39;);
+    obj['Proc\_Resp'] = ApiClient.convertToType(data['Proc\_Resp'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_Phone&#39;)) {
+    if (data.hasOwnProperty('Proc\_Code')) {
 
-    obj[&#39;Contact\_Phone&#39;] = ApiClient.convertToType(data[&#39;Contact\_Phone&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_Fax&#39;)) {
-
-    obj[&#39;Contact\_Fax&#39;] = ApiClient.convertToType(data[&#39;Contact\_Fax&#39;], &#39;String&#39;);
+    obj['Proc\_Code'] = ApiClient.convertToType(data['Proc\_Code'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Contact\_Email&#39;)) {
+    if (data.hasOwnProperty('Proc\_Mess')) {
 
-    obj[&#39;Contact\_Email&#39;] = ApiClient.convertToType(data[&#39;Contact\_Email&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Contact\_Title&#39;)) {
-
-    obj[&#39;Contact\_Title&#39;] = ApiClient.convertToType(data[&#39;Contact\_Title&#39;], &#39;String&#39;);
+    obj['Proc\_Mess'] = ApiClient.convertToType(data['Proc\_Mess'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;IP&#39;)) {
+    if (data.hasOwnProperty('AVS\_Code')) {
 
-    obj[&#39;IP&#39;] = ApiClient.convertToType(data[&#39;IP&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;TaxExempt&#39;)) {
-
-    obj[&#39;TaxExempt&#39;] = ApiClient.convertToType(data[&#39;TaxExempt&#39;], &#39;Boolean&#39;);
+    obj['AVS\_Code'] = ApiClient.convertToType(data['AVS\_Code'], 'String');
 
     }
 
+    if (data.hasOwnProperty('AVS\_Resp')) {
+
+    obj['AVS\_Resp'] = ApiClient.convertToType(data['AVS\_Resp'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('CVV\_Code')) {
+
+    obj['CVV\_Code'] = ApiClient.convertToType(data['CVV\_Code'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CVV\_Resp')) {
+
+    obj['CVV\_Resp'] = ApiClient.convertToType(data['CVV\_Resp'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Items')) {
+
+    obj['Items'] = ApiClient.convertToType(data['Items'], [TransactionItem]);
+
+    }
+
+    if (data.hasOwnProperty('Business\_Name')) {
+
+    obj['Business\_Name'] = ApiClient.convertToType(data['Business\_Name'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Address')) {
+
+    obj['Business\_Address'] = ApiClient.convertToType(data['Business\_Address'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Address2')) {
+
+    obj['Business\_Address2'] = ApiClient.convertToType(data['Business\_Address2'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_City')) {
+
+    obj['Business\_City'] = ApiClient.convertToType(data['Business\_City'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_State')) {
+
+    obj['Business\_State'] = ApiClient.convertToType(data['Business\_State'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Zip')) {
+
+    obj['Business\_Zip'] = ApiClient.convertToType(data['Business\_Zip'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Country')) {
+
+    obj['Business\_Country'] = ApiClient.convertToType(data['Business\_Country'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Business\_Website')) {
+
+    obj['Business\_Website'] = ApiClient.convertToType(data['Business\_Website'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_FirstName')) {
+
+    obj['Contact\_FirstName'] = ApiClient.convertToType(data['Contact\_FirstName'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_LastName')) {
+
+    obj['Contact\_LastName'] = ApiClient.convertToType(data['Contact\_LastName'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Phone')) {
+
+    obj['Contact\_Phone'] = ApiClient.convertToType(data['Contact\_Phone'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Fax')) {
+
+    obj['Contact\_Fax'] = ApiClient.convertToType(data['Contact\_Fax'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Email')) {
+
+    obj['Contact\_Email'] = ApiClient.convertToType(data['Contact\_Email'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Contact\_Title')) {
+
+    obj['Contact\_Title'] = ApiClient.convertToType(data['Contact\_Title'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('IP')) {
+
+    obj['IP'] = ApiClient.convertToType(data['IP'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('TaxExempt')) {
+
+    obj['TaxExempt'] = ApiClient.convertToType(data['TaxExempt'], 'Boolean');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -2564,9 +2564,9 @@
 
 # TransactionItem
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassTransactionItem {
 
@@ -2578,21 +2578,21 @@
 
     this.ExtendedAmount = 0;
 
-    this.ItemNumber = &#39;&#39;;
+    this.ItemNumber = '';
 
     this.UnitCost = 0;
 
     this.Quantity = 0;
 
-    this.Description = &#39;&#39;;
+    this.Description = '';
 
     this.Discount = 0;
 
     this.Tax = 0;
 
-    this.CommodityCode = &#39;&#39;;
+    this.CommodityCode = '';
 
-    this.UnitOfMeasure = &#39;&#39;;
+    this.UnitOfMeasure = '';
 
     }
 
@@ -2600,77 +2600,77 @@
 
     if (data) {
 
-    obj = obj || newTransactionItem();
+    obj = obj || new TransactionItem();
 
-    if (data.hasOwnProperty(&#39;TaxIncluded&#39;)) {
+    if (data.hasOwnProperty('TaxIncluded')) {
 
-    obj[&#39;TaxIncluded&#39;] = ApiClient.convertToType(data[&#39;TaxIncluded&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Credit&#39;)) {
-
-    obj[&#39;Credit&#39;] = ApiClient.convertToType(data[&#39;Credit&#39;], &#39;Boolean&#39;);
+    obj['TaxIncluded'] = ApiClient.convertToType(data['TaxIncluded'], 'Boolean');
 
     }
 
-    if (data.hasOwnProperty(&#39;ExtendedAmount&#39;)) {
+    if (data.hasOwnProperty('Credit')) {
 
-    obj[&#39;ExtendedAmount&#39;] = ApiClient.convertToType(data[&#39;ExtendedAmount&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ItemNumber&#39;)) {
-
-    obj[&#39;ItemNumber&#39;] = ApiClient.convertToType(data[&#39;ItemNumber&#39;], &#39;String&#39;);
+    obj['Credit'] = ApiClient.convertToType(data['Credit'], 'Boolean');
 
     }
 
-    if (data.hasOwnProperty(&#39;UnitCost&#39;)) {
+    if (data.hasOwnProperty('ExtendedAmount')) {
 
-    obj[&#39;UnitCost&#39;] = ApiClient.convertToType(data[&#39;UnitCost&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Quantity&#39;)) {
-
-    obj[&#39;Quantity&#39;] = ApiClient.convertToType(data[&#39;Quantity&#39;], &#39;Number&#39;);
+    obj['ExtendedAmount'] = ApiClient.convertToType(data['ExtendedAmount'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;Description&#39;)) {
+    if (data.hasOwnProperty('ItemNumber')) {
 
-    obj[&#39;Description&#39;] = ApiClient.convertToType(data[&#39;Description&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Discount&#39;)) {
-
-    obj[&#39;Discount&#39;] = ApiClient.convertToType(data[&#39;Discount&#39;], &#39;Number&#39;);
+    obj['ItemNumber'] = ApiClient.convertToType(data['ItemNumber'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Tax&#39;)) {
+    if (data.hasOwnProperty('UnitCost')) {
 
-    obj[&#39;Tax&#39;] = ApiClient.convertToType(data[&#39;Tax&#39;], &#39;Number&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CommodityCode&#39;)) {
-
-    obj[&#39;CommodityCode&#39;] = ApiClient.convertToType(data[&#39;CommodityCode&#39;], &#39;String&#39;);
+    obj['UnitCost'] = ApiClient.convertToType(data['UnitCost'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;UnitOfMeasure&#39;)) {
+    if (data.hasOwnProperty('Quantity')) {
 
-    obj[&#39;UnitOfMeasure&#39;] = ApiClient.convertToType(data[&#39;UnitOfMeasure&#39;], &#39;String&#39;);
+    obj['Quantity'] = ApiClient.convertToType(data['Quantity'], 'Number');
+
+    }
+
+    if (data.hasOwnProperty('Description')) {
+
+    obj['Description'] = ApiClient.convertToType(data['Description'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Discount')) {
+
+    obj['Discount'] = ApiClient.convertToType(data['Discount'], 'Number');
+
+    }
+
+    if (data.hasOwnProperty('Tax')) {
+
+    obj['Tax'] = ApiClient.convertToType(data['Tax'], 'Number');
+
+    }
+
+    if (data.hasOwnProperty('CommodityCode')) {
+
+    obj['CommodityCode'] = ApiClient.convertToType(data['CommodityCode'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('UnitOfMeasure')) {
+
+    obj['UnitOfMeasure'] = ApiClient.convertToType(data['UnitOfMeasure'], 'String');
 
     }
 
     }
 
-    returnobj;
+    return obj;
 
     }
 
@@ -2680,129 +2680,129 @@
 
     exportdefaultclassTransactionType {
 
-    /\*\*
+    /**
 
-    \* value: &quot;Sale&quot;
+    * value: "Sale"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Sale = &#39;Sale&#39;;
+    Sale = 'Sale';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Credit&quot;
+    * value: "Credit"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Credit = &#39;Credit&#39;;
+    Credit = 'Credit';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Authorization&quot;
+    * value: "Authorization"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Authorization = &#39;Authorization&#39;;
+    Authorization = 'Authorization';
 
-    /\*\*
+    /**
 
-    \* value: &quot;PreAuth&quot;
+    * value: "PreAuth"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    PreAuth = &#39;PreAuth&#39;;
+    PreAuth = 'PreAuth';
 
-    /\*\*
+    /**
 
-    \* value: &quot;PostAuth&quot;
+    * value: "PostAuth"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    PostAuth = &#39;PostAuth&#39;;
+    PostAuth = 'PostAuth';
 
-    /\*\*
+    /**
 
-    \* value: &quot;ForceAuth&quot;
+    * value: "ForceAuth"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    ForceAuth = &#39;ForceAuth&#39;;
+    ForceAuth = 'ForceAuth';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Void&quot;
+    * value: "void "
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Void = &#39;Void&#39;;
+    void = 'void ';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Query&quot;
+    * value: "Query"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Query = &#39;Query&#39;;
+    Query = 'Query';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Verify&quot;
+    * value: "Verify"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Verify = &#39;Verify&#39;;
+    Verify = 'Verify';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Mark&quot;
+    * value: "Mark"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Mark = &#39;Mark&#39;;
+    Mark = 'Mark';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Return&quot;
+    * value: "Return"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Return = &#39;Return&#39;;
+    Return = 'Return';
 
-    /\*\*
+    /**
 
-    \* value: &quot;Use&quot;
+    * value: "Use"
 
-    \* @const
+    * @const
 
-    \*/
+    */
 
-    Use = &#39;Use&#39;;
+    Use = 'Use';
 
     staticconstructFromObject(object) {
 
-    returnobject;
+    return object;
 
     }
 
@@ -2810,21 +2810,21 @@
 
 # UpdateTransactionInfo
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
     exportdefaultclassUpdateTransactionInfo {
 
     constructor() {
 
-    this.InvoiceNumber = &#39;&#39;;
+    this.InvoiceNumber = '';
 
-    this.CustomerNumber = &#39;&#39;;
+    this.CustomerNumber = '';
 
-    this.PONumber = &#39;&#39;;
+    this.PONumber = '';
 
-    this.Note = &#39;&#39;;
+    this.Note = '';
 
     }
 
@@ -2832,35 +2832,35 @@
 
     if (data) {
 
-    obj = obj || newUpdateTransactionInfo();
+    obj = obj || new UpdateTransactionInfo();
 
-    if (data.hasOwnProperty(&#39;InvoiceNumber&#39;)) {
+    if (data.hasOwnProperty('InvoiceNumber')) {
 
-    obj[&#39;InvoiceNumber&#39;] = ApiClient.convertToType(data[&#39;InvoiceNumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CustomerNumber&#39;)) {
-
-    obj[&#39;CustomerNumber&#39;] = ApiClient.convertToType(data[&#39;CustomerNumber&#39;], &#39;String&#39;);
+    obj['InvoiceNumber'] = ApiClient.convertToType(data['InvoiceNumber'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;PONumber&#39;)) {
+    if (data.hasOwnProperty('CustomerNumber')) {
 
-    obj[&#39;PONumber&#39;] = ApiClient.convertToType(data[&#39;PONumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Note&#39;)) {
-
-    obj[&#39;Note&#39;] = ApiClient.convertToType(data[&#39;Note&#39;], &#39;String&#39;);
+    obj['CustomerNumber'] = ApiClient.convertToType(data['CustomerNumber'], 'String');
 
     }
 
+    if (data.hasOwnProperty('PONumber')) {
+
+    obj['PONumber'] = ApiClient.convertToType(data['PONumber'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('Note')) {
+
+    obj['Note'] = ApiClient.convertToType(data['Note'], 'String');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -2868,111 +2868,111 @@
 
 # VaultCheck
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importResponsefrom&#39;./Response&#39;;
+    importResponsefrom'./Response';
 
     exportdefaultclassVaultCheck {
 
     constructor() {
 
-    /\*\*
+    /**
 
-    \* @member{module:model/Response}Response
+    * @member{module:model/Response}Response
 
-    \*/
+    */
 
-    this.Response = newResponse();
+    this.Response = new Response();
 
-    /\*\*
+    /**
 
-    \* @member{Number}CheckID
+    * @member{Number}CheckID
 
-    \*/
+    */
 
     this.CheckID = 0;
 
-    /\*\*
+    /**
 
-    \* @member{Boolean}Main
+    * @member{Boolean}Main
 
-    \*/
+    */
 
     this.Main = false;
 
-    /\*\*
+    /**
 
-    \* @member{String}CheckRouting
+    * @member{String}CheckRouting
 
-    \*/
+    */
 
-    this.CheckRouting = &#39;&#39;;
+    this.CheckRouting = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}CheckAccount
+    * @member{String}CheckAccount
 
-    \*/
+    */
 
-    this.CheckAccount = &#39;&#39;;
+    this.CheckAccount = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}CheckNumber
+    * @member{String}CheckNumber
 
-    \*/
+    */
 
-    this.CheckNumber = &#39;&#39;;
+    this.CheckNumber = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}CheckFirstName
+    * @member{String}CheckFirstName
 
-    \*/
+    */
 
-    this.CheckFirstName = &#39;&#39;;
+    this.CheckFirstName = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}CheckLastName
+    * @member{String}CheckLastName
 
-    \*/
+    */
 
-    this.CheckLastName = &#39;&#39;;
+    this.CheckLastName = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}Note
+    * @member{String}Note
 
-    \*/
+    */
 
-    this.Note = &#39;&#39;;
+    this.Note = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}MaskedRouting
+    * @member{String}MaskedRouting
 
-    \*/
+    */
 
-    this.MaskedRouting = &#39;&#39;;
+    this.MaskedRouting = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}MaskedAccount
+    * @member{String}MaskedAccount
 
-    \*/
+    */
 
-    this.MaskedAccount = &#39;&#39;;
+    this.MaskedAccount = '';
 
-    /\*\*
+    /**
 
-    \* @member{String}AccountType
+    * @member{String}AccountType
 
-    \*/
+    */
 
-    this.AccountType = &#39;&#39;;
+    this.AccountType = '';
 
     }
 
@@ -2980,83 +2980,83 @@
 
     if (data) {
 
-    obj = obj || newVaultCheck();
+    obj = obj || new VaultCheck();
 
-    if (data.hasOwnProperty(&#39;Response&#39;)) {
+    if (data.hasOwnProperty('Response')) {
 
-    obj[&#39;Response&#39;] = Response.constructFromObject(data[&#39;Response&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CheckID&#39;)) {
-
-    obj[&#39;CheckID&#39;] = ApiClient.convertToType(data[&#39;CheckID&#39;], &#39;Number&#39;);
+    obj['Response'] = Response.constructFromObject(data['Response']);
 
     }
 
-    if (data.hasOwnProperty(&#39;Main&#39;)) {
+    if (data.hasOwnProperty('CheckID')) {
 
-    obj[&#39;Main&#39;] = ApiClient.convertToType(data[&#39;Main&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CheckRouting&#39;)) {
-
-    obj[&#39;CheckRouting&#39;] = ApiClient.convertToType(data[&#39;CheckRouting&#39;], &#39;String&#39;);
+    obj['CheckID'] = ApiClient.convertToType(data['CheckID'], 'Number');
 
     }
 
-    if (data.hasOwnProperty(&#39;CheckAccount&#39;)) {
+    if (data.hasOwnProperty('Main')) {
 
-    obj[&#39;CheckAccount&#39;] = ApiClient.convertToType(data[&#39;CheckAccount&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CheckNumber&#39;)) {
-
-    obj[&#39;CheckNumber&#39;] = ApiClient.convertToType(data[&#39;CheckNumber&#39;], &#39;String&#39;);
+    obj['Main'] = ApiClient.convertToType(data['Main'], 'Boolean');
 
     }
 
-    if (data.hasOwnProperty(&#39;CheckFirstName&#39;)) {
+    if (data.hasOwnProperty('CheckRouting')) {
 
-    obj[&#39;CheckFirstName&#39;] = ApiClient.convertToType(data[&#39;CheckFirstName&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CheckLastName&#39;)) {
-
-    obj[&#39;CheckLastName&#39;] = ApiClient.convertToType(data[&#39;CheckLastName&#39;], &#39;String&#39;);
+    obj['CheckRouting'] = ApiClient.convertToType(data['CheckRouting'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Note&#39;)) {
+    if (data.hasOwnProperty('CheckAccount')) {
 
-    obj[&#39;Note&#39;] = ApiClient.convertToType(data[&#39;Note&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;MaskedRouting&#39;)) {
-
-    obj[&#39;MaskedRouting&#39;] = ApiClient.convertToType(data[&#39;MaskedRouting&#39;], &#39;String&#39;);
+    obj['CheckAccount'] = ApiClient.convertToType(data['CheckAccount'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;MaskedAccount&#39;)) {
+    if (data.hasOwnProperty('CheckNumber')) {
 
-    obj[&#39;MaskedAccount&#39;] = ApiClient.convertToType(data[&#39;MaskedAccount&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;AccountType&#39;)) {
-
-    obj[&#39;AccountType&#39;] = ApiClient.convertToType(data[&#39;AccountType&#39;], &#39;String&#39;);
+    obj['CheckNumber'] = ApiClient.convertToType(data['CheckNumber'], 'String');
 
     }
 
+    if (data.hasOwnProperty('CheckFirstName')) {
+
+    obj['CheckFirstName'] = ApiClient.convertToType(data['CheckFirstName'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('CheckLastName')) {
+
+    obj['CheckLastName'] = ApiClient.convertToType(data['CheckLastName'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Note')) {
+
+    obj['Note'] = ApiClient.convertToType(data['Note'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('MaskedRouting')) {
+
+    obj['MaskedRouting'] = ApiClient.convertToType(data['MaskedRouting'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('MaskedAccount')) {
+
+    obj['MaskedAccount'] = ApiClient.convertToType(data['MaskedAccount'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('AccountType')) {
+
+    obj['AccountType'] = ApiClient.convertToType(data['AccountType'], 'String');
+
+    }
+
+    }
+
+    return obj;
 
     }
 
@@ -3064,55 +3064,55 @@
 
 # VaultCreditCard
 
-    /\* eslint-disable no-prototype-builtins \*/
+    /* eslint-disable no-prototype-builtins */
 
-    importApiClientfrom&#39;../ApiClient&#39;;
+    importApiClientfrom'../ApiClient';
 
-    importCVVPresenceTypefrom&#39;./CVVPresenceType&#39;;
+    importCVVPresenceTypefrom'./CVVPresenceType';
 
-    importResponsefrom&#39;./Response&#39;;
+    importResponsefrom'./Response';
 
     exportdefaultclassVaultCreditCard {
 
     constructor() {
 
-    this.MagneticTracks = &#39;&#39;;
+    this.MagneticTracks = '';
 
-    this.Track1 = &#39;&#39;;
+    this.Track1 = '';
 
-    this.Track2 = &#39;&#39;;
+    this.Track2 = '';
 
-    this.Number = &#39;&#39;;
+    this.Number = '';
 
-    this.MaskedNumber = &#39;&#39;;
+    this.MaskedNumber = '';
 
-    this.Holder = &#39;&#39;;
+    this.Holder = '';
 
-    this.ExpDate = &#39;&#39;;
+    this.ExpDate = '';
 
-    this.CVV = &#39;&#39;;
+    this.CVV = '';
 
-    this.Address = &#39;&#39;;
+    this.Address = '';
 
-    this.City = &#39;&#39;;
+    this.City = '';
 
-    this.State = &#39;&#39;;
+    this.State = '';
 
-    this.ZIP = &#39;&#39;;
+    this.ZIP = '';
 
     this.Swiped = false;
 
-    this.TypeString = &#39;&#39;;
+    this.TypeString = '';
 
     this.CVVType = CVVPresenceType.Normal;
 
     this.NotPresent = false;
 
-    this.Response = newResponse();
+    this.Response = new Response();
 
     this.CardID = 0;
 
-    this.Note = &#39;&#39;;
+    this.Note = '';
 
     this.Main = false;
 
@@ -3122,131 +3122,131 @@
 
     if (data) {
 
-    obj = obj || newVaultCreditCard();
+    obj = obj || new VaultCreditCard();
 
-    if (data.hasOwnProperty(&#39;MagneticTracks&#39;)) {
+    if (data.hasOwnProperty('MagneticTracks')) {
 
-    obj[&#39;MagneticTracks&#39;] = ApiClient.convertToType(data[&#39;MagneticTracks&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Track1&#39;)) {
-
-    obj[&#39;Track1&#39;] = ApiClient.convertToType(data[&#39;Track1&#39;], &#39;String&#39;);
+    obj['MagneticTracks'] = ApiClient.convertToType(data['MagneticTracks'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Track2&#39;)) {
+    if (data.hasOwnProperty('Track1')) {
 
-    obj[&#39;Track2&#39;] = ApiClient.convertToType(data[&#39;Track2&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Number&#39;)) {
-
-    obj[&#39;Number&#39;] = ApiClient.convertToType(data[&#39;Number&#39;], &#39;String&#39;);
+    obj['Track1'] = ApiClient.convertToType(data['Track1'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;MaskedNumber&#39;)) {
+    if (data.hasOwnProperty('Track2')) {
 
-    obj[&#39;MaskedNumber&#39;] = ApiClient.convertToType(data[&#39;MaskedNumber&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Holder&#39;)) {
-
-    obj[&#39;Holder&#39;] = ApiClient.convertToType(data[&#39;Holder&#39;], &#39;String&#39;);
+    obj['Track2'] = ApiClient.convertToType(data['Track2'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;ExpDate&#39;)) {
+    if (data.hasOwnProperty('Number')) {
 
-    obj[&#39;ExpDate&#39;] = ApiClient.convertToType(data[&#39;ExpDate&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CVV&#39;)) {
-
-    obj[&#39;CVV&#39;] = ApiClient.convertToType(data[&#39;CVV&#39;], &#39;String&#39;);
+    obj['Number'] = ApiClient.convertToType(data['Number'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Address&#39;)) {
+    if (data.hasOwnProperty('MaskedNumber')) {
 
-    obj[&#39;Address&#39;] = ApiClient.convertToType(data[&#39;Address&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;City&#39;)) {
-
-    obj[&#39;City&#39;] = ApiClient.convertToType(data[&#39;City&#39;], &#39;String&#39;);
+    obj['MaskedNumber'] = ApiClient.convertToType(data['MaskedNumber'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;State&#39;)) {
+    if (data.hasOwnProperty('Holder')) {
 
-    obj[&#39;State&#39;] = ApiClient.convertToType(data[&#39;State&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;ZIP&#39;)) {
-
-    obj[&#39;ZIP&#39;] = ApiClient.convertToType(data[&#39;ZIP&#39;], &#39;String&#39;);
+    obj['Holder'] = ApiClient.convertToType(data['Holder'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Swiped&#39;)) {
+    if (data.hasOwnProperty('ExpDate')) {
 
-    obj[&#39;Swiped&#39;] = ApiClient.convertToType(data[&#39;Swiped&#39;], &#39;Boolean&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;TypeString&#39;)) {
-
-    obj[&#39;TypeString&#39;] = ApiClient.convertToType(data[&#39;TypeString&#39;], &#39;String&#39;);
+    obj['ExpDate'] = ApiClient.convertToType(data['ExpDate'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;CVVType&#39;)) {
+    if (data.hasOwnProperty('CVV')) {
 
-    obj[&#39;CVVType&#39;] = CVVPresenceType.constructFromObject(data[&#39;CVVType&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;NotPresent&#39;)) {
-
-    obj[&#39;NotPresent&#39;] = ApiClient.convertToType(data[&#39;NotPresent&#39;], &#39;Boolean&#39;);
+    obj['CVV'] = ApiClient.convertToType(data['CVV'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Response&#39;)) {
+    if (data.hasOwnProperty('Address')) {
 
-    obj[&#39;Response&#39;] = Response.constructFromObject(data[&#39;Response&#39;]);
-
-    }
-
-    if (data.hasOwnProperty(&#39;CardID&#39;)) {
-
-    obj[&#39;CardID&#39;] = ApiClient.convertToType(data[&#39;CardID&#39;], &#39;Number&#39;);
+    obj['Address'] = ApiClient.convertToType(data['Address'], 'String');
 
     }
 
-    if (data.hasOwnProperty(&#39;Note&#39;)) {
+    if (data.hasOwnProperty('City')) {
 
-    obj[&#39;Note&#39;] = ApiClient.convertToType(data[&#39;Note&#39;], &#39;String&#39;);
-
-    }
-
-    if (data.hasOwnProperty(&#39;Main&#39;)) {
-
-    obj[&#39;Main&#39;] = ApiClient.convertToType(data[&#39;Main&#39;], &#39;Boolean&#39;);
+    obj['City'] = ApiClient.convertToType(data['City'], 'String');
 
     }
 
+    if (data.hasOwnProperty('State')) {
+
+    obj['State'] = ApiClient.convertToType(data['State'], 'String');
+
     }
 
-    returnobj;
+    if (data.hasOwnProperty('ZIP')) {
+
+    obj['ZIP'] = ApiClient.convertToType(data['ZIP'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Swiped')) {
+
+    obj['Swiped'] = ApiClient.convertToType(data['Swiped'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('TypeString')) {
+
+    obj['TypeString'] = ApiClient.convertToType(data['TypeString'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('CVVType')) {
+
+    obj['CVVType'] = CVVPresenceType.constructFromObject(data['CVVType']);
+
+    }
+
+    if (data.hasOwnProperty('NotPresent')) {
+
+    obj['NotPresent'] = ApiClient.convertToType(data['NotPresent'], 'Boolean');
+
+    }
+
+    if (data.hasOwnProperty('Response')) {
+
+    obj['Response'] = Response.constructFromObject(data['Response']);
+
+    }
+
+    if (data.hasOwnProperty('CardID')) {
+
+    obj['CardID'] = ApiClient.convertToType(data['CardID'], 'Number');
+
+    }
+
+    if (data.hasOwnProperty('Note')) {
+
+    obj['Note'] = ApiClient.convertToType(data['Note'], 'String');
+
+    }
+
+    if (data.hasOwnProperty('Main')) {
+
+    obj['Main'] = ApiClient.convertToType(data['Main'], 'Boolean');
+
+    }
+
+    }
+
+    return obj;
 
     }
 

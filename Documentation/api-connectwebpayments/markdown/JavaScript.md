@@ -2,19 +2,19 @@
 
 # API Client
 
-    importsuperagentfrom&quot;superagent&quot;;
+    importsuperagentfrom"superagent";
 
     exportdefaultclassApiClient {
 
     constructor() {
 
-    this.basePath = &#39;/&#39;.replace(/\/+$/, &#39;&#39;);
+    this.basePath = '/'.replace(/\/+$/, '');
 
     this.authentications = {
 
-    type:&#39;basic&#39;,
+    type:'basic',
 
-    username:&#39;\&lt;username\&gt;&#39;,
+    username:'<username>',
 
     };
 
@@ -26,9 +26,9 @@
 
     this.enableCookies = false;
 
-    if (typeofwindow === &#39;undefined&#39;) {
+    if (typeofwindow === 'undefined') {
 
-    this.agent = newsuperagent.agent();
+    this.agent = new superagent.agent();
 
     }
 
@@ -40,17 +40,17 @@
 
     if (param == undefined || param == null) {
 
-    return&#39;&#39;;
+    return '';
 
     }
 
     if (paraminstanceofDate) {
 
-    returnparam.toJSON();
+    return param.toJSON();
 
     }
 
-    returnparam.toString();
+    return param.toString();
 
     }
 
@@ -58,13 +58,13 @@
 
     if (!path.match(/^\//)) {
 
-    path = &#39;/&#39; + path;
+    path = '/' + path;
 
     }
 
     varurl = this.basePath + path;
 
-    url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) =\&gt; {
+    url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 
     varvalue;
 
@@ -78,53 +78,53 @@
 
     }
 
-    returnencodeURIComponent(value);
+    return encodeURIComponent(value);
 
     });
 
-    returnurl;
+    return url;
 
     }
 
     isJsonMime(contentType) {
 
-    returnBoolean(contentType != null &amp;&amp; contentType.match(/^application\/json(;.\*)?$/i));
+    return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
 
     }
 
     jsonPreferredMime(contentTypes) {
 
-    for (vari = 0; i \&lt; contentTypes.length; i++) {
+    for (vari = 0; i < contentTypes.length; i++) {
 
     if (this.isJsonMime(contentTypes[i])) {
 
-    returncontentTypes[i];
+    return contentTypes[i];
 
     }
 
     }
 
-    returncontentTypes[0];
+    return contentTypes[0];
 
     }
 
     normalizeParams(params) {
 
-    varnewParams = {};
+    varnew Params = {};
 
     for (varkeyinparams) {
 
-    if (params.hasOwnProperty(key) &amp;&amp; params[key] != undefined &amp;&amp; params[key] != null) {
+    if (params.hasOwnProperty(key) && params[key] != undefined && params[key] != null) {
 
     varvalue = params[key];
 
     if (Array.isArray(value)) {
 
-    newParams[key] = value;
+    new Params[key] = value;
 
     } else {
 
-    newParams[key] = this.paramToString(value);
+    new Params[key] = this.paramToString(value);
 
     }
 
@@ -132,27 +132,27 @@
 
     }
 
-    returnnewParams;
+    return new Params;
 
     }
 
-    deserialize(response, returnType) {
+    deserialize(response, return Type) {
 
-    if (response == null || returnType == null || response.status == 204) {
+    if (response == null || return Type == null || response.status == 204) {
 
-    returnnull;
+    return null;
 
     }
 
     vardata = response.body;
 
-    if (data == null || (typeofdata === &#39;object&#39; &amp;&amp; typeofdata.length === &#39;undefined&#39; &amp;&amp; !Object.keys(data).length)) {
+    if (data == null || (typeofdata === 'object' && typeofdata.length === 'undefined' && !Object.keys(data).length)) {
 
     data = response.text;
 
     }
 
-    returnApiClient.convertToType(data, returnType);
+    return ApiClient.convertToType(data, return Type);
 
     }
 
@@ -160,7 +160,7 @@
 
     headerParams, bodyParam, contentTypes, accepts,
 
-    returnType, callback) {
+    return Type, callback) {
 
     varurl = this.buildUrl(path, pathParams);
 
@@ -188,15 +188,15 @@
 
     // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
 
-    if(contentType != &#39;multipart/form-data&#39;) {
+    if(contentType != 'multipart/form-data') {
 
     request.type(contentType);
 
     }
 
-    } elseif (!request.header[&#39;Content-Type&#39;]) {
+    } elseif (!request.header['Content-Type']) {
 
-    request.type(&#39;application/json&#39;);
+    request.type('application/json');
 
     }
 
@@ -214,13 +214,13 @@
 
     }
 
-    if (returnType === &#39;Blob&#39;) {
+    if (return Type === 'Blob') {
 
-    request.responseType(&#39;blob&#39;);
+    request.responseType('blob');
 
-    } elseif (returnType === &#39;String&#39;) {
+    } elseif (return Type === 'String') {
 
-    request.responseType(&#39;string&#39;);
+    request.responseType('string');
 
     }
 
@@ -228,7 +228,7 @@
 
     if (this.enableCookies){
 
-    if (typeofwindow === &#39;undefined&#39;) {
+    if (typeofwindow === 'undefined') {
 
     this.agent.attachCookies(request);
 
@@ -242,7 +242,7 @@
 
     }
 
-    request.end((error, response) =\&gt; {
+    request.end((error, response) => {
 
     if (callback) {
 
@@ -252,9 +252,9 @@
 
     try {
 
-    data = this.deserialize(response, returnType);
+    data = this.deserialize(response, return Type);
 
-    if (this.enableCookies &amp;&amp; typeofwindow === &#39;undefined&#39;){
+    if (this.enableCookies && typeofwindow === 'undefined'){
 
     this.agent.saveCookies(response);
 
@@ -274,13 +274,13 @@
 
     });
 
-    returnrequest;
+    return request;
 
     }
 
     staticparseDate(str) {
 
-    returnnewDate(str);
+    return new Date(str);
 
     }
 
@@ -288,33 +288,33 @@
 
     if (data === null || data === undefined)
 
-    returndata
+    return data
 
     switch (type) {
 
-    case&#39;Boolean&#39;:
+    case'Boolean':
 
-    returnBoolean(data);
+    return Boolean(data);
 
-    case&#39;Integer&#39;:
+    case'Integer':
 
-    returnparseInt(data, 10);
+    return parseInt(data, 10);
 
-    case&#39;Number&#39;:
+    case'Number':
 
-    returnparseFloat(data);
+    return parseFloat(data);
 
-    case&#39;String&#39;:
+    case'String':
 
-    returnString(data);
+    return String(data);
 
-    case&#39;Date&#39;:
+    case'Date':
 
-    returnApiClient.parseDate(String(data));
+    return ApiClient.parseDate(String(data));
 
-    case&#39;Blob&#39;:
+    case'Blob':
 
-    returndata;
+    return data;
 
     default:
 
@@ -322,29 +322,29 @@
 
     // generic object, return directly
 
-    returndata;
+    return data;
 
-    } elseif (typeoftype === &#39;function&#39;) {
+    } elseif (typeoftype === 'function') {
 
     // for model type like: User
 
-    returntype.constructFromObject(data);
+    return type.constructFromObject(data);
 
     } elseif (Array.isArray(type)) {
 
-    // for array type like: [&#39;String&#39;]
+    // for array type like: ['String']
 
     varitemType = type[0];
 
-    returndata.map((item) =\&gt; {
+    return data.map((item) => {
 
-    returnApiClient.convertToType(item, itemType);
+    return ApiClient.convertToType(item, itemType);
 
     });
 
-    } elseif (typeoftype === &#39;object&#39;) {
+    } elseif (typeoftype === 'object') {
 
-    // for plain object type like: {&#39;String&#39;: &#39;Integer&#39;}
+    // for plain object type like: {'String': 'Integer'}
 
     varkeyType, valueType;
 
@@ -378,13 +378,13 @@
 
     }
 
-    returnresult;
+    return result;
 
     } else {
 
     // for unknown type, return the data directly
 
-    returndata;
+    return data;
 
     }
 
@@ -396,7 +396,7 @@
 
     if (Array.isArray(data)) {
 
-    for (vari = 0; i \&lt; data.length; i++) {
+    for (vari = 0; i < data.length; i++) {
 
     if (data.hasOwnProperty(i))
 
@@ -420,15 +420,15 @@
 
     }
 
-    ApiClient.instance = newApiClient();
+    ApiClient.instance = new ApiClient();
 
 # Account API
 
 ## /api/v1/Account/GetAccountSettings
 
-    importApiClientfrom&quot;../ApiClient&quot;;
+    importApiClientfrom"../ApiClient";
 
-    importSettingsfrom&#39;../model/Settings&#39;;
+    importSettingsfrom'../model/Settings';
 
     exportdefaultclassAccountApi {
 
@@ -446,23 +446,23 @@
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Settings;
+    constreturn Type = Settings;
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Account/GetAccountSettings&#39;,
+    '/api/v1/Account/GetAccountSettings',
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -474,7 +474,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -488,9 +488,9 @@
 
 ## /api/v1/Communication/EmailReceipt
 
-    importApiClientfrom&quot;../ApiClient&quot;;
+    importApiClientfrom"../ApiClient";
 
-    importResponsefrom&#39;../model/Response&#39;;
+    importResponsefrom'../model/Response';
 
     exportdefaultclassCommunicationApi {
 
@@ -504,29 +504,29 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {};
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Communication/EmailReceipt&#39;,
+    '/api/v1/Communication/EmailReceipt',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -538,7 +538,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -552,13 +552,13 @@
 
 ## /api/v1/Reporting/GetBatchesByDate/{batchDate}
 
-    importApiClientfrom&quot;../ApiClient&quot;;
+    importApiClientfrom"../ApiClient";
 
-    importBatchfrom&#39;../model/Batch&#39;;
+    importBatchfrom'../model/Batch';
 
-    importQueryTransactionfrom&#39;../model/QueryTransaction&#39;;
+    importQueryTransactionfrom'../model/QueryTransaction';
 
-    importTerminalSettingsfrom&#39;../model/TerminalSettings&#39;;
+    importTerminalSettingsfrom'../model/TerminalSettings';
 
     exportdefaultclassReportingApi {
 
@@ -574,29 +574,29 @@
 
     constpathParams = {
 
-    &#39;batchDate&#39;:batchDate
+    'batchDate':batchDate
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [Batch];
+    constreturn Type = [Batch];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Reporting/GetBatchesByDate/${batchDate}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -608,7 +608,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -626,23 +626,23 @@
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [TerminalSettings];
+    constreturn Type = [TerminalSettings];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Reporting/GetCheckTerminals&#39;,
+    '/api/v1/Reporting/GetCheckTerminals',
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -654,7 +654,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -670,29 +670,29 @@
 
     constpathParams = {
 
-    &#39;secCode&#39;:secCode
+    'secCode':secCode
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [TerminalSettings];
+    constreturn Type = [TerminalSettings];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Reporting/GetCheckTerminalSettingsBySEC/${secCode}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -704,7 +704,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -720,29 +720,29 @@
 
     constpathParams = {
 
-    &#39;terminalID&#39;:terminalID
+    'terminalID':terminalID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [TerminalSettings];
+    constreturn Type = [TerminalSettings];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Reporting/GetCheckTerminalSettings/${terminalID}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -754,7 +754,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -770,29 +770,29 @@
 
     constpathParams = {
 
-    &#39;batch&#39;:batch
+    'batch':batch
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [QueryTransaction];
+    constreturn Type = [QueryTransaction];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Reporting/GetTransactionsByBatch/${batch}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -804,7 +804,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -820,29 +820,29 @@
 
     constpathParams = {
 
-    &#39;transactionDate&#39;:transactionDate
+    'transactionDate':transactionDate
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [QueryTransaction];
+    constreturn Type = [QueryTransaction];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Reporting/GetTransactionsByDate/${transactionDate}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -854,7 +854,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -866,15 +866,15 @@
 
 ## /api/v1/Vault/GetVaultRecord/{reference}
 
-    importApiClientfrom&quot;../ApiClient&quot;;
+    importApiClientfrom"../ApiClient";
 
-    importCheckTransactionfrom&#39;../model/CheckTransaction&#39;;
+    importCheckTransactionfrom'../model/CheckTransaction';
 
-    importRecordfrom&#39;../model/Record&#39;;
+    importRecordfrom'../model/Record';
 
-    importResponsefrom&#39;../model/Response&#39;;
+    importResponsefrom'../model/Response';
 
-    importTransactionfrom&#39;../model/Transaction&#39;;
+    importTransactionfrom'../model/Transaction';
 
     exportdefaultclassVaultApi {
 
@@ -890,29 +890,29 @@
 
     constpathParams = {
 
-    &#39;reference&#39;:reference
+    'reference':reference
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Record;
+    constreturn Type = Record;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Vault/GetVaultRecord/${reference}`,
 
-    &#39;GET&#39;,
+    'GET',
 
     pathParams,
 
@@ -924,7 +924,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -938,7 +938,7 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
@@ -946,23 +946,23 @@
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [Response];
+    constreturn Type = [Response];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Vault/SaveVault&#39;,
+    '/api/v1/Vault/SaveVault',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -974,7 +974,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -988,33 +988,33 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
-    &#39;vaultID&#39;:vaultID
+    'vaultID':vaultID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Vault/SaveVaultCard/${vaultID}`,
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1026,7 +1026,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1040,7 +1040,7 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
@@ -1048,23 +1048,23 @@
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = [Record];
+    constreturn Type = [Record];
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Vault/SearchVault&#39;,
+    '/api/v1/Vault/SearchVault',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1076,7 +1076,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1092,29 +1092,29 @@
 
     constpathParams = {
 
-    &#39;vaultCardID&#39;:vaultCardID
+    'vaultCardID':vaultCardID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Vault/DeleteVaultCardByID/${vaultCardID}`,
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1126,7 +1126,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1142,29 +1142,29 @@
 
     constpathParams = {
 
-    &#39;vaultCheckID&#39;:vaultCheckID
+    'vaultCheckID':vaultCheckID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/Vault/DeleteVaultCheckByID/${vaultCheckID}`,
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1176,7 +1176,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1190,33 +1190,33 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
-    &#39;vaultCheckID&#39;:vaultCheckID
+    'vaultCheckID':vaultCheckID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = CheckTransaction;
+    constreturn Type = CheckTransaction;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}&#39;,
+    '/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1228,7 +1228,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1242,33 +1242,33 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
-    &#39;vaultCardID&#39;:vaultCardID
+    'vaultCardID':vaultCardID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Transaction;
+    constreturn Type = Transaction;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}&#39;,
+    '/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1280,7 +1280,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1292,15 +1292,15 @@
 
 ## /api/v1/VirtualTerminal/Submit
 
-    importApiClientfrom&quot;../ApiClient&quot;;
+    importApiClientfrom"../ApiClient";
 
-    importCheckTransactionfrom&#39;../model/CheckTransaction&#39;;
+    importCheckTransactionfrom'../model/CheckTransaction';
 
-    importQueryTransactionfrom&#39;../model/QueryTransaction&#39;;
+    importQueryTransactionfrom'../model/QueryTransaction';
 
-    importResponsefrom&#39;../model/Response&#39;;
+    importResponsefrom'../model/Response';
 
-    importTransactionfrom&#39;../model/Transaction&#39;;
+    importTransactionfrom'../model/Transaction';
 
     exportdefaultclassVirtualTerminalApi {
 
@@ -1314,29 +1314,29 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {};
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Transaction;
+    constreturn Type = Transaction;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/VirtualTerminal/Submit&#39;,
+    '/api/v1/VirtualTerminal/Submit',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1348,7 +1348,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1362,29 +1362,29 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {};
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = CheckTransaction;
+    constreturn Type = CheckTransaction;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/VirtualTerminal/SubmitCheck&#39;,
+    '/api/v1/VirtualTerminal/SubmitCheck',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1396,7 +1396,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1412,29 +1412,29 @@
 
     constpathParams = {
 
-    &#39;transactionID&#39;:transactionID
+    'transactionID':transactionID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
     constcontentTypes = [];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/VirtualTerminal/Mark/${transactionID}`,
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1446,7 +1446,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1460,29 +1460,29 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {};
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/VirtualTerminal/MarkTransactions&#39;,
+    '/api/v1/VirtualTerminal/MarkTransactions',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1494,7 +1494,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1508,29 +1508,29 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {};
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = QueryTransaction;
+    constreturn Type = QueryTransaction;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
-    &#39;/api/v1/VirtualTerminal/Query&#39;,
+    '/api/v1/VirtualTerminal/Query',
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1542,7 +1542,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 
@@ -1556,33 +1556,33 @@
 
     opts = opts || {};
 
-    constpostBody = opts[&#39;body&#39;];
+    constpostBody = opts['body'];
 
     constpathParams = {
 
-    &#39;transactionID&#39;:transactionID
+    'transactionID':transactionID
 
     };
 
     constheaderParams = {
 
-    &#39;Account&#39;:account,
+    'Account':account,
 
-    &#39;Password&#39;:password
+    'Password':password
 
     };
 
-    constcontentTypes = [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;];
+    constcontentTypes = ['application/json', 'text/json', 'application/_*+json'];
 
-    constaccepts = [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;];
+    constaccepts = ['text/plain', 'application/json', 'text/json'];
 
-    constreturnType = Response;
+    constreturn Type = Response;
 
-    returnthis.apiClient.callApi(
+    return this.apiClient.callApi(
 
     `/api/v1/VirtualTerminal/UpdateTransactionInfo/${transactionID}`,
 
-    &#39;POST&#39;,
+    'POST',
 
     pathParams,
 
@@ -1594,7 +1594,7 @@
 
     accepts,
 
-    returnType,
+    return Type,
 
     callback
 

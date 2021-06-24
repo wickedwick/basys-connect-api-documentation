@@ -6,57 +6,57 @@
 
     classAddress(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;address\_line1&#39;: &#39;str&#39;,
+    'address_line1': 'str',
 
-    &#39;address\_line2&#39;: &#39;str&#39;,
+    'address_line2': 'str',
 
-    &#39;city&#39;: &#39;str&#39;,
+    'city': 'str',
 
-    &#39;state&#39;: &#39;str&#39;,
+    'state': 'str',
 
-    &#39;zip\_code&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;address\_line1&#39;: &#39;AddressLine1&#39;,
-
-    &#39;address\_line2&#39;: &#39;AddressLine2&#39;,
-
-    &#39;city&#39;: &#39;City&#39;,
-
-    &#39;state&#39;: &#39;State&#39;,
-
-    &#39;zip\_code&#39;: &#39;ZipCode&#39;
+    'zip_code': 'str'
 
     }
 
-    def\_\_init\_\_(self, address\_line1=None, address\_line2=None, city=None, state=None, zip\_code=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Address - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'address_line1': 'AddressLine1',
 
-    self.\_address\_line1 = None
+    'address_line2': 'AddressLine2',
 
-    self.\_address\_line2 = None
+    'city': 'City',
 
-    self.\_city = None
+    'state': 'State',
 
-    self.\_state = None
+    'zip_code': 'ZipCode'
 
-    self.\_zip\_code = None
+    }
+
+    def__init__(self, address_line1=None, address_line2=None, city=None, state=None, zip_code=None): # noqa: E501
+
+    """Address - a model defined in Swagger"""# noqa: E501
+
+    self._address_line1 = None
+
+    self._address_line2 = None
+
+    self._city = None
+
+    self._state = None
+
+    self._zip_code = None
 
     self.discriminator = None
 
-    ifaddress\_line1isnotNone:
+    ifaddress_line1isnotNone:
 
-    self.address\_line1 = address\_line1
+    self.address_line1 = address_line1
 
-    ifaddress\_line2isnotNone:
+    ifaddress_line2isnotNone:
 
-    self.address\_line2 = address\_line2
+    self.address_line2 = address_line2
 
     ifcityisnotNone:
 
@@ -66,69 +66,69 @@
 
     self.state = state
 
-    ifzip\_codeisnotNone:
+    ifzip_codeisnotNone:
 
-    self.zip\_code = zip\_code
-
-    @property
-
-    defaddress\_line1(self):
-
-    returnself.\_address\_line1
-
-    @address\_line1.setter
-
-    defaddress\_line1(self, address\_line1):
-
-    self.\_address\_line1 = address\_line1
+    self.zip_code = zip_code
 
     @property
 
-    defaddress\_line2(self):
+    defaddress_line1(self):
 
-    returnself.\_address\_line2
+    return self._address_line1
 
-    @address\_line2.setter
+    @address_line1.setter
 
-    defaddress\_line2(self, address\_line2):
+    defaddress_line1(self, address_line1):
 
-    self.\_address\_line2 = address\_line2
+    self._address_line1 = address_line1
+
+    @property
+
+    defaddress_line2(self):
+
+    return self._address_line2
+
+    @address_line2.setter
+
+    defaddress_line2(self, address_line2):
+
+    self._address_line2 = address_line2
 
     @property
 
     defcity(self):
 
-    returnself.\_city
+    return self._city
 
     @city.setter
 
     defcity(self, city):
 
-    self.\_city = city
+    self._city = city
 
     @property
 
     defstate(self):
 
-    returnself.\_state
+    return self._state
 
     @state.setter
 
     defstate(self, state):
 
-    self.\_state = state
+    self._state = state
 
     @property
 
-    defzip\_code(self):
+    defzip_code(self):
 
-    returnself.\_zip\_code
+    return self._zip_code
 
-    @zip\_code.setter
+    @zip_code.setter
 
-    defzip\_code(self, zip\_code):
+    defzip_code(self, zip_code):
 
-    self.\_zip\_code = zip\_code
+    self._zip_code = zip_code
 
 # Batch
 
@@ -136,71 +136,71 @@
 
     classBatch(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;batch\_number&#39;: &#39;str&#39;,
+    'batch_number': 'str',
 
-    &#39;started&#39;: &#39;datetime&#39;,
+    'started': 'datetime',
 
-    &#39;completed&#39;: &#39;datetime&#39;,
+    'completed': 'datetime',
 
-    &#39;sales\_count&#39;: &#39;str&#39;,
+    'sales_count': 'str',
 
-    &#39;sales\_sum&#39;: &#39;float&#39;,
+    'sales_sum': 'float',
 
-    &#39;return\_count&#39;: &#39;str&#39;,
+    'return _count': 'str',
 
-    &#39;return\_sum&#39;: &#39;float&#39;,
+    'return _sum': 'float',
 
-    &#39;batch\_error&#39;: &#39;bool&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;batch\_number&#39;: &#39;BatchNumber&#39;,
-
-    &#39;started&#39;: &#39;Started&#39;,
-
-    &#39;completed&#39;: &#39;Completed&#39;,
-
-    &#39;sales\_count&#39;: &#39;SalesCount&#39;,
-
-    &#39;sales\_sum&#39;: &#39;SalesSum&#39;,
-
-    &#39;return\_count&#39;: &#39;ReturnCount&#39;,
-
-    &#39;return\_sum&#39;: &#39;ReturnSum&#39;,
-
-    &#39;batch\_error&#39;: &#39;BatchError&#39;
+    'batch_error': 'bool'
 
     }
 
-    def\_\_init\_\_(self, batch\_number=None, started=None, completed=None, sales\_count=None, sales\_sum=None, return\_count=None, return\_sum=None, batch\_error=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Batch - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'batch_number': 'BatchNumber',
 
-    self.\_batch\_number = None
+    'started': 'Started',
 
-    self.\_started = None
+    'completed': 'Completed',
 
-    self.\_completed = None
+    'sales_count': 'SalesCount',
 
-    self.\_sales\_count = None
+    'sales_sum': 'SalesSum',
 
-    self.\_sales\_sum = None
+    'return _count': 'ReturnCount',
 
-    self.\_return\_count = None
+    'return _sum': 'ReturnSum',
 
-    self.\_return\_sum = None
+    'batch_error': 'BatchError'
 
-    self.\_batch\_error = None
+    }
+
+    def__init__(self, batch_number=None, started=None, completed=None, sales_count=None, sales_sum=None, return _count=None, return _sum=None, batch_error=None): # noqa: E501
+
+    """Batch - a model defined in Swagger"""# noqa: E501
+
+    self._batch_number = None
+
+    self._started = None
+
+    self._completed = None
+
+    self._sales_count = None
+
+    self._sales_sum = None
+
+    self._return _count = None
+
+    self._return _sum = None
+
+    self._batch_error = None
 
     self.discriminator = None
 
-    ifbatch\_numberisnotNone:
+    ifbatch_numberisnotNone:
 
-    self.batch\_number = batch\_number
+    self.batch_number = batch_number
 
     ifstartedisnotNone:
 
@@ -210,121 +210,121 @@
 
     self.completed = completed
 
-    ifsales\_countisnotNone:
+    ifsales_countisnotNone:
 
-    self.sales\_count = sales\_count
+    self.sales_count = sales_count
 
-    ifsales\_sumisnotNone:
+    ifsales_sumisnotNone:
 
-    self.sales\_sum = sales\_sum
+    self.sales_sum = sales_sum
 
-    ifreturn\_countisnotNone:
+    ifreturn _countisnotNone:
 
-    self.return\_count = return\_count
+    self.return _count = return _count
 
-    ifreturn\_sumisnotNone:
+    ifreturn _sumisnotNone:
 
-    self.return\_sum = return\_sum
+    self.return _sum = return _sum
 
-    ifbatch\_errorisnotNone:
+    ifbatch_errorisnotNone:
 
-    self.batch\_error = batch\_error
+    self.batch_error = batch_error
 
     @property
 
-    defbatch\_number(self):
+    defbatch_number(self):
 
-    returnself.\_batch\_number
+    return self._batch_number
 
-    @batch\_number.setter
+    @batch_number.setter
 
-    defbatch\_number(self, batch\_number):
+    defbatch_number(self, batch_number):
 
-    self.\_batch\_number = batch\_number
+    self._batch_number = batch_number
 
     @property
 
     defstarted(self):
 
-    returnself.\_started
+    return self._started
 
     @started.setter
 
     defstarted(self, started):
 
-    self.\_started = started
+    self._started = started
 
     @property
 
     defcompleted(self):
 
-    returnself.\_completed
+    return self._completed
 
     @completed.setter
 
     defcompleted(self, completed):
 
-    self.\_completed = completed
+    self._completed = completed
 
     @property
 
-    defsales\_count(self):
+    defsales_count(self):
 
-    returnself.\_sales\_count
+    return self._sales_count
 
-    @sales\_count.setter
+    @sales_count.setter
 
-    defsales\_count(self, sales\_count):
+    defsales_count(self, sales_count):
 
-    self.\_sales\_count = sales\_count
-
-    @property
-
-    defsales\_sum(self):
-
-    returnself.\_sales\_sum
-
-    @sales\_sum.setter
-
-    defsales\_sum(self, sales\_sum):
-
-    self.\_sales\_sum = sales\_sum
+    self._sales_count = sales_count
 
     @property
 
-    defreturn\_count(self):
+    defsales_sum(self):
 
-    returnself.\_return\_count
+    return self._sales_sum
 
-    @return\_count.setter
+    @sales_sum.setter
 
-    defreturn\_count(self, return\_count):
+    defsales_sum(self, sales_sum):
 
-    self.\_return\_count = return\_count
-
-    @property
-
-    defreturn\_sum(self):
-
-    returnself.\_return\_sum
-
-    @return\_sum.setter
-
-    defreturn\_sum(self, return\_sum):
-
-    self.\_return\_sum = return\_sum
+    self._sales_sum = sales_sum
 
     @property
 
-    defbatch\_error(self):
+    defreturn _count(self):
 
-    returnself.\_batch\_error
+    return self._return _count
 
-    @batch\_error.setter
+    @return _count.setter
 
-    defbatch\_error(self, batch\_error):
+    defreturn _count(self, return _count):
 
-    self.\_batch\_error = batch\_error
+    self._return _count = return _count
+
+    @property
+
+    defreturn _sum(self):
+
+    return self._return _sum
+
+    @return _sum.setter
+
+    defreturn _sum(self, return _sum):
+
+    self._return _sum = return _sum
+
+    @property
+
+    defbatch_error(self):
+
+    return self._batch_error
+
+    @batch_error.setter
+
+    defbatch_error(self, batch_error):
+
+    self._batch_error = batch_error
 
 # Business
 
@@ -332,47 +332,47 @@
 
     classBusiness(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;address&#39;: &#39;Address&#39;,
+    'address': 'Address',
 
-    &#39;name&#39;: &#39;str&#39;,
+    'name': 'str',
 
-    &#39;phone&#39;: &#39;str&#39;,
+    'phone': 'str',
 
-    &#39;fax&#39;: &#39;str&#39;,
+    'fax': 'str',
 
-    &#39;web\_site&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;address&#39;: &#39;Address&#39;,
-
-    &#39;name&#39;: &#39;Name&#39;,
-
-    &#39;phone&#39;: &#39;Phone&#39;,
-
-    &#39;fax&#39;: &#39;Fax&#39;,
-
-    &#39;web\_site&#39;: &#39;WebSite&#39;
+    'web_site': 'str'
 
     }
 
-    def\_\_init\_\_(self, address=None, name=None, phone=None, fax=None, web\_site=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Business - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'address': 'Address',
 
-    self.\_address = None
+    'name': 'Name',
 
-    self.\_name = None
+    'phone': 'Phone',
 
-    self.\_phone = None
+    'fax': 'Fax',
 
-    self.\_fax = None
+    'web_site': 'WebSite'
 
-    self.\_web\_site = None
+    }
+
+    def__init__(self, address=None, name=None, phone=None, fax=None, web_site=None): # noqa: E501
+
+    """Business - a model defined in Swagger"""# noqa: E501
+
+    self._address = None
+
+    self._name = None
+
+    self._phone = None
+
+    self._fax = None
+
+    self._web_site = None
 
     self.discriminator = None
 
@@ -392,69 +392,69 @@
 
     self.fax = fax
 
-    ifweb\_siteisnotNone:
+    ifweb_siteisnotNone:
 
-    self.web\_site = web\_site
+    self.web_site = web_site
 
     @property
 
     defaddress(self):
 
-    returnself.\_address
+    return self._address
 
     @address.setter
 
     defaddress(self, address):
 
-    self.\_address = address
+    self._address = address
 
     @property
 
     defname(self):
 
-    returnself.\_name
+    return self._name
 
     @name.setter
 
     defname(self, name):
 
-    self.\_name = name
+    self._name = name
 
     @property
 
     defphone(self):
 
-    returnself.\_phone
+    return self._phone
 
     @phone.setter
 
     defphone(self, phone):
 
-    self.\_phone = phone
+    self._phone = phone
 
     @property
 
     deffax(self):
 
-    returnself.\_fax
+    return self._fax
 
     @fax.setter
 
     deffax(self, fax):
 
-    self.\_fax = fax
+    self._fax = fax
 
     @property
 
-    defweb\_site(self):
+    defweb_site(self):
 
-    returnself.\_web\_site
+    return self._web_site
 
-    @web\_site.setter
+    @web_site.setter
 
-    defweb\_site(self, web\_site):
+    defweb_site(self, web_site):
 
-    self.\_web\_site = web\_site
+    self._web_site = web_site
 
 # CheckAccountType
 
@@ -462,23 +462,23 @@
 
     classCheckAccountType(object):
 
-    UNKNOWN = &quot;Unknown&quot;
+    UNKNOWN = "Unknown"
 
-    CHECKING = &quot;Checking&quot;
+    CHECKING = "Checking"
 
-    SAVINGS = &quot;Savings&quot;
+    SAVINGS = "Savings"
 
-    swagger\_types = {
-
-    }
-
-    attribute\_map = {
+    swagger_types = {
 
     }
 
-    def\_\_init\_\_(self): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;CheckAccountType - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    }
+
+    def__init__(self): # noqa: E501
+
+    """CheckAccountType - a model defined in Swagger"""# noqa: E501
 
     self.discriminator = None
 
@@ -488,253 +488,253 @@
 
     classCheckTransaction(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;terminal\_id&#39;: &#39;str&#39;,
+    'terminal_id': 'str',
 
-    &#39;account\_number&#39;: &#39;str&#39;,
+    'account_number': 'str',
 
-    &#39;account\_type&#39;: &#39;CheckAccountType&#39;,
+    'account_type': 'CheckAccountType',
 
-    &#39;check\_number&#39;: &#39;str&#39;,
+    'check_number': 'str',
 
-    &#39;routing\_number&#39;: &#39;str&#39;,
+    'routing_number': 'str',
 
-    &#39;micr\_data&#39;: &#39;str&#39;,
+    'micr_data': 'str',
 
-    &#39;first\_name&#39;: &#39;str&#39;,
+    'first_name': 'str',
 
-    &#39;last\_name&#39;: &#39;str&#39;,
+    'last_name': 'str',
 
-    &#39;company\_name&#39;: &#39;str&#39;,
+    'company_name': 'str',
 
-    &#39;address1&#39;: &#39;str&#39;,
+    'address1': 'str',
 
-    &#39;address2&#39;: &#39;str&#39;,
+    'address2': 'str',
 
-    &#39;city&#39;: &#39;str&#39;,
+    'city': 'str',
 
-    &#39;state&#39;: &#39;str&#39;,
+    'state': 'str',
 
-    &#39;zip&#39;: &#39;str&#39;,
+    'zip': 'str',
 
-    &#39;phone\_number&#39;: &#39;str&#39;,
+    'phone_number': 'str',
 
-    &#39;dl\_number&#39;: &#39;str&#39;,
+    'dl_number': 'str',
 
-    &#39;dl\_state&#39;: &#39;str&#39;,
+    'dl_state': 'str',
 
-    &#39;courtesy\_card\_id&#39;: &#39;str&#39;,
+    'courtesy_card_id': 'str',
 
-    &#39;ssn4&#39;: &#39;str&#39;,
+    'ssn4': 'str',
 
-    &#39;dob\_year&#39;: &#39;str&#39;,
+    'dob_year': 'str',
 
-    &#39;check\_amount&#39;: &#39;str&#39;,
+    'check_amount': 'str',
 
-    &#39;tran\_type&#39;: &#39;CheckTransactionType&#39;,
+    'tran_type': 'CheckTransactionType',
 
-    &#39;proc\_id&#39;: &#39;str&#39;,
+    'proc_id': 'str',
 
-    &#39;ip\_address&#39;: &#39;str&#39;,
+    'ip_address': 'str',
 
-    &#39;customer\_number&#39;: &#39;str&#39;,
+    'customer_number': 'str',
 
-    &#39;po\_number&#39;: &#39;str&#39;,
+    'po_number': 'str',
 
-    &#39;invoice\_number&#39;: &#39;str&#39;,
+    'invoice_number': 'str',
 
-    &#39;tran\_note&#39;: &#39;str&#39;,
+    'tran_note': 'str',
 
-    &#39;email\_address&#39;: &#39;str&#39;,
+    'email_address': 'str',
 
-    &#39;sec\_code&#39;: &#39;str&#39;,
+    'sec_code': 'str',
 
-    &#39;proc\_resp&#39;: &#39;str&#39;,
+    'proc_resp': 'str',
 
-    &#39;proc\_code&#39;: &#39;str&#39;,
+    'proc_code': 'str',
 
-    &#39;proc\_mess&#39;: &#39;str&#39;
+    'proc_mess': 'str'
 
     }
 
-    attribute\_map = {
+    attribute_map = {
 
-    &#39;terminal\_id&#39;: &#39;Terminal\_ID&#39;,
+    'terminal_id': 'Terminal_ID',
 
-    &#39;account\_number&#39;: &#39;Account\_Number&#39;,
+    'account_number': 'Account_Number',
 
-    &#39;account\_type&#39;: &#39;Account\_Type&#39;,
+    'account_type': 'Account_Type',
 
-    &#39;check\_number&#39;: &#39;Check\_Number&#39;,
+    'check_number': 'Check_Number',
 
-    &#39;routing\_number&#39;: &#39;Routing\_Number&#39;,
+    'routing_number': 'Routing_Number',
 
-    &#39;micr\_data&#39;: &#39;MICR\_Data&#39;,
+    'micr_data': 'MICR_Data',
 
-    &#39;first\_name&#39;: &#39;First\_Name&#39;,
+    'first_name': 'First_Name',
 
-    &#39;last\_name&#39;: &#39;Last\_Name&#39;,
+    'last_name': 'Last_Name',
 
-    &#39;company\_name&#39;: &#39;Company\_Name&#39;,
+    'company_name': 'Company_Name',
 
-    &#39;address1&#39;: &#39;Address1&#39;,
+    'address1': 'Address1',
 
-    &#39;address2&#39;: &#39;Address2&#39;,
+    'address2': 'Address2',
 
-    &#39;city&#39;: &#39;City&#39;,
+    'city': 'City',
 
-    &#39;state&#39;: &#39;State&#39;,
+    'state': 'State',
 
-    &#39;zip&#39;: &#39;Zip&#39;,
+    'zip': 'Zip',
 
-    &#39;phone\_number&#39;: &#39;Phone\_Number&#39;,
+    'phone_number': 'Phone_Number',
 
-    &#39;dl\_number&#39;: &#39;DL\_Number&#39;,
+    'dl_number': 'DL_Number',
 
-    &#39;dl\_state&#39;: &#39;DL\_State&#39;,
+    'dl_state': 'DL_State',
 
-    &#39;courtesy\_card\_id&#39;: &#39;Courtesy\_Card\_ID&#39;,
+    'courtesy_card_id': 'Courtesy_Card_ID',
 
-    &#39;ssn4&#39;: &#39;SSN4&#39;,
+    'ssn4': 'SSN4',
 
-    &#39;dob\_year&#39;: &#39;DOB\_Year&#39;,
+    'dob_year': 'DOB_Year',
 
-    &#39;check\_amount&#39;: &#39;Check\_Amount&#39;,
+    'check_amount': 'Check_Amount',
 
-    &#39;tran\_type&#39;: &#39;Tran\_Type&#39;,
+    'tran_type': 'Tran_Type',
 
-    &#39;proc\_id&#39;: &#39;Proc\_ID&#39;,
+    'proc_id': 'Proc_ID',
 
-    &#39;ip\_address&#39;: &#39;IP\_Address&#39;,
+    'ip_address': 'IP_Address',
 
-    &#39;customer\_number&#39;: &#39;CustomerNumber&#39;,
+    'customer_number': 'CustomerNumber',
 
-    &#39;po\_number&#39;: &#39;PONumber&#39;,
+    'po_number': 'PONumber',
 
-    &#39;invoice\_number&#39;: &#39;InvoiceNumber&#39;,
+    'invoice_number': 'InvoiceNumber',
 
-    &#39;tran\_note&#39;: &#39;TranNote&#39;,
+    'tran_note': 'TranNote',
 
-    &#39;email\_address&#39;: &#39;EmailAddress&#39;,
+    'email_address': 'EmailAddress',
 
-    &#39;sec\_code&#39;: &#39;SEC\_Code&#39;,
+    'sec_code': 'SEC_Code',
 
-    &#39;proc\_resp&#39;: &#39;Proc\_Resp&#39;,
+    'proc_resp': 'Proc_Resp',
 
-    &#39;proc\_code&#39;: &#39;Proc\_Code&#39;,
+    'proc_code': 'Proc_Code',
 
-    &#39;proc\_mess&#39;: &#39;Proc\_Mess&#39;
+    'proc_mess': 'Proc_Mess'
 
     }
 
-    def\_\_init\_\_(self, terminal\_id=None, account\_number=None, account\_type=None, check\_number=None, routing\_number=None, micr\_data=None, first\_name=None, last\_name=None, company\_name=None, address1=None, address2=None, city=None, state=None, zip=None, phone\_number=None, dl\_number=None, dl\_state=None, courtesy\_card\_id=None, ssn4=None, dob\_year=None, check\_amount=None, tran\_type=None, proc\_id=None, ip\_address=None, customer\_number=None, po\_number=None, invoice\_number=None, tran\_note=None, email\_address=None, sec\_code=None, proc\_resp=None, proc\_code=None, proc\_mess=None): # noqa: E501
+    def__init__(self, terminal_id=None, account_number=None, account_type=None, check_number=None, routing_number=None, micr_data=None, first_name=None, last_name=None, company_name=None, address1=None, address2=None, city=None, state=None, zip=None, phone_number=None, dl_number=None, dl_state=None, courtesy_card_id=None, ssn4=None, dob_year=None, check_amount=None, tran_type=None, proc_id=None, ip_address=None, customer_number=None, po_number=None, invoice_number=None, tran_note=None, email_address=None, sec_code=None, proc_resp=None, proc_code=None, proc_mess=None): # noqa: E501
 
-    &quot;&quot;&quot;CheckTransaction - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    """CheckTransaction - a model defined in Swagger"""# noqa: E501
 
-    self.\_terminal\_id = None
+    self._terminal_id = None
 
-    self.\_account\_number = None
+    self._account_number = None
 
-    self.\_account\_type = None
+    self._account_type = None
 
-    self.\_check\_number = None
+    self._check_number = None
 
-    self.\_routing\_number = None
+    self._routing_number = None
 
-    self.\_micr\_data = None
+    self._micr_data = None
 
-    self.\_first\_name = None
+    self._first_name = None
 
-    self.\_last\_name = None
+    self._last_name = None
 
-    self.\_company\_name = None
+    self._company_name = None
 
-    self.\_address1 = None
+    self._address1 = None
 
-    self.\_address2 = None
+    self._address2 = None
 
-    self.\_city = None
+    self._city = None
 
-    self.\_state = None
+    self._state = None
 
-    self.\_zip = None
+    self._zip = None
 
-    self.\_phone\_number = None
+    self._phone_number = None
 
-    self.\_dl\_number = None
+    self._dl_number = None
 
-    self.\_dl\_state = None
+    self._dl_state = None
 
-    self.\_courtesy\_card\_id = None
+    self._courtesy_card_id = None
 
-    self.\_ssn4 = None
+    self._ssn4 = None
 
-    self.\_dob\_year = None
+    self._dob_year = None
 
-    self.\_check\_amount = None
+    self._check_amount = None
 
-    self.\_tran\_type = None
+    self._tran_type = None
 
-    self.\_proc\_id = None
+    self._proc_id = None
 
-    self.\_ip\_address = None
+    self._ip_address = None
 
-    self.\_customer\_number = None
+    self._customer_number = None
 
-    self.\_po\_number = None
+    self._po_number = None
 
-    self.\_invoice\_number = None
+    self._invoice_number = None
 
-    self.\_tran\_note = None
+    self._tran_note = None
 
-    self.\_email\_address = None
+    self._email_address = None
 
-    self.\_sec\_code = None
+    self._sec_code = None
 
-    self.\_proc\_resp = None
+    self._proc_resp = None
 
-    self.\_proc\_code = None
+    self._proc_code = None
 
-    self.\_proc\_mess = None
+    self._proc_mess = None
 
     self.discriminator = None
 
-    ifterminal\_idisnotNone:
+    ifterminal_idisnotNone:
 
-    self.terminal\_id = terminal\_id
+    self.terminal_id = terminal_id
 
-    ifaccount\_numberisnotNone:
+    ifaccount_numberisnotNone:
 
-    self.account\_number = account\_number
+    self.account_number = account_number
 
-    ifaccount\_typeisnotNone:
+    ifaccount_typeisnotNone:
 
-    self.account\_type = account\_type
+    self.account_type = account_type
 
-    ifcheck\_numberisnotNone:
+    ifcheck_numberisnotNone:
 
-    self.check\_number = check\_number
+    self.check_number = check_number
 
-    ifrouting\_numberisnotNone:
+    ifrouting_numberisnotNone:
 
-    self.routing\_number = routing\_number
+    self.routing_number = routing_number
 
-    ifmicr\_dataisnotNone:
+    ifmicr_dataisnotNone:
 
-    self.micr\_data = micr\_data
+    self.micr_data = micr_data
 
-    iffirst\_nameisnotNone:
+    iffirst_nameisnotNone:
 
-    self.first\_name = first\_name
+    self.first_name = first_name
 
-    iflast\_nameisnotNone:
+    iflast_nameisnotNone:
 
-    self.last\_name = last\_name
+    self.last_name = last_name
 
-    ifcompany\_nameisnotNone:
+    ifcompany_nameisnotNone:
 
-    self.company\_name = company\_name
+    self.company_name = company_name
 
     ifaddress1isnotNone:
 
@@ -756,477 +756,477 @@
 
     self.zip = zip
 
-    ifphone\_numberisnotNone:
+    ifphone_numberisnotNone:
 
-    self.phone\_number = phone\_number
+    self.phone_number = phone_number
 
-    ifdl\_numberisnotNone:
+    ifdl_numberisnotNone:
 
-    self.dl\_number = dl\_number
+    self.dl_number = dl_number
 
-    ifdl\_stateisnotNone:
+    ifdl_stateisnotNone:
 
-    self.dl\_state = dl\_state
+    self.dl_state = dl_state
 
-    ifcourtesy\_card\_idisnotNone:
+    ifcourtesy_card_idisnotNone:
 
-    self.courtesy\_card\_id = courtesy\_card\_id
+    self.courtesy_card_id = courtesy_card_id
 
     ifssn4isnotNone:
 
     self.ssn4 = ssn4
 
-    ifdob\_yearisnotNone:
+    ifdob_yearisnotNone:
 
-    self.dob\_year = dob\_year
+    self.dob_year = dob_year
 
-    ifcheck\_amountisnotNone:
+    ifcheck_amountisnotNone:
 
-    self.check\_amount = check\_amount
+    self.check_amount = check_amount
 
-    iftran\_typeisnotNone:
+    iftran_typeisnotNone:
 
-    self.tran\_type = tran\_type
+    self.tran_type = tran_type
 
-    ifproc\_idisnotNone:
+    ifproc_idisnotNone:
 
-    self.proc\_id = proc\_id
+    self.proc_id = proc_id
 
-    ifip\_addressisnotNone:
+    ifip_addressisnotNone:
 
-    self.ip\_address = ip\_address
+    self.ip_address = ip_address
 
-    ifcustomer\_numberisnotNone:
+    ifcustomer_numberisnotNone:
 
-    self.customer\_number = customer\_number
+    self.customer_number = customer_number
 
-    ifpo\_numberisnotNone:
+    ifpo_numberisnotNone:
 
-    self.po\_number = po\_number
+    self.po_number = po_number
 
-    ifinvoice\_numberisnotNone:
+    ifinvoice_numberisnotNone:
 
-    self.invoice\_number = invoice\_number
+    self.invoice_number = invoice_number
 
-    iftran\_noteisnotNone:
+    iftran_noteisnotNone:
 
-    self.tran\_note = tran\_note
+    self.tran_note = tran_note
 
-    ifemail\_addressisnotNone:
+    ifemail_addressisnotNone:
 
-    self.email\_address = email\_address
+    self.email_address = email_address
 
-    ifsec\_codeisnotNone:
+    ifsec_codeisnotNone:
 
-    self.sec\_code = sec\_code
+    self.sec_code = sec_code
 
-    ifproc\_respisnotNone:
+    ifproc_respisnotNone:
 
-    self.proc\_resp = proc\_resp
+    self.proc_resp = proc_resp
 
-    ifproc\_codeisnotNone:
+    ifproc_codeisnotNone:
 
-    self.proc\_code = proc\_code
+    self.proc_code = proc_code
 
-    ifproc\_messisnotNone:
+    ifproc_messisnotNone:
 
-    self.proc\_mess = proc\_mess
-
-    @property
-
-    defterminal\_id(self):
-
-    returnself.\_terminal\_id
-
-    @terminal\_id.setter
-
-    defterminal\_id(self, terminal\_id):
-
-    self.\_terminal\_id = terminal\_id
+    self.proc_mess = proc_mess
 
     @property
 
-    defaccount\_number(self):
+    defterminal_id(self):
 
-    returnself.\_account\_number
+    return self._terminal_id
 
-    @account\_number.setter
+    @terminal_id.setter
 
-    defaccount\_number(self, account\_number):
+    defterminal_id(self, terminal_id):
 
-    self.\_account\_number = account\_number
-
-    @property
-
-    defaccount\_type(self):
-
-    returnself.\_account\_type
-
-    @account\_type.setter
-
-    defaccount\_type(self, account\_type):
-
-    self.\_account\_type = account\_type
+    self._terminal_id = terminal_id
 
     @property
 
-    defcheck\_number(self):
+    defaccount_number(self):
 
-    returnself.\_check\_number
+    return self._account_number
 
-    @check\_number.setter
+    @account_number.setter
 
-    defcheck\_number(self, check\_number):
+    defaccount_number(self, account_number):
 
-    self.\_check\_number = check\_number
-
-    @property
-
-    defrouting\_number(self):
-
-    returnself.\_routing\_number
-
-    @routing\_number.setter
-
-    defrouting\_number(self, routing\_number):
-
-    self.\_routing\_number = routing\_number
+    self._account_number = account_number
 
     @property
 
-    defmicr\_data(self):
+    defaccount_type(self):
 
-    returnself.\_micr\_data
+    return self._account_type
 
-    @micr\_data.setter
+    @account_type.setter
 
-    defmicr\_data(self, micr\_data):
+    defaccount_type(self, account_type):
 
-    self.\_micr\_data = micr\_data
-
-    @property
-
-    deffirst\_name(self):
-
-    returnself.\_first\_name
-
-    @first\_name.setter
-
-    deffirst\_name(self, first\_name):
-
-    self.\_first\_name = first\_name
+    self._account_type = account_type
 
     @property
 
-    deflast\_name(self):
+    defcheck_number(self):
 
-    returnself.\_last\_name
+    return self._check_number
 
-    @last\_name.setter
+    @check_number.setter
 
-    deflast\_name(self, last\_name):
+    defcheck_number(self, check_number):
 
-    self.\_last\_name = last\_name
+    self._check_number = check_number
 
     @property
 
-    defcompany\_name(self):
+    defrouting_number(self):
 
-    returnself.\_company\_name
+    return self._routing_number
 
-    @company\_name.setter
+    @routing_number.setter
 
-    defcompany\_name(self, company\_name):
+    defrouting_number(self, routing_number):
 
-    self.\_company\_name = company\_name
+    self._routing_number = routing_number
+
+    @property
+
+    defmicr_data(self):
+
+    return self._micr_data
+
+    @micr_data.setter
+
+    defmicr_data(self, micr_data):
+
+    self._micr_data = micr_data
+
+    @property
+
+    deffirst_name(self):
+
+    return self._first_name
+
+    @first_name.setter
+
+    deffirst_name(self, first_name):
+
+    self._first_name = first_name
+
+    @property
+
+    deflast_name(self):
+
+    return self._last_name
+
+    @last_name.setter
+
+    deflast_name(self, last_name):
+
+    self._last_name = last_name
+
+    @property
+
+    defcompany_name(self):
+
+    return self._company_name
+
+    @company_name.setter
+
+    defcompany_name(self, company_name):
+
+    self._company_name = company_name
 
     @property
 
     defaddress1(self):
 
-    returnself.\_address1
+    return self._address1
 
     @address1.setter
 
     defaddress1(self, address1):
 
-    self.\_address1 = address1
+    self._address1 = address1
 
     @property
 
     defaddress2(self):
 
-    returnself.\_address2
+    return self._address2
 
     @address2.setter
 
     defaddress2(self, address2):
 
-    self.\_address2 = address2
+    self._address2 = address2
 
     @property
 
     defcity(self):
 
-    returnself.\_city
+    return self._city
 
     @city.setter
 
     defcity(self, city):
 
-    self.\_city = city
+    self._city = city
 
     @property
 
     defstate(self):
 
-    returnself.\_state
+    return self._state
 
     @state.setter
 
     defstate(self, state):
 
-    self.\_state = state
+    self._state = state
 
     @property
 
     defzip(self):
 
-    returnself.\_zip
+    return self._zip
 
     @zip.setter
 
     defzip(self, zip):
 
-    self.\_zip = zip
+    self._zip = zip
 
     @property
 
-    defphone\_number(self):
+    defphone_number(self):
 
-    returnself.\_phone\_number
+    return self._phone_number
 
-    @phone\_number.setter
+    @phone_number.setter
 
-    defphone\_number(self, phone\_number):
+    defphone_number(self, phone_number):
 
-    self.\_phone\_number = phone\_number
-
-    @property
-
-    defdl\_number(self):
-
-    returnself.\_dl\_number
-
-    @dl\_number.setter
-
-    defdl\_number(self, dl\_number):
-
-    self.\_dl\_number = dl\_number
+    self._phone_number = phone_number
 
     @property
 
-    defdl\_state(self):
+    defdl_number(self):
 
-    returnself.\_dl\_state
+    return self._dl_number
 
-    @dl\_state.setter
+    @dl_number.setter
 
-    defdl\_state(self, dl\_state):
+    defdl_number(self, dl_number):
 
-    self.\_dl\_state = dl\_state
+    self._dl_number = dl_number
 
     @property
 
-    defcourtesy\_card\_id(self):
+    defdl_state(self):
 
-    returnself.\_courtesy\_card\_id
+    return self._dl_state
 
-    @courtesy\_card\_id.setter
+    @dl_state.setter
 
-    defcourtesy\_card\_id(self, courtesy\_card\_id):
+    defdl_state(self, dl_state):
 
-    self.\_courtesy\_card\_id = courtesy\_card\_id
+    self._dl_state = dl_state
+
+    @property
+
+    defcourtesy_card_id(self):
+
+    return self._courtesy_card_id
+
+    @courtesy_card_id.setter
+
+    defcourtesy_card_id(self, courtesy_card_id):
+
+    self._courtesy_card_id = courtesy_card_id
 
     @property
 
     defssn4(self):
 
-    returnself.\_ssn4
+    return self._ssn4
 
     @ssn4.setter
 
     defssn4(self, ssn4):
 
-    self.\_ssn4 = ssn4
+    self._ssn4 = ssn4
 
     @property
 
-    defdob\_year(self):
+    defdob_year(self):
 
-    returnself.\_dob\_year
+    return self._dob_year
 
-    @dob\_year.setter
+    @dob_year.setter
 
-    defdob\_year(self, dob\_year):
+    defdob_year(self, dob_year):
 
-    self.\_dob\_year = dob\_year
-
-    @property
-
-    defcheck\_amount(self):
-
-    returnself.\_check\_amount
-
-    @check\_amount.setter
-
-    defcheck\_amount(self, check\_amount):
-
-    self.\_check\_amount = check\_amount
+    self._dob_year = dob_year
 
     @property
 
-    deftran\_type(self):
+    defcheck_amount(self):
 
-    returnself.\_tran\_type
+    return self._check_amount
 
-    @tran\_type.setter
+    @check_amount.setter
 
-    deftran\_type(self, tran\_type):
+    defcheck_amount(self, check_amount):
 
-    self.\_tran\_type = tran\_type
-
-    @property
-
-    defproc\_id(self):
-
-    returnself.\_proc\_id
-
-    @proc\_id.setter
-
-    defproc\_id(self, proc\_id):
-
-    self.\_proc\_id = proc\_id
+    self._check_amount = check_amount
 
     @property
 
-    defip\_address(self):
+    deftran_type(self):
 
-    returnself.\_ip\_address
+    return self._tran_type
 
-    @ip\_address.setter
+    @tran_type.setter
 
-    defip\_address(self, ip\_address):
+    deftran_type(self, tran_type):
 
-    self.\_ip\_address = ip\_address
-
-    @property
-
-    defcustomer\_number(self):
-
-    returnself.\_customer\_number
-
-    @customer\_number.setter
-
-    defcustomer\_number(self, customer\_number):
-
-    self.\_customer\_number = customer\_number
+    self._tran_type = tran_type
 
     @property
 
-    defpo\_number(self):
+    defproc_id(self):
 
-    returnself.\_po\_number
+    return self._proc_id
 
-    @po\_number.setter
+    @proc_id.setter
 
-    defpo\_number(self, po\_number):
+    defproc_id(self, proc_id):
 
-    self.\_po\_number = po\_number
-
-    @property
-
-    definvoice\_number(self):
-
-    returnself.\_invoice\_number
-
-    @invoice\_number.setter
-
-    definvoice\_number(self, invoice\_number):
-
-    self.\_invoice\_number = invoice\_number
+    self._proc_id = proc_id
 
     @property
 
-    deftran\_note(self):
+    defip_address(self):
 
-    returnself.\_tran\_note
+    return self._ip_address
 
-    @tran\_note.setter
+    @ip_address.setter
 
-    deftran\_note(self, tran\_note):
+    defip_address(self, ip_address):
 
-    self.\_tran\_note = tran\_note
-
-    @property
-
-    defemail\_address(self):
-
-    returnself.\_email\_address
-
-    @email\_address.setter
-
-    defemail\_address(self, email\_address):
-
-    self.\_email\_address = email\_address
+    self._ip_address = ip_address
 
     @property
 
-    defsec\_code(self):
+    defcustomer_number(self):
 
-    returnself.\_sec\_code
+    return self._customer_number
 
-    @sec\_code.setter
+    @customer_number.setter
 
-    defsec\_code(self, sec\_code):
+    defcustomer_number(self, customer_number):
 
-    self.\_sec\_code = sec\_code
-
-    @property
-
-    defproc\_resp(self):
-
-    returnself.\_proc\_resp
-
-    @proc\_resp.setter
-
-    defproc\_resp(self, proc\_resp):
-
-    self.\_proc\_resp = proc\_resp
+    self._customer_number = customer_number
 
     @property
 
-    defproc\_code(self):
+    defpo_number(self):
 
-    returnself.\_proc\_code
+    return self._po_number
 
-    @proc\_code.setter
+    @po_number.setter
 
-    defproc\_code(self, proc\_code):
+    defpo_number(self, po_number):
 
-    self.\_proc\_code = proc\_code
+    self._po_number = po_number
 
     @property
 
-    defproc\_mess(self):
+    definvoice_number(self):
 
-    returnself.\_proc\_mess
+    return self._invoice_number
 
-    @proc\_mess.setter
+    @invoice_number.setter
 
-    defproc\_mess(self, proc\_mess):
+    definvoice_number(self, invoice_number):
 
-    self.\_proc\_mess = proc\_mess
+    self._invoice_number = invoice_number
+
+    @property
+
+    deftran_note(self):
+
+    return self._tran_note
+
+    @tran_note.setter
+
+    deftran_note(self, tran_note):
+
+    self._tran_note = tran_note
+
+    @property
+
+    defemail_address(self):
+
+    return self._email_address
+
+    @email_address.setter
+
+    defemail_address(self, email_address):
+
+    self._email_address = email_address
+
+    @property
+
+    defsec_code(self):
+
+    return self._sec_code
+
+    @sec_code.setter
+
+    defsec_code(self, sec_code):
+
+    self._sec_code = sec_code
+
+    @property
+
+    defproc_resp(self):
+
+    return self._proc_resp
+
+    @proc_resp.setter
+
+    defproc_resp(self, proc_resp):
+
+    self._proc_resp = proc_resp
+
+    @property
+
+    defproc_code(self):
+
+    return self._proc_code
+
+    @proc_code.setter
+
+    defproc_code(self, proc_code):
+
+    self._proc_code = proc_code
+
+    @property
+
+    defproc_mess(self):
+
+    return self._proc_mess
+
+    @proc_mess.setter
+
+    defproc_mess(self, proc_mess):
+
+    self._proc_mess = proc_mess
 
 # CheckTransactionSettings
 
@@ -1234,119 +1234,119 @@
 
     classCheckTransactionSettings(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;reader&#39;: &#39;FieldInfo&#39;,
+    'reader': 'FieldInfo',
 
-    &#39;contact\_name&#39;: &#39;FieldInfo&#39;,
+    'contact_name': 'FieldInfo',
 
-    &#39;contact\_title&#39;: &#39;FieldInfo&#39;,
+    'contact_title': 'FieldInfo',
 
-    &#39;email\_address&#39;: &#39;FieldInfo&#39;,
+    'email_address': 'FieldInfo',
 
-    &#39;phone\_default&#39;: &#39;str&#39;,
+    'phone_default': 'str',
 
-    &#39;fax&#39;: &#39;FieldInfo&#39;,
+    'fax': 'FieldInfo',
 
-    &#39;billing\_address\_default&#39;: &#39;str&#39;,
+    'billing_address_default': 'str',
 
-    &#39;billing\_address2&#39;: &#39;FieldInfo&#39;,
+    'billing_address2': 'FieldInfo',
 
-    &#39;billing\_city\_default&#39;: &#39;str&#39;,
+    'billing_city_default': 'str',
 
-    &#39;billing\_state\_default&#39;: &#39;str&#39;,
+    'billing_state_default': 'str',
 
-    &#39;billing\_zip\_default&#39;: &#39;str&#39;,
+    'billing_zip_default': 'str',
 
-    &#39;po\_number&#39;: &#39;FieldInfo&#39;,
+    'po_number': 'FieldInfo',
 
-    &#39;invoice\_number&#39;: &#39;FieldInfo&#39;,
+    'invoice_number': 'FieldInfo',
 
-    &#39;business\_name&#39;: &#39;FieldInfo&#39;,
+    'business_name': 'FieldInfo',
 
-    &#39;customer\_number&#39;: &#39;FieldInfo&#39;,
+    'customer_number': 'FieldInfo',
 
-    &#39;reference\_note&#39;: &#39;FieldInfo&#39;,
+    'reference_note': 'FieldInfo',
 
-    &#39;default\_sec\_code&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;reader&#39;: &#39;Reader&#39;,
-
-    &#39;contact\_name&#39;: &#39;ContactName&#39;,
-
-    &#39;contact\_title&#39;: &#39;ContactTitle&#39;,
-
-    &#39;email\_address&#39;: &#39;EmailAddress&#39;,
-
-    &#39;phone\_default&#39;: &#39;PhoneDefault&#39;,
-
-    &#39;fax&#39;: &#39;Fax&#39;,
-
-    &#39;billing\_address\_default&#39;: &#39;BillingAddressDefault&#39;,
-
-    &#39;billing\_address2&#39;: &#39;BillingAddress2&#39;,
-
-    &#39;billing\_city\_default&#39;: &#39;BillingCityDefault&#39;,
-
-    &#39;billing\_state\_default&#39;: &#39;BillingStateDefault&#39;,
-
-    &#39;billing\_zip\_default&#39;: &#39;BillingZipDefault&#39;,
-
-    &#39;po\_number&#39;: &#39;PONumber&#39;,
-
-    &#39;invoice\_number&#39;: &#39;InvoiceNumber&#39;,
-
-    &#39;business\_name&#39;: &#39;BusinessName&#39;,
-
-    &#39;customer\_number&#39;: &#39;CustomerNumber&#39;,
-
-    &#39;reference\_note&#39;: &#39;ReferenceNote&#39;,
-
-    &#39;default\_sec\_code&#39;: &#39;DefaultSECCode&#39;
+    'default_sec_code': 'str'
 
     }
 
-    def\_\_init\_\_(self, reader=None, contact\_name=None, contact\_title=None, email\_address=None, phone\_default=None, fax=None, billing\_address\_default=None, billing\_address2=None, billing\_city\_default=None, billing\_state\_default=None, billing\_zip\_default=None, po\_number=None, invoice\_number=None, business\_name=None, customer\_number=None, reference\_note=None, default\_sec\_code=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;CheckTransactionSettings - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'reader': 'Reader',
 
-    self.\_reader = None
+    'contact_name': 'ContactName',
 
-    self.\_contact\_name = None
+    'contact_title': 'ContactTitle',
 
-    self.\_contact\_title = None
+    'email_address': 'EmailAddress',
 
-    self.\_email\_address = None
+    'phone_default': 'PhoneDefault',
 
-    self.\_phone\_default = None
+    'fax': 'Fax',
 
-    self.\_fax = None
+    'billing_address_default': 'BillingAddressDefault',
 
-    self.\_billing\_address\_default = None
+    'billing_address2': 'BillingAddress2',
 
-    self.\_billing\_address2 = None
+    'billing_city_default': 'BillingCityDefault',
 
-    self.\_billing\_city\_default = None
+    'billing_state_default': 'BillingStateDefault',
 
-    self.\_billing\_state\_default = None
+    'billing_zip_default': 'BillingZipDefault',
 
-    self.\_billing\_zip\_default = None
+    'po_number': 'PONumber',
 
-    self.\_po\_number = None
+    'invoice_number': 'InvoiceNumber',
 
-    self.\_invoice\_number = None
+    'business_name': 'BusinessName',
 
-    self.\_business\_name = None
+    'customer_number': 'CustomerNumber',
 
-    self.\_customer\_number = None
+    'reference_note': 'ReferenceNote',
 
-    self.\_reference\_note = None
+    'default_sec_code': 'DefaultSECCode'
 
-    self.\_default\_sec\_code = None
+    }
+
+    def__init__(self, reader=None, contact_name=None, contact_title=None, email_address=None, phone_default=None, fax=None, billing_address_default=None, billing_address2=None, billing_city_default=None, billing_state_default=None, billing_zip_default=None, po_number=None, invoice_number=None, business_name=None, customer_number=None, reference_note=None, default_sec_code=None): # noqa: E501
+
+    """CheckTransactionSettings - a model defined in Swagger"""# noqa: E501
+
+    self._reader = None
+
+    self._contact_name = None
+
+    self._contact_title = None
+
+    self._email_address = None
+
+    self._phone_default = None
+
+    self._fax = None
+
+    self._billing_address_default = None
+
+    self._billing_address2 = None
+
+    self._billing_city_default = None
+
+    self._billing_state_default = None
+
+    self._billing_zip_default = None
+
+    self._po_number = None
+
+    self._invoice_number = None
+
+    self._business_name = None
+
+    self._customer_number = None
+
+    self._reference_note = None
+
+    self._default_sec_code = None
 
     self.discriminator = None
 
@@ -1354,273 +1354,273 @@
 
     self.reader = reader
 
-    ifcontact\_nameisnotNone:
+    ifcontact_nameisnotNone:
 
-    self.contact\_name = contact\_name
+    self.contact_name = contact_name
 
-    ifcontact\_titleisnotNone:
+    ifcontact_titleisnotNone:
 
-    self.contact\_title = contact\_title
+    self.contact_title = contact_title
 
-    ifemail\_addressisnotNone:
+    ifemail_addressisnotNone:
 
-    self.email\_address = email\_address
+    self.email_address = email_address
 
-    ifphone\_defaultisnotNone:
+    ifphone_defaultisnotNone:
 
-    self.phone\_default = phone\_default
+    self.phone_default = phone_default
 
     iffaxisnotNone:
 
     self.fax = fax
 
-    ifbilling\_address\_defaultisnotNone:
+    ifbilling_address_defaultisnotNone:
 
-    self.billing\_address\_default = billing\_address\_default
+    self.billing_address_default = billing_address_default
 
-    ifbilling\_address2isnotNone:
+    ifbilling_address2isnotNone:
 
-    self.billing\_address2 = billing\_address2
+    self.billing_address2 = billing_address2
 
-    ifbilling\_city\_defaultisnotNone:
+    ifbilling_city_defaultisnotNone:
 
-    self.billing\_city\_default = billing\_city\_default
+    self.billing_city_default = billing_city_default
 
-    ifbilling\_state\_defaultisnotNone:
+    ifbilling_state_defaultisnotNone:
 
-    self.billing\_state\_default = billing\_state\_default
+    self.billing_state_default = billing_state_default
 
-    ifbilling\_zip\_defaultisnotNone:
+    ifbilling_zip_defaultisnotNone:
 
-    self.billing\_zip\_default = billing\_zip\_default
+    self.billing_zip_default = billing_zip_default
 
-    ifpo\_numberisnotNone:
+    ifpo_numberisnotNone:
 
-    self.po\_number = po\_number
+    self.po_number = po_number
 
-    ifinvoice\_numberisnotNone:
+    ifinvoice_numberisnotNone:
 
-    self.invoice\_number = invoice\_number
+    self.invoice_number = invoice_number
 
-    ifbusiness\_nameisnotNone:
+    ifbusiness_nameisnotNone:
 
-    self.business\_name = business\_name
+    self.business_name = business_name
 
-    ifcustomer\_numberisnotNone:
+    ifcustomer_numberisnotNone:
 
-    self.customer\_number = customer\_number
+    self.customer_number = customer_number
 
-    ifreference\_noteisnotNone:
+    ifreference_noteisnotNone:
 
-    self.reference\_note = reference\_note
+    self.reference_note = reference_note
 
-    ifdefault\_sec\_codeisnotNone:
+    ifdefault_sec_codeisnotNone:
 
-    self.default\_sec\_code = default\_sec\_code
+    self.default_sec_code = default_sec_code
 
     @property
 
     defreader(self):
 
-    returnself.\_reader
+    return self._reader
 
     @reader.setter
 
     defreader(self, reader):
 
-    self.\_reader = reader
+    self._reader = reader
 
     @property
 
-    defcontact\_name(self):
+    defcontact_name(self):
 
-    returnself.\_contact\_name
+    return self._contact_name
 
-    @contact\_name.setter
+    @contact_name.setter
 
-    defcontact\_name(self, contact\_name):
+    defcontact_name(self, contact_name):
 
-    self.\_contact\_name = contact\_name
-
-    @property
-
-    defcontact\_title(self):
-
-    returnself.\_contact\_title
-
-    @contact\_title.setter
-
-    defcontact\_title(self, contact\_title):
-
-    self.\_contact\_title = contact\_title
+    self._contact_name = contact_name
 
     @property
 
-    defemail\_address(self):
+    defcontact_title(self):
 
-    returnself.\_email\_address
+    return self._contact_title
 
-    @email\_address.setter
+    @contact_title.setter
 
-    defemail\_address(self, email\_address):
+    defcontact_title(self, contact_title):
 
-    self.\_email\_address = email\_address
+    self._contact_title = contact_title
 
     @property
 
-    defphone\_default(self):
+    defemail_address(self):
 
-    returnself.\_phone\_default
+    return self._email_address
 
-    @phone\_default.setter
+    @email_address.setter
 
-    defphone\_default(self, phone\_default):
+    defemail_address(self, email_address):
 
-    self.\_phone\_default = phone\_default
+    self._email_address = email_address
+
+    @property
+
+    defphone_default(self):
+
+    return self._phone_default
+
+    @phone_default.setter
+
+    defphone_default(self, phone_default):
+
+    self._phone_default = phone_default
 
     @property
 
     deffax(self):
 
-    returnself.\_fax
+    return self._fax
 
     @fax.setter
 
     deffax(self, fax):
 
-    self.\_fax = fax
+    self._fax = fax
 
     @property
 
-    defbilling\_address\_default(self):
+    defbilling_address_default(self):
 
-    returnself.\_billing\_address\_default
+    return self._billing_address_default
 
-    @billing\_address\_default.setter
+    @billing_address_default.setter
 
-    defbilling\_address\_default(self, billing\_address\_default):
+    defbilling_address_default(self, billing_address_default):
 
-    self.\_billing\_address\_default = billing\_address\_default
-
-    @property
-
-    defbilling\_address2(self):
-
-    returnself.\_billing\_address2
-
-    @billing\_address2.setter
-
-    defbilling\_address2(self, billing\_address2):
-
-    self.\_billing\_address2 = billing\_address2
+    self._billing_address_default = billing_address_default
 
     @property
 
-    defbilling\_city\_default(self):
+    defbilling_address2(self):
 
-    returnself.\_billing\_city\_default
+    return self._billing_address2
 
-    @billing\_city\_default.setter
+    @billing_address2.setter
 
-    defbilling\_city\_default(self, billing\_city\_default):
+    defbilling_address2(self, billing_address2):
 
-    self.\_billing\_city\_default = billing\_city\_default
-
-    @property
-
-    defbilling\_state\_default(self):
-
-    returnself.\_billing\_state\_default
-
-    @billing\_state\_default.setter
-
-    defbilling\_state\_default(self, billing\_state\_default):
-
-    self.\_billing\_state\_default = billing\_state\_default
+    self._billing_address2 = billing_address2
 
     @property
 
-    defbilling\_zip\_default(self):
+    defbilling_city_default(self):
 
-    returnself.\_billing\_zip\_default
+    return self._billing_city_default
 
-    @billing\_zip\_default.setter
+    @billing_city_default.setter
 
-    defbilling\_zip\_default(self, billing\_zip\_default):
+    defbilling_city_default(self, billing_city_default):
 
-    self.\_billing\_zip\_default = billing\_zip\_default
-
-    @property
-
-    defpo\_number(self):
-
-    returnself.\_po\_number
-
-    @po\_number.setter
-
-    defpo\_number(self, po\_number):
-
-    self.\_po\_number = po\_number
+    self._billing_city_default = billing_city_default
 
     @property
 
-    definvoice\_number(self):
+    defbilling_state_default(self):
 
-    returnself.\_invoice\_number
+    return self._billing_state_default
 
-    @invoice\_number.setter
+    @billing_state_default.setter
 
-    definvoice\_number(self, invoice\_number):
+    defbilling_state_default(self, billing_state_default):
 
-    self.\_invoice\_number = invoice\_number
-
-    @property
-
-    defbusiness\_name(self):
-
-    returnself.\_business\_name
-
-    @business\_name.setter
-
-    defbusiness\_name(self, business\_name):
-
-    self.\_business\_name = business\_name
+    self._billing_state_default = billing_state_default
 
     @property
 
-    defcustomer\_number(self):
+    defbilling_zip_default(self):
 
-    returnself.\_customer\_number
+    return self._billing_zip_default
 
-    @customer\_number.setter
+    @billing_zip_default.setter
 
-    defcustomer\_number(self, customer\_number):
+    defbilling_zip_default(self, billing_zip_default):
 
-    self.\_customer\_number = customer\_number
-
-    @property
-
-    defreference\_note(self):
-
-    returnself.\_reference\_note
-
-    @reference\_note.setter
-
-    defreference\_note(self, reference\_note):
-
-    self.\_reference\_note = reference\_note
+    self._billing_zip_default = billing_zip_default
 
     @property
 
-    defdefault\_sec\_code(self):
+    defpo_number(self):
 
-    returnself.\_default\_sec\_code
+    return self._po_number
 
-    @default\_sec\_code.setter
+    @po_number.setter
 
-    defdefault\_sec\_code(self, default\_sec\_code):
+    defpo_number(self, po_number):
 
-    self.\_default\_sec\_code = default\_sec\_code
+    self._po_number = po_number
+
+    @property
+
+    definvoice_number(self):
+
+    return self._invoice_number
+
+    @invoice_number.setter
+
+    definvoice_number(self, invoice_number):
+
+    self._invoice_number = invoice_number
+
+    @property
+
+    defbusiness_name(self):
+
+    return self._business_name
+
+    @business_name.setter
+
+    defbusiness_name(self, business_name):
+
+    self._business_name = business_name
+
+    @property
+
+    defcustomer_number(self):
+
+    return self._customer_number
+
+    @customer_number.setter
+
+    defcustomer_number(self, customer_number):
+
+    self._customer_number = customer_number
+
+    @property
+
+    defreference_note(self):
+
+    return self._reference_note
+
+    @reference_note.setter
+
+    defreference_note(self, reference_note):
+
+    self._reference_note = reference_note
+
+    @property
+
+    defdefault_sec_code(self):
+
+    return self._default_sec_code
+
+    @default_sec_code.setter
+
+    defdefault_sec_code(self, default_sec_code):
+
+    self._default_sec_code = default_sec_code
 
 # CheckTransactionType
 
@@ -1628,31 +1628,31 @@
 
     classCheckTransactionType(object):
 
-    UNKNOWN = &quot;Unknown&quot;
+    UNKNOWN = "Unknown"
 
-    AUTHORIZE = &quot;Authorize&quot;
+    AUTHORIZE = "Authorize"
 
-    VOID = &quot;Void&quot;
+    void = "void "
 
-    OVERRIDE = &quot;Override&quot;
+    OVERRIDE = "Override"
 
-    PAYROLL = &quot;Payroll&quot;
+    PAYROLL = "Payroll"
 
-    RECURRING = &quot;Recurring&quot;
+    RECURRING = "Recurring"
 
-    REFUND = &quot;Refund&quot;
+    REFUND = "Refund"
 
-    swagger\_types = {
-
-    }
-
-    attribute\_map = {
+    swagger_types = {
 
     }
 
-    def\_\_init\_\_(self): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;CheckTransactionType - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    }
+
+    def__init__(self): # noqa: E501
+
+    """CheckTransactionType - a model defined in Swagger"""# noqa: E501
 
     self.discriminator = None
 
@@ -1662,63 +1662,63 @@
 
     classContact(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;first\_name&#39;: &#39;str&#39;,
+    'first_name': 'str',
 
-    &#39;last\_name&#39;: &#39;str&#39;,
+    'last_name': 'str',
 
-    &#39;name&#39;: &#39;str&#39;,
+    'name': 'str',
 
-    &#39;title&#39;: &#39;str&#39;,
+    'title': 'str',
 
-    &#39;phone&#39;: &#39;str&#39;,
+    'phone': 'str',
 
-    &#39;email&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;first\_name&#39;: &#39;FirstName&#39;,
-
-    &#39;last\_name&#39;: &#39;LastName&#39;,
-
-    &#39;name&#39;: &#39;Name&#39;,
-
-    &#39;title&#39;: &#39;Title&#39;,
-
-    &#39;phone&#39;: &#39;Phone&#39;,
-
-    &#39;email&#39;: &#39;Email&#39;
+    'email': 'str'
 
     }
 
-    def\_\_init\_\_(self, first\_name=None, last\_name=None, name=None, title=None, phone=None, email=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Contact - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'first_name': 'FirstName',
 
-    self.\_first\_name = None
+    'last_name': 'LastName',
 
-    self.\_last\_name = None
+    'name': 'Name',
 
-    self.\_name = None
+    'title': 'Title',
 
-    self.\_title = None
+    'phone': 'Phone',
 
-    self.\_phone = None
+    'email': 'Email'
 
-    self.\_email = None
+    }
+
+    def__init__(self, first_name=None, last_name=None, name=None, title=None, phone=None, email=None): # noqa: E501
+
+    """Contact - a model defined in Swagger"""# noqa: E501
+
+    self._first_name = None
+
+    self._last_name = None
+
+    self._name = None
+
+    self._title = None
+
+    self._phone = None
+
+    self._email = None
 
     self.discriminator = None
 
-    iffirst\_nameisnotNone:
+    iffirst_nameisnotNone:
 
-    self.first\_name = first\_name
+    self.first_name = first_name
 
-    iflast\_nameisnotNone:
+    iflast_nameisnotNone:
 
-    self.last\_name = last\_name
+    self.last_name = last_name
 
     ifnameisnotNone:
 
@@ -1738,75 +1738,75 @@
 
     @property
 
-    deffirst\_name(self):
+    deffirst_name(self):
 
-    returnself.\_first\_name
+    return self._first_name
 
-    @first\_name.setter
+    @first_name.setter
 
-    deffirst\_name(self, first\_name):
+    deffirst_name(self, first_name):
 
-    self.\_first\_name = first\_name
+    self._first_name = first_name
 
     @property
 
-    deflast\_name(self):
+    deflast_name(self):
 
-    returnself.\_last\_name
+    return self._last_name
 
-    @last\_name.setter
+    @last_name.setter
 
-    deflast\_name(self, last\_name):
+    deflast_name(self, last_name):
 
-    self.\_last\_name = last\_name
+    self._last_name = last_name
 
     @property
 
     defname(self):
 
-    returnself.\_name
+    return self._name
 
     @name.setter
 
     defname(self, name):
 
-    self.\_name = name
+    self._name = name
 
     @property
 
     deftitle(self):
 
-    returnself.\_title
+    return self._title
 
     @title.setter
 
     deftitle(self, title):
 
-    self.\_title = title
+    self._title = title
 
     @property
 
     defphone(self):
 
-    returnself.\_phone
+    return self._phone
 
     @phone.setter
 
     defphone(self, phone):
 
-    self.\_phone = phone
+    self._phone = phone
 
     @property
 
     defemail(self):
 
-    returnself.\_email
+    return self._email
 
     @email.setter
 
     defemail(self, email):
 
-    self.\_email = email
+    self._email = email
 
 # CreditCardTransactionSettings
 
@@ -1814,155 +1814,155 @@
 
     classCreditCardTransactionSettings(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;cvv&#39;: &#39;FieldInfo&#39;,
+    'cvv': 'FieldInfo',
 
-    &#39;contact\_name&#39;: &#39;FieldInfo&#39;,
+    'contact_name': 'FieldInfo',
 
-    &#39;contact\_title&#39;: &#39;FieldInfo&#39;,
+    'contact_title': 'FieldInfo',
 
-    &#39;email\_address&#39;: &#39;FieldInfo&#39;,
+    'email_address': 'FieldInfo',
 
-    &#39;phone&#39;: &#39;FieldInfo&#39;,
+    'phone': 'FieldInfo',
 
-    &#39;fax&#39;: &#39;FieldInfo&#39;,
+    'fax': 'FieldInfo',
 
-    &#39;billing\_address&#39;: &#39;FieldInfo&#39;,
+    'billing_address': 'FieldInfo',
 
-    &#39;billing\_address2&#39;: &#39;FieldInfo&#39;,
+    'billing_address2': 'FieldInfo',
 
-    &#39;billing\_city&#39;: &#39;FieldInfo&#39;,
+    'billing_city': 'FieldInfo',
 
-    &#39;billing\_state&#39;: &#39;FieldInfo&#39;,
+    'billing_state': 'FieldInfo',
 
-    &#39;billing\_zip&#39;: &#39;FieldInfo&#39;,
+    'billing_zip': 'FieldInfo',
 
-    &#39;po\_number&#39;: &#39;FieldInfo&#39;,
+    'po_number': 'FieldInfo',
 
-    &#39;invoice\_number&#39;: &#39;FieldInfo&#39;,
+    'invoice_number': 'FieldInfo',
 
-    &#39;business\_name&#39;: &#39;FieldInfo&#39;,
+    'business_name': 'FieldInfo',
 
-    &#39;customer\_number&#39;: &#39;FieldInfo&#39;,
+    'customer_number': 'FieldInfo',
 
-    &#39;reference\_note&#39;: &#39;FieldInfo&#39;,
+    'reference_note': 'FieldInfo',
 
-    &#39;sales\_tax&#39;: &#39;FieldInfo&#39;,
+    'sales_tax': 'FieldInfo',
 
-    &#39;tax\_exempt&#39;: &#39;FieldInfo&#39;,
+    'tax_exempt': 'FieldInfo',
 
-    &#39;card\_tracks&#39;: &#39;FieldInfo&#39;,
+    'card_tracks': 'FieldInfo',
 
-    &#39;card\_zip&#39;: &#39;FieldInfo&#39;,
+    'card_zip': 'FieldInfo',
 
-    &#39;card\_address&#39;: &#39;FieldInfo&#39;,
+    'card_address': 'FieldInfo',
 
-    &#39;item\_description&#39;: &#39;str&#39;,
+    'item_description': 'str',
 
-    &#39;default\_transaction\_type&#39;: &#39;TransactionType&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;cvv&#39;: &#39;CVV&#39;,
-
-    &#39;contact\_name&#39;: &#39;ContactName&#39;,
-
-    &#39;contact\_title&#39;: &#39;ContactTitle&#39;,
-
-    &#39;email\_address&#39;: &#39;EmailAddress&#39;,
-
-    &#39;phone&#39;: &#39;Phone&#39;,
-
-    &#39;fax&#39;: &#39;Fax&#39;,
-
-    &#39;billing\_address&#39;: &#39;BillingAddress&#39;,
-
-    &#39;billing\_address2&#39;: &#39;BillingAddress2&#39;,
-
-    &#39;billing\_city&#39;: &#39;BillingCity&#39;,
-
-    &#39;billing\_state&#39;: &#39;BillingState&#39;,
-
-    &#39;billing\_zip&#39;: &#39;BillingZip&#39;,
-
-    &#39;po\_number&#39;: &#39;PONumber&#39;,
-
-    &#39;invoice\_number&#39;: &#39;InvoiceNumber&#39;,
-
-    &#39;business\_name&#39;: &#39;BusinessName&#39;,
-
-    &#39;customer\_number&#39;: &#39;CustomerNumber&#39;,
-
-    &#39;reference\_note&#39;: &#39;ReferenceNote&#39;,
-
-    &#39;sales\_tax&#39;: &#39;SalesTax&#39;,
-
-    &#39;tax\_exempt&#39;: &#39;TaxExempt&#39;,
-
-    &#39;card\_tracks&#39;: &#39;CardTracks&#39;,
-
-    &#39;card\_zip&#39;: &#39;CardZip&#39;,
-
-    &#39;card\_address&#39;: &#39;CardAddress&#39;,
-
-    &#39;item\_description&#39;: &#39;ItemDescription&#39;,
-
-    &#39;default\_transaction\_type&#39;: &#39;DefaultTransactionType&#39;
+    'default_transaction_type': 'TransactionType'
 
     }
 
-    def\_\_init\_\_(self, cvv=None, contact\_name=None, contact\_title=None, email\_address=None, phone=None, fax=None, billing\_address=None, billing\_address2=None, billing\_city=None, billing\_state=None, billing\_zip=None, po\_number=None, invoice\_number=None, business\_name=None, customer\_number=None, reference\_note=None, sales\_tax=None, tax\_exempt=None, card\_tracks=None, card\_zip=None, card\_address=None, item\_description=None, default\_transaction\_type=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;CreditCardTransactionSettings - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'cvv': 'CVV',
 
-    self.\_cvv = None
+    'contact_name': 'ContactName',
 
-    self.\_contact\_name = None
+    'contact_title': 'ContactTitle',
 
-    self.\_contact\_title = None
+    'email_address': 'EmailAddress',
 
-    self.\_email\_address = None
+    'phone': 'Phone',
 
-    self.\_phone = None
+    'fax': 'Fax',
 
-    self.\_fax = None
+    'billing_address': 'BillingAddress',
 
-    self.\_billing\_address = None
+    'billing_address2': 'BillingAddress2',
 
-    self.\_billing\_address2 = None
+    'billing_city': 'BillingCity',
 
-    self.\_billing\_city = None
+    'billing_state': 'BillingState',
 
-    self.\_billing\_state = None
+    'billing_zip': 'BillingZip',
 
-    self.\_billing\_zip = None
+    'po_number': 'PONumber',
 
-    self.\_po\_number = None
+    'invoice_number': 'InvoiceNumber',
 
-    self.\_invoice\_number = None
+    'business_name': 'BusinessName',
 
-    self.\_business\_name = None
+    'customer_number': 'CustomerNumber',
 
-    self.\_customer\_number = None
+    'reference_note': 'ReferenceNote',
 
-    self.\_reference\_note = None
+    'sales_tax': 'SalesTax',
 
-    self.\_sales\_tax = None
+    'tax_exempt': 'TaxExempt',
 
-    self.\_tax\_exempt = None
+    'card_tracks': 'CardTracks',
 
-    self.\_card\_tracks = None
+    'card_zip': 'CardZip',
 
-    self.\_card\_zip = None
+    'card_address': 'CardAddress',
 
-    self.\_card\_address = None
+    'item_description': 'ItemDescription',
 
-    self.\_item\_description = None
+    'default_transaction_type': 'DefaultTransactionType'
 
-    self.\_default\_transaction\_type = None
+    }
+
+    def__init__(self, cvv=None, contact_name=None, contact_title=None, email_address=None, phone=None, fax=None, billing_address=None, billing_address2=None, billing_city=None, billing_state=None, billing_zip=None, po_number=None, invoice_number=None, business_name=None, customer_number=None, reference_note=None, sales_tax=None, tax_exempt=None, card_tracks=None, card_zip=None, card_address=None, item_description=None, default_transaction_type=None): # noqa: E501
+
+    """CreditCardTransactionSettings - a model defined in Swagger"""# noqa: E501
+
+    self._cvv = None
+
+    self._contact_name = None
+
+    self._contact_title = None
+
+    self._email_address = None
+
+    self._phone = None
+
+    self._fax = None
+
+    self._billing_address = None
+
+    self._billing_address2 = None
+
+    self._billing_city = None
+
+    self._billing_state = None
+
+    self._billing_zip = None
+
+    self._po_number = None
+
+    self._invoice_number = None
+
+    self._business_name = None
+
+    self._customer_number = None
+
+    self._reference_note = None
+
+    self._sales_tax = None
+
+    self._tax_exempt = None
+
+    self._card_tracks = None
+
+    self._card_zip = None
+
+    self._card_address = None
+
+    self._item_description = None
+
+    self._default_transaction_type = None
 
     self.discriminator = None
 
@@ -1970,17 +1970,17 @@
 
     self.cvv = cvv
 
-    ifcontact\_nameisnotNone:
+    ifcontact_nameisnotNone:
 
-    self.contact\_name = contact\_name
+    self.contact_name = contact_name
 
-    ifcontact\_titleisnotNone:
+    ifcontact_titleisnotNone:
 
-    self.contact\_title = contact\_title
+    self.contact_title = contact_title
 
-    ifemail\_addressisnotNone:
+    ifemail_addressisnotNone:
 
-    self.email\_address = email\_address
+    self.email_address = email_address
 
     ifphoneisnotNone:
 
@@ -1990,349 +1990,349 @@
 
     self.fax = fax
 
-    ifbilling\_addressisnotNone:
+    ifbilling_addressisnotNone:
 
-    self.billing\_address = billing\_address
+    self.billing_address = billing_address
 
-    ifbilling\_address2isnotNone:
+    ifbilling_address2isnotNone:
 
-    self.billing\_address2 = billing\_address2
+    self.billing_address2 = billing_address2
 
-    ifbilling\_cityisnotNone:
+    ifbilling_cityisnotNone:
 
-    self.billing\_city = billing\_city
+    self.billing_city = billing_city
 
-    ifbilling\_stateisnotNone:
+    ifbilling_stateisnotNone:
 
-    self.billing\_state = billing\_state
+    self.billing_state = billing_state
 
-    ifbilling\_zipisnotNone:
+    ifbilling_zipisnotNone:
 
-    self.billing\_zip = billing\_zip
+    self.billing_zip = billing_zip
 
-    ifpo\_numberisnotNone:
+    ifpo_numberisnotNone:
 
-    self.po\_number = po\_number
+    self.po_number = po_number
 
-    ifinvoice\_numberisnotNone:
+    ifinvoice_numberisnotNone:
 
-    self.invoice\_number = invoice\_number
+    self.invoice_number = invoice_number
 
-    ifbusiness\_nameisnotNone:
+    ifbusiness_nameisnotNone:
 
-    self.business\_name = business\_name
+    self.business_name = business_name
 
-    ifcustomer\_numberisnotNone:
+    ifcustomer_numberisnotNone:
 
-    self.customer\_number = customer\_number
+    self.customer_number = customer_number
 
-    ifreference\_noteisnotNone:
+    ifreference_noteisnotNone:
 
-    self.reference\_note = reference\_note
+    self.reference_note = reference_note
 
-    ifsales\_taxisnotNone:
+    ifsales_taxisnotNone:
 
-    self.sales\_tax = sales\_tax
+    self.sales_tax = sales_tax
 
-    iftax\_exemptisnotNone:
+    iftax_exemptisnotNone:
 
-    self.tax\_exempt = tax\_exempt
+    self.tax_exempt = tax_exempt
 
-    ifcard\_tracksisnotNone:
+    ifcard_tracksisnotNone:
 
-    self.card\_tracks = card\_tracks
+    self.card_tracks = card_tracks
 
-    ifcard\_zipisnotNone:
+    ifcard_zipisnotNone:
 
-    self.card\_zip = card\_zip
+    self.card_zip = card_zip
 
-    ifcard\_addressisnotNone:
+    ifcard_addressisnotNone:
 
-    self.card\_address = card\_address
+    self.card_address = card_address
 
-    ifitem\_descriptionisnotNone:
+    ifitem_descriptionisnotNone:
 
-    self.item\_description = item\_description
+    self.item_description = item_description
 
-    ifdefault\_transaction\_typeisnotNone:
+    ifdefault_transaction_typeisnotNone:
 
-    self.default\_transaction\_type = default\_transaction\_type
+    self.default_transaction_type = default_transaction_type
 
     @property
 
     defcvv(self):
 
-    returnself.\_cvv
+    return self._cvv
 
     @cvv.setter
 
     defcvv(self, cvv):
 
-    self.\_cvv = cvv
+    self._cvv = cvv
 
     @property
 
-    defcontact\_name(self):
+    defcontact_name(self):
 
-    returnself.\_contact\_name
+    return self._contact_name
 
-    @contact\_name.setter
+    @contact_name.setter
 
-    defcontact\_name(self, contact\_name):
+    defcontact_name(self, contact_name):
 
-    self.\_contact\_name = contact\_name
-
-    @property
-
-    defcontact\_title(self):
-
-    returnself.\_contact\_title
-
-    @contact\_title.setter
-
-    defcontact\_title(self, contact\_title):
-
-    self.\_contact\_title = contact\_title
+    self._contact_name = contact_name
 
     @property
 
-    defemail\_address(self):
+    defcontact_title(self):
 
-    returnself.\_email\_address
+    return self._contact_title
 
-    @email\_address.setter
+    @contact_title.setter
 
-    defemail\_address(self, email\_address):
+    defcontact_title(self, contact_title):
 
-    self.\_email\_address = email\_address
+    self._contact_title = contact_title
+
+    @property
+
+    defemail_address(self):
+
+    return self._email_address
+
+    @email_address.setter
+
+    defemail_address(self, email_address):
+
+    self._email_address = email_address
 
     @property
 
     defphone(self):
 
-    returnself.\_phone
+    return self._phone
 
     @phone.setter
 
     defphone(self, phone):
 
-    self.\_phone = phone
+    self._phone = phone
 
     @property
 
     deffax(self):
 
-    returnself.\_fax
+    return self._fax
 
     @fax.setter
 
     deffax(self, fax):
 
-    self.\_fax = fax
+    self._fax = fax
 
     @property
 
-    defbilling\_address(self):
+    defbilling_address(self):
 
-    returnself.\_billing\_address
+    return self._billing_address
 
-    @billing\_address.setter
+    @billing_address.setter
 
-    defbilling\_address(self, billing\_address):
+    defbilling_address(self, billing_address):
 
-    self.\_billing\_address = billing\_address
-
-    @property
-
-    defbilling\_address2(self):
-
-    returnself.\_billing\_address2
-
-    @billing\_address2.setter
-
-    defbilling\_address2(self, billing\_address2):
-
-    self.\_billing\_address2 = billing\_address2
+    self._billing_address = billing_address
 
     @property
 
-    defbilling\_city(self):
+    defbilling_address2(self):
 
-    returnself.\_billing\_city
+    return self._billing_address2
 
-    @billing\_city.setter
+    @billing_address2.setter
 
-    defbilling\_city(self, billing\_city):
+    defbilling_address2(self, billing_address2):
 
-    self.\_billing\_city = billing\_city
-
-    @property
-
-    defbilling\_state(self):
-
-    returnself.\_billing\_state
-
-    @billing\_state.setter
-
-    defbilling\_state(self, billing\_state):
-
-    self.\_billing\_state = billing\_state
+    self._billing_address2 = billing_address2
 
     @property
 
-    defbilling\_zip(self):
+    defbilling_city(self):
 
-    returnself.\_billing\_zip
+    return self._billing_city
 
-    @billing\_zip.setter
+    @billing_city.setter
 
-    defbilling\_zip(self, billing\_zip):
+    defbilling_city(self, billing_city):
 
-    self.\_billing\_zip = billing\_zip
-
-    @property
-
-    defpo\_number(self):
-
-    returnself.\_po\_number
-
-    @po\_number.setter
-
-    defpo\_number(self, po\_number):
-
-    self.\_po\_number = po\_number
+    self._billing_city = billing_city
 
     @property
 
-    definvoice\_number(self):
+    defbilling_state(self):
 
-    returnself.\_invoice\_number
+    return self._billing_state
 
-    @invoice\_number.setter
+    @billing_state.setter
 
-    definvoice\_number(self, invoice\_number):
+    defbilling_state(self, billing_state):
 
-    self.\_invoice\_number = invoice\_number
-
-    @property
-
-    defbusiness\_name(self):
-
-    returnself.\_business\_name
-
-    @business\_name.setter
-
-    defbusiness\_name(self, business\_name):
-
-    self.\_business\_name = business\_name
+    self._billing_state = billing_state
 
     @property
 
-    defcustomer\_number(self):
+    defbilling_zip(self):
 
-    returnself.\_customer\_number
+    return self._billing_zip
 
-    @customer\_number.setter
+    @billing_zip.setter
 
-    defcustomer\_number(self, customer\_number):
+    defbilling_zip(self, billing_zip):
 
-    self.\_customer\_number = customer\_number
-
-    @property
-
-    defreference\_note(self):
-
-    returnself.\_reference\_note
-
-    @reference\_note.setter
-
-    defreference\_note(self, reference\_note):
-
-    self.\_reference\_note = reference\_note
+    self._billing_zip = billing_zip
 
     @property
 
-    defsales\_tax(self):
+    defpo_number(self):
 
-    returnself.\_sales\_tax
+    return self._po_number
 
-    @sales\_tax.setter
+    @po_number.setter
 
-    defsales\_tax(self, sales\_tax):
+    defpo_number(self, po_number):
 
-    self.\_sales\_tax = sales\_tax
-
-    @property
-
-    deftax\_exempt(self):
-
-    returnself.\_tax\_exempt
-
-    @tax\_exempt.setter
-
-    deftax\_exempt(self, tax\_exempt):
-
-    self.\_tax\_exempt = tax\_exempt
+    self._po_number = po_number
 
     @property
 
-    defcard\_tracks(self):
+    definvoice_number(self):
 
-    returnself.\_card\_tracks
+    return self._invoice_number
 
-    @card\_tracks.setter
+    @invoice_number.setter
 
-    defcard\_tracks(self, card\_tracks):
+    definvoice_number(self, invoice_number):
 
-    self.\_card\_tracks = card\_tracks
-
-    @property
-
-    defcard\_zip(self):
-
-    returnself.\_card\_zip
-
-    @card\_zip.setter
-
-    defcard\_zip(self, card\_zip):
-
-    self.\_card\_zip = card\_zip
+    self._invoice_number = invoice_number
 
     @property
 
-    defcard\_address(self):
+    defbusiness_name(self):
 
-    returnself.\_card\_address
+    return self._business_name
 
-    @card\_address.setter
+    @business_name.setter
 
-    defcard\_address(self, card\_address):
+    defbusiness_name(self, business_name):
 
-    self.\_card\_address = card\_address
-
-    @property
-
-    defitem\_description(self):
-
-    returnself.\_item\_description
-
-    @item\_description.setter
-
-    defitem\_description(self, item\_description):
-
-    self.\_item\_description = item\_description
+    self._business_name = business_name
 
     @property
 
-    defdefault\_transaction\_type(self):
+    defcustomer_number(self):
 
-    returnself.\_default\_transaction\_type
+    return self._customer_number
 
-    @default\_transaction\_type.setter
+    @customer_number.setter
 
-    defdefault\_transaction\_type(self, default\_transaction\_type):
+    defcustomer_number(self, customer_number):
 
-    self.\_default\_transaction\_type = default\_transaction\_type
+    self._customer_number = customer_number
+
+    @property
+
+    defreference_note(self):
+
+    return self._reference_note
+
+    @reference_note.setter
+
+    defreference_note(self, reference_note):
+
+    self._reference_note = reference_note
+
+    @property
+
+    defsales_tax(self):
+
+    return self._sales_tax
+
+    @sales_tax.setter
+
+    defsales_tax(self, sales_tax):
+
+    self._sales_tax = sales_tax
+
+    @property
+
+    deftax_exempt(self):
+
+    return self._tax_exempt
+
+    @tax_exempt.setter
+
+    deftax_exempt(self, tax_exempt):
+
+    self._tax_exempt = tax_exempt
+
+    @property
+
+    defcard_tracks(self):
+
+    return self._card_tracks
+
+    @card_tracks.setter
+
+    defcard_tracks(self, card_tracks):
+
+    self._card_tracks = card_tracks
+
+    @property
+
+    defcard_zip(self):
+
+    return self._card_zip
+
+    @card_zip.setter
+
+    defcard_zip(self, card_zip):
+
+    self._card_zip = card_zip
+
+    @property
+
+    defcard_address(self):
+
+    return self._card_address
+
+    @card_address.setter
+
+    defcard_address(self, card_address):
+
+    self._card_address = card_address
+
+    @property
+
+    defitem_description(self):
+
+    return self._item_description
+
+    @item_description.setter
+
+    defitem_description(self, item_description):
+
+    self._item_description = item_description
+
+    @property
+
+    defdefault_transaction_type(self):
+
+    return self._default_transaction_type
+
+    @default_transaction_type.setter
+
+    defdefault_transaction_type(self, default_transaction_type):
+
+    self._default_transaction_type = default_transaction_type
 
 # CVVPresenceType
 
@@ -2340,25 +2340,25 @@
 
     classCVVPresenceType(object):
 
-    NORMAL = &quot;Normal&quot;
+    NORMAL = "Normal"
 
-    BYPASS = &quot;Bypass&quot;
+    BYPASS = "Bypass"
 
-    ILLEGIBLE = &quot;Illegible&quot;
+    ILLEGIBLE = "Illegible"
 
-    NOTAVAILABLE = &quot;NotAvailable&quot;
+    NOTAVAILABLE = "NotAvailable"
 
-    swagger\_types = {
-
-    }
-
-    attribute\_map = {
+    swagger_types = {
 
     }
 
-    def\_\_init\_\_(self): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;CVVPresenceType - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    }
+
+    def__init__(self): # noqa: E501
+
+    """CVVPresenceType - a model defined in Swagger"""# noqa: E501
 
     self.discriminator = None
 
@@ -2368,57 +2368,57 @@
 
     classEmailReceipt(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;transaction\_id&#39;: &#39;str&#39;,
+    'transaction_id': 'str',
 
-    &#39;to\_addresses&#39;: &#39;str&#39;,
+    'to_addresses': 'str',
 
-    &#39;subject&#39;: &#39;str&#39;,
+    'subject': 'str',
 
-    &#39;header&#39;: &#39;str&#39;,
+    'header': 'str',
 
-    &#39;footer&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;transaction\_id&#39;: &#39;TransactionID&#39;,
-
-    &#39;to\_addresses&#39;: &#39;ToAddresses&#39;,
-
-    &#39;subject&#39;: &#39;Subject&#39;,
-
-    &#39;header&#39;: &#39;Header&#39;,
-
-    &#39;footer&#39;: &#39;Footer&#39;
+    'footer': 'str'
 
     }
 
-    def\_\_init\_\_(self, transaction\_id=None, to\_addresses=None, subject=None, header=None, footer=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;EmailReceipt - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'transaction_id': 'TransactionID',
 
-    self.\_transaction\_id = None
+    'to_addresses': 'ToAddresses',
 
-    self.\_to\_addresses = None
+    'subject': 'Subject',
 
-    self.\_subject = None
+    'header': 'Header',
 
-    self.\_header = None
+    'footer': 'Footer'
 
-    self.\_footer = None
+    }
+
+    def__init__(self, transaction_id=None, to_addresses=None, subject=None, header=None, footer=None): # noqa: E501
+
+    """EmailReceipt - a model defined in Swagger"""# noqa: E501
+
+    self._transaction_id = None
+
+    self._to_addresses = None
+
+    self._subject = None
+
+    self._header = None
+
+    self._footer = None
 
     self.discriminator = None
 
-    iftransaction\_idisnotNone:
+    iftransaction_idisnotNone:
 
-    self.transaction\_id = transaction\_id
+    self.transaction_id = transaction_id
 
-    ifto\_addressesisnotNone:
+    ifto_addressesisnotNone:
 
-    self.to\_addresses = to\_addresses
+    self.to_addresses = to_addresses
 
     ifsubjectisnotNone:
 
@@ -2434,63 +2434,63 @@
 
     @property
 
-    deftransaction\_id(self):
+    deftransaction_id(self):
 
-    returnself.\_transaction\_id
+    return self._transaction_id
 
-    @transaction\_id.setter
+    @transaction_id.setter
 
-    deftransaction\_id(self, transaction\_id):
+    deftransaction_id(self, transaction_id):
 
-    self.\_transaction\_id = transaction\_id
+    self._transaction_id = transaction_id
 
     @property
 
-    defto\_addresses(self):
+    defto_addresses(self):
 
-    returnself.\_to\_addresses
+    return self._to_addresses
 
-    @to\_addresses.setter
+    @to_addresses.setter
 
-    defto\_addresses(self, to\_addresses):
+    defto_addresses(self, to_addresses):
 
-    self.\_to\_addresses = to\_addresses
+    self._to_addresses = to_addresses
 
     @property
 
     defsubject(self):
 
-    returnself.\_subject
+    return self._subject
 
     @subject.setter
 
     defsubject(self, subject):
 
-    self.\_subject = subject
+    self._subject = subject
 
     @property
 
     defheader(self):
 
-    returnself.\_header
+    return self._header
 
     @header.setter
 
     defheader(self, header):
 
-    self.\_header = header
+    self._header = header
 
     @property
 
     deffooter(self):
 
-    returnself.\_footer
+    return self._footer
 
     @footer.setter
 
     deffooter(self, footer):
 
-    self.\_footer = footer
+    self._footer = footer
 
 # FieldAccess
 
@@ -2498,23 +2498,23 @@
 
     classFieldAccess(object):
 
-    DISABLED = &quot;Disabled&quot;
+    DISABLED = "Disabled"
 
-    ENABLED = &quot;Enabled&quot;
+    ENABLED = "Enabled"
 
-    REQUIRED = &quot;Required&quot;
+    REQUIRED = "Required"
 
-    swagger\_types = {
-
-    }
-
-    attribute\_map = {
+    swagger_types = {
 
     }
 
-    def\_\_init\_\_(self): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;FieldAccess - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    }
+
+    def__init__(self): # noqa: E501
+
+    """FieldAccess - a model defined in Swagger"""# noqa: E501
 
     self.discriminator = None
 
@@ -2524,29 +2524,29 @@
 
     classFieldInfo(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;access&#39;: &#39;FieldAccess&#39;,
+    'access': 'FieldAccess',
 
-    &#39;default&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;access&#39;: &#39;Access&#39;,
-
-    &#39;default&#39;: &#39;Default&#39;
+    'default': 'str'
 
     }
 
-    def\_\_init\_\_(self, access=None, default=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;FieldInfo - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'access': 'Access',
 
-    self.\_access = None
+    'default': 'Default'
 
-    self.\_default = None
+    }
+
+    def__init__(self, access=None, default=None): # noqa: E501
+
+    """FieldInfo - a model defined in Swagger"""# noqa: E501
+
+    self._access = None
+
+    self._default = None
 
     self.discriminator = None
 
@@ -2562,25 +2562,25 @@
 
     defaccess(self):
 
-    returnself.\_access
+    return self._access
 
     @access.setter
 
     defaccess(self, access):
 
-    self.\_access = access
+    self._access = access
 
     @property
 
     defdefault(self):
 
-    returnself.\_default
+    return self._default
 
     @default.setter
 
     defdefault(self, default):
 
-    self.\_default = default
+    self._default = default
 
 # QueryTransaction
 
@@ -2588,987 +2588,987 @@
 
     classQueryTransaction(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;tran\_sequence&#39;: &#39;str&#39;,
+    'tran_sequence': 'str',
 
-    &#39;tran\_batch&#39;: &#39;str&#39;,
+    'tran_batch': 'str',
 
-    &#39;tran\_modified&#39;: &#39;str&#39;,
+    'tran_modified': 'str',
 
-    &#39;tran\_processed&#39;: &#39;str&#39;,
+    'tran_processed': 'str',
 
-    &#39;tran\_settled&#39;: &#39;str&#39;,
+    'tran_settled': 'str',
 
-    &#39;submit\_time&#39;: &#39;str&#39;,
+    'submit_time': 'str',
 
-    &#39;tran\_type&#39;: &#39;str&#39;,
+    'tran_type': 'str',
 
-    &#39;tran\_amt&#39;: &#39;float&#39;,
+    'tran_amt': 'float',
 
-    &#39;tran\_tax&#39;: &#39;float&#39;,
+    'tran_tax': 'float',
 
-    &#39;tran\_inv&#39;: &#39;str&#39;,
+    'tran_inv': 'str',
 
-    &#39;tran\_po&#39;: &#39;str&#39;,
+    'tran_po': 'str',
 
-    &#39;tran\_c\_num&#39;: &#39;str&#39;,
+    'tran_c_num': 'str',
 
-    &#39;tran\_note&#39;: &#39;str&#39;,
+    'tran_note': 'str',
 
-    &#39;card\_num&#39;: &#39;str&#39;,
+    'card_num': 'str',
 
-    &#39;card\_name&#39;: &#39;str&#39;,
+    'card_name': 'str',
 
-    &#39;card\_exp&#39;: &#39;str&#39;,
+    'card_exp': 'str',
 
-    &#39;avs\_street&#39;: &#39;str&#39;,
+    'avs_street': 'str',
 
-    &#39;avs\_zip&#39;: &#39;str&#39;,
+    'avs_zip': 'str',
 
-    &#39;cvv\_num&#39;: &#39;str&#39;,
+    'cvv_num': 'str',
 
-    &#39;proc\_id&#39;: &#39;str&#39;,
+    'proc_id': 'str',
 
-    &#39;proc\_resp&#39;: &#39;str&#39;,
+    'proc_resp': 'str',
 
-    &#39;proc\_code&#39;: &#39;str&#39;,
+    'proc_code': 'str',
 
-    &#39;proc\_mess&#39;: &#39;str&#39;,
+    'proc_mess': 'str',
 
-    &#39;avs\_code&#39;: &#39;str&#39;,
+    'avs_code': 'str',
 
-    &#39;avs\_resp&#39;: &#39;str&#39;,
+    'avs_resp': 'str',
 
-    &#39;cvv\_code&#39;: &#39;str&#39;,
+    'cvv_code': 'str',
 
-    &#39;cvv\_resp&#39;: &#39;str&#39;,
+    'cvv_resp': 'str',
 
-    &#39;items&#39;: &#39;list[TransactionItem]&#39;,
+    'items': 'list[TransactionItem]',
 
-    &#39;business\_name&#39;: &#39;str&#39;,
+    'business_name': 'str',
 
-    &#39;business\_address&#39;: &#39;str&#39;,
+    'business_address': 'str',
 
-    &#39;business\_address2&#39;: &#39;str&#39;,
+    'business_address2': 'str',
 
-    &#39;business\_city&#39;: &#39;str&#39;,
+    'business_city': 'str',
 
-    &#39;business\_state&#39;: &#39;str&#39;,
+    'business_state': 'str',
 
-    &#39;business\_zip&#39;: &#39;str&#39;,
+    'business_zip': 'str',
 
-    &#39;business\_country&#39;: &#39;str&#39;,
+    'business_country': 'str',
 
-    &#39;business\_website&#39;: &#39;str&#39;,
+    'business_website': 'str',
 
-    &#39;contact\_first\_name&#39;: &#39;str&#39;,
+    'contact_first_name': 'str',
 
-    &#39;contact\_last\_name&#39;: &#39;str&#39;,
+    'contact_last_name': 'str',
 
-    &#39;contact\_phone&#39;: &#39;str&#39;,
+    'contact_phone': 'str',
 
-    &#39;contact\_fax&#39;: &#39;str&#39;,
+    'contact_fax': 'str',
 
-    &#39;contact\_email&#39;: &#39;str&#39;,
+    'contact_email': 'str',
 
-    &#39;contact\_title&#39;: &#39;str&#39;,
+    'contact_title': 'str',
 
-    &#39;ip&#39;: &#39;str&#39;,
+    'ip': 'str',
 
-    &#39;tax\_exempt&#39;: &#39;bool&#39;
+    'tax_exempt': 'bool'
 
     }
 
-    attribute\_map = {
+    attribute_map = {
 
-    &#39;tran\_sequence&#39;: &#39;Tran\_Sequence&#39;,
+    'tran_sequence': 'Tran_Sequence',
 
-    &#39;tran\_batch&#39;: &#39;Tran\_Batch&#39;,
+    'tran_batch': 'Tran_Batch',
 
-    &#39;tran\_modified&#39;: &#39;Tran\_Modified&#39;,
+    'tran_modified': 'Tran_Modified',
 
-    &#39;tran\_processed&#39;: &#39;Tran\_Processed&#39;,
+    'tran_processed': 'Tran_Processed',
 
-    &#39;tran\_settled&#39;: &#39;Tran\_Settled&#39;,
+    'tran_settled': 'Tran_Settled',
 
-    &#39;submit\_time&#39;: &#39;Submit\_Time&#39;,
+    'submit_time': 'Submit_Time',
 
-    &#39;tran\_type&#39;: &#39;Tran\_Type&#39;,
+    'tran_type': 'Tran_Type',
 
-    &#39;tran\_amt&#39;: &#39;Tran\_Amt&#39;,
+    'tran_amt': 'Tran_Amt',
 
-    &#39;tran\_tax&#39;: &#39;Tran\_Tax&#39;,
+    'tran_tax': 'Tran_Tax',
 
-    &#39;tran\_inv&#39;: &#39;Tran\_Inv&#39;,
+    'tran_inv': 'Tran_Inv',
 
-    &#39;tran\_po&#39;: &#39;Tran\_PO&#39;,
+    'tran_po': 'Tran_PO',
 
-    &#39;tran\_c\_num&#39;: &#39;Tran\_CNum&#39;,
+    'tran_c_num': 'Tran_CNum',
 
-    &#39;tran\_note&#39;: &#39;Tran\_Note&#39;,
+    'tran_note': 'Tran_Note',
 
-    &#39;card\_num&#39;: &#39;Card\_Num&#39;,
+    'card_num': 'Card_Num',
 
-    &#39;card\_name&#39;: &#39;Card\_Name&#39;,
+    'card_name': 'Card_Name',
 
-    &#39;card\_exp&#39;: &#39;Card\_Exp&#39;,
+    'card_exp': 'Card_Exp',
 
-    &#39;avs\_street&#39;: &#39;AVS\_Street&#39;,
+    'avs_street': 'AVS_Street',
 
-    &#39;avs\_zip&#39;: &#39;AVS\_Zip&#39;,
+    'avs_zip': 'AVS_Zip',
 
-    &#39;cvv\_num&#39;: &#39;CVV\_Num&#39;,
+    'cvv_num': 'CVV_Num',
 
-    &#39;proc\_id&#39;: &#39;Proc\_ID&#39;,
+    'proc_id': 'Proc_ID',
 
-    &#39;proc\_resp&#39;: &#39;Proc\_Resp&#39;,
+    'proc_resp': 'Proc_Resp',
 
-    &#39;proc\_code&#39;: &#39;Proc\_Code&#39;,
+    'proc_code': 'Proc_Code',
 
-    &#39;proc\_mess&#39;: &#39;Proc\_Mess&#39;,
+    'proc_mess': 'Proc_Mess',
 
-    &#39;avs\_code&#39;: &#39;AVS\_Code&#39;,
+    'avs_code': 'AVS_Code',
 
-    &#39;avs\_resp&#39;: &#39;AVS\_Resp&#39;,
+    'avs_resp': 'AVS_Resp',
 
-    &#39;cvv\_code&#39;: &#39;CVV\_Code&#39;,
+    'cvv_code': 'CVV_Code',
 
-    &#39;cvv\_resp&#39;: &#39;CVV\_Resp&#39;,
+    'cvv_resp': 'CVV_Resp',
 
-    &#39;items&#39;: &#39;Items&#39;,
+    'items': 'Items',
 
-    &#39;business\_name&#39;: &#39;Business\_Name&#39;,
+    'business_name': 'Business_Name',
 
-    &#39;business\_address&#39;: &#39;Business\_Address&#39;,
+    'business_address': 'Business_Address',
 
-    &#39;business\_address2&#39;: &#39;Business\_Address2&#39;,
+    'business_address2': 'Business_Address2',
 
-    &#39;business\_city&#39;: &#39;Business\_City&#39;,
+    'business_city': 'Business_City',
 
-    &#39;business\_state&#39;: &#39;Business\_State&#39;,
+    'business_state': 'Business_State',
 
-    &#39;business\_zip&#39;: &#39;Business\_Zip&#39;,
+    'business_zip': 'Business_Zip',
 
-    &#39;business\_country&#39;: &#39;Business\_Country&#39;,
+    'business_country': 'Business_Country',
 
-    &#39;business\_website&#39;: &#39;Business\_Website&#39;,
+    'business_website': 'Business_Website',
 
-    &#39;contact\_first\_name&#39;: &#39;Contact\_FirstName&#39;,
+    'contact_first_name': 'Contact_FirstName',
 
-    &#39;contact\_last\_name&#39;: &#39;Contact\_LastName&#39;,
+    'contact_last_name': 'Contact_LastName',
 
-    &#39;contact\_phone&#39;: &#39;Contact\_Phone&#39;,
+    'contact_phone': 'Contact_Phone',
 
-    &#39;contact\_fax&#39;: &#39;Contact\_Fax&#39;,
+    'contact_fax': 'Contact_Fax',
 
-    &#39;contact\_email&#39;: &#39;Contact\_Email&#39;,
+    'contact_email': 'Contact_Email',
 
-    &#39;contact\_title&#39;: &#39;Contact\_Title&#39;,
+    'contact_title': 'Contact_Title',
 
-    &#39;ip&#39;: &#39;IP&#39;,
+    'ip': 'IP',
 
-    &#39;tax\_exempt&#39;: &#39;TaxExempt&#39;
+    'tax_exempt': 'TaxExempt'
 
     }
 
-    def\_\_init\_\_(self, tran\_sequence=None, tran\_batch=None, tran\_modified=None, tran\_processed=None, tran\_settled=None, submit\_time=None, tran\_type=None, tran\_amt=None, tran\_tax=None, tran\_inv=None, tran\_po=None, tran\_c\_num=None, tran\_note=None, card\_num=None, card\_name=None, card\_exp=None, avs\_street=None, avs\_zip=None, cvv\_num=None, proc\_id=None, proc\_resp=None, proc\_code=None, proc\_mess=None, avs\_code=None, avs\_resp=None, cvv\_code=None, cvv\_resp=None, items=None, business\_name=None, business\_address=None, business\_address2=None, business\_city=None, business\_state=None, business\_zip=None, business\_country=None, business\_website=None, contact\_first\_name=None, contact\_last\_name=None, contact\_phone=None, contact\_fax=None, contact\_email=None, contact\_title=None, ip=None, tax\_exempt=None): # noqa: E501
+    def__init__(self, tran_sequence=None, tran_batch=None, tran_modified=None, tran_processed=None, tran_settled=None, submit_time=None, tran_type=None, tran_amt=None, tran_tax=None, tran_inv=None, tran_po=None, tran_c_num=None, tran_note=None, card_num=None, card_name=None, card_exp=None, avs_street=None, avs_zip=None, cvv_num=None, proc_id=None, proc_resp=None, proc_code=None, proc_mess=None, avs_code=None, avs_resp=None, cvv_code=None, cvv_resp=None, items=None, business_name=None, business_address=None, business_address2=None, business_city=None, business_state=None, business_zip=None, business_country=None, business_website=None, contact_first_name=None, contact_last_name=None, contact_phone=None, contact_fax=None, contact_email=None, contact_title=None, ip=None, tax_exempt=None): # noqa: E501
 
-    &quot;&quot;&quot;QueryTransaction - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    """QueryTransaction - a model defined in Swagger"""# noqa: E501
 
-    self.\_tran\_sequence = None
+    self._tran_sequence = None
 
-    self.\_tran\_batch = None
+    self._tran_batch = None
 
-    self.\_tran\_modified = None
+    self._tran_modified = None
 
-    self.\_tran\_processed = None
+    self._tran_processed = None
 
-    self.\_tran\_settled = None
+    self._tran_settled = None
 
-    self.\_submit\_time = None
+    self._submit_time = None
 
-    self.\_tran\_type = None
+    self._tran_type = None
 
-    self.\_tran\_amt = None
+    self._tran_amt = None
 
-    self.\_tran\_tax = None
+    self._tran_tax = None
 
-    self.\_tran\_inv = None
+    self._tran_inv = None
 
-    self.\_tran\_po = None
+    self._tran_po = None
 
-    self.\_tran\_c\_num = None
+    self._tran_c_num = None
 
-    self.\_tran\_note = None
+    self._tran_note = None
 
-    self.\_card\_num = None
+    self._card_num = None
 
-    self.\_card\_name = None
+    self._card_name = None
 
-    self.\_card\_exp = None
+    self._card_exp = None
 
-    self.\_avs\_street = None
+    self._avs_street = None
 
-    self.\_avs\_zip = None
+    self._avs_zip = None
 
-    self.\_cvv\_num = None
+    self._cvv_num = None
 
-    self.\_proc\_id = None
+    self._proc_id = None
 
-    self.\_proc\_resp = None
+    self._proc_resp = None
 
-    self.\_proc\_code = None
+    self._proc_code = None
 
-    self.\_proc\_mess = None
+    self._proc_mess = None
 
-    self.\_avs\_code = None
+    self._avs_code = None
 
-    self.\_avs\_resp = None
+    self._avs_resp = None
 
-    self.\_cvv\_code = None
+    self._cvv_code = None
 
-    self.\_cvv\_resp = None
+    self._cvv_resp = None
 
-    self.\_items = None
+    self._items = None
 
-    self.\_business\_name = None
+    self._business_name = None
 
-    self.\_business\_address = None
+    self._business_address = None
 
-    self.\_business\_address2 = None
+    self._business_address2 = None
 
-    self.\_business\_city = None
+    self._business_city = None
 
-    self.\_business\_state = None
+    self._business_state = None
 
-    self.\_business\_zip = None
+    self._business_zip = None
 
-    self.\_business\_country = None
+    self._business_country = None
 
-    self.\_business\_website = None
+    self._business_website = None
 
-    self.\_contact\_first\_name = None
+    self._contact_first_name = None
 
-    self.\_contact\_last\_name = None
+    self._contact_last_name = None
 
-    self.\_contact\_phone = None
+    self._contact_phone = None
 
-    self.\_contact\_fax = None
+    self._contact_fax = None
 
-    self.\_contact\_email = None
+    self._contact_email = None
 
-    self.\_contact\_title = None
+    self._contact_title = None
 
-    self.\_ip = None
+    self._ip = None
 
-    self.\_tax\_exempt = None
+    self._tax_exempt = None
 
     self.discriminator = None
 
-    iftran\_sequenceisnotNone:
+    iftran_sequenceisnotNone:
 
-    self.tran\_sequence = tran\_sequence
+    self.tran_sequence = tran_sequence
 
-    iftran\_batchisnotNone:
+    iftran_batchisnotNone:
 
-    self.tran\_batch = tran\_batch
+    self.tran_batch = tran_batch
 
-    iftran\_modifiedisnotNone:
+    iftran_modifiedisnotNone:
 
-    self.tran\_modified = tran\_modified
+    self.tran_modified = tran_modified
 
-    iftran\_processedisnotNone:
+    iftran_processedisnotNone:
 
-    self.tran\_processed = tran\_processed
+    self.tran_processed = tran_processed
 
-    iftran\_settledisnotNone:
+    iftran_settledisnotNone:
 
-    self.tran\_settled = tran\_settled
+    self.tran_settled = tran_settled
 
-    ifsubmit\_timeisnotNone:
+    ifsubmit_timeisnotNone:
 
-    self.submit\_time = submit\_time
+    self.submit_time = submit_time
 
-    iftran\_typeisnotNone:
+    iftran_typeisnotNone:
 
-    self.tran\_type = tran\_type
+    self.tran_type = tran_type
 
-    iftran\_amtisnotNone:
+    iftran_amtisnotNone:
 
-    self.tran\_amt = tran\_amt
+    self.tran_amt = tran_amt
 
-    iftran\_taxisnotNone:
+    iftran_taxisnotNone:
 
-    self.tran\_tax = tran\_tax
+    self.tran_tax = tran_tax
 
-    iftran\_invisnotNone:
+    iftran_invisnotNone:
 
-    self.tran\_inv = tran\_inv
+    self.tran_inv = tran_inv
 
-    iftran\_poisnotNone:
+    iftran_poisnotNone:
 
-    self.tran\_po = tran\_po
+    self.tran_po = tran_po
 
-    iftran\_c\_numisnotNone:
+    iftran_c_numisnotNone:
 
-    self.tran\_c\_num = tran\_c\_num
+    self.tran_c_num = tran_c_num
 
-    iftran\_noteisnotNone:
+    iftran_noteisnotNone:
 
-    self.tran\_note = tran\_note
+    self.tran_note = tran_note
 
-    ifcard\_numisnotNone:
+    ifcard_numisnotNone:
 
-    self.card\_num = card\_num
+    self.card_num = card_num
 
-    ifcard\_nameisnotNone:
+    ifcard_nameisnotNone:
 
-    self.card\_name = card\_name
+    self.card_name = card_name
 
-    ifcard\_expisnotNone:
+    ifcard_expisnotNone:
 
-    self.card\_exp = card\_exp
+    self.card_exp = card_exp
 
-    ifavs\_streetisnotNone:
+    ifavs_streetisnotNone:
 
-    self.avs\_street = avs\_street
+    self.avs_street = avs_street
 
-    ifavs\_zipisnotNone:
+    ifavs_zipisnotNone:
 
-    self.avs\_zip = avs\_zip
+    self.avs_zip = avs_zip
 
-    ifcvv\_numisnotNone:
+    ifcvv_numisnotNone:
 
-    self.cvv\_num = cvv\_num
+    self.cvv_num = cvv_num
 
-    ifproc\_idisnotNone:
+    ifproc_idisnotNone:
 
-    self.proc\_id = proc\_id
+    self.proc_id = proc_id
 
-    ifproc\_respisnotNone:
+    ifproc_respisnotNone:
 
-    self.proc\_resp = proc\_resp
+    self.proc_resp = proc_resp
 
-    ifproc\_codeisnotNone:
+    ifproc_codeisnotNone:
 
-    self.proc\_code = proc\_code
+    self.proc_code = proc_code
 
-    ifproc\_messisnotNone:
+    ifproc_messisnotNone:
 
-    self.proc\_mess = proc\_mess
+    self.proc_mess = proc_mess
 
-    ifavs\_codeisnotNone:
+    ifavs_codeisnotNone:
 
-    self.avs\_code = avs\_code
+    self.avs_code = avs_code
 
-    ifavs\_respisnotNone:
+    ifavs_respisnotNone:
 
-    self.avs\_resp = avs\_resp
+    self.avs_resp = avs_resp
 
-    ifcvv\_codeisnotNone:
+    ifcvv_codeisnotNone:
 
-    self.cvv\_code = cvv\_code
+    self.cvv_code = cvv_code
 
-    ifcvv\_respisnotNone:
+    ifcvv_respisnotNone:
 
-    self.cvv\_resp = cvv\_resp
+    self.cvv_resp = cvv_resp
 
     ifitemsisnotNone:
 
     self.items = items
 
-    ifbusiness\_nameisnotNone:
+    ifbusiness_nameisnotNone:
 
-    self.business\_name = business\_name
+    self.business_name = business_name
 
-    ifbusiness\_addressisnotNone:
+    ifbusiness_addressisnotNone:
 
-    self.business\_address = business\_address
+    self.business_address = business_address
 
-    ifbusiness\_address2isnotNone:
+    ifbusiness_address2isnotNone:
 
-    self.business\_address2 = business\_address2
+    self.business_address2 = business_address2
 
-    ifbusiness\_cityisnotNone:
+    ifbusiness_cityisnotNone:
 
-    self.business\_city = business\_city
+    self.business_city = business_city
 
-    ifbusiness\_stateisnotNone:
+    ifbusiness_stateisnotNone:
 
-    self.business\_state = business\_state
+    self.business_state = business_state
 
-    ifbusiness\_zipisnotNone:
+    ifbusiness_zipisnotNone:
 
-    self.business\_zip = business\_zip
+    self.business_zip = business_zip
 
-    ifbusiness\_countryisnotNone:
+    ifbusiness_countryisnotNone:
 
-    self.business\_country = business\_country
+    self.business_country = business_country
 
-    ifbusiness\_websiteisnotNone:
+    ifbusiness_websiteisnotNone:
 
-    self.business\_website = business\_website
+    self.business_website = business_website
 
-    ifcontact\_first\_nameisnotNone:
+    ifcontact_first_nameisnotNone:
 
-    self.contact\_first\_name = contact\_first\_name
+    self.contact_first_name = contact_first_name
 
-    ifcontact\_last\_nameisnotNone:
+    ifcontact_last_nameisnotNone:
 
-    self.contact\_last\_name = contact\_last\_name
+    self.contact_last_name = contact_last_name
 
-    ifcontact\_phoneisnotNone:
+    ifcontact_phoneisnotNone:
 
-    self.contact\_phone = contact\_phone
+    self.contact_phone = contact_phone
 
-    ifcontact\_faxisnotNone:
+    ifcontact_faxisnotNone:
 
-    self.contact\_fax = contact\_fax
+    self.contact_fax = contact_fax
 
-    ifcontact\_emailisnotNone:
+    ifcontact_emailisnotNone:
 
-    self.contact\_email = contact\_email
+    self.contact_email = contact_email
 
-    ifcontact\_titleisnotNone:
+    ifcontact_titleisnotNone:
 
-    self.contact\_title = contact\_title
+    self.contact_title = contact_title
 
     ifipisnotNone:
 
     self.ip = ip
 
-    iftax\_exemptisnotNone:
+    iftax_exemptisnotNone:
 
-    self.tax\_exempt = tax\_exempt
-
-    @property
-
-    deftran\_sequence(self):
-
-    returnself.\_tran\_sequence
-
-    @tran\_sequence.setter
-
-    deftran\_sequence(self, tran\_sequence):
-
-    self.\_tran\_sequence = tran\_sequence
+    self.tax_exempt = tax_exempt
 
     @property
 
-    deftran\_batch(self):
+    deftran_sequence(self):
 
-    returnself.\_tran\_batch
+    return self._tran_sequence
 
-    @tran\_batch.setter
+    @tran_sequence.setter
 
-    deftran\_batch(self, tran\_batch):
+    deftran_sequence(self, tran_sequence):
 
-    self.\_tran\_batch = tran\_batch
-
-    @property
-
-    deftran\_modified(self):
-
-    returnself.\_tran\_modified
-
-    @tran\_modified.setter
-
-    deftran\_modified(self, tran\_modified):
-
-    self.\_tran\_modified = tran\_modified
+    self._tran_sequence = tran_sequence
 
     @property
 
-    deftran\_processed(self):
+    deftran_batch(self):
 
-    returnself.\_tran\_processed
+    return self._tran_batch
 
-    @tran\_processed.setter
+    @tran_batch.setter
 
-    deftran\_processed(self, tran\_processed):
+    deftran_batch(self, tran_batch):
 
-    self.\_tran\_processed = tran\_processed
-
-    @property
-
-    deftran\_settled(self):
-
-    returnself.\_tran\_settled
-
-    @tran\_settled.setter
-
-    deftran\_settled(self, tran\_settled):
-
-    self.\_tran\_settled = tran\_settled
+    self._tran_batch = tran_batch
 
     @property
 
-    defsubmit\_time(self):
+    deftran_modified(self):
 
-    returnself.\_submit\_time
+    return self._tran_modified
 
-    @submit\_time.setter
+    @tran_modified.setter
 
-    defsubmit\_time(self, submit\_time):
+    deftran_modified(self, tran_modified):
 
-    self.\_submit\_time = submit\_time
-
-    @property
-
-    deftran\_type(self):
-
-    returnself.\_tran\_type
-
-    @tran\_type.setter
-
-    deftran\_type(self, tran\_type):
-
-    self.\_tran\_type = tran\_type
+    self._tran_modified = tran_modified
 
     @property
 
-    deftran\_amt(self):
+    deftran_processed(self):
 
-    returnself.\_tran\_amt
+    return self._tran_processed
 
-    @tran\_amt.setter
+    @tran_processed.setter
 
-    deftran\_amt(self, tran\_amt):
+    deftran_processed(self, tran_processed):
 
-    self.\_tran\_amt = tran\_amt
-
-    @property
-
-    deftran\_tax(self):
-
-    returnself.\_tran\_tax
-
-    @tran\_tax.setter
-
-    deftran\_tax(self, tran\_tax):
-
-    self.\_tran\_tax = tran\_tax
+    self._tran_processed = tran_processed
 
     @property
 
-    deftran\_inv(self):
+    deftran_settled(self):
 
-    returnself.\_tran\_inv
+    return self._tran_settled
 
-    @tran\_inv.setter
+    @tran_settled.setter
 
-    deftran\_inv(self, tran\_inv):
+    deftran_settled(self, tran_settled):
 
-    self.\_tran\_inv = tran\_inv
-
-    @property
-
-    deftran\_po(self):
-
-    returnself.\_tran\_po
-
-    @tran\_po.setter
-
-    deftran\_po(self, tran\_po):
-
-    self.\_tran\_po = tran\_po
+    self._tran_settled = tran_settled
 
     @property
 
-    deftran\_c\_num(self):
+    defsubmit_time(self):
 
-    returnself.\_tran\_c\_num
+    return self._submit_time
 
-    @tran\_c\_num.setter
+    @submit_time.setter
 
-    deftran\_c\_num(self, tran\_c\_num):
+    defsubmit_time(self, submit_time):
 
-    self.\_tran\_c\_num = tran\_c\_num
-
-    @property
-
-    deftran\_note(self):
-
-    returnself.\_tran\_note
-
-    @tran\_note.setter
-
-    deftran\_note(self, tran\_note):
-
-    self.\_tran\_note = tran\_note
+    self._submit_time = submit_time
 
     @property
 
-    defcard\_num(self):
+    deftran_type(self):
 
-    returnself.\_card\_num
+    return self._tran_type
 
-    @card\_num.setter
+    @tran_type.setter
 
-    defcard\_num(self, card\_num):
+    deftran_type(self, tran_type):
 
-    self.\_card\_num = card\_num
-
-    @property
-
-    defcard\_name(self):
-
-    returnself.\_card\_name
-
-    @card\_name.setter
-
-    defcard\_name(self, card\_name):
-
-    self.\_card\_name = card\_name
+    self._tran_type = tran_type
 
     @property
 
-    defcard\_exp(self):
+    deftran_amt(self):
 
-    returnself.\_card\_exp
+    return self._tran_amt
 
-    @card\_exp.setter
+    @tran_amt.setter
 
-    defcard\_exp(self, card\_exp):
+    deftran_amt(self, tran_amt):
 
-    self.\_card\_exp = card\_exp
-
-    @property
-
-    defavs\_street(self):
-
-    returnself.\_avs\_street
-
-    @avs\_street.setter
-
-    defavs\_street(self, avs\_street):
-
-    self.\_avs\_street = avs\_street
+    self._tran_amt = tran_amt
 
     @property
 
-    defavs\_zip(self):
+    deftran_tax(self):
 
-    returnself.\_avs\_zip
+    return self._tran_tax
 
-    @avs\_zip.setter
+    @tran_tax.setter
 
-    defavs\_zip(self, avs\_zip):
+    deftran_tax(self, tran_tax):
 
-    self.\_avs\_zip = avs\_zip
-
-    @property
-
-    defcvv\_num(self):
-
-    returnself.\_cvv\_num
-
-    @cvv\_num.setter
-
-    defcvv\_num(self, cvv\_num):
-
-    self.\_cvv\_num = cvv\_num
+    self._tran_tax = tran_tax
 
     @property
 
-    defproc\_id(self):
+    deftran_inv(self):
 
-    returnself.\_proc\_id
+    return self._tran_inv
 
-    @proc\_id.setter
+    @tran_inv.setter
 
-    defproc\_id(self, proc\_id):
+    deftran_inv(self, tran_inv):
 
-    self.\_proc\_id = proc\_id
-
-    @property
-
-    defproc\_resp(self):
-
-    returnself.\_proc\_resp
-
-    @proc\_resp.setter
-
-    defproc\_resp(self, proc\_resp):
-
-    self.\_proc\_resp = proc\_resp
+    self._tran_inv = tran_inv
 
     @property
 
-    defproc\_code(self):
+    deftran_po(self):
 
-    returnself.\_proc\_code
+    return self._tran_po
 
-    @proc\_code.setter
+    @tran_po.setter
 
-    defproc\_code(self, proc\_code):
+    deftran_po(self, tran_po):
 
-    self.\_proc\_code = proc\_code
-
-    @property
-
-    defproc\_mess(self):
-
-    returnself.\_proc\_mess
-
-    @proc\_mess.setter
-
-    defproc\_mess(self, proc\_mess):
-
-    self.\_proc\_mess = proc\_mess
+    self._tran_po = tran_po
 
     @property
 
-    defavs\_code(self):
+    deftran_c_num(self):
 
-    returnself.\_avs\_code
+    return self._tran_c_num
 
-    @avs\_code.setter
+    @tran_c_num.setter
 
-    defavs\_code(self, avs\_code):
+    deftran_c_num(self, tran_c_num):
 
-    self.\_avs\_code = avs\_code
-
-    @property
-
-    defavs\_resp(self):
-
-    returnself.\_avs\_resp
-
-    @avs\_resp.setter
-
-    defavs\_resp(self, avs\_resp):
-
-    self.\_avs\_resp = avs\_resp
+    self._tran_c_num = tran_c_num
 
     @property
 
-    defcvv\_code(self):
+    deftran_note(self):
 
-    returnself.\_cvv\_code
+    return self._tran_note
 
-    @cvv\_code.setter
+    @tran_note.setter
 
-    defcvv\_code(self, cvv\_code):
+    deftran_note(self, tran_note):
 
-    self.\_cvv\_code = cvv\_code
+    self._tran_note = tran_note
 
     @property
 
-    defcvv\_resp(self):
+    defcard_num(self):
 
-    returnself.\_cvv\_resp
+    return self._card_num
 
-    @cvv\_resp.setter
+    @card_num.setter
 
-    defcvv\_resp(self, cvv\_resp):
+    defcard_num(self, card_num):
 
-    self.\_cvv\_resp = cvv\_resp
+    self._card_num = card_num
+
+    @property
+
+    defcard_name(self):
+
+    return self._card_name
+
+    @card_name.setter
+
+    defcard_name(self, card_name):
+
+    self._card_name = card_name
+
+    @property
+
+    defcard_exp(self):
+
+    return self._card_exp
+
+    @card_exp.setter
+
+    defcard_exp(self, card_exp):
+
+    self._card_exp = card_exp
+
+    @property
+
+    defavs_street(self):
+
+    return self._avs_street
+
+    @avs_street.setter
+
+    defavs_street(self, avs_street):
+
+    self._avs_street = avs_street
+
+    @property
+
+    defavs_zip(self):
+
+    return self._avs_zip
+
+    @avs_zip.setter
+
+    defavs_zip(self, avs_zip):
+
+    self._avs_zip = avs_zip
+
+    @property
+
+    defcvv_num(self):
+
+    return self._cvv_num
+
+    @cvv_num.setter
+
+    defcvv_num(self, cvv_num):
+
+    self._cvv_num = cvv_num
+
+    @property
+
+    defproc_id(self):
+
+    return self._proc_id
+
+    @proc_id.setter
+
+    defproc_id(self, proc_id):
+
+    self._proc_id = proc_id
+
+    @property
+
+    defproc_resp(self):
+
+    return self._proc_resp
+
+    @proc_resp.setter
+
+    defproc_resp(self, proc_resp):
+
+    self._proc_resp = proc_resp
+
+    @property
+
+    defproc_code(self):
+
+    return self._proc_code
+
+    @proc_code.setter
+
+    defproc_code(self, proc_code):
+
+    self._proc_code = proc_code
+
+    @property
+
+    defproc_mess(self):
+
+    return self._proc_mess
+
+    @proc_mess.setter
+
+    defproc_mess(self, proc_mess):
+
+    self._proc_mess = proc_mess
+
+    @property
+
+    defavs_code(self):
+
+    return self._avs_code
+
+    @avs_code.setter
+
+    defavs_code(self, avs_code):
+
+    self._avs_code = avs_code
+
+    @property
+
+    defavs_resp(self):
+
+    return self._avs_resp
+
+    @avs_resp.setter
+
+    defavs_resp(self, avs_resp):
+
+    self._avs_resp = avs_resp
+
+    @property
+
+    defcvv_code(self):
+
+    return self._cvv_code
+
+    @cvv_code.setter
+
+    defcvv_code(self, cvv_code):
+
+    self._cvv_code = cvv_code
+
+    @property
+
+    defcvv_resp(self):
+
+    return self._cvv_resp
+
+    @cvv_resp.setter
+
+    defcvv_resp(self, cvv_resp):
+
+    self._cvv_resp = cvv_resp
 
     @property
 
     defitems(self):
 
-    returnself.\_items
+    return self._items
 
     @items.setter
 
     defitems(self, items):
 
-    self.\_items = items
+    self._items = items
 
     @property
 
-    defbusiness\_name(self):
+    defbusiness_name(self):
 
-    returnself.\_business\_name
+    return self._business_name
 
-    @business\_name.setter
+    @business_name.setter
 
-    defbusiness\_name(self, business\_name):
+    defbusiness_name(self, business_name):
 
-    self.\_business\_name = business\_name
-
-    @property
-
-    defbusiness\_address(self):
-
-    returnself.\_business\_address
-
-    @business\_address.setter
-
-    defbusiness\_address(self, business\_address):
-
-    self.\_business\_address = business\_address
+    self._business_name = business_name
 
     @property
 
-    defbusiness\_address2(self):
+    defbusiness_address(self):
 
-    returnself.\_business\_address2
+    return self._business_address
 
-    @business\_address2.setter
+    @business_address.setter
 
-    defbusiness\_address2(self, business\_address2):
+    defbusiness_address(self, business_address):
 
-    self.\_business\_address2 = business\_address2
-
-    @property
-
-    defbusiness\_city(self):
-
-    returnself.\_business\_city
-
-    @business\_city.setter
-
-    defbusiness\_city(self, business\_city):
-
-    self.\_business\_city = business\_city
+    self._business_address = business_address
 
     @property
 
-    defbusiness\_state(self):
+    defbusiness_address2(self):
 
-    returnself.\_business\_state
+    return self._business_address2
 
-    @business\_state.setter
+    @business_address2.setter
 
-    defbusiness\_state(self, business\_state):
+    defbusiness_address2(self, business_address2):
 
-    self.\_business\_state = business\_state
-
-    @property
-
-    defbusiness\_zip(self):
-
-    returnself.\_business\_zip
-
-    @business\_zip.setter
-
-    defbusiness\_zip(self, business\_zip):
-
-    self.\_business\_zip = business\_zip
+    self._business_address2 = business_address2
 
     @property
 
-    defbusiness\_country(self):
+    defbusiness_city(self):
 
-    returnself.\_business\_country
+    return self._business_city
 
-    @business\_country.setter
+    @business_city.setter
 
-    defbusiness\_country(self, business\_country):
+    defbusiness_city(self, business_city):
 
-    self.\_business\_country = business\_country
-
-    @property
-
-    defbusiness\_website(self):
-
-    returnself.\_business\_website
-
-    @business\_website.setter
-
-    defbusiness\_website(self, business\_website):
-
-    self.\_business\_website = business\_website
+    self._business_city = business_city
 
     @property
 
-    defcontact\_first\_name(self):
+    defbusiness_state(self):
 
-    returnself.\_contact\_first\_name
+    return self._business_state
 
-    @contact\_first\_name.setter
+    @business_state.setter
 
-    defcontact\_first\_name(self, contact\_first\_name):
+    defbusiness_state(self, business_state):
 
-    self.\_contact\_first\_name = contact\_first\_name
-
-    @property
-
-    defcontact\_last\_name(self):
-
-    returnself.\_contact\_last\_name
-
-    @contact\_last\_name.setter
-
-    defcontact\_last\_name(self, contact\_last\_name):
-
-    self.\_contact\_last\_name = contact\_last\_name
+    self._business_state = business_state
 
     @property
 
-    defcontact\_phone(self):
+    defbusiness_zip(self):
 
-    returnself.\_contact\_phone
+    return self._business_zip
 
-    @contact\_phone.setter
+    @business_zip.setter
 
-    defcontact\_phone(self, contact\_phone):
+    defbusiness_zip(self, business_zip):
 
-    self.\_contact\_phone = contact\_phone
-
-    @property
-
-    defcontact\_fax(self):
-
-    returnself.\_contact\_fax
-
-    @contact\_fax.setter
-
-    defcontact\_fax(self, contact\_fax):
-
-    self.\_contact\_fax = contact\_fax
+    self._business_zip = business_zip
 
     @property
 
-    defcontact\_email(self):
+    defbusiness_country(self):
 
-    returnself.\_contact\_email
+    return self._business_country
 
-    @contact\_email.setter
+    @business_country.setter
 
-    defcontact\_email(self, contact\_email):
+    defbusiness_country(self, business_country):
 
-    self.\_contact\_email = contact\_email
+    self._business_country = business_country
 
     @property
 
-    defcontact\_title(self):
+    defbusiness_website(self):
 
-    returnself.\_contact\_title
+    return self._business_website
 
-    @contact\_title.setter
+    @business_website.setter
 
-    defcontact\_title(self, contact\_title):
+    defbusiness_website(self, business_website):
 
-    self.\_contact\_title = contact\_title
+    self._business_website = business_website
+
+    @property
+
+    defcontact_first_name(self):
+
+    return self._contact_first_name
+
+    @contact_first_name.setter
+
+    defcontact_first_name(self, contact_first_name):
+
+    self._contact_first_name = contact_first_name
+
+    @property
+
+    defcontact_last_name(self):
+
+    return self._contact_last_name
+
+    @contact_last_name.setter
+
+    defcontact_last_name(self, contact_last_name):
+
+    self._contact_last_name = contact_last_name
+
+    @property
+
+    defcontact_phone(self):
+
+    return self._contact_phone
+
+    @contact_phone.setter
+
+    defcontact_phone(self, contact_phone):
+
+    self._contact_phone = contact_phone
+
+    @property
+
+    defcontact_fax(self):
+
+    return self._contact_fax
+
+    @contact_fax.setter
+
+    defcontact_fax(self, contact_fax):
+
+    self._contact_fax = contact_fax
+
+    @property
+
+    defcontact_email(self):
+
+    return self._contact_email
+
+    @contact_email.setter
+
+    defcontact_email(self, contact_email):
+
+    self._contact_email = contact_email
+
+    @property
+
+    defcontact_title(self):
+
+    return self._contact_title
+
+    @contact_title.setter
+
+    defcontact_title(self, contact_title):
+
+    self._contact_title = contact_title
 
     @property
 
     defip(self):
 
-    returnself.\_ip
+    return self._ip
 
     @ip.setter
 
     defip(self, ip):
 
-    self.\_ip = ip
+    self._ip = ip
 
     @property
 
-    deftax\_exempt(self):
+    deftax_exempt(self):
 
-    returnself.\_tax\_exempt
+    return self._tax_exempt
 
-    @tax\_exempt.setter
+    @tax_exempt.setter
 
-    deftax\_exempt(self, tax\_exempt):
+    deftax_exempt(self, tax_exempt):
 
-    self.\_tax\_exempt = tax\_exempt
+    self._tax_exempt = tax_exempt
 
 # Receipt
 
@@ -3576,29 +3576,29 @@
 
     classReceipt(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;header&#39;: &#39;ReceiptCustomLines&#39;,
+    'header': 'ReceiptCustomLines',
 
-    &#39;footer&#39;: &#39;ReceiptCustomLines&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;header&#39;: &#39;Header&#39;,
-
-    &#39;footer&#39;: &#39;Footer&#39;
+    'footer': 'ReceiptCustomLines'
 
     }
 
-    def\_\_init\_\_(self, header=None, footer=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Receipt - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'header': 'Header',
 
-    self.\_header = None
+    'footer': 'Footer'
 
-    self.\_footer = None
+    }
+
+    def__init__(self, header=None, footer=None): # noqa: E501
+
+    """Receipt - a model defined in Swagger"""# noqa: E501
+
+    self._header = None
+
+    self._footer = None
 
     self.discriminator = None
 
@@ -3614,25 +3614,25 @@
 
     defheader(self):
 
-    returnself.\_header
+    return self._header
 
     @header.setter
 
     defheader(self, header):
 
-    self.\_header = header
+    self._header = header
 
     @property
 
     deffooter(self):
 
-    returnself.\_footer
+    return self._footer
 
     @footer.setter
 
     deffooter(self, footer):
 
-    self.\_footer = footer
+    self._footer = footer
 
 # ReceiptCustomLines
 
@@ -3640,107 +3640,107 @@
 
     classReceiptCustomLines(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;custom\_line1&#39;: &#39;str&#39;,
+    'custom_line1': 'str',
 
-    &#39;custom\_line2&#39;: &#39;str&#39;,
+    'custom_line2': 'str',
 
-    &#39;custom\_line3&#39;: &#39;str&#39;,
+    'custom_line3': 'str',
 
-    &#39;custom\_line4&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;custom\_line1&#39;: &#39;CustomLine1&#39;,
-
-    &#39;custom\_line2&#39;: &#39;CustomLine2&#39;,
-
-    &#39;custom\_line3&#39;: &#39;CustomLine3&#39;,
-
-    &#39;custom\_line4&#39;: &#39;CustomLine4&#39;
+    'custom_line4': 'str'
 
     }
 
-    def\_\_init\_\_(self, custom\_line1=None, custom\_line2=None, custom\_line3=None, custom\_line4=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;ReceiptCustomLines - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'custom_line1': 'CustomLine1',
 
-    self.\_custom\_line1 = None
+    'custom_line2': 'CustomLine2',
 
-    self.\_custom\_line2 = None
+    'custom_line3': 'CustomLine3',
 
-    self.\_custom\_line3 = None
+    'custom_line4': 'CustomLine4'
 
-    self.\_custom\_line4 = None
+    }
+
+    def__init__(self, custom_line1=None, custom_line2=None, custom_line3=None, custom_line4=None): # noqa: E501
+
+    """ReceiptCustomLines - a model defined in Swagger"""# noqa: E501
+
+    self._custom_line1 = None
+
+    self._custom_line2 = None
+
+    self._custom_line3 = None
+
+    self._custom_line4 = None
 
     self.discriminator = None
 
-    ifcustom\_line1isnotNone:
+    ifcustom_line1isnotNone:
 
-    self.custom\_line1 = custom\_line1
+    self.custom_line1 = custom_line1
 
-    ifcustom\_line2isnotNone:
+    ifcustom_line2isnotNone:
 
-    self.custom\_line2 = custom\_line2
+    self.custom_line2 = custom_line2
 
-    ifcustom\_line3isnotNone:
+    ifcustom_line3isnotNone:
 
-    self.custom\_line3 = custom\_line3
+    self.custom_line3 = custom_line3
 
-    ifcustom\_line4isnotNone:
+    ifcustom_line4isnotNone:
 
-    self.custom\_line4 = custom\_line4
-
-    @property
-
-    defcustom\_line1(self):
-
-    returnself.\_custom\_line1
-
-    @custom\_line1.setter
-
-    defcustom\_line1(self, custom\_line1):
-
-    self.\_custom\_line1 = custom\_line1
+    self.custom_line4 = custom_line4
 
     @property
 
-    defcustom\_line2(self):
+    defcustom_line1(self):
 
-    returnself.\_custom\_line2
+    return self._custom_line1
 
-    @custom\_line2.setter
+    @custom_line1.setter
 
-    defcustom\_line2(self, custom\_line2):
+    defcustom_line1(self, custom_line1):
 
-    self.\_custom\_line2 = custom\_line2
-
-    @property
-
-    defcustom\_line3(self):
-
-    returnself.\_custom\_line3
-
-    @custom\_line3.setter
-
-    defcustom\_line3(self, custom\_line3):
-
-    self.\_custom\_line3 = custom\_line3
+    self._custom_line1 = custom_line1
 
     @property
 
-    defcustom\_line4(self):
+    defcustom_line2(self):
 
-    returnself.\_custom\_line4
+    return self._custom_line2
 
-    @custom\_line4.setter
+    @custom_line2.setter
 
-    defcustom\_line4(self, custom\_line4):
+    defcustom_line2(self, custom_line2):
 
-    self.\_custom\_line4 = custom\_line4
+    self._custom_line2 = custom_line2
+
+    @property
+
+    defcustom_line3(self):
+
+    return self._custom_line3
+
+    @custom_line3.setter
+
+    defcustom_line3(self, custom_line3):
+
+    self._custom_line3 = custom_line3
+
+    @property
+
+    defcustom_line4(self):
+
+    return self._custom_line4
+
+    @custom_line4.setter
+
+    defcustom_line4(self, custom_line4):
+
+    self._custom_line4 = custom_line4
 
 # Record
 
@@ -3748,89 +3748,89 @@
 
     classRecord(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;response&#39;: &#39;Response&#39;,
+    'response': 'Response',
 
-    &#39;id&#39;: &#39;int&#39;,
+    'id': 'int',
 
-    &#39;reference&#39;: &#39;str&#39;,
+    'reference': 'str',
 
-    &#39;business&#39;: &#39;Business&#39;,
+    'business': 'Business',
 
-    &#39;contact&#39;: &#39;Contact&#39;,
+    'contact': 'Contact',
 
-    &#39;po&#39;: &#39;str&#39;,
+    'po': 'str',
 
-    &#39;invoice&#39;: &#39;str&#39;,
+    'invoice': 'str',
 
-    &#39;customer&#39;: &#39;str&#39;,
+    'customer': 'str',
 
-    &#39;tax\_exempt&#39;: &#39;bool&#39;,
+    'tax_exempt': 'bool',
 
-    &#39;note&#39;: &#39;str&#39;,
+    'note': 'str',
 
-    &#39;credit\_cards&#39;: &#39;list[VaultCreditCard]&#39;,
+    'credit_cards': 'list[VaultCreditCard]',
 
-    &#39;checks&#39;: &#39;list[VaultCheck]&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;response&#39;: &#39;Response&#39;,
-
-    &#39;id&#39;: &#39;ID&#39;,
-
-    &#39;reference&#39;: &#39;Reference&#39;,
-
-    &#39;business&#39;: &#39;Business&#39;,
-
-    &#39;contact&#39;: &#39;Contact&#39;,
-
-    &#39;po&#39;: &#39;PO&#39;,
-
-    &#39;invoice&#39;: &#39;Invoice&#39;,
-
-    &#39;customer&#39;: &#39;Customer&#39;,
-
-    &#39;tax\_exempt&#39;: &#39;TaxExempt&#39;,
-
-    &#39;note&#39;: &#39;Note&#39;,
-
-    &#39;credit\_cards&#39;: &#39;CreditCards&#39;,
-
-    &#39;checks&#39;: &#39;Checks&#39;
+    'checks': 'list[VaultCheck]'
 
     }
 
-    def\_\_init\_\_(self, response=None, id=None, reference=None, business=None, contact=None, po=None, invoice=None, customer=None, tax\_exempt=None, note=None, credit\_cards=None, checks=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Record - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'response': 'Response',
 
-    self.\_response = None
+    'id': 'ID',
 
-    self.\_id = None
+    'reference': 'Reference',
 
-    self.\_reference = None
+    'business': 'Business',
 
-    self.\_business = None
+    'contact': 'Contact',
 
-    self.\_contact = None
+    'po': 'PO',
 
-    self.\_po = None
+    'invoice': 'Invoice',
 
-    self.\_invoice = None
+    'customer': 'Customer',
 
-    self.\_customer = None
+    'tax_exempt': 'TaxExempt',
 
-    self.\_tax\_exempt = None
+    'note': 'Note',
 
-    self.\_note = None
+    'credit_cards': 'CreditCards',
 
-    self.\_credit\_cards = None
+    'checks': 'Checks'
 
-    self.\_checks = None
+    }
+
+    def__init__(self, response=None, id=None, reference=None, business=None, contact=None, po=None, invoice=None, customer=None, tax_exempt=None, note=None, credit_cards=None, checks=None): # noqa: E501
+
+    """Record - a model defined in Swagger"""# noqa: E501
+
+    self._response = None
+
+    self._id = None
+
+    self._reference = None
+
+    self._business = None
+
+    self._contact = None
+
+    self._po = None
+
+    self._invoice = None
+
+    self._customer = None
+
+    self._tax_exempt = None
+
+    self._note = None
+
+    self._credit_cards = None
+
+    self._checks = None
 
     self.discriminator = None
 
@@ -3866,17 +3866,17 @@
 
     self.customer = customer
 
-    iftax\_exemptisnotNone:
+    iftax_exemptisnotNone:
 
-    self.tax\_exempt = tax\_exempt
+    self.tax_exempt = tax_exempt
 
     ifnoteisnotNone:
 
     self.note = note
 
-    ifcredit\_cardsisnotNone:
+    ifcredit_cardsisnotNone:
 
-    self.credit\_cards = credit\_cards
+    self.credit_cards = credit_cards
 
     ifchecksisnotNone:
 
@@ -3886,145 +3886,145 @@
 
     defresponse(self):
 
-    returnself.\_response
+    return self._response
 
     @response.setter
 
     defresponse(self, response):
 
-    self.\_response = response
+    self._response = response
 
     @property
 
     defid(self):
 
-    returnself.\_id
+    return self._id
 
     @id.setter
 
     defid(self, id):
 
-    self.\_id = id
+    self._id = id
 
     @property
 
     defreference(self):
 
-    returnself.\_reference
+    return self._reference
 
     @reference.setter
 
     defreference(self, reference):
 
-    self.\_reference = reference
+    self._reference = reference
 
     @property
 
     defbusiness(self):
 
-    returnself.\_business
+    return self._business
 
     @business.setter
 
     defbusiness(self, business):
 
-    self.\_business = business
+    self._business = business
 
     @property
 
     defcontact(self):
 
-    returnself.\_contact
+    return self._contact
 
     @contact.setter
 
     defcontact(self, contact):
 
-    self.\_contact = contact
+    self._contact = contact
 
     @property
 
     defpo(self):
 
-    returnself.\_po
+    return self._po
 
     @po.setter
 
     defpo(self, po):
 
-    self.\_po = po
+    self._po = po
 
     @property
 
     definvoice(self):
 
-    returnself.\_invoice
+    return self._invoice
 
     @invoice.setter
 
     definvoice(self, invoice):
 
-    self.\_invoice = invoice
+    self._invoice = invoice
 
     @property
 
     defcustomer(self):
 
-    returnself.\_customer
+    return self._customer
 
     @customer.setter
 
     defcustomer(self, customer):
 
-    self.\_customer = customer
+    self._customer = customer
 
     @property
 
-    deftax\_exempt(self):
+    deftax_exempt(self):
 
-    returnself.\_tax\_exempt
+    return self._tax_exempt
 
-    @tax\_exempt.setter
+    @tax_exempt.setter
 
-    deftax\_exempt(self, tax\_exempt):
+    deftax_exempt(self, tax_exempt):
 
-    self.\_tax\_exempt = tax\_exempt
+    self._tax_exempt = tax_exempt
 
     @property
 
     defnote(self):
 
-    returnself.\_note
+    return self._note
 
     @note.setter
 
     defnote(self, note):
 
-    self.\_note = note
+    self._note = note
 
     @property
 
-    defcredit\_cards(self):
+    defcredit_cards(self):
 
-    returnself.\_credit\_cards
+    return self._credit_cards
 
-    @credit\_cards.setter
+    @credit_cards.setter
 
-    defcredit\_cards(self, credit\_cards):
+    defcredit_cards(self, credit_cards):
 
-    self.\_credit\_cards = credit\_cards
+    self._credit_cards = credit_cards
 
     @property
 
     defchecks(self):
 
-    returnself.\_checks
+    return self._checks
 
     @checks.setter
 
     defchecks(self, checks):
 
-    self.\_checks = checks
+    self._checks = checks
 
 # Response
 
@@ -4032,29 +4032,29 @@
 
     classResponse(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;error&#39;: &#39;bool&#39;,
+    'error': 'bool',
 
-    &#39;message&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;error&#39;: &#39;Error&#39;,
-
-    &#39;message&#39;: &#39;Message&#39;
+    'message': 'str'
 
     }
 
-    def\_\_init\_\_(self, error=None, message=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Response - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'error': 'Error',
 
-    self.\_error = None
+    'message': 'Message'
 
-    self.\_message = None
+    }
+
+    def__init__(self, error=None, message=None): # noqa: E501
+
+    """Response - a model defined in Swagger"""# noqa: E501
+
+    self._error = None
+
+    self._message = None
 
     self.discriminator = None
 
@@ -4070,25 +4070,25 @@
 
     deferror(self):
 
-    returnself.\_error
+    return self._error
 
     @error.setter
 
     deferror(self, error):
 
-    self.\_error = error
+    self._error = error
 
     @property
 
     defmessage(self):
 
-    returnself.\_message
+    return self._message
 
     @message.setter
 
     defmessage(self, message):
 
-    self.\_message = message
+    self._message = message
 
 # SearchVault
 
@@ -4096,41 +4096,41 @@
 
     classSearchVault(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;reference&#39;: &#39;str&#39;,
+    'reference': 'str',
 
-    &#39;business\_name&#39;: &#39;str&#39;,
+    'business_name': 'str',
 
-    &#39;first\_name&#39;: &#39;str&#39;,
+    'first_name': 'str',
 
-    &#39;last\_name&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;reference&#39;: &#39;Reference&#39;,
-
-    &#39;business\_name&#39;: &#39;BusinessName&#39;,
-
-    &#39;first\_name&#39;: &#39;FirstName&#39;,
-
-    &#39;last\_name&#39;: &#39;LastName&#39;
+    'last_name': 'str'
 
     }
 
-    def\_\_init\_\_(self, reference=None, business\_name=None, first\_name=None, last\_name=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;SearchVault - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'reference': 'Reference',
 
-    self.\_reference = None
+    'business_name': 'BusinessName',
 
-    self.\_business\_name = None
+    'first_name': 'FirstName',
 
-    self.\_first\_name = None
+    'last_name': 'LastName'
 
-    self.\_last\_name = None
+    }
+
+    def__init__(self, reference=None, business_name=None, first_name=None, last_name=None): # noqa: E501
+
+    """SearchVault - a model defined in Swagger"""# noqa: E501
+
+    self._reference = None
+
+    self._business_name = None
+
+    self._first_name = None
+
+    self._last_name = None
 
     self.discriminator = None
 
@@ -4138,65 +4138,65 @@
 
     self.reference = reference
 
-    ifbusiness\_nameisnotNone:
+    ifbusiness_nameisnotNone:
 
-    self.business\_name = business\_name
+    self.business_name = business_name
 
-    iffirst\_nameisnotNone:
+    iffirst_nameisnotNone:
 
-    self.first\_name = first\_name
+    self.first_name = first_name
 
-    iflast\_nameisnotNone:
+    iflast_nameisnotNone:
 
-    self.last\_name = last\_name
+    self.last_name = last_name
 
     @property
 
     defreference(self):
 
-    returnself.\_reference
+    return self._reference
 
     @reference.setter
 
     defreference(self, reference):
 
-    self.\_reference = reference
+    self._reference = reference
 
     @property
 
-    defbusiness\_name(self):
+    defbusiness_name(self):
 
-    returnself.\_business\_name
+    return self._business_name
 
-    @business\_name.setter
+    @business_name.setter
 
-    defbusiness\_name(self, business\_name):
+    defbusiness_name(self, business_name):
 
-    self.\_business\_name = business\_name
-
-    @property
-
-    deffirst\_name(self):
-
-    returnself.\_first\_name
-
-    @first\_name.setter
-
-    deffirst\_name(self, first\_name):
-
-    self.\_first\_name = first\_name
+    self._business_name = business_name
 
     @property
 
-    deflast\_name(self):
+    deffirst_name(self):
 
-    returnself.\_last\_name
+    return self._first_name
 
-    @last\_name.setter
+    @first_name.setter
 
-    deflast\_name(self, last\_name):
+    deffirst_name(self, first_name):
 
-    self.\_last\_name = last\_name
+    self._first_name = first_name
+
+    @property
+
+    deflast_name(self):
+
+    return self._last_name
+
+    @last_name.setter
+
+    deflast_name(self, last_name):
+
+    self._last_name = last_name
 
 # Settings
 
@@ -4204,95 +4204,95 @@
 
     classSettings(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;credit\_card\_transaction\_settings&#39;: &#39;CreditCardTransactionSettings&#39;,
+    'credit_card_transaction_settings': 'CreditCardTransactionSettings',
 
-    &#39;check\_transaction\_settings&#39;: &#39;CheckTransactionSettings&#39;,
+    'check_transaction_settings': 'CheckTransactionSettings',
 
-    &#39;business&#39;: &#39;Business&#39;,
+    'business': 'Business',
 
-    &#39;main\_contact&#39;: &#39;Contact&#39;,
+    'main_contact': 'Contact',
 
-    &#39;receipt40&#39;: &#39;Receipt&#39;,
+    'receipt40': 'Receipt',
 
-    &#39;receipt80&#39;: &#39;Receipt&#39;,
+    'receipt80': 'Receipt',
 
-    &#39;print\_signature\_line&#39;: &#39;bool&#39;,
+    'print_signature_line': 'bool',
 
-    &#39;response&#39;: &#39;Response&#39;,
+    'response': 'Response',
 
-    &#39;account\_id&#39;: &#39;str&#39;,
+    'account_id': 'str',
 
-    &#39;copy\_email\_receipt&#39;: &#39;FieldInfo&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;credit\_card\_transaction\_settings&#39;: &#39;CreditCardTransactionSettings&#39;,
-
-    &#39;check\_transaction\_settings&#39;: &#39;CheckTransactionSettings&#39;,
-
-    &#39;business&#39;: &#39;Business&#39;,
-
-    &#39;main\_contact&#39;: &#39;MainContact&#39;,
-
-    &#39;receipt40&#39;: &#39;Receipt40&#39;,
-
-    &#39;receipt80&#39;: &#39;Receipt80&#39;,
-
-    &#39;print\_signature\_line&#39;: &#39;PrintSignatureLine&#39;,
-
-    &#39;response&#39;: &#39;Response&#39;,
-
-    &#39;account\_id&#39;: &#39;AccountID&#39;,
-
-    &#39;copy\_email\_receipt&#39;: &#39;CopyEmailReceipt&#39;
+    'copy_email_receipt': 'FieldInfo'
 
     }
 
-    def\_\_init\_\_(self, credit\_card\_transaction\_settings=None, check\_transaction\_settings=None, business=None, main\_contact=None, receipt40=None, receipt80=None, print\_signature\_line=None, response=None, account\_id=None, copy\_email\_receipt=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;Settings - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'credit_card_transaction_settings': 'CreditCardTransactionSettings',
 
-    self.\_credit\_card\_transaction\_settings = None
+    'check_transaction_settings': 'CheckTransactionSettings',
 
-    self.\_check\_transaction\_settings = None
+    'business': 'Business',
 
-    self.\_business = None
+    'main_contact': 'MainContact',
 
-    self.\_main\_contact = None
+    'receipt40': 'Receipt40',
 
-    self.\_receipt40 = None
+    'receipt80': 'Receipt80',
 
-    self.\_receipt80 = None
+    'print_signature_line': 'PrintSignatureLine',
 
-    self.\_print\_signature\_line = None
+    'response': 'Response',
 
-    self.\_response = None
+    'account_id': 'AccountID',
 
-    self.\_account\_id = None
+    'copy_email_receipt': 'CopyEmailReceipt'
 
-    self.\_copy\_email\_receipt = None
+    }
+
+    def__init__(self, credit_card_transaction_settings=None, check_transaction_settings=None, business=None, main_contact=None, receipt40=None, receipt80=None, print_signature_line=None, response=None, account_id=None, copy_email_receipt=None): # noqa: E501
+
+    """Settings - a model defined in Swagger"""# noqa: E501
+
+    self._credit_card_transaction_settings = None
+
+    self._check_transaction_settings = None
+
+    self._business = None
+
+    self._main_contact = None
+
+    self._receipt40 = None
+
+    self._receipt80 = None
+
+    self._print_signature_line = None
+
+    self._response = None
+
+    self._account_id = None
+
+    self._copy_email_receipt = None
 
     self.discriminator = None
 
-    ifcredit\_card\_transaction\_settingsisnotNone:
+    ifcredit_card_transaction_settingsisnotNone:
 
-    self.credit\_card\_transaction\_settings = credit\_card\_transaction\_settings
+    self.credit_card_transaction_settings = credit_card_transaction_settings
 
-    ifcheck\_transaction\_settingsisnotNone:
+    ifcheck_transaction_settingsisnotNone:
 
-    self.check\_transaction\_settings = check\_transaction\_settings
+    self.check_transaction_settings = check_transaction_settings
 
     ifbusinessisnotNone:
 
     self.business = business
 
-    ifmain\_contactisnotNone:
+    ifmain_contactisnotNone:
 
-    self.main\_contact = main\_contact
+    self.main_contact = main_contact
 
     ifreceipt40isnotNone:
 
@@ -4302,141 +4302,141 @@
 
     self.receipt80 = receipt80
 
-    ifprint\_signature\_lineisnotNone:
+    ifprint_signature_lineisnotNone:
 
-    self.print\_signature\_line = print\_signature\_line
+    self.print_signature_line = print_signature_line
 
     ifresponseisnotNone:
 
     self.response = response
 
-    ifaccount\_idisnotNone:
+    ifaccount_idisnotNone:
 
-    self.account\_id = account\_id
+    self.account_id = account_id
 
-    ifcopy\_email\_receiptisnotNone:
+    ifcopy_email_receiptisnotNone:
 
-    self.copy\_email\_receipt = copy\_email\_receipt
-
-    @property
-
-    defcredit\_card\_transaction\_settings(self):
-
-    returnself.\_credit\_card\_transaction\_settings
-
-    @credit\_card\_transaction\_settings.setter
-
-    defcredit\_card\_transaction\_settings(self, credit\_card\_transaction\_settings):
-
-    self.\_credit\_card\_transaction\_settings = credit\_card\_transaction\_settings
+    self.copy_email_receipt = copy_email_receipt
 
     @property
 
-    defcheck\_transaction\_settings(self):
+    defcredit_card_transaction_settings(self):
 
-    returnself.\_check\_transaction\_settings
+    return self._credit_card_transaction_settings
 
-    @check\_transaction\_settings.setter
+    @credit_card_transaction_settings.setter
 
-    defcheck\_transaction\_settings(self, check\_transaction\_settings):
+    defcredit_card_transaction_settings(self, credit_card_transaction_settings):
 
-    self.\_check\_transaction\_settings = check\_transaction\_settings
+    self._credit_card_transaction_settings = credit_card_transaction_settings
+
+    @property
+
+    defcheck_transaction_settings(self):
+
+    return self._check_transaction_settings
+
+    @check_transaction_settings.setter
+
+    defcheck_transaction_settings(self, check_transaction_settings):
+
+    self._check_transaction_settings = check_transaction_settings
 
     @property
 
     defbusiness(self):
 
-    returnself.\_business
+    return self._business
 
     @business.setter
 
     defbusiness(self, business):
 
-    self.\_business = business
+    self._business = business
 
     @property
 
-    defmain\_contact(self):
+    defmain_contact(self):
 
-    returnself.\_main\_contact
+    return self._main_contact
 
-    @main\_contact.setter
+    @main_contact.setter
 
-    defmain\_contact(self, main\_contact):
+    defmain_contact(self, main_contact):
 
-    self.\_main\_contact = main\_contact
+    self._main_contact = main_contact
 
     @property
 
     defreceipt40(self):
 
-    returnself.\_receipt40
+    return self._receipt40
 
     @receipt40.setter
 
     defreceipt40(self, receipt40):
 
-    self.\_receipt40 = receipt40
+    self._receipt40 = receipt40
 
     @property
 
     defreceipt80(self):
 
-    returnself.\_receipt80
+    return self._receipt80
 
     @receipt80.setter
 
     defreceipt80(self, receipt80):
 
-    self.\_receipt80 = receipt80
+    self._receipt80 = receipt80
 
     @property
 
-    defprint\_signature\_line(self):
+    defprint_signature_line(self):
 
-    returnself.\_print\_signature\_line
+    return self._print_signature_line
 
-    @print\_signature\_line.setter
+    @print_signature_line.setter
 
-    defprint\_signature\_line(self, print\_signature\_line):
+    defprint_signature_line(self, print_signature_line):
 
-    self.\_print\_signature\_line = print\_signature\_line
+    self._print_signature_line = print_signature_line
 
     @property
 
     defresponse(self):
 
-    returnself.\_response
+    return self._response
 
     @response.setter
 
     defresponse(self, response):
 
-    self.\_response = response
+    self._response = response
 
     @property
 
-    defaccount\_id(self):
+    defaccount_id(self):
 
-    returnself.\_account\_id
+    return self._account_id
 
-    @account\_id.setter
+    @account_id.setter
 
-    defaccount\_id(self, account\_id):
+    defaccount_id(self, account_id):
 
-    self.\_account\_id = account\_id
+    self._account_id = account_id
 
     @property
 
-    defcopy\_email\_receipt(self):
+    defcopy_email_receipt(self):
 
-    returnself.\_copy\_email\_receipt
+    return self._copy_email_receipt
 
-    @copy\_email\_receipt.setter
+    @copy_email_receipt.setter
 
-    defcopy\_email\_receipt(self, copy\_email\_receipt):
+    defcopy_email_receipt(self, copy_email_receipt):
 
-    self.\_copy\_email\_receipt = copy\_email\_receipt
+    self._copy_email_receipt = copy_email_receipt
 
 # TerminalSettings
 
@@ -4444,65 +4444,65 @@
 
     classTerminalSettings(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;id&#39;: &#39;int&#39;,
+    'id': 'int',
 
-    &#39;terminal\_id&#39;: &#39;int&#39;,
+    'terminal_id': 'int',
 
-    &#39;sec\_code&#39;: &#39;str&#39;,
+    'sec_code': 'str',
 
-    &#39;gateway\_terminal&#39;: &#39;bool&#39;,
+    'gateway_terminal': 'bool',
 
-    &#39;consumer\_credits&#39;: &#39;bool&#39;,
+    'consumer_credits': 'bool',
 
-    &#39;dl\_required&#39;: &#39;bool&#39;,
+    'dl_required': 'bool',
 
-    &#39;check\_verify&#39;: &#39;bool&#39;,
+    'check_verify': 'bool',
 
-    &#39;identity\_verify&#39;: &#39;bool&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;id&#39;: &#39;ID&#39;,
-
-    &#39;terminal\_id&#39;: &#39;Terminal\_ID&#39;,
-
-    &#39;sec\_code&#39;: &#39;SEC\_Code&#39;,
-
-    &#39;gateway\_terminal&#39;: &#39;Gateway\_Terminal&#39;,
-
-    &#39;consumer\_credits&#39;: &#39;Consumer\_Credits&#39;,
-
-    &#39;dl\_required&#39;: &#39;DL\_Required&#39;,
-
-    &#39;check\_verify&#39;: &#39;Check\_Verify&#39;,
-
-    &#39;identity\_verify&#39;: &#39;Identity\_Verify&#39;
+    'identity_verify': 'bool'
 
     }
 
-    def\_\_init\_\_(self, id=None, terminal\_id=None, sec\_code=None, gateway\_terminal=None, consumer\_credits=None, dl\_required=None, check\_verify=None, identity\_verify=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;TerminalSettings - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'id': 'ID',
 
-    self.\_id = None
+    'terminal_id': 'Terminal_ID',
 
-    self.\_terminal\_id = None
+    'sec_code': 'SEC_Code',
 
-    self.\_sec\_code = None
+    'gateway_terminal': 'Gateway_Terminal',
 
-    self.\_gateway\_terminal = None
+    'consumer_credits': 'Consumer_Credits',
 
-    self.\_consumer\_credits = None
+    'dl_required': 'DL_Required',
 
-    self.\_dl\_required = None
+    'check_verify': 'Check_Verify',
 
-    self.\_check\_verify = None
+    'identity_verify': 'Identity_Verify'
 
-    self.\_identity\_verify = None
+    }
+
+    def__init__(self, id=None, terminal_id=None, sec_code=None, gateway_terminal=None, consumer_credits=None, dl_required=None, check_verify=None, identity_verify=None): # noqa: E501
+
+    """TerminalSettings - a model defined in Swagger"""# noqa: E501
+
+    self._id = None
+
+    self._terminal_id = None
+
+    self._sec_code = None
+
+    self._gateway_terminal = None
+
+    self._consumer_credits = None
+
+    self._dl_required = None
+
+    self._check_verify = None
+
+    self._identity_verify = None
 
     self.discriminator = None
 
@@ -4510,129 +4510,129 @@
 
     self.id = id
 
-    ifterminal\_idisnotNone:
+    ifterminal_idisnotNone:
 
-    self.terminal\_id = terminal\_id
+    self.terminal_id = terminal_id
 
-    ifsec\_codeisnotNone:
+    ifsec_codeisnotNone:
 
-    self.sec\_code = sec\_code
+    self.sec_code = sec_code
 
-    ifgateway\_terminalisnotNone:
+    ifgateway_terminalisnotNone:
 
-    self.gateway\_terminal = gateway\_terminal
+    self.gateway_terminal = gateway_terminal
 
-    ifconsumer\_creditsisnotNone:
+    ifconsumer_creditsisnotNone:
 
-    self.consumer\_credits = consumer\_credits
+    self.consumer_credits = consumer_credits
 
-    ifdl\_requiredisnotNone:
+    ifdl_requiredisnotNone:
 
-    self.dl\_required = dl\_required
+    self.dl_required = dl_required
 
-    ifcheck\_verifyisnotNone:
+    ifcheck_verifyisnotNone:
 
-    self.check\_verify = check\_verify
+    self.check_verify = check_verify
 
-    ifidentity\_verifyisnotNone:
+    ifidentity_verifyisnotNone:
 
-    self.identity\_verify = identity\_verify
+    self.identity_verify = identity_verify
 
     @property
 
     defid(self):
 
-    returnself.\_id
+    return self._id
 
     @id.setter
 
     defid(self, id):
 
-    self.\_id = id
+    self._id = id
 
     @property
 
-    defterminal\_id(self):
+    defterminal_id(self):
 
-    returnself.\_terminal\_id
+    return self._terminal_id
 
-    @terminal\_id.setter
+    @terminal_id.setter
 
-    defterminal\_id(self, terminal\_id):
+    defterminal_id(self, terminal_id):
 
-    self.\_terminal\_id = terminal\_id
-
-    @property
-
-    defsec\_code(self):
-
-    returnself.\_sec\_code
-
-    @sec\_code.setter
-
-    defsec\_code(self, sec\_code):
-
-    self.\_sec\_code = sec\_code
+    self._terminal_id = terminal_id
 
     @property
 
-    defgateway\_terminal(self):
+    defsec_code(self):
 
-    returnself.\_gateway\_terminal
+    return self._sec_code
 
-    @gateway\_terminal.setter
+    @sec_code.setter
 
-    defgateway\_terminal(self, gateway\_terminal):
+    defsec_code(self, sec_code):
 
-    self.\_gateway\_terminal = gateway\_terminal
-
-    @property
-
-    defconsumer\_credits(self):
-
-    returnself.\_consumer\_credits
-
-    @consumer\_credits.setter
-
-    defconsumer\_credits(self, consumer\_credits):
-
-    self.\_consumer\_credits = consumer\_credits
+    self._sec_code = sec_code
 
     @property
 
-    defdl\_required(self):
+    defgateway_terminal(self):
 
-    returnself.\_dl\_required
+    return self._gateway_terminal
 
-    @dl\_required.setter
+    @gateway_terminal.setter
 
-    defdl\_required(self, dl\_required):
+    defgateway_terminal(self, gateway_terminal):
 
-    self.\_dl\_required = dl\_required
-
-    @property
-
-    defcheck\_verify(self):
-
-    returnself.\_check\_verify
-
-    @check\_verify.setter
-
-    defcheck\_verify(self, check\_verify):
-
-    self.\_check\_verify = check\_verify
+    self._gateway_terminal = gateway_terminal
 
     @property
 
-    defidentity\_verify(self):
+    defconsumer_credits(self):
 
-    returnself.\_identity\_verify
+    return self._consumer_credits
 
-    @identity\_verify.setter
+    @consumer_credits.setter
 
-    defidentity\_verify(self, identity\_verify):
+    defconsumer_credits(self, consumer_credits):
 
-    self.\_identity\_verify = identity\_verify
+    self._consumer_credits = consumer_credits
+
+    @property
+
+    defdl_required(self):
+
+    return self._dl_required
+
+    @dl_required.setter
+
+    defdl_required(self, dl_required):
+
+    self._dl_required = dl_required
+
+    @property
+
+    defcheck_verify(self):
+
+    return self._check_verify
+
+    @check_verify.setter
+
+    defcheck_verify(self, check_verify):
+
+    self._check_verify = check_verify
+
+    @property
+
+    defidentity_verify(self):
+
+    return self._identity_verify
+
+    @identity_verify.setter
+
+    defidentity_verify(self, identity_verify):
+
+    self._identity_verify = identity_verify
 
 # Transaction
 
@@ -4640,899 +4640,899 @@
 
     classTransaction(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;submit\_time&#39;: &#39;datetime&#39;,
+    'submit_time': 'datetime',
 
-    &#39;tran\_type&#39;: &#39;str&#39;,
+    'tran_type': 'str',
 
-    &#39;tran\_amt&#39;: &#39;float&#39;,
+    'tran_amt': 'float',
 
-    &#39;tran\_tax&#39;: &#39;float&#39;,
+    'tran_tax': 'float',
 
-    &#39;tran\_inv&#39;: &#39;str&#39;,
+    'tran_inv': 'str',
 
-    &#39;tran\_po&#39;: &#39;str&#39;,
+    'tran_po': 'str',
 
-    &#39;tran\_c\_num&#39;: &#39;str&#39;,
+    'tran_c_num': 'str',
 
-    &#39;tran\_note&#39;: &#39;str&#39;,
+    'tran_note': 'str',
 
-    &#39;card\_num&#39;: &#39;str&#39;,
+    'card_num': 'str',
 
-    &#39;card\_name&#39;: &#39;str&#39;,
+    'card_name': 'str',
 
-    &#39;card\_exp&#39;: &#39;str&#39;,
+    'card_exp': 'str',
 
-    &#39;card\_type&#39;: &#39;str&#39;,
+    'card_type': 'str',
 
-    &#39;avs\_street&#39;: &#39;str&#39;,
+    'avs_street': 'str',
 
-    &#39;avs\_zip&#39;: &#39;str&#39;,
+    'avs_zip': 'str',
 
-    &#39;cvv\_num&#39;: &#39;str&#39;,
+    'cvv_num': 'str',
 
-    &#39;proc\_id&#39;: &#39;str&#39;,
+    'proc_id': 'str',
 
-    &#39;proc\_resp&#39;: &#39;str&#39;,
+    'proc_resp': 'str',
 
-    &#39;proc\_code&#39;: &#39;str&#39;,
+    'proc_code': 'str',
 
-    &#39;proc\_mess&#39;: &#39;str&#39;,
+    'proc_mess': 'str',
 
-    &#39;avs\_code&#39;: &#39;str&#39;,
+    'avs_code': 'str',
 
-    &#39;avs\_resp&#39;: &#39;str&#39;,
+    'avs_resp': 'str',
 
-    &#39;cvv\_code&#39;: &#39;str&#39;,
+    'cvv_code': 'str',
 
-    &#39;cvv\_resp&#39;: &#39;str&#39;,
+    'cvv_resp': 'str',
 
-    &#39;items&#39;: &#39;list[TransactionItem]&#39;,
+    'items': 'list[TransactionItem]',
 
-    &#39;business\_name&#39;: &#39;str&#39;,
+    'business_name': 'str',
 
-    &#39;business\_address&#39;: &#39;str&#39;,
+    'business_address': 'str',
 
-    &#39;business\_address2&#39;: &#39;str&#39;,
+    'business_address2': 'str',
 
-    &#39;business\_city&#39;: &#39;str&#39;,
+    'business_city': 'str',
 
-    &#39;business\_state&#39;: &#39;str&#39;,
+    'business_state': 'str',
 
-    &#39;business\_zip&#39;: &#39;str&#39;,
+    'business_zip': 'str',
 
-    &#39;business\_country&#39;: &#39;str&#39;,
+    'business_country': 'str',
 
-    &#39;business\_website&#39;: &#39;str&#39;,
+    'business_website': 'str',
 
-    &#39;contact\_first\_name&#39;: &#39;str&#39;,
+    'contact_first_name': 'str',
 
-    &#39;contact\_last\_name&#39;: &#39;str&#39;,
+    'contact_last_name': 'str',
 
-    &#39;contact\_phone&#39;: &#39;str&#39;,
+    'contact_phone': 'str',
 
-    &#39;contact\_fax&#39;: &#39;str&#39;,
+    'contact_fax': 'str',
 
-    &#39;contact\_email&#39;: &#39;str&#39;,
+    'contact_email': 'str',
 
-    &#39;contact\_title&#39;: &#39;str&#39;,
+    'contact_title': 'str',
 
-    &#39;ip&#39;: &#39;str&#39;,
+    'ip': 'str',
 
-    &#39;tax\_exempt&#39;: &#39;bool&#39;
+    'tax_exempt': 'bool'
 
     }
 
-    attribute\_map = {
+    attribute_map = {
 
-    &#39;submit\_time&#39;: &#39;Submit\_Time&#39;,
+    'submit_time': 'Submit_Time',
 
-    &#39;tran\_type&#39;: &#39;Tran\_Type&#39;,
+    'tran_type': 'Tran_Type',
 
-    &#39;tran\_amt&#39;: &#39;Tran\_Amt&#39;,
+    'tran_amt': 'Tran_Amt',
 
-    &#39;tran\_tax&#39;: &#39;Tran\_Tax&#39;,
+    'tran_tax': 'Tran_Tax',
 
-    &#39;tran\_inv&#39;: &#39;Tran\_Inv&#39;,
+    'tran_inv': 'Tran_Inv',
 
-    &#39;tran\_po&#39;: &#39;Tran\_PO&#39;,
+    'tran_po': 'Tran_PO',
 
-    &#39;tran\_c\_num&#39;: &#39;Tran\_CNum&#39;,
+    'tran_c_num': 'Tran_CNum',
 
-    &#39;tran\_note&#39;: &#39;Tran\_Note&#39;,
+    'tran_note': 'Tran_Note',
 
-    &#39;card\_num&#39;: &#39;Card\_Num&#39;,
+    'card_num': 'Card_Num',
 
-    &#39;card\_name&#39;: &#39;Card\_Name&#39;,
+    'card_name': 'Card_Name',
 
-    &#39;card\_exp&#39;: &#39;Card\_Exp&#39;,
+    'card_exp': 'Card_Exp',
 
-    &#39;card\_type&#39;: &#39;Card\_Type&#39;,
+    'card_type': 'Card_Type',
 
-    &#39;avs\_street&#39;: &#39;AVS\_Street&#39;,
+    'avs_street': 'AVS_Street',
 
-    &#39;avs\_zip&#39;: &#39;AVS\_Zip&#39;,
+    'avs_zip': 'AVS_Zip',
 
-    &#39;cvv\_num&#39;: &#39;CVV\_Num&#39;,
+    'cvv_num': 'CVV_Num',
 
-    &#39;proc\_id&#39;: &#39;Proc\_ID&#39;,
+    'proc_id': 'Proc_ID',
 
-    &#39;proc\_resp&#39;: &#39;Proc\_Resp&#39;,
+    'proc_resp': 'Proc_Resp',
 
-    &#39;proc\_code&#39;: &#39;Proc\_Code&#39;,
+    'proc_code': 'Proc_Code',
 
-    &#39;proc\_mess&#39;: &#39;Proc\_Mess&#39;,
+    'proc_mess': 'Proc_Mess',
 
-    &#39;avs\_code&#39;: &#39;AVS\_Code&#39;,
+    'avs_code': 'AVS_Code',
 
-    &#39;avs\_resp&#39;: &#39;AVS\_Resp&#39;,
+    'avs_resp': 'AVS_Resp',
 
-    &#39;cvv\_code&#39;: &#39;CVV\_Code&#39;,
+    'cvv_code': 'CVV_Code',
 
-    &#39;cvv\_resp&#39;: &#39;CVV\_Resp&#39;,
+    'cvv_resp': 'CVV_Resp',
 
-    &#39;items&#39;: &#39;Items&#39;,
+    'items': 'Items',
 
-    &#39;business\_name&#39;: &#39;Business\_Name&#39;,
+    'business_name': 'Business_Name',
 
-    &#39;business\_address&#39;: &#39;Business\_Address&#39;,
+    'business_address': 'Business_Address',
 
-    &#39;business\_address2&#39;: &#39;Business\_Address2&#39;,
+    'business_address2': 'Business_Address2',
 
-    &#39;business\_city&#39;: &#39;Business\_City&#39;,
+    'business_city': 'Business_City',
 
-    &#39;business\_state&#39;: &#39;Business\_State&#39;,
+    'business_state': 'Business_State',
 
-    &#39;business\_zip&#39;: &#39;Business\_Zip&#39;,
+    'business_zip': 'Business_Zip',
 
-    &#39;business\_country&#39;: &#39;Business\_Country&#39;,
+    'business_country': 'Business_Country',
 
-    &#39;business\_website&#39;: &#39;Business\_Website&#39;,
+    'business_website': 'Business_Website',
 
-    &#39;contact\_first\_name&#39;: &#39;Contact\_FirstName&#39;,
+    'contact_first_name': 'Contact_FirstName',
 
-    &#39;contact\_last\_name&#39;: &#39;Contact\_LastName&#39;,
+    'contact_last_name': 'Contact_LastName',
 
-    &#39;contact\_phone&#39;: &#39;Contact\_Phone&#39;,
+    'contact_phone': 'Contact_Phone',
 
-    &#39;contact\_fax&#39;: &#39;Contact\_Fax&#39;,
+    'contact_fax': 'Contact_Fax',
 
-    &#39;contact\_email&#39;: &#39;Contact\_Email&#39;,
+    'contact_email': 'Contact_Email',
 
-    &#39;contact\_title&#39;: &#39;Contact\_Title&#39;,
+    'contact_title': 'Contact_Title',
 
-    &#39;ip&#39;: &#39;IP&#39;,
+    'ip': 'IP',
 
-    &#39;tax\_exempt&#39;: &#39;TaxExempt&#39;
+    'tax_exempt': 'TaxExempt'
 
     }
 
-    def\_\_init\_\_(self, submit\_time=None, tran\_type=None, tran\_amt=None, tran\_tax=None, tran\_inv=None, tran\_po=None, tran\_c\_num=None, tran\_note=None, card\_num=None, card\_name=None, card\_exp=None, card\_type=None, avs\_street=None, avs\_zip=None, cvv\_num=None, proc\_id=None, proc\_resp=None, proc\_code=None, proc\_mess=None, avs\_code=None, avs\_resp=None, cvv\_code=None, cvv\_resp=None, items=None, business\_name=None, business\_address=None, business\_address2=None, business\_city=None, business\_state=None, business\_zip=None, business\_country=None, business\_website=None, contact\_first\_name=None, contact\_last\_name=None, contact\_phone=None, contact\_fax=None, contact\_email=None, contact\_title=None, ip=None, tax\_exempt=None): # noqa: E501
+    def__init__(self, submit_time=None, tran_type=None, tran_amt=None, tran_tax=None, tran_inv=None, tran_po=None, tran_c_num=None, tran_note=None, card_num=None, card_name=None, card_exp=None, card_type=None, avs_street=None, avs_zip=None, cvv_num=None, proc_id=None, proc_resp=None, proc_code=None, proc_mess=None, avs_code=None, avs_resp=None, cvv_code=None, cvv_resp=None, items=None, business_name=None, business_address=None, business_address2=None, business_city=None, business_state=None, business_zip=None, business_country=None, business_website=None, contact_first_name=None, contact_last_name=None, contact_phone=None, contact_fax=None, contact_email=None, contact_title=None, ip=None, tax_exempt=None): # noqa: E501
 
-    &quot;&quot;&quot;Transaction - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    """Transaction - a model defined in Swagger"""# noqa: E501
 
-    self.\_submit\_time = None
+    self._submit_time = None
 
-    self.\_tran\_type = None
+    self._tran_type = None
 
-    self.\_tran\_amt = None
+    self._tran_amt = None
 
-    self.\_tran\_tax = None
+    self._tran_tax = None
 
-    self.\_tran\_inv = None
+    self._tran_inv = None
 
-    self.\_tran\_po = None
+    self._tran_po = None
 
-    self.\_tran\_c\_num = None
+    self._tran_c_num = None
 
-    self.\_tran\_note = None
+    self._tran_note = None
 
-    self.\_card\_num = None
+    self._card_num = None
 
-    self.\_card\_name = None
+    self._card_name = None
 
-    self.\_card\_exp = None
+    self._card_exp = None
 
-    self.\_card\_type = None
+    self._card_type = None
 
-    self.\_avs\_street = None
+    self._avs_street = None
 
-    self.\_avs\_zip = None
+    self._avs_zip = None
 
-    self.\_cvv\_num = None
+    self._cvv_num = None
 
-    self.\_proc\_id = None
+    self._proc_id = None
 
-    self.\_proc\_resp = None
+    self._proc_resp = None
 
-    self.\_proc\_code = None
+    self._proc_code = None
 
-    self.\_proc\_mess = None
+    self._proc_mess = None
 
-    self.\_avs\_code = None
+    self._avs_code = None
 
-    self.\_avs\_resp = None
+    self._avs_resp = None
 
-    self.\_cvv\_code = None
+    self._cvv_code = None
 
-    self.\_cvv\_resp = None
+    self._cvv_resp = None
 
-    self.\_items = None
+    self._items = None
 
-    self.\_business\_name = None
+    self._business_name = None
 
-    self.\_business\_address = None
+    self._business_address = None
 
-    self.\_business\_address2 = None
+    self._business_address2 = None
 
-    self.\_business\_city = None
+    self._business_city = None
 
-    self.\_business\_state = None
+    self._business_state = None
 
-    self.\_business\_zip = None
+    self._business_zip = None
 
-    self.\_business\_country = None
+    self._business_country = None
 
-    self.\_business\_website = None
+    self._business_website = None
 
-    self.\_contact\_first\_name = None
+    self._contact_first_name = None
 
-    self.\_contact\_last\_name = None
+    self._contact_last_name = None
 
-    self.\_contact\_phone = None
+    self._contact_phone = None
 
-    self.\_contact\_fax = None
+    self._contact_fax = None
 
-    self.\_contact\_email = None
+    self._contact_email = None
 
-    self.\_contact\_title = None
+    self._contact_title = None
 
-    self.\_ip = None
+    self._ip = None
 
-    self.\_tax\_exempt = None
+    self._tax_exempt = None
 
     self.discriminator = None
 
-    ifsubmit\_timeisnotNone:
+    ifsubmit_timeisnotNone:
 
-    self.submit\_time = submit\_time
+    self.submit_time = submit_time
 
-    iftran\_typeisnotNone:
+    iftran_typeisnotNone:
 
-    self.tran\_type = tran\_type
+    self.tran_type = tran_type
 
-    iftran\_amtisnotNone:
+    iftran_amtisnotNone:
 
-    self.tran\_amt = tran\_amt
+    self.tran_amt = tran_amt
 
-    iftran\_taxisnotNone:
+    iftran_taxisnotNone:
 
-    self.tran\_tax = tran\_tax
+    self.tran_tax = tran_tax
 
-    iftran\_invisnotNone:
+    iftran_invisnotNone:
 
-    self.tran\_inv = tran\_inv
+    self.tran_inv = tran_inv
 
-    iftran\_poisnotNone:
+    iftran_poisnotNone:
 
-    self.tran\_po = tran\_po
+    self.tran_po = tran_po
 
-    iftran\_c\_numisnotNone:
+    iftran_c_numisnotNone:
 
-    self.tran\_c\_num = tran\_c\_num
+    self.tran_c_num = tran_c_num
 
-    iftran\_noteisnotNone:
+    iftran_noteisnotNone:
 
-    self.tran\_note = tran\_note
+    self.tran_note = tran_note
 
-    ifcard\_numisnotNone:
+    ifcard_numisnotNone:
 
-    self.card\_num = card\_num
+    self.card_num = card_num
 
-    ifcard\_nameisnotNone:
+    ifcard_nameisnotNone:
 
-    self.card\_name = card\_name
+    self.card_name = card_name
 
-    ifcard\_expisnotNone:
+    ifcard_expisnotNone:
 
-    self.card\_exp = card\_exp
+    self.card_exp = card_exp
 
-    ifcard\_typeisnotNone:
+    ifcard_typeisnotNone:
 
-    self.card\_type = card\_type
+    self.card_type = card_type
 
-    ifavs\_streetisnotNone:
+    ifavs_streetisnotNone:
 
-    self.avs\_street = avs\_street
+    self.avs_street = avs_street
 
-    ifavs\_zipisnotNone:
+    ifavs_zipisnotNone:
 
-    self.avs\_zip = avs\_zip
+    self.avs_zip = avs_zip
 
-    ifcvv\_numisnotNone:
+    ifcvv_numisnotNone:
 
-    self.cvv\_num = cvv\_num
+    self.cvv_num = cvv_num
 
-    ifproc\_idisnotNone:
+    ifproc_idisnotNone:
 
-    self.proc\_id = proc\_id
+    self.proc_id = proc_id
 
-    ifproc\_respisnotNone:
+    ifproc_respisnotNone:
 
-    self.proc\_resp = proc\_resp
+    self.proc_resp = proc_resp
 
-    ifproc\_codeisnotNone:
+    ifproc_codeisnotNone:
 
-    self.proc\_code = proc\_code
+    self.proc_code = proc_code
 
-    ifproc\_messisnotNone:
+    ifproc_messisnotNone:
 
-    self.proc\_mess = proc\_mess
+    self.proc_mess = proc_mess
 
-    ifavs\_codeisnotNone:
+    ifavs_codeisnotNone:
 
-    self.avs\_code = avs\_code
+    self.avs_code = avs_code
 
-    ifavs\_respisnotNone:
+    ifavs_respisnotNone:
 
-    self.avs\_resp = avs\_resp
+    self.avs_resp = avs_resp
 
-    ifcvv\_codeisnotNone:
+    ifcvv_codeisnotNone:
 
-    self.cvv\_code = cvv\_code
+    self.cvv_code = cvv_code
 
-    ifcvv\_respisnotNone:
+    ifcvv_respisnotNone:
 
-    self.cvv\_resp = cvv\_resp
+    self.cvv_resp = cvv_resp
 
     ifitemsisnotNone:
 
     self.items = items
 
-    ifbusiness\_nameisnotNone:
+    ifbusiness_nameisnotNone:
 
-    self.business\_name = business\_name
+    self.business_name = business_name
 
-    ifbusiness\_addressisnotNone:
+    ifbusiness_addressisnotNone:
 
-    self.business\_address = business\_address
+    self.business_address = business_address
 
-    ifbusiness\_address2isnotNone:
+    ifbusiness_address2isnotNone:
 
-    self.business\_address2 = business\_address2
+    self.business_address2 = business_address2
 
-    ifbusiness\_cityisnotNone:
+    ifbusiness_cityisnotNone:
 
-    self.business\_city = business\_city
+    self.business_city = business_city
 
-    ifbusiness\_stateisnotNone:
+    ifbusiness_stateisnotNone:
 
-    self.business\_state = business\_state
+    self.business_state = business_state
 
-    ifbusiness\_zipisnotNone:
+    ifbusiness_zipisnotNone:
 
-    self.business\_zip = business\_zip
+    self.business_zip = business_zip
 
-    ifbusiness\_countryisnotNone:
+    ifbusiness_countryisnotNone:
 
-    self.business\_country = business\_country
+    self.business_country = business_country
 
-    ifbusiness\_websiteisnotNone:
+    ifbusiness_websiteisnotNone:
 
-    self.business\_website = business\_website
+    self.business_website = business_website
 
-    ifcontact\_first\_nameisnotNone:
+    ifcontact_first_nameisnotNone:
 
-    self.contact\_first\_name = contact\_first\_name
+    self.contact_first_name = contact_first_name
 
-    ifcontact\_last\_nameisnotNone:
+    ifcontact_last_nameisnotNone:
 
-    self.contact\_last\_name = contact\_last\_name
+    self.contact_last_name = contact_last_name
 
-    ifcontact\_phoneisnotNone:
+    ifcontact_phoneisnotNone:
 
-    self.contact\_phone = contact\_phone
+    self.contact_phone = contact_phone
 
-    ifcontact\_faxisnotNone:
+    ifcontact_faxisnotNone:
 
-    self.contact\_fax = contact\_fax
+    self.contact_fax = contact_fax
 
-    ifcontact\_emailisnotNone:
+    ifcontact_emailisnotNone:
 
-    self.contact\_email = contact\_email
+    self.contact_email = contact_email
 
-    ifcontact\_titleisnotNone:
+    ifcontact_titleisnotNone:
 
-    self.contact\_title = contact\_title
+    self.contact_title = contact_title
 
     ifipisnotNone:
 
     self.ip = ip
 
-    iftax\_exemptisnotNone:
+    iftax_exemptisnotNone:
 
-    self.tax\_exempt = tax\_exempt
-
-    @property
-
-    defsubmit\_time(self):
-
-    returnself.\_submit\_time
-
-    @submit\_time.setter
-
-    defsubmit\_time(self, submit\_time):
-
-    self.\_submit\_time = submit\_time
+    self.tax_exempt = tax_exempt
 
     @property
 
-    deftran\_type(self):
+    defsubmit_time(self):
 
-    returnself.\_tran\_type
+    return self._submit_time
 
-    @tran\_type.setter
+    @submit_time.setter
 
-    deftran\_type(self, tran\_type):
+    defsubmit_time(self, submit_time):
 
-    self.\_tran\_type = tran\_type
-
-    @property
-
-    deftran\_amt(self):
-
-    returnself.\_tran\_amt
-
-    @tran\_amt.setter
-
-    deftran\_amt(self, tran\_amt):
-
-    self.\_tran\_amt = tran\_amt
+    self._submit_time = submit_time
 
     @property
 
-    deftran\_tax(self):
+    deftran_type(self):
 
-    returnself.\_tran\_tax
+    return self._tran_type
 
-    @tran\_tax.setter
+    @tran_type.setter
 
-    deftran\_tax(self, tran\_tax):
+    deftran_type(self, tran_type):
 
-    self.\_tran\_tax = tran\_tax
-
-    @property
-
-    deftran\_inv(self):
-
-    returnself.\_tran\_inv
-
-    @tran\_inv.setter
-
-    deftran\_inv(self, tran\_inv):
-
-    self.\_tran\_inv = tran\_inv
+    self._tran_type = tran_type
 
     @property
 
-    deftran\_po(self):
+    deftran_amt(self):
 
-    returnself.\_tran\_po
+    return self._tran_amt
 
-    @tran\_po.setter
+    @tran_amt.setter
 
-    deftran\_po(self, tran\_po):
+    deftran_amt(self, tran_amt):
 
-    self.\_tran\_po = tran\_po
-
-    @property
-
-    deftran\_c\_num(self):
-
-    returnself.\_tran\_c\_num
-
-    @tran\_c\_num.setter
-
-    deftran\_c\_num(self, tran\_c\_num):
-
-    self.\_tran\_c\_num = tran\_c\_num
+    self._tran_amt = tran_amt
 
     @property
 
-    deftran\_note(self):
+    deftran_tax(self):
 
-    returnself.\_tran\_note
+    return self._tran_tax
 
-    @tran\_note.setter
+    @tran_tax.setter
 
-    deftran\_note(self, tran\_note):
+    deftran_tax(self, tran_tax):
 
-    self.\_tran\_note = tran\_note
-
-    @property
-
-    defcard\_num(self):
-
-    returnself.\_card\_num
-
-    @card\_num.setter
-
-    defcard\_num(self, card\_num):
-
-    self.\_card\_num = card\_num
+    self._tran_tax = tran_tax
 
     @property
 
-    defcard\_name(self):
+    deftran_inv(self):
 
-    returnself.\_card\_name
+    return self._tran_inv
 
-    @card\_name.setter
+    @tran_inv.setter
 
-    defcard\_name(self, card\_name):
+    deftran_inv(self, tran_inv):
 
-    self.\_card\_name = card\_name
-
-    @property
-
-    defcard\_exp(self):
-
-    returnself.\_card\_exp
-
-    @card\_exp.setter
-
-    defcard\_exp(self, card\_exp):
-
-    self.\_card\_exp = card\_exp
+    self._tran_inv = tran_inv
 
     @property
 
-    defcard\_type(self):
+    deftran_po(self):
 
-    returnself.\_card\_type
+    return self._tran_po
 
-    @card\_type.setter
+    @tran_po.setter
 
-    defcard\_type(self, card\_type):
+    deftran_po(self, tran_po):
 
-    self.\_card\_type = card\_type
-
-    @property
-
-    defavs\_street(self):
-
-    returnself.\_avs\_street
-
-    @avs\_street.setter
-
-    defavs\_street(self, avs\_street):
-
-    self.\_avs\_street = avs\_street
+    self._tran_po = tran_po
 
     @property
 
-    defavs\_zip(self):
+    deftran_c_num(self):
 
-    returnself.\_avs\_zip
+    return self._tran_c_num
 
-    @avs\_zip.setter
+    @tran_c_num.setter
 
-    defavs\_zip(self, avs\_zip):
+    deftran_c_num(self, tran_c_num):
 
-    self.\_avs\_zip = avs\_zip
-
-    @property
-
-    defcvv\_num(self):
-
-    returnself.\_cvv\_num
-
-    @cvv\_num.setter
-
-    defcvv\_num(self, cvv\_num):
-
-    self.\_cvv\_num = cvv\_num
+    self._tran_c_num = tran_c_num
 
     @property
 
-    defproc\_id(self):
+    deftran_note(self):
 
-    returnself.\_proc\_id
+    return self._tran_note
 
-    @proc\_id.setter
+    @tran_note.setter
 
-    defproc\_id(self, proc\_id):
+    deftran_note(self, tran_note):
 
-    self.\_proc\_id = proc\_id
-
-    @property
-
-    defproc\_resp(self):
-
-    returnself.\_proc\_resp
-
-    @proc\_resp.setter
-
-    defproc\_resp(self, proc\_resp):
-
-    self.\_proc\_resp = proc\_resp
+    self._tran_note = tran_note
 
     @property
 
-    defproc\_code(self):
+    defcard_num(self):
 
-    returnself.\_proc\_code
+    return self._card_num
 
-    @proc\_code.setter
+    @card_num.setter
 
-    defproc\_code(self, proc\_code):
+    defcard_num(self, card_num):
 
-    self.\_proc\_code = proc\_code
-
-    @property
-
-    defproc\_mess(self):
-
-    returnself.\_proc\_mess
-
-    @proc\_mess.setter
-
-    defproc\_mess(self, proc\_mess):
-
-    self.\_proc\_mess = proc\_mess
+    self._card_num = card_num
 
     @property
 
-    defavs\_code(self):
+    defcard_name(self):
 
-    returnself.\_avs\_code
+    return self._card_name
 
-    @avs\_code.setter
+    @card_name.setter
 
-    defavs\_code(self, avs\_code):
+    defcard_name(self, card_name):
 
-    self.\_avs\_code = avs\_code
-
-    @property
-
-    defavs\_resp(self):
-
-    returnself.\_avs\_resp
-
-    @avs\_resp.setter
-
-    defavs\_resp(self, avs\_resp):
-
-    self.\_avs\_resp = avs\_resp
+    self._card_name = card_name
 
     @property
 
-    defcvv\_code(self):
+    defcard_exp(self):
 
-    returnself.\_cvv\_code
+    return self._card_exp
 
-    @cvv\_code.setter
+    @card_exp.setter
 
-    defcvv\_code(self, cvv\_code):
+    defcard_exp(self, card_exp):
 
-    self.\_cvv\_code = cvv\_code
+    self._card_exp = card_exp
 
     @property
 
-    defcvv\_resp(self):
+    defcard_type(self):
 
-    returnself.\_cvv\_resp
+    return self._card_type
 
-    @cvv\_resp.setter
+    @card_type.setter
 
-    defcvv\_resp(self, cvv\_resp):
+    defcard_type(self, card_type):
 
-    self.\_cvv\_resp = cvv\_resp
+    self._card_type = card_type
+
+    @property
+
+    defavs_street(self):
+
+    return self._avs_street
+
+    @avs_street.setter
+
+    defavs_street(self, avs_street):
+
+    self._avs_street = avs_street
+
+    @property
+
+    defavs_zip(self):
+
+    return self._avs_zip
+
+    @avs_zip.setter
+
+    defavs_zip(self, avs_zip):
+
+    self._avs_zip = avs_zip
+
+    @property
+
+    defcvv_num(self):
+
+    return self._cvv_num
+
+    @cvv_num.setter
+
+    defcvv_num(self, cvv_num):
+
+    self._cvv_num = cvv_num
+
+    @property
+
+    defproc_id(self):
+
+    return self._proc_id
+
+    @proc_id.setter
+
+    defproc_id(self, proc_id):
+
+    self._proc_id = proc_id
+
+    @property
+
+    defproc_resp(self):
+
+    return self._proc_resp
+
+    @proc_resp.setter
+
+    defproc_resp(self, proc_resp):
+
+    self._proc_resp = proc_resp
+
+    @property
+
+    defproc_code(self):
+
+    return self._proc_code
+
+    @proc_code.setter
+
+    defproc_code(self, proc_code):
+
+    self._proc_code = proc_code
+
+    @property
+
+    defproc_mess(self):
+
+    return self._proc_mess
+
+    @proc_mess.setter
+
+    defproc_mess(self, proc_mess):
+
+    self._proc_mess = proc_mess
+
+    @property
+
+    defavs_code(self):
+
+    return self._avs_code
+
+    @avs_code.setter
+
+    defavs_code(self, avs_code):
+
+    self._avs_code = avs_code
+
+    @property
+
+    defavs_resp(self):
+
+    return self._avs_resp
+
+    @avs_resp.setter
+
+    defavs_resp(self, avs_resp):
+
+    self._avs_resp = avs_resp
+
+    @property
+
+    defcvv_code(self):
+
+    return self._cvv_code
+
+    @cvv_code.setter
+
+    defcvv_code(self, cvv_code):
+
+    self._cvv_code = cvv_code
+
+    @property
+
+    defcvv_resp(self):
+
+    return self._cvv_resp
+
+    @cvv_resp.setter
+
+    defcvv_resp(self, cvv_resp):
+
+    self._cvv_resp = cvv_resp
 
     @property
 
     defitems(self):
 
-    returnself.\_items
+    return self._items
 
     @items.setter
 
     defitems(self, items):
 
-    self.\_items = items
+    self._items = items
 
     @property
 
-    defbusiness\_name(self):
+    defbusiness_name(self):
 
-    returnself.\_business\_name
+    return self._business_name
 
-    @business\_name.setter
+    @business_name.setter
 
-    defbusiness\_name(self, business\_name):
+    defbusiness_name(self, business_name):
 
-    self.\_business\_name = business\_name
-
-    @property
-
-    defbusiness\_address(self):
-
-    returnself.\_business\_address
-
-    @business\_address.setter
-
-    defbusiness\_address(self, business\_address):
-
-    self.\_business\_address = business\_address
+    self._business_name = business_name
 
     @property
 
-    defbusiness\_address2(self):
+    defbusiness_address(self):
 
-    returnself.\_business\_address2
+    return self._business_address
 
-    @business\_address2.setter
+    @business_address.setter
 
-    defbusiness\_address2(self, business\_address2):
+    defbusiness_address(self, business_address):
 
-    self.\_business\_address2 = business\_address2
-
-    @property
-
-    defbusiness\_city(self):
-
-    returnself.\_business\_city
-
-    @business\_city.setter
-
-    defbusiness\_city(self, business\_city):
-
-    self.\_business\_city = business\_city
+    self._business_address = business_address
 
     @property
 
-    defbusiness\_state(self):
+    defbusiness_address2(self):
 
-    returnself.\_business\_state
+    return self._business_address2
 
-    @business\_state.setter
+    @business_address2.setter
 
-    defbusiness\_state(self, business\_state):
+    defbusiness_address2(self, business_address2):
 
-    self.\_business\_state = business\_state
-
-    @property
-
-    defbusiness\_zip(self):
-
-    returnself.\_business\_zip
-
-    @business\_zip.setter
-
-    defbusiness\_zip(self, business\_zip):
-
-    self.\_business\_zip = business\_zip
+    self._business_address2 = business_address2
 
     @property
 
-    defbusiness\_country(self):
+    defbusiness_city(self):
 
-    returnself.\_business\_country
+    return self._business_city
 
-    @business\_country.setter
+    @business_city.setter
 
-    defbusiness\_country(self, business\_country):
+    defbusiness_city(self, business_city):
 
-    self.\_business\_country = business\_country
-
-    @property
-
-    defbusiness\_website(self):
-
-    returnself.\_business\_website
-
-    @business\_website.setter
-
-    defbusiness\_website(self, business\_website):
-
-    self.\_business\_website = business\_website
+    self._business_city = business_city
 
     @property
 
-    defcontact\_first\_name(self):
+    defbusiness_state(self):
 
-    returnself.\_contact\_first\_name
+    return self._business_state
 
-    @contact\_first\_name.setter
+    @business_state.setter
 
-    defcontact\_first\_name(self, contact\_first\_name):
+    defbusiness_state(self, business_state):
 
-    self.\_contact\_first\_name = contact\_first\_name
-
-    @property
-
-    defcontact\_last\_name(self):
-
-    returnself.\_contact\_last\_name
-
-    @contact\_last\_name.setter
-
-    defcontact\_last\_name(self, contact\_last\_name):
-
-    self.\_contact\_last\_name = contact\_last\_name
+    self._business_state = business_state
 
     @property
 
-    defcontact\_phone(self):
+    defbusiness_zip(self):
 
-    returnself.\_contact\_phone
+    return self._business_zip
 
-    @contact\_phone.setter
+    @business_zip.setter
 
-    defcontact\_phone(self, contact\_phone):
+    defbusiness_zip(self, business_zip):
 
-    self.\_contact\_phone = contact\_phone
-
-    @property
-
-    defcontact\_fax(self):
-
-    returnself.\_contact\_fax
-
-    @contact\_fax.setter
-
-    defcontact\_fax(self, contact\_fax):
-
-    self.\_contact\_fax = contact\_fax
+    self._business_zip = business_zip
 
     @property
 
-    defcontact\_email(self):
+    defbusiness_country(self):
 
-    returnself.\_contact\_email
+    return self._business_country
 
-    @contact\_email.setter
+    @business_country.setter
 
-    defcontact\_email(self, contact\_email):
+    defbusiness_country(self, business_country):
 
-    self.\_contact\_email = contact\_email
+    self._business_country = business_country
 
     @property
 
-    defcontact\_title(self):
+    defbusiness_website(self):
 
-    returnself.\_contact\_title
+    return self._business_website
 
-    @contact\_title.setter
+    @business_website.setter
 
-    defcontact\_title(self, contact\_title):
+    defbusiness_website(self, business_website):
 
-    self.\_contact\_title = contact\_title
+    self._business_website = business_website
+
+    @property
+
+    defcontact_first_name(self):
+
+    return self._contact_first_name
+
+    @contact_first_name.setter
+
+    defcontact_first_name(self, contact_first_name):
+
+    self._contact_first_name = contact_first_name
+
+    @property
+
+    defcontact_last_name(self):
+
+    return self._contact_last_name
+
+    @contact_last_name.setter
+
+    defcontact_last_name(self, contact_last_name):
+
+    self._contact_last_name = contact_last_name
+
+    @property
+
+    defcontact_phone(self):
+
+    return self._contact_phone
+
+    @contact_phone.setter
+
+    defcontact_phone(self, contact_phone):
+
+    self._contact_phone = contact_phone
+
+    @property
+
+    defcontact_fax(self):
+
+    return self._contact_fax
+
+    @contact_fax.setter
+
+    defcontact_fax(self, contact_fax):
+
+    self._contact_fax = contact_fax
+
+    @property
+
+    defcontact_email(self):
+
+    return self._contact_email
+
+    @contact_email.setter
+
+    defcontact_email(self, contact_email):
+
+    self._contact_email = contact_email
+
+    @property
+
+    defcontact_title(self):
+
+    return self._contact_title
+
+    @contact_title.setter
+
+    defcontact_title(self, contact_title):
+
+    self._contact_title = contact_title
 
     @property
 
     defip(self):
 
-    returnself.\_ip
+    return self._ip
 
     @ip.setter
 
     defip(self, ip):
 
-    self.\_ip = ip
+    self._ip = ip
 
     @property
 
-    deftax\_exempt(self):
+    deftax_exempt(self):
 
-    returnself.\_tax\_exempt
+    return self._tax_exempt
 
-    @tax\_exempt.setter
+    @tax_exempt.setter
 
-    deftax\_exempt(self, tax\_exempt):
+    deftax_exempt(self, tax_exempt):
 
-    self.\_tax\_exempt = tax\_exempt
+    self._tax_exempt = tax_exempt
 
 # TransactionItem
 
@@ -5540,105 +5540,105 @@
 
     classTransactionItem(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;tax\_included&#39;: &#39;bool&#39;,
+    'tax_included': 'bool',
 
-    &#39;credit&#39;: &#39;bool&#39;,
+    'credit': 'bool',
 
-    &#39;extended\_amount&#39;: &#39;float&#39;,
+    'extended_amount': 'float',
 
-    &#39;item\_number&#39;: &#39;str&#39;,
+    'item_number': 'str',
 
-    &#39;unit\_cost&#39;: &#39;float&#39;,
+    'unit_cost': 'float',
 
-    &#39;quantity&#39;: &#39;int&#39;,
+    'quantity': 'int',
 
-    &#39;description&#39;: &#39;str&#39;,
+    'description': 'str',
 
-    &#39;discount&#39;: &#39;float&#39;,
+    'discount': 'float',
 
-    &#39;tax&#39;: &#39;float&#39;,
+    'tax': 'float',
 
-    &#39;commodity\_code&#39;: &#39;str&#39;,
+    'commodity_code': 'str',
 
-    &#39;unit\_of\_measure&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;tax\_included&#39;: &#39;TaxIncluded&#39;,
-
-    &#39;credit&#39;: &#39;Credit&#39;,
-
-    &#39;extended\_amount&#39;: &#39;ExtendedAmount&#39;,
-
-    &#39;item\_number&#39;: &#39;ItemNumber&#39;,
-
-    &#39;unit\_cost&#39;: &#39;UnitCost&#39;,
-
-    &#39;quantity&#39;: &#39;Quantity&#39;,
-
-    &#39;description&#39;: &#39;Description&#39;,
-
-    &#39;discount&#39;: &#39;Discount&#39;,
-
-    &#39;tax&#39;: &#39;Tax&#39;,
-
-    &#39;commodity\_code&#39;: &#39;CommodityCode&#39;,
-
-    &#39;unit\_of\_measure&#39;: &#39;UnitOfMeasure&#39;
+    'unit_of_measure': 'str'
 
     }
 
-    def\_\_init\_\_(self, tax\_included=None, credit=None, extended\_amount=None, item\_number=None, unit\_cost=None, quantity=None, description=None, discount=None, tax=None, commodity\_code=None, unit\_of\_measure=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;TransactionItem - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'tax_included': 'TaxIncluded',
 
-    self.\_tax\_included = None
+    'credit': 'Credit',
 
-    self.\_credit = None
+    'extended_amount': 'ExtendedAmount',
 
-    self.\_extended\_amount = None
+    'item_number': 'ItemNumber',
 
-    self.\_item\_number = None
+    'unit_cost': 'UnitCost',
 
-    self.\_unit\_cost = None
+    'quantity': 'Quantity',
 
-    self.\_quantity = None
+    'description': 'Description',
 
-    self.\_description = None
+    'discount': 'Discount',
 
-    self.\_discount = None
+    'tax': 'Tax',
 
-    self.\_tax = None
+    'commodity_code': 'CommodityCode',
 
-    self.\_commodity\_code = None
+    'unit_of_measure': 'UnitOfMeasure'
 
-    self.\_unit\_of\_measure = None
+    }
+
+    def__init__(self, tax_included=None, credit=None, extended_amount=None, item_number=None, unit_cost=None, quantity=None, description=None, discount=None, tax=None, commodity_code=None, unit_of_measure=None): # noqa: E501
+
+    """TransactionItem - a model defined in Swagger"""# noqa: E501
+
+    self._tax_included = None
+
+    self._credit = None
+
+    self._extended_amount = None
+
+    self._item_number = None
+
+    self._unit_cost = None
+
+    self._quantity = None
+
+    self._description = None
+
+    self._discount = None
+
+    self._tax = None
+
+    self._commodity_code = None
+
+    self._unit_of_measure = None
 
     self.discriminator = None
 
-    iftax\_includedisnotNone:
+    iftax_includedisnotNone:
 
-    self.tax\_included = tax\_included
+    self.tax_included = tax_included
 
     ifcreditisnotNone:
 
     self.credit = credit
 
-    ifextended\_amountisnotNone:
+    ifextended_amountisnotNone:
 
-    self.extended\_amount = extended\_amount
+    self.extended_amount = extended_amount
 
-    ifitem\_numberisnotNone:
+    ifitem_numberisnotNone:
 
-    self.item\_number = item\_number
+    self.item_number = item_number
 
-    ifunit\_costisnotNone:
+    ifunit_costisnotNone:
 
-    self.unit\_cost = unit\_cost
+    self.unit_cost = unit_cost
 
     ifquantityisnotNone:
 
@@ -5656,145 +5656,145 @@
 
     self.tax = tax
 
-    ifcommodity\_codeisnotNone:
+    ifcommodity_codeisnotNone:
 
-    self.commodity\_code = commodity\_code
+    self.commodity_code = commodity_code
 
-    ifunit\_of\_measureisnotNone:
+    ifunit_of_measureisnotNone:
 
-    self.unit\_of\_measure = unit\_of\_measure
+    self.unit_of_measure = unit_of_measure
 
     @property
 
-    deftax\_included(self):
+    deftax_included(self):
 
-    returnself.\_tax\_included
+    return self._tax_included
 
-    @tax\_included.setter
+    @tax_included.setter
 
-    deftax\_included(self, tax\_included):
+    deftax_included(self, tax_included):
 
-    self.\_tax\_included = tax\_included
+    self._tax_included = tax_included
 
     @property
 
     defcredit(self):
 
-    returnself.\_credit
+    return self._credit
 
     @credit.setter
 
     defcredit(self, credit):
 
-    self.\_credit = credit
+    self._credit = credit
 
     @property
 
-    defextended\_amount(self):
+    defextended_amount(self):
 
-    returnself.\_extended\_amount
+    return self._extended_amount
 
-    @extended\_amount.setter
+    @extended_amount.setter
 
-    defextended\_amount(self, extended\_amount):
+    defextended_amount(self, extended_amount):
 
-    self.\_extended\_amount = extended\_amount
-
-    @property
-
-    defitem\_number(self):
-
-    returnself.\_item\_number
-
-    @item\_number.setter
-
-    defitem\_number(self, item\_number):
-
-    self.\_item\_number = item\_number
+    self._extended_amount = extended_amount
 
     @property
 
-    defunit\_cost(self):
+    defitem_number(self):
 
-    returnself.\_unit\_cost
+    return self._item_number
 
-    @unit\_cost.setter
+    @item_number.setter
 
-    defunit\_cost(self, unit\_cost):
+    defitem_number(self, item_number):
 
-    self.\_unit\_cost = unit\_cost
+    self._item_number = item_number
+
+    @property
+
+    defunit_cost(self):
+
+    return self._unit_cost
+
+    @unit_cost.setter
+
+    defunit_cost(self, unit_cost):
+
+    self._unit_cost = unit_cost
 
     @property
 
     defquantity(self):
 
-    returnself.\_quantity
+    return self._quantity
 
     @quantity.setter
 
     defquantity(self, quantity):
 
-    self.\_quantity = quantity
+    self._quantity = quantity
 
     @property
 
     defdescription(self):
 
-    returnself.\_description
+    return self._description
 
     @description.setter
 
     defdescription(self, description):
 
-    self.\_description = description
+    self._description = description
 
     @property
 
     defdiscount(self):
 
-    returnself.\_discount
+    return self._discount
 
     @discount.setter
 
     defdiscount(self, discount):
 
-    self.\_discount = discount
+    self._discount = discount
 
     @property
 
     deftax(self):
 
-    returnself.\_tax
+    return self._tax
 
     @tax.setter
 
     deftax(self, tax):
 
-    self.\_tax = tax
+    self._tax = tax
 
     @property
 
-    defcommodity\_code(self):
+    defcommodity_code(self):
 
-    returnself.\_commodity\_code
+    return self._commodity_code
 
-    @commodity\_code.setter
+    @commodity_code.setter
 
-    defcommodity\_code(self, commodity\_code):
+    defcommodity_code(self, commodity_code):
 
-    self.\_commodity\_code = commodity\_code
+    self._commodity_code = commodity_code
 
     @property
 
-    defunit\_of\_measure(self):
+    defunit_of_measure(self):
 
-    returnself.\_unit\_of\_measure
+    return self._unit_of_measure
 
-    @unit\_of\_measure.setter
+    @unit_of_measure.setter
 
-    defunit\_of\_measure(self, unit\_of\_measure):
+    defunit_of_measure(self, unit_of_measure):
 
-    self.\_unit\_of\_measure = unit\_of\_measure
+    self._unit_of_measure = unit_of_measure
 
 # UpdateTransactionInfo
 
@@ -5802,55 +5802,55 @@
 
     classUpdateTransactionInfo(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;invoice\_number&#39;: &#39;str&#39;,
+    'invoice_number': 'str',
 
-    &#39;customer\_number&#39;: &#39;str&#39;,
+    'customer_number': 'str',
 
-    &#39;po\_number&#39;: &#39;str&#39;,
+    'po_number': 'str',
 
-    &#39;note&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;invoice\_number&#39;: &#39;InvoiceNumber&#39;,
-
-    &#39;customer\_number&#39;: &#39;CustomerNumber&#39;,
-
-    &#39;po\_number&#39;: &#39;PONumber&#39;,
-
-    &#39;note&#39;: &#39;Note&#39;
+    'note': 'str'
 
     }
 
-    def\_\_init\_\_(self, invoice\_number=None, customer\_number=None, po\_number=None, note=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;UpdateTransactionInfo - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'invoice_number': 'InvoiceNumber',
 
-    self.\_invoice\_number = None
+    'customer_number': 'CustomerNumber',
 
-    self.\_customer\_number = None
+    'po_number': 'PONumber',
 
-    self.\_po\_number = None
+    'note': 'Note'
 
-    self.\_note = None
+    }
+
+    def__init__(self, invoice_number=None, customer_number=None, po_number=None, note=None): # noqa: E501
+
+    """UpdateTransactionInfo - a model defined in Swagger"""# noqa: E501
+
+    self._invoice_number = None
+
+    self._customer_number = None
+
+    self._po_number = None
+
+    self._note = None
 
     self.discriminator = None
 
-    ifinvoice\_numberisnotNone:
+    ifinvoice_numberisnotNone:
 
-    self.invoice\_number = invoice\_number
+    self.invoice_number = invoice_number
 
-    ifcustomer\_numberisnotNone:
+    ifcustomer_numberisnotNone:
 
-    self.customer\_number = customer\_number
+    self.customer_number = customer_number
 
-    ifpo\_numberisnotNone:
+    ifpo_numberisnotNone:
 
-    self.po\_number = po\_number
+    self.po_number = po_number
 
     ifnoteisnotNone:
 
@@ -5858,51 +5858,51 @@
 
     @property
 
-    definvoice\_number(self):
+    definvoice_number(self):
 
-    returnself.\_invoice\_number
+    return self._invoice_number
 
-    @invoice\_number.setter
+    @invoice_number.setter
 
-    definvoice\_number(self, invoice\_number):
+    definvoice_number(self, invoice_number):
 
-    self.\_invoice\_number = invoice\_number
-
-    @property
-
-    defcustomer\_number(self):
-
-    returnself.\_customer\_number
-
-    @customer\_number.setter
-
-    defcustomer\_number(self, customer\_number):
-
-    self.\_customer\_number = customer\_number
+    self._invoice_number = invoice_number
 
     @property
 
-    defpo\_number(self):
+    defcustomer_number(self):
 
-    returnself.\_po\_number
+    return self._customer_number
 
-    @po\_number.setter
+    @customer_number.setter
 
-    defpo\_number(self, po\_number):
+    defcustomer_number(self, customer_number):
 
-    self.\_po\_number = po\_number
+    self._customer_number = customer_number
+
+    @property
+
+    defpo_number(self):
+
+    return self._po_number
+
+    @po_number.setter
+
+    defpo_number(self, po_number):
+
+    self._po_number = po_number
 
     @property
 
     defnote(self):
 
-    returnself.\_note
+    return self._note
 
     @note.setter
 
     defnote(self, note):
 
-    self.\_note = note
+    self._note = note
 
 # VaultCheck
 
@@ -5910,89 +5910,89 @@
 
     classVaultCheck(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;response&#39;: &#39;Response&#39;,
+    'response': 'Response',
 
-    &#39;check\_id&#39;: &#39;int&#39;,
+    'check_id': 'int',
 
-    &#39;main&#39;: &#39;bool&#39;,
+    'main': 'bool',
 
-    &#39;check\_routing&#39;: &#39;str&#39;,
+    'check_routing': 'str',
 
-    &#39;check\_account&#39;: &#39;str&#39;,
+    'check_account': 'str',
 
-    &#39;check\_number&#39;: &#39;str&#39;,
+    'check_number': 'str',
 
-    &#39;check\_first\_name&#39;: &#39;str&#39;,
+    'check_first_name': 'str',
 
-    &#39;check\_last\_name&#39;: &#39;str&#39;,
+    'check_last_name': 'str',
 
-    &#39;note&#39;: &#39;str&#39;,
+    'note': 'str',
 
-    &#39;masked\_routing&#39;: &#39;str&#39;,
+    'masked_routing': 'str',
 
-    &#39;masked\_account&#39;: &#39;str&#39;,
+    'masked_account': 'str',
 
-    &#39;account\_type&#39;: &#39;str&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;response&#39;: &#39;Response&#39;,
-
-    &#39;check\_id&#39;: &#39;CheckID&#39;,
-
-    &#39;main&#39;: &#39;Main&#39;,
-
-    &#39;check\_routing&#39;: &#39;CheckRouting&#39;,
-
-    &#39;check\_account&#39;: &#39;CheckAccount&#39;,
-
-    &#39;check\_number&#39;: &#39;CheckNumber&#39;,
-
-    &#39;check\_first\_name&#39;: &#39;CheckFirstName&#39;,
-
-    &#39;check\_last\_name&#39;: &#39;CheckLastName&#39;,
-
-    &#39;note&#39;: &#39;Note&#39;,
-
-    &#39;masked\_routing&#39;: &#39;MaskedRouting&#39;,
-
-    &#39;masked\_account&#39;: &#39;MaskedAccount&#39;,
-
-    &#39;account\_type&#39;: &#39;AccountType&#39;
+    'account_type': 'str'
 
     }
 
-    def\_\_init\_\_(self, response=None, check\_id=None, main=None, check\_routing=None, check\_account=None, check\_number=None, check\_first\_name=None, check\_last\_name=None, note=None, masked\_routing=None, masked\_account=None, account\_type=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;VaultCheck - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'response': 'Response',
 
-    self.\_response = None
+    'check_id': 'CheckID',
 
-    self.\_check\_id = None
+    'main': 'Main',
 
-    self.\_main = None
+    'check_routing': 'CheckRouting',
 
-    self.\_check\_routing = None
+    'check_account': 'CheckAccount',
 
-    self.\_check\_account = None
+    'check_number': 'CheckNumber',
 
-    self.\_check\_number = None
+    'check_first_name': 'CheckFirstName',
 
-    self.\_check\_first\_name = None
+    'check_last_name': 'CheckLastName',
 
-    self.\_check\_last\_name = None
+    'note': 'Note',
 
-    self.\_note = None
+    'masked_routing': 'MaskedRouting',
 
-    self.\_masked\_routing = None
+    'masked_account': 'MaskedAccount',
 
-    self.\_masked\_account = None
+    'account_type': 'AccountType'
 
-    self.\_account\_type = None
+    }
+
+    def__init__(self, response=None, check_id=None, main=None, check_routing=None, check_account=None, check_number=None, check_first_name=None, check_last_name=None, note=None, masked_routing=None, masked_account=None, account_type=None): # noqa: E501
+
+    """VaultCheck - a model defined in Swagger"""# noqa: E501
+
+    self._response = None
+
+    self._check_id = None
+
+    self._main = None
+
+    self._check_routing = None
+
+    self._check_account = None
+
+    self._check_number = None
+
+    self._check_first_name = None
+
+    self._check_last_name = None
+
+    self._note = None
+
+    self._masked_routing = None
+
+    self._masked_account = None
+
+    self._account_type = None
 
     self.discriminator = None
 
@@ -6000,193 +6000,193 @@
 
     self.response = response
 
-    ifcheck\_idisnotNone:
+    ifcheck_idisnotNone:
 
-    self.check\_id = check\_id
+    self.check_id = check_id
 
     ifmainisnotNone:
 
     self.main = main
 
-    ifcheck\_routingisnotNone:
+    ifcheck_routingisnotNone:
 
-    self.check\_routing = check\_routing
+    self.check_routing = check_routing
 
-    ifcheck\_accountisnotNone:
+    ifcheck_accountisnotNone:
 
-    self.check\_account = check\_account
+    self.check_account = check_account
 
-    ifcheck\_numberisnotNone:
+    ifcheck_numberisnotNone:
 
-    self.check\_number = check\_number
+    self.check_number = check_number
 
-    ifcheck\_first\_nameisnotNone:
+    ifcheck_first_nameisnotNone:
 
-    self.check\_first\_name = check\_first\_name
+    self.check_first_name = check_first_name
 
-    ifcheck\_last\_nameisnotNone:
+    ifcheck_last_nameisnotNone:
 
-    self.check\_last\_name = check\_last\_name
+    self.check_last_name = check_last_name
 
     ifnoteisnotNone:
 
     self.note = note
 
-    ifmasked\_routingisnotNone:
+    ifmasked_routingisnotNone:
 
-    self.masked\_routing = masked\_routing
+    self.masked_routing = masked_routing
 
-    ifmasked\_accountisnotNone:
+    ifmasked_accountisnotNone:
 
-    self.masked\_account = masked\_account
+    self.masked_account = masked_account
 
-    ifaccount\_typeisnotNone:
+    ifaccount_typeisnotNone:
 
-    self.account\_type = account\_type
+    self.account_type = account_type
 
     @property
 
     defresponse(self):
 
-    returnself.\_response
+    return self._response
 
     @response.setter
 
     defresponse(self, response):
 
-    self.\_response = response
+    self._response = response
 
     @property
 
-    defcheck\_id(self):
+    defcheck_id(self):
 
-    returnself.\_check\_id
+    return self._check_id
 
-    @check\_id.setter
+    @check_id.setter
 
-    defcheck\_id(self, check\_id):
+    defcheck_id(self, check_id):
 
-    self.\_check\_id = check\_id
+    self._check_id = check_id
 
     @property
 
     defmain(self):
 
-    returnself.\_main
+    return self._main
 
     @main.setter
 
     defmain(self, main):
 
-    self.\_main = main
+    self._main = main
 
     @property
 
-    defcheck\_routing(self):
+    defcheck_routing(self):
 
-    returnself.\_check\_routing
+    return self._check_routing
 
-    @check\_routing.setter
+    @check_routing.setter
 
-    defcheck\_routing(self, check\_routing):
+    defcheck_routing(self, check_routing):
 
-    self.\_check\_routing = check\_routing
-
-    @property
-
-    defcheck\_account(self):
-
-    returnself.\_check\_account
-
-    @check\_account.setter
-
-    defcheck\_account(self, check\_account):
-
-    self.\_check\_account = check\_account
+    self._check_routing = check_routing
 
     @property
 
-    defcheck\_number(self):
+    defcheck_account(self):
 
-    returnself.\_check\_number
+    return self._check_account
 
-    @check\_number.setter
+    @check_account.setter
 
-    defcheck\_number(self, check\_number):
+    defcheck_account(self, check_account):
 
-    self.\_check\_number = check\_number
-
-    @property
-
-    defcheck\_first\_name(self):
-
-    returnself.\_check\_first\_name
-
-    @check\_first\_name.setter
-
-    defcheck\_first\_name(self, check\_first\_name):
-
-    self.\_check\_first\_name = check\_first\_name
+    self._check_account = check_account
 
     @property
 
-    defcheck\_last\_name(self):
+    defcheck_number(self):
 
-    returnself.\_check\_last\_name
+    return self._check_number
 
-    @check\_last\_name.setter
+    @check_number.setter
 
-    defcheck\_last\_name(self, check\_last\_name):
+    defcheck_number(self, check_number):
 
-    self.\_check\_last\_name = check\_last\_name
+    self._check_number = check_number
+
+    @property
+
+    defcheck_first_name(self):
+
+    return self._check_first_name
+
+    @check_first_name.setter
+
+    defcheck_first_name(self, check_first_name):
+
+    self._check_first_name = check_first_name
+
+    @property
+
+    defcheck_last_name(self):
+
+    return self._check_last_name
+
+    @check_last_name.setter
+
+    defcheck_last_name(self, check_last_name):
+
+    self._check_last_name = check_last_name
 
     @property
 
     defnote(self):
 
-    returnself.\_note
+    return self._note
 
     @note.setter
 
     defnote(self, note):
 
-    self.\_note = note
+    self._note = note
 
     @property
 
-    defmasked\_routing(self):
+    defmasked_routing(self):
 
-    returnself.\_masked\_routing
+    return self._masked_routing
 
-    @masked\_routing.setter
+    @masked_routing.setter
 
-    defmasked\_routing(self, masked\_routing):
+    defmasked_routing(self, masked_routing):
 
-    self.\_masked\_routing = masked\_routing
-
-    @property
-
-    defmasked\_account(self):
-
-    returnself.\_masked\_account
-
-    @masked\_account.setter
-
-    defmasked\_account(self, masked\_account):
-
-    self.\_masked\_account = masked\_account
+    self._masked_routing = masked_routing
 
     @property
 
-    defaccount\_type(self):
+    defmasked_account(self):
 
-    returnself.\_account\_type
+    return self._masked_account
 
-    @account\_type.setter
+    @masked_account.setter
 
-    defaccount\_type(self, account\_type):
+    defmasked_account(self, masked_account):
 
-    self.\_account\_type = account\_type
+    self._masked_account = masked_account
+
+    @property
+
+    defaccount_type(self):
+
+    return self._account_type
+
+    @account_type.setter
+
+    defaccount_type(self, account_type):
+
+    self._account_type = account_type
 
 # VaultCreditCard
 
@@ -6194,143 +6194,143 @@
 
     classVaultCreditCard(object):
 
-    swagger\_types = {
+    swagger_types = {
 
-    &#39;magnetic\_tracks&#39;: &#39;str&#39;,
+    'magnetic_tracks': 'str',
 
-    &#39;track1&#39;: &#39;str&#39;,
+    'track1': 'str',
 
-    &#39;track2&#39;: &#39;str&#39;,
+    'track2': 'str',
 
-    &#39;number&#39;: &#39;str&#39;,
+    'number': 'str',
 
-    &#39;masked\_number&#39;: &#39;str&#39;,
+    'masked_number': 'str',
 
-    &#39;holder&#39;: &#39;str&#39;,
+    'holder': 'str',
 
-    &#39;exp\_date&#39;: &#39;str&#39;,
+    'exp_date': 'str',
 
-    &#39;cvv&#39;: &#39;str&#39;,
+    'cvv': 'str',
 
-    &#39;address&#39;: &#39;str&#39;,
+    'address': 'str',
 
-    &#39;city&#39;: &#39;str&#39;,
+    'city': 'str',
 
-    &#39;state&#39;: &#39;str&#39;,
+    'state': 'str',
 
-    &#39;zip&#39;: &#39;str&#39;,
+    'zip': 'str',
 
-    &#39;swiped&#39;: &#39;bool&#39;,
+    'swiped': 'bool',
 
-    &#39;type\_string&#39;: &#39;str&#39;,
+    'type_string': 'str',
 
-    &#39;cvv\_type&#39;: &#39;CVVPresenceType&#39;,
+    'cvv_type': 'CVVPresenceType',
 
-    &#39;not\_present&#39;: &#39;bool&#39;,
+    'not_present': 'bool',
 
-    &#39;response&#39;: &#39;Response&#39;,
+    'response': 'Response',
 
-    &#39;card\_id&#39;: &#39;int&#39;,
+    'card_id': 'int',
 
-    &#39;note&#39;: &#39;str&#39;,
+    'note': 'str',
 
-    &#39;main&#39;: &#39;bool&#39;
-
-    }
-
-    attribute\_map = {
-
-    &#39;magnetic\_tracks&#39;: &#39;MagneticTracks&#39;,
-
-    &#39;track1&#39;: &#39;Track1&#39;,
-
-    &#39;track2&#39;: &#39;Track2&#39;,
-
-    &#39;number&#39;: &#39;Number&#39;,
-
-    &#39;masked\_number&#39;: &#39;MaskedNumber&#39;,
-
-    &#39;holder&#39;: &#39;Holder&#39;,
-
-    &#39;exp\_date&#39;: &#39;ExpDate&#39;,
-
-    &#39;cvv&#39;: &#39;CVV&#39;,
-
-    &#39;address&#39;: &#39;Address&#39;,
-
-    &#39;city&#39;: &#39;City&#39;,
-
-    &#39;state&#39;: &#39;State&#39;,
-
-    &#39;zip&#39;: &#39;ZIP&#39;,
-
-    &#39;swiped&#39;: &#39;Swiped&#39;,
-
-    &#39;type\_string&#39;: &#39;TypeString&#39;,
-
-    &#39;cvv\_type&#39;: &#39;CVVType&#39;,
-
-    &#39;not\_present&#39;: &#39;NotPresent&#39;,
-
-    &#39;response&#39;: &#39;Response&#39;,
-
-    &#39;card\_id&#39;: &#39;CardID&#39;,
-
-    &#39;note&#39;: &#39;Note&#39;,
-
-    &#39;main&#39;: &#39;Main&#39;
+    'main': 'bool'
 
     }
 
-    def\_\_init\_\_(self, magnetic\_tracks=None, track1=None, track2=None, number=None, masked\_number=None, holder=None, exp\_date=None, cvv=None, address=None, city=None, state=None, zip=None, swiped=None, type\_string=None, cvv\_type=None, not\_present=None, response=None, card\_id=None, note=None, main=None): # noqa: E501
+    attribute_map = {
 
-    &quot;&quot;&quot;VaultCreditCard - a model defined in Swagger&quot;&quot;&quot;# noqa: E501
+    'magnetic_tracks': 'MagneticTracks',
 
-    self.\_magnetic\_tracks = None
+    'track1': 'Track1',
 
-    self.\_track1 = None
+    'track2': 'Track2',
 
-    self.\_track2 = None
+    'number': 'Number',
 
-    self.\_number = None
+    'masked_number': 'MaskedNumber',
 
-    self.\_masked\_number = None
+    'holder': 'Holder',
 
-    self.\_holder = None
+    'exp_date': 'ExpDate',
 
-    self.\_exp\_date = None
+    'cvv': 'CVV',
 
-    self.\_cvv = None
+    'address': 'Address',
 
-    self.\_address = None
+    'city': 'City',
 
-    self.\_city = None
+    'state': 'State',
 
-    self.\_state = None
+    'zip': 'ZIP',
 
-    self.\_zip = None
+    'swiped': 'Swiped',
 
-    self.\_swiped = None
+    'type_string': 'TypeString',
 
-    self.\_type\_string = None
+    'cvv_type': 'CVVType',
 
-    self.\_cvv\_type = None
+    'not_present': 'NotPresent',
 
-    self.\_not\_present = None
+    'response': 'Response',
 
-    self.\_response = None
+    'card_id': 'CardID',
 
-    self.\_card\_id = None
+    'note': 'Note',
 
-    self.\_note = None
+    'main': 'Main'
 
-    self.\_main = None
+    }
+
+    def__init__(self, magnetic_tracks=None, track1=None, track2=None, number=None, masked_number=None, holder=None, exp_date=None, cvv=None, address=None, city=None, state=None, zip=None, swiped=None, type_string=None, cvv_type=None, not_present=None, response=None, card_id=None, note=None, main=None): # noqa: E501
+
+    """VaultCreditCard - a model defined in Swagger"""# noqa: E501
+
+    self._magnetic_tracks = None
+
+    self._track1 = None
+
+    self._track2 = None
+
+    self._number = None
+
+    self._masked_number = None
+
+    self._holder = None
+
+    self._exp_date = None
+
+    self._cvv = None
+
+    self._address = None
+
+    self._city = None
+
+    self._state = None
+
+    self._zip = None
+
+    self._swiped = None
+
+    self._type_string = None
+
+    self._cvv_type = None
+
+    self._not_present = None
+
+    self._response = None
+
+    self._card_id = None
+
+    self._note = None
+
+    self._main = None
 
     self.discriminator = None
 
-    ifmagnetic\_tracksisnotNone:
+    ifmagnetic_tracksisnotNone:
 
-    self.magnetic\_tracks = magnetic\_tracks
+    self.magnetic_tracks = magnetic_tracks
 
     iftrack1isnotNone:
 
@@ -6344,17 +6344,17 @@
 
     self.number = number
 
-    ifmasked\_numberisnotNone:
+    ifmasked_numberisnotNone:
 
-    self.masked\_number = masked\_number
+    self.masked_number = masked_number
 
     ifholderisnotNone:
 
     self.holder = holder
 
-    ifexp\_dateisnotNone:
+    ifexp_dateisnotNone:
 
-    self.exp\_date = exp\_date
+    self.exp_date = exp_date
 
     ifcvvisnotNone:
 
@@ -6380,25 +6380,25 @@
 
     self.swiped = swiped
 
-    iftype\_stringisnotNone:
+    iftype_stringisnotNone:
 
-    self.type\_string = type\_string
+    self.type_string = type_string
 
-    ifcvv\_typeisnotNone:
+    ifcvv_typeisnotNone:
 
-    self.cvv\_type = cvv\_type
+    self.cvv_type = cvv_type
 
-    ifnot\_presentisnotNone:
+    ifnot_presentisnotNone:
 
-    self.not\_present = not\_present
+    self.not_present = not_present
 
     ifresponseisnotNone:
 
     self.response = response
 
-    ifcard\_idisnotNone:
+    ifcard_idisnotNone:
 
-    self.card\_id = card\_id
+    self.card_id = card_id
 
     ifnoteisnotNone:
 
@@ -6410,240 +6410,240 @@
 
     @property
 
-    defmagnetic\_tracks(self):
+    defmagnetic_tracks(self):
 
-    returnself.\_magnetic\_tracks
+    return self._magnetic_tracks
 
-    @magnetic\_tracks.setter
+    @magnetic_tracks.setter
 
-    defmagnetic\_tracks(self, magnetic\_tracks):
+    defmagnetic_tracks(self, magnetic_tracks):
 
-    self.\_magnetic\_tracks = magnetic\_tracks
+    self._magnetic_tracks = magnetic_tracks
 
     @property
 
     deftrack1(self):
 
-    returnself.\_track1
+    return self._track1
 
     @track1.setter
 
     deftrack1(self, track1):
 
-    self.\_track1 = track1
+    self._track1 = track1
 
     @property
 
     deftrack2(self):
 
-    returnself.\_track2
+    return self._track2
 
     @track2.setter
 
     deftrack2(self, track2):
 
-    self.\_track2 = track2
+    self._track2 = track2
 
     @property
 
     defnumber(self):
 
-    returnself.\_number
+    return self._number
 
     @number.setter
 
     defnumber(self, number):
 
-    self.\_number = number
+    self._number = number
 
     @property
 
-    defmasked\_number(self):
+    defmasked_number(self):
 
-    returnself.\_masked\_number
+    return self._masked_number
 
-    @masked\_number.setter
+    @masked_number.setter
 
-    defmasked\_number(self, masked\_number):
+    defmasked_number(self, masked_number):
 
-    self.\_masked\_number = masked\_number
+    self._masked_number = masked_number
 
     @property
 
     defholder(self):
 
-    returnself.\_holder
+    return self._holder
 
     @holder.setter
 
     defholder(self, holder):
 
-    self.\_holder = holder
+    self._holder = holder
 
     @property
 
-    defexp\_date(self):
+    defexp_date(self):
 
-    returnself.\_exp\_date
+    return self._exp_date
 
-    @exp\_date.setter
+    @exp_date.setter
 
-    defexp\_date(self, exp\_date):
+    defexp_date(self, exp_date):
 
-    self.\_exp\_date = exp\_date
+    self._exp_date = exp_date
 
     @property
 
     defcvv(self):
 
-    returnself.\_cvv
+    return self._cvv
 
     @cvv.setter
 
     defcvv(self, cvv):
 
-    self.\_cvv = cvv
+    self._cvv = cvv
 
     @property
 
     defaddress(self):
 
-    returnself.\_address
+    return self._address
 
     @address.setter
 
     defaddress(self, address):
 
-    self.\_address = address
+    self._address = address
 
     @property
 
     defcity(self):
 
-    returnself.\_city
+    return self._city
 
     @city.setter
 
     defcity(self, city):
 
-    self.\_city = city
+    self._city = city
 
     @property
 
     defstate(self):
 
-    returnself.\_state
+    return self._state
 
     @state.setter
 
     defstate(self, state):
 
-    self.\_state = state
+    self._state = state
 
     @property
 
     defzip(self):
 
-    returnself.\_zip
+    return self._zip
 
     @zip.setter
 
     defzip(self, zip):
 
-    self.\_zip = zip
+    self._zip = zip
 
     @property
 
     defswiped(self):
 
-    returnself.\_swiped
+    return self._swiped
 
     @swiped.setter
 
     defswiped(self, swiped):
 
-    self.\_swiped = swiped
+    self._swiped = swiped
 
     @property
 
-    deftype\_string(self):
+    deftype_string(self):
 
-    returnself.\_type\_string
+    return self._type_string
 
-    @type\_string.setter
+    @type_string.setter
 
-    deftype\_string(self, type\_string):
+    deftype_string(self, type_string):
 
-    self.\_type\_string = type\_string
-
-    @property
-
-    defcvv\_type(self):
-
-    returnself.\_cvv\_type
-
-    @cvv\_type.setter
-
-    defcvv\_type(self, cvv\_type):
-
-    self.\_cvv\_type = cvv\_type
+    self._type_string = type_string
 
     @property
 
-    defnot\_present(self):
+    defcvv_type(self):
 
-    returnself.\_not\_present
+    return self._cvv_type
 
-    @not\_present.setter
+    @cvv_type.setter
 
-    defnot\_present(self, not\_present):
+    defcvv_type(self, cvv_type):
 
-    self.\_not\_present = not\_present
+    self._cvv_type = cvv_type
+
+    @property
+
+    defnot_present(self):
+
+    return self._not_present
+
+    @not_present.setter
+
+    defnot_present(self, not_present):
+
+    self._not_present = not_present
 
     @property
 
     defresponse(self):
 
-    returnself.\_response
+    return self._response
 
     @response.setter
 
     defresponse(self, response):
 
-    self.\_response = response
+    self._response = response
 
     @property
 
-    defcard\_id(self):
+    defcard_id(self):
 
-    returnself.\_card\_id
+    return self._card_id
 
-    @card\_id.setter
+    @card_id.setter
 
-    defcard\_id(self, card\_id):
+    defcard_id(self, card_id):
 
-    self.\_card\_id = card\_id
+    self._card_id = card_id
 
     @property
 
     defnote(self):
 
-    returnself.\_note
+    return self._note
 
     @note.setter
 
     defnote(self, note):
 
-    self.\_note = note
+    self._note = note
 
     @property
 
     defmain(self):
 
-    returnself.\_main
+    return self._main
 
     @main.setter
 
     defmain(self, main):
 
-    self.\_main = main
+    self._main = main

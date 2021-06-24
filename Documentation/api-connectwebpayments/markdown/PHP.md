@@ -8,31 +8,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1AccountGetAccountSettingsGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1AccountGetAccountSettingsGet&#39;
+    'Missing the required parameter $account when calling apiV1AccountGetAccountSettingsGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Account/GetAccountSettings&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1AccountGetAccountSettingsGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Account/GetAccountSettings';
 
     $formParams = [];
 
@@ -40,7 +40,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -48,7 +48,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -56,27 +56,27 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -86,33 +86,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -120,17 +120,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -138,13 +138,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -154,13 +154,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -178,31 +178,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1CommunicationEmailReceiptPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1CommunicationEmailReceiptPost&#39;
+    'Missing the required parameter $account when calling apiV1CommunicationEmailReceiptPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Communication/EmailReceipt&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1CommunicationEmailReceiptPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Communication/EmailReceipt';
 
     $formParams = [];
 
@@ -210,7 +210,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -218,7 +218,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -226,35 +226,35 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -262,33 +262,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -296,17 +296,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -314,13 +314,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -330,13 +330,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -350,47 +350,47 @@
 
 ## /api/v1/Reporting/GetBatchesByDate/{batchDate}
 
-    protectedfunctionapiV1ReportingGetBatchesByDateBatchDateGetRequest($batch\_date, $account, $password)
+    protectedfunctionapiV1ReportingGetBatchesByDateBatchDateGetRequest($batch_date, $account, $password)
 
     {
 
-    // verify the required parameter &#39;batch\_date&#39; is set
+    // verify the required parameter 'batch_date' is set
 
-    if ($batch\_date === null || (is\_array($batch\_date) &amp;&amp; count($batch\_date) === 0)) {
+    if ($batch_date === null || (is_array($batch_date) && count($batch_date) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $batch\_date when calling apiV1ReportingGetBatchesByDateBatchDateGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetBatchesByDateBatchDateGet&#39;
+    'Missing the required parameter $batch_date when calling apiV1ReportingGetBatchesByDateBatchDateGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetBatchesByDateBatchDateGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetBatchesByDateBatchDateGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetBatchesByDate/{batchDate}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetBatchesByDateBatchDateGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetBatchesByDate/{batchDate}';
 
     $formParams = [];
 
@@ -398,7 +398,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -406,7 +406,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -414,19 +414,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($batch\_date !== null) {
+    if ($batch_date !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;batchDate&#39; . &#39;}&#39;,
+    '{' . 'batchDate' . '}',
 
-    ObjectSerializer::toPathValue($batch\_date),
+    ObjectSerializer::toPathValue($batch_date),
 
     $resourcePath
 
@@ -436,21 +436,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -460,33 +460,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -494,17 +494,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -512,13 +512,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -528,13 +528,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -546,47 +546,47 @@
 
 ## /api/v1/Reporting/GetCheckTerminals
 
-    protectedfunctionapiV1ReportingGetCheckTerminalSettingsBySECSecCodeGetRequest($sec\_code, $account, $password)
+    protectedfunctionapiV1ReportingGetCheckTerminalSettingsBySECSecCodeGetRequest($sec_code, $account, $password)
 
     {
 
-    // verify the required parameter &#39;sec\_code&#39; is set
+    // verify the required parameter 'sec_code' is set
 
-    if ($sec\_code === null || (is\_array($sec\_code) &amp;&amp; count($sec\_code) === 0)) {
+    if ($sec_code === null || (is_array($sec_code) && count($sec_code) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $sec\_code when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
+    'Missing the required parameter $sec_code when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}';
 
     $formParams = [];
 
@@ -594,7 +594,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -602,7 +602,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -610,19 +610,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($sec\_code !== null) {
+    if ($sec_code !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;secCode&#39; . &#39;}&#39;,
+    '{' . 'secCode' . '}',
 
-    ObjectSerializer::toPathValue($sec\_code),
+    ObjectSerializer::toPathValue($sec_code),
 
     $resourcePath
 
@@ -632,21 +632,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -656,33 +656,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -690,17 +690,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -708,13 +708,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -724,13 +724,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -742,47 +742,47 @@
 
 ## /api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}
 
-    protectedfunctionapiV1ReportingGetCheckTerminalSettingsBySECSecCodeGetRequest($sec\_code, $account, $password)
+    protectedfunctionapiV1ReportingGetCheckTerminalSettingsBySECSecCodeGetRequest($sec_code, $account, $password)
 
     {
 
-    // verify the required parameter &#39;sec\_code&#39; is set
+    // verify the required parameter 'sec_code' is set
 
-    if ($sec\_code === null || (is\_array($sec\_code) &amp;&amp; count($sec\_code) === 0)) {
+    if ($sec_code === null || (is_array($sec_code) && count($sec_code) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $sec\_code when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
+    'Missing the required parameter $sec_code when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}';
 
     $formParams = [];
 
@@ -790,7 +790,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -798,7 +798,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -806,19 +806,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($sec\_code !== null) {
+    if ($sec_code !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;secCode&#39; . &#39;}&#39;,
+    '{' . 'secCode' . '}',
 
-    ObjectSerializer::toPathValue($sec\_code),
+    ObjectSerializer::toPathValue($sec_code),
 
     $resourcePath
 
@@ -828,21 +828,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -852,33 +852,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -886,17 +886,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -904,13 +904,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -920,13 +920,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -938,47 +938,47 @@
 
 ## /api/v1/Reporting/GetCheckTerminalSettings/{terminalID}
 
-    protectedfunctionapiV1ReportingGetCheckTerminalSettingsTerminalIDGetRequest($terminal\_id, $account, $password)
+    protectedfunctionapiV1ReportingGetCheckTerminalSettingsTerminalIDGetRequest($terminal_id, $account, $password)
 
     {
 
-    // verify the required parameter &#39;terminal\_id&#39; is set
+    // verify the required parameter 'terminal_id' is set
 
-    if ($terminal\_id === null || (is\_array($terminal\_id) &amp;&amp; count($terminal\_id) === 0)) {
+    if ($terminal_id === null || (is_array($terminal_id) && count($terminal_id) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $terminal\_id when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet&#39;
+    'Missing the required parameter $terminal_id when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetCheckTerminalSettingsTerminalIDGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}';
 
     $formParams = [];
 
@@ -986,7 +986,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -994,7 +994,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -1002,19 +1002,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($terminal\_id !== null) {
+    if ($terminal_id !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;terminalID&#39; . &#39;}&#39;,
+    '{' . 'terminalID' . '}',
 
-    ObjectSerializer::toPathValue($terminal\_id),
+    ObjectSerializer::toPathValue($terminal_id),
 
     $resourcePath
 
@@ -1024,21 +1024,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -1048,33 +1048,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -1082,17 +1082,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -1100,13 +1100,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -1116,13 +1116,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -1138,43 +1138,43 @@
 
     {
 
-    // verify the required parameter &#39;batch&#39; is set
+    // verify the required parameter 'batch' is set
 
-    if ($batch === null || (is\_array($batch) &amp;&amp; count($batch) === 0)) {
+    if ($batch === null || (is_array($batch) && count($batch) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $batch when calling apiV1ReportingGetTransactionsByBatchBatchGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetTransactionsByBatchBatchGet&#39;
+    'Missing the required parameter $batch when calling apiV1ReportingGetTransactionsByBatchBatchGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetTransactionsByBatchBatchGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetTransactionsByBatchBatchGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetTransactionsByBatch/{batch}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetTransactionsByBatchBatchGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetTransactionsByBatch/{batch}';
 
     $formParams = [];
 
@@ -1182,7 +1182,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -1190,7 +1190,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -1198,7 +1198,7 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
@@ -1206,9 +1206,9 @@
 
     if ($batch !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;batch&#39; . &#39;}&#39;,
+    '{' . 'batch' . '}',
 
     ObjectSerializer::toPathValue($batch),
 
@@ -1220,21 +1220,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -1244,33 +1244,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -1278,17 +1278,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -1296,13 +1296,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -1312,13 +1312,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -1330,47 +1330,47 @@
 
 ## /api/v1/Reporting/GetTransactionsByDate/{transactionDate}
 
-    protectedfunctionapiV1ReportingGetTransactionsByDateTransactionDateGetRequest($transaction\_date, $account, $password)
+    protectedfunctionapiV1ReportingGetTransactionsByDateTransactionDateGetRequest($transaction_date, $account, $password)
 
     {
 
-    // verify the required parameter &#39;transaction\_date&#39; is set
+    // verify the required parameter 'transaction_date' is set
 
-    if ($transaction\_date === null || (is\_array($transaction\_date) &amp;&amp; count($transaction\_date) === 0)) {
+    if ($transaction_date === null || (is_array($transaction_date) && count($transaction_date) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $transaction\_date when calling apiV1ReportingGetTransactionsByDateTransactionDateGet&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1ReportingGetTransactionsByDateTransactionDateGet&#39;
+    'Missing the required parameter $transaction_date when calling apiV1ReportingGetTransactionsByDateTransactionDateGet'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1ReportingGetTransactionsByDateTransactionDateGet&#39;
+    'Missing the required parameter $account when calling apiV1ReportingGetTransactionsByDateTransactionDateGet'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/Reporting/GetTransactionsByDate/{transactionDate}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1ReportingGetTransactionsByDateTransactionDateGet'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/Reporting/GetTransactionsByDate/{transactionDate}';
 
     $formParams = [];
 
@@ -1378,7 +1378,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -1386,7 +1386,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -1394,19 +1394,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($transaction\_date !== null) {
+    if ($transaction_date !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;transactionDate&#39; . &#39;}&#39;,
+    '{' . 'transactionDate' . '}',
 
-    ObjectSerializer::toPathValue($transaction\_date),
+    ObjectSerializer::toPathValue($transaction_date),
 
     $resourcePath
 
@@ -1416,21 +1416,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -1440,33 +1440,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -1474,17 +1474,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -1492,13 +1492,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -1508,13 +1508,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;GET&#39;,
+    'GET',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -1530,25 +1530,25 @@
 
     public function apiV1VaultGetVaultRecordReferenceGetAsync($reference, $account, $password)
     {
-        $returnType = '\Swagger\Client\Model\Record';
+        $return Type = '\Swagger\Client\Model\Record';
         $request = $this->apiV1VaultGetVaultRecordReferenceGetRequest($reference, $account, $password);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) use ($return Type) {
                     $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
+                    if ($return Type === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
+                        if ($return Type !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
+                        ObjectSerializer::deserialize($content, $return Type, []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1572,35 +1572,35 @@
 
 ## /api/v1/Vault/SaveVault
 
-    publicfunctionapiV1VaultSaveVaultPostAsyncWithHttpInfo($account, $password, $body = null)
+    public functionapiV1VaultSaveVaultPostAsyncWithHttpInfo($account, $password, $body = null)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Response[]&#39;;
+    $return Type = '\Swagger\Client\Model\Response[]';
 
-    $request = $this-\&gt;apiV1VaultSaveVaultPostRequest($account, $password, $body);
+    $request = $this->apiV1VaultSaveVaultPostRequest($account, $password, $body);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -1608,11 +1608,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -1620,27 +1620,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -1652,35 +1652,35 @@
 
 ## /api/v1/Vault/SaveVaultCard/{vaultID}
 
-    publicfunctionapiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo($account, $password, $vault\_id, $body = null)
+    public functionapiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo($account, $password, $vault_id, $body = null)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Response&#39;;
+    $return Type = '\Swagger\Client\Model\Response';
 
-    $request = $this-\&gt;apiV1VaultSaveVaultCardVaultIDPostRequest($account, $password, $vault\_id, $body);
+    $request = $this->apiV1VaultSaveVaultCardVaultIDPostRequest($account, $password, $vault_id, $body);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -1688,11 +1688,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -1700,27 +1700,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -1732,35 +1732,35 @@
 
 ## /api/v1/Vault/SearchVault
 
-    publicfunctionapiV1VaultSearchVaultPostAsyncWithHttpInfo($account, $password, $body = null)
+    public functionapiV1VaultSearchVaultPostAsyncWithHttpInfo($account, $password, $body = null)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Record[]&#39;;
+    $return Type = '\Swagger\Client\Model\Record[]';
 
-    $request = $this-\&gt;apiV1VaultSearchVaultPostRequest($account, $password, $body);
+    $request = $this->apiV1VaultSearchVaultPostRequest($account, $password, $body);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -1768,11 +1768,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -1780,27 +1780,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -1812,35 +1812,35 @@
 
 ## /api/v1/Vault/DeleteVaultCardByID/{vaultCardID}
 
-    publicfunctionapiV1VaultDeleteVaultCardByIDVaultCardIDPostAsyncWithHttpInfo($vault\_card\_id, $account, $password)
+    public functionapiV1VaultDeleteVaultCardByIDVaultCardIDPostAsyncWithHttpInfo($vault_card_id, $account, $password)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Response&#39;;
+    $return Type = '\Swagger\Client\Model\Response';
 
-    $request = $this-\&gt;apiV1VaultDeleteVaultCardByIDVaultCardIDPostRequest($vault\_card\_id, $account, $password);
+    $request = $this->apiV1VaultDeleteVaultCardByIDVaultCardIDPostRequest($vault_card_id, $account, $password);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -1848,11 +1848,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -1860,27 +1860,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -1892,35 +1892,35 @@
 
 ## /api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}
 
-    publicfunctionapiV1VaultDeleteVaultCheckByIDVaultCheckIDPostAsyncWithHttpInfo($vault\_check\_id, $account, $password)
+    public functionapiV1VaultDeleteVaultCheckByIDVaultCheckIDPostAsyncWithHttpInfo($vault_check_id, $account, $password)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Response&#39;;
+    $return Type = '\Swagger\Client\Model\Response';
 
-    $request = $this-\&gt;apiV1VaultDeleteVaultCheckByIDVaultCheckIDPostRequest($vault\_check\_id, $account, $password);
+    $request = $this->apiV1VaultDeleteVaultCheckByIDVaultCheckIDPostRequest($vault_check_id, $account, $password);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -1928,11 +1928,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -1940,27 +1940,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -1972,35 +1972,35 @@
 
 ## /api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}
 
-    publicfunctionapiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostAsyncWithHttpInfo($account, $password, $vault\_check\_id, $body = null)
+    public functionapiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostAsyncWithHttpInfo($account, $password, $vault_check_id, $body = null)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\CheckTransaction&#39;;
+    $return Type = '\Swagger\Client\Model\CheckTransaction';
 
-    $request = $this-\&gt;apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostRequest($account, $password, $vault\_check\_id, $body);
+    $request = $this->apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostRequest($account, $password, $vault_check_id, $body);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -2008,11 +2008,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -2020,27 +2020,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -2052,35 +2052,35 @@
 
 ## /api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}
 
-    publicfunctionapiV1VaultSubmitWithVaultCardIDVaultCardIDPostAsyncWithHttpInfo($account, $password, $vault\_card\_id, $body = null)
+    public functionapiV1VaultSubmitWithVaultCardIDVaultCardIDPostAsyncWithHttpInfo($account, $password, $vault_card_id, $body = null)
 
     {
 
-    $returnType = &#39;\Swagger\Client\Model\Transaction&#39;;
+    $return Type = '\Swagger\Client\Model\Transaction';
 
-    $request = $this-\&gt;apiV1VaultSubmitWithVaultCardIDVaultCardIDPostRequest($account, $password, $vault\_card\_id, $body);
+    $request = $this->apiV1VaultSubmitWithVaultCardIDVaultCardIDPostRequest($account, $password, $vault_card_id, $body);
 
-    return$this-\&gt;client
+    return $this->client
 
-    -\&gt;sendAsync($request, $this-\&gt;createHttpClientOption())
+    ->sendAsync($request, $this->createHttpClientOption())
 
-    -\&gt;then(
+    ->then(
 
-    function ($response) use ($returnType) {
+    function ($response) use ($return Type) {
 
-    $responseBody = $response-\&gt;getBody();
+    $responseBody = $response->getBody();
 
-    if ($returnType === &#39;\SplFileObject&#39;) {
+    if ($return Type === '\SplFileObject') {
 
     $content = $responseBody; //stream goes to serializer
 
     } else {
 
-    $content = $responseBody-\&gt;getContents();
+    $content = $responseBody->getContents();
 
-    if ($returnType !== &#39;string&#39;) {
+    if ($return Type !== 'string') {
 
-    $content = json\_decode($content);
+    $content = json_decode($content);
 
     }
 
@@ -2088,11 +2088,11 @@
 
     return [
 
-    ObjectSerializer::deserialize($content, $returnType, []),
+    ObjectSerializer::deserialize($content, $return Type, []),
 
-    $response-\&gt;getStatusCode(),
+    $response->getStatusCode(),
 
-    $response-\&gt;getHeaders()
+    $response->getHeaders()
 
     ];
 
@@ -2100,27 +2100,27 @@
 
     function ($exception) {
 
-    $response = $exception-\&gt;getResponse();
+    $response = $exception->getResponse();
 
-    $statusCode = $response-\&gt;getStatusCode();
+    $statusCode = $response->getStatusCode();
 
-    thrownewApiException(
+    throw new ApiException(
 
     sprintf(
 
-    &#39;[%d] Error connecting to the API (%s)&#39;,
+    '[%d] Error connecting to the API (%s)',
 
     $statusCode,
 
-    $exception-\&gt;getRequest()-\&gt;getUri()
+    $exception->getRequest()->getUri()
 
     ),
 
     $statusCode,
 
-    $response-\&gt;getHeaders(),
+    $response->getHeaders(),
 
-    $response-\&gt;getBody()
+    $response->getBody()
 
     );
 
@@ -2138,31 +2138,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalSubmitPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalSubmitPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalSubmitPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/Submit&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1VirtualTerminalSubmitPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/Submit';
 
     $formParams = [];
 
@@ -2170,7 +2170,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -2178,7 +2178,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -2186,35 +2186,35 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -2222,33 +2222,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -2256,17 +2256,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -2274,13 +2274,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -2290,13 +2290,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -2312,31 +2312,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalSubmitCheckPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalSubmitCheckPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalSubmitCheckPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/SubmitCheck&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1VirtualTerminalSubmitCheckPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/SubmitCheck';
 
     $formParams = [];
 
@@ -2344,7 +2344,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -2352,7 +2352,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -2360,35 +2360,35 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -2396,33 +2396,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -2430,17 +2430,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -2448,13 +2448,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -2464,13 +2464,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -2482,47 +2482,47 @@
 
 ## /api/v1/VirtualTerminal/Mark/{transactionID}
 
-    protectedfunctionapiV1VirtualTerminalMarkTransactionIDPostRequest($transaction\_id, $account, $password)
+    protectedfunctionapiV1VirtualTerminalMarkTransactionIDPostRequest($transaction_id, $account, $password)
 
     {
 
-    // verify the required parameter &#39;transaction\_id&#39; is set
+    // verify the required parameter 'transaction_id' is set
 
-    if ($transaction\_id === null || (is\_array($transaction\_id) &amp;&amp; count($transaction\_id) === 0)) {
+    if ($transaction_id === null || (is_array($transaction_id) && count($transaction_id) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $transaction\_id when calling apiV1VirtualTerminalMarkTransactionIDPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalMarkTransactionIDPost&#39;
+    'Missing the required parameter $transaction_id when calling apiV1VirtualTerminalMarkTransactionIDPost'
 
     );
 
     }
 
-    // verify the required parameter &#39;password&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalMarkTransactionIDPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalMarkTransactionIDPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/Mark/{transactionID}&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1VirtualTerminalMarkTransactionIDPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/Mark/{transactionID}';
 
     $formParams = [];
 
@@ -2530,7 +2530,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -2538,7 +2538,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -2546,19 +2546,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($transaction\_id !== null) {
+    if ($transaction_id !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;transactionID&#39; . &#39;}&#39;,
+    '{' . 'transactionID' . '}',
 
-    ObjectSerializer::toPathValue($transaction\_id),
+    ObjectSerializer::toPathValue($transaction_id),
 
     $resourcePath
 
@@ -2568,21 +2568,21 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
     []
 
@@ -2592,33 +2592,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -2626,17 +2626,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -2644,13 +2644,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -2660,13 +2660,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -2682,31 +2682,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalMarkTransactionsPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalMarkTransactionsPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalMarkTransactionsPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/MarkTransactions&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1VirtualTerminalMarkTransactionsPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/MarkTransactions';
 
     $formParams = [];
 
@@ -2714,7 +2714,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -2722,7 +2722,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -2730,35 +2730,35 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -2766,33 +2766,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -2800,17 +2800,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -2818,13 +2818,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -2834,13 +2834,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -2856,31 +2856,31 @@
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalQueryPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalQueryPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalQueryPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/Query&#39;;
+    // verify the required parameter 'password' is set
+
+    if ($password === null || (is_array($password) && count($password) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $password when calling apiV1VirtualTerminalQueryPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/Query';
 
     $formParams = [];
 
@@ -2888,7 +2888,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -2896,7 +2896,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -2904,35 +2904,35 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -2940,33 +2940,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -2974,17 +2974,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -2992,13 +2992,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -3008,13 +3008,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 
@@ -3026,47 +3026,47 @@
 
 ## /api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}
 
-    protectedfunctionapiV1VirtualTerminalUpdateTransactionInfoTransactionIDPostRequest($account, $password, $transaction\_id, $body = null)
+    protectedfunctionapiV1VirtualTerminalUpdateTransactionInfoTransactionIDPostRequest($account, $password, $transaction_id, $body = null)
 
     {
 
-    // verify the required parameter &#39;account&#39; is set
+    // verify the required parameter 'account' is set
 
-    if ($account === null || (is\_array($account) &amp;&amp; count($account) === 0)) {
+    if ($account === null || (is_array($account) && count($account) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $account when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&#39;
-
-    );
-
-    }
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if ($password === null || (is\_array($password) &amp;&amp; count($password) === 0)) {
-
-    thrownew\InvalidArgumentException(
-
-    &#39;Missing the required parameter $password when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&#39;
+    'Missing the required parameter $account when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost'
 
     );
 
     }
 
-    // verify the required parameter &#39;transaction\_id&#39; is set
+    // verify the required parameter 'password' is set
 
-    if ($transaction\_id === null || (is\_array($transaction\_id) &amp;&amp; count($transaction\_id) === 0)) {
+    if ($password === null || (is_array($password) && count($password) === 0)) {
 
-    thrownew\InvalidArgumentException(
+    throw new \InvalidArgumentException(
 
-    &#39;Missing the required parameter $transaction\_id when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&#39;
+    'Missing the required parameter $password when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost'
 
     );
 
     }
 
-    $resourcePath = &#39;/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}&#39;;
+    // verify the required parameter 'transaction_id' is set
+
+    if ($transaction_id === null || (is_array($transaction_id) && count($transaction_id) === 0)) {
+
+    throw new \InvalidArgumentException(
+
+    'Missing the required parameter $transaction_id when calling apiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost'
+
+    );
+
+    }
+
+    $resourcePath = '/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}';
 
     $formParams = [];
 
@@ -3074,7 +3074,7 @@
 
     $headerParams = [];
 
-    $httpBody = &#39;&#39;;
+    $httpBody = '';
 
     $multipart = false;
 
@@ -3082,7 +3082,7 @@
 
     if ($account !== null) {
 
-    $headerParams[&#39;Account&#39;] = ObjectSerializer::toHeaderValue($account);
+    $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
 
     }
 
@@ -3090,19 +3090,19 @@
 
     if ($password !== null) {
 
-    $headerParams[&#39;Password&#39;] = ObjectSerializer::toHeaderValue($password);
+    $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
 
     }
 
     // path params
 
-    if ($transaction\_id !== null) {
+    if ($transaction_id !== null) {
 
-    $resourcePath = str\_replace(
+    $resourcePath = str_replace(
 
-    &#39;{&#39; . &#39;transactionID&#39; . &#39;}&#39;,
+    '{' . 'transactionID' . '}',
 
-    ObjectSerializer::toPathValue($transaction\_id),
+    ObjectSerializer::toPathValue($transaction_id),
 
     $resourcePath
 
@@ -3112,29 +3112,29 @@
 
     // body params
 
-    $\_tempBody = null;
+    $_tempBody = null;
 
     if (isset($body)) {
 
-    $\_tempBody = $body;
+    $_tempBody = $body;
 
     }
 
     if ($multipart) {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeadersForMultipart(
+    $headers = $this->headerSelector->selectHeadersForMultipart(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]
+    ['text/plain', 'application/json', 'text/json']
 
     );
 
     } else {
 
-    $headers = $this-\&gt;headerSelector-\&gt;selectHeaders(
+    $headers = $this->headerSelector->selectHeaders(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;],
+    ['text/plain', 'application/json', 'text/json'],
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\_\*+json&#39;]
+    ['application/json', 'text/json', 'application/_*+json']
 
     );
 
@@ -3142,33 +3142,33 @@
 
     // for model (json/xml)
 
-    if (isset($\_tempBody)) {
+    if (isset($_tempBody)) {
 
-    // $\_tempBody is the method argument, if present
+    // $_tempBody is the method argument, if present
 
-    $httpBody = $\_tempBody;
+    $httpBody = $_tempBody;
 
-    // \stdClass has no \_\_toString(), so we should encode it manually
+    // \stdClass has no __toString(), so we should encode it manually
 
-    if ($httpBody instanceof \stdClass &amp;&amp; $headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($httpBody);
+    $httpBody = \GuzzleHttp\json_encode($httpBody);
 
     }
 
-    } elseif (count($formParams) \&gt; 0) {
+    } elseif (count($formParams) > 0) {
 
     if ($multipart) {
 
     $multipartContents = [];
 
-    foreach ($formParams as $formParamName =\&gt; $formParamValue) {
+    foreach ($formParams as $formParamName => $formParamValue) {
 
     $multipartContents[] = [
 
-    &#39;name&#39; =\&gt; $formParamName,
+    'name' => $formParamName,
 
-    &#39;contents&#39; =\&gt; $formParamValue
+    'contents' => $formParamValue
 
     ];
 
@@ -3176,17 +3176,17 @@
 
     // for HTTP post (form)
 
-    $httpBody = newMultipartStream($multipartContents);
+    $httpBody = new MultipartStream($multipartContents);
 
-    } elseif ($headers[&#39;Content-Type&#39;] === &#39;application/json&#39;) {
+    } elseif ($headers['Content-Type'] === 'application/json') {
 
-    $httpBody = \GuzzleHttp\json\_encode($formParams);
+    $httpBody = \GuzzleHttp\json_encode($formParams);
 
     } else {
 
     // for HTTP post (form)
 
-    $httpBody = \GuzzleHttp\Psr7\build\_query($formParams);
+    $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
 
     }
 
@@ -3194,13 +3194,13 @@
 
     $defaultHeaders = [];
 
-    if ($this-\&gt;config-\&gt;getUserAgent()) {
+    if ($this->config->getUserAgent()) {
 
-    $defaultHeaders[&#39;User-Agent&#39;] = $this-\&gt;config-\&gt;getUserAgent();
+    $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
 
     }
 
-    $headers = array\_merge(
+    $headers = array_merge(
 
     $defaultHeaders,
 
@@ -3210,13 +3210,13 @@
 
     );
 
-    $query = \GuzzleHttp\Psr7\build\_query($queryParams);
+    $query = \GuzzleHttp\Psr7\build_query($queryParams);
 
-    returnnewRequest(
+    return new Request(
 
-    &#39;POST&#39;,
+    'POST',
 
-    $this-\&gt;config-\&gt;getHost() . $resourcePath . ($query ? &quot;?{$query}&quot; : &#39;&#39;),
+    $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
 
     $headers,
 

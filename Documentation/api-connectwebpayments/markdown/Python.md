@@ -2,2850 +2,2850 @@
 
 # API Client
 
-    defcall\_api(
+    defcall_api(
 
-    self, resource\_path, method, path\_params=None,
+    self, resource_path, method, path_params=None,
 
-    query\_params=None, header\_params=None, body=None, post\_params=None,
+    query_params=None, header_params=None, body=None, post_params=None,
 
-    files=None, response\_type=None, auth\_settings=None,
+    files=None, response_type=None, auth_settings=None,
 
-    \_return\_http\_data\_only=None, collection\_formats=None,
+    _return _http_data_only=None, collection_formats=None,
 
-    \_preload\_content=True, \_request\_timeout=None):
+    _preload_content=True, _request_timeout=None):
 
     config = self.configuration
 
     # header parameters
 
-    header\_params = header\_paramsor {}
+    header_params = header_paramsor {}
 
-    header\_params.update(self.default\_headers)
+    header_params.update(self.default_headers)
 
     ifself.cookie:
 
-    header\_params[&#39;Cookie&#39;] = self.cookie
+    header_params['Cookie'] = self.cookie
 
-    ifheader\_params:
+    ifheader_params:
 
-    header\_params = self.sanitize\_for\_serialization(header\_params)
+    header_params = self.sanitize_for_serialization(header_params)
 
-    header\_params = dict(self.parameters\_to\_tuples(header\_params,
+    header_params = dict(self.parameters_to_tuples(header_params,
 
-    collection\_formats))
+    collection_formats))
 
     # path parameters
 
-    ifpath\_params:
+    ifpath_params:
 
-    path\_params = self.sanitize\_for\_serialization(path\_params)
+    path_params = self.sanitize_for_serialization(path_params)
 
-    path\_params = self.parameters\_to\_tuples(path\_params,
+    path_params = self.parameters_to_tuples(path_params,
 
-    collection\_formats)
+    collection_formats)
 
-    fork, vinpath\_params:
+    fork, vinpath_params:
 
     # specified safe chars, encode everything
 
-    resource\_path = resource\_path.replace(
+    resource_path = resource_path.replace(
 
-    &#39;{%s}&#39; % k,
+    '{%s}' % k,
 
-    quote(str(v), safe=config.safe\_chars\_for\_path\_param)
+    quote(str(v), safe=config.safe_chars_for_path_param)
 
     )
 
     # query parameters
 
-    ifquery\_params:
+    ifquery_params:
 
-    query\_params = self.sanitize\_for\_serialization(query\_params)
+    query_params = self.sanitize_for_serialization(query_params)
 
-    query\_params = self.parameters\_to\_tuples(query\_params,
+    query_params = self.parameters_to_tuples(query_params,
 
-    collection\_formats)
+    collection_formats)
 
     # post parameters
 
-    ifpost\_paramsorfiles:
+    ifpost_paramsorfiles:
 
-    post\_params = self.prepare\_post\_parameters(post\_params, files)
+    post_params = self.prepare_post_parameters(post_params, files)
 
-    post\_params = self.sanitize\_for\_serialization(post\_params)
+    post_params = self.sanitize_for_serialization(post_params)
 
-    post\_params = self.parameters\_to\_tuples(post\_params,
+    post_params = self.parameters_to_tuples(post_params,
 
-    collection\_formats)
+    collection_formats)
 
     # auth setting
 
-    self.update\_params\_for\_auth(header\_params, query\_params, auth\_settings)
+    self.update_params_for_auth(header_params, query_params, auth_settings)
 
     # body
 
     ifbody:
 
-    body = self.sanitize\_for\_serialization(body)
+    body = self.sanitize_for_serialization(body)
 
     # request url
 
-    url = self.configuration.host + resource\_path
+    url = self.configuration.host + resource_path
 
     # perform request and return response
 
-    response\_data = self.request(
+    response_data = self.request(
 
-    method, url, query\_params=query\_params, headers=header\_params,
+    method, url, query_params=query_params, headers=header_params,
 
-    post\_params=post\_params, body=body,
+    post_params=post_params, body=body,
 
-    \_preload\_content=\_preload\_content,
+    _preload_content=_preload_content,
 
-    \_request\_timeout=\_request\_timeout)
+    _request_timeout=_request_timeout)
 
-    self.last\_response = response\_data
+    self.last_response = response_data
 
-    return\_data = response\_data
+    return _data = response_data
 
-    if\_preload\_content:
+    if_preload_content:
 
     # deserialize response data
 
-    ifresponse\_type:
+    ifresponse_type:
 
-    return\_data = self.deserialize(response\_data, response\_type)
-
-    else:
-
-    return\_data = None
-
-    if\_return\_http\_data\_only:
-
-    return(return\_data)
+    return _data = self.deserialize(response_data, response_type)
 
     else:
 
-    return (return\_data, response\_data.status,
+    return _data = None
 
-    response\_data.getheaders())
+    if_return _http_data_only:
+
+    return (return _data)
+
+    else:
+
+    return (return _data, response_data.status,
+
+    response_data.getheaders())
 
 # Account API
 
 ## /api/v1/Account/GetAccountSettings
 
-    defapi\_v1\_account\_get\_account\_settings\_get\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_account_get_account_settings_get_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_account\_get\_account\_settings\_get&quot; % key
+    " to method api_v1_account_get_account_settings_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_account_get_account_settings_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_account_get_account_settings_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_account_get_account_settings_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_account_get_account_settings_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Account/GetAccountSettings&#39;, &#39;GET&#39;,
+    '/api/v1/Account/GetAccountSettings', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Settings&#39;, # noqa: E501
+    response_type='Settings', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 # Communication API
 
 ## /api/v1/Communication/EmailReceipt
 
-    defapi\_v1\_communication\_email\_receipt\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_communication_email_receipt_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_communication\_email\_receipt\_post&quot; % key
+    " to method api_v1_communication_email_receipt_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_communication_email_receipt_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_communication_email_receipt_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_communication_email_receipt_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_communication_email_receipt_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Communication/EmailReceipt&#39;, &#39;POST&#39;,
+    '/api/v1/Communication/EmailReceipt', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 # Reporting API
 
 ## /api/v1/Reporting/GetBatchesByDate/{batchDate}
 
-    defapi\_v1\_reporting\_get\_batches\_by\_date\_batch\_date\_get\_with\_http\_info(self, batch\_date, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_batches_by_date_batch_date_get_with_http_info(self, batch_date, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;batch\_date&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['batch_date', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_batches\_by\_date\_batch\_date\_get&quot; % key
+    " to method api_v1_reporting_get_batches_by_date_batch_date_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;batch\_date&#39; is set
+    # verify the required parameter 'batch_date' is set
 
-    if (&#39;batch\_date&#39;notinparamsor
+    if ('batch_date'notinparamsor
 
-    params[&#39;batch\_date&#39;] isNone):
+    params['batch_date'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `batch_date` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `batch_date` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_batches_by_date_batch_date_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;batch\_date&#39;inparams:
+    if'batch_date'inparams:
 
-    path\_params[&#39;batchDate&#39;] = params[&#39;batch\_date&#39;] # noqa: E501
+    path_params['batchDate'] = params['batch_date'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetBatchesByDate/{batchDate}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetBatchesByDate/{batchDate}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[Batch]&#39;, # noqa: E501
+    response_type='list[Batch]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Reporting/GetCheckTerminals
 
-    defapi\_v1\_reporting\_get\_check\_terminal\_settings\_by\_sec\_sec\_code\_get\_with\_http\_info(self, sec\_code, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get_with_http_info(self, sec_code, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;sec\_code&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['sec_code', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_check\_terminal\_settings\_by\_sec\_sec\_code\_get&quot; % key
+    " to method api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;sec\_code&#39; is set
+    # verify the required parameter 'sec_code' is set
 
-    if (&#39;sec\_code&#39;notinparamsor
+    if ('sec_code'notinparamsor
 
-    params[&#39;sec\_code&#39;] isNone):
+    params['sec_code'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `sec_code` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `sec_code` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;sec\_code&#39;inparams:
+    if'sec_code'inparams:
 
-    path\_params[&#39;secCode&#39;] = params[&#39;sec\_code&#39;] # noqa: E501
+    path_params['secCode'] = params['sec_code'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[TerminalSettings]&#39;, # noqa: E501
+    response_type='list[TerminalSettings]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}
 
-    defapi\_v1\_reporting\_get\_check\_terminal\_settings\_by\_sec\_sec\_code\_get\_with\_http\_info(self, sec\_code, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get_with_http_info(self, sec_code, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;sec\_code&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['sec_code', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_check\_terminal\_settings\_by\_sec\_sec\_code\_get&quot; % key
+    " to method api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;sec\_code&#39; is set
+    # verify the required parameter 'sec_code' is set
 
-    if (&#39;sec\_code&#39;notinparamsor
+    if ('sec_code'notinparamsor
 
-    params[&#39;sec\_code&#39;] isNone):
+    params['sec_code'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `sec_code` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `sec_code` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_by_sec_sec_code_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;sec\_code&#39;inparams:
+    if'sec_code'inparams:
 
-    path\_params[&#39;secCode&#39;] = params[&#39;sec\_code&#39;] # noqa: E501
+    path_params['secCode'] = params['sec_code'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[TerminalSettings]&#39;, # noqa: E501
+    response_type='list[TerminalSettings]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Reporting/GetCheckTerminalSettings/{terminalID}
 
-    defapi\_v1\_reporting\_get\_check\_terminal\_settings\_terminal\_id\_get\_with\_http\_info(self, terminal\_id, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_check_terminal_settings_terminal_id_get_with_http_info(self, terminal_id, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;terminal\_id&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['terminal_id', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_check\_terminal\_settings\_terminal\_id\_get&quot; % key
+    " to method api_v1_reporting_get_check_terminal_settings_terminal_id_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;terminal\_id&#39; is set
+    # verify the required parameter 'terminal_id' is set
 
-    if (&#39;terminal\_id&#39;notinparamsor
+    if ('terminal_id'notinparamsor
 
-    params[&#39;terminal\_id&#39;] isNone):
+    params['terminal_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `terminal_id` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `terminal_id` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_check_terminal_settings_terminal_id_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;terminal\_id&#39;inparams:
+    if'terminal_id'inparams:
 
-    path\_params[&#39;terminalID&#39;] = params[&#39;terminal\_id&#39;] # noqa: E501
+    path_params['terminalID'] = params['terminal_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[TerminalSettings]&#39;, # noqa: E501
+    response_type='list[TerminalSettings]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Reporting/GetTransactionsByBatch/{batch}
 
-    defapi\_v1\_reporting\_get\_transactions\_by\_batch\_batch\_get\_with\_http\_info(self, batch, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_transactions_by_batch_batch_get_with_http_info(self, batch, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;batch&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['batch', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_transactions\_by\_batch\_batch\_get&quot; % key
+    " to method api_v1_reporting_get_transactions_by_batch_batch_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;batch&#39; is set
+    # verify the required parameter 'batch' is set
 
-    if (&#39;batch&#39;notinparamsor
+    if ('batch'notinparamsor
 
-    params[&#39;batch&#39;] isNone):
+    params['batch'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `batch` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `batch` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_transactions_by_batch_batch_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;batch&#39;inparams:
+    if'batch'inparams:
 
-    path\_params[&#39;batch&#39;] = params[&#39;batch&#39;] # noqa: E501
+    path_params['batch'] = params['batch'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetTransactionsByBatch/{batch}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetTransactionsByBatch/{batch}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[QueryTransaction]&#39;, # noqa: E501
+    response_type='list[QueryTransaction]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Reporting/GetTransactionsByDate/{transactionDate}
 
-    defapi\_v1\_reporting\_get\_transactions\_by\_date\_transaction\_date\_get\_with\_http\_info(self, transaction\_date, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_reporting_get_transactions_by_date_transaction_date_get_with_http_info(self, transaction_date, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;transaction\_date&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['transaction_date', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_reporting\_get\_transactions\_by\_date\_transaction\_date\_get&quot; % key
+    " to method api_v1_reporting_get_transactions_by_date_transaction_date_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;transaction\_date&#39; is set
+    # verify the required parameter 'transaction_date' is set
 
-    if (&#39;transaction\_date&#39;notinparamsor
+    if ('transaction_date'notinparamsor
 
-    params[&#39;transaction\_date&#39;] isNone):
+    params['transaction_date'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `transaction_date` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `transaction_date` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_reporting_get_transactions_by_date_transaction_date_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;transaction\_date&#39;inparams:
+    if'transaction_date'inparams:
 
-    path\_params[&#39;transactionDate&#39;] = params[&#39;transaction\_date&#39;] # noqa: E501
+    path_params['transactionDate'] = params['transaction_date'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Reporting/GetTransactionsByDate/{transactionDate}&#39;, &#39;GET&#39;,
+    '/api/v1/Reporting/GetTransactionsByDate/{transactionDate}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[QueryTransaction]&#39;, # noqa: E501
+    response_type='list[QueryTransaction]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 # Vault API
 
 ## /api/v1/Vault/GetVaultRecord/{reference}
 
-    defapi\_v1\_vault\_get\_vault\_record\_reference\_get\_with\_http\_info(self, reference, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_get_vault_record_reference_get_with_http_info(self, reference, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;reference&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['reference', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_get\_vault\_record\_reference\_get&quot; % key
+    " to method api_v1_vault_get_vault_record_reference_get" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;reference&#39; is set
+    # verify the required parameter 'reference' is set
 
-    if (&#39;reference&#39;notinparamsor
+    if ('reference'notinparamsor
 
-    params[&#39;reference&#39;] isNone):
+    params['reference'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `reference` when calling `api_v1_vault_get_vault_record_reference_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `reference` when calling `api_v1_vault_get_vault_record_reference_get`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_get_vault_record_reference_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_get_vault_record_reference_get`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_get_vault_record_reference_get`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_get_vault_record_reference_get`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;reference&#39;inparams:
+    if'reference'inparams:
 
-    path\_params[&#39;reference&#39;] = params[&#39;reference&#39;] # noqa: E501
+    path_params['reference'] = params['reference'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/GetVaultRecord/{reference}&#39;, &#39;GET&#39;,
+    '/api/v1/Vault/GetVaultRecord/{reference}', 'GET',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Record&#39;, # noqa: E501
+    response_type='Record', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/SaveVault
 
-    defapi\_v1\_vault\_save\_vault\_card\_vault\_id\_post\_with\_http\_info(self, account, password, vault\_id, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_save_vault_card_vault_id_post_with_http_info(self, account, password, vault_id, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;vault\_id&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'vault_id', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_save\_vault\_card\_vault\_id\_post&quot; % key
+    " to method api_v1_vault_save_vault_card_vault_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;vault\_id&#39; is set
+    # verify the required parameter 'vault_id' is set
 
-    if (&#39;vault\_id&#39;notinparamsor
+    if ('vault_id'notinparamsor
 
-    params[&#39;vault\_id&#39;] isNone):
+    params['vault_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_id` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_id` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_id&#39;inparams:
+    if'vault_id'inparams:
 
-    path\_params[&#39;vaultID&#39;] = params[&#39;vault\_id&#39;] # noqa: E501
+    path_params['vaultID'] = params['vault_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/SaveVaultCard/{vaultID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/SaveVaultCard/{vaultID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/SaveVaultCard/{vaultID}
 
-    defapi\_v1\_vault\_save\_vault\_card\_vault\_id\_post\_with\_http\_info(self, account, password, vault\_id, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_save_vault_card_vault_id_post_with_http_info(self, account, password, vault_id, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;vault\_id&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'vault_id', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_save\_vault\_card\_vault\_id\_post&quot; % key
+    " to method api_v1_vault_save_vault_card_vault_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;vault\_id&#39; is set
+    # verify the required parameter 'vault_id' is set
 
-    if (&#39;vault\_id&#39;notinparamsor
+    if ('vault_id'notinparamsor
 
-    params[&#39;vault\_id&#39;] isNone):
+    params['vault_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_id` when calling `api_v1_vault_save_vault_card_vault_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_id` when calling `api_v1_vault_save_vault_card_vault_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_id&#39;inparams:
+    if'vault_id'inparams:
 
-    path\_params[&#39;vaultID&#39;] = params[&#39;vault\_id&#39;] # noqa: E501
+    path_params['vaultID'] = params['vault_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/SaveVaultCard/{vaultID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/SaveVaultCard/{vaultID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/SearchVault
 
-    defapi\_v1\_vault\_search\_vault\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_search_vault_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_search\_vault\_post&quot; % key
+    " to method api_v1_vault_search_vault_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_search_vault_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_search_vault_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_search_vault_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_search_vault_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/SearchVault&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/SearchVault', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;list[Record]&#39;, # noqa: E501
+    response_type='list[Record]', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/DeleteVaultCardByID/{vaultCardID}
 
-    defapi\_v1\_vault\_delete\_vault\_card\_by\_id\_vault\_card\_id\_post\_with\_http\_info(self, vault\_card\_id, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_delete_vault_card_by_id_vault_card_id_post_with_http_info(self, vault_card_id, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;vault\_card\_id&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['vault_card_id', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_delete\_vault\_card\_by\_id\_vault\_card\_id\_post&quot; % key
+    " to method api_v1_vault_delete_vault_card_by_id_vault_card_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;vault\_card\_id&#39; is set
+    # verify the required parameter 'vault_card_id' is set
 
-    if (&#39;vault\_card\_id&#39;notinparamsor
+    if ('vault_card_id'notinparamsor
 
-    params[&#39;vault\_card\_id&#39;] isNone):
+    params['vault_card_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_card_id` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_card_id` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_delete_vault_card_by_id_vault_card_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_card\_id&#39;inparams:
+    if'vault_card_id'inparams:
 
-    path\_params[&#39;vaultCardID&#39;] = params[&#39;vault\_card\_id&#39;] # noqa: E501
+    path_params['vaultCardID'] = params['vault_card_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/DeleteVaultCardByID/{vaultCardID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/DeleteVaultCardByID/{vaultCardID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}
 
-    defapi\_v1\_vault\_delete\_vault\_check\_by\_id\_vault\_check\_id\_post\_with\_http\_info(self, vault\_check\_id, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_delete_vault_check_by_id_vault_check_id_post_with_http_info(self, vault_check_id, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;vault\_check\_id&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['vault_check_id', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_delete\_vault\_check\_by\_id\_vault\_check\_id\_post&quot; % key
+    " to method api_v1_vault_delete_vault_check_by_id_vault_check_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;vault\_check\_id&#39; is set
+    # verify the required parameter 'vault_check_id' is set
 
-    if (&#39;vault\_check\_id&#39;notinparamsor
+    if ('vault_check_id'notinparamsor
 
-    params[&#39;vault\_check\_id&#39;] isNone):
+    params['vault_check_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_check_id` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_check_id` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_delete_vault_check_by_id_vault_check_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_check\_id&#39;inparams:
+    if'vault_check_id'inparams:
 
-    path\_params[&#39;vaultCheckID&#39;] = params[&#39;vault\_check\_id&#39;] # noqa: E501
+    path_params['vaultCheckID'] = params['vault_check_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}
 
-    defapi\_v1\_vault\_submit\_check\_with\_vault\_check\_id\_vault\_check\_id\_post\_with\_http\_info(self, account, password, vault\_check\_id, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_submit_check_with_vault_check_id_vault_check_id_post_with_http_info(self, account, password, vault_check_id, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;vault\_check\_id&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'vault_check_id', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_submit\_check\_with\_vault\_check\_id\_vault\_check\_id\_post&quot; % key
+    " to method api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;vault\_check\_id&#39; is set
+    # verify the required parameter 'vault_check_id' is set
 
-    if (&#39;vault\_check\_id&#39;notinparamsor
+    if ('vault_check_id'notinparamsor
 
-    params[&#39;vault\_check\_id&#39;] isNone):
+    params['vault_check_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_check_id` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_check_id` when calling `api_v1_vault_submit_check_with_vault_check_id_vault_check_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_check\_id&#39;inparams:
+    if'vault_check_id'inparams:
 
-    path\_params[&#39;vaultCheckID&#39;] = params[&#39;vault\_check\_id&#39;] # noqa: E501
+    path_params['vaultCheckID'] = params['vault_check_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;CheckTransaction&#39;, # noqa: E501
+    response_type='CheckTransaction', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}
 
-    defapi\_v1\_vault\_submit\_with\_vault\_card\_id\_vault\_card\_id\_post\_with\_http\_info(self, account, password, vault\_card\_id, \*\*kwargs): # noqa: E501
+    defapi_v1_vault_submit_with_vault_card_id_vault_card_id_post_with_http_info(self, account, password, vault_card_id, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;vault\_card\_id&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'vault_card_id', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_vault\_submit\_with\_vault\_card\_id\_vault\_card\_id\_post&quot; % key
+    " to method api_v1_vault_submit_with_vault_card_id_vault_card_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;vault\_card\_id&#39; is set
+    # verify the required parameter 'vault_card_id' is set
 
-    if (&#39;vault\_card\_id&#39;notinparamsor
+    if ('vault_card_id'notinparamsor
 
-    params[&#39;vault\_card\_id&#39;] isNone):
+    params['vault_card_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `vault_card_id` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `vault_card_id` when calling `api_v1_vault_submit_with_vault_card_id_vault_card_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;vault\_card\_id&#39;inparams:
+    if'vault_card_id'inparams:
 
-    path\_params[&#39;vaultCardID&#39;] = params[&#39;vault\_card\_id&#39;] # noqa: E501
+    path_params['vaultCardID'] = params['vault_card_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}&#39;, &#39;POST&#39;,
+    '/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Transaction&#39;, # noqa: E501
+    response_type='Transaction', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 # VirtualTerminal API
 
 ## /api/v1/VirtualTerminal/Submit
 
-    defapi\_v1\_virtual\_terminal\_submit\_check\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_submit_check_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_submit\_check\_post&quot; % key
+    " to method api_v1_virtual_terminal_submit_check_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_submit_check_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_submit_check_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_submit_check_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_submit_check_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/SubmitCheck&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/SubmitCheck', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;CheckTransaction&#39;, # noqa: E501
+    response_type='CheckTransaction', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/VirtualTerminal/SubmitCheck
 
-    defapi\_v1\_virtual\_terminal\_submit\_check\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_submit_check_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_submit\_check\_post&quot; % key
+    " to method api_v1_virtual_terminal_submit_check_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_submit_check_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_submit_check_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_submit_check_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_submit_check_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/SubmitCheck&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/SubmitCheck', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;CheckTransaction&#39;, # noqa: E501
+    response_type='CheckTransaction', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/VirtualTerminal/Mark/{transactionID}
 
-    defapi\_v1\_virtual\_terminal\_mark\_transaction\_id\_post\_with\_http\_info(self, transaction\_id, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_mark_transaction_id_post_with_http_info(self, transaction_id, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;transaction\_id&#39;, &#39;account&#39;, &#39;password&#39;] # noqa: E501
+    all_params = ['transaction_id', 'account', 'password'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_mark\_transaction\_id\_post&quot; % key
+    " to method api_v1_virtual_terminal_mark_transaction_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;transaction\_id&#39; is set
+    # verify the required parameter 'transaction_id' is set
 
-    if (&#39;transaction\_id&#39;notinparamsor
+    if ('transaction_id'notinparamsor
 
-    params[&#39;transaction\_id&#39;] isNone):
+    params['transaction_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `transaction_id` when calling `api_v1_virtual_terminal_mark_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `transaction_id` when calling `api_v1_virtual_terminal_mark_transaction_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_mark_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_mark_transaction_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_mark_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_mark_transaction_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;transaction\_id&#39;inparams:
+    if'transaction_id'inparams:
 
-    path\_params[&#39;transactionID&#39;] = params[&#39;transaction\_id&#39;] # noqa: E501
+    path_params['transactionID'] = params['transaction_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/Mark/{transactionID}&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/Mark/{transactionID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/VirtualTerminal/MarkTransactions
 
-    defapi\_v1\_virtual\_terminal\_mark\_transactions\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_mark_transactions_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_mark\_transactions\_post&quot; % key
+    " to method api_v1_virtual_terminal_mark_transactions_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_mark_transactions_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_mark_transactions_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_mark_transactions_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_mark_transactions_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/MarkTransactions&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/MarkTransactions', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/VirtualTerminal/Query
 
-    defapi\_v1\_virtual\_terminal\_query\_post\_with\_http\_info(self, account, password, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_query_post_with_http_info(self, account, password, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_query\_post&quot; % key
+    " to method api_v1_virtual_terminal_query_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_query_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_query_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_query_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_query_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/Query&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/Query', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;QueryTransaction&#39;, # noqa: E501
+    response_type='QueryTransaction', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)
 
 ## /api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}
 
-    defapi\_v1\_virtual\_terminal\_update\_transaction\_info\_transaction\_id\_post\_with\_http\_info(self, account, password, transaction\_id, \*\*kwargs): # noqa: E501
+    defapi_v1_virtual_terminal_update_transaction_info_transaction_id_post_with_http_info(self, account, password, transaction_id, **kwargs): # noqa: E501
 
-    all\_params = [&#39;account&#39;, &#39;password&#39;, &#39;transaction\_id&#39;, &#39;body&#39;] # noqa: E501
+    all_params = ['account', 'password', 'transaction_id', 'body'] # noqa: E501
 
-    all\_params.append(&#39;async\_req&#39;)
+    all_params.append('async_req')
 
-    all\_params.append(&#39;\_return\_http\_data\_only&#39;)
+    all_params.append('_return _http_data_only')
 
-    all\_params.append(&#39;\_preload\_content&#39;)
+    all_params.append('_preload_content')
 
-    all\_params.append(&#39;\_request\_timeout&#39;)
+    all_params.append('_request_timeout')
 
     params = locals()
 
-    forkey, valinsix.iteritems(params[&#39;kwargs&#39;]):
+    forkey, valinsix.iteritems(params['kwargs']):
 
-    ifkeynotinall\_params:
+    ifkeynotinall_params:
 
     raiseTypeError(
 
-    &quot;Got an unexpected keyword argument &#39;%s&#39;&quot;
+    "Got an unexpected keyword argument '%s'"
 
-    &quot; to method api\_v1\_virtual\_terminal\_update\_transaction\_info\_transaction\_id\_post&quot; % key
+    " to method api_v1_virtual_terminal_update_transaction_info_transaction_id_post" % key
 
     )
 
     params[key] = val
 
-    delparams[&#39;kwargs&#39;]
+    delparams['kwargs']
 
-    # verify the required parameter &#39;account&#39; is set
+    # verify the required parameter 'account' is set
 
-    if (&#39;account&#39;notinparamsor
+    if ('account'notinparamsor
 
-    params[&#39;account&#39;] isNone):
+    params['account'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `account` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `account` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;password&#39; is set
+    # verify the required parameter 'password' is set
 
-    if (&#39;password&#39;notinparamsor
+    if ('password'notinparamsor
 
-    params[&#39;password&#39;] isNone):
+    params['password'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `password` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `password` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`") # noqa: E501
 
-    # verify the required parameter &#39;transaction\_id&#39; is set
+    # verify the required parameter 'transaction_id' is set
 
-    if (&#39;transaction\_id&#39;notinparamsor
+    if ('transaction_id'notinparamsor
 
-    params[&#39;transaction\_id&#39;] isNone):
+    params['transaction_id'] isNone):
 
-    raiseValueError(&quot;Missing the required parameter `transaction_id` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`&quot;) # noqa: E501
+    raiseValueError("Missing the required parameter `transaction_id` when calling `api_v1_virtual_terminal_update_transaction_info_transaction_id_post`") # noqa: E501
 
-    collection\_formats = {}
+    collection_formats = {}
 
-    path\_params = {}
+    path_params = {}
 
-    if&#39;transaction\_id&#39;inparams:
+    if'transaction_id'inparams:
 
-    path\_params[&#39;transactionID&#39;] = params[&#39;transaction\_id&#39;] # noqa: E501
+    path_params['transactionID'] = params['transaction_id'] # noqa: E501
 
-    query\_params = []
+    query_params = []
 
-    header\_params = {}
+    header_params = {}
 
-    if&#39;account&#39;inparams:
+    if'account'inparams:
 
-    header\_params[&#39;Account&#39;] = params[&#39;account&#39;] # noqa: E501
+    header_params['Account'] = params['account'] # noqa: E501
 
-    if&#39;password&#39;inparams:
+    if'password'inparams:
 
-    header\_params[&#39;Password&#39;] = params[&#39;password&#39;] # noqa: E501
+    header_params['Password'] = params['password'] # noqa: E501
 
-    form\_params = []
+    form_params = []
 
-    local\_var\_files = {}
+    local_var_files = {}
 
-    body\_params = None
+    body_params = None
 
-    if&#39;body&#39;inparams:
+    if'body'inparams:
 
-    body\_params = params[&#39;body&#39;]
+    body_params = params['body']
 
     # HTTP header `Accept`
 
-    header\_params[&#39;Accept&#39;] = self.api\_client.select\_header\_accept(
+    header_params['Accept'] = self.api_client.select_header_accept(
 
-    [&#39;text/plain&#39;, &#39;application/json&#39;, &#39;text/json&#39;]) # noqa: E501
+    ['text/plain', 'application/json', 'text/json']) # noqa: E501
 
     # HTTP header `Content-Type`
 
-    header\_params[&#39;Content-Type&#39;] = self.api\_client.select\_header\_content\_type( # noqa: E501
+    header_params['Content-Type'] = self.api_client.select_header_content_type( # noqa: E501
 
-    [&#39;application/json&#39;, &#39;text/json&#39;, &#39;application/\*+json&#39;]) # noqa: E501
+    ['application/json', 'text/json', 'application/*+json']) # noqa: E501
 
     # Authentication setting
 
-    auth\_settings = [] # noqa: E501
+    auth_settings = [] # noqa: E501
 
-    returnself.api\_client.call\_api(
+    return self.api_client.call_api(
 
-    &#39;/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}&#39;, &#39;POST&#39;,
+    '/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}', 'POST',
 
-    path\_params,
+    path_params,
 
-    query\_params,
+    query_params,
 
-    header\_params,
+    header_params,
 
-    body=body\_params,
+    body=body_params,
 
-    post\_params=form\_params,
+    post_params=form_params,
 
-    files=local\_var\_files,
+    files=local_var_files,
 
-    response\_type=&#39;Response&#39;, # noqa: E501
+    response_type='Response', # noqa: E501
 
-    auth\_settings=auth\_settings,
+    auth_settings=auth_settings,
 
-    async\_req=params.get(&#39;async\_req&#39;),
+    async_req=params.get('async_req'),
 
-    \_return\_http\_data\_only=params.get(&#39;\_return\_http\_data\_only&#39;),
+    _return _http_data_only=params.get('_return _http_data_only'),
 
-    \_preload\_content=params.get(&#39;\_preload\_content&#39;, True),
+    _preload_content=params.get('_preload_content', True),
 
-    \_request\_timeout=params.get(&#39;\_request\_timeout&#39;),
+    _request_timeout=params.get('_request_timeout'),
 
-    collection\_formats=collection\_formats)
+    collection_formats=collection_formats)

@@ -2,43 +2,43 @@
 
 # Address
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassAddress : IEquatable\&lt;Address\&gt;, IValidatableObject
+    public partial classAddress : IEquatable<Address>, IValidatableObject
 
     {
 
-    publicAddress(stringaddressLine1 = default(string), stringaddressLine2 = default(string), stringcity = default(string), stringstate = default(string), stringzipCode = default(string))
+    public Address(stringaddressLine1 = default(string), stringaddressLine2 = default(string), stringcity = default(string), stringstate = default(string), stringzipCode = default(string))
 
     {
 
@@ -54,25 +54,25 @@
 
     }
 
-    [DataMember(Name=&quot;AddressLine1&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AddressLine1", EmitDefaultValue=false)]
 
-    publicstringAddressLine1 { get; set; }
+    public stringAddressLine1 { get; set; }
 
-    [DataMember(Name=&quot;AddressLine2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AddressLine2", EmitDefaultValue=false)]
 
-    publicstringAddressLine2 { get; set; }
+    public stringAddressLine2 { get; set; }
 
-    [DataMember(Name=&quot;City&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="City", EmitDefaultValue=false)]
 
-    publicstringCity { get; set; }
+    public stringCity { get; set; }
 
-    [DataMember(Name=&quot;State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="State", EmitDefaultValue=false)]
 
-    publicstringState { get; set; }
+    public stringState { get; set; }
 
-    [DataMember(Name=&quot;ZipCode&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ZipCode", EmitDefaultValue=false)]
 
-    publicstringZipCode { get; set; }
+    public stringZipCode { get; set; }
 
     }
 
@@ -80,43 +80,43 @@
 
 # Batch
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassBatch : IEquatable\&lt;Batch\&gt;, IValidatableObject
+    public partial classBatch : IEquatable<Batch>, IValidatableObject
 
     {
 
-    publicBatch(stringbatchNumber = default(string), DateTime? started = default(DateTime?), DateTime? completed = default(DateTime?), stringsalesCount = default(string), double? salesSum = default(double?), stringreturnCount = default(string), double? returnSum = default(double?), bool? batchError = default(bool?))
+    public Batch(stringbatchNumber = default(string), DateTime? started = default(DateTime?), DateTime? completed = default(DateTime?), stringsalesCount = default(string), double? salesSum = default(double?), stringreturn Count = default(string), double? return Sum = default(double?), bool? batchError = default(bool?))
 
     {
 
@@ -130,45 +130,45 @@
 
     this.SalesSum = salesSum;
 
-    this.ReturnCount = returnCount;
+    this.ReturnCount = return Count;
 
-    this.ReturnSum = returnSum;
+    this.ReturnSum = return Sum;
 
     this.BatchError = batchError;
 
     }
 
-    [DataMember(Name=&quot;BatchNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BatchNumber", EmitDefaultValue=false)]
 
-    publicstringBatchNumber { get; set; }
+    public stringBatchNumber { get; set; }
 
-    [DataMember(Name=&quot;Started&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Started", EmitDefaultValue=false)]
 
-    publicDateTime? Started { get; set; }
+    public DateTime? Started { get; set; }
 
-    [DataMember(Name=&quot;Completed&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Completed", EmitDefaultValue=false)]
 
-    publicDateTime? Completed { get; set; }
+    public DateTime? Completed { get; set; }
 
-    [DataMember(Name=&quot;SalesCount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SalesCount", EmitDefaultValue=false)]
 
-    publicstringSalesCount { get; set; }
+    public stringSalesCount { get; set; }
 
-    [DataMember(Name=&quot;SalesSum&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SalesSum", EmitDefaultValue=false)]
 
-    publicdouble? SalesSum { get; set; }
+    public double? SalesSum { get; set; }
 
-    [DataMember(Name=&quot;ReturnCount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ReturnCount", EmitDefaultValue=false)]
 
-    publicstringReturnCount { get; set; }
+    public stringReturnCount { get; set; }
 
-    [DataMember(Name=&quot;ReturnSum&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ReturnSum", EmitDefaultValue=false)]
 
-    publicdouble? ReturnSum { get; set; }
+    public double? ReturnSum { get; set; }
 
-    [DataMember(Name=&quot;BatchError&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BatchError", EmitDefaultValue=false)]
 
-    publicbool? BatchError { get; set; }
+    public bool? BatchError { get; set; }
 
     }
 
@@ -176,43 +176,43 @@
 
 # Business
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassBusiness : IEquatable\&lt;Business\&gt;, IValidatableObject
+    public partial classBusiness : IEquatable<Business>, IValidatableObject
 
     {
 
-    publicBusiness(Addressaddress = default(Address), stringname = default(string), stringphone = default(string), stringfax = default(string), stringwebSite = default(string))
+    public Business(Addressaddress = default(Address), stringname = default(string), stringphone = default(string), stringfax = default(string), stringwebSite = default(string))
 
     {
 
@@ -228,25 +228,25 @@
 
     }
 
-    [DataMember(Name=&quot;Address&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Address", EmitDefaultValue=false)]
 
-    publicAddressAddress { get; set; }
+    public AddressAddress { get; set; }
 
-    [DataMember(Name=&quot;Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Name", EmitDefaultValue=false)]
 
-    publicstringName { get; set; }
+    public stringName { get; set; }
 
-    [DataMember(Name=&quot;Phone&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Phone", EmitDefaultValue=false)]
 
-    publicstringPhone { get; set; }
+    public stringPhone { get; set; }
 
-    [DataMember(Name=&quot;Fax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Fax", EmitDefaultValue=false)]
 
-    publicstringFax { get; set; }
+    public stringFax { get; set; }
 
-    [DataMember(Name=&quot;WebSite&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="WebSite", EmitDefaultValue=false)]
 
-    publicstringWebSite { get; set; }
+    public stringWebSite { get; set; }
 
     }
 
@@ -254,51 +254,51 @@
 
 # CheckAccountType
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [JsonConverter(typeof(StringEnumConverter))]
 
-    publicenumCheckAccountType
+    public enumCheckAccountType
 
     {
 
-    [EnumMember(Value = &quot;Unknown&quot;)]
+    [EnumMember(Value = "Unknown")]
 
     Unknown = 1,
 
-    [EnumMember(Value = &quot;Checking&quot;)]
+    [EnumMember(Value = "Checking")]
 
     Checking = 2,
 
-    [EnumMember(Value = &quot;Savings&quot;)]
+    [EnumMember(Value = "Savings")]
 
     Savings = 3
 
@@ -308,43 +308,43 @@
 
 # CheckTransaction
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassCheckTransaction : IEquatable\&lt;CheckTransaction\&gt;, IValidatableObject
+    public partial classCheckTransaction : IEquatable<CheckTransaction>, IValidatableObject
 
     {
 
-    publicCheckTransaction(stringterminalID = default(string), stringaccountNumber = default(string), CheckAccountTypeaccountType = default(CheckAccountType), stringcheckNumber = default(string), stringroutingNumber = default(string), stringmICRData = default(string), stringfirstName = default(string), stringlastName = default(string), stringcompanyName = default(string), stringaddress1 = default(string), stringaddress2 = default(string), stringcity = default(string), stringstate = default(string), stringzip = default(string), stringphoneNumber = default(string), stringdLNumber = default(string), stringdLState = default(string), stringcourtesyCardID = default(string), stringsSN4 = default(string), stringdOBYear = default(string), stringcheckAmount = default(string), CheckTransactionTypetranType = default(CheckTransactionType), stringprocID = default(string), stringiPAddress = default(string), stringcustomerNumber = default(string), stringpONumber = default(string), stringinvoiceNumber = default(string), stringtranNote = default(string), stringemailAddress = default(string), stringsECCode = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string))
+    public CheckTransaction(stringterminalID = default(string), stringaccountNumber = default(string), CheckAccountTypeaccountType = default(CheckAccountType), stringcheckNumber = default(string), stringroutingNumber = default(string), stringmICRData = default(string), stringfirstName = default(string), stringlastName = default(string), stringcompanyName = default(string), stringaddress1 = default(string), stringaddress2 = default(string), stringcity = default(string), stringstate = default(string), stringzip = default(string), stringphoneNumber = default(string), stringdLNumber = default(string), stringdLState = default(string), stringcourtesyCardID = default(string), stringsSN4 = default(string), stringdOBYear = default(string), stringcheckAmount = default(string), CheckTransactionTypetranType = default(CheckTransactionType), stringprocID = default(string), stringiPAddress = default(string), stringcustomerNumber = default(string), stringpONumber = default(string), stringinvoiceNumber = default(string), stringtranNote = default(string), stringemailAddress = default(string), stringsECCode = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string))
 
     {
 
@@ -416,137 +416,137 @@
 
     }
 
-    [DataMember(Name=&quot;Terminal\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Terminal_ID", EmitDefaultValue=false)]
 
-    publicstringTerminalID { get; set; }
+    public stringTerminalID { get; set; }
 
-    [DataMember(Name=&quot;Account\_Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Account_Number", EmitDefaultValue=false)]
 
-    publicstringAccountNumber { get; set; }
+    public stringAccountNumber { get; set; }
 
-    [DataMember(Name=&quot;Account\_Type&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Account_Type", EmitDefaultValue=false)]
 
-    publicCheckAccountTypeAccountType { get; set; }
+    public CheckAccountTypeAccountType { get; set; }
 
-    [DataMember(Name=&quot;Check\_Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Check_Number", EmitDefaultValue=false)]
 
-    publicstringCheckNumber { get; set; }
+    public stringCheckNumber { get; set; }
 
-    [DataMember(Name=&quot;Routing\_Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Routing_Number", EmitDefaultValue=false)]
 
-    publicstringRoutingNumber { get; set; }
+    public stringRoutingNumber { get; set; }
 
-    [DataMember(Name=&quot;MICR\_Data&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MICR_Data", EmitDefaultValue=false)]
 
-    publicstringMICRData { get; set; }
+    public stringMICRData { get; set; }
 
-    [DataMember(Name=&quot;First\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="First_Name", EmitDefaultValue=false)]
 
-    publicstringFirstName { get; set; }
+    public stringFirstName { get; set; }
 
-    [DataMember(Name=&quot;Last\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Last_Name", EmitDefaultValue=false)]
 
-    publicstringLastName { get; set; }
+    public stringLastName { get; set; }
 
-    [DataMember(Name=&quot;Company\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Company_Name", EmitDefaultValue=false)]
 
-    publicstringCompanyName { get; set; }
+    public stringCompanyName { get; set; }
 
-    [DataMember(Name=&quot;Address1&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Address1", EmitDefaultValue=false)]
 
-    publicstringAddress1 { get; set; }
+    public stringAddress1 { get; set; }
 
-    [DataMember(Name=&quot;Address2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Address2", EmitDefaultValue=false)]
 
-    publicstringAddress2 { get; set; }
+    public stringAddress2 { get; set; }
 
-    [DataMember(Name=&quot;City&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="City", EmitDefaultValue=false)]
 
-    publicstringCity { get; set; }
+    public stringCity { get; set; }
 
-    [DataMember(Name=&quot;State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="State", EmitDefaultValue=false)]
 
-    publicstringState { get; set; }
+    public stringState { get; set; }
 
-    [DataMember(Name=&quot;Zip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Zip", EmitDefaultValue=false)]
 
-    publicstringZip { get; set; }
+    public stringZip { get; set; }
 
-    [DataMember(Name=&quot;Phone\_Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Phone_Number", EmitDefaultValue=false)]
 
-    publicstringPhoneNumber { get; set; }
+    public stringPhoneNumber { get; set; }
 
-    [DataMember(Name=&quot;DL\_Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DL_Number", EmitDefaultValue=false)]
 
-    publicstringDLNumber { get; set; }
+    public stringDLNumber { get; set; }
 
-    [DataMember(Name=&quot;DL\_State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DL_State", EmitDefaultValue=false)]
 
-    publicstringDLState { get; set; }
+    public stringDLState { get; set; }
 
-    [DataMember(Name=&quot;Courtesy\_Card\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Courtesy_Card_ID", EmitDefaultValue=false)]
 
-    publicstringCourtesyCardID { get; set; }
+    public stringCourtesyCardID { get; set; }
 
-    [DataMember(Name=&quot;SSN4&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SSN4", EmitDefaultValue=false)]
 
-    publicstringSSN4 { get; set; }
+    public stringSSN4 { get; set; }
 
-    [DataMember(Name=&quot;DOB\_Year&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DOB_Year", EmitDefaultValue=false)]
 
-    publicstringDOBYear { get; set; }
+    public stringDOBYear { get; set; }
 
-    [DataMember(Name=&quot;Check\_Amount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Check_Amount", EmitDefaultValue=false)]
 
-    publicstringCheckAmount { get; set; }
+    public stringCheckAmount { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Type&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Type", EmitDefaultValue=false)]
 
-    publicCheckTransactionTypeTranType { get; set; }
+    public CheckTransactionTypeTranType { get; set; }
 
-    [DataMember(Name=&quot;Proc\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_ID", EmitDefaultValue=false)]
 
-    publicstringProcID { get; set; }
+    public stringProcID { get; set; }
 
-    [DataMember(Name=&quot;IP\_Address&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="IP_Address", EmitDefaultValue=false)]
 
-    publicstringIPAddress { get; set; }
+    public stringIPAddress { get; set; }
 
-    [DataMember(Name=&quot;CustomerNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomerNumber", EmitDefaultValue=false)]
 
-    publicstringCustomerNumber { get; set; }
+    public stringCustomerNumber { get; set; }
 
-    [DataMember(Name=&quot;PONumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PONumber", EmitDefaultValue=false)]
 
-    publicstringPONumber { get; set; }
+    public stringPONumber { get; set; }
 
-    [DataMember(Name=&quot;InvoiceNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="InvoiceNumber", EmitDefaultValue=false)]
 
-    publicstringInvoiceNumber { get; set; }
+    public stringInvoiceNumber { get; set; }
 
-    [DataMember(Name=&quot;TranNote&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TranNote", EmitDefaultValue=false)]
 
-    publicstringTranNote { get; set; }
+    public stringTranNote { get; set; }
 
-    [DataMember(Name=&quot;EmailAddress&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="EmailAddress", EmitDefaultValue=false)]
 
-    publicstringEmailAddress { get; set; }
+    public stringEmailAddress { get; set; }
 
-    [DataMember(Name=&quot;SEC\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SEC_Code", EmitDefaultValue=false)]
 
-    publicstringSECCode { get; set; }
+    public stringSECCode { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Resp", EmitDefaultValue=false)]
 
-    publicstringProcResp { get; set; }
+    public stringProcResp { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Code", EmitDefaultValue=false)]
 
-    publicstringProcCode { get; set; }
+    public stringProcCode { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Mess&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Mess", EmitDefaultValue=false)]
 
-    publicstringProcMess { get; set; }
+    public stringProcMess { get; set; }
 
     }
 
@@ -554,43 +554,43 @@
 
 # CheckTransactionSettings
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassCheckTransactionSettings : IEquatable\&lt;CheckTransactionSettings\&gt;, IValidatableObject
+    public partial classCheckTransactionSettings : IEquatable<CheckTransactionSettings>, IValidatableObject
 
     {
 
-    publicCheckTransactionSettings(FieldInforeader = default(FieldInfo), FieldInfocontactName = default(FieldInfo), FieldInfocontactTitle = default(FieldInfo), FieldInfoemailAddress = default(FieldInfo), stringphoneDefault = default(string), FieldInfofax = default(FieldInfo), stringbillingAddressDefault = default(string), FieldInfobillingAddress2 = default(FieldInfo), stringbillingCityDefault = default(string), stringbillingStateDefault = default(string), stringbillingZipDefault = default(string), FieldInfopONumber = default(FieldInfo), FieldInfoinvoiceNumber = default(FieldInfo), FieldInfobusinessName = default(FieldInfo), FieldInfocustomerNumber = default(FieldInfo), FieldInforeferenceNote = default(FieldInfo), stringdefaultSECCode = default(string))
+    public CheckTransactionSettings(FieldInforeader = default(FieldInfo), FieldInfocontactName = default(FieldInfo), FieldInfocontactTitle = default(FieldInfo), FieldInfoemailAddress = default(FieldInfo), stringphoneDefault = default(string), FieldInfofax = default(FieldInfo), stringbillingAddressDefault = default(string), FieldInfobillingAddress2 = default(FieldInfo), stringbillingCityDefault = default(string), stringbillingStateDefault = default(string), stringbillingZipDefault = default(string), FieldInfopONumber = default(FieldInfo), FieldInfoinvoiceNumber = default(FieldInfo), FieldInfobusinessName = default(FieldInfo), FieldInfocustomerNumber = default(FieldInfo), FieldInforeferenceNote = default(FieldInfo), stringdefaultSECCode = default(string))
 
     {
 
@@ -630,73 +630,73 @@
 
     }
 
-    [DataMember(Name=&quot;Reader&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Reader", EmitDefaultValue=false)]
 
-    publicFieldInfoReader { get; set; }
+    public FieldInfoReader { get; set; }
 
-    [DataMember(Name=&quot;ContactName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ContactName", EmitDefaultValue=false)]
 
-    publicFieldInfoContactName { get; set; }
+    public FieldInfoContactName { get; set; }
 
-    [DataMember(Name=&quot;ContactTitle&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ContactTitle", EmitDefaultValue=false)]
 
-    publicFieldInfoContactTitle { get; set; }
+    public FieldInfoContactTitle { get; set; }
 
-    [DataMember(Name=&quot;EmailAddress&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="EmailAddress", EmitDefaultValue=false)]
 
-    publicFieldInfoEmailAddress { get; set; }
+    public FieldInfoEmailAddress { get; set; }
 
-    [DataMember(Name=&quot;PhoneDefault&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PhoneDefault", EmitDefaultValue=false)]
 
-    publicstringPhoneDefault { get; set; }
+    public stringPhoneDefault { get; set; }
 
-    [DataMember(Name=&quot;Fax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Fax", EmitDefaultValue=false)]
 
-    publicFieldInfoFax { get; set; }
+    public FieldInfoFax { get; set; }
 
-    [DataMember(Name=&quot;BillingAddressDefault&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingAddressDefault", EmitDefaultValue=false)]
 
-    publicstringBillingAddressDefault { get; set; }
+    public stringBillingAddressDefault { get; set; }
 
-    [DataMember(Name=&quot;BillingAddress2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingAddress2", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingAddress2 { get; set; }
+    public FieldInfoBillingAddress2 { get; set; }
 
-    [DataMember(Name=&quot;BillingCityDefault&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingCityDefault", EmitDefaultValue=false)]
 
-    publicstringBillingCityDefault { get; set; }
+    public stringBillingCityDefault { get; set; }
 
-    [DataMember(Name=&quot;BillingStateDefault&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingStateDefault", EmitDefaultValue=false)]
 
-    publicstringBillingStateDefault { get; set; }
+    public stringBillingStateDefault { get; set; }
 
-    [DataMember(Name=&quot;BillingZipDefault&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingZipDefault", EmitDefaultValue=false)]
 
-    publicstringBillingZipDefault { get; set; }
+    public stringBillingZipDefault { get; set; }
 
-    [DataMember(Name=&quot;PONumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PONumber", EmitDefaultValue=false)]
 
-    publicFieldInfoPONumber { get; set; }
+    public FieldInfoPONumber { get; set; }
 
-    [DataMember(Name=&quot;InvoiceNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="InvoiceNumber", EmitDefaultValue=false)]
 
-    publicFieldInfoInvoiceNumber { get; set; }
+    public FieldInfoInvoiceNumber { get; set; }
 
-    [DataMember(Name=&quot;BusinessName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BusinessName", EmitDefaultValue=false)]
 
-    publicFieldInfoBusinessName { get; set; }
+    public FieldInfoBusinessName { get; set; }
 
-    [DataMember(Name=&quot;CustomerNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomerNumber", EmitDefaultValue=false)]
 
-    publicFieldInfoCustomerNumber { get; set; }
+    public FieldInfoCustomerNumber { get; set; }
 
-    [DataMember(Name=&quot;ReferenceNote&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ReferenceNote", EmitDefaultValue=false)]
 
-    publicFieldInfoReferenceNote { get; set; }
+    public FieldInfoReferenceNote { get; set; }
 
-    [DataMember(Name=&quot;DefaultSECCode&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DefaultSECCode", EmitDefaultValue=false)]
 
-    publicstringDefaultSECCode { get; set; }
+    public stringDefaultSECCode { get; set; }
 
     }
 
@@ -704,67 +704,67 @@
 
 # CheckTransactionType
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [JsonConverter(typeof(StringEnumConverter))]
 
-    publicenumCheckTransactionType
+    public enumCheckTransactionType
 
     {
 
-    [EnumMember(Value = &quot;Unknown&quot;)]
+    [EnumMember(Value = "Unknown")]
 
     Unknown = 1,
 
-    [EnumMember(Value = &quot;Authorize&quot;)]
+    [EnumMember(Value = "Authorize")]
 
     Authorize = 2,
 
-    [EnumMember(Value = &quot;Void&quot;)]
+    [EnumMember(Value = "void ")]
 
-    Void = 3,
+    void = 3,
 
-    [EnumMember(Value = &quot;Override&quot;)]
+    [EnumMember(Value = "Override")]
 
     Override = 4,
 
-    [EnumMember(Value = &quot;Payroll&quot;)]
+    [EnumMember(Value = "Payroll")]
 
     Payroll = 5,
 
-    [EnumMember(Value = &quot;Recurring&quot;)]
+    [EnumMember(Value = "Recurring")]
 
     Recurring = 6,
 
-    [EnumMember(Value = &quot;Refund&quot;)]
+    [EnumMember(Value = "Refund")]
 
     Refund = 7 }
 
@@ -772,43 +772,43 @@
 
 # Contact
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassContact : IEquatable\&lt;Contact\&gt;, IValidatableObject
+    public partial classContact : IEquatable<Contact>, IValidatableObject
 
     {
 
-    publicContact(stringfirstName = default(string), stringlastName = default(string), stringname = default(string), stringtitle = default(string), stringphone = default(string), stringemail = default(string))
+    public Contact(stringfirstName = default(string), stringlastName = default(string), stringname = default(string), stringtitle = default(string), stringphone = default(string), stringemail = default(string))
 
     {
 
@@ -826,29 +826,29 @@
 
     }
 
-    [DataMember(Name=&quot;FirstName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="FirstName", EmitDefaultValue=false)]
 
-    publicstringFirstName { get; set; }
+    public stringFirstName { get; set; }
 
-    [DataMember(Name=&quot;LastName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="LastName", EmitDefaultValue=false)]
 
-    publicstringLastName { get; set; }
+    public stringLastName { get; set; }
 
-    [DataMember(Name=&quot;Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Name", EmitDefaultValue=false)]
 
-    publicstringName { get; set; }
+    public stringName { get; set; }
 
-    [DataMember(Name=&quot;Title&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Title", EmitDefaultValue=false)]
 
-    publicstringTitle { get; set; }
+    public stringTitle { get; set; }
 
-    [DataMember(Name=&quot;Phone&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Phone", EmitDefaultValue=false)]
 
-    publicstringPhone { get; set; }
+    public stringPhone { get; set; }
 
-    [DataMember(Name=&quot;Email&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Email", EmitDefaultValue=false)]
 
-    publicstringEmail { get; set; }
+    public stringEmail { get; set; }
 
     }
 
@@ -856,43 +856,43 @@
 
 # CreditCardTransactionSettings
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassCreditCardTransactionSettings : IEquatable\&lt;CreditCardTransactionSettings\&gt;, IValidatableObject
+    public partial classCreditCardTransactionSettings : IEquatable<CreditCardTransactionSettings>, IValidatableObject
 
     {
 
-    publicCreditCardTransactionSettings(FieldInfocVV = default(FieldInfo), FieldInfocontactName = default(FieldInfo), FieldInfocontactTitle = default(FieldInfo), FieldInfoemailAddress = default(FieldInfo), FieldInfophone = default(FieldInfo), FieldInfofax = default(FieldInfo), FieldInfobillingAddress = default(FieldInfo), FieldInfobillingAddress2 = default(FieldInfo), FieldInfobillingCity = default(FieldInfo), FieldInfobillingState = default(FieldInfo), FieldInfobillingZip = default(FieldInfo), FieldInfopONumber = default(FieldInfo), FieldInfoinvoiceNumber = default(FieldInfo), FieldInfobusinessName = default(FieldInfo), FieldInfocustomerNumber = default(FieldInfo), FieldInforeferenceNote = default(FieldInfo), FieldInfosalesTax = default(FieldInfo), FieldInfotaxExempt = default(FieldInfo), FieldInfocardTracks = default(FieldInfo), FieldInfocardZip = default(FieldInfo), FieldInfocardAddress = default(FieldInfo), stringitemDescription = default(string), TransactionTypedefaultTransactionType = default(TransactionType))
+    public CreditCardTransactionSettings(FieldInfocVV = default(FieldInfo), FieldInfocontactName = default(FieldInfo), FieldInfocontactTitle = default(FieldInfo), FieldInfoemailAddress = default(FieldInfo), FieldInfophone = default(FieldInfo), FieldInfofax = default(FieldInfo), FieldInfobillingAddress = default(FieldInfo), FieldInfobillingAddress2 = default(FieldInfo), FieldInfobillingCity = default(FieldInfo), FieldInfobillingState = default(FieldInfo), FieldInfobillingZip = default(FieldInfo), FieldInfopONumber = default(FieldInfo), FieldInfoinvoiceNumber = default(FieldInfo), FieldInfobusinessName = default(FieldInfo), FieldInfocustomerNumber = default(FieldInfo), FieldInforeferenceNote = default(FieldInfo), FieldInfosalesTax = default(FieldInfo), FieldInfotaxExempt = default(FieldInfo), FieldInfocardTracks = default(FieldInfo), FieldInfocardZip = default(FieldInfo), FieldInfocardAddress = default(FieldInfo), stringitemDescription = default(string), TransactionTypedefaultTransactionType = default(TransactionType))
 
     {
 
@@ -944,97 +944,97 @@
 
     }
 
-    [DataMember(Name=&quot;CVV&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV", EmitDefaultValue=false)]
 
-    publicFieldInfoCVV { get; set; }
+    public FieldInfoCVV { get; set; }
 
-    [DataMember(Name=&quot;ContactName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ContactName", EmitDefaultValue=false)]
 
-    publicFieldInfoContactName { get; set; }
+    public FieldInfoContactName { get; set; }
 
-    [DataMember(Name=&quot;ContactTitle&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ContactTitle", EmitDefaultValue=false)]
 
-    publicFieldInfoContactTitle { get; set; }
+    public FieldInfoContactTitle { get; set; }
 
-    [DataMember(Name=&quot;EmailAddress&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="EmailAddress", EmitDefaultValue=false)]
 
-    publicFieldInfoEmailAddress { get; set; }
+    public FieldInfoEmailAddress { get; set; }
 
-    [DataMember(Name=&quot;Phone&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Phone", EmitDefaultValue=false)]
 
-    publicFieldInfoPhone { get; set; }
+    public FieldInfoPhone { get; set; }
 
-    [DataMember(Name=&quot;Fax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Fax", EmitDefaultValue=false)]
 
-    publicFieldInfoFax { get; set; }
+    public FieldInfoFax { get; set; }
 
-    [DataMember(Name=&quot;BillingAddress&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingAddress", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingAddress { get; set; }
+    public FieldInfoBillingAddress { get; set; }
 
-    [DataMember(Name=&quot;BillingAddress2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingAddress2", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingAddress2 { get; set; }
+    public FieldInfoBillingAddress2 { get; set; }
 
-    [DataMember(Name=&quot;BillingCity&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingCity", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingCity { get; set; }
+    public FieldInfoBillingCity { get; set; }
 
-    [DataMember(Name=&quot;BillingState&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingState", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingState { get; set; }
+    public FieldInfoBillingState { get; set; }
 
-    [DataMember(Name=&quot;BillingZip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BillingZip", EmitDefaultValue=false)]
 
-    publicFieldInfoBillingZip { get; set; }
+    public FieldInfoBillingZip { get; set; }
 
-    [DataMember(Name=&quot;PONumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PONumber", EmitDefaultValue=false)]
 
-    publicFieldInfoPONumber { get; set; }
+    public FieldInfoPONumber { get; set; }
 
-    [DataMember(Name=&quot;InvoiceNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="InvoiceNumber", EmitDefaultValue=false)]
 
-    publicFieldInfoInvoiceNumber { get; set; }
+    public FieldInfoInvoiceNumber { get; set; }
 
-    [DataMember(Name=&quot;BusinessName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BusinessName", EmitDefaultValue=false)]
 
-    publicFieldInfoBusinessName { get; set; }
+    public FieldInfoBusinessName { get; set; }
 
-    [DataMember(Name=&quot;CustomerNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomerNumber", EmitDefaultValue=false)]
 
-    publicFieldInfoCustomerNumber { get; set; }
+    public FieldInfoCustomerNumber { get; set; }
 
-    [DataMember(Name=&quot;ReferenceNote&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ReferenceNote", EmitDefaultValue=false)]
 
-    publicFieldInfoReferenceNote { get; set; }
+    public FieldInfoReferenceNote { get; set; }
 
-    [DataMember(Name=&quot;SalesTax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SalesTax", EmitDefaultValue=false)]
 
-    publicFieldInfoSalesTax { get; set; }
+    public FieldInfoSalesTax { get; set; }
 
-    [DataMember(Name=&quot;TaxExempt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TaxExempt", EmitDefaultValue=false)]
 
-    publicFieldInfoTaxExempt { get; set; }
+    public FieldInfoTaxExempt { get; set; }
 
-    [DataMember(Name=&quot;CardTracks&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CardTracks", EmitDefaultValue=false)]
 
-    publicFieldInfoCardTracks { get; set; }
+    public FieldInfoCardTracks { get; set; }
 
-    [DataMember(Name=&quot;CardZip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CardZip", EmitDefaultValue=false)]
 
-    publicFieldInfoCardZip { get; set; }
+    public FieldInfoCardZip { get; set; }
 
-    [DataMember(Name=&quot;CardAddress&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CardAddress", EmitDefaultValue=false)]
 
-    publicFieldInfoCardAddress { get; set; }
+    public FieldInfoCardAddress { get; set; }
 
-    [DataMember(Name=&quot;ItemDescription&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ItemDescription", EmitDefaultValue=false)]
 
-    publicstringItemDescription { get; set; }
+    public stringItemDescription { get; set; }
 
-    [DataMember(Name=&quot;DefaultTransactionType&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DefaultTransactionType", EmitDefaultValue=false)]
 
-    publicTransactionTypeDefaultTransactionType { get; set; }
+    public TransactionTypeDefaultTransactionType { get; set; }
 
     }
 
@@ -1042,55 +1042,55 @@
 
 # CVVPresenceType
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [JsonConverter(typeof(StringEnumConverter))]
 
-    publicenumCVVPresenceType
+    public enumCVVPresenceType
 
     {
 
-    [EnumMember(Value = &quot;Normal&quot;)]
+    [EnumMember(Value = "Normal")]
 
     Normal = 1,
 
-    [EnumMember(Value = &quot;Bypass&quot;)]
+    [EnumMember(Value = "Bypass")]
 
     Bypass = 2,
 
-    [EnumMember(Value = &quot;Illegible&quot;)]
+    [EnumMember(Value = "Illegible")]
 
     Illegible = 3,
 
-    [EnumMember(Value = &quot;NotAvailable&quot;)]
+    [EnumMember(Value = "NotAvailable")]
 
     NotAvailable = 4
 
@@ -1100,43 +1100,43 @@
 
 # EmailReceipt
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassEmailReceipt : IEquatable\&lt;EmailReceipt\&gt;, IValidatableObject
+    public partial classEmailReceipt : IEquatable<EmailReceipt>, IValidatableObject
 
     {
 
-    publicEmailReceipt(stringtransactionID = default(string), stringtoAddresses = default(string), stringsubject = default(string), stringheader = default(string), stringfooter = default(string))
+    public EmailReceipt(stringtransactionID = default(string), stringtoAddresses = default(string), stringsubject = default(string), stringheader = default(string), stringfooter = default(string))
 
     {
 
@@ -1152,25 +1152,25 @@
 
     }
 
-    [DataMember(Name=&quot;TransactionID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TransactionID", EmitDefaultValue=false)]
 
-    publicstringTransactionID { get; set; }
+    public stringTransactionID { get; set; }
 
-    [DataMember(Name=&quot;ToAddresses&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ToAddresses", EmitDefaultValue=false)]
 
-    publicstringToAddresses { get; set; }
+    public stringToAddresses { get; set; }
 
-    [DataMember(Name=&quot;Subject&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Subject", EmitDefaultValue=false)]
 
-    publicstringSubject { get; set; }
+    public stringSubject { get; set; }
 
-    [DataMember(Name=&quot;Header&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Header", EmitDefaultValue=false)]
 
-    publicstringHeader { get; set; }
+    public stringHeader { get; set; }
 
-    [DataMember(Name=&quot;Footer&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Footer", EmitDefaultValue=false)]
 
-    publicstringFooter { get; set; }
+    public stringFooter { get; set; }
 
     }
 
@@ -1178,51 +1178,51 @@
 
 # FieldAccess
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [JsonConverter(typeof(StringEnumConverter))]
 
-    publicenumFieldAccess
+    public enumFieldAccess
 
     {
 
-    [EnumMember(Value = &quot;Disabled&quot;)]
+    [EnumMember(Value = "Disabled")]
 
     Disabled = 1,
 
-    [EnumMember(Value = &quot;Enabled&quot;)]
+    [EnumMember(Value = "Enabled")]
 
     Enabled = 2,
 
-    [EnumMember(Value = &quot;Required&quot;)]
+    [EnumMember(Value = "Required")]
 
     Required = 3
 
@@ -1232,59 +1232,59 @@
 
 # FieldInfo
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassFieldInfo : IEquatable\&lt;FieldInfo\&gt;, IValidatableObject
+    public partial classFieldInfo : IEquatable<FieldInfo>, IValidatableObject
 
     {
 
-    publicFieldInfo(FieldAccessaccess = default(FieldAccess), string\_default = default(string))
+    public FieldInfo(FieldAccessaccess = default(FieldAccess), string_default = default(string))
 
     {
 
     this.Access = access;
 
-    this.\_Default = \_default;
+    this._Default = _default;
 
     }
 
-    [DataMember(Name=&quot;Access&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Access", EmitDefaultValue=false)]
 
-    publicFieldAccessAccess { get; set; }
+    public FieldAccessAccess { get; set; }
 
-    [DataMember(Name=&quot;Default&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Default", EmitDefaultValue=false)]
 
-    publicstring\_Default { get; set; }
+    public string_Default { get; set; }
 
     }
 
@@ -1292,43 +1292,43 @@
 
 # QueryTransaction
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassQueryTransaction : IEquatable\&lt;QueryTransaction\&gt;, IValidatableObject
+    public partial classQueryTransaction : IEquatable<QueryTransaction>, IValidatableObject
 
     {
 
-    publicQueryTransaction(stringtranSequence = default(string), stringtranBatch = default(string), stringtranModified = default(string), stringtranProcessed = default(string), stringtranSettled = default(string), stringsubmitTime = default(string), stringtranType = default(string), double? tranAmt = default(double?), double? tranTax = default(double?), stringtranInv = default(string), stringtranPO = default(string), stringtranCNum = default(string), stringtranNote = default(string), stringcardNum = default(string), stringcardName = default(string), stringcardExp = default(string), stringaVSStreet = default(string), stringaVSZip = default(string), stringcVVNum = default(string), stringprocID = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string), stringaVSCode = default(string), stringaVSResp = default(string), stringcVVCode = default(string), stringcVVResp = default(string), List\&lt;TransactionItem\&gt; items = default(List\&lt;TransactionItem\&gt;), stringbusinessName = default(string), stringbusinessAddress = default(string), stringbusinessAddress2 = default(string), stringbusinessCity = default(string), stringbusinessState = default(string), stringbusinessZip = default(string), stringbusinessCountry = default(string), stringbusinessWebsite = default(string), stringcontactFirstName = default(string), stringcontactLastName = default(string), stringcontactPhone = default(string), stringcontactFax = default(string), stringcontactEmail = default(string), stringcontactTitle = default(string), stringiP = default(string), bool? taxExempt = default(bool?))
+    public QueryTransaction(stringtranSequence = default(string), stringtranBatch = default(string), stringtranModified = default(string), stringtranProcessed = default(string), stringtranSettled = default(string), stringsubmitTime = default(string), stringtranType = default(string), double? tranAmt = default(double?), double? tranTax = default(double?), stringtranInv = default(string), stringtranPO = default(string), stringtranCNum = default(string), stringtranNote = default(string), stringcardNum = default(string), stringcardName = default(string), stringcardExp = default(string), stringaVSStreet = default(string), stringaVSZip = default(string), stringcVVNum = default(string), stringprocID = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string), stringaVSCode = default(string), stringaVSResp = default(string), stringcVVCode = default(string), stringcVVResp = default(string), List<TransactionItem> items = default(List<TransactionItem>), stringbusinessName = default(string), stringbusinessAddress = default(string), stringbusinessAddress2 = default(string), stringbusinessCity = default(string), stringbusinessState = default(string), stringbusinessZip = default(string), stringbusinessCountry = default(string), stringbusinessWebsite = default(string), stringcontactFirstName = default(string), stringcontactLastName = default(string), stringcontactPhone = default(string), stringcontactFax = default(string), stringcontactEmail = default(string), stringcontactTitle = default(string), stringiP = default(string), bool? taxExempt = default(bool?))
 
     {
 
@@ -1422,181 +1422,181 @@
 
     }
 
-    [DataMember(Name=&quot;Tran\_Sequence&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Sequence", EmitDefaultValue=false)]
 
-    publicstringTranSequence { get; set; }
+    public stringTranSequence { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Batch&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Batch", EmitDefaultValue=false)]
 
-    publicstringTranBatch { get; set; }
+    public stringTranBatch { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Modified&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Modified", EmitDefaultValue=false)]
 
-    publicstringTranModified { get; set; }
+    public stringTranModified { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Processed&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Processed", EmitDefaultValue=false)]
 
-    publicstringTranProcessed { get; set; }
+    public stringTranProcessed { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Settled&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Settled", EmitDefaultValue=false)]
 
-    publicstringTranSettled { get; set; }
+    public stringTranSettled { get; set; }
 
-    [DataMember(Name=&quot;Submit\_Time&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Submit_Time", EmitDefaultValue=false)]
 
-    publicstringSubmitTime { get; set; }
+    public stringSubmitTime { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Type&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Type", EmitDefaultValue=false)]
 
-    publicstringTranType { get; set; }
+    public stringTranType { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Amt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Amt", EmitDefaultValue=false)]
 
-    publicdouble? TranAmt { get; set; }
+    public double? TranAmt { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Tax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Tax", EmitDefaultValue=false)]
 
-    publicdouble? TranTax { get; set; }
+    public double? TranTax { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Inv&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Inv", EmitDefaultValue=false)]
 
-    publicstringTranInv { get; set; }
+    public stringTranInv { get; set; }
 
-    [DataMember(Name=&quot;Tran\_PO&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_PO", EmitDefaultValue=false)]
 
-    publicstringTranPO { get; set; }
+    public stringTranPO { get; set; }
 
-    [DataMember(Name=&quot;Tran\_CNum&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_CNum", EmitDefaultValue=false)]
 
-    publicstringTranCNum { get; set; }
+    public stringTranCNum { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Note", EmitDefaultValue=false)]
 
-    publicstringTranNote { get; set; }
+    public stringTranNote { get; set; }
 
-    [DataMember(Name=&quot;Card\_Num&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Num", EmitDefaultValue=false)]
 
-    publicstringCardNum { get; set; }
+    public stringCardNum { get; set; }
 
-    [DataMember(Name=&quot;Card\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Name", EmitDefaultValue=false)]
 
-    publicstringCardName { get; set; }
+    public stringCardName { get; set; }
 
-    [DataMember(Name=&quot;Card\_Exp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Exp", EmitDefaultValue=false)]
 
-    publicstringCardExp { get; set; }
+    public stringCardExp { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Street&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Street", EmitDefaultValue=false)]
 
-    publicstringAVSStreet { get; set; }
+    public stringAVSStreet { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Zip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Zip", EmitDefaultValue=false)]
 
-    publicstringAVSZip { get; set; }
+    public stringAVSZip { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Num&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Num", EmitDefaultValue=false)]
 
-    publicstringCVVNum { get; set; }
+    public stringCVVNum { get; set; }
 
-    [DataMember(Name=&quot;Proc\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_ID", EmitDefaultValue=false)]
 
-    publicstringProcID { get; set; }
+    public stringProcID { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Resp", EmitDefaultValue=false)]
 
-    publicstringProcResp { get; set; }
+    public stringProcResp { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Code", EmitDefaultValue=false)]
 
-    publicstringProcCode { get; set; }
+    public stringProcCode { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Mess&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Mess", EmitDefaultValue=false)]
 
-    publicstringProcMess { get; set; }
+    public stringProcMess { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Code", EmitDefaultValue=false)]
 
-    publicstringAVSCode { get; set; }
+    public stringAVSCode { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Resp", EmitDefaultValue=false)]
 
-    publicstringAVSResp { get; set; }
+    public stringAVSResp { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Code", EmitDefaultValue=false)]
 
-    publicstringCVVCode { get; set; }
+    public stringCVVCode { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Resp", EmitDefaultValue=false)]
 
-    publicstringCVVResp { get; set; }
+    public stringCVVResp { get; set; }
 
-    [DataMember(Name=&quot;Items&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Items", EmitDefaultValue=false)]
 
-    publicList\&lt;TransactionItem\&gt; Items { get; set; }
+    public List<TransactionItem> Items { get; set; }
 
-    [DataMember(Name=&quot;Business\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Name", EmitDefaultValue=false)]
 
-    publicstringBusinessName { get; set; }
+    public stringBusinessName { get; set; }
 
-    [DataMember(Name=&quot;Business\_Address&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Address", EmitDefaultValue=false)]
 
-    publicstringBusinessAddress { get; set; }
+    public stringBusinessAddress { get; set; }
 
-    [DataMember(Name=&quot;Business\_Address2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Address2", EmitDefaultValue=false)]
 
-    publicstringBusinessAddress2 { get; set; }
+    public stringBusinessAddress2 { get; set; }
 
-    [DataMember(Name=&quot;Business\_City&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_City", EmitDefaultValue=false)]
 
-    publicstringBusinessCity { get; set; }
+    public stringBusinessCity { get; set; }
 
-    [DataMember(Name=&quot;Business\_State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_State", EmitDefaultValue=false)]
 
-    publicstringBusinessState { get; set; }
+    public stringBusinessState { get; set; }
 
-    [DataMember(Name=&quot;Business\_Zip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Zip", EmitDefaultValue=false)]
 
-    publicstringBusinessZip { get; set; }
+    public stringBusinessZip { get; set; }
 
-    [DataMember(Name=&quot;Business\_Country&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Country", EmitDefaultValue=false)]
 
-    publicstringBusinessCountry { get; set; }
+    public stringBusinessCountry { get; set; }
 
-    [DataMember(Name=&quot;Business\_Website&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Website", EmitDefaultValue=false)]
 
-    publicstringBusinessWebsite { get; set; }
+    public stringBusinessWebsite { get; set; }
 
-    [DataMember(Name=&quot;Contact\_FirstName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_FirstName", EmitDefaultValue=false)]
 
-    publicstringContactFirstName { get; set; }
+    public stringContactFirstName { get; set; }
 
-    [DataMember(Name=&quot;Contact\_LastName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_LastName", EmitDefaultValue=false)]
 
-    publicstringContactLastName { get; set; }
+    public stringContactLastName { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Phone&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Phone", EmitDefaultValue=false)]
 
-    publicstringContactPhone { get; set; }
+    public stringContactPhone { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Fax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Fax", EmitDefaultValue=false)]
 
-    publicstringContactFax { get; set; }
+    public stringContactFax { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Email&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Email", EmitDefaultValue=false)]
 
-    publicstringContactEmail { get; set; }
+    public stringContactEmail { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Title&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Title", EmitDefaultValue=false)]
 
-    publicstringContactTitle { get; set; }
+    public stringContactTitle { get; set; }
 
-    [DataMember(Name=&quot;IP&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="IP", EmitDefaultValue=false)]
 
-    publicstringIP { get; set; }
+    public stringIP { get; set; }
 
-    [DataMember(Name=&quot;TaxExempt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TaxExempt", EmitDefaultValue=false)]
 
-    publicbool? TaxExempt { get; set; }
+    public bool? TaxExempt { get; set; }
 
     }
 
@@ -1604,43 +1604,43 @@
 
 # Receipt
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassReceipt : IEquatable\&lt;Receipt\&gt;, IValidatableObject
+    public partial classReceipt : IEquatable<Receipt>, IValidatableObject
 
     {
 
-    publicReceipt(ReceiptCustomLinesheader = default(ReceiptCustomLines), ReceiptCustomLinesfooter = default(ReceiptCustomLines))
+    public Receipt(ReceiptCustomLinesheader = default(ReceiptCustomLines), ReceiptCustomLinesfooter = default(ReceiptCustomLines))
 
     {
 
@@ -1650,13 +1650,13 @@
 
     }
 
-    [DataMember(Name=&quot;Header&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Header", EmitDefaultValue=false)]
 
-    publicReceiptCustomLinesHeader { get; set; }
+    public ReceiptCustomLinesHeader { get; set; }
 
-    [DataMember(Name=&quot;Footer&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Footer", EmitDefaultValue=false)]
 
-    publicReceiptCustomLinesFooter { get; set; }
+    public ReceiptCustomLinesFooter { get; set; }
 
     }
 
@@ -1664,43 +1664,43 @@
 
 # ReceiptCustomLines
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassReceiptCustomLines : IEquatable\&lt;ReceiptCustomLines\&gt;, IValidatableObject
+    public partial classReceiptCustomLines : IEquatable<ReceiptCustomLines>, IValidatableObject
 
     {
 
-    publicReceiptCustomLines(stringcustomLine1 = default(string), stringcustomLine2 = default(string), stringcustomLine3 = default(string), stringcustomLine4 = default(string))
+    public ReceiptCustomLines(stringcustomLine1 = default(string), stringcustomLine2 = default(string), stringcustomLine3 = default(string), stringcustomLine4 = default(string))
 
     {
 
@@ -1714,21 +1714,21 @@
 
     }
 
-    [DataMember(Name=&quot;CustomLine1&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomLine1", EmitDefaultValue=false)]
 
-    publicstringCustomLine1 { get; set; }
+    public stringCustomLine1 { get; set; }
 
-    [DataMember(Name=&quot;CustomLine2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomLine2", EmitDefaultValue=false)]
 
-    publicstringCustomLine2 { get; set; }
+    public stringCustomLine2 { get; set; }
 
-    [DataMember(Name=&quot;CustomLine3&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomLine3", EmitDefaultValue=false)]
 
-    publicstringCustomLine3 { get; set; }
+    public stringCustomLine3 { get; set; }
 
-    [DataMember(Name=&quot;CustomLine4&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomLine4", EmitDefaultValue=false)]
 
-    publicstringCustomLine4 { get; set; }
+    public stringCustomLine4 { get; set; }
 
     }
 
@@ -1736,43 +1736,43 @@
 
 # Record
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassRecord : IEquatable\&lt;Record\&gt;, IValidatableObject
+    public partial classRecord : IEquatable<Record>, IValidatableObject
 
     {
 
-    publicRecord(Responseresponse = default(Response), int? iD = default(int?), stringreference = default(string), Businessbusiness = default(Business), Contactcontact = default(Contact), stringpO = default(string), stringinvoice = default(string), stringcustomer = default(string), bool? taxExempt = default(bool?), stringnote = default(string), List\&lt;VaultCreditCard\&gt; creditCards = default(List\&lt;VaultCreditCard\&gt;), List\&lt;VaultCheck\&gt; checks = default(List\&lt;VaultCheck\&gt;))
+    public Record(Responseresponse = default(Response), int? iD = default(int?), stringreference = default(string), Businessbusiness = default(Business), Contactcontact = default(Contact), stringpO = default(string), stringinvoice = default(string), stringcustomer = default(string), bool? taxExempt = default(bool?), stringnote = default(string), List<VaultCreditCard> creditCards = default(List<VaultCreditCard>), List<VaultCheck> checks = default(List<VaultCheck>))
 
     {
 
@@ -1802,53 +1802,53 @@
 
     }
 
-    [DataMember(Name=&quot;Response&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Response", EmitDefaultValue=false)]
 
-    publicResponseResponse { get; set; }
+    public ResponseResponse { get; set; }
 
-    [DataMember(Name=&quot;ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ID", EmitDefaultValue=false)]
 
-    publicint? ID { get; set; }
+    public int? ID { get; set; }
 
-    [DataMember(Name=&quot;Reference&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Reference", EmitDefaultValue=false)]
 
-    publicstringReference { get; set; }
+    public stringReference { get; set; }
 
-    [DataMember(Name=&quot;Business&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business", EmitDefaultValue=false)]
 
-    publicBusinessBusiness { get; set; }
+    public BusinessBusiness { get; set; }
 
-    [DataMember(Name=&quot;Contact&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact", EmitDefaultValue=false)]
 
-    publicContactContact { get; set; }
+    public ContactContact { get; set; }
 
-    [DataMember(Name=&quot;PO&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PO", EmitDefaultValue=false)]
 
-    publicstringPO { get; set; }
+    public stringPO { get; set; }
 
-    [DataMember(Name=&quot;Invoice&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Invoice", EmitDefaultValue=false)]
 
-    publicstringInvoice { get; set; }
+    public stringInvoice { get; set; }
 
-    [DataMember(Name=&quot;Customer&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Customer", EmitDefaultValue=false)]
 
-    publicstringCustomer { get; set; }
+    public stringCustomer { get; set; }
 
-    [DataMember(Name=&quot;TaxExempt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TaxExempt", EmitDefaultValue=false)]
 
-    publicbool? TaxExempt { get; set; }
+    public bool? TaxExempt { get; set; }
 
-    [DataMember(Name=&quot;Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Note", EmitDefaultValue=false)]
 
-    publicstringNote { get; set; }
+    public stringNote { get; set; }
 
-    [DataMember(Name=&quot;CreditCards&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CreditCards", EmitDefaultValue=false)]
 
-    publicList\&lt;VaultCreditCard\&gt; CreditCards { get; set; }
+    public List<VaultCreditCard> CreditCards { get; set; }
 
-    [DataMember(Name=&quot;Checks&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Checks", EmitDefaultValue=false)]
 
-    publicList\&lt;VaultCheck\&gt; Checks { get; set; }
+    public List<VaultCheck> Checks { get; set; }
 
     }
 
@@ -1856,43 +1856,43 @@
 
 # Response
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassResponse : IEquatable\&lt;Response\&gt;, IValidatableObject
+    public partial classResponse : IEquatable<Response>, IValidatableObject
 
     {
 
-    publicResponse(bool? error = default(bool?), stringmessage = default(string))
+    public Response(bool? error = default(bool?), stringmessage = default(string))
 
     {
 
@@ -1902,13 +1902,13 @@
 
     }
 
-    [DataMember(Name=&quot;Error&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Error", EmitDefaultValue=false)]
 
-    publicbool? Error { get; set; }
+    public bool? Error { get; set; }
 
-    [DataMember(Name=&quot;Message&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Message", EmitDefaultValue=false)]
 
-    publicstringMessage { get; set; }
+    public stringMessage { get; set; }
 
     }
 
@@ -1916,43 +1916,43 @@
 
 # SearchVault
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassSearchVault : IEquatable\&lt;SearchVault\&gt;, IValidatableObject
+    public partial classSearchVault : IEquatable<SearchVault>, IValidatableObject
 
     {
 
-    publicSearchVault(stringreference = default(string), stringbusinessName = default(string), stringfirstName = default(string), stringlastName = default(string))
+    public SearchVault(stringreference = default(string), stringbusinessName = default(string), stringfirstName = default(string), stringlastName = default(string))
 
     {
 
@@ -1966,21 +1966,21 @@
 
     }
 
-    [DataMember(Name=&quot;Reference&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Reference", EmitDefaultValue=false)]
 
-    publicstringReference { get; set; }
+    public stringReference { get; set; }
 
-    [DataMember(Name=&quot;BusinessName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="BusinessName", EmitDefaultValue=false)]
 
-    publicstringBusinessName { get; set; }
+    public stringBusinessName { get; set; }
 
-    [DataMember(Name=&quot;FirstName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="FirstName", EmitDefaultValue=false)]
 
-    publicstringFirstName { get; set; }
+    public stringFirstName { get; set; }
 
-    [DataMember(Name=&quot;LastName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="LastName", EmitDefaultValue=false)]
 
-    publicstringLastName { get; set; }
+    public stringLastName { get; set; }
 
     }
 
@@ -1988,43 +1988,43 @@
 
 # Settings
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassSettings : IEquatable\&lt;Settings\&gt;, IValidatableObject
+    public partial classSettings : IEquatable<Settings>, IValidatableObject
 
     {
 
-    publicSettings(CreditCardTransactionSettingscreditCardTransactionSettings = default(CreditCardTransactionSettings), CheckTransactionSettingscheckTransactionSettings = default(CheckTransactionSettings), Businessbusiness = default(Business), ContactmainContact = default(Contact), Receiptreceipt40 = default(Receipt), Receiptreceipt80 = default(Receipt), bool? printSignatureLine = default(bool?), Responseresponse = default(Response), stringaccountID = default(string), FieldInfocopyEmailReceipt = default(FieldInfo))
+    public Settings(CreditCardTransactionSettingscreditCardTransactionSettings = default(CreditCardTransactionSettings), CheckTransactionSettingscheckTransactionSettings = default(CheckTransactionSettings), Businessbusiness = default(Business), ContactmainContact = default(Contact), Receiptreceipt40 = default(Receipt), Receiptreceipt80 = default(Receipt), bool? printSignatureLine = default(bool?), Responseresponse = default(Response), stringaccountID = default(string), FieldInfocopyEmailReceipt = default(FieldInfo))
 
     {
 
@@ -2050,45 +2050,45 @@
 
     }
 
-    [DataMember(Name=&quot;CreditCardTransactionSettings&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CreditCardTransactionSettings", EmitDefaultValue=false)]
 
-    publicCreditCardTransactionSettingsCreditCardTransactionSettings { get; set; }
+    public CreditCardTransactionSettingsCreditCardTransactionSettings { get; set; }
 
-    [DataMember(Name=&quot;CheckTransactionSettings&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckTransactionSettings", EmitDefaultValue=false)]
 
-    publicCheckTransactionSettingsCheckTransactionSettings { get; set; }
+    public CheckTransactionSettingsCheckTransactionSettings { get; set; }
 
-    [DataMember(Name=&quot;Business&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business", EmitDefaultValue=false)]
 
-    publicBusinessBusiness { get; set; }
+    public BusinessBusiness { get; set; }
 
-    [DataMember(Name=&quot;MainContact&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MainContact", EmitDefaultValue=false)]
 
-    publicContactMainContact { get; set; }
+    public ContactMainContact { get; set; }
 
-    [DataMember(Name=&quot;Receipt40&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Receipt40", EmitDefaultValue=false)]
 
-    publicReceiptReceipt40 { get; set; }
+    public ReceiptReceipt40 { get; set; }
 
-    [DataMember(Name=&quot;Receipt80&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Receipt80", EmitDefaultValue=false)]
 
-    publicReceiptReceipt80 { get; set; }
+    public ReceiptReceipt80 { get; set; }
 
-    [DataMember(Name=&quot;PrintSignatureLine&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PrintSignatureLine", EmitDefaultValue=false)]
 
-    publicbool? PrintSignatureLine { get; set; }
+    public bool? PrintSignatureLine { get; set; }
 
-    [DataMember(Name=&quot;Response&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Response", EmitDefaultValue=false)]
 
-    publicResponseResponse { get; set; }
+    public ResponseResponse { get; set; }
 
-    [DataMember(Name=&quot;AccountID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AccountID", EmitDefaultValue=false)]
 
-    publicstringAccountID { get; set; }
+    public stringAccountID { get; set; }
 
-    [DataMember(Name=&quot;CopyEmailReceipt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CopyEmailReceipt", EmitDefaultValue=false)]
 
-    publicFieldInfoCopyEmailReceipt { get; set; }
+    public FieldInfoCopyEmailReceipt { get; set; }
 
     }
 
@@ -2096,43 +2096,43 @@
 
 # TerminalSettings
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassTerminalSettings : IEquatable\&lt;TerminalSettings\&gt;, IValidatableObject
+    public partial classTerminalSettings : IEquatable<TerminalSettings>, IValidatableObject
 
     {
 
-    publicTerminalSettings(int? iD = default(int?), int? terminalID = default(int?), stringsECCode = default(string), bool? gatewayTerminal = default(bool?), bool? consumerCredits = default(bool?), bool? dLRequired = default(bool?), bool? checkVerify = default(bool?), bool? identityVerify = default(bool?))
+    public TerminalSettings(int? iD = default(int?), int? terminalID = default(int?), stringsECCode = default(string), bool? gatewayTerminal = default(bool?), bool? consumerCredits = default(bool?), bool? dLRequired = default(bool?), bool? checkVerify = default(bool?), bool? identityVerify = default(bool?))
 
     {
 
@@ -2154,37 +2154,37 @@
 
     }
 
-    [DataMember(Name=&quot;ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ID", EmitDefaultValue=false)]
 
-    publicint? ID { get; set; }
+    public int? ID { get; set; }
 
-    [DataMember(Name=&quot;Terminal\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Terminal_ID", EmitDefaultValue=false)]
 
-    publicint? TerminalID { get; set; }
+    public int? TerminalID { get; set; }
 
-    [DataMember(Name=&quot;SEC\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="SEC_Code", EmitDefaultValue=false)]
 
-    publicstringSECCode { get; set; }
+    public stringSECCode { get; set; }
 
-    [DataMember(Name=&quot;Gateway\_Terminal&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Gateway_Terminal", EmitDefaultValue=false)]
 
-    publicbool? GatewayTerminal { get; set; }
+    public bool? GatewayTerminal { get; set; }
 
-    [DataMember(Name=&quot;Consumer\_Credits&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Consumer_Credits", EmitDefaultValue=false)]
 
-    publicbool? ConsumerCredits { get; set; }
+    public bool? ConsumerCredits { get; set; }
 
-    [DataMember(Name=&quot;DL\_Required&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="DL_Required", EmitDefaultValue=false)]
 
-    publicbool? DLRequired { get; set; }
+    public bool? DLRequired { get; set; }
 
-    [DataMember(Name=&quot;Check\_Verify&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Check_Verify", EmitDefaultValue=false)]
 
-    publicbool? CheckVerify { get; set; }
+    public bool? CheckVerify { get; set; }
 
-    [DataMember(Name=&quot;Identity\_Verify&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Identity_Verify", EmitDefaultValue=false)]
 
-    publicbool? IdentityVerify { get; set; }
+    public bool? IdentityVerify { get; set; }
 
     }
 
@@ -2192,43 +2192,43 @@
 
 # Transaction
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassTransaction : IEquatable\&lt;Transaction\&gt;, IValidatableObject
+    public partial classTransaction : IEquatable<Transaction>, IValidatableObject
 
     {
 
-    publicTransaction(DateTime? submitTime = default(DateTime?), stringtranType = default(string), double? tranAmt = default(double?), double? tranTax = default(double?), stringtranInv = default(string), stringtranPO = default(string), stringtranCNum = default(string), stringtranNote = default(string), stringcardNum = default(string), stringcardName = default(string), stringcardExp = default(string), stringcardType = default(string), stringaVSStreet = default(string), stringaVSZip = default(string), stringcVVNum = default(string), stringprocID = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string), stringaVSCode = default(string), stringaVSResp = default(string), stringcVVCode = default(string), stringcVVResp = default(string), List\&lt;TransactionItem\&gt; items = default(List\&lt;TransactionItem\&gt;), stringbusinessName = default(string), stringbusinessAddress = default(string), stringbusinessAddress2 = default(string), stringbusinessCity = default(string), stringbusinessState = default(string), stringbusinessZip = default(string), stringbusinessCountry = default(string), stringbusinessWebsite = default(string), stringcontactFirstName = default(string), stringcontactLastName = default(string), stringcontactPhone = default(string), stringcontactFax = default(string), stringcontactEmail = default(string), stringcontactTitle = default(string), stringiP = default(string), bool? taxExempt = default(bool?))
+    public Transaction(DateTime? submitTime = default(DateTime?), stringtranType = default(string), double? tranAmt = default(double?), double? tranTax = default(double?), stringtranInv = default(string), stringtranPO = default(string), stringtranCNum = default(string), stringtranNote = default(string), stringcardNum = default(string), stringcardName = default(string), stringcardExp = default(string), stringcardType = default(string), stringaVSStreet = default(string), stringaVSZip = default(string), stringcVVNum = default(string), stringprocID = default(string), stringprocResp = default(string), stringprocCode = default(string), stringprocMess = default(string), stringaVSCode = default(string), stringaVSResp = default(string), stringcVVCode = default(string), stringcVVResp = default(string), List<TransactionItem> items = default(List<TransactionItem>), stringbusinessName = default(string), stringbusinessAddress = default(string), stringbusinessAddress2 = default(string), stringbusinessCity = default(string), stringbusinessState = default(string), stringbusinessZip = default(string), stringbusinessCountry = default(string), stringbusinessWebsite = default(string), stringcontactFirstName = default(string), stringcontactLastName = default(string), stringcontactPhone = default(string), stringcontactFax = default(string), stringcontactEmail = default(string), stringcontactTitle = default(string), stringiP = default(string), bool? taxExempt = default(bool?))
 
     {
 
@@ -2314,165 +2314,165 @@
 
     }
 
-    [DataMember(Name=&quot;Submit\_Time&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Submit_Time", EmitDefaultValue=false)]
 
-    publicDateTime? SubmitTime { get; set; }
+    public DateTime? SubmitTime { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Type&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Type", EmitDefaultValue=false)]
 
-    publicstringTranType { get; set; }
+    public stringTranType { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Amt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Amt", EmitDefaultValue=false)]
 
-    publicdouble? TranAmt { get; set; }
+    public double? TranAmt { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Tax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Tax", EmitDefaultValue=false)]
 
-    publicdouble? TranTax { get; set; }
+    public double? TranTax { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Inv&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Inv", EmitDefaultValue=false)]
 
-    publicstringTranInv { get; set; }
+    public stringTranInv { get; set; }
 
-    [DataMember(Name=&quot;Tran\_PO&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_PO", EmitDefaultValue=false)]
 
-    publicstringTranPO { get; set; }
+    public stringTranPO { get; set; }
 
-    [DataMember(Name=&quot;Tran\_CNum&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_CNum", EmitDefaultValue=false)]
 
-    publicstringTranCNum { get; set; }
+    public stringTranCNum { get; set; }
 
-    [DataMember(Name=&quot;Tran\_Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tran_Note", EmitDefaultValue=false)]
 
-    publicstringTranNote { get; set; }
+    public stringTranNote { get; set; }
 
-    [DataMember(Name=&quot;Card\_Num&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Num", EmitDefaultValue=false)]
 
-    publicstringCardNum { get; set; }
+    public stringCardNum { get; set; }
 
-    [DataMember(Name=&quot;Card\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Name", EmitDefaultValue=false)]
 
-    publicstringCardName { get; set; }
+    public stringCardName { get; set; }
 
-    [DataMember(Name=&quot;Card\_Exp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Exp", EmitDefaultValue=false)]
 
-    publicstringCardExp { get; set; }
+    public stringCardExp { get; set; }
 
-    [DataMember(Name=&quot;Card\_Type&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Card_Type", EmitDefaultValue=false)]
 
-    publicstringCardType { get; set; }
+    public stringCardType { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Street&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Street", EmitDefaultValue=false)]
 
-    publicstringAVSStreet { get; set; }
+    public stringAVSStreet { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Zip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Zip", EmitDefaultValue=false)]
 
-    publicstringAVSZip { get; set; }
+    public stringAVSZip { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Num&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Num", EmitDefaultValue=false)]
 
-    publicstringCVVNum { get; set; }
+    public stringCVVNum { get; set; }
 
-    [DataMember(Name=&quot;Proc\_ID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_ID", EmitDefaultValue=false)]
 
-    publicstringProcID { get; set; }
+    public stringProcID { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Resp", EmitDefaultValue=false)]
 
-    publicstringProcResp { get; set; }
+    public stringProcResp { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Code", EmitDefaultValue=false)]
 
-    publicstringProcCode { get; set; }
+    public stringProcCode { get; set; }
 
-    [DataMember(Name=&quot;Proc\_Mess&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Proc_Mess", EmitDefaultValue=false)]
 
-    publicstringProcMess { get; set; }
+    public stringProcMess { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Code", EmitDefaultValue=false)]
 
-    publicstringAVSCode { get; set; }
+    public stringAVSCode { get; set; }
 
-    [DataMember(Name=&quot;AVS\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AVS_Resp", EmitDefaultValue=false)]
 
-    publicstringAVSResp { get; set; }
+    public stringAVSResp { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Code&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Code", EmitDefaultValue=false)]
 
-    publicstringCVVCode { get; set; }
+    public stringCVVCode { get; set; }
 
-    [DataMember(Name=&quot;CVV\_Resp&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV_Resp", EmitDefaultValue=false)]
 
-    publicstringCVVResp { get; set; }
+    public stringCVVResp { get; set; }
 
-    [DataMember(Name=&quot;Items&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Items", EmitDefaultValue=false)]
 
-    publicList\&lt;TransactionItem\&gt; Items { get; set; }
+    public List<TransactionItem> Items { get; set; }
 
-    [DataMember(Name=&quot;Business\_Name&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Name", EmitDefaultValue=false)]
 
-    publicstringBusinessName { get; set; }
+    public stringBusinessName { get; set; }
 
-    [DataMember(Name=&quot;Business\_Address&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Address", EmitDefaultValue=false)]
 
-    publicstringBusinessAddress { get; set; }
+    public stringBusinessAddress { get; set; }
 
-    [DataMember(Name=&quot;Business\_Address2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Address2", EmitDefaultValue=false)]
 
-    publicstringBusinessAddress2 { get; set; }
+    public stringBusinessAddress2 { get; set; }
 
-    [DataMember(Name=&quot;Business\_City&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_City", EmitDefaultValue=false)]
 
-    publicstringBusinessCity { get; set; }
+    public stringBusinessCity { get; set; }
 
-    [DataMember(Name=&quot;Business\_State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_State", EmitDefaultValue=false)]
 
-    publicstringBusinessState { get; set; }
+    public stringBusinessState { get; set; }
 
-    [DataMember(Name=&quot;Business\_Zip&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Zip", EmitDefaultValue=false)]
 
-    publicstringBusinessZip { get; set; }
+    public stringBusinessZip { get; set; }
 
-    [DataMember(Name=&quot;Business\_Country&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Country", EmitDefaultValue=false)]
 
-    publicstringBusinessCountry { get; set; }
+    public stringBusinessCountry { get; set; }
 
-    [DataMember(Name=&quot;Business\_Website&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Business_Website", EmitDefaultValue=false)]
 
-    publicstringBusinessWebsite { get; set; }
+    public stringBusinessWebsite { get; set; }
 
-    [DataMember(Name=&quot;Contact\_FirstName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_FirstName", EmitDefaultValue=false)]
 
-    publicstringContactFirstName { get; set; }
+    public stringContactFirstName { get; set; }
 
-    [DataMember(Name=&quot;Contact\_LastName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_LastName", EmitDefaultValue=false)]
 
-    publicstringContactLastName { get; set; }
+    public stringContactLastName { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Phone&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Phone", EmitDefaultValue=false)]
 
-    publicstringContactPhone { get; set; }
+    public stringContactPhone { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Fax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Fax", EmitDefaultValue=false)]
 
-    publicstringContactFax { get; set; }
+    public stringContactFax { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Email&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Email", EmitDefaultValue=false)]
 
-    publicstringContactEmail { get; set; }
+    public stringContactEmail { get; set; }
 
-    [DataMember(Name=&quot;Contact\_Title&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Contact_Title", EmitDefaultValue=false)]
 
-    publicstringContactTitle { get; set; }
+    public stringContactTitle { get; set; }
 
-    [DataMember(Name=&quot;IP&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="IP", EmitDefaultValue=false)]
 
-    publicstringIP { get; set; }
+    public stringIP { get; set; }
 
-    [DataMember(Name=&quot;TaxExempt&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TaxExempt", EmitDefaultValue=false)]
 
-    publicbool? TaxExempt { get; set; }
+    public bool? TaxExempt { get; set; }
 
     }
 
@@ -2480,43 +2480,43 @@
 
 # TransactionItem
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassTransactionItem : IEquatable\&lt;TransactionItem\&gt;, IValidatableObject
+    public partial classTransactionItem : IEquatable<TransactionItem>, IValidatableObject
 
     {
 
-    publicTransactionItem(bool? taxIncluded = default(bool?), bool? credit = default(bool?), double? extendedAmount = default(double?), stringitemNumber = default(string), double? unitCost = default(double?), int? quantity = default(int?), stringdescription = default(string), double? discount = default(double?), double? tax = default(double?), stringcommodityCode = default(string), stringunitOfMeasure = default(string))
+    public TransactionItem(bool? taxIncluded = default(bool?), bool? credit = default(bool?), double? extendedAmount = default(double?), stringitemNumber = default(string), double? unitCost = default(double?), int? quantity = default(int?), stringdescription = default(string), double? discount = default(double?), double? tax = default(double?), stringcommodityCode = default(string), stringunitOfMeasure = default(string))
 
     {
 
@@ -2544,49 +2544,49 @@
 
     }
 
-    [DataMember(Name=&quot;TaxIncluded&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TaxIncluded", EmitDefaultValue=false)]
 
-    publicbool? TaxIncluded { get; set; }
+    public bool? TaxIncluded { get; set; }
 
-    [DataMember(Name=&quot;Credit&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Credit", EmitDefaultValue=false)]
 
-    publicbool? Credit { get; set; }
+    public bool? Credit { get; set; }
 
-    [DataMember(Name=&quot;ExtendedAmount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ExtendedAmount", EmitDefaultValue=false)]
 
-    publicdouble? ExtendedAmount { get; set; }
+    public double? ExtendedAmount { get; set; }
 
-    [DataMember(Name=&quot;ItemNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ItemNumber", EmitDefaultValue=false)]
 
-    publicstringItemNumber { get; set; }
+    public stringItemNumber { get; set; }
 
-    [DataMember(Name=&quot;UnitCost&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="UnitCost", EmitDefaultValue=false)]
 
-    publicdouble? UnitCost { get; set; }
+    public double? UnitCost { get; set; }
 
-    [DataMember(Name=&quot;Quantity&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Quantity", EmitDefaultValue=false)]
 
-    publicint? Quantity { get; set; }
+    public int? Quantity { get; set; }
 
-    [DataMember(Name=&quot;Description&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Description", EmitDefaultValue=false)]
 
-    publicstringDescription { get; set; }
+    public stringDescription { get; set; }
 
-    [DataMember(Name=&quot;Discount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Discount", EmitDefaultValue=false)]
 
-    publicdouble? Discount { get; set; }
+    public double? Discount { get; set; }
 
-    [DataMember(Name=&quot;Tax&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Tax", EmitDefaultValue=false)]
 
-    publicdouble? Tax { get; set; }
+    public double? Tax { get; set; }
 
-    [DataMember(Name=&quot;CommodityCode&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CommodityCode", EmitDefaultValue=false)]
 
-    publicstringCommodityCode { get; set; }
+    public stringCommodityCode { get; set; }
 
-    [DataMember(Name=&quot;UnitOfMeasure&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="UnitOfMeasure", EmitDefaultValue=false)]
 
-    publicstringUnitOfMeasure { get; set; }
+    public stringUnitOfMeasure { get; set; }
 
     }
 
@@ -2594,43 +2594,43 @@
 
 # UpdateTransactionInfo
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassUpdateTransactionInfo : IEquatable\&lt;UpdateTransactionInfo\&gt;, IValidatableObject
+    public partial classUpdateTransactionInfo : IEquatable<UpdateTransactionInfo>, IValidatableObject
 
     {
 
-    publicUpdateTransactionInfo(stringinvoiceNumber = default(string), stringcustomerNumber = default(string), stringpONumber = default(string), stringnote = default(string))
+    public UpdateTransactionInfo(stringinvoiceNumber = default(string), stringcustomerNumber = default(string), stringpONumber = default(string), stringnote = default(string))
 
     {
 
@@ -2644,21 +2644,21 @@
 
     }
 
-    [DataMember(Name=&quot;InvoiceNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="InvoiceNumber", EmitDefaultValue=false)]
 
-    publicstringInvoiceNumber { get; set; }
+    public stringInvoiceNumber { get; set; }
 
-    [DataMember(Name=&quot;CustomerNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CustomerNumber", EmitDefaultValue=false)]
 
-    publicstringCustomerNumber { get; set; }
+    public stringCustomerNumber { get; set; }
 
-    [DataMember(Name=&quot;PONumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="PONumber", EmitDefaultValue=false)]
 
-    publicstringPONumber { get; set; }
+    public stringPONumber { get; set; }
 
-    [DataMember(Name=&quot;Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Note", EmitDefaultValue=false)]
 
-    publicstringNote { get; set; }
+    public stringNote { get; set; }
 
     }
 
@@ -2666,43 +2666,43 @@
 
 # VaultCheck
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassVaultCheck : IEquatable\&lt;VaultCheck\&gt;, IValidatableObject
+    public partial classVaultCheck : IEquatable<VaultCheck>, IValidatableObject
 
     {
 
-    publicVaultCheck(Responseresponse = default(Response), int? checkID = default(int?), bool? main = default(bool?), stringcheckRouting = default(string), stringcheckAccount = default(string), stringcheckNumber = default(string), stringcheckFirstName = default(string), stringcheckLastName = default(string), stringnote = default(string), stringmaskedRouting = default(string), stringmaskedAccount = default(string), stringaccountType = default(string))
+    public VaultCheck(Responseresponse = default(Response), int? checkID = default(int?), bool? main = default(bool?), stringcheckRouting = default(string), stringcheckAccount = default(string), stringcheckNumber = default(string), stringcheckFirstName = default(string), stringcheckLastName = default(string), stringnote = default(string), stringmaskedRouting = default(string), stringmaskedAccount = default(string), stringaccountType = default(string))
 
     {
 
@@ -2732,53 +2732,53 @@
 
     }
 
-    [DataMember(Name=&quot;Response&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Response", EmitDefaultValue=false)]
 
-    publicResponseResponse { get; set; }
+    public ResponseResponse { get; set; }
 
-    [DataMember(Name=&quot;CheckID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckID", EmitDefaultValue=false)]
 
-    publicint? CheckID { get; set; }
+    public int? CheckID { get; set; }
 
-    [DataMember(Name=&quot;Main&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Main", EmitDefaultValue=false)]
 
-    publicbool? Main { get; set; }
+    public bool? Main { get; set; }
 
-    [DataMember(Name=&quot;CheckRouting&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckRouting", EmitDefaultValue=false)]
 
-    publicstringCheckRouting { get; set; }
+    public stringCheckRouting { get; set; }
 
-    [DataMember(Name=&quot;CheckAccount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckAccount", EmitDefaultValue=false)]
 
-    publicstringCheckAccount { get; set; }
+    public stringCheckAccount { get; set; }
 
-    [DataMember(Name=&quot;CheckNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckNumber", EmitDefaultValue=false)]
 
-    publicstringCheckNumber { get; set; }
+    public stringCheckNumber { get; set; }
 
-    [DataMember(Name=&quot;CheckFirstName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckFirstName", EmitDefaultValue=false)]
 
-    publicstringCheckFirstName { get; set; }
+    public stringCheckFirstName { get; set; }
 
-    [DataMember(Name=&quot;CheckLastName&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CheckLastName", EmitDefaultValue=false)]
 
-    publicstringCheckLastName { get; set; }
+    public stringCheckLastName { get; set; }
 
-    [DataMember(Name=&quot;Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Note", EmitDefaultValue=false)]
 
-    publicstringNote { get; set; }
+    public stringNote { get; set; }
 
-    [DataMember(Name=&quot;MaskedRouting&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MaskedRouting", EmitDefaultValue=false)]
 
-    publicstringMaskedRouting { get; set; }
+    public stringMaskedRouting { get; set; }
 
-    [DataMember(Name=&quot;MaskedAccount&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MaskedAccount", EmitDefaultValue=false)]
 
-    publicstringMaskedAccount { get; set; }
+    public stringMaskedAccount { get; set; }
 
-    [DataMember(Name=&quot;AccountType&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="AccountType", EmitDefaultValue=false)]
 
-    publicstringAccountType { get; set; }
+    public stringAccountType { get; set; }
 
     }
 
@@ -2786,43 +2786,43 @@
 
 # VaultCreditCard
 
-    usingSystem;
+    using System;
 
-    usingSystem.Linq;
+    using System.Linq;
 
-    usingSystem.IO;
+    using System.IO;
 
-    usingSystem.Text;
+    using System.Text;
 
-    usingSystem.Text.RegularExpressions;
+    using System.Text.RegularExpressions;
 
-    usingSystem.Collections;
+    using System.Collections;
 
-    usingSystem.Collections.Generic;
+    using System.Collections.Generic;
 
-    usingSystem.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-    usingSystem.Runtime.Serialization;
+    using System.Runtime.Serialization;
 
-    usingNewtonsoft.Json;
+    using Newtonsoft.Json;
 
-    usingNewtonsoft.Json.Converters;
+    using Newtonsoft.Json.Converters;
 
-    usingSystem.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations;
 
-    usingSwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
+    using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
-    namespaceIO.Swagger.Model
+    namespace IO.Swagger.Model
 
     {
 
     [DataContract]
 
-    publicpartialclassVaultCreditCard : IEquatable\&lt;VaultCreditCard\&gt;, IValidatableObject
+    public partial classVaultCreditCard : IEquatable<VaultCreditCard>, IValidatableObject
 
     {
 
-    publicVaultCreditCard(stringmagneticTracks = default(string), stringtrack1 = default(string), stringtrack2 = default(string), stringnumber = default(string), stringmaskedNumber = default(string), stringholder = default(string), stringexpDate = default(string), stringcVV = default(string), stringaddress = default(string), stringcity = default(string), stringstate = default(string), stringzIP = default(string), bool? swiped = default(bool?), stringtypeString = default(string), CVVPresenceTypecVVType = default(CVVPresenceType), bool? notPresent = default(bool?), Responseresponse = default(Response), int? cardID = default(int?), stringnote = default(string), bool? main = default(bool?))
+    public VaultCreditCard(stringmagneticTracks = default(string), stringtrack1 = default(string), stringtrack2 = default(string), stringnumber = default(string), stringmaskedNumber = default(string), stringholder = default(string), stringexpDate = default(string), stringcVV = default(string), stringaddress = default(string), stringcity = default(string), stringstate = default(string), stringzIP = default(string), bool? swiped = default(bool?), stringtypeString = default(string), CVVPresenceTypecVVType = default(CVVPresenceType), bool? notPresent = default(bool?), Responseresponse = default(Response), int? cardID = default(int?), stringnote = default(string), bool? main = default(bool?))
 
     {
 
@@ -2868,85 +2868,85 @@
 
     }
 
-    [DataMember(Name=&quot;MagneticTracks&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MagneticTracks", EmitDefaultValue=false)]
 
-    publicstringMagneticTracks { get; set; }
+    public stringMagneticTracks { get; set; }
 
-    [DataMember(Name=&quot;Track1&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Track1", EmitDefaultValue=false)]
 
-    publicstringTrack1 { get; set; }
+    public stringTrack1 { get; set; }
 
-    [DataMember(Name=&quot;Track2&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Track2", EmitDefaultValue=false)]
 
-    publicstringTrack2 { get; set; }
+    public stringTrack2 { get; set; }
 
-    [DataMember(Name=&quot;Number&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Number", EmitDefaultValue=false)]
 
-    publicstringNumber { get; set; }
+    public stringNumber { get; set; }
 
-    [DataMember(Name=&quot;MaskedNumber&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="MaskedNumber", EmitDefaultValue=false)]
 
-    publicstringMaskedNumber { get; set; }
+    public stringMaskedNumber { get; set; }
 
-    [DataMember(Name=&quot;Holder&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Holder", EmitDefaultValue=false)]
 
-    publicstringHolder { get; set; }
+    public stringHolder { get; set; }
 
-    [DataMember(Name=&quot;ExpDate&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ExpDate", EmitDefaultValue=false)]
 
-    publicstringExpDate { get; set; }
+    public stringExpDate { get; set; }
 
-    [DataMember(Name=&quot;CVV&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVV", EmitDefaultValue=false)]
 
-    publicstringCVV { get; set; }
+    public stringCVV { get; set; }
 
-    [DataMember(Name=&quot;Address&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Address", EmitDefaultValue=false)]
 
-    publicstringAddress { get; set; }
+    public stringAddress { get; set; }
 
-    [DataMember(Name=&quot;City&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="City", EmitDefaultValue=false)]
 
-    publicstringCity { get; set; }
+    public stringCity { get; set; }
 
-    [DataMember(Name=&quot;State&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="State", EmitDefaultValue=false)]
 
-    publicstringState { get; set; }
+    public stringState { get; set; }
 
-    [DataMember(Name=&quot;ZIP&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="ZIP", EmitDefaultValue=false)]
 
-    publicstringZIP { get; set; }
+    public stringZIP { get; set; }
 
-    [DataMember(Name=&quot;Swiped&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Swiped", EmitDefaultValue=false)]
 
-    publicbool? Swiped { get; set; }
+    public bool? Swiped { get; set; }
 
-    [DataMember(Name=&quot;TypeString&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="TypeString", EmitDefaultValue=false)]
 
-    publicstringTypeString { get; set; }
+    public stringTypeString { get; set; }
 
-    [DataMember(Name=&quot;CVVType&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CVVType", EmitDefaultValue=false)]
 
-    publicCVVPresenceTypeCVVType { get; set; }
+    public CVVPresenceTypeCVVType { get; set; }
 
-    [DataMember(Name=&quot;NotPresent&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="NotPresent", EmitDefaultValue=false)]
 
-    publicbool? NotPresent { get; set; }
+    public bool? NotPresent { get; set; }
 
-    [DataMember(Name=&quot;Response&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Response", EmitDefaultValue=false)]
 
-    publicResponseResponse { get; set; }
+    public ResponseResponse { get; set; }
 
-    [DataMember(Name=&quot;CardID&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="CardID", EmitDefaultValue=false)]
 
-    publicint? CardID { get; set; }
+    public int? CardID { get; set; }
 
-    [DataMember(Name=&quot;Note&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Note", EmitDefaultValue=false)]
 
-    publicstringNote { get; set; }
+    public stringNote { get; set; }
 
-    [DataMember(Name=&quot;Main&quot;, EmitDefaultValue=false)]
+    [DataMember(Name="Main", EmitDefaultValue=false)]
 
-    publicbool? Main { get; set; }
+    public bool? Main { get; set; }
 
     }
 

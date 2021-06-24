@@ -2,3190 +2,1895 @@
 
 # API Client
 
-    usingSystem;
-
-    usingSystem.Collections;
-
-    usingSystem.Collections.Generic;
-
-    usingSystem.Globalization;
-
-    usingSystem.Text.RegularExpressions;
-
-    usingSystem.IO;
-
-    usingSystem.Web;
-
-    usingSystem.Linq;
-
-    usingSystem.Net;
-
-    usingSystem.Text;
-
-    usingNewtonsoft.Json;
-
-    usingRestSharp;
-
-    namespaceIO.Swagger.Client
-
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
+    using System.IO;
+    using System.Web;
+    using System.Linq;
+    using System.Net;
+    using System.Text;
+    using Newtonsoft.Json;
+    using RestSharp;
+    namespace IO.Swagger.Client
     {
-
-    publicpartialclassApiClient
-
-    {
-
-    privateJsonSerializerSettingsserializerSettings = newJsonSerializerSettings
-
-    {
-
-    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-
-    };
-
-    partialvoidInterceptRequest(IRestRequestrequest);
-
-    partialvoidInterceptResponse(IRestRequestrequest, IRestResponseresponse);
-
-    publicApiClient()
-
-    {
-
-    Configuration = IO.Swagger.Client.Configuration.Default;
-
-    RestClient = newRestClient(&quot;/&quot;);
-
-    }
-
-    publicApiClient(Configurationconfig)
-
-    {
-
-    Configuration = config ?? IO.Swagger.Client.Configuration.Default;
-
-    RestClient = newRestClient(Configuration.BasePath);
-
-    }
-
-    publicApiClient(StringbasePath = &quot;/&quot;)
-
-    {
-
-    if (String.IsNullOrEmpty(basePath))
-
-    thrownewArgumentException(&quot;basePath cannot be empty&quot;);
-
-    RestClient = newRestClient(basePath);
-
-    Configuration = Client.Configuration.Default;
-
-    }
-
-    publicIReadableConfigurationConfiguration { get; set; }
-
-    publicRestClientRestClient { get; set; }
-
-    privateRestRequestPrepareRequest(
-
-    Stringpath, RestSharp.Methodmethod,
-
-    List\&lt;KeyValuePair\&lt;String, String\&gt;\&gt; queryParams,
-
-    ObjectpostBody,
-
-    Dictionary\&lt;String, String\&gt; headerParams,
-
-    Dictionary\&lt;String, String\&gt; formParams,
-
-    Dictionary\&lt;String, FileParameter\&gt; fileParams,
-
-    Dictionary\&lt;String, String\&gt; pathParams,
-
-    StringcontentType)
-
-    {
-
-    varrequest = newRestRequest(path, method);
-
-    // add path parameter, if any
-
-    foreach (varparaminpathParams)
-
-    request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
-
-    // add header parameter, if any
-
-    foreach (varparaminheaderParams)
-
-    request.AddHeader(param.Key, param.Value);
-
-    // add query parameter, if any
-
-    foreach (varparaminqueryParams)
-
-    request.AddQueryParameter(param.Key, param.Value);
-
-    // add form parameter, if any
-
-    foreach (varparaminformParams)
-
-    request.AddParameter(param.Key, param.Value);
-
-    // add file parameter, if any
-
-    foreach (varparaminfileParams)
-
-    {
-
-    request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
-
-    }
-
-    if (postBody != null) // http body (model or byte[]) parameter
-
-    {
-
-    request.AddParameter(contentType, postBody, ParameterType.RequestBody);
-
-    }
-
-    returnrequest;
-
-    }
-
-    publicObjectCallApi(
-
-    Stringpath, RestSharp.Methodmethod,
-
-    List\&lt;KeyValuePair\&lt;String, String\&gt;\&gt; queryParams,
-
-    ObjectpostBody,
-
-    Dictionary\&lt;String, String\&gt; headerParams,
-
-    Dictionary\&lt;String, String\&gt; formParams,
-
-    Dictionary\&lt;String, FileParameter\&gt; fileParams,
-
-    Dictionary\&lt;String, String\&gt; pathParams,
-
-    StringcontentType)
-
-    {
-
-    varrequest = PrepareRequest(
-
-    path, method, queryParams, postBody, headerParams, formParams, fileParams,
-
-    pathParams, contentType);
-
-    // set timeout
-
-    RestClient.Timeout = Configuration.Timeout;
-
-    // set user agent
-
-    RestClient.UserAgent = Configuration.UserAgent;
-
-    InterceptRequest(request);
-
-    varresponse = RestClient.Execute(request);
-
-    InterceptResponse(request, response);
-
-    return (Object)response;
-
-    }
-
-    public async System.Threading.Tasks.Task\&lt;Object\&gt; CallApiAsync(
-
-    Stringpath,
-
-    RestSharp.Methodmethod,
-
-    List\&lt;KeyValuePair\&lt;String, String\&gt;\&gt; queryParams,
-
-    ObjectpostBody,
-
-    Dictionary\&lt;String, String\&gt; headerParams,
-
-    Dictionary\&lt;String, String\&gt; formParams,
-
-    Dictionary\&lt;String, FileParameter\&gt; fileParams,
-
-    Dictionary\&lt;String, String\&gt; pathParams,
-
-    StringcontentType)
-
-    {
-
-    varrequest = PrepareRequest(
-
-    path, method, queryParams, postBody, headerParams, formParams, fileParams,
-
-    pathParams, contentType);
-
-    InterceptRequest(request);
-
-    varresponse = awaitRestClient.ExecuteTaskAsync(request);
-
-    InterceptResponse(request, response);
-
-    return (Object)response;
-
-    }
-
-    publicobjectDeserialize(IRestResponseresponse, Typetype)
-
-    {
-
-    IList\&lt;Parameter\&gt; headers = response.Headers;
-
-    if (type == typeof(byte[])) // return byte array
-
-    {
-
-    returnresponse.RawBytes;
-
-    }
-
-    if (type == typeof(Stream))
-
-    {
-
-    if (headers != null)
-
-    {
-
-    varfilePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
-
-    ? Path.GetTempPath()
-
-    : Configuration.TempFolderPath;
-
-    varregex = newRegex(@&quot;Content-Disposition=.\*filename=[&#39;&quot;&quot;]?([^&#39;&quot;&quot;\s]+)[&#39;&quot;&quot;]?$&quot;);
-
-    foreach (varheaderinheaders)
-
-    {
-
-    varmatch = regex.Match(header.ToString());
-
-    if (match.Success)
-
-    {
-
-    stringfileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace(&quot;\&quot;&quot;, &quot;&quot;).Replace(&quot;&#39;&quot;, &quot;&quot;));
-
-    File.WriteAllBytes(fileName, response.RawBytes);
-
-    returnnewFileStream(fileName, FileMode.Open);
-
-    }
-
-    }
-
-    }
-
-    varstream = newMemoryStream(response.RawBytes);
-
-    returnstream;
-
-    }
-
-    if (type.Name.StartsWith(&quot;System.Nullable`1[[System.DateTime&quot;)) // return a datetime object
-
-    {
-
-    returnDateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
-
-    }
-
-    if (type == typeof(String) || type.Name.StartsWith(&quot;System.Nullable&quot;)) // return primitive type
-
-    {
-
-    returnConvertType(response.Content, type);
-
-    }
-
-    // at this point, it must be a model (json)
-
-    try
-
-    {
-
-    returnJsonConvert.DeserializeObject(response.Content, type, serializerSettings);
-
-    }
-
-    catch (Exceptione)
-
-    {
-
-    thrownewApiException(500, e.Message);
-
-    }
-
-    }
-
-    publicStringSerialize(objectobj)
-
-    {
-
-    try
-
-    {
-
-    returnobj != null ? JsonConvert.SerializeObject(obj) : null;
-
-    }
-
-    catch (Exceptione)
-
-    {
-
-    thrownewApiException(500, e.Message);
-
-    }
-
-    }
-
-    publicboolIsJsonMime(Stringmime)
-
-    {
-
-    varjsonRegex = newRegex(&quot;(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[\t]\*(;.\*)?$&quot;);
-
-    returnmime != null &amp;&amp; (jsonRegex.IsMatch(mime) || mime.Equals(&quot;application/json-patch+json&quot;));
-
-    }
-
-    publicStringSelectHeaderContentType(String[] contentTypes)
-
-    {
-
-    if (contentTypes.Length == 0)
-
-    return&quot;application/json&quot;;
-
-    foreach (varcontentTypeincontentTypes)
-
-    {
-
-    if (IsJsonMime(contentType.ToLower()))
-
-    returncontentType;
-
-    }
-
-    returncontentTypes[0]; // use the first content type specified in &#39;consumes&#39;
-
-    }
-
-    publicStringSelectHeaderAccept(String[] accepts)
-
-    {
-
-    if (accepts.Length == 0)
-
-    returnnull;
-
-    if (accepts.Contains(&quot;application/json&quot;, StringComparer.OrdinalIgnoreCase))
-
-    return&quot;application/json&quot;;
-
-    returnString.Join(&quot;,&quot;, accepts);
-
-    }
-
-    publicstaticdynamicConvertType(dynamicfromObject, TypetoObject)
-
-    {
-
-    returnConvert.ChangeType(fromObject, toObject);
-
-    }
-
-    publicstaticbyte[] ReadAsBytes(StreaminputStream)
-
-    {
-
-    byte[] buf = newbyte[16 \* 1024];
-
-    using (MemoryStreamms = newMemoryStream())
-
-    {
-
-    intcount;
-
-    while ((count = inputStream.Read(buf, 0, buf.Length)) \&gt; 0)
-
-    {
-
-    ms.Write(buf, 0, count);
-
-    }
-
-    returnms.ToArray();
-
-    }
-
-    }
-
-    publicstaticstringSanitizeFilename(stringfilename)
-
-    {
-
-    Matchmatch = Regex.Match(filename, @&quot;.\*[/\\](.\*)$&quot;);
-
-    if (match.Success)
-
-    {
-
-    returnmatch.Groups[1].Value;
-
-    }
-
-    else
-
-    {
-
-    returnfilename;
-
-    }
-
-    }
-
-    }
-
+        public partial class ApiClient
+        {
+            private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
+            {
+                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+            };
+
+            partial void InterceptRequest(IRestRequest request);
+            partial void InterceptResponse(IRestRequest request, IRestResponse response);
+
+            public ApiClient()
+            {
+                Configuration = IO.Swagger.Client.Configuration.Default;
+                RestClient = new RestClient("/");
+            }
+
+            public ApiClient(Configuration config)
+            {
+                Configuration = config ?? IO.Swagger.Client.Configuration.Default;
+                RestClient = new RestClient(Configuration.BasePath);
+            }
+
+            public ApiClient(String basePath = "/")
+            {
+
+                if (String.IsNullOrEmpty(basePath))
+                    throw new ArgumentException("basePath cannot be empty");
+                RestClient = new RestClient(basePath);
+                Configuration = Client.Configuration.Default;
+            }
+
+            public IReadableConfiguration Configuration { get; set; }
+
+            public RestClient RestClient { get; set; }
+            private RestRequest PrepareRequest(
+                String path, RestSharp.Method method,
+                List<KeyValuePair<String, String>> queryParams,
+                Object postBody,
+                Dictionary<String, String> headerParams,
+                Dictionary<String, String> formParams,
+                Dictionary<String, FileParameter> fileParams,
+                Dictionary<String, String> pathParams,
+                String contentType)
+            {
+                var request = new RestRequest(path, method);
+                // add path parameter, if any
+                foreach (var param in pathParams)
+                    request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+                // add header parameter, if any
+                foreach (var param in headerParams)
+                    request.AddHeader(param.Key, param.Value);
+                // add query parameter, if any
+                foreach (var param in queryParams)
+                    request.AddQueryParameter(param.Key, param.Value);
+                // add form parameter, if any
+                foreach (var param in formParams)
+                    request.AddParameter(param.Key, param.Value);
+                // add file parameter, if any
+                foreach (var param in fileParams)
+                {
+                    request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
+                }
+
+                if (postBody != null) // http body (model or byte[]) parameter
+                {
+                    request.AddParameter(contentType, postBody, ParameterType.RequestBody);
+                }
+                return request;
+            }
+
+            public Object CallApi(
+                String path, RestSharp.Method method,
+                List<KeyValuePair<String, String>> queryParams,
+                Object postBody,
+                Dictionary<String, String> headerParams,
+                Dictionary<String, String> formParams,
+                Dictionary<String, FileParameter> fileParams,
+                Dictionary<String, String> pathParams,
+                String contentType)
+            {
+                var request = PrepareRequest(
+                    path, method, queryParams, postBody, headerParams, formParams, fileParams,
+                    pathParams, contentType);
+                // set timeout
+                RestClient.Timeout = Configuration.Timeout;
+                // set user agent
+                RestClient.UserAgent = Configuration.UserAgent;
+                InterceptRequest(request);
+                var response = RestClient.Execute(request);
+                InterceptResponse(request, response);
+                return (Object)response;
+            }
+
+            public async System.Threading.Tasks.Task<Object> CallApiAsync(
+                String path,
+                RestSharp.Method method,
+                List<KeyValuePair<String, String>> queryParams,
+                Object postBody,
+                Dictionary<String, String> headerParams,
+                Dictionary<String, String> formParams,
+                Dictionary<String, FileParameter> fileParams,
+                Dictionary<String, String> pathParams,
+                String contentType)
+            {
+                var request = PrepareRequest(
+                    path, method, queryParams, postBody, headerParams, formParams, fileParams,
+                    pathParams, contentType);
+                InterceptRequest(request);
+                var response = await RestClient.ExecuteTaskAsync(request);
+                InterceptResponse(request, response);
+                return (Object)response;
+            }
+
+            public object Deserialize(IRestResponse response, Type type)
+            {
+                IList<Parameter> headers = response.Headers;
+
+                if (type == typeof(byte[])) // return byte array
+                {
+                    return response.RawBytes;
+                }
+
+                if (type == typeof(Stream))
+                {
+                    if (headers != null)
+                    {
+                        var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
+                            ? Path.GetTempPath()
+                            : Configuration.TempFolderPath;
+                        var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
+                        foreach (var header in headers)
+                        {
+                            var match = regex.Match(header.ToString());
+                            if (match.Success)
+                            {
+                            string fileName = filePath + SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
+                            File.WriteAllBytes(fileName, response.RawBytes);
+                            return new FileStream(fileName, FileMode.Open);
+                            }
+                        }
+                    }
+
+                    var stream = new MemoryStream(response.RawBytes);
+                    return stream;
+                }
+
+                if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
+                {
+                    return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
+                }
+
+                if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+                {
+                    return ConvertType(response.Content, type);
+                }
+
+                // at this point, it must be a model (json)
+                try
+                {
+                    return JsonConvert.DeserializeObject(response.Content, type, serializerSettings);
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(500, e.Message);
+                }
+            }
+
+            public String Serialize(object obj)
+            {
+                try
+                {
+                    return obj != null ? JsonConvert.SerializeObject(obj) : null;
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(500, e.Message);
+                }
+            }
+
+            public bool IsJsonMime(String mime)
+            {
+                var jsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
+                return mime != null && (jsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json"));
+            }
+
+            public String SelectHeaderContentType(String[] contentTypes)
+            {
+                if (contentTypes.Length == 0)
+                    return "application/json";
+
+                foreach (var contentType in contentTypes)
+                {
+                    if (IsJsonMime(contentType.ToLower()))
+                    return contentType;
+                }
+
+                return contentTypes[0]; // use the first content type specified in 'consumes'
+            }
+
+            public String SelectHeaderAccept(String[] accepts)
+            {
+                if (accepts.Length == 0)
+                    return null;
+
+                if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
+                    return "application/json";
+
+                return String.Join(",", accepts);
+            }
+
+            public static dynamic ConvertType(dynamic fromObject, Type toObject)
+            {
+                return Convert.ChangeType(fromObject, toObject);
+            }
+
+            public static byte[] ReadAsBytes(Stream inputStream)
+            {
+                byte[] buf = new byte[16 * 1024];
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    int count;
+                    while ((count = inputStream.Read(buf, 0, buf.Length)) > 0)
+                    {
+                    ms.Write(buf, 0, count);
+                    }
+                    return ms.ToArray();
+                }
+            }
+
+            public static string SanitizeFilename(string filename)
+            {
+                Match match = Regex.Match(filename, @".*[/\\](.*)$");
+
+                if (match.Success)
+                {
+                    return match.Groups[1].Value;
+                }
+                else
+                {
+                    return filename;
+                }
+            }
+        }
     }
 
 # Account API
 
 ## /api/v1/Account/GetAccountSettings
 
-    usingSystem;
-
-    usingSystem.Collections.Generic;
-
-    usingSystem.Collections.ObjectModel;
-
-    usingSystem.Linq;
-
-    usingRestSharp;
-
-    usingIO.Swagger.Client;
-
-    usingIO.Swagger.Model;
-
-    namespaceIO.Swagger.Api
-
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using RestSharp;
+    using IO.Swagger.Client;
+    using IO.Swagger.Model;
+    namespace IO.Swagger.Api
     {
-
-    publicinterfaceIAccountApi : IApiAccessor
-
-    {
-
-    System.Threading.Tasks.Task\&lt;Settings\&gt; GetSettingsAsync(stringaccount, stringpassword);
-
-    System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Settings\&gt;\&gt; GetSettingsWithHttpInfoAsync(stringaccount, stringpassword);
-
-    }
-
-    publicpartialclassAccountApi : IAccountApi
-
-    {
-
-    privateIO.Swagger.Client.ExceptionFactory\_exceptionFactory = (name, response) =\&gt; null;
-
-    publicAccountApi(StringbasePath)
-
-    {
-
-    this.Configuration = newIO.Swagger.Client.Configuration { BasePath = basePath };
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicAccountApi()
-
-    {
-
-    this.Configuration = IO.Swagger.Client.Configuration.Default;
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicAccountApi(IO.Swagger.Client.Configurationconfiguration = null)
-
-    {
-
-    if (configuration == null)
-
-    this.Configuration = IO.Swagger.Client.Configuration.Default;
-
-    else
-
-    this.Configuration = configuration;
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicIO.Swagger.Client.ConfigurationConfiguration { get; set; }
-
-    publicIO.Swagger.Client.ExceptionFactoryExceptionFactory
-
-    {
-
-    get
-
-    {
-
-    if (\_exceptionFactory != null &amp;&amp; \_exceptionFactory.GetInvocationList().Length \&gt; 1)
-
-    {
-
-    thrownewInvalidOperationException(&quot;Multicast delegate for ExceptionFactory is unsupported.&quot;);
-
-    }
-
-    return\_exceptionFactory;
-
-    }
-
-    set { \_exceptionFactory = value; }
-
-    }
-
-    public async System.Threading.Tasks.Task\&lt;Settings\&gt; GetSettingsAsync(stringaccount, stringpassword)
-
-    {
-
-    ApiResponse\&lt;Settings\&gt; localVarResponse = awaitGetSettingsWithHttpInfoAsync(account, password);
-
-    returnlocalVarResponse.Data;
-
-    }
-
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Settings\&gt;\&gt; GetSettingsWithHttpInfoAsync(stringaccount, stringpassword)
-
-    {
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if (account == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling AccountApi-\&gt;ApiV1AccountGetAccountSettingsGet&quot;);
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if (password == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling AccountApi-\&gt;ApiV1AccountGetAccountSettingsGet&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Account/GetAccountSettings&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1AccountGetAccountSettingsGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Settings\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Settings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Settings)));
-
-    }
-
-    }
-
+        public interface IAccountApi : IApiAccessor
+        {
+            System.Threading.Tasks.Task<Settings> GetSettingsAsync(string account, string password);
+            System.Threading.Tasks.Task<ApiResponse<Settings>> GetSettingsWithHttpInfoAsync(string account, string password);
+        }
+        public partial class AccountApi : IAccountApi
+        {
+            private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+            public AccountApi(String basePath)
+            {
+                this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public AccountApi()
+            {
+                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public AccountApi(IO.Swagger.Client.Configuration configuration = null)
+            {
+                if (configuration == null)
+                    this.Configuration = IO.Swagger.Client.Configuration.Default;
+                else
+                    this.Configuration = configuration;
+
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public IO.Swagger.Client.Configuration Configuration { get; set; }
+
+            public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+            {
+                get
+                {
+                    if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                    {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                    }
+                    return _exceptionFactory;
+                }
+                set { _exceptionFactory = value; }
+            }
+
+            public async System.Threading.Tasks.Task<Settings> GetSettingsAsync(string account, string password)
+            {
+                ApiResponse<Settings> localVarResponse = await GetSettingsWithHttpInfoAsync(account, password);
+                return localVarResponse.Data;
+            }
+
+            public async System.Threading.Tasks.Task<ApiResponse<Settings>> GetSettingsWithHttpInfoAsync(string account, string password)
+            {
+                // verify the required parameter 'account' is set
+                if (account == null)
+                    throw new ApiException(400, "Missing required parameter 'account' when calling AccountApi->ApiV1AccountGetAccountSettingsGet");
+
+                // verify the required parameter 'password' is set
+                if (password == null)
+                    throw new ApiException(400, "Missing required parameter 'password' when calling AccountApi->ApiV1AccountGetAccountSettingsGet");
+
+                var localVarPath = "/api/v1/Account/GetAccountSettings";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {};
+                String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "text/plain",
+                    "application/json",
+                    "text/json"
+                };
+                String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+
+                if (localVarHttpHeaderAccept != null)
+                    localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (account != null)
+                    localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
+
+                if (password != null)
+                    localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath, Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams,  localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
+                int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                    Exception exception = ExceptionFactory("ApiV1AccountGetAccountSettingsGet", localVarResponse);
+                    if (exception != null) throw exception;
+                }
+
+                return new ApiResponse<Settings>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                    (Settings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Settings)));
+            }
+        }
     }
 
 # Communication API
 
 ## /api/v1/Communication/EmailReceipt
 
-    usingSystem;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using RestSharp;
+    using IO.Swagger.Client;
+    using IO.Swagger.Model;
 
-    usingSystem.Collections.Generic;
-
-    usingSystem.Collections.ObjectModel;
-
-    usingSystem.Linq;
-
-    usingRestSharp;
-
-    usingIO.Swagger.Client;
-
-    usingIO.Swagger.Model;
-
-    namespaceIO.Swagger.Api
-
+    namespace IO.Swagger.Api
     {
-
-    publicinterfaceICommunicationApi : IApiAccessor
-
-    {
-
-    ResponseApiV1CommunicationEmailReceiptPost(stringaccount, stringpassword, EmailReceiptbody = null);
-
-    ApiResponse\&lt;Response\&gt; ApiV1CommunicationEmailReceiptPostWithHttpInfo(stringaccount, stringpassword, EmailReceiptbody = null);
-
-    System.Threading.Tasks.Task\&lt;Response\&gt; ApiV1CommunicationEmailReceiptPostAsync(stringaccount, stringpassword, EmailReceiptbody = null);
-
-    System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(stringaccount, stringpassword, EmailReceiptbody = null);
-
-    }
-
-    publicpartialclassCommunicationApi : ICommunicationApi
-
-    {
-
-    privateIO.Swagger.Client.ExceptionFactory_exceptionFactory = (name, response) =\&gt; null;
-
-    publicCommunicationApi(StringbasePath)
-
-    {
-
-    this.Configuration = newIO.Swagger.Client.Configuration { BasePath = basePath };
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicCommunicationApi()
-
-    {
-
-    this.Configuration = IO.Swagger.Client.Configuration.Default;
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicCommunicationApi(IO.Swagger.Client.Configurationconfiguration = null)
-
-    {
-
-    if (configuration == null) // use the default one in Configuration
-
-    this.Configuration = IO.Swagger.Client.Configuration.Default;
-
-    else
-
-    this.Configuration = configuration;
-
-    ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-
-    }
-
-    publicStringGetBasePath()
-
-    {
-
-    returnthis.Configuration.ApiClient.RestClient.BaseUrl.ToString();
-
-    }
-
-    [Obsolete(&quot;SetBasePath is deprecated, please do &#39;Configuration.ApiClient = new ApiClient(\&quot;http://new-path\&quot;)&#39; instead.&quot;)]
-
-    publicvoidSetBasePath(StringbasePath)
-
-    {
-
-    // do nothing
-
-    }
-
-    publicIO.Swagger.Client.ConfigurationConfiguration { get; set; }
-
-    publicIO.Swagger.Client.ExceptionFactoryExceptionFactory
-
-    {
-
-    get
-
-    {
-
-    if (\_exceptionFactory != null &amp;&amp; \_exceptionFactory.GetInvocationList().Length \&gt; 1)
-
-    {
-
-    thrownewInvalidOperationException(&quot;Multicast delegate for ExceptionFactory is unsupported.&quot;);
-
-    }
-
-    return_exceptionFactory;
-
-    }
-
-    set { \_exceptionFactory = value; }
-
-    }
-
-    [Obsolete(&quot;DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.&quot;)]
-
-    publicIDictionary\&lt;String, String\&gt; DefaultHeader()
-
-    {
-
-    returnnewReadOnlyDictionary\&lt;string, string\&gt;(this.Configuration.DefaultHeader);
-
-    }
-
-    [Obsolete(&quot;AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.&quot;)]
-
-    publicvoidAddDefaultHeader(stringkey, stringvalue)
-
-    {
-
-    this.Configuration.AddDefaultHeader(key, value);
-
-    }
-
-    publicResponseApiV1CommunicationEmailReceiptPost(stringaccount, stringpassword, EmailReceiptbody = null)
-
-    {
-
-    ApiResponse\&lt;Response\&gt; localVarResponse = ApiV1CommunicationEmailReceiptPostWithHttpInfo(account, password, body);
-
-    returnlocalVarResponse.Data;
-
-    }
-
-    publicApiResponse\&lt;Response\&gt; ApiV1CommunicationEmailReceiptPostWithHttpInfo(stringaccount, stringpassword, EmailReceiptbody = null)
-
-    {
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if (account == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling CommunicationApi-\&gt;ApiV1CommunicationEmailReceiptPost&quot;);
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if (password == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling CommunicationApi-\&gt;ApiV1CommunicationEmailReceiptPost&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Communication/EmailReceipt&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1CommunicationEmailReceiptPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
-    }
-
-    public async System.Threading.Tasks.Task\&lt;Response\&gt; ApiV1CommunicationEmailReceiptPostAsync(stringaccount, stringpassword, EmailReceiptbody = null)
-
-    {
-
-    ApiResponse\&lt;Response\&gt; localVarResponse = awaitApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(account, password, body);
-
-    returnlocalVarResponse.Data;
-
-    }
-
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(stringaccount, stringpassword, EmailReceiptbody = null)
-
-    {
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if (account == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling CommunicationApi-\&gt;ApiV1CommunicationEmailReceiptPost&quot;);
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if (password == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling CommunicationApi-\&gt;ApiV1CommunicationEmailReceiptPost&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Communication/EmailReceipt&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1CommunicationEmailReceiptPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
-    }
-
-    }
-
+        public interface ICommunicationApi : IApiAccessor
+        {
+            Response ApiV1CommunicationEmailReceiptPost(string account, string password, EmailReceipt body = null);
+            ApiResponse<Response> ApiV1CommunicationEmailReceiptPostWithHttpInfo(string account, string password, EmailReceipt body = null);
+            System.Threading.Tasks.Task<Response> ApiV1CommunicationEmailReceiptPostAsync(string account, string password, EmailReceipt body = null);
+            System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(string account, string password, EmailReceipt body = null);
+        }
+
+        public partial class CommunicationApi : ICommunicationApi
+        {
+            private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+
+            public CommunicationApi(String basePath)
+            {
+                this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public CommunicationApi()
+            {
+                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public CommunicationApi(IO.Swagger.Client.Configuration configuration = null)
+            {
+                if (configuration == null) // use the default one in Configuration
+                    this.Configuration = IO.Swagger.Client.Configuration.Default;
+                else
+                    this.Configuration = configuration;
+                ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            }
+
+            public String GetBasePath()
+            {
+                return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            }
+
+            public IO.Swagger.Client.Configuration Configuration { get; set; }
+
+            public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+            {
+                get
+                {
+                    if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+                    {
+                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+                    }
+                    return _exceptionFactory;
+                }
+                set { _exceptionFactory = value; }
+            }
+
+            public Response ApiV1CommunicationEmailReceiptPost(string account, string password, EmailReceipt body = null)
+            {
+                ApiResponse<Response> localVarResponse = ApiV1CommunicationEmailReceiptPostWithHttpInfo(account, password, body);
+                return localVarResponse.Data;
+            }
+
+            public ApiResponse<Response> ApiV1CommunicationEmailReceiptPostWithHttpInfo(string account, string password, EmailReceipt body = null)
+            {
+                // verify the required parameter 'account' is set
+                if (account == null)
+                    throw new ApiException(400, "Missing required parameter 'account' when calling CommunicationApi->ApiV1CommunicationEmailReceiptPost");
+                // verify the required parameter 'password' is set
+                if (password == null)
+                    throw new ApiException(400, "Missing required parameter 'password' when calling CommunicationApi->ApiV1CommunicationEmailReceiptPost");
+
+                var localVarPath = "/api/v1/Communication/EmailReceipt";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/json",
+                    "text/json",
+                    "application/_*+json"
+                };
+
+                String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "text/plain",
+                    "application/json",
+                    "text/json"
+                };
+
+                String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+
+                if (localVarHttpHeaderAccept != null)
+                    localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (account != null)
+                    localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
+
+                if (password != null)
+                    localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
+
+                if (body != null && body.GetType() != typeof(byte[]))
+                {
+                    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                }
+                else
+                {
+                    localVarPostBody = body; // byte array
+                }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+                    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                    localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int)localVarResponse.StatusCode;
+                if (ExceptionFactory != null)
+                {
+                    Exception exception = ExceptionFactory("ApiV1CommunicationEmailReceiptPost", localVarResponse);
+
+                    if (exception != null) throw exception;
+                }
+
+                return new ApiResponse<Response>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
+            }
+
+            public async System.Threading.Tasks.Task<Response> ApiV1CommunicationEmailReceiptPostAsync(string account, string password, EmailReceipt body = null)
+            {
+                ApiResponse<Response> localVarResponse = await ApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(account, password, body);
+                return localVarResponse.Data;
+            }
+
+            public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1CommunicationEmailReceiptPostAsyncWithHttpInfo(string account, string password, EmailReceipt body = null)
+            {
+                // verify the required parameter 'account' is set
+                if (account == null)
+                    throw new ApiException(400, "Missing required parameter 'account' when calling CommunicationApi->ApiV1CommunicationEmailReceiptPost");
+
+                // verify the required parameter 'password' is set
+                if (password == null)
+                    throw new ApiException(400, "Missing required parameter 'password' when calling CommunicationApi->ApiV1CommunicationEmailReceiptPost");
+
+                var localVarPath = "/api/v1/Communication/EmailReceipt";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/json",
+                    "text/json",
+                    "application/_*+json"
+                };
+
+                String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "text/plain",
+                    "application/json",
+                    "text/json"
+                };
+
+                String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+
+                if (localVarHttpHeaderAccept != null)
+                    localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (account != null)
+                    localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
+
+                if (password != null)
+                    localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
+
+                if (body != null && body.GetType() != typeof(byte[]))
+                {
+                    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                }
+                else
+                {
+                    localVarPostBody = body; // byte array
+                }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                    localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                    Exception exception = ExceptionFactory("ApiV1CommunicationEmailReceiptPost", localVarResponse);
+                    if (exception != null) throw exception;
+                }
+
+                return new ApiResponse<Response>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
+            }
+        }
     }
 
 # Reporting API
 
 ## /api/v1/Reporting/GetBatchesByDate/{batchDate}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;Batch\&gt;\&gt;\&gt; ApiV1ReportingGetBatchesByDateBatchDateGetAsyncWithHttpInfo(DateTime? batchDate, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<Batch>>> ApiV1ReportingGetBatchesByDateBatchDateGetAsyncWithHttpInfo(DateTime? batchDate, string account, string password)
     {
+        // verify the required parameter 'batchDate' is set
+        if (batchDate == null)
+            throw new ApiException(400, "Missing required parameter 'batchDate' when calling ReportingApi->ApiV1ReportingGetBatchesByDateBatchDateGet");
 
-    // verify the required parameter &#39;batchDate&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling ReportingApi->ApiV1ReportingGetBatchesByDateBatchDateGet");
 
-    if (batchDate == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling ReportingApi->ApiV1ReportingGetBatchesByDateBatchDateGet");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;batchDate&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetBatchesByDateBatchDateGet&quot;);
+        var localVarPath = "/api/v1/Reporting/GetBatchesByDate/{batchDate}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetBatchesByDateBatchDateGet&quot;);
+        if (batchDate != null)
+            localVarPathParams.Add("batchDate", this.Configuration.ApiClient.ParameterToString(batchDate)); // path parameter
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    // verify the required parameter &#39;password&#39; is set
+        // make the HTTP request
+        IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-    if (password == null)
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exception exception = ExceptionFactory("ApiV1ReportingGetBatchesByDateBatchDateGet", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetBatchesByDateBatchDateGet&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Reporting/GetBatchesByDate/{batchDate}&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (batchDate != null) localVarPathParams.Add(&quot;batchDate&quot;, this.Configuration.ApiClient.ParameterToString(batchDate)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetBatchesByDateBatchDateGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;Batch\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;Batch\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;Batch\&gt;)));
-
+        return new ApiResponse<List<Batch>>(localVarStatusCode,
+            localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+            (List<Batch>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Batch>)));
     }
 
 ## /api/v1/Reporting/GetCheckTerminals
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;\&gt; ApiV1ReportingGetCheckTerminalsGetAsyncWithHttpInfo(stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<TerminalSettings>>> ApiV1ReportingGetCheckTerminalsGetAsyncWithHttpInfo(string account, string password)
     {
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if (account == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalsGet&quot;);
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if (password == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalsGet&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Reporting/GetCheckTerminals&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetCheckTerminalsGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;TerminalSettings\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;TerminalSettings\&gt;)));
-
-    }
-
-    ## /api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}
-
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;\&gt; ApiV1ReportingGetCheckTerminalSettingsBySECSecCodeGetAsyncWithHttpInfo(stringsecCode, stringaccount, stringpassword)
-
-    {
-
-    // verify the required parameter &#39;secCode&#39; is set
-
-    if (secCode == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;secCode&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&quot;);
-
-    // verify the required parameter &#39;account&#39; is set
-
-    if (account == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&quot;);
-
-    // verify the required parameter &#39;password&#39; is set
-
-    if (password == null)
-
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&quot;);
-
-    varlocalVarPath = &quot;/api/v1/Reporting/GetCheckTerminalSettingsBySEC/{secCode}&quot;;
-
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (secCode != null) localVarPathParams.Add(&quot;secCode&quot;, this.Configuration.ApiClient.ParameterToString(secCode)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetCheckTerminalSettingsBySECSecCodeGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;TerminalSettings\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;TerminalSettings\&gt;)));
-
+      // verify the required parameter 'account' is set
+      if (account == null)
+        throw new ApiException(400, "Missing required parameter 'account' when calling ReportingApi->ApiV1ReportingGetCheckTerminalsGet");
+      // verify the required parameter 'password' is set
+      if (password == null)
+        throw new ApiException(400, "Missing required parameter 'password' when calling ReportingApi->ApiV1ReportingGetCheckTerminalsGet");
+
+      var localVarPath = "/api/v1/Reporting/GetCheckTerminals";
+      var localVarPathParams = new Dictionary<String, String>();
+      var localVarQueryParams = new List<KeyValuePair<String, String>>();
+      var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+      var localVarFormParams = new Dictionary<String, String>();
+      var localVarFileParams = new Dictionary<String, FileParameter>();
+      Object localVarPostBody = null;
+
+      // to determine the Content-Type header
+      String[] localVarHttpContentTypes = new String[] {};
+      String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+      // to determine the Accept header
+      String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
+      String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+
+      if (localVarHttpHeaderAccept != null)
+        localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+      if (account != null)
+        localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
+
+      if (password != null)
+        localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
+
+      // make the HTTP request
+      IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+          Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+          localVarPathParams, localVarHttpContentType);
+
+      int localVarStatusCode = (int)localVarResponse.StatusCode;
+      if (ExceptionFactory != null)
+      {
+        Exception exception = ExceptionFactory("ApiV1ReportingGetCheckTerminalsGet", localVarResponse);
+        if (exception != null) throw exception;
+      }
+
+      return new ApiResponse<List<TerminalSettings>>(localVarStatusCode,
+          localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+          (List<TerminalSettings>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TerminalSettings>)));
     }
 
 ## /api/v1/Reporting/GetCheckTerminalSettings/{terminalID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;\&gt; ApiV1ReportingGetCheckTerminalSettingsTerminalIDGetAsyncWithHttpInfo(int? terminalID, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<TerminalSettings>>> ApiV1ReportingGetCheckTerminalSettingsTerminalIDGetAsyncWithHttpInfo(int? terminalID, string account, string password)
     {
+        // verify the required parameter 'terminalID' is set
+        if (terminalID == null)
+            throw new ApiException(400, "Missing required parameter 'terminalID' when calling ReportingApi->ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet");
 
-    // verify the required parameter &#39;terminalID&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling ReportingApi->ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet");
 
-    if (terminalID == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling ReportingApi->ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;terminalID&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet&quot;);
+        var localVarPath = "/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet&quot;);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (terminalID != null)
+            localVarPathParams.Add("terminalID", this.Configuration.ApiClient.ParameterToString(terminalID)); // path parameter
 
-    if (password == null)
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet&quot;);
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Reporting/GetCheckTerminalSettings/{terminalID}&quot;;
+        // make the HTTP request
+        IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exception exception = ExceptionFactory("ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (terminalID != null) localVarPathParams.Add(&quot;terminalID&quot;, this.Configuration.ApiClient.ParameterToString(terminalID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetCheckTerminalSettingsTerminalIDGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;TerminalSettings\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;TerminalSettings\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;TerminalSettings\&gt;)));
-
+        return new ApiResponse<List<TerminalSettings>>(localVarStatusCode,
+            localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+            (List<TerminalSettings>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TerminalSettings>)));
     }
 
 ## /api/v1/Reporting/GetTransactionsByBatch/{batch}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;QueryTransaction\&gt;\&gt;\&gt; ApiV1ReportingGetTransactionsByBatchBatchGetAsyncWithHttpInfo(stringbatch, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<QueryTransaction>>> ApiV1ReportingGetTransactionsByBatchBatchGetAsyncWithHttpInfo(string batch, string account, string password)
     {
+      // verify the required parameter 'batch' is set
+      if (batch == null)
+        throw new ApiException(400, "Missing required parameter 'batch' when calling ReportingApi->ApiV1ReportingGetTransactionsByBatchBatchGet");
 
-    // verify the required parameter &#39;batch&#39; is set
+      // verify the required parameter 'account' is set
+      if (account == null)
+        throw new ApiException(400, "Missing required parameter 'account' when calling ReportingApi->ApiV1ReportingGetTransactionsByBatchBatchGet");
 
-    if (batch == null)
+      // verify the required parameter 'password' is set
+      if (password == null)
+        throw new ApiException(400, "Missing required parameter 'password' when calling ReportingApi->ApiV1ReportingGetTransactionsByBatchBatchGet");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;batch&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByBatchBatchGet&quot;);
+      var localVarPath = "/api/v1/Reporting/GetTransactionsByBatch/{batch}";
+      var localVarPathParams = new Dictionary<String, String>();
+      var localVarQueryParams = new List<KeyValuePair<String, String>>();
+      var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+      var localVarFormParams = new Dictionary<String, String>();
+      var localVarFileParams = new Dictionary<String, FileParameter>();
+      Object localVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+      // to determine the Content-Type header
+      String[] localVarHttpContentTypes = new String[] {};
+      String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+      // to determine the Accept header
+      String[] localVarHttpHeaderAccepts = new String[] {
+          "text/plain",
+          "application/json",
+          "text/json"
+      };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByBatchBatchGet&quot;);
+      String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+      if (localVarHttpHeaderAccept != null)
+        localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    // verify the required parameter &#39;password&#39; is set
+      if (batch != null)
+        localVarPathParams.Add("batch", this.Configuration.ApiClient.ParameterToString(batch)); // path parameter
 
-    if (password == null)
+      if (account != null)
+        localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByBatchBatchGet&quot;);
+      if (password != null)
+        localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Reporting/GetTransactionsByBatch/{batch}&quot;;
+      // make the HTTP request
+      IRestResponse localVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+          Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+          localVarPathParams, localVarHttpContentType);
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+      int localVarStatusCode = (int)localVarResponse.StatusCode;
+      if (ExceptionFactory != null)
+      {
+        Exception exception = ExceptionFactory("ApiV1ReportingGetTransactionsByBatchBatchGet", localVarResponse);
+        if (exception != null) throw exception;
+      }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (batch != null) localVarPathParams.Add(&quot;batch&quot;, this.Configuration.ApiClient.ParameterToString(batch)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetTransactionsByBatchBatchGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;QueryTransaction\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;QueryTransaction\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;QueryTransaction\&gt;)));
-
+      return new ApiResponse<List<QueryTransaction>>(localVarStatusCode,
+          localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+          (List<QueryTransaction>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<QueryTransaction>)));
     }
 
 ## /api/v1/Reporting/GetTransactionsByDate/{transactionDate}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;QueryTransaction\&gt;\&gt;\&gt; ApiV1ReportingGetTransactionsByDateTransactionDateGetAsyncWithHttpInfo(DateTime? transactionDate, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<QueryTransaction>>> ApiV1ReportingGetTransactionsByDateTransactionDateGetAsyncWithHttpInfo(DateTime? transactionDate, stringaccount, stringpassword)
     {
+        // verify the required parameter 'transactionDate' is set
+        if (transactionDate == null)
+            throw new ApiException(400, "Missing required parameter 'transactionDate' when calling ReportingApi->ApiV1ReportingGetTransactionsByDateTransactionDateGet");
 
-    // verify the required parameter &#39;transactionDate&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling ReportingApi->ApiV1ReportingGetTransactionsByDateTransactionDateGet");
 
-    if (transactionDate == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling ReportingApi->ApiV1ReportingGetTransactionsByDateTransactionDateGet");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;transactionDate&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByDateTransactionDateGet&quot;);
+        var localVarPath = "/api/v1/Reporting/GetTransactionsByDate/{transactionDate}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByDateTransactionDateGet&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (password == null)
+        if (transactionDate != null)
+            localVarPathParams.Add("transactionDate", this.Configuration.ApiClient.ParameterToString(transactionDate)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling ReportingApi-\&gt;ApiV1ReportingGetTransactionsByDateTransactionDateGet&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Reporting/GetTransactionsByDate/{transactionDate}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath, Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1ReportingGetTransactionsByDateTransactionDateGet", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (transactionDate != null) localVarPathParams.Add(&quot;transactionDate&quot;, this.Configuration.ApiClient.ParameterToString(transactionDate)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1ReportingGetTransactionsByDateTransactionDateGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;QueryTransaction\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;QueryTransaction\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;QueryTransaction\&gt;)));
-
-    }
-
+        return new ApiResponse<List<QueryTransaction>>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (List<QueryTransaction>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<QueryTransaction>)));
     }
 
 # Vault API
 
 ## /api/v1/Vault/GetVaultRecord/{reference}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Record\&gt;\&gt; ApiV1VaultGetVaultRecordReferenceGetAsyncWithHttpInfo(stringreference, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Record>> ApiV1VaultGetVaultRecordReferenceGetAsyncWithHttpInfo(stringreference, stringaccount, stringpassword)
     {
+        // verify the required parameter 'reference' is set
+        if (reference == null)
+            throw new ApiException(400, "Missing required parameter 'reference' when calling VaultApi->ApiV1VaultGetVaultRecordReferenceGet");
 
-    // verify the required parameter &#39;reference&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultGetVaultRecordReferenceGet");
 
-    if (reference == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultGetVaultRecordReferenceGet");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;reference&#39; when calling VaultApi-\&gt;ApiV1VaultGetVaultRecordReferenceGet&quot;);
+        var localVarPath = "/api/v1/Vault/GetVaultRecord/{reference}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultGetVaultRecordReferenceGet&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (reference != null)
+            localVarPathParams.Add("reference", this.Configuration.ApiClient.ParameterToString(reference)); // path parameter
 
-    if (password == null)
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultGetVaultRecordReferenceGet&quot;);
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/GetVaultRecord/{reference}&quot;;
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultGetVaultRecordReferenceGet", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (reference != null) localVarPathParams.Add(&quot;reference&quot;, this.Configuration.ApiClient.ParameterToString(reference)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultGetVaultRecordReferenceGet&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Record\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Record)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Record)));
-
+        return new ApiResponse<Record>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Record)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Record)));
     }
 
 ## /api/v1/Vault/SaveVault
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultID, VaultCreditCardbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultID, VaultCreditCardbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    if (account == null)
+        // verify the required parameter 'vaultID' is set
+        if (vaultID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultID' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/SaveVaultCard/{vaultID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;password&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    if (password == null)
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    // verify the required parameter &#39;vaultID&#39; is set
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
 
-    if (vaultID == null)
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultID&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        if (vaultID != null)
+            localVarPathParams.Add("vaultID", this.Configuration.ApiClient.ParameterToString(vaultID)); // path parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/SaveVaultCard/{vaultID}&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams,localVarFileParams, localVarPathParams, localVarHttpContentType);
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultSaveVaultCardVaultIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultID != null) localVarPathParams.Add(&quot;vaultID&quot;, this.Configuration.ApiClient.ParameterToString(vaultID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultSaveVaultCardVaultIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/Vault/SaveVaultCard/{vaultID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultID, VaultCreditCardbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultID, VaultCreditCardbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    if (account == null)
+        // verify the required parameter 'vaultID' is set
+        if (vaultID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultID' when calling VaultApi->ApiV1VaultSaveVaultCardVaultIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/SaveVaultCard/{vaultID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;password&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    if (password == null)
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    // verify the required parameter &#39;vaultID&#39; is set
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (vaultID == null)
+        if (vaultID != null)
+            localVarPathParams.Add("vaultID", this.Configuration.ApiClient.ParameterToString(vaultID)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultID&#39; when calling VaultApi-\&gt;ApiV1VaultSaveVaultCardVaultIDPost&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/SaveVaultCard/{vaultID}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultSaveVaultCardVaultIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultID != null) localVarPathParams.Add(&quot;vaultID&quot;, this.Configuration.ApiClient.ParameterToString(vaultID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultSaveVaultCardVaultIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/Vault/SearchVault
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;List\&lt;Record\&gt;\&gt;\&gt; ApiV1VaultSearchVaultPostAsyncWithHttpInfo(stringaccount, stringpassword, SearchVaultbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<List<Record>>> ApiV1VaultSearchVaultPostAsyncWithHttpInfo(stringaccount, stringpassword, SearchVaultbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultSearchVaultPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultSearchVaultPost");
 
-    if (account == null)
+        var localVarPath = "/api/v1/Vault/SearchVault";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultSearchVaultPost&quot;);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    // verify the required parameter &#39;password&#39; is set
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (password == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultSearchVaultPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    varlocalVarPath = &quot;/api/v1/Vault/SearchVault&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
+            int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultSearchVaultPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultSearchVaultPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;List\&lt;Record\&gt;\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (List\&lt;Record\&gt;)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List\&lt;Record\&gt;)));
-
+        return new ApiResponse<List<Record>>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (List<Record>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Record>)));
     }
 
 ## /api/v1/Vault/DeleteVaultCardByID/{vaultCardID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VaultDeleteVaultCardByIDVaultCardIDPostAsyncWithHttpInfo(int? vaultCardID, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VaultDeleteVaultCardByIDVaultCardIDPostAsyncWithHttpInfo(int? vaultCardID, stringaccount, stringpassword)
     {
+        // verify the required parameter 'vaultCardID' is set
+        if (vaultCardID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultCardID' when calling VaultApi->ApiV1VaultDeleteVaultCardByIDVaultCardIDPost");
 
-    // verify the required parameter &#39;vaultCardID&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultDeleteVaultCardByIDVaultCardIDPost");
 
-    if (vaultCardID == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultDeleteVaultCardByIDVaultCardIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultCardID&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCardByIDVaultCardIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/DeleteVaultCardByID/{vaultCardID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCardByIDVaultCardIDPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (password == null)
+        if (vaultCardID != null)
+            localVarPathParams.Add("vaultCardID", this.Configuration.ApiClient.ParameterToString(vaultCardID)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCardByIDVaultCardIDPost&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/DeleteVaultCardByID/{vaultCardID}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultDeleteVaultCardByIDVaultCardIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultCardID != null) localVarPathParams.Add(&quot;vaultCardID&quot;, this.Configuration.ApiClient.ParameterToString(vaultCardID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultDeleteVaultCardByIDVaultCardIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPostAsyncWithHttpInfo(int? vaultCheckID, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPostAsyncWithHttpInfo(int? vaultCheckID, stringaccount, stringpassword)
     {
+        // verify the required parameter 'vaultCheckID' is set
+        if (vaultCheckID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultCheckID' when calling VaultApi->ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost");
 
-    // verify the required parameter &#39;vaultCheckID&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost");
 
-    if (vaultCheckID == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultCheckID&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (vaultCheckID != null)
+            localVarPathParams.Add("vaultCheckID", this.Configuration.ApiClient.ParameterToString(vaultCheckID)); // path parameter
 
-    if (password == null)
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost&quot;);
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}&quot;;
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultCheckID != null) localVarPathParams.Add(&quot;vaultCheckID&quot;, this.Configuration.ApiClient.ParameterToString(vaultCheckID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultDeleteVaultCheckByIDVaultCheckIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;CheckTransaction\&gt;\&gt; ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultCheckID, CheckTransactionbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<CheckTransaction>> ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultCheckID, CheckTransactionbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost");
 
-    if (account == null)
+        // verify the required parameter 'vaultCheckID' is set
+        if (vaultCheckID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultCheckID' when calling VaultApi->ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;password&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    if (password == null)
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost&quot;);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    // verify the required parameter &#39;vaultCheckID&#39; is set
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (vaultCheckID == null)
+        if (vaultCheckID != null)
+            localVarPathParams.Add("vaultCheckID", this.Configuration.ApiClient.ParameterToString(vaultCheckID)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultCheckID&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath, Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultCheckID != null) localVarPathParams.Add(&quot;vaultCheckID&quot;, this.Configuration.ApiClient.ParameterToString(vaultCheckID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;CheckTransaction\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
-
+        return new ApiResponse<CheckTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
     }
 
 ## /api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Transaction\&gt;\&gt; ApiV1VaultSubmitWithVaultCardIDVaultCardIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultCardID, Transactionbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Transaction>> ApiV1VaultSubmitWithVaultCardIDVaultCardIDPostAsyncWithHttpInfo(stringaccount, stringpassword, int? vaultCardID, Transactionbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VaultApi->ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VaultApi->ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost");
 
-    if (account == null)
+        // verify the required parameter 'vaultCardID' is set
+        if (vaultCardID == null)
+            throw new ApiException(400, "Missing required parameter 'vaultCardID' when calling VaultApi->ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost&quot;);
+        var localVarPath = "/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;password&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    if (password == null)
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost&quot;);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    // verify the required parameter &#39;vaultCardID&#39; is set
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (vaultCardID == null)
+        if (vaultCardID != null)
+            localVarPathParams.Add("vaultCardID", this.Configuration.ApiClient.ParameterToString(vaultCardID)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;vaultCardID&#39; when calling VaultApi-\&gt;ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (vaultCardID != null) localVarPathParams.Add(&quot;vaultCardID&quot;, this.Configuration.ApiClient.ParameterToString(vaultCardID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VaultSubmitWithVaultCardIDVaultCardIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Transaction\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Transaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Transaction)));
-
-    }
-
+        return new ApiResponse<Transaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Transaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Transaction)));
     }
 
 # VirtualTerminal API
 
 ## /api/v1/VirtualTerminal/Submit
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;CheckTransaction\&gt;\&gt; ApiV1VirtualTerminalSubmitCheckPostAsyncWithHttpInfo(stringaccount, stringpassword, CheckTransactionbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<CheckTransaction>> ApiV1VirtualTerminalSubmitCheckPostAsyncWithHttpInfo(stringaccount, stringpassword, CheckTransactionbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalSubmitCheckPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalSubmitCheckPost");
 
-    if (account == null)
+        var localVarPath = "/api/v1/VirtualTerminal/SubmitCheck";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalSubmitCheckPost&quot;);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    // verify the required parameter &#39;password&#39; is set
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (password == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalSubmitCheckPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/SubmitCheck&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalSubmitCheckPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalSubmitCheckPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;CheckTransaction\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
-
+        return new ApiResponse<CheckTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
     }
 
 ## /api/v1/VirtualTerminal/SubmitCheck
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;CheckTransaction\&gt;\&gt; ApiV1VirtualTerminalSubmitCheckPostAsyncWithHttpInfo(stringaccount, stringpassword, CheckTransactionbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<CheckTransaction>> ApiV1VirtualTerminalSubmitCheckPostAsyncWithHttpInfo(stringaccount, stringpassword, CheckTransactionbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalSubmitCheckPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalSubmitCheckPost");
 
-    if (account == null)
+        var localVarPath = "/api/v1/VirtualTerminal/SubmitCheck";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalSubmitCheckPost&quot;);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    // verify the required parameter &#39;password&#39; is set
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (password == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalSubmitCheckPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/SubmitCheck&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams,localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalSubmitCheckPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalSubmitCheckPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;CheckTransaction\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
-
+        return new ApiResponse<CheckTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (CheckTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(CheckTransaction)));
     }
 
 ## /api/v1/VirtualTerminal/Mark/{transactionID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VirtualTerminalMarkTransactionIDPostAsyncWithHttpInfo(stringtransactionID, stringaccount, stringpassword)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VirtualTerminalMarkTransactionIDPostAsyncWithHttpInfo(stringtransactionID, stringaccount, stringpassword)
     {
+        // verify the required parameter 'transactionID' is set
+        if (transactionID == null)
+            throw new ApiException(400, "Missing required parameter 'transactionID' when calling VirtualTerminalApi->ApiV1VirtualTerminalMarkTransactionIDPost");
 
-    // verify the required parameter &#39;transactionID&#39; is set
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalMarkTransactionIDPost");
 
-    if (transactionID == null)
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalMarkTransactionIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;transactionID&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalMarkTransactionIDPost&quot;);
+        var localVarPath = "/api/v1/VirtualTerminal/Mark/{transactionID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;account&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {};
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (account == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalMarkTransactionIDPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    // verify the required parameter &#39;password&#39; is set
+        if (transactionID != null)
+            localVarPathParams.Add("transactionID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
-    if (password == null)
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalMarkTransactionIDPost&quot;);
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/Mark/{transactionID}&quot;;
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalMarkTransactionIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
-
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
-
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (transactionID != null) localVarPathParams.Add(&quot;transactionID&quot;, this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalMarkTransactionIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/VirtualTerminal/MarkTransactions
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VirtualTerminalMarkTransactionsPostAsyncWithHttpInfo(stringaccount, stringpassword, List\&lt;string\&gt; body = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VirtualTerminalMarkTransactionsPostAsyncWithHttpInfo(stringaccount, stringpassword, List<string> body = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalMarkTransactionsPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalMarkTransactionsPost");
 
-    if (account == null)
+        var localVarPath = "/api/v1/VirtualTerminal/MarkTransactions";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalMarkTransactionsPost&quot;);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    // verify the required parameter &#39;password&#39; is set
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (password == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalMarkTransactionsPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/MarkTransactions&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalMarkTransactionsPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalMarkTransactionsPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }
 
 ## /api/v1/VirtualTerminal/Query
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;QueryTransaction\&gt;\&gt; ApiV1VirtualTerminalQueryPostAsyncWithHttpInfo(stringaccount, stringpassword, Transactionbody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<QueryTransaction>> ApiV1VirtualTerminalQueryPostAsyncWithHttpInfo(stringaccount, stringpassword, Transactionbody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalQueryPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalQueryPost");
 
-    if (account == null)
+        var localVarPath = "/api/v1/VirtualTerminal/Query";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalQueryPost&quot;);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    // verify the required parameter &#39;password&#39; is set
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    if (password == null)
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalQueryPost&quot;);
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/Query&quot;;
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalQueryPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalQueryPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;QueryTransaction\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (QueryTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryTransaction)));
-
+        return new ApiResponse<QueryTransaction>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (QueryTransaction)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QueryTransaction)));
     }
 
 ## /api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}
 
-    public async System.Threading.Tasks.Task\&lt;ApiResponse\&lt;Response\&gt;\&gt; ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPostAsyncWithHttpInfo(stringaccount, stringpassword, stringtransactionID, UpdateTransactionInfobody = null)
-
+    public async System.Threading.Tasks.Task<ApiResponse<Response>> ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPostAsyncWithHttpInfo(stringaccount, stringpassword, stringtransactionID, UpdateTransactionInfobody = null)
     {
+        // verify the required parameter 'account' is set
+        if (account == null)
+            throw new ApiException(400, "Missing required parameter 'account' when calling VirtualTerminalApi->ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost");
 
-    // verify the required parameter &#39;account&#39; is set
+        // verify the required parameter 'password' is set
+        if (password == null)
+            throw new ApiException(400, "Missing required parameter 'password' when calling VirtualTerminalApi->ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost");
 
-    if (account == null)
+        // verify the required parameter 'transactionID' is set
+        if (transactionID == null)
+            throw new ApiException(400, "Missing required parameter 'transactionID' when calling VirtualTerminalApi->ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost");
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;account&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&quot;);
+        var localVarPath = "/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<KeyValuePair<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        ObjectlocalVarPostBody = null;
 
-    // verify the required parameter &#39;password&#39; is set
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json",
+            "text/json",
+            "application/_*+json"
+        };
 
-    if (password == null)
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;password&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&quot;);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+            "text/plain",
+            "application/json",
+            "text/json"
+        };
 
-    // verify the required parameter &#39;transactionID&#39; is set
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-    if (transactionID == null)
+        if (transactionID != null)
+            localVarPathParams.Add("transactionID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
-    thrownewApiException(400, &quot;Missing required parameter &#39;transactionID&#39; when calling VirtualTerminalApi-\&gt;ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&quot;);
+        if (account != null)
+            localVarHeaderParams.Add("Account", this.Configuration.ApiClient.ParameterToString(account)); // header parameter
 
-    varlocalVarPath = &quot;/api/v1/VirtualTerminal/UpdateTransactionInfo/{transactionID}&quot;;
+        if (password != null)
+            localVarHeaderParams.Add("Password", this.Configuration.ApiClient.ParameterToString(password)); // header parameter
 
-    varlocalVarPathParams = newDictionary\&lt;String, String\&gt;();
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
-    varlocalVarQueryParams = newList\&lt;KeyValuePair\&lt;String, String\&gt;\&gt;();
+        // make the HTTP request
+        IRestResponselocalVarResponse = (IRestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarPathParams, localVarHttpContentType);
 
-    varlocalVarHeaderParams = newDictionary\&lt;String, String\&gt;(this.Configuration.DefaultHeader);
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+        if (ExceptionFactory != null)
+        {
+            Exceptionexception = ExceptionFactory("ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost", localVarResponse);
+            if (exception != null) throw exception;
+        }
 
-    varlocalVarFormParams = newDictionary\&lt;String, String\&gt;();
-
-    varlocalVarFileParams = newDictionary\&lt;String, FileParameter\&gt;();
-
-    ObjectlocalVarPostBody = null;
-
-    // to determine the Content-Type header
-
-    String[] localVarHttpContentTypes = newString[] {
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;,
-
-    &quot;application/\_\*+json&quot;
-
-    };
-
-    StringlocalVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-    // to determine the Accept header
-
-    String[] localVarHttpHeaderAccepts = newString[] {
-
-    &quot;text/plain&quot;,
-
-    &quot;application/json&quot;,
-
-    &quot;text/json&quot;
-
-    };
-
-    StringlocalVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-
-    if (localVarHttpHeaderAccept != null)
-
-    localVarHeaderParams.Add(&quot;Accept&quot;, localVarHttpHeaderAccept);
-
-    if (transactionID != null) localVarPathParams.Add(&quot;transactionID&quot;, this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
-
-    if (account != null) localVarHeaderParams.Add(&quot;Account&quot;, this.Configuration.ApiClient.ParameterToString(account)); // header parameter
-
-    if (password != null) localVarHeaderParams.Add(&quot;Password&quot;, this.Configuration.ApiClient.ParameterToString(password)); // header parameter
-
-    if (body != null &amp;&amp; body.GetType() != typeof(byte[]))
-
-    {
-
-    localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-
-    }
-
-    else
-
-    {
-
-    localVarPostBody = body; // byte array
-
-    }
-
-    // make the HTTP request
-
-    IRestResponselocalVarResponse = (IRestResponse)awaitthis.Configuration.ApiClient.CallApiAsync(localVarPath,
-
-    Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-
-    localVarPathParams, localVarHttpContentType);
-
-    intlocalVarStatusCode = (int)localVarResponse.StatusCode;
-
-    if (ExceptionFactory != null)
-
-    {
-
-    Exceptionexception = ExceptionFactory(&quot;ApiV1VirtualTerminalUpdateTransactionInfoTransactionIDPost&quot;, localVarResponse);
-
-    if (exception != null) throwexception;
-
-    }
-
-    returnnewApiResponse\&lt;Response\&gt;(localVarStatusCode,
-
-    localVarResponse.Headers.ToDictionary(x =\&gt; x.Name, x =\&gt; string.Join(&quot;,&quot;, x.Value)),
-
-    (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
-
+        return new ApiResponse<Response>(localVarStatusCode, localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), (Response)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Response)));
     }

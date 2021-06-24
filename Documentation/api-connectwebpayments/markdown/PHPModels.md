@@ -2,9 +2,9 @@
 
 # Address
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -16,309 +16,309 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Address&#39;;
+    protectedstatic$swaggerModelName = 'Address';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;address\_line1&#39; =\&gt; &#39;string&#39;,
+    'address_line1' => 'string',
 
-    &#39;address\_line2&#39; =\&gt; &#39;string&#39;,
+    'address_line2' => 'string',
 
-    &#39;city&#39; =\&gt; &#39;string&#39;,
+    'city' => 'string',
 
-    &#39;state&#39; =\&gt; &#39;string&#39;,
+    'state' => 'string',
 
-    &#39;zip\_code&#39; =\&gt; &#39;string&#39;
+    'zip_code' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;address\_line1&#39; =\&gt; null,
+    'address_line1' => null,
 
-    &#39;address\_line2&#39; =\&gt; null,
+    'address_line2' => null,
 
-    &#39;city&#39; =\&gt; null,
+    'city' => null,
 
-    &#39;state&#39; =\&gt; null,
+    'state' => null,
 
-    &#39;zip\_code&#39; =\&gt; null
+    'zip_code' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;address\_line1&#39; =\&gt; &#39;AddressLine1&#39;,
+    'address_line1' => 'AddressLine1',
 
-    &#39;address\_line2&#39; =\&gt; &#39;AddressLine2&#39;,
+    'address_line2' => 'AddressLine2',
 
-    &#39;city&#39; =\&gt; &#39;City&#39;,
+    'city' => 'City',
 
-    &#39;state&#39; =\&gt; &#39;State&#39;,
+    'state' => 'State',
 
-    &#39;zip\_code&#39; =\&gt; &#39;ZipCode&#39;
+    'zip_code' => 'ZipCode'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;address\_line1&#39; =\&gt; &#39;setAddressLine1&#39;,
+    'address_line1' => 'setAddressLine1',
 
-    &#39;address\_line2&#39; =\&gt; &#39;setAddressLine2&#39;,
+    'address_line2' => 'setAddressLine2',
 
-    &#39;city&#39; =\&gt; &#39;setCity&#39;,
+    'city' => 'setCity',
 
-    &#39;state&#39; =\&gt; &#39;setState&#39;,
+    'state' => 'setState',
 
-    &#39;zip\_code&#39; =\&gt; &#39;setZipCode&#39;
+    'zip_code' => 'setZipCode'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;address\_line1&#39; =\&gt; &#39;getAddressLine1&#39;,
+    'address_line1' => 'getAddressLine1',
 
-    &#39;address\_line2&#39; =\&gt; &#39;getAddressLine2&#39;,
+    'address_line2' => 'getAddressLine2',
 
-    &#39;city&#39; =\&gt; &#39;getCity&#39;,
+    'city' => 'getCity',
 
-    &#39;state&#39; =\&gt; &#39;getState&#39;,
+    'state' => 'getState',
 
-    &#39;zip\_code&#39; =\&gt; &#39;getZipCode&#39;
+    'zip_code' => 'getZipCode'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;address\_line1&#39;] = isset($data[&#39;address\_line1&#39;]) ? $data[&#39;address\_line1&#39;] : null;
+    $this->container['address_line1'] = isset($data['address_line1']) ? $data['address_line1'] : null;
 
-    $this-\&gt;container[&#39;address\_line2&#39;] = isset($data[&#39;address\_line2&#39;]) ? $data[&#39;address\_line2&#39;] : null;
+    $this->container['address_line2'] = isset($data['address_line2']) ? $data['address_line2'] : null;
 
-    $this-\&gt;container[&#39;city&#39;] = isset($data[&#39;city&#39;]) ? $data[&#39;city&#39;] : null;
+    $this->container['city'] = isset($data['city']) ? $data['city'] : null;
 
-    $this-\&gt;container[&#39;state&#39;] = isset($data[&#39;state&#39;]) ? $data[&#39;state&#39;] : null;
+    $this->container['state'] = isset($data['state']) ? $data['state'] : null;
 
-    $this-\&gt;container[&#39;zip\_code&#39;] = isset($data[&#39;zip\_code&#39;]) ? $data[&#39;zip\_code&#39;] : null;
+    $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetAddressLine1()
+    public functiongetAddressLine1()
 
     {
 
-    return$this-\&gt;container[&#39;address\_line1&#39;];
+    return $this->container['address_line1'];
 
     }
 
-    publicfunctionsetAddressLine1($address\_line1)
+    public functionsetAddressLine1($address_line1)
 
     {
 
-    $this-\&gt;container[&#39;address\_line1&#39;] = $address\_line1;
+    $this->container['address_line1'] = $address_line1;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAddressLine2()
+    public functiongetAddressLine2()
 
     {
 
-    return$this-\&gt;container[&#39;address\_line2&#39;];
+    return $this->container['address_line2'];
 
     }
 
-    publicfunctionsetAddressLine2($address\_line2)
+    public functionsetAddressLine2($address_line2)
 
     {
 
-    $this-\&gt;container[&#39;address\_line2&#39;] = $address\_line2;
+    $this->container['address_line2'] = $address_line2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCity()
+    public functiongetCity()
 
     {
 
-    return$this-\&gt;container[&#39;city&#39;];
+    return $this->container['city'];
 
     }
 
-    publicfunctionsetCity($city)
+    public functionsetCity($city)
 
     {
 
-    $this-\&gt;container[&#39;city&#39;] = $city;
+    $this->container['city'] = $city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetState()
+    public functiongetState()
 
     {
 
-    return$this-\&gt;container[&#39;state&#39;];
+    return $this->container['state'];
 
     }
 
-    publicfunctionsetState($state)
+    public functionsetState($state)
 
     {
 
-    $this-\&gt;container[&#39;state&#39;] = $state;
+    $this->container['state'] = $state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetZipCode()
+    public functiongetZipCode()
 
     {
 
-    return$this-\&gt;container[&#39;zip\_code&#39;];
+    return $this->container['zip_code'];
 
     }
 
-    publicfunctionsetZipCode($zip\_code)
+    public functionsetZipCode($zip_code)
 
     {
 
-    $this-\&gt;container[&#39;zip\_code&#39;] = $zip\_code;
+    $this->container['zip_code'] = $zip_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -326,9 +326,9 @@
 
 # Batch
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -340,399 +340,399 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Batch&#39;;
+    protectedstatic$swaggerModelName = 'Batch';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;batch\_number&#39; =\&gt; &#39;string&#39;,
+    'batch_number' => 'string',
 
-    &#39;started&#39; =\&gt; &#39;\DateTime&#39;,
+    'started' => '\DateTime',
 
-    &#39;completed&#39; =\&gt; &#39;\DateTime&#39;,
+    'completed' => '\DateTime',
 
-    &#39;sales\_count&#39; =\&gt; &#39;string&#39;,
+    'sales_count' => 'string',
 
-    &#39;sales\_sum&#39; =\&gt; &#39;double&#39;,
+    'sales_sum' => 'double',
 
-    &#39;return\_count&#39; =\&gt; &#39;string&#39;,
+    'return _count' => 'string',
 
-    &#39;return\_sum&#39; =\&gt; &#39;double&#39;,
+    'return _sum' => 'double',
 
-    &#39;batch\_error&#39; =\&gt; &#39;bool&#39;
+    'batch_error' => 'bool'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;batch\_number&#39; =\&gt; null,
+    'batch_number' => null,
 
-    &#39;started&#39; =\&gt; &#39;date-time&#39;,
+    'started' => 'date-time',
 
-    &#39;completed&#39; =\&gt; &#39;date-time&#39;,
+    'completed' => 'date-time',
 
-    &#39;sales\_count&#39; =\&gt; null,
+    'sales_count' => null,
 
-    &#39;sales\_sum&#39; =\&gt; &#39;double&#39;,
+    'sales_sum' => 'double',
 
-    &#39;return\_count&#39; =\&gt; null,
+    'return _count' => null,
 
-    &#39;return\_sum&#39; =\&gt; &#39;double&#39;,
+    'return _sum' => 'double',
 
-    &#39;batch\_error&#39; =\&gt; null
+    'batch_error' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;batch\_number&#39; =\&gt; &#39;BatchNumber&#39;,
+    'batch_number' => 'BatchNumber',
 
-    &#39;started&#39; =\&gt; &#39;Started&#39;,
+    'started' => 'Started',
 
-    &#39;completed&#39; =\&gt; &#39;Completed&#39;,
+    'completed' => 'Completed',
 
-    &#39;sales\_count&#39; =\&gt; &#39;SalesCount&#39;,
+    'sales_count' => 'SalesCount',
 
-    &#39;sales\_sum&#39; =\&gt; &#39;SalesSum&#39;,
+    'sales_sum' => 'SalesSum',
 
-    &#39;return\_count&#39; =\&gt; &#39;ReturnCount&#39;,
+    'return _count' => 'ReturnCount',
 
-    &#39;return\_sum&#39; =\&gt; &#39;ReturnSum&#39;,
+    'return _sum' => 'ReturnSum',
 
-    &#39;batch\_error&#39; =\&gt; &#39;BatchError&#39;
+    'batch_error' => 'BatchError'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;batch\_number&#39; =\&gt; &#39;setBatchNumber&#39;,
+    'batch_number' => 'setBatchNumber',
 
-    &#39;started&#39; =\&gt; &#39;setStarted&#39;,
+    'started' => 'setStarted',
 
-    &#39;completed&#39; =\&gt; &#39;setCompleted&#39;,
+    'completed' => 'setCompleted',
 
-    &#39;sales\_count&#39; =\&gt; &#39;setSalesCount&#39;,
+    'sales_count' => 'setSalesCount',
 
-    &#39;sales\_sum&#39; =\&gt; &#39;setSalesSum&#39;,
+    'sales_sum' => 'setSalesSum',
 
-    &#39;return\_count&#39; =\&gt; &#39;setReturnCount&#39;,
+    'return _count' => 'setReturnCount',
 
-    &#39;return\_sum&#39; =\&gt; &#39;setReturnSum&#39;,
+    'return _sum' => 'setReturnSum',
 
-    &#39;batch\_error&#39; =\&gt; &#39;setBatchError&#39;
+    'batch_error' => 'setBatchError'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;batch\_number&#39; =\&gt; &#39;getBatchNumber&#39;,
+    'batch_number' => 'getBatchNumber',
 
-    &#39;started&#39; =\&gt; &#39;getStarted&#39;,
+    'started' => 'getStarted',
 
-    &#39;completed&#39; =\&gt; &#39;getCompleted&#39;,
+    'completed' => 'getCompleted',
 
-    &#39;sales\_count&#39; =\&gt; &#39;getSalesCount&#39;,
+    'sales_count' => 'getSalesCount',
 
-    &#39;sales\_sum&#39; =\&gt; &#39;getSalesSum&#39;,
+    'sales_sum' => 'getSalesSum',
 
-    &#39;return\_count&#39; =\&gt; &#39;getReturnCount&#39;,
+    'return _count' => 'getReturnCount',
 
-    &#39;return\_sum&#39; =\&gt; &#39;getReturnSum&#39;,
+    'return _sum' => 'getReturnSum',
 
-    &#39;batch\_error&#39; =\&gt; &#39;getBatchError&#39;
+    'batch_error' => 'getBatchError'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;batch\_number&#39;] = isset($data[&#39;batch\_number&#39;]) ? $data[&#39;batch\_number&#39;] : null;
+    $this->container['batch_number'] = isset($data['batch_number']) ? $data['batch_number'] : null;
 
-    $this-\&gt;container[&#39;started&#39;] = isset($data[&#39;started&#39;]) ? $data[&#39;started&#39;] : null;
+    $this->container['started'] = isset($data['started']) ? $data['started'] : null;
 
-    $this-\&gt;container[&#39;completed&#39;] = isset($data[&#39;completed&#39;]) ? $data[&#39;completed&#39;] : null;
+    $this->container['completed'] = isset($data['completed']) ? $data['completed'] : null;
 
-    $this-\&gt;container[&#39;sales\_count&#39;] = isset($data[&#39;sales\_count&#39;]) ? $data[&#39;sales\_count&#39;] : null;
+    $this->container['sales_count'] = isset($data['sales_count']) ? $data['sales_count'] : null;
 
-    $this-\&gt;container[&#39;sales\_sum&#39;] = isset($data[&#39;sales\_sum&#39;]) ? $data[&#39;sales\_sum&#39;] : null;
+    $this->container['sales_sum'] = isset($data['sales_sum']) ? $data['sales_sum'] : null;
 
-    $this-\&gt;container[&#39;return\_count&#39;] = isset($data[&#39;return\_count&#39;]) ? $data[&#39;return\_count&#39;] : null;
+    $this->container['return _count'] = isset($data['return _count']) ? $data['return _count'] : null;
 
-    $this-\&gt;container[&#39;return\_sum&#39;] = isset($data[&#39;return\_sum&#39;]) ? $data[&#39;return\_sum&#39;] : null;
+    $this->container['return _sum'] = isset($data['return _sum']) ? $data['return _sum'] : null;
 
-    $this-\&gt;container[&#39;batch\_error&#39;] = isset($data[&#39;batch\_error&#39;]) ? $data[&#39;batch\_error&#39;] : null;
+    $this->container['batch_error'] = isset($data['batch_error']) ? $data['batch_error'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetBatchNumber()
+    public functiongetBatchNumber()
 
     {
 
-    return$this-\&gt;container[&#39;batch\_number&#39;];
+    return $this->container['batch_number'];
 
     }
 
-    publicfunctionsetBatchNumber($batch\_number)
+    public functionsetBatchNumber($batch_number)
 
     {
 
-    $this-\&gt;container[&#39;batch\_number&#39;] = $batch\_number;
+    $this->container['batch_number'] = $batch_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetStarted()
+    public functiongetStarted()
 
     {
 
-    return$this-\&gt;container[&#39;started&#39;];
+    return $this->container['started'];
 
     }
 
-    publicfunctionsetStarted($started)
+    public functionsetStarted($started)
 
     {
 
-    $this-\&gt;container[&#39;started&#39;] = $started;
+    $this->container['started'] = $started;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCompleted()
+    public functiongetCompleted()
 
     {
 
-    return$this-\&gt;container[&#39;completed&#39;];
+    return $this->container['completed'];
 
     }
 
-    publicfunctionsetCompleted($completed)
+    public functionsetCompleted($completed)
 
     {
 
-    $this-\&gt;container[&#39;completed&#39;] = $completed;
+    $this->container['completed'] = $completed;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSalesCount()
+    public functiongetSalesCount()
 
     {
 
-    return$this-\&gt;container[&#39;sales\_count&#39;];
+    return $this->container['sales_count'];
 
     }
 
-    publicfunctionsetSalesCount($sales\_count)
+    public functionsetSalesCount($sales_count)
 
     {
 
-    $this-\&gt;container[&#39;sales\_count&#39;] = $sales\_count;
+    $this->container['sales_count'] = $sales_count;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSalesSum()
+    public functiongetSalesSum()
 
     {
 
-    return$this-\&gt;container[&#39;sales\_sum&#39;];
+    return $this->container['sales_sum'];
 
     }
 
-    publicfunctionsetSalesSum($sales\_sum)
+    public functionsetSalesSum($sales_sum)
 
     {
 
-    $this-\&gt;container[&#39;sales\_sum&#39;] = $sales\_sum;
+    $this->container['sales_sum'] = $sales_sum;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReturnCount()
+    public functiongetReturnCount()
 
     {
 
-    return$this-\&gt;container[&#39;return\_count&#39;];
+    return $this->container['return _count'];
 
     }
 
-    publicfunctionsetReturnCount($return\_count)
+    public functionsetReturnCount($return _count)
 
     {
 
-    $this-\&gt;container[&#39;return\_count&#39;] = $return\_count;
+    $this->container['return _count'] = $return _count;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReturnSum()
+    public functiongetReturnSum()
 
     {
 
-    return$this-\&gt;container[&#39;return\_sum&#39;];
+    return $this->container['return _sum'];
 
     }
 
-    publicfunctionsetReturnSum($return\_sum)
+    public functionsetReturnSum($return _sum)
 
     {
 
-    $this-\&gt;container[&#39;return\_sum&#39;] = $return\_sum;
+    $this->container['return _sum'] = $return _sum;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBatchError()
+    public functiongetBatchError()
 
     {
 
-    return$this-\&gt;container[&#39;batch\_error&#39;];
+    return $this->container['batch_error'];
 
     }
 
-    publicfunctionsetBatchError($batch\_error)
+    public functionsetBatchError($batch_error)
 
     {
 
-    $this-\&gt;container[&#39;batch\_error&#39;] = $batch\_error;
+    $this->container['batch_error'] = $batch_error;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -740,9 +740,9 @@
 
 # Business
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -754,309 +754,309 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Business&#39;;
+    protectedstatic$swaggerModelName = 'Business';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;address&#39; =\&gt; &#39;\Swagger\Client\Model\Address&#39;,
+    'address' => '\Swagger\Client\Model\Address',
 
-    &#39;name&#39; =\&gt; &#39;string&#39;,
+    'name' => 'string',
 
-    &#39;phone&#39; =\&gt; &#39;string&#39;,
+    'phone' => 'string',
 
-    &#39;fax&#39; =\&gt; &#39;string&#39;,
+    'fax' => 'string',
 
-    &#39;web\_site&#39; =\&gt; &#39;string&#39;
+    'web_site' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;address&#39; =\&gt; null,
+    'address' => null,
 
-    &#39;name&#39; =\&gt; null,
+    'name' => null,
 
-    &#39;phone&#39; =\&gt; null,
+    'phone' => null,
 
-    &#39;fax&#39; =\&gt; null,
+    'fax' => null,
 
-    &#39;web\_site&#39; =\&gt; null
+    'web_site' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;address&#39; =\&gt; &#39;Address&#39;,
+    'address' => 'Address',
 
-    &#39;name&#39; =\&gt; &#39;Name&#39;,
+    'name' => 'Name',
 
-    &#39;phone&#39; =\&gt; &#39;Phone&#39;,
+    'phone' => 'Phone',
 
-    &#39;fax&#39; =\&gt; &#39;Fax&#39;,
+    'fax' => 'Fax',
 
-    &#39;web\_site&#39; =\&gt; &#39;WebSite&#39;
+    'web_site' => 'WebSite'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;address&#39; =\&gt; &#39;setAddress&#39;,
+    'address' => 'setAddress',
 
-    &#39;name&#39; =\&gt; &#39;setName&#39;,
+    'name' => 'setName',
 
-    &#39;phone&#39; =\&gt; &#39;setPhone&#39;,
+    'phone' => 'setPhone',
 
-    &#39;fax&#39; =\&gt; &#39;setFax&#39;,
+    'fax' => 'setFax',
 
-    &#39;web\_site&#39; =\&gt; &#39;setWebSite&#39;
+    'web_site' => 'setWebSite'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;address&#39; =\&gt; &#39;getAddress&#39;,
+    'address' => 'getAddress',
 
-    &#39;name&#39; =\&gt; &#39;getName&#39;,
+    'name' => 'getName',
 
-    &#39;phone&#39; =\&gt; &#39;getPhone&#39;,
+    'phone' => 'getPhone',
 
-    &#39;fax&#39; =\&gt; &#39;getFax&#39;,
+    'fax' => 'getFax',
 
-    &#39;web\_site&#39; =\&gt; &#39;getWebSite&#39;
+    'web_site' => 'getWebSite'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;address&#39;] = isset($data[&#39;address&#39;]) ? $data[&#39;address&#39;] : null;
+    $this->container['address'] = isset($data['address']) ? $data['address'] : null;
 
-    $this-\&gt;container[&#39;name&#39;] = isset($data[&#39;name&#39;]) ? $data[&#39;name&#39;] : null;
+    $this->container['name'] = isset($data['name']) ? $data['name'] : null;
 
-    $this-\&gt;container[&#39;phone&#39;] = isset($data[&#39;phone&#39;]) ? $data[&#39;phone&#39;] : null;
+    $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
 
-    $this-\&gt;container[&#39;fax&#39;] = isset($data[&#39;fax&#39;]) ? $data[&#39;fax&#39;] : null;
+    $this->container['fax'] = isset($data['fax']) ? $data['fax'] : null;
 
-    $this-\&gt;container[&#39;web\_site&#39;] = isset($data[&#39;web\_site&#39;]) ? $data[&#39;web\_site&#39;] : null;
+    $this->container['web_site'] = isset($data['web_site']) ? $data['web_site'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetAddress()
+    public functiongetAddress()
 
     {
 
-    return$this-\&gt;container[&#39;address&#39;];
+    return $this->container['address'];
 
     }
 
-    publicfunctionsetAddress($address)
+    public functionsetAddress($address)
 
     {
 
-    $this-\&gt;container[&#39;address&#39;] = $address;
+    $this->container['address'] = $address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetName()
+    public functiongetName()
 
     {
 
-    return$this-\&gt;container[&#39;name&#39;];
+    return $this->container['name'];
 
     }
 
-    publicfunctionsetName($name)
+    public functionsetName($name)
 
     {
 
-    $this-\&gt;container[&#39;name&#39;] = $name;
+    $this->container['name'] = $name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPhone()
+    public functiongetPhone()
 
     {
 
-    return$this-\&gt;container[&#39;phone&#39;];
+    return $this->container['phone'];
 
     }
 
-    publicfunctionsetPhone($phone)
+    public functionsetPhone($phone)
 
     {
 
-    $this-\&gt;container[&#39;phone&#39;] = $phone;
+    $this->container['phone'] = $phone;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFax()
+    public functiongetFax()
 
     {
 
-    return$this-\&gt;container[&#39;fax&#39;];
+    return $this->container['fax'];
 
     }
 
-    publicfunctionsetFax($fax)
+    public functionsetFax($fax)
 
     {
 
-    $this-\&gt;container[&#39;fax&#39;] = $fax;
+    $this->container['fax'] = $fax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetWebSite()
+    public functiongetWebSite()
 
     {
 
-    return$this-\&gt;container[&#39;web\_site&#39;];
+    return $this->container['web_site'];
 
     }
 
-    publicfunctionsetWebSite($web\_site)
+    public functionsetWebSite($web_site)
 
     {
 
-    $this-\&gt;container[&#39;web\_site&#39;] = $web\_site;
+    $this->container['web_site'] = $web_site;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -1064,9 +1064,9 @@
 
 # CheckAccountType
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use \Swagger\Client\ObjectSerializer;
 
@@ -1074,13 +1074,13 @@
 
     {
 
-    const UNKNOWN = &#39;Unknown&#39;;
+    const UNKNOWN = 'Unknown';
 
-    const CHECKING = &#39;Checking&#39;;
+    const CHECKING = 'Checking';
 
-    const SAVINGS = &#39;Savings&#39;;
+    const SAVINGS = 'Savings';
 
-    publicstaticfunctiongetAllowableEnumValues()
+    public staticfunctiongetAllowableEnumValues()
 
     {
 
@@ -1100,9 +1100,9 @@
 
     # CheckTransaction
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -1114,1149 +1114,1149 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;CheckTransaction&#39;;
+    protectedstatic$swaggerModelName = 'CheckTransaction';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;terminal\_id&#39; =\&gt; &#39;string&#39;,
+    'terminal_id' => 'string',
 
-    &#39;account\_number&#39; =\&gt; &#39;string&#39;,
+    'account_number' => 'string',
 
-    &#39;account\_type&#39; =\&gt; &#39;\Swagger\Client\Model\CheckAccountType&#39;,
+    'account_type' => '\Swagger\Client\Model\CheckAccountType',
 
-    &#39;check\_number&#39; =\&gt; &#39;string&#39;,
+    'check_number' => 'string',
 
-    &#39;routing\_number&#39; =\&gt; &#39;string&#39;,
+    'routing_number' => 'string',
 
-    &#39;micr\_data&#39; =\&gt; &#39;string&#39;,
+    'micr_data' => 'string',
 
-    &#39;first\_name&#39; =\&gt; &#39;string&#39;,
+    'first_name' => 'string',
 
-    &#39;last\_name&#39; =\&gt; &#39;string&#39;,
+    'last_name' => 'string',
 
-    &#39;company\_name&#39; =\&gt; &#39;string&#39;,
+    'company_name' => 'string',
 
-    &#39;address1&#39; =\&gt; &#39;string&#39;,
+    'address1' => 'string',
 
-    &#39;address2&#39; =\&gt; &#39;string&#39;,
+    'address2' => 'string',
 
-    &#39;city&#39; =\&gt; &#39;string&#39;,
+    'city' => 'string',
 
-    &#39;state&#39; =\&gt; &#39;string&#39;,
+    'state' => 'string',
 
-    &#39;zip&#39; =\&gt; &#39;string&#39;,
+    'zip' => 'string',
 
-    &#39;phone\_number&#39; =\&gt; &#39;string&#39;,
+    'phone_number' => 'string',
 
-    &#39;dl\_number&#39; =\&gt; &#39;string&#39;,
+    'dl_number' => 'string',
 
-    &#39;dl\_state&#39; =\&gt; &#39;string&#39;,
+    'dl_state' => 'string',
 
-    &#39;courtesy\_card\_id&#39; =\&gt; &#39;string&#39;,
+    'courtesy_card_id' => 'string',
 
-    &#39;ssn4&#39; =\&gt; &#39;string&#39;,
+    'ssn4' => 'string',
 
-    &#39;dob\_year&#39; =\&gt; &#39;string&#39;,
+    'dob_year' => 'string',
 
-    &#39;check\_amount&#39; =\&gt; &#39;string&#39;,
+    'check_amount' => 'string',
 
-    &#39;tran\_type&#39; =\&gt; &#39;\Swagger\Client\Model\CheckTransactionType&#39;,
+    'tran_type' => '\Swagger\Client\Model\CheckTransactionType',
 
-    &#39;proc\_id&#39; =\&gt; &#39;string&#39;,
+    'proc_id' => 'string',
 
-    &#39;ip\_address&#39; =\&gt; &#39;string&#39;,
+    'ip_address' => 'string',
 
-    &#39;customer\_number&#39; =\&gt; &#39;string&#39;,
+    'customer_number' => 'string',
 
-    &#39;po\_number&#39; =\&gt; &#39;string&#39;,
+    'po_number' => 'string',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;string&#39;,
+    'invoice_number' => 'string',
 
-    &#39;tran\_note&#39; =\&gt; &#39;string&#39;,
+    'tran_note' => 'string',
 
-    &#39;email\_address&#39; =\&gt; &#39;string&#39;,
+    'email_address' => 'string',
 
-    &#39;sec\_code&#39; =\&gt; &#39;string&#39;,
+    'sec_code' => 'string',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;string&#39;,
+    'proc_resp' => 'string',
 
-    &#39;proc\_code&#39; =\&gt; &#39;string&#39;,
+    'proc_code' => 'string',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;string&#39;
+    'proc_mess' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;terminal\_id&#39; =\&gt; null,
+    'terminal_id' => null,
 
-    &#39;account\_number&#39; =\&gt; null,
+    'account_number' => null,
 
-    &#39;account\_type&#39; =\&gt; null,
+    'account_type' => null,
 
-    &#39;check\_number&#39; =\&gt; null,
+    'check_number' => null,
 
-    &#39;routing\_number&#39; =\&gt; null,
+    'routing_number' => null,
 
-    &#39;micr\_data&#39; =\&gt; null,
+    'micr_data' => null,
 
-    &#39;first\_name&#39; =\&gt; null,
+    'first_name' => null,
 
-    &#39;last\_name&#39; =\&gt; null,
+    'last_name' => null,
 
-    &#39;company\_name&#39; =\&gt; null,
+    'company_name' => null,
 
-    &#39;address1&#39; =\&gt; null,
+    'address1' => null,
 
-    &#39;address2&#39; =\&gt; null,
+    'address2' => null,
 
-    &#39;city&#39; =\&gt; null,
+    'city' => null,
 
-    &#39;state&#39; =\&gt; null,
+    'state' => null,
 
-    &#39;zip&#39; =\&gt; null,
+    'zip' => null,
 
-    &#39;phone\_number&#39; =\&gt; null,
+    'phone_number' => null,
 
-    &#39;dl\_number&#39; =\&gt; null,
+    'dl_number' => null,
 
-    &#39;dl\_state&#39; =\&gt; null,
+    'dl_state' => null,
 
-    &#39;courtesy\_card\_id&#39; =\&gt; null,
+    'courtesy_card_id' => null,
 
-    &#39;ssn4&#39; =\&gt; null,
+    'ssn4' => null,
 
-    &#39;dob\_year&#39; =\&gt; null,
+    'dob_year' => null,
 
-    &#39;check\_amount&#39; =\&gt; null,
+    'check_amount' => null,
 
-    &#39;tran\_type&#39; =\&gt; null,
+    'tran_type' => null,
 
-    &#39;proc\_id&#39; =\&gt; null,
+    'proc_id' => null,
 
-    &#39;ip\_address&#39; =\&gt; null,
+    'ip_address' => null,
 
-    &#39;customer\_number&#39; =\&gt; null,
+    'customer_number' => null,
 
-    &#39;po\_number&#39; =\&gt; null,
+    'po_number' => null,
 
-    &#39;invoice\_number&#39; =\&gt; null,
+    'invoice_number' => null,
 
-    &#39;tran\_note&#39; =\&gt; null,
+    'tran_note' => null,
 
-    &#39;email\_address&#39; =\&gt; null,
+    'email_address' => null,
 
-    &#39;sec\_code&#39; =\&gt; null,
+    'sec_code' => null,
 
-    &#39;proc\_resp&#39; =\&gt; null,
+    'proc_resp' => null,
 
-    &#39;proc\_code&#39; =\&gt; null,
+    'proc_code' => null,
 
-    &#39;proc\_mess&#39; =\&gt; null
+    'proc_mess' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;terminal\_id&#39; =\&gt; &#39;Terminal\_ID&#39;,
+    'terminal_id' => 'Terminal_ID',
 
-    &#39;account\_number&#39; =\&gt; &#39;Account\_Number&#39;,
+    'account_number' => 'Account_Number',
 
-    &#39;account\_type&#39; =\&gt; &#39;Account\_Type&#39;,
+    'account_type' => 'Account_Type',
 
-    &#39;check\_number&#39; =\&gt; &#39;Check\_Number&#39;,
+    'check_number' => 'Check_Number',
 
-    &#39;routing\_number&#39; =\&gt; &#39;Routing\_Number&#39;,
+    'routing_number' => 'Routing_Number',
 
-    &#39;micr\_data&#39; =\&gt; &#39;MICR\_Data&#39;,
+    'micr_data' => 'MICR_Data',
 
-    &#39;first\_name&#39; =\&gt; &#39;First\_Name&#39;,
+    'first_name' => 'First_Name',
 
-    &#39;last\_name&#39; =\&gt; &#39;Last\_Name&#39;,
+    'last_name' => 'Last_Name',
 
-    &#39;company\_name&#39; =\&gt; &#39;Company\_Name&#39;,
+    'company_name' => 'Company_Name',
 
-    &#39;address1&#39; =\&gt; &#39;Address1&#39;,
+    'address1' => 'Address1',
 
-    &#39;address2&#39; =\&gt; &#39;Address2&#39;,
+    'address2' => 'Address2',
 
-    &#39;city&#39; =\&gt; &#39;City&#39;,
+    'city' => 'City',
 
-    &#39;state&#39; =\&gt; &#39;State&#39;,
+    'state' => 'State',
 
-    &#39;zip&#39; =\&gt; &#39;Zip&#39;,
+    'zip' => 'Zip',
 
-    &#39;phone\_number&#39; =\&gt; &#39;Phone\_Number&#39;,
+    'phone_number' => 'Phone_Number',
 
-    &#39;dl\_number&#39; =\&gt; &#39;DL\_Number&#39;,
+    'dl_number' => 'DL_Number',
 
-    &#39;dl\_state&#39; =\&gt; &#39;DL\_State&#39;,
+    'dl_state' => 'DL_State',
 
-    &#39;courtesy\_card\_id&#39; =\&gt; &#39;Courtesy\_Card\_ID&#39;,
+    'courtesy_card_id' => 'Courtesy_Card_ID',
 
-    &#39;ssn4&#39; =\&gt; &#39;SSN4&#39;,
+    'ssn4' => 'SSN4',
 
-    &#39;dob\_year&#39; =\&gt; &#39;DOB\_Year&#39;,
+    'dob_year' => 'DOB_Year',
 
-    &#39;check\_amount&#39; =\&gt; &#39;Check\_Amount&#39;,
+    'check_amount' => 'Check_Amount',
 
-    &#39;tran\_type&#39; =\&gt; &#39;Tran\_Type&#39;,
+    'tran_type' => 'Tran_Type',
 
-    &#39;proc\_id&#39; =\&gt; &#39;Proc\_ID&#39;,
+    'proc_id' => 'Proc_ID',
 
-    &#39;ip\_address&#39; =\&gt; &#39;IP\_Address&#39;,
+    'ip_address' => 'IP_Address',
 
-    &#39;customer\_number&#39; =\&gt; &#39;CustomerNumber&#39;,
+    'customer_number' => 'CustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;PONumber&#39;,
+    'po_number' => 'PONumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;InvoiceNumber&#39;,
+    'invoice_number' => 'InvoiceNumber',
 
-    &#39;tran\_note&#39; =\&gt; &#39;TranNote&#39;,
+    'tran_note' => 'TranNote',
 
-    &#39;email\_address&#39; =\&gt; &#39;EmailAddress&#39;,
+    'email_address' => 'EmailAddress',
 
-    &#39;sec\_code&#39; =\&gt; &#39;SEC\_Code&#39;,
+    'sec_code' => 'SEC_Code',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;Proc\_Resp&#39;,
+    'proc_resp' => 'Proc_Resp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;Proc\_Code&#39;,
+    'proc_code' => 'Proc_Code',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;Proc\_Mess&#39;
+    'proc_mess' => 'Proc_Mess'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;terminal\_id&#39; =\&gt; &#39;setTerminalId&#39;,
+    'terminal_id' => 'setTerminalId',
 
-    &#39;account\_number&#39; =\&gt; &#39;setAccountNumber&#39;,
+    'account_number' => 'setAccountNumber',
 
-    &#39;account\_type&#39; =\&gt; &#39;setAccountType&#39;,
+    'account_type' => 'setAccountType',
 
-    &#39;check\_number&#39; =\&gt; &#39;setCheckNumber&#39;,
+    'check_number' => 'setCheckNumber',
 
-    &#39;routing\_number&#39; =\&gt; &#39;setRoutingNumber&#39;,
+    'routing_number' => 'setRoutingNumber',
 
-    &#39;micr\_data&#39; =\&gt; &#39;setMicrData&#39;,
+    'micr_data' => 'setMicrData',
 
-    &#39;first\_name&#39; =\&gt; &#39;setFirstName&#39;,
+    'first_name' => 'setFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;setLastName&#39;,
+    'last_name' => 'setLastName',
 
-    &#39;company\_name&#39; =\&gt; &#39;setCompanyName&#39;,
+    'company_name' => 'setCompanyName',
 
-    &#39;address1&#39; =\&gt; &#39;setAddress1&#39;,
+    'address1' => 'setAddress1',
 
-    &#39;address2&#39; =\&gt; &#39;setAddress2&#39;,
+    'address2' => 'setAddress2',
 
-    &#39;city&#39; =\&gt; &#39;setCity&#39;,
+    'city' => 'setCity',
 
-    &#39;state&#39; =\&gt; &#39;setState&#39;,
+    'state' => 'setState',
 
-    &#39;zip&#39; =\&gt; &#39;setZip&#39;,
+    'zip' => 'setZip',
 
-    &#39;phone\_number&#39; =\&gt; &#39;setPhoneNumber&#39;,
+    'phone_number' => 'setPhoneNumber',
 
-    &#39;dl\_number&#39; =\&gt; &#39;setDlNumber&#39;,
+    'dl_number' => 'setDlNumber',
 
-    &#39;dl\_state&#39; =\&gt; &#39;setDlState&#39;,
+    'dl_state' => 'setDlState',
 
-    &#39;courtesy\_card\_id&#39; =\&gt; &#39;setCourtesyCardId&#39;,
+    'courtesy_card_id' => 'setCourtesyCardId',
 
-    &#39;ssn4&#39; =\&gt; &#39;setSsn4&#39;,
+    'ssn4' => 'setSsn4',
 
-    &#39;dob\_year&#39; =\&gt; &#39;setDobYear&#39;,
+    'dob_year' => 'setDobYear',
 
-    &#39;check\_amount&#39; =\&gt; &#39;setCheckAmount&#39;,
+    'check_amount' => 'setCheckAmount',
 
-    &#39;tran\_type&#39; =\&gt; &#39;setTranType&#39;,
+    'tran_type' => 'setTranType',
 
-    &#39;proc\_id&#39; =\&gt; &#39;setProcId&#39;,
+    'proc_id' => 'setProcId',
 
-    &#39;ip\_address&#39; =\&gt; &#39;setIpAddress&#39;,
+    'ip_address' => 'setIpAddress',
 
-    &#39;customer\_number&#39; =\&gt; &#39;setCustomerNumber&#39;,
+    'customer_number' => 'setCustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;setPoNumber&#39;,
+    'po_number' => 'setPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;setInvoiceNumber&#39;,
+    'invoice_number' => 'setInvoiceNumber',
 
-    &#39;tran\_note&#39; =\&gt; &#39;setTranNote&#39;,
+    'tran_note' => 'setTranNote',
 
-    &#39;email\_address&#39; =\&gt; &#39;setEmailAddress&#39;,
+    'email_address' => 'setEmailAddress',
 
-    &#39;sec\_code&#39; =\&gt; &#39;setSecCode&#39;,
+    'sec_code' => 'setSecCode',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;setProcResp&#39;,
+    'proc_resp' => 'setProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;setProcCode&#39;,
+    'proc_code' => 'setProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;setProcMess&#39;
+    'proc_mess' => 'setProcMess'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;terminal\_id&#39; =\&gt; &#39;getTerminalId&#39;,
+    'terminal_id' => 'getTerminalId',
 
-    &#39;account\_number&#39; =\&gt; &#39;getAccountNumber&#39;,
+    'account_number' => 'getAccountNumber',
 
-    &#39;account\_type&#39; =\&gt; &#39;getAccountType&#39;,
+    'account_type' => 'getAccountType',
 
-    &#39;check\_number&#39; =\&gt; &#39;getCheckNumber&#39;,
+    'check_number' => 'getCheckNumber',
 
-    &#39;routing\_number&#39; =\&gt; &#39;getRoutingNumber&#39;,
+    'routing_number' => 'getRoutingNumber',
 
-    &#39;micr\_data&#39; =\&gt; &#39;getMicrData&#39;,
+    'micr_data' => 'getMicrData',
 
-    &#39;first\_name&#39; =\&gt; &#39;getFirstName&#39;,
+    'first_name' => 'getFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;getLastName&#39;,
+    'last_name' => 'getLastName',
 
-    &#39;company\_name&#39; =\&gt; &#39;getCompanyName&#39;,
+    'company_name' => 'getCompanyName',
 
-    &#39;address1&#39; =\&gt; &#39;getAddress1&#39;,
+    'address1' => 'getAddress1',
 
-    &#39;address2&#39; =\&gt; &#39;getAddress2&#39;,
+    'address2' => 'getAddress2',
 
-    &#39;city&#39; =\&gt; &#39;getCity&#39;,
+    'city' => 'getCity',
 
-    &#39;state&#39; =\&gt; &#39;getState&#39;,
+    'state' => 'getState',
 
-    &#39;zip&#39; =\&gt; &#39;getZip&#39;,
+    'zip' => 'getZip',
 
-    &#39;phone\_number&#39; =\&gt; &#39;getPhoneNumber&#39;,
+    'phone_number' => 'getPhoneNumber',
 
-    &#39;dl\_number&#39; =\&gt; &#39;getDlNumber&#39;,
+    'dl_number' => 'getDlNumber',
 
-    &#39;dl\_state&#39; =\&gt; &#39;getDlState&#39;,
+    'dl_state' => 'getDlState',
 
-    &#39;courtesy\_card\_id&#39; =\&gt; &#39;getCourtesyCardId&#39;,
+    'courtesy_card_id' => 'getCourtesyCardId',
 
-    &#39;ssn4&#39; =\&gt; &#39;getSsn4&#39;,
+    'ssn4' => 'getSsn4',
 
-    &#39;dob\_year&#39; =\&gt; &#39;getDobYear&#39;,
+    'dob_year' => 'getDobYear',
 
-    &#39;check\_amount&#39; =\&gt; &#39;getCheckAmount&#39;,
+    'check_amount' => 'getCheckAmount',
 
-    &#39;tran\_type&#39; =\&gt; &#39;getTranType&#39;,
+    'tran_type' => 'getTranType',
 
-    &#39;proc\_id&#39; =\&gt; &#39;getProcId&#39;,
+    'proc_id' => 'getProcId',
 
-    &#39;ip\_address&#39; =\&gt; &#39;getIpAddress&#39;,
+    'ip_address' => 'getIpAddress',
 
-    &#39;customer\_number&#39; =\&gt; &#39;getCustomerNumber&#39;,
+    'customer_number' => 'getCustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;getPoNumber&#39;,
+    'po_number' => 'getPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;getInvoiceNumber&#39;,
+    'invoice_number' => 'getInvoiceNumber',
 
-    &#39;tran\_note&#39; =\&gt; &#39;getTranNote&#39;,
+    'tran_note' => 'getTranNote',
 
-    &#39;email\_address&#39; =\&gt; &#39;getEmailAddress&#39;,
+    'email_address' => 'getEmailAddress',
 
-    &#39;sec\_code&#39; =\&gt; &#39;getSecCode&#39;,
+    'sec_code' => 'getSecCode',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;getProcResp&#39;,
+    'proc_resp' => 'getProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;getProcCode&#39;,
+    'proc_code' => 'getProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;getProcMess&#39;
+    'proc_mess' => 'getProcMess'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;terminal\_id&#39;] = isset($data[&#39;terminal\_id&#39;]) ? $data[&#39;terminal\_id&#39;] : null;
+    $this->container['terminal_id'] = isset($data['terminal_id']) ? $data['terminal_id'] : null;
 
-    $this-\&gt;container[&#39;account\_number&#39;] = isset($data[&#39;account\_number&#39;]) ? $data[&#39;account\_number&#39;] : null;
+    $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
 
-    $this-\&gt;container[&#39;account\_type&#39;] = isset($data[&#39;account\_type&#39;]) ? $data[&#39;account\_type&#39;] : null;
+    $this->container['account_type'] = isset($data['account_type']) ? $data['account_type'] : null;
 
-    $this-\&gt;container[&#39;check\_number&#39;] = isset($data[&#39;check\_number&#39;]) ? $data[&#39;check\_number&#39;] : null;
+    $this->container['check_number'] = isset($data['check_number']) ? $data['check_number'] : null;
 
-    $this-\&gt;container[&#39;routing\_number&#39;] = isset($data[&#39;routing\_number&#39;]) ? $data[&#39;routing\_number&#39;] : null;
+    $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
 
-    $this-\&gt;container[&#39;micr\_data&#39;] = isset($data[&#39;micr\_data&#39;]) ? $data[&#39;micr\_data&#39;] : null;
+    $this->container['micr_data'] = isset($data['micr_data']) ? $data['micr_data'] : null;
 
-    $this-\&gt;container[&#39;first\_name&#39;] = isset($data[&#39;first\_name&#39;]) ? $data[&#39;first\_name&#39;] : null;
+    $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
 
-    $this-\&gt;container[&#39;last\_name&#39;] = isset($data[&#39;last\_name&#39;]) ? $data[&#39;last\_name&#39;] : null;
+    $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
 
-    $this-\&gt;container[&#39;company\_name&#39;] = isset($data[&#39;company\_name&#39;]) ? $data[&#39;company\_name&#39;] : null;
+    $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
 
-    $this-\&gt;container[&#39;address1&#39;] = isset($data[&#39;address1&#39;]) ? $data[&#39;address1&#39;] : null;
+    $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
 
-    $this-\&gt;container[&#39;address2&#39;] = isset($data[&#39;address2&#39;]) ? $data[&#39;address2&#39;] : null;
+    $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
 
-    $this-\&gt;container[&#39;city&#39;] = isset($data[&#39;city&#39;]) ? $data[&#39;city&#39;] : null;
+    $this->container['city'] = isset($data['city']) ? $data['city'] : null;
 
-    $this-\&gt;container[&#39;state&#39;] = isset($data[&#39;state&#39;]) ? $data[&#39;state&#39;] : null;
+    $this->container['state'] = isset($data['state']) ? $data['state'] : null;
 
-    $this-\&gt;container[&#39;zip&#39;] = isset($data[&#39;zip&#39;]) ? $data[&#39;zip&#39;] : null;
+    $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
 
-    $this-\&gt;container[&#39;phone\_number&#39;] = isset($data[&#39;phone\_number&#39;]) ? $data[&#39;phone\_number&#39;] : null;
+    $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
 
-    $this-\&gt;container[&#39;dl\_number&#39;] = isset($data[&#39;dl\_number&#39;]) ? $data[&#39;dl\_number&#39;] : null;
+    $this->container['dl_number'] = isset($data['dl_number']) ? $data['dl_number'] : null;
 
-    $this-\&gt;container[&#39;dl\_state&#39;] = isset($data[&#39;dl\_state&#39;]) ? $data[&#39;dl\_state&#39;] : null;
+    $this->container['dl_state'] = isset($data['dl_state']) ? $data['dl_state'] : null;
 
-    $this-\&gt;container[&#39;courtesy\_card\_id&#39;] = isset($data[&#39;courtesy\_card\_id&#39;]) ? $data[&#39;courtesy\_card\_id&#39;] : null;
+    $this->container['courtesy_card_id'] = isset($data['courtesy_card_id']) ? $data['courtesy_card_id'] : null;
 
-    $this-\&gt;container[&#39;ssn4&#39;] = isset($data[&#39;ssn4&#39;]) ? $data[&#39;ssn4&#39;] : null;
+    $this->container['ssn4'] = isset($data['ssn4']) ? $data['ssn4'] : null;
 
-    $this-\&gt;container[&#39;dob\_year&#39;] = isset($data[&#39;dob\_year&#39;]) ? $data[&#39;dob\_year&#39;] : null;
+    $this->container['dob_year'] = isset($data['dob_year']) ? $data['dob_year'] : null;
 
-    $this-\&gt;container[&#39;check\_amount&#39;] = isset($data[&#39;check\_amount&#39;]) ? $data[&#39;check\_amount&#39;] : null;
+    $this->container['check_amount'] = isset($data['check_amount']) ? $data['check_amount'] : null;
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = isset($data[&#39;tran\_type&#39;]) ? $data[&#39;tran\_type&#39;] : null;
+    $this->container['tran_type'] = isset($data['tran_type']) ? $data['tran_type'] : null;
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = isset($data[&#39;proc\_id&#39;]) ? $data[&#39;proc\_id&#39;] : null;
+    $this->container['proc_id'] = isset($data['proc_id']) ? $data['proc_id'] : null;
 
-    $this-\&gt;container[&#39;ip\_address&#39;] = isset($data[&#39;ip\_address&#39;]) ? $data[&#39;ip\_address&#39;] : null;
+    $this->container['ip_address'] = isset($data['ip_address']) ? $data['ip_address'] : null;
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = isset($data[&#39;customer\_number&#39;]) ? $data[&#39;customer\_number&#39;] : null;
+    $this->container['customer_number'] = isset($data['customer_number']) ? $data['customer_number'] : null;
 
-    $this-\&gt;container[&#39;po\_number&#39;] = isset($data[&#39;po\_number&#39;]) ? $data[&#39;po\_number&#39;] : null;
+    $this->container['po_number'] = isset($data['po_number']) ? $data['po_number'] : null;
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = isset($data[&#39;invoice\_number&#39;]) ? $data[&#39;invoice\_number&#39;] : null;
+    $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = isset($data[&#39;tran\_note&#39;]) ? $data[&#39;tran\_note&#39;] : null;
+    $this->container['tran_note'] = isset($data['tran_note']) ? $data['tran_note'] : null;
 
-    $this-\&gt;container[&#39;email\_address&#39;] = isset($data[&#39;email\_address&#39;]) ? $data[&#39;email\_address&#39;] : null;
+    $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
 
-    $this-\&gt;container[&#39;sec\_code&#39;] = isset($data[&#39;sec\_code&#39;]) ? $data[&#39;sec\_code&#39;] : null;
+    $this->container['sec_code'] = isset($data['sec_code']) ? $data['sec_code'] : null;
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = isset($data[&#39;proc\_resp&#39;]) ? $data[&#39;proc\_resp&#39;] : null;
+    $this->container['proc_resp'] = isset($data['proc_resp']) ? $data['proc_resp'] : null;
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = isset($data[&#39;proc\_code&#39;]) ? $data[&#39;proc\_code&#39;] : null;
+    $this->container['proc_code'] = isset($data['proc_code']) ? $data['proc_code'] : null;
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = isset($data[&#39;proc\_mess&#39;]) ? $data[&#39;proc\_mess&#39;] : null;
+    $this->container['proc_mess'] = isset($data['proc_mess']) ? $data['proc_mess'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetTerminalId()
+    public functiongetTerminalId()
 
     {
 
-    return$this-\&gt;container[&#39;terminal\_id&#39;];
+    return $this->container['terminal_id'];
 
     }
 
-    publicfunctionsetTerminalId($terminal\_id)
+    public functionsetTerminalId($terminal_id)
 
     {
 
-    $this-\&gt;container[&#39;terminal\_id&#39;] = $terminal\_id;
+    $this->container['terminal_id'] = $terminal_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAccountNumber()
+    public functiongetAccountNumber()
 
     {
 
-    return$this-\&gt;container[&#39;account\_number&#39;];
+    return $this->container['account_number'];
 
     }
 
-    publicfunctionsetAccountNumber($account\_number)
+    public functionsetAccountNumber($account_number)
 
     {
 
-    $this-\&gt;container[&#39;account\_number&#39;] = $account\_number;
+    $this->container['account_number'] = $account_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAccountType()
+    public functiongetAccountType()
 
     {
 
-    return$this-\&gt;container[&#39;account\_type&#39;];
+    return $this->container['account_type'];
 
     }
 
-    publicfunctionsetAccountType($account\_type)
+    public functionsetAccountType($account_type)
 
     {
 
-    $this-\&gt;container[&#39;account\_type&#39;] = $account\_type;
+    $this->container['account_type'] = $account_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckNumber()
+    public functiongetCheckNumber()
 
     {
 
-    return$this-\&gt;container[&#39;check\_number&#39;];
+    return $this->container['check_number'];
 
     }
 
-    publicfunctionsetCheckNumber($check\_number)
+    public functionsetCheckNumber($check_number)
 
     {
 
-    $this-\&gt;container[&#39;check\_number&#39;] = $check\_number;
+    $this->container['check_number'] = $check_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetRoutingNumber()
+    public functiongetRoutingNumber()
 
     {
 
-    return$this-\&gt;container[&#39;routing\_number&#39;];
+    return $this->container['routing_number'];
 
     }
 
-    publicfunctionsetRoutingNumber($routing\_number)
+    public functionsetRoutingNumber($routing_number)
 
     {
 
-    $this-\&gt;container[&#39;routing\_number&#39;] = $routing\_number;
+    $this->container['routing_number'] = $routing_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMicrData()
+    public functiongetMicrData()
 
     {
 
-    return$this-\&gt;container[&#39;micr\_data&#39;];
+    return $this->container['micr_data'];
 
     }
 
-    publicfunctionsetMicrData($micr\_data)
+    public functionsetMicrData($micr_data)
 
     {
 
-    $this-\&gt;container[&#39;micr\_data&#39;] = $micr\_data;
+    $this->container['micr_data'] = $micr_data;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFirstName()
+    public functiongetFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;first\_name&#39;];
+    return $this->container['first_name'];
 
     }
 
-    publicfunctionsetFirstName($first\_name)
+    public functionsetFirstName($first_name)
 
     {
 
-    $this-\&gt;container[&#39;first\_name&#39;] = $first\_name;
+    $this->container['first_name'] = $first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetLastName()
+    public functiongetLastName()
 
     {
 
-    return$this-\&gt;container[&#39;last\_name&#39;];
+    return $this->container['last_name'];
 
     }
 
-    publicfunctionsetLastName($last\_name)
+    public functionsetLastName($last_name)
 
     {
 
-    $this-\&gt;container[&#39;last\_name&#39;] = $last\_name;
+    $this->container['last_name'] = $last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCompanyName()
+    public functiongetCompanyName()
 
     {
 
-    return$this-\&gt;container[&#39;company\_name&#39;];
+    return $this->container['company_name'];
 
     }
 
-    publicfunctionsetCompanyName($company\_name)
+    public functionsetCompanyName($company_name)
 
     {
 
-    $this-\&gt;container[&#39;company\_name&#39;] = $company\_name;
+    $this->container['company_name'] = $company_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAddress1()
+    public functiongetAddress1()
 
     {
 
-    return$this-\&gt;container[&#39;address1&#39;];
+    return $this->container['address1'];
 
     }
 
-    publicfunctionsetAddress1($address1)
+    public functionsetAddress1($address1)
 
     {
 
-    $this-\&gt;container[&#39;address1&#39;] = $address1;
+    $this->container['address1'] = $address1;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAddress2()
+    public functiongetAddress2()
 
     {
 
-    return$this-\&gt;container[&#39;address2&#39;];
+    return $this->container['address2'];
 
     }
 
-    publicfunctionsetAddress2($address2)
+    public functionsetAddress2($address2)
 
     {
 
-    $this-\&gt;container[&#39;address2&#39;] = $address2;
+    $this->container['address2'] = $address2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCity()
+    public functiongetCity()
 
     {
 
-    return$this-\&gt;container[&#39;city&#39;];
+    return $this->container['city'];
 
     }
 
-    publicfunctionsetCity($city)
+    public functionsetCity($city)
 
     {
 
-    $this-\&gt;container[&#39;city&#39;] = $city;
+    $this->container['city'] = $city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetState()
+    public functiongetState()
 
     {
 
-    return$this-\&gt;container[&#39;state&#39;];
+    return $this->container['state'];
 
     }
 
-    publicfunctionsetState($state)
+    public functionsetState($state)
 
     {
 
-    $this-\&gt;container[&#39;state&#39;] = $state;
+    $this->container['state'] = $state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetZip()
+    public functiongetZip()
 
     {
 
-    return$this-\&gt;container[&#39;zip&#39;];
+    return $this->container['zip'];
 
     }
 
-    publicfunctionsetZip($zip)
+    public functionsetZip($zip)
 
     {
 
-    $this-\&gt;container[&#39;zip&#39;] = $zip;
+    $this->container['zip'] = $zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPhoneNumber()
+    public functiongetPhoneNumber()
 
     {
 
-    return$this-\&gt;container[&#39;phone\_number&#39;];
+    return $this->container['phone_number'];
 
     }
 
-    publicfunctionsetPhoneNumber($phone\_number)
+    public functionsetPhoneNumber($phone_number)
 
     {
 
-    $this-\&gt;container[&#39;phone\_number&#39;] = $phone\_number;
+    $this->container['phone_number'] = $phone_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDlNumber()
+    public functiongetDlNumber()
 
     {
 
-    return$this-\&gt;container[&#39;dl\_number&#39;];
+    return $this->container['dl_number'];
 
     }
 
-    publicfunctionsetDlNumber($dl\_number)
+    public functionsetDlNumber($dl_number)
 
     {
 
-    $this-\&gt;container[&#39;dl\_number&#39;] = $dl\_number;
+    $this->container['dl_number'] = $dl_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDlState()
+    public functiongetDlState()
 
     {
 
-    return$this-\&gt;container[&#39;dl\_state&#39;];
+    return $this->container['dl_state'];
 
     }
 
-    publicfunctionsetDlState($dl\_state)
+    public functionsetDlState($dl_state)
 
     {
 
-    $this-\&gt;container[&#39;dl\_state&#39;] = $dl\_state;
+    $this->container['dl_state'] = $dl_state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCourtesyCardId()
+    public functiongetCourtesyCardId()
 
     {
 
-    return$this-\&gt;container[&#39;courtesy\_card\_id&#39;];
+    return $this->container['courtesy_card_id'];
 
     }
 
-    publicfunctionsetCourtesyCardId($courtesy\_card\_id)
+    public functionsetCourtesyCardId($courtesy_card_id)
 
     {
 
-    $this-\&gt;container[&#39;courtesy\_card\_id&#39;] = $courtesy\_card\_id;
+    $this->container['courtesy_card_id'] = $courtesy_card_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSsn4()
+    public functiongetSsn4()
 
     {
 
-    return$this-\&gt;container[&#39;ssn4&#39;];
+    return $this->container['ssn4'];
 
     }
 
-    publicfunctionsetSsn4($ssn4)
+    public functionsetSsn4($ssn4)
 
     {
 
-    $this-\&gt;container[&#39;ssn4&#39;] = $ssn4;
+    $this->container['ssn4'] = $ssn4;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDobYear()
+    public functiongetDobYear()
 
     {
 
-    return$this-\&gt;container[&#39;dob\_year&#39;];
+    return $this->container['dob_year'];
 
     }
 
-    publicfunctionsetDobYear($dob\_year)
+    public functionsetDobYear($dob_year)
 
     {
 
-    $this-\&gt;container[&#39;dob\_year&#39;] = $dob\_year;
+    $this->container['dob_year'] = $dob_year;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckAmount()
+    public functiongetCheckAmount()
 
     {
 
-    return$this-\&gt;container[&#39;check\_amount&#39;];
+    return $this->container['check_amount'];
 
     }
 
-    publicfunctionsetCheckAmount($check\_amount)
+    public functionsetCheckAmount($check_amount)
 
     {
 
-    $this-\&gt;container[&#39;check\_amount&#39;] = $check\_amount;
+    $this->container['check_amount'] = $check_amount;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranType()
+    public functiongetTranType()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_type&#39;];
+    return $this->container['tran_type'];
 
     }
 
-    publicfunctionsetTranType($tran\_type)
+    public functionsetTranType($tran_type)
 
     {
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = $tran\_type;
+    $this->container['tran_type'] = $tran_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcId()
+    public functiongetProcId()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_id&#39;];
+    return $this->container['proc_id'];
 
     }
 
-    publicfunctionsetProcId($proc\_id)
+    public functionsetProcId($proc_id)
 
     {
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = $proc\_id;
+    $this->container['proc_id'] = $proc_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetIpAddress()
+    public functiongetIpAddress()
 
     {
 
-    return$this-\&gt;container[&#39;ip\_address&#39;];
+    return $this->container['ip_address'];
 
     }
 
-    publicfunctionsetIpAddress($ip\_address)
+    public functionsetIpAddress($ip_address)
 
     {
 
-    $this-\&gt;container[&#39;ip\_address&#39;] = $ip\_address;
+    $this->container['ip_address'] = $ip_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomerNumber()
+    public functiongetCustomerNumber()
 
     {
 
-    return$this-\&gt;container[&#39;customer\_number&#39;];
+    return $this->container['customer_number'];
 
     }
 
-    publicfunctionsetCustomerNumber($customer\_number)
+    public functionsetCustomerNumber($customer_number)
 
     {
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = $customer\_number;
+    $this->container['customer_number'] = $customer_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPoNumber()
+    public functiongetPoNumber()
 
     {
 
-    return$this-\&gt;container[&#39;po\_number&#39;];
+    return $this->container['po_number'];
 
     }
 
-    publicfunctionsetPoNumber($po\_number)
+    public functionsetPoNumber($po_number)
 
     {
 
-    $this-\&gt;container[&#39;po\_number&#39;] = $po\_number;
+    $this->container['po_number'] = $po_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetInvoiceNumber()
+    public functiongetInvoiceNumber()
 
     {
 
-    return$this-\&gt;container[&#39;invoice\_number&#39;];
+    return $this->container['invoice_number'];
 
     }
 
-    publicfunctionsetInvoiceNumber($invoice\_number)
+    public functionsetInvoiceNumber($invoice_number)
 
     {
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = $invoice\_number;
+    $this->container['invoice_number'] = $invoice_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranNote()
+    public functiongetTranNote()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_note&#39;];
+    return $this->container['tran_note'];
 
     }
 
-    publicfunctionsetTranNote($tran\_note)
+    public functionsetTranNote($tran_note)
 
     {
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = $tran\_note;
+    $this->container['tran_note'] = $tran_note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetEmailAddress()
+    public functiongetEmailAddress()
 
     {
 
-    return$this-\&gt;container[&#39;email\_address&#39;];
+    return $this->container['email_address'];
 
     }
 
-    publicfunctionsetEmailAddress($email\_address)
+    public functionsetEmailAddress($email_address)
 
     {
 
-    $this-\&gt;container[&#39;email\_address&#39;] = $email\_address;
+    $this->container['email_address'] = $email_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSecCode()
+    public functiongetSecCode()
 
     {
 
-    return$this-\&gt;container[&#39;sec\_code&#39;];
+    return $this->container['sec_code'];
 
     }
 
-    publicfunctionsetSecCode($sec\_code)
+    public functionsetSecCode($sec_code)
 
     {
 
-    $this-\&gt;container[&#39;sec\_code&#39;] = $sec\_code;
+    $this->container['sec_code'] = $sec_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcResp()
+    public functiongetProcResp()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_resp&#39;];
+    return $this->container['proc_resp'];
 
     }
 
-    publicfunctionsetProcResp($proc\_resp)
+    public functionsetProcResp($proc_resp)
 
     {
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = $proc\_resp;
+    $this->container['proc_resp'] = $proc_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcCode()
+    public functiongetProcCode()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_code&#39;];
+    return $this->container['proc_code'];
 
     }
 
-    publicfunctionsetProcCode($proc\_code)
+    public functionsetProcCode($proc_code)
 
     {
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = $proc\_code;
+    $this->container['proc_code'] = $proc_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcMess()
+    public functiongetProcMess()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_mess&#39;];
+    return $this->container['proc_mess'];
 
     }
 
-    publicfunctionsetProcMess($proc\_mess)
+    public functionsetProcMess($proc_mess)
 
     {
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = $proc\_mess;
+    $this->container['proc_mess'] = $proc_mess;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -2264,9 +2264,9 @@
 
 # CheckTransactionSettings
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -2278,669 +2278,669 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;CheckTransactionSettings&#39;;
+    protectedstatic$swaggerModelName = 'CheckTransactionSettings';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;reader&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'reader' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;contact\_name&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'contact_name' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;contact\_title&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'contact_title' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;email\_address&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'email_address' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;phone\_default&#39; =\&gt; &#39;string&#39;,
+    'phone_default' => 'string',
 
-    &#39;fax&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'fax' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_address\_default&#39; =\&gt; &#39;string&#39;,
+    'billing_address_default' => 'string',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_address2' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_city\_default&#39; =\&gt; &#39;string&#39;,
+    'billing_city_default' => 'string',
 
-    &#39;billing\_state\_default&#39; =\&gt; &#39;string&#39;,
+    'billing_state_default' => 'string',
 
-    &#39;billing\_zip\_default&#39; =\&gt; &#39;string&#39;,
+    'billing_zip_default' => 'string',
 
-    &#39;po\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'po_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'invoice_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;business\_name&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'business_name' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;customer\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'customer_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;reference\_note&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'reference_note' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;default\_sec\_code&#39; =\&gt; &#39;string&#39;
+    'default_sec_code' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;reader&#39; =\&gt; null,
+    'reader' => null,
 
-    &#39;contact\_name&#39; =\&gt; null,
+    'contact_name' => null,
 
-    &#39;contact\_title&#39; =\&gt; null,
+    'contact_title' => null,
 
-    &#39;email\_address&#39; =\&gt; null,
+    'email_address' => null,
 
-    &#39;phone\_default&#39; =\&gt; null,
+    'phone_default' => null,
 
-    &#39;fax&#39; =\&gt; null,
+    'fax' => null,
 
-    &#39;billing\_address\_default&#39; =\&gt; null,
+    'billing_address_default' => null,
 
-    &#39;billing\_address2&#39; =\&gt; null,
+    'billing_address2' => null,
 
-    &#39;billing\_city\_default&#39; =\&gt; null,
+    'billing_city_default' => null,
 
-    &#39;billing\_state\_default&#39; =\&gt; null,
+    'billing_state_default' => null,
 
-    &#39;billing\_zip\_default&#39; =\&gt; null,
+    'billing_zip_default' => null,
 
-    &#39;po\_number&#39; =\&gt; null,
+    'po_number' => null,
 
-    &#39;invoice\_number&#39; =\&gt; null,
+    'invoice_number' => null,
 
-    &#39;business\_name&#39; =\&gt; null,
+    'business_name' => null,
 
-    &#39;customer\_number&#39; =\&gt; null,
+    'customer_number' => null,
 
-    &#39;reference\_note&#39; =\&gt; null,
+    'reference_note' => null,
 
-    &#39;default\_sec\_code&#39; =\&gt; null
+    'default_sec_code' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;reader&#39; =\&gt; &#39;Reader&#39;,
+    'reader' => 'Reader',
 
-    &#39;contact\_name&#39; =\&gt; &#39;ContactName&#39;,
+    'contact_name' => 'ContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;ContactTitle&#39;,
+    'contact_title' => 'ContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;EmailAddress&#39;,
+    'email_address' => 'EmailAddress',
 
-    &#39;phone\_default&#39; =\&gt; &#39;PhoneDefault&#39;,
+    'phone_default' => 'PhoneDefault',
 
-    &#39;fax&#39; =\&gt; &#39;Fax&#39;,
+    'fax' => 'Fax',
 
-    &#39;billing\_address\_default&#39; =\&gt; &#39;BillingAddressDefault&#39;,
+    'billing_address_default' => 'BillingAddressDefault',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;BillingAddress2&#39;,
+    'billing_address2' => 'BillingAddress2',
 
-    &#39;billing\_city\_default&#39; =\&gt; &#39;BillingCityDefault&#39;,
+    'billing_city_default' => 'BillingCityDefault',
 
-    &#39;billing\_state\_default&#39; =\&gt; &#39;BillingStateDefault&#39;,
+    'billing_state_default' => 'BillingStateDefault',
 
-    &#39;billing\_zip\_default&#39; =\&gt; &#39;BillingZipDefault&#39;,
+    'billing_zip_default' => 'BillingZipDefault',
 
-    &#39;po\_number&#39; =\&gt; &#39;PONumber&#39;,
+    'po_number' => 'PONumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;InvoiceNumber&#39;,
+    'invoice_number' => 'InvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;BusinessName&#39;,
+    'business_name' => 'BusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;CustomerNumber&#39;,
+    'customer_number' => 'CustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;ReferenceNote&#39;,
+    'reference_note' => 'ReferenceNote',
 
-    &#39;default\_sec\_code&#39; =\&gt; &#39;DefaultSECCode&#39;
+    'default_sec_code' => 'DefaultSECCode'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;reader&#39; =\&gt; &#39;setReader&#39;,
+    'reader' => 'setReader',
 
-    &#39;contact\_name&#39; =\&gt; &#39;setContactName&#39;,
+    'contact_name' => 'setContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;setContactTitle&#39;,
+    'contact_title' => 'setContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;setEmailAddress&#39;,
+    'email_address' => 'setEmailAddress',
 
-    &#39;phone\_default&#39; =\&gt; &#39;setPhoneDefault&#39;,
+    'phone_default' => 'setPhoneDefault',
 
-    &#39;fax&#39; =\&gt; &#39;setFax&#39;,
+    'fax' => 'setFax',
 
-    &#39;billing\_address\_default&#39; =\&gt; &#39;setBillingAddressDefault&#39;,
+    'billing_address_default' => 'setBillingAddressDefault',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;setBillingAddress2&#39;,
+    'billing_address2' => 'setBillingAddress2',
 
-    &#39;billing\_city\_default&#39; =\&gt; &#39;setBillingCityDefault&#39;,
+    'billing_city_default' => 'setBillingCityDefault',
 
-    &#39;billing\_state\_default&#39; =\&gt; &#39;setBillingStateDefault&#39;,
+    'billing_state_default' => 'setBillingStateDefault',
 
-    &#39;billing\_zip\_default&#39; =\&gt; &#39;setBillingZipDefault&#39;,
+    'billing_zip_default' => 'setBillingZipDefault',
 
-    &#39;po\_number&#39; =\&gt; &#39;setPoNumber&#39;,
+    'po_number' => 'setPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;setInvoiceNumber&#39;,
+    'invoice_number' => 'setInvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;setBusinessName&#39;,
+    'business_name' => 'setBusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;setCustomerNumber&#39;,
+    'customer_number' => 'setCustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;setReferenceNote&#39;,
+    'reference_note' => 'setReferenceNote',
 
-    &#39;default\_sec\_code&#39; =\&gt; &#39;setDefaultSecCode&#39;
+    'default_sec_code' => 'setDefaultSecCode'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;reader&#39; =\&gt; &#39;getReader&#39;,
+    'reader' => 'getReader',
 
-    &#39;contact\_name&#39; =\&gt; &#39;getContactName&#39;,
+    'contact_name' => 'getContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;getContactTitle&#39;,
+    'contact_title' => 'getContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;getEmailAddress&#39;,
+    'email_address' => 'getEmailAddress',
 
-    &#39;phone\_default&#39; =\&gt; &#39;getPhoneDefault&#39;,
+    'phone_default' => 'getPhoneDefault',
 
-    &#39;fax&#39; =\&gt; &#39;getFax&#39;,
+    'fax' => 'getFax',
 
-    &#39;billing\_address\_default&#39; =\&gt; &#39;getBillingAddressDefault&#39;,
+    'billing_address_default' => 'getBillingAddressDefault',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;getBillingAddress2&#39;,
+    'billing_address2' => 'getBillingAddress2',
 
-    &#39;billing\_city\_default&#39; =\&gt; &#39;getBillingCityDefault&#39;,
+    'billing_city_default' => 'getBillingCityDefault',
 
-    &#39;billing\_state\_default&#39; =\&gt; &#39;getBillingStateDefault&#39;,
+    'billing_state_default' => 'getBillingStateDefault',
 
-    &#39;billing\_zip\_default&#39; =\&gt; &#39;getBillingZipDefault&#39;,
+    'billing_zip_default' => 'getBillingZipDefault',
 
-    &#39;po\_number&#39; =\&gt; &#39;getPoNumber&#39;,
+    'po_number' => 'getPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;getInvoiceNumber&#39;,
+    'invoice_number' => 'getInvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;getBusinessName&#39;,
+    'business_name' => 'getBusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;getCustomerNumber&#39;,
+    'customer_number' => 'getCustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;getReferenceNote&#39;,
+    'reference_note' => 'getReferenceNote',
 
-    &#39;default\_sec\_code&#39; =\&gt; &#39;getDefaultSecCode&#39;
+    'default_sec_code' => 'getDefaultSecCode'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;reader&#39;] = isset($data[&#39;reader&#39;]) ? $data[&#39;reader&#39;] : null;
+    $this->container['reader'] = isset($data['reader']) ? $data['reader'] : null;
 
-    $this-\&gt;container[&#39;contact\_name&#39;] = isset($data[&#39;contact\_name&#39;]) ? $data[&#39;contact\_name&#39;] : null;
+    $this->container['contact_name'] = isset($data['contact_name']) ? $data['contact_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = isset($data[&#39;contact\_title&#39;]) ? $data[&#39;contact\_title&#39;] : null;
+    $this->container['contact_title'] = isset($data['contact_title']) ? $data['contact_title'] : null;
 
-    $this-\&gt;container[&#39;email\_address&#39;] = isset($data[&#39;email\_address&#39;]) ? $data[&#39;email\_address&#39;] : null;
+    $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
 
-    $this-\&gt;container[&#39;phone\_default&#39;] = isset($data[&#39;phone\_default&#39;]) ? $data[&#39;phone\_default&#39;] : null;
+    $this->container['phone_default'] = isset($data['phone_default']) ? $data['phone_default'] : null;
 
-    $this-\&gt;container[&#39;fax&#39;] = isset($data[&#39;fax&#39;]) ? $data[&#39;fax&#39;] : null;
+    $this->container['fax'] = isset($data['fax']) ? $data['fax'] : null;
 
-    $this-\&gt;container[&#39;billing\_address\_default&#39;] = isset($data[&#39;billing\_address\_default&#39;]) ? $data[&#39;billing\_address\_default&#39;] : null;
+    $this->container['billing_address_default'] = isset($data['billing_address_default']) ? $data['billing_address_default'] : null;
 
-    $this-\&gt;container[&#39;billing\_address2&#39;] = isset($data[&#39;billing\_address2&#39;]) ? $data[&#39;billing\_address2&#39;] : null;
+    $this->container['billing_address2'] = isset($data['billing_address2']) ? $data['billing_address2'] : null;
 
-    $this-\&gt;container[&#39;billing\_city\_default&#39;] = isset($data[&#39;billing\_city\_default&#39;]) ? $data[&#39;billing\_city\_default&#39;] : null;
+    $this->container['billing_city_default'] = isset($data['billing_city_default']) ? $data['billing_city_default'] : null;
 
-    $this-\&gt;container[&#39;billing\_state\_default&#39;] = isset($data[&#39;billing\_state\_default&#39;]) ? $data[&#39;billing\_state\_default&#39;] : null;
+    $this->container['billing_state_default'] = isset($data['billing_state_default']) ? $data['billing_state_default'] : null;
 
-    $this-\&gt;container[&#39;billing\_zip\_default&#39;] = isset($data[&#39;billing\_zip\_default&#39;]) ? $data[&#39;billing\_zip\_default&#39;] : null;
+    $this->container['billing_zip_default'] = isset($data['billing_zip_default']) ? $data['billing_zip_default'] : null;
 
-    $this-\&gt;container[&#39;po\_number&#39;] = isset($data[&#39;po\_number&#39;]) ? $data[&#39;po\_number&#39;] : null;
+    $this->container['po_number'] = isset($data['po_number']) ? $data['po_number'] : null;
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = isset($data[&#39;invoice\_number&#39;]) ? $data[&#39;invoice\_number&#39;] : null;
+    $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
 
-    $this-\&gt;container[&#39;business\_name&#39;] = isset($data[&#39;business\_name&#39;]) ? $data[&#39;business\_name&#39;] : null;
+    $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = isset($data[&#39;customer\_number&#39;]) ? $data[&#39;customer\_number&#39;] : null;
+    $this->container['customer_number'] = isset($data['customer_number']) ? $data['customer_number'] : null;
 
-    $this-\&gt;container[&#39;reference\_note&#39;] = isset($data[&#39;reference\_note&#39;]) ? $data[&#39;reference\_note&#39;] : null;
+    $this->container['reference_note'] = isset($data['reference_note']) ? $data['reference_note'] : null;
 
-    $this-\&gt;container[&#39;default\_sec\_code&#39;] = isset($data[&#39;default\_sec\_code&#39;]) ? $data[&#39;default\_sec\_code&#39;] : null;
+    $this->container['default_sec_code'] = isset($data['default_sec_code']) ? $data['default_sec_code'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetReader()
+    public functiongetReader()
 
     {
 
-    return$this-\&gt;container[&#39;reader&#39;];
+    return $this->container['reader'];
 
     }
 
-    publicfunctionsetReader($reader)
+    public functionsetReader($reader)
 
     {
 
-    $this-\&gt;container[&#39;reader&#39;] = $reader;
+    $this->container['reader'] = $reader;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactName()
+    public functiongetContactName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_name&#39;];
+    return $this->container['contact_name'];
 
     }
 
-    publicfunctionsetContactName($contact\_name)
+    public functionsetContactName($contact_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_name&#39;] = $contact\_name;
+    $this->container['contact_name'] = $contact_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactTitle()
+    public functiongetContactTitle()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_title&#39;];
+    return $this->container['contact_title'];
 
     }
 
-    publicfunctionsetContactTitle($contact\_title)
+    public functionsetContactTitle($contact_title)
 
     {
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = $contact\_title;
+    $this->container['contact_title'] = $contact_title;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetEmailAddress()
+    public functiongetEmailAddress()
 
     {
 
-    return$this-\&gt;container[&#39;email\_address&#39;];
+    return $this->container['email_address'];
 
     }
 
-    publicfunctionsetEmailAddress($email\_address)
+    public functionsetEmailAddress($email_address)
 
     {
 
-    $this-\&gt;container[&#39;email\_address&#39;] = $email\_address;
+    $this->container['email_address'] = $email_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPhoneDefault()
+    public functiongetPhoneDefault()
 
     {
 
-    return$this-\&gt;container[&#39;phone\_default&#39;];
+    return $this->container['phone_default'];
 
     }
 
-    publicfunctionsetPhoneDefault($phone\_default)
+    public functionsetPhoneDefault($phone_default)
 
     {
 
-    $this-\&gt;container[&#39;phone\_default&#39;] = $phone\_default;
+    $this->container['phone_default'] = $phone_default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFax()
+    public functiongetFax()
 
     {
 
-    return$this-\&gt;container[&#39;fax&#39;];
+    return $this->container['fax'];
 
     }
 
-    publicfunctionsetFax($fax)
+    public functionsetFax($fax)
 
     {
 
-    $this-\&gt;container[&#39;fax&#39;] = $fax;
+    $this->container['fax'] = $fax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingAddressDefault()
+    public functiongetBillingAddressDefault()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_address\_default&#39;];
+    return $this->container['billing_address_default'];
 
     }
 
-    publicfunctionsetBillingAddressDefault($billing\_address\_default)
+    public functionsetBillingAddressDefault($billing_address_default)
 
     {
 
-    $this-\&gt;container[&#39;billing\_address\_default&#39;] = $billing\_address\_default;
+    $this->container['billing_address_default'] = $billing_address_default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingAddress2()
+    public functiongetBillingAddress2()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_address2&#39;];
+    return $this->container['billing_address2'];
 
     }
 
-    publicfunctionsetBillingAddress2($billing\_address2)
+    public functionsetBillingAddress2($billing_address2)
 
     {
 
-    $this-\&gt;container[&#39;billing\_address2&#39;] = $billing\_address2;
+    $this->container['billing_address2'] = $billing_address2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingCityDefault()
+    public functiongetBillingCityDefault()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_city\_default&#39;];
+    return $this->container['billing_city_default'];
 
     }
 
-    publicfunctionsetBillingCityDefault($billing\_city\_default)
+    public functionsetBillingCityDefault($billing_city_default)
 
     {
 
-    $this-\&gt;container[&#39;billing\_city\_default&#39;] = $billing\_city\_default;
+    $this->container['billing_city_default'] = $billing_city_default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingStateDefault()
+    public functiongetBillingStateDefault()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_state\_default&#39;];
+    return $this->container['billing_state_default'];
 
     }
 
-    publicfunctionsetBillingStateDefault($billing\_state\_default)
+    public functionsetBillingStateDefault($billing_state_default)
 
     {
 
-    $this-\&gt;container[&#39;billing\_state\_default&#39;] = $billing\_state\_default;
+    $this->container['billing_state_default'] = $billing_state_default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingZipDefault()
+    public functiongetBillingZipDefault()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_zip\_default&#39;];
+    return $this->container['billing_zip_default'];
 
     }
 
-    publicfunctionsetBillingZipDefault($billing\_zip\_default)
+    public functionsetBillingZipDefault($billing_zip_default)
 
     {
 
-    $this-\&gt;container[&#39;billing\_zip\_default&#39;] = $billing\_zip\_default;
+    $this->container['billing_zip_default'] = $billing_zip_default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPoNumber()
+    public functiongetPoNumber()
 
     {
 
-    return$this-\&gt;container[&#39;po\_number&#39;];
+    return $this->container['po_number'];
 
     }
 
-    publicfunctionsetPoNumber($po\_number)
+    public functionsetPoNumber($po_number)
 
     {
 
-    $this-\&gt;container[&#39;po\_number&#39;] = $po\_number;
+    $this->container['po_number'] = $po_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetInvoiceNumber()
+    public functiongetInvoiceNumber()
 
     {
 
-    return$this-\&gt;container[&#39;invoice\_number&#39;];
+    return $this->container['invoice_number'];
 
     }
 
-    publicfunctionsetInvoiceNumber($invoice\_number)
+    public functionsetInvoiceNumber($invoice_number)
 
     {
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = $invoice\_number;
+    $this->container['invoice_number'] = $invoice_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessName()
+    public functiongetBusinessName()
 
     {
 
-    return$this-\&gt;container[&#39;business\_name&#39;];
+    return $this->container['business_name'];
 
     }
 
-    publicfunctionsetBusinessName($business\_name)
+    public functionsetBusinessName($business_name)
 
     {
 
-    $this-\&gt;container[&#39;business\_name&#39;] = $business\_name;
+    $this->container['business_name'] = $business_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomerNumber()
+    public functiongetCustomerNumber()
 
     {
 
-    return$this-\&gt;container[&#39;customer\_number&#39;];
+    return $this->container['customer_number'];
 
     }
 
-    publicfunctionsetCustomerNumber($customer\_number)
+    public functionsetCustomerNumber($customer_number)
 
     {
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = $customer\_number;
+    $this->container['customer_number'] = $customer_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReferenceNote()
+    public functiongetReferenceNote()
 
     {
 
-    return$this-\&gt;container[&#39;reference\_note&#39;];
+    return $this->container['reference_note'];
 
     }
 
-    publicfunctionsetReferenceNote($reference\_note)
+    public functionsetReferenceNote($reference_note)
 
     {
 
-    $this-\&gt;container[&#39;reference\_note&#39;] = $reference\_note;
+    $this->container['reference_note'] = $reference_note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDefaultSecCode()
+    public functiongetDefaultSecCode()
 
     {
 
-    return$this-\&gt;container[&#39;default\_sec\_code&#39;];
+    return $this->container['default_sec_code'];
 
     }
 
-    publicfunctionsetDefaultSecCode($default\_sec\_code)
+    public functionsetDefaultSecCode($default_sec_code)
 
     {
 
-    $this-\&gt;container[&#39;default\_sec\_code&#39;] = $default\_sec\_code;
+    $this->container['default_sec_code'] = $default_sec_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -2948,9 +2948,9 @@
 
 # CheckTransactionType
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use \Swagger\Client\ObjectSerializer;
 
@@ -2958,21 +2958,21 @@
 
     {
 
-    const UNKNOWN = &#39;Unknown&#39;;
+    const UNKNOWN = 'Unknown';
 
-    const AUTHORIZE = &#39;Authorize&#39;;
+    const AUTHORIZE = 'Authorize';
 
-    const VOID = &#39;Void&#39;;
+    const void = 'void ';
 
-    const OVERRIDE = &#39;Override&#39;;
+    const OVERRIDE = 'Override';
 
-    const PAYROLL = &#39;Payroll&#39;;
+    const PAYROLL = 'Payroll';
 
-    const RECURRING = &#39;Recurring&#39;;
+    const RECURRING = 'Recurring';
 
-    const REFUND = &#39;Refund&#39;;
+    const REFUND = 'Refund';
 
-    publicstaticfunctiongetAllowableEnumValues()
+    public staticfunctiongetAllowableEnumValues()
 
     {
 
@@ -2982,7 +2982,7 @@
 
     self::AUTHORIZE,
 
-    self::VOID,
+    self::void ,
 
     self::OVERRIDE,
 
@@ -3000,9 +3000,9 @@
 
 # Contact
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -3014,339 +3014,339 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Contact&#39;;
+    protectedstatic$swaggerModelName = 'Contact';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;first\_name&#39; =\&gt; &#39;string&#39;,
+    'first_name' => 'string',
 
-    &#39;last\_name&#39; =\&gt; &#39;string&#39;,
+    'last_name' => 'string',
 
-    &#39;name&#39; =\&gt; &#39;string&#39;,
+    'name' => 'string',
 
-    &#39;title&#39; =\&gt; &#39;string&#39;,
+    'title' => 'string',
 
-    &#39;phone&#39; =\&gt; &#39;string&#39;,
+    'phone' => 'string',
 
-    &#39;email&#39; =\&gt; &#39;string&#39;
+    'email' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;first\_name&#39; =\&gt; null,
+    'first_name' => null,
 
-    &#39;last\_name&#39; =\&gt; null,
+    'last_name' => null,
 
-    &#39;name&#39; =\&gt; null,
+    'name' => null,
 
-    &#39;title&#39; =\&gt; null,
+    'title' => null,
 
-    &#39;phone&#39; =\&gt; null,
+    'phone' => null,
 
-    &#39;email&#39; =\&gt; null
+    'email' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;first\_name&#39; =\&gt; &#39;FirstName&#39;,
+    'first_name' => 'FirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;LastName&#39;,
+    'last_name' => 'LastName',
 
-    &#39;name&#39; =\&gt; &#39;Name&#39;,
+    'name' => 'Name',
 
-    &#39;title&#39; =\&gt; &#39;Title&#39;,
+    'title' => 'Title',
 
-    &#39;phone&#39; =\&gt; &#39;Phone&#39;,
+    'phone' => 'Phone',
 
-    &#39;email&#39; =\&gt; &#39;Email&#39;
+    'email' => 'Email'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;first\_name&#39; =\&gt; &#39;setFirstName&#39;,
+    'first_name' => 'setFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;setLastName&#39;,
+    'last_name' => 'setLastName',
 
-    &#39;name&#39; =\&gt; &#39;setName&#39;,
+    'name' => 'setName',
 
-    &#39;title&#39; =\&gt; &#39;setTitle&#39;,
+    'title' => 'setTitle',
 
-    &#39;phone&#39; =\&gt; &#39;setPhone&#39;,
+    'phone' => 'setPhone',
 
-    &#39;email&#39; =\&gt; &#39;setEmail&#39;
+    'email' => 'setEmail'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;first\_name&#39; =\&gt; &#39;getFirstName&#39;,
+    'first_name' => 'getFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;getLastName&#39;,
+    'last_name' => 'getLastName',
 
-    &#39;name&#39; =\&gt; &#39;getName&#39;,
+    'name' => 'getName',
 
-    &#39;title&#39; =\&gt; &#39;getTitle&#39;,
+    'title' => 'getTitle',
 
-    &#39;phone&#39; =\&gt; &#39;getPhone&#39;,
+    'phone' => 'getPhone',
 
-    &#39;email&#39; =\&gt; &#39;getEmail&#39;
+    'email' => 'getEmail'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;first\_name&#39;] = isset($data[&#39;first\_name&#39;]) ? $data[&#39;first\_name&#39;] : null;
+    $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
 
-    $this-\&gt;container[&#39;last\_name&#39;] = isset($data[&#39;last\_name&#39;]) ? $data[&#39;last\_name&#39;] : null;
+    $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
 
-    $this-\&gt;container[&#39;name&#39;] = isset($data[&#39;name&#39;]) ? $data[&#39;name&#39;] : null;
+    $this->container['name'] = isset($data['name']) ? $data['name'] : null;
 
-    $this-\&gt;container[&#39;title&#39;] = isset($data[&#39;title&#39;]) ? $data[&#39;title&#39;] : null;
+    $this->container['title'] = isset($data['title']) ? $data['title'] : null;
 
-    $this-\&gt;container[&#39;phone&#39;] = isset($data[&#39;phone&#39;]) ? $data[&#39;phone&#39;] : null;
+    $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
 
-    $this-\&gt;container[&#39;email&#39;] = isset($data[&#39;email&#39;]) ? $data[&#39;email&#39;] : null;
+    $this->container['email'] = isset($data['email']) ? $data['email'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetFirstName()
+    public functiongetFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;first\_name&#39;];
+    return $this->container['first_name'];
 
     }
 
-    publicfunctionsetFirstName($first\_name)
+    public functionsetFirstName($first_name)
 
     {
 
-    $this-\&gt;container[&#39;first\_name&#39;] = $first\_name;
+    $this->container['first_name'] = $first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetLastName()
+    public functiongetLastName()
 
     {
 
-    return$this-\&gt;container[&#39;last\_name&#39;];
+    return $this->container['last_name'];
 
     }
 
-    publicfunctionsetLastName($last\_name)
+    public functionsetLastName($last_name)
 
     {
 
-    $this-\&gt;container[&#39;last\_name&#39;] = $last\_name;
+    $this->container['last_name'] = $last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetName()
+    public functiongetName()
 
     {
 
-    return$this-\&gt;container[&#39;name&#39;];
+    return $this->container['name'];
 
     }
 
-    publicfunctionsetName($name)
+    public functionsetName($name)
 
     {
 
-    $this-\&gt;container[&#39;name&#39;] = $name;
+    $this->container['name'] = $name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTitle()
+    public functiongetTitle()
 
     {
 
-    return$this-\&gt;container[&#39;title&#39;];
+    return $this->container['title'];
 
     }
 
-    publicfunctionsetTitle($title)
+    public functionsetTitle($title)
 
     {
 
-    $this-\&gt;container[&#39;title&#39;] = $title;
+    $this->container['title'] = $title;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPhone()
+    public functiongetPhone()
 
     {
 
-    return$this-\&gt;container[&#39;phone&#39;];
+    return $this->container['phone'];
 
     }
 
-    publicfunctionsetPhone($phone)
+    public functionsetPhone($phone)
 
     {
 
-    $this-\&gt;container[&#39;phone&#39;] = $phone;
+    $this->container['phone'] = $phone;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetEmail()
+    public functiongetEmail()
 
     {
 
-    return$this-\&gt;container[&#39;email&#39;];
+    return $this->container['email'];
 
     }
 
-    publicfunctionsetEmail($email)
+    public functionsetEmail($email)
 
     {
 
-    $this-\&gt;container[&#39;email&#39;] = $email;
+    $this->container['email'] = $email;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -3354,9 +3354,9 @@
 
 # CreditCardTransactionSettings
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -3368,849 +3368,849 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;CreditCardTransactionSettings&#39;;
+    protectedstatic$swaggerModelName = 'CreditCardTransactionSettings';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;cvv&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'cvv' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;contact\_name&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'contact_name' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;contact\_title&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'contact_title' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;email\_address&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'email_address' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;phone&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'phone' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;fax&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'fax' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_address&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_address' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_address2' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_city&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_city' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_state&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_state' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;billing\_zip&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'billing_zip' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;po\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'po_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'invoice_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;business\_name&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'business_name' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;customer\_number&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'customer_number' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;reference\_note&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'reference_note' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;sales\_tax&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'sales_tax' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'tax_exempt' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;card\_tracks&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'card_tracks' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;card\_zip&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'card_zip' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;card\_address&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;,
+    'card_address' => '\Swagger\Client\Model\FieldInfo',
 
-    &#39;item\_description&#39; =\&gt; &#39;string&#39;,
+    'item_description' => 'string',
 
-    &#39;default\_transaction\_type&#39; =\&gt; &#39;\Swagger\Client\Model\TransactionType&#39;
+    'default_transaction_type' => '\Swagger\Client\Model\TransactionType'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;cvv&#39; =\&gt; null,
+    'cvv' => null,
 
-    &#39;contact\_name&#39; =\&gt; null,
+    'contact_name' => null,
 
-    &#39;contact\_title&#39; =\&gt; null,
+    'contact_title' => null,
 
-    &#39;email\_address&#39; =\&gt; null,
+    'email_address' => null,
 
-    &#39;phone&#39; =\&gt; null,
+    'phone' => null,
 
-    &#39;fax&#39; =\&gt; null,
+    'fax' => null,
 
-    &#39;billing\_address&#39; =\&gt; null,
+    'billing_address' => null,
 
-    &#39;billing\_address2&#39; =\&gt; null,
+    'billing_address2' => null,
 
-    &#39;billing\_city&#39; =\&gt; null,
+    'billing_city' => null,
 
-    &#39;billing\_state&#39; =\&gt; null,
+    'billing_state' => null,
 
-    &#39;billing\_zip&#39; =\&gt; null,
+    'billing_zip' => null,
 
-    &#39;po\_number&#39; =\&gt; null,
+    'po_number' => null,
 
-    &#39;invoice\_number&#39; =\&gt; null,
+    'invoice_number' => null,
 
-    &#39;business\_name&#39; =\&gt; null,
+    'business_name' => null,
 
-    &#39;customer\_number&#39; =\&gt; null,
+    'customer_number' => null,
 
-    &#39;reference\_note&#39; =\&gt; null,
+    'reference_note' => null,
 
-    &#39;sales\_tax&#39; =\&gt; null,
+    'sales_tax' => null,
 
-    &#39;tax\_exempt&#39; =\&gt; null,
+    'tax_exempt' => null,
 
-    &#39;card\_tracks&#39; =\&gt; null,
+    'card_tracks' => null,
 
-    &#39;card\_zip&#39; =\&gt; null,
+    'card_zip' => null,
 
-    &#39;card\_address&#39; =\&gt; null,
+    'card_address' => null,
 
-    &#39;item\_description&#39; =\&gt; null,
+    'item_description' => null,
 
-    &#39;default\_transaction\_type&#39; =\&gt; null
+    'default_transaction_type' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;cvv&#39; =\&gt; &#39;CVV&#39;,
+    'cvv' => 'CVV',
 
-    &#39;contact\_name&#39; =\&gt; &#39;ContactName&#39;,
+    'contact_name' => 'ContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;ContactTitle&#39;,
+    'contact_title' => 'ContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;EmailAddress&#39;,
+    'email_address' => 'EmailAddress',
 
-    &#39;phone&#39; =\&gt; &#39;Phone&#39;,
+    'phone' => 'Phone',
 
-    &#39;fax&#39; =\&gt; &#39;Fax&#39;,
+    'fax' => 'Fax',
 
-    &#39;billing\_address&#39; =\&gt; &#39;BillingAddress&#39;,
+    'billing_address' => 'BillingAddress',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;BillingAddress2&#39;,
+    'billing_address2' => 'BillingAddress2',
 
-    &#39;billing\_city&#39; =\&gt; &#39;BillingCity&#39;,
+    'billing_city' => 'BillingCity',
 
-    &#39;billing\_state&#39; =\&gt; &#39;BillingState&#39;,
+    'billing_state' => 'BillingState',
 
-    &#39;billing\_zip&#39; =\&gt; &#39;BillingZip&#39;,
+    'billing_zip' => 'BillingZip',
 
-    &#39;po\_number&#39; =\&gt; &#39;PONumber&#39;,
+    'po_number' => 'PONumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;InvoiceNumber&#39;,
+    'invoice_number' => 'InvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;BusinessName&#39;,
+    'business_name' => 'BusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;CustomerNumber&#39;,
+    'customer_number' => 'CustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;ReferenceNote&#39;,
+    'reference_note' => 'ReferenceNote',
 
-    &#39;sales\_tax&#39; =\&gt; &#39;SalesTax&#39;,
+    'sales_tax' => 'SalesTax',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;TaxExempt&#39;,
+    'tax_exempt' => 'TaxExempt',
 
-    &#39;card\_tracks&#39; =\&gt; &#39;CardTracks&#39;,
+    'card_tracks' => 'CardTracks',
 
-    &#39;card\_zip&#39; =\&gt; &#39;CardZip&#39;,
+    'card_zip' => 'CardZip',
 
-    &#39;card\_address&#39; =\&gt; &#39;CardAddress&#39;,
+    'card_address' => 'CardAddress',
 
-    &#39;item\_description&#39; =\&gt; &#39;ItemDescription&#39;,
+    'item_description' => 'ItemDescription',
 
-    &#39;default\_transaction\_type&#39; =\&gt; &#39;DefaultTransactionType&#39;
+    'default_transaction_type' => 'DefaultTransactionType'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;cvv&#39; =\&gt; &#39;setCvv&#39;,
+    'cvv' => 'setCvv',
 
-    &#39;contact\_name&#39; =\&gt; &#39;setContactName&#39;,
+    'contact_name' => 'setContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;setContactTitle&#39;,
+    'contact_title' => 'setContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;setEmailAddress&#39;,
+    'email_address' => 'setEmailAddress',
 
-    &#39;phone&#39; =\&gt; &#39;setPhone&#39;,
+    'phone' => 'setPhone',
 
-    &#39;fax&#39; =\&gt; &#39;setFax&#39;,
+    'fax' => 'setFax',
 
-    &#39;billing\_address&#39; =\&gt; &#39;setBillingAddress&#39;,
+    'billing_address' => 'setBillingAddress',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;setBillingAddress2&#39;,
+    'billing_address2' => 'setBillingAddress2',
 
-    &#39;billing\_city&#39; =\&gt; &#39;setBillingCity&#39;,
+    'billing_city' => 'setBillingCity',
 
-    &#39;billing\_state&#39; =\&gt; &#39;setBillingState&#39;,
+    'billing_state' => 'setBillingState',
 
-    &#39;billing\_zip&#39; =\&gt; &#39;setBillingZip&#39;,
+    'billing_zip' => 'setBillingZip',
 
-    &#39;po\_number&#39; =\&gt; &#39;setPoNumber&#39;,
+    'po_number' => 'setPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;setInvoiceNumber&#39;,
+    'invoice_number' => 'setInvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;setBusinessName&#39;,
+    'business_name' => 'setBusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;setCustomerNumber&#39;,
+    'customer_number' => 'setCustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;setReferenceNote&#39;,
+    'reference_note' => 'setReferenceNote',
 
-    &#39;sales\_tax&#39; =\&gt; &#39;setSalesTax&#39;,
+    'sales_tax' => 'setSalesTax',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;setTaxExempt&#39;,
+    'tax_exempt' => 'setTaxExempt',
 
-    &#39;card\_tracks&#39; =\&gt; &#39;setCardTracks&#39;,
+    'card_tracks' => 'setCardTracks',
 
-    &#39;card\_zip&#39; =\&gt; &#39;setCardZip&#39;,
+    'card_zip' => 'setCardZip',
 
-    &#39;card\_address&#39; =\&gt; &#39;setCardAddress&#39;,
+    'card_address' => 'setCardAddress',
 
-    &#39;item\_description&#39; =\&gt; &#39;setItemDescription&#39;,
+    'item_description' => 'setItemDescription',
 
-    &#39;default\_transaction\_type&#39; =\&gt; &#39;setDefaultTransactionType&#39;
+    'default_transaction_type' => 'setDefaultTransactionType'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;cvv&#39; =\&gt; &#39;getCvv&#39;,
+    'cvv' => 'getCvv',
 
-    &#39;contact\_name&#39; =\&gt; &#39;getContactName&#39;,
+    'contact_name' => 'getContactName',
 
-    &#39;contact\_title&#39; =\&gt; &#39;getContactTitle&#39;,
+    'contact_title' => 'getContactTitle',
 
-    &#39;email\_address&#39; =\&gt; &#39;getEmailAddress&#39;,
+    'email_address' => 'getEmailAddress',
 
-    &#39;phone&#39; =\&gt; &#39;getPhone&#39;,
+    'phone' => 'getPhone',
 
-    &#39;fax&#39; =\&gt; &#39;getFax&#39;,
+    'fax' => 'getFax',
 
-    &#39;billing\_address&#39; =\&gt; &#39;getBillingAddress&#39;,
+    'billing_address' => 'getBillingAddress',
 
-    &#39;billing\_address2&#39; =\&gt; &#39;getBillingAddress2&#39;,
+    'billing_address2' => 'getBillingAddress2',
 
-    &#39;billing\_city&#39; =\&gt; &#39;getBillingCity&#39;,
+    'billing_city' => 'getBillingCity',
 
-    &#39;billing\_state&#39; =\&gt; &#39;getBillingState&#39;,
+    'billing_state' => 'getBillingState',
 
-    &#39;billing\_zip&#39; =\&gt; &#39;getBillingZip&#39;,
+    'billing_zip' => 'getBillingZip',
 
-    &#39;po\_number&#39; =\&gt; &#39;getPoNumber&#39;,
+    'po_number' => 'getPoNumber',
 
-    &#39;invoice\_number&#39; =\&gt; &#39;getInvoiceNumber&#39;,
+    'invoice_number' => 'getInvoiceNumber',
 
-    &#39;business\_name&#39; =\&gt; &#39;getBusinessName&#39;,
+    'business_name' => 'getBusinessName',
 
-    &#39;customer\_number&#39; =\&gt; &#39;getCustomerNumber&#39;,
+    'customer_number' => 'getCustomerNumber',
 
-    &#39;reference\_note&#39; =\&gt; &#39;getReferenceNote&#39;,
+    'reference_note' => 'getReferenceNote',
 
-    &#39;sales\_tax&#39; =\&gt; &#39;getSalesTax&#39;,
+    'sales_tax' => 'getSalesTax',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;getTaxExempt&#39;,
+    'tax_exempt' => 'getTaxExempt',
 
-    &#39;card\_tracks&#39; =\&gt; &#39;getCardTracks&#39;,
+    'card_tracks' => 'getCardTracks',
 
-    &#39;card\_zip&#39; =\&gt; &#39;getCardZip&#39;,
+    'card_zip' => 'getCardZip',
 
-    &#39;card\_address&#39; =\&gt; &#39;getCardAddress&#39;,
+    'card_address' => 'getCardAddress',
 
-    &#39;item\_description&#39; =\&gt; &#39;getItemDescription&#39;,
+    'item_description' => 'getItemDescription',
 
-    &#39;default\_transaction\_type&#39; =\&gt; &#39;getDefaultTransactionType&#39;
+    'default_transaction_type' => 'getDefaultTransactionType'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;cvv&#39;] = isset($data[&#39;cvv&#39;]) ? $data[&#39;cvv&#39;] : null;
+    $this->container['cvv'] = isset($data['cvv']) ? $data['cvv'] : null;
 
-    $this-\&gt;container[&#39;contact\_name&#39;] = isset($data[&#39;contact\_name&#39;]) ? $data[&#39;contact\_name&#39;] : null;
+    $this->container['contact_name'] = isset($data['contact_name']) ? $data['contact_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = isset($data[&#39;contact\_title&#39;]) ? $data[&#39;contact\_title&#39;] : null;
+    $this->container['contact_title'] = isset($data['contact_title']) ? $data['contact_title'] : null;
 
-    $this-\&gt;container[&#39;email\_address&#39;] = isset($data[&#39;email\_address&#39;]) ? $data[&#39;email\_address&#39;] : null;
+    $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
 
-    $this-\&gt;container[&#39;phone&#39;] = isset($data[&#39;phone&#39;]) ? $data[&#39;phone&#39;] : null;
+    $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
 
-    $this-\&gt;container[&#39;fax&#39;] = isset($data[&#39;fax&#39;]) ? $data[&#39;fax&#39;] : null;
+    $this->container['fax'] = isset($data['fax']) ? $data['fax'] : null;
 
-    $this-\&gt;container[&#39;billing\_address&#39;] = isset($data[&#39;billing\_address&#39;]) ? $data[&#39;billing\_address&#39;] : null;
+    $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
 
-    $this-\&gt;container[&#39;billing\_address2&#39;] = isset($data[&#39;billing\_address2&#39;]) ? $data[&#39;billing\_address2&#39;] : null;
+    $this->container['billing_address2'] = isset($data['billing_address2']) ? $data['billing_address2'] : null;
 
-    $this-\&gt;container[&#39;billing\_city&#39;] = isset($data[&#39;billing\_city&#39;]) ? $data[&#39;billing\_city&#39;] : null;
+    $this->container['billing_city'] = isset($data['billing_city']) ? $data['billing_city'] : null;
 
-    $this-\&gt;container[&#39;billing\_state&#39;] = isset($data[&#39;billing\_state&#39;]) ? $data[&#39;billing\_state&#39;] : null;
+    $this->container['billing_state'] = isset($data['billing_state']) ? $data['billing_state'] : null;
 
-    $this-\&gt;container[&#39;billing\_zip&#39;] = isset($data[&#39;billing\_zip&#39;]) ? $data[&#39;billing\_zip&#39;] : null;
+    $this->container['billing_zip'] = isset($data['billing_zip']) ? $data['billing_zip'] : null;
 
-    $this-\&gt;container[&#39;po\_number&#39;] = isset($data[&#39;po\_number&#39;]) ? $data[&#39;po\_number&#39;] : null;
+    $this->container['po_number'] = isset($data['po_number']) ? $data['po_number'] : null;
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = isset($data[&#39;invoice\_number&#39;]) ? $data[&#39;invoice\_number&#39;] : null;
+    $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
 
-    $this-\&gt;container[&#39;business\_name&#39;] = isset($data[&#39;business\_name&#39;]) ? $data[&#39;business\_name&#39;] : null;
+    $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = isset($data[&#39;customer\_number&#39;]) ? $data[&#39;customer\_number&#39;] : null;
+    $this->container['customer_number'] = isset($data['customer_number']) ? $data['customer_number'] : null;
 
-    $this-\&gt;container[&#39;reference\_note&#39;] = isset($data[&#39;reference\_note&#39;]) ? $data[&#39;reference\_note&#39;] : null;
+    $this->container['reference_note'] = isset($data['reference_note']) ? $data['reference_note'] : null;
 
-    $this-\&gt;container[&#39;sales\_tax&#39;] = isset($data[&#39;sales\_tax&#39;]) ? $data[&#39;sales\_tax&#39;] : null;
+    $this->container['sales_tax'] = isset($data['sales_tax']) ? $data['sales_tax'] : null;
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = isset($data[&#39;tax\_exempt&#39;]) ? $data[&#39;tax\_exempt&#39;] : null;
+    $this->container['tax_exempt'] = isset($data['tax_exempt']) ? $data['tax_exempt'] : null;
 
-    $this-\&gt;container[&#39;card\_tracks&#39;] = isset($data[&#39;card\_tracks&#39;]) ? $data[&#39;card\_tracks&#39;] : null;
+    $this->container['card_tracks'] = isset($data['card_tracks']) ? $data['card_tracks'] : null;
 
-    $this-\&gt;container[&#39;card\_zip&#39;] = isset($data[&#39;card\_zip&#39;]) ? $data[&#39;card\_zip&#39;] : null;
+    $this->container['card_zip'] = isset($data['card_zip']) ? $data['card_zip'] : null;
 
-    $this-\&gt;container[&#39;card\_address&#39;] = isset($data[&#39;card\_address&#39;]) ? $data[&#39;card\_address&#39;] : null;
+    $this->container['card_address'] = isset($data['card_address']) ? $data['card_address'] : null;
 
-    $this-\&gt;container[&#39;item\_description&#39;] = isset($data[&#39;item\_description&#39;]) ? $data[&#39;item\_description&#39;] : null;
+    $this->container['item_description'] = isset($data['item_description']) ? $data['item_description'] : null;
 
-    $this-\&gt;container[&#39;default\_transaction\_type&#39;] = isset($data[&#39;default\_transaction\_type&#39;]) ? $data[&#39;default\_transaction\_type&#39;] : null;
+    $this->container['default_transaction_type'] = isset($data['default_transaction_type']) ? $data['default_transaction_type'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetCvv()
+    public functiongetCvv()
 
     {
 
-    return$this-\&gt;container[&#39;cvv&#39;];
+    return $this->container['cvv'];
 
     }
 
-    publicfunctionsetCvv($cvv)
+    public functionsetCvv($cvv)
 
     {
 
-    $this-\&gt;container[&#39;cvv&#39;] = $cvv;
+    $this->container['cvv'] = $cvv;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactName()
+    public functiongetContactName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_name&#39;];
+    return $this->container['contact_name'];
 
     }
 
-    publicfunctionsetContactName($contact\_name)
+    public functionsetContactName($contact_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_name&#39;] = $contact\_name;
+    $this->container['contact_name'] = $contact_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactTitle()
+    public functiongetContactTitle()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_title&#39;];
+    return $this->container['contact_title'];
 
     }
 
-    publicfunctionsetContactTitle($contact\_title)
+    public functionsetContactTitle($contact_title)
 
     {
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = $contact\_title;
+    $this->container['contact_title'] = $contact_title;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetEmailAddress()
+    public functiongetEmailAddress()
 
     {
 
-    return$this-\&gt;container[&#39;email\_address&#39;];
+    return $this->container['email_address'];
 
     }
 
-    publicfunctionsetEmailAddress($email\_address)
+    public functionsetEmailAddress($email_address)
 
     {
 
-    $this-\&gt;container[&#39;email\_address&#39;] = $email\_address;
+    $this->container['email_address'] = $email_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPhone()
+    public functiongetPhone()
 
     {
 
-    return$this-\&gt;container[&#39;phone&#39;];
+    return $this->container['phone'];
 
     }
 
-    publicfunctionsetPhone($phone)
+    public functionsetPhone($phone)
 
     {
 
-    $this-\&gt;container[&#39;phone&#39;] = $phone;
+    $this->container['phone'] = $phone;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFax()
+    public functiongetFax()
 
     {
 
-    return$this-\&gt;container[&#39;fax&#39;];
+    return $this->container['fax'];
 
     }
 
-    publicfunctionsetFax($fax)
+    public functionsetFax($fax)
 
     {
 
-    $this-\&gt;container[&#39;fax&#39;] = $fax;
+    $this->container['fax'] = $fax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingAddress()
+    public functiongetBillingAddress()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_address&#39;];
+    return $this->container['billing_address'];
 
     }
 
-    publicfunctionsetBillingAddress($billing\_address)
+    public functionsetBillingAddress($billing_address)
 
     {
 
-    $this-\&gt;container[&#39;billing\_address&#39;] = $billing\_address;
+    $this->container['billing_address'] = $billing_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingAddress2()
+    public functiongetBillingAddress2()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_address2&#39;];
+    return $this->container['billing_address2'];
 
     }
 
-    publicfunctionsetBillingAddress2($billing\_address2)
+    public functionsetBillingAddress2($billing_address2)
 
     {
 
-    $this-\&gt;container[&#39;billing\_address2&#39;] = $billing\_address2;
+    $this->container['billing_address2'] = $billing_address2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingCity()
+    public functiongetBillingCity()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_city&#39;];
+    return $this->container['billing_city'];
 
     }
 
-    publicfunctionsetBillingCity($billing\_city)
+    public functionsetBillingCity($billing_city)
 
     {
 
-    $this-\&gt;container[&#39;billing\_city&#39;] = $billing\_city;
+    $this->container['billing_city'] = $billing_city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingState()
+    public functiongetBillingState()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_state&#39;];
+    return $this->container['billing_state'];
 
     }
 
-    publicfunctionsetBillingState($billing\_state)
+    public functionsetBillingState($billing_state)
 
     {
 
-    $this-\&gt;container[&#39;billing\_state&#39;] = $billing\_state;
+    $this->container['billing_state'] = $billing_state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBillingZip()
+    public functiongetBillingZip()
 
     {
 
-    return$this-\&gt;container[&#39;billing\_zip&#39;];
+    return $this->container['billing_zip'];
 
     }
 
-    publicfunctionsetBillingZip($billing\_zip)
+    public functionsetBillingZip($billing_zip)
 
     {
 
-    $this-\&gt;container[&#39;billing\_zip&#39;] = $billing\_zip;
+    $this->container['billing_zip'] = $billing_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPoNumber()
+    public functiongetPoNumber()
 
     {
 
-    return$this-\&gt;container[&#39;po\_number&#39;];
+    return $this->container['po_number'];
 
     }
 
-    publicfunctionsetPoNumber($po\_number)
+    public functionsetPoNumber($po_number)
 
     {
 
-    $this-\&gt;container[&#39;po\_number&#39;] = $po\_number;
+    $this->container['po_number'] = $po_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetInvoiceNumber()
+    public functiongetInvoiceNumber()
 
     {
 
-    return$this-\&gt;container[&#39;invoice\_number&#39;];
+    return $this->container['invoice_number'];
 
     }
 
-    publicfunctionsetInvoiceNumber($invoice\_number)
+    public functionsetInvoiceNumber($invoice_number)
 
     {
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = $invoice\_number;
+    $this->container['invoice_number'] = $invoice_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessName()
+    public functiongetBusinessName()
 
     {
 
-    return$this-\&gt;container[&#39;business\_name&#39;];
+    return $this->container['business_name'];
 
     }
 
-    publicfunctionsetBusinessName($business\_name)
+    public functionsetBusinessName($business_name)
 
     {
 
-    $this-\&gt;container[&#39;business\_name&#39;] = $business\_name;
+    $this->container['business_name'] = $business_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomerNumber()
+    public functiongetCustomerNumber()
 
     {
 
-    return$this-\&gt;container[&#39;customer\_number&#39;];
+    return $this->container['customer_number'];
 
     }
 
-    publicfunctionsetCustomerNumber($customer\_number)
+    public functionsetCustomerNumber($customer_number)
 
     {
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = $customer\_number;
+    $this->container['customer_number'] = $customer_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReferenceNote()
+    public functiongetReferenceNote()
 
     {
 
-    return$this-\&gt;container[&#39;reference\_note&#39;];
+    return $this->container['reference_note'];
 
     }
 
-    publicfunctionsetReferenceNote($reference\_note)
+    public functionsetReferenceNote($reference_note)
 
     {
 
-    $this-\&gt;container[&#39;reference\_note&#39;] = $reference\_note;
+    $this->container['reference_note'] = $reference_note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSalesTax()
+    public functiongetSalesTax()
 
     {
 
-    return$this-\&gt;container[&#39;sales\_tax&#39;];
+    return $this->container['sales_tax'];
 
     }
 
-    publicfunctionsetSalesTax($sales\_tax)
+    public functionsetSalesTax($sales_tax)
 
     {
 
-    $this-\&gt;container[&#39;sales\_tax&#39;] = $sales\_tax;
+    $this->container['sales_tax'] = $sales_tax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTaxExempt()
+    public functiongetTaxExempt()
 
     {
 
-    return$this-\&gt;container[&#39;tax\_exempt&#39;];
+    return $this->container['tax_exempt'];
 
     }
 
-    publicfunctionsetTaxExempt($tax\_exempt)
+    public functionsetTaxExempt($tax_exempt)
 
     {
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = $tax\_exempt;
+    $this->container['tax_exempt'] = $tax_exempt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardTracks()
+    public functiongetCardTracks()
 
     {
 
-    return$this-\&gt;container[&#39;card\_tracks&#39;];
+    return $this->container['card_tracks'];
 
     }
 
-    publicfunctionsetCardTracks($card\_tracks)
+    public functionsetCardTracks($card_tracks)
 
     {
 
-    $this-\&gt;container[&#39;card\_tracks&#39;] = $card\_tracks;
+    $this->container['card_tracks'] = $card_tracks;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardZip()
+    public functiongetCardZip()
 
     {
 
-    return$this-\&gt;container[&#39;card\_zip&#39;];
+    return $this->container['card_zip'];
 
     }
 
-    publicfunctionsetCardZip($card\_zip)
+    public functionsetCardZip($card_zip)
 
     {
 
-    $this-\&gt;container[&#39;card\_zip&#39;] = $card\_zip;
+    $this->container['card_zip'] = $card_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardAddress()
+    public functiongetCardAddress()
 
     {
 
-    return$this-\&gt;container[&#39;card\_address&#39;];
+    return $this->container['card_address'];
 
     }
 
-    publicfunctionsetCardAddress($card\_address)
+    public functionsetCardAddress($card_address)
 
     {
 
-    $this-\&gt;container[&#39;card\_address&#39;] = $card\_address;
+    $this->container['card_address'] = $card_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetItemDescription()
+    public functiongetItemDescription()
 
     {
 
-    return$this-\&gt;container[&#39;item\_description&#39;];
+    return $this->container['item_description'];
 
     }
 
-    publicfunctionsetItemDescription($item\_description)
+    public functionsetItemDescription($item_description)
 
     {
 
-    $this-\&gt;container[&#39;item\_description&#39;] = $item\_description;
+    $this->container['item_description'] = $item_description;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDefaultTransactionType()
+    public functiongetDefaultTransactionType()
 
     {
 
-    return$this-\&gt;container[&#39;default\_transaction\_type&#39;];
+    return $this->container['default_transaction_type'];
 
     }
 
-    publicfunctionsetDefaultTransactionType($default\_transaction\_type)
+    public functionsetDefaultTransactionType($default_transaction_type)
 
     {
 
-    $this-\&gt;container[&#39;default\_transaction\_type&#39;] = $default\_transaction\_type;
+    $this->container['default_transaction_type'] = $default_transaction_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -4218,9 +4218,9 @@
 
 # CVVPresenceType
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use \Swagger\Client\ObjectSerializer;
 
@@ -4228,15 +4228,15 @@
 
     {
 
-    const NORMAL = &#39;Normal&#39;;
+    const NORMAL = 'Normal';
 
-    const BYPASS = &#39;Bypass&#39;;
+    const BYPASS = 'Bypass';
 
-    const ILLEGIBLE = &#39;Illegible&#39;;
+    const ILLEGIBLE = 'Illegible';
 
-    const NOT\_AVAILABLE = &#39;NotAvailable&#39;;
+    const NOT_AVAILABLE = 'NotAvailable';
 
-    publicstaticfunctiongetAllowableEnumValues()
+    public staticfunctiongetAllowableEnumValues()
 
     {
 
@@ -4248,7 +4248,7 @@
 
     self::ILLEGIBLE,
 
-    self::NOT\_AVAILABLE,
+    self::NOT_AVAILABLE,
 
     ];
 
@@ -4258,9 +4258,9 @@
 
     # EmailReceipt
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -4272,309 +4272,309 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;EmailReceipt&#39;;
+    protectedstatic$swaggerModelName = 'EmailReceipt';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;transaction\_id&#39; =\&gt; &#39;string&#39;,
+    'transaction_id' => 'string',
 
-    &#39;to\_addresses&#39; =\&gt; &#39;string&#39;,
+    'to_addresses' => 'string',
 
-    &#39;subject&#39; =\&gt; &#39;string&#39;,
+    'subject' => 'string',
 
-    &#39;header&#39; =\&gt; &#39;string&#39;,
+    'header' => 'string',
 
-    &#39;footer&#39; =\&gt; &#39;string&#39;
+    'footer' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;transaction\_id&#39; =\&gt; null,
+    'transaction_id' => null,
 
-    &#39;to\_addresses&#39; =\&gt; null,
+    'to_addresses' => null,
 
-    &#39;subject&#39; =\&gt; null,
+    'subject' => null,
 
-    &#39;header&#39; =\&gt; null,
+    'header' => null,
 
-    &#39;footer&#39; =\&gt; null
+    'footer' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;transaction\_id&#39; =\&gt; &#39;TransactionID&#39;,
+    'transaction_id' => 'TransactionID',
 
-    &#39;to\_addresses&#39; =\&gt; &#39;ToAddresses&#39;,
+    'to_addresses' => 'ToAddresses',
 
-    &#39;subject&#39; =\&gt; &#39;Subject&#39;,
+    'subject' => 'Subject',
 
-    &#39;header&#39; =\&gt; &#39;Header&#39;,
+    'header' => 'Header',
 
-    &#39;footer&#39; =\&gt; &#39;Footer&#39;
+    'footer' => 'Footer'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;transaction\_id&#39; =\&gt; &#39;setTransactionId&#39;,
+    'transaction_id' => 'setTransactionId',
 
-    &#39;to\_addresses&#39; =\&gt; &#39;setToAddresses&#39;,
+    'to_addresses' => 'setToAddresses',
 
-    &#39;subject&#39; =\&gt; &#39;setSubject&#39;,
+    'subject' => 'setSubject',
 
-    &#39;header&#39; =\&gt; &#39;setHeader&#39;,
+    'header' => 'setHeader',
 
-    &#39;footer&#39; =\&gt; &#39;setFooter&#39;
+    'footer' => 'setFooter'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;transaction\_id&#39; =\&gt; &#39;getTransactionId&#39;,
+    'transaction_id' => 'getTransactionId',
 
-    &#39;to\_addresses&#39; =\&gt; &#39;getToAddresses&#39;,
+    'to_addresses' => 'getToAddresses',
 
-    &#39;subject&#39; =\&gt; &#39;getSubject&#39;,
+    'subject' => 'getSubject',
 
-    &#39;header&#39; =\&gt; &#39;getHeader&#39;,
+    'header' => 'getHeader',
 
-    &#39;footer&#39; =\&gt; &#39;getFooter&#39;
+    'footer' => 'getFooter'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;transaction\_id&#39;] = isset($data[&#39;transaction\_id&#39;]) ? $data[&#39;transaction\_id&#39;] : null;
+    $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
 
-    $this-\&gt;container[&#39;to\_addresses&#39;] = isset($data[&#39;to\_addresses&#39;]) ? $data[&#39;to\_addresses&#39;] : null;
+    $this->container['to_addresses'] = isset($data['to_addresses']) ? $data['to_addresses'] : null;
 
-    $this-\&gt;container[&#39;subject&#39;] = isset($data[&#39;subject&#39;]) ? $data[&#39;subject&#39;] : null;
+    $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
 
-    $this-\&gt;container[&#39;header&#39;] = isset($data[&#39;header&#39;]) ? $data[&#39;header&#39;] : null;
+    $this->container['header'] = isset($data['header']) ? $data['header'] : null;
 
-    $this-\&gt;container[&#39;footer&#39;] = isset($data[&#39;footer&#39;]) ? $data[&#39;footer&#39;] : null;
+    $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetTransactionId()
+    public functiongetTransactionId()
 
     {
 
-    return$this-\&gt;container[&#39;transaction\_id&#39;];
+    return $this->container['transaction_id'];
 
     }
 
-    publicfunctionsetTransactionId($transaction\_id)
+    public functionsetTransactionId($transaction_id)
 
     {
 
-    $this-\&gt;container[&#39;transaction\_id&#39;] = $transaction\_id;
+    $this->container['transaction_id'] = $transaction_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetToAddresses()
+    public functiongetToAddresses()
 
     {
 
-    return$this-\&gt;container[&#39;to\_addresses&#39;];
+    return $this->container['to_addresses'];
 
     }
 
-    publicfunctionsetToAddresses($to\_addresses)
+    public functionsetToAddresses($to_addresses)
 
     {
 
-    $this-\&gt;container[&#39;to\_addresses&#39;] = $to\_addresses;
+    $this->container['to_addresses'] = $to_addresses;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSubject()
+    public functiongetSubject()
 
     {
 
-    return$this-\&gt;container[&#39;subject&#39;];
+    return $this->container['subject'];
 
     }
 
-    publicfunctionsetSubject($subject)
+    public functionsetSubject($subject)
 
     {
 
-    $this-\&gt;container[&#39;subject&#39;] = $subject;
+    $this->container['subject'] = $subject;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetHeader()
+    public functiongetHeader()
 
     {
 
-    return$this-\&gt;container[&#39;header&#39;];
+    return $this->container['header'];
 
     }
 
-    publicfunctionsetHeader($header)
+    public functionsetHeader($header)
 
     {
 
-    $this-\&gt;container[&#39;header&#39;] = $header;
+    $this->container['header'] = $header;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFooter()
+    public functiongetFooter()
 
     {
 
-    return$this-\&gt;container[&#39;footer&#39;];
+    return $this->container['footer'];
 
     }
 
-    publicfunctionsetFooter($footer)
+    public functionsetFooter($footer)
 
     {
 
-    $this-\&gt;container[&#39;footer&#39;] = $footer;
+    $this->container['footer'] = $footer;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -4582,9 +4582,9 @@
 
 # FieldAccess
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use \Swagger\Client\ObjectSerializer;
 
@@ -4592,13 +4592,13 @@
 
     {
 
-    const DISABLED = &#39;Disabled&#39;;
+    const DISABLED = 'Disabled';
 
-    const ENABLED = &#39;Enabled&#39;;
+    const ENABLED = 'Enabled';
 
-    const REQUIRED = &#39;Required&#39;;
+    const REQUIRED = 'Required';
 
-    publicstaticfunctiongetAllowableEnumValues()
+    public staticfunctiongetAllowableEnumValues()
 
     {
 
@@ -4618,9 +4618,9 @@
 
 # FieldInfo
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -4632,219 +4632,219 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;FieldInfo&#39;;
+    protectedstatic$swaggerModelName = 'FieldInfo';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;access&#39; =\&gt; &#39;\Swagger\Client\Model\FieldAccess&#39;,
+    'access' => '\Swagger\Client\Model\FieldAccess',
 
-    &#39;default&#39; =\&gt; &#39;string&#39;
+    'default' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;access&#39; =\&gt; null,
+    'access' => null,
 
-    &#39;default&#39; =\&gt; null
+    'default' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;access&#39; =\&gt; &#39;Access&#39;,
+    'access' => 'Access',
 
-    &#39;default&#39; =\&gt; &#39;Default&#39;
+    'default' => 'Default'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;access&#39; =\&gt; &#39;setAccess&#39;,
+    'access' => 'setAccess',
 
-    &#39;default&#39; =\&gt; &#39;setDefault&#39;
+    'default' => 'setDefault'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;access&#39; =\&gt; &#39;getAccess&#39;,
+    'access' => 'getAccess',
 
-    &#39;default&#39; =\&gt; &#39;getDefault&#39;
+    'default' => 'getDefault'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;access&#39;] = isset($data[&#39;access&#39;]) ? $data[&#39;access&#39;] : null;
+    $this->container['access'] = isset($data['access']) ? $data['access'] : null;
 
-    $this-\&gt;container[&#39;default&#39;] = isset($data[&#39;default&#39;]) ? $data[&#39;default&#39;] : null;
+    $this->container['default'] = isset($data['default']) ? $data['default'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetAccess()
+    public functiongetAccess()
 
     {
 
-    return$this-\&gt;container[&#39;access&#39;];
+    return $this->container['access'];
 
     }
 
-    publicfunctionsetAccess($access)
+    public functionsetAccess($access)
 
     {
 
-    $this-\&gt;container[&#39;access&#39;] = $access;
+    $this->container['access'] = $access;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDefault()
+    public functiongetDefault()
 
     {
 
-    return$this-\&gt;container[&#39;default&#39;];
+    return $this->container['default'];
 
     }
 
-    publicfunctionsetDefault($default)
+    public functionsetDefault($default)
 
     {
 
-    $this-\&gt;container[&#39;default&#39;] = $default;
+    $this->container['default'] = $default;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -4852,9 +4852,9 @@
 
 # QueryTransaction
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -4866,1479 +4866,1479 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;QueryTransaction&#39;;
+    protectedstatic$swaggerModelName = 'QueryTransaction';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;tran\_sequence&#39; =\&gt; &#39;string&#39;,
+    'tran_sequence' => 'string',
 
-    &#39;tran\_batch&#39; =\&gt; &#39;string&#39;,
+    'tran_batch' => 'string',
 
-    &#39;tran\_modified&#39; =\&gt; &#39;string&#39;,
+    'tran_modified' => 'string',
 
-    &#39;tran\_processed&#39; =\&gt; &#39;string&#39;,
+    'tran_processed' => 'string',
 
-    &#39;tran\_settled&#39; =\&gt; &#39;string&#39;,
+    'tran_settled' => 'string',
 
-    &#39;submit\_time&#39; =\&gt; &#39;string&#39;,
+    'submit_time' => 'string',
 
-    &#39;tran\_type&#39; =\&gt; &#39;string&#39;,
+    'tran_type' => 'string',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;double&#39;,
+    'tran_amt' => 'double',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;double&#39;,
+    'tran_tax' => 'double',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;string&#39;,
+    'tran_inv' => 'string',
 
-    &#39;tran\_po&#39; =\&gt; &#39;string&#39;,
+    'tran_po' => 'string',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;string&#39;,
+    'tran_c_num' => 'string',
 
-    &#39;tran\_note&#39; =\&gt; &#39;string&#39;,
+    'tran_note' => 'string',
 
-    &#39;card\_num&#39; =\&gt; &#39;string&#39;,
+    'card_num' => 'string',
 
-    &#39;card\_name&#39; =\&gt; &#39;string&#39;,
+    'card_name' => 'string',
 
-    &#39;card\_exp&#39; =\&gt; &#39;string&#39;,
+    'card_exp' => 'string',
 
-    &#39;avs\_street&#39; =\&gt; &#39;string&#39;,
+    'avs_street' => 'string',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;string&#39;,
+    'avs_zip' => 'string',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;string&#39;,
+    'cvv_num' => 'string',
 
-    &#39;proc\_id&#39; =\&gt; &#39;string&#39;,
+    'proc_id' => 'string',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;string&#39;,
+    'proc_resp' => 'string',
 
-    &#39;proc\_code&#39; =\&gt; &#39;string&#39;,
+    'proc_code' => 'string',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;string&#39;,
+    'proc_mess' => 'string',
 
-    &#39;avs\_code&#39; =\&gt; &#39;string&#39;,
+    'avs_code' => 'string',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;string&#39;,
+    'avs_resp' => 'string',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;string&#39;,
+    'cvv_code' => 'string',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;string&#39;,
+    'cvv_resp' => 'string',
 
-    &#39;items&#39; =\&gt; &#39;\Swagger\Client\Model\TransactionItem[]&#39;,
+    'items' => '\Swagger\Client\Model\TransactionItem[]',
 
-    &#39;business\_name&#39; =\&gt; &#39;string&#39;,
+    'business_name' => 'string',
 
-    &#39;business\_address&#39; =\&gt; &#39;string&#39;,
+    'business_address' => 'string',
 
-    &#39;business\_address2&#39; =\&gt; &#39;string&#39;,
+    'business_address2' => 'string',
 
-    &#39;business\_city&#39; =\&gt; &#39;string&#39;,
+    'business_city' => 'string',
 
-    &#39;business\_state&#39; =\&gt; &#39;string&#39;,
+    'business_state' => 'string',
 
-    &#39;business\_zip&#39; =\&gt; &#39;string&#39;,
+    'business_zip' => 'string',
 
-    &#39;business\_country&#39; =\&gt; &#39;string&#39;,
+    'business_country' => 'string',
 
-    &#39;business\_website&#39; =\&gt; &#39;string&#39;,
+    'business_website' => 'string',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;string&#39;,
+    'contact_first_name' => 'string',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;string&#39;,
+    'contact_last_name' => 'string',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;string&#39;,
+    'contact_phone' => 'string',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;string&#39;,
+    'contact_fax' => 'string',
 
-    &#39;contact\_email&#39; =\&gt; &#39;string&#39;,
+    'contact_email' => 'string',
 
-    &#39;contact\_title&#39; =\&gt; &#39;string&#39;,
+    'contact_title' => 'string',
 
-    &#39;ip&#39; =\&gt; &#39;string&#39;,
+    'ip' => 'string',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;bool&#39;
+    'tax_exempt' => 'bool'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;tran\_sequence&#39; =\&gt; null,
+    'tran_sequence' => null,
 
-    &#39;tran\_batch&#39; =\&gt; null,
+    'tran_batch' => null,
 
-    &#39;tran\_modified&#39; =\&gt; null,
+    'tran_modified' => null,
 
-    &#39;tran\_processed&#39; =\&gt; null,
+    'tran_processed' => null,
 
-    &#39;tran\_settled&#39; =\&gt; null,
+    'tran_settled' => null,
 
-    &#39;submit\_time&#39; =\&gt; null,
+    'submit_time' => null,
 
-    &#39;tran\_type&#39; =\&gt; null,
+    'tran_type' => null,
 
-    &#39;tran\_amt&#39; =\&gt; &#39;double&#39;,
+    'tran_amt' => 'double',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;double&#39;,
+    'tran_tax' => 'double',
 
-    &#39;tran\_inv&#39; =\&gt; null,
+    'tran_inv' => null,
 
-    &#39;tran\_po&#39; =\&gt; null,
+    'tran_po' => null,
 
-    &#39;tran\_c\_num&#39; =\&gt; null,
+    'tran_c_num' => null,
 
-    &#39;tran\_note&#39; =\&gt; null,
+    'tran_note' => null,
 
-    &#39;card\_num&#39; =\&gt; null,
+    'card_num' => null,
 
-    &#39;card\_name&#39; =\&gt; null,
+    'card_name' => null,
 
-    &#39;card\_exp&#39; =\&gt; null,
+    'card_exp' => null,
 
-    &#39;avs\_street&#39; =\&gt; null,
+    'avs_street' => null,
 
-    &#39;avs\_zip&#39; =\&gt; null,
+    'avs_zip' => null,
 
-    &#39;cvv\_num&#39; =\&gt; null,
+    'cvv_num' => null,
 
-    &#39;proc\_id&#39; =\&gt; null,
+    'proc_id' => null,
 
-    &#39;proc\_resp&#39; =\&gt; null,
+    'proc_resp' => null,
 
-    &#39;proc\_code&#39; =\&gt; null,
+    'proc_code' => null,
 
-    &#39;proc\_mess&#39; =\&gt; null,
+    'proc_mess' => null,
 
-    &#39;avs\_code&#39; =\&gt; null,
+    'avs_code' => null,
 
-    &#39;avs\_resp&#39; =\&gt; null,
+    'avs_resp' => null,
 
-    &#39;cvv\_code&#39; =\&gt; null,
+    'cvv_code' => null,
 
-    &#39;cvv\_resp&#39; =\&gt; null,
+    'cvv_resp' => null,
 
-    &#39;items&#39; =\&gt; null,
+    'items' => null,
 
-    &#39;business\_name&#39; =\&gt; null,
+    'business_name' => null,
 
-    &#39;business\_address&#39; =\&gt; null,
+    'business_address' => null,
 
-    &#39;business\_address2&#39; =\&gt; null,
+    'business_address2' => null,
 
-    &#39;business\_city&#39; =\&gt; null,
+    'business_city' => null,
 
-    &#39;business\_state&#39; =\&gt; null,
+    'business_state' => null,
 
-    &#39;business\_zip&#39; =\&gt; null,
+    'business_zip' => null,
 
-    &#39;business\_country&#39; =\&gt; null,
+    'business_country' => null,
 
-    &#39;business\_website&#39; =\&gt; null,
+    'business_website' => null,
 
-    &#39;contact\_first\_name&#39; =\&gt; null,
+    'contact_first_name' => null,
 
-    &#39;contact\_last\_name&#39; =\&gt; null,
+    'contact_last_name' => null,
 
-    &#39;contact\_phone&#39; =\&gt; null,
+    'contact_phone' => null,
 
-    &#39;contact\_fax&#39; =\&gt; null,
+    'contact_fax' => null,
 
-    &#39;contact\_email&#39; =\&gt; null,
+    'contact_email' => null,
 
-    &#39;contact\_title&#39; =\&gt; null,
+    'contact_title' => null,
 
-    &#39;ip&#39; =\&gt; null,
+    'ip' => null,
 
-    &#39;tax\_exempt&#39; =\&gt; null
+    'tax_exempt' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;tran\_sequence&#39; =\&gt; &#39;Tran\_Sequence&#39;,
+    'tran_sequence' => 'Tran_Sequence',
 
-    &#39;tran\_batch&#39; =\&gt; &#39;Tran\_Batch&#39;,
+    'tran_batch' => 'Tran_Batch',
 
-    &#39;tran\_modified&#39; =\&gt; &#39;Tran\_Modified&#39;,
+    'tran_modified' => 'Tran_Modified',
 
-    &#39;tran\_processed&#39; =\&gt; &#39;Tran\_Processed&#39;,
+    'tran_processed' => 'Tran_Processed',
 
-    &#39;tran\_settled&#39; =\&gt; &#39;Tran\_Settled&#39;,
+    'tran_settled' => 'Tran_Settled',
 
-    &#39;submit\_time&#39; =\&gt; &#39;Submit\_Time&#39;,
+    'submit_time' => 'Submit_Time',
 
-    &#39;tran\_type&#39; =\&gt; &#39;Tran\_Type&#39;,
+    'tran_type' => 'Tran_Type',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;Tran\_Amt&#39;,
+    'tran_amt' => 'Tran_Amt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;Tran\_Tax&#39;,
+    'tran_tax' => 'Tran_Tax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;Tran\_Inv&#39;,
+    'tran_inv' => 'Tran_Inv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;Tran\_PO&#39;,
+    'tran_po' => 'Tran_PO',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;Tran\_CNum&#39;,
+    'tran_c_num' => 'Tran_CNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;Tran\_Note&#39;,
+    'tran_note' => 'Tran_Note',
 
-    &#39;card\_num&#39; =\&gt; &#39;Card\_Num&#39;,
+    'card_num' => 'Card_Num',
 
-    &#39;card\_name&#39; =\&gt; &#39;Card\_Name&#39;,
+    'card_name' => 'Card_Name',
 
-    &#39;card\_exp&#39; =\&gt; &#39;Card\_Exp&#39;,
+    'card_exp' => 'Card_Exp',
 
-    &#39;avs\_street&#39; =\&gt; &#39;AVS\_Street&#39;,
+    'avs_street' => 'AVS_Street',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;AVS\_Zip&#39;,
+    'avs_zip' => 'AVS_Zip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;CVV\_Num&#39;,
+    'cvv_num' => 'CVV_Num',
 
-    &#39;proc\_id&#39; =\&gt; &#39;Proc\_ID&#39;,
+    'proc_id' => 'Proc_ID',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;Proc\_Resp&#39;,
+    'proc_resp' => 'Proc_Resp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;Proc\_Code&#39;,
+    'proc_code' => 'Proc_Code',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;Proc\_Mess&#39;,
+    'proc_mess' => 'Proc_Mess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;AVS\_Code&#39;,
+    'avs_code' => 'AVS_Code',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;AVS\_Resp&#39;,
+    'avs_resp' => 'AVS_Resp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;CVV\_Code&#39;,
+    'cvv_code' => 'CVV_Code',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;CVV\_Resp&#39;,
+    'cvv_resp' => 'CVV_Resp',
 
-    &#39;items&#39; =\&gt; &#39;Items&#39;,
+    'items' => 'Items',
 
-    &#39;business\_name&#39; =\&gt; &#39;Business\_Name&#39;,
+    'business_name' => 'Business_Name',
 
-    &#39;business\_address&#39; =\&gt; &#39;Business\_Address&#39;,
+    'business_address' => 'Business_Address',
 
-    &#39;business\_address2&#39; =\&gt; &#39;Business\_Address2&#39;,
+    'business_address2' => 'Business_Address2',
 
-    &#39;business\_city&#39; =\&gt; &#39;Business\_City&#39;,
+    'business_city' => 'Business_City',
 
-    &#39;business\_state&#39; =\&gt; &#39;Business\_State&#39;,
+    'business_state' => 'Business_State',
 
-    &#39;business\_zip&#39; =\&gt; &#39;Business\_Zip&#39;,
+    'business_zip' => 'Business_Zip',
 
-    &#39;business\_country&#39; =\&gt; &#39;Business\_Country&#39;,
+    'business_country' => 'Business_Country',
 
-    &#39;business\_website&#39; =\&gt; &#39;Business\_Website&#39;,
+    'business_website' => 'Business_Website',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;Contact\_FirstName&#39;,
+    'contact_first_name' => 'Contact_FirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;Contact\_LastName&#39;,
+    'contact_last_name' => 'Contact_LastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;Contact\_Phone&#39;,
+    'contact_phone' => 'Contact_Phone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;Contact\_Fax&#39;,
+    'contact_fax' => 'Contact_Fax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;Contact\_Email&#39;,
+    'contact_email' => 'Contact_Email',
 
-    &#39;contact\_title&#39; =\&gt; &#39;Contact\_Title&#39;,
+    'contact_title' => 'Contact_Title',
 
-    &#39;ip&#39; =\&gt; &#39;IP&#39;,
+    'ip' => 'IP',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;TaxExempt&#39;
+    'tax_exempt' => 'TaxExempt'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;tran\_sequence&#39; =\&gt; &#39;setTranSequence&#39;,
+    'tran_sequence' => 'setTranSequence',
 
-    &#39;tran\_batch&#39; =\&gt; &#39;setTranBatch&#39;,
+    'tran_batch' => 'setTranBatch',
 
-    &#39;tran\_modified&#39; =\&gt; &#39;setTranModified&#39;,
+    'tran_modified' => 'setTranModified',
 
-    &#39;tran\_processed&#39; =\&gt; &#39;setTranProcessed&#39;,
+    'tran_processed' => 'setTranProcessed',
 
-    &#39;tran\_settled&#39; =\&gt; &#39;setTranSettled&#39;,
+    'tran_settled' => 'setTranSettled',
 
-    &#39;submit\_time&#39; =\&gt; &#39;setSubmitTime&#39;,
+    'submit_time' => 'setSubmitTime',
 
-    &#39;tran\_type&#39; =\&gt; &#39;setTranType&#39;,
+    'tran_type' => 'setTranType',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;setTranAmt&#39;,
+    'tran_amt' => 'setTranAmt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;setTranTax&#39;,
+    'tran_tax' => 'setTranTax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;setTranInv&#39;,
+    'tran_inv' => 'setTranInv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;setTranPo&#39;,
+    'tran_po' => 'setTranPo',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;setTranCNum&#39;,
+    'tran_c_num' => 'setTranCNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;setTranNote&#39;,
+    'tran_note' => 'setTranNote',
 
-    &#39;card\_num&#39; =\&gt; &#39;setCardNum&#39;,
+    'card_num' => 'setCardNum',
 
-    &#39;card\_name&#39; =\&gt; &#39;setCardName&#39;,
+    'card_name' => 'setCardName',
 
-    &#39;card\_exp&#39; =\&gt; &#39;setCardExp&#39;,
+    'card_exp' => 'setCardExp',
 
-    &#39;avs\_street&#39; =\&gt; &#39;setAvsStreet&#39;,
+    'avs_street' => 'setAvsStreet',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;setAvsZip&#39;,
+    'avs_zip' => 'setAvsZip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;setCvvNum&#39;,
+    'cvv_num' => 'setCvvNum',
 
-    &#39;proc\_id&#39; =\&gt; &#39;setProcId&#39;,
+    'proc_id' => 'setProcId',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;setProcResp&#39;,
+    'proc_resp' => 'setProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;setProcCode&#39;,
+    'proc_code' => 'setProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;setProcMess&#39;,
+    'proc_mess' => 'setProcMess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;setAvsCode&#39;,
+    'avs_code' => 'setAvsCode',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;setAvsResp&#39;,
+    'avs_resp' => 'setAvsResp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;setCvvCode&#39;,
+    'cvv_code' => 'setCvvCode',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;setCvvResp&#39;,
+    'cvv_resp' => 'setCvvResp',
 
-    &#39;items&#39; =\&gt; &#39;setItems&#39;,
+    'items' => 'setItems',
 
-    &#39;business\_name&#39; =\&gt; &#39;setBusinessName&#39;,
+    'business_name' => 'setBusinessName',
 
-    &#39;business\_address&#39; =\&gt; &#39;setBusinessAddress&#39;,
+    'business_address' => 'setBusinessAddress',
 
-    &#39;business\_address2&#39; =\&gt; &#39;setBusinessAddress2&#39;,
+    'business_address2' => 'setBusinessAddress2',
 
-    &#39;business\_city&#39; =\&gt; &#39;setBusinessCity&#39;,
+    'business_city' => 'setBusinessCity',
 
-    &#39;business\_state&#39; =\&gt; &#39;setBusinessState&#39;,
+    'business_state' => 'setBusinessState',
 
-    &#39;business\_zip&#39; =\&gt; &#39;setBusinessZip&#39;,
+    'business_zip' => 'setBusinessZip',
 
-    &#39;business\_country&#39; =\&gt; &#39;setBusinessCountry&#39;,
+    'business_country' => 'setBusinessCountry',
 
-    &#39;business\_website&#39; =\&gt; &#39;setBusinessWebsite&#39;,
+    'business_website' => 'setBusinessWebsite',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;setContactFirstName&#39;,
+    'contact_first_name' => 'setContactFirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;setContactLastName&#39;,
+    'contact_last_name' => 'setContactLastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;setContactPhone&#39;,
+    'contact_phone' => 'setContactPhone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;setContactFax&#39;,
+    'contact_fax' => 'setContactFax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;setContactEmail&#39;,
+    'contact_email' => 'setContactEmail',
 
-    &#39;contact\_title&#39; =\&gt; &#39;setContactTitle&#39;,
+    'contact_title' => 'setContactTitle',
 
-    &#39;ip&#39; =\&gt; &#39;setIp&#39;,
+    'ip' => 'setIp',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;setTaxExempt&#39;
+    'tax_exempt' => 'setTaxExempt'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;tran\_sequence&#39; =\&gt; &#39;getTranSequence&#39;,
+    'tran_sequence' => 'getTranSequence',
 
-    &#39;tran\_batch&#39; =\&gt; &#39;getTranBatch&#39;,
+    'tran_batch' => 'getTranBatch',
 
-    &#39;tran\_modified&#39; =\&gt; &#39;getTranModified&#39;,
+    'tran_modified' => 'getTranModified',
 
-    &#39;tran\_processed&#39; =\&gt; &#39;getTranProcessed&#39;,
+    'tran_processed' => 'getTranProcessed',
 
-    &#39;tran\_settled&#39; =\&gt; &#39;getTranSettled&#39;,
+    'tran_settled' => 'getTranSettled',
 
-    &#39;submit\_time&#39; =\&gt; &#39;getSubmitTime&#39;,
+    'submit_time' => 'getSubmitTime',
 
-    &#39;tran\_type&#39; =\&gt; &#39;getTranType&#39;,
+    'tran_type' => 'getTranType',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;getTranAmt&#39;,
+    'tran_amt' => 'getTranAmt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;getTranTax&#39;,
+    'tran_tax' => 'getTranTax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;getTranInv&#39;,
+    'tran_inv' => 'getTranInv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;getTranPo&#39;,
+    'tran_po' => 'getTranPo',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;getTranCNum&#39;,
+    'tran_c_num' => 'getTranCNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;getTranNote&#39;,
+    'tran_note' => 'getTranNote',
 
-    &#39;card\_num&#39; =\&gt; &#39;getCardNum&#39;,
+    'card_num' => 'getCardNum',
 
-    &#39;card\_name&#39; =\&gt; &#39;getCardName&#39;,
+    'card_name' => 'getCardName',
 
-    &#39;card\_exp&#39; =\&gt; &#39;getCardExp&#39;,
+    'card_exp' => 'getCardExp',
 
-    &#39;avs\_street&#39; =\&gt; &#39;getAvsStreet&#39;,
+    'avs_street' => 'getAvsStreet',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;getAvsZip&#39;,
+    'avs_zip' => 'getAvsZip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;getCvvNum&#39;,
+    'cvv_num' => 'getCvvNum',
 
-    &#39;proc\_id&#39; =\&gt; &#39;getProcId&#39;,
+    'proc_id' => 'getProcId',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;getProcResp&#39;,
+    'proc_resp' => 'getProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;getProcCode&#39;,
+    'proc_code' => 'getProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;getProcMess&#39;,
+    'proc_mess' => 'getProcMess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;getAvsCode&#39;,
+    'avs_code' => 'getAvsCode',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;getAvsResp&#39;,
+    'avs_resp' => 'getAvsResp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;getCvvCode&#39;,
+    'cvv_code' => 'getCvvCode',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;getCvvResp&#39;,
+    'cvv_resp' => 'getCvvResp',
 
-    &#39;items&#39; =\&gt; &#39;getItems&#39;,
+    'items' => 'getItems',
 
-    &#39;business\_name&#39; =\&gt; &#39;getBusinessName&#39;,
+    'business_name' => 'getBusinessName',
 
-    &#39;business\_address&#39; =\&gt; &#39;getBusinessAddress&#39;,
+    'business_address' => 'getBusinessAddress',
 
-    &#39;business\_address2&#39; =\&gt; &#39;getBusinessAddress2&#39;,
+    'business_address2' => 'getBusinessAddress2',
 
-    &#39;business\_city&#39; =\&gt; &#39;getBusinessCity&#39;,
+    'business_city' => 'getBusinessCity',
 
-    &#39;business\_state&#39; =\&gt; &#39;getBusinessState&#39;,
+    'business_state' => 'getBusinessState',
 
-    &#39;business\_zip&#39; =\&gt; &#39;getBusinessZip&#39;,
+    'business_zip' => 'getBusinessZip',
 
-    &#39;business\_country&#39; =\&gt; &#39;getBusinessCountry&#39;,
+    'business_country' => 'getBusinessCountry',
 
-    &#39;business\_website&#39; =\&gt; &#39;getBusinessWebsite&#39;,
+    'business_website' => 'getBusinessWebsite',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;getContactFirstName&#39;,
+    'contact_first_name' => 'getContactFirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;getContactLastName&#39;,
+    'contact_last_name' => 'getContactLastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;getContactPhone&#39;,
+    'contact_phone' => 'getContactPhone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;getContactFax&#39;,
+    'contact_fax' => 'getContactFax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;getContactEmail&#39;,
+    'contact_email' => 'getContactEmail',
 
-    &#39;contact\_title&#39; =\&gt; &#39;getContactTitle&#39;,
+    'contact_title' => 'getContactTitle',
 
-    &#39;ip&#39; =\&gt; &#39;getIp&#39;,
+    'ip' => 'getIp',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;getTaxExempt&#39;
+    'tax_exempt' => 'getTaxExempt'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;tran\_sequence&#39;] = isset($data[&#39;tran\_sequence&#39;]) ? $data[&#39;tran\_sequence&#39;] : null;
+    $this->container['tran_sequence'] = isset($data['tran_sequence']) ? $data['tran_sequence'] : null;
 
-    $this-\&gt;container[&#39;tran\_batch&#39;] = isset($data[&#39;tran\_batch&#39;]) ? $data[&#39;tran\_batch&#39;] : null;
+    $this->container['tran_batch'] = isset($data['tran_batch']) ? $data['tran_batch'] : null;
 
-    $this-\&gt;container[&#39;tran\_modified&#39;] = isset($data[&#39;tran\_modified&#39;]) ? $data[&#39;tran\_modified&#39;] : null;
+    $this->container['tran_modified'] = isset($data['tran_modified']) ? $data['tran_modified'] : null;
 
-    $this-\&gt;container[&#39;tran\_processed&#39;] = isset($data[&#39;tran\_processed&#39;]) ? $data[&#39;tran\_processed&#39;] : null;
+    $this->container['tran_processed'] = isset($data['tran_processed']) ? $data['tran_processed'] : null;
 
-    $this-\&gt;container[&#39;tran\_settled&#39;] = isset($data[&#39;tran\_settled&#39;]) ? $data[&#39;tran\_settled&#39;] : null;
+    $this->container['tran_settled'] = isset($data['tran_settled']) ? $data['tran_settled'] : null;
 
-    $this-\&gt;container[&#39;submit\_time&#39;] = isset($data[&#39;submit\_time&#39;]) ? $data[&#39;submit\_time&#39;] : null;
+    $this->container['submit_time'] = isset($data['submit_time']) ? $data['submit_time'] : null;
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = isset($data[&#39;tran\_type&#39;]) ? $data[&#39;tran\_type&#39;] : null;
+    $this->container['tran_type'] = isset($data['tran_type']) ? $data['tran_type'] : null;
 
-    $this-\&gt;container[&#39;tran\_amt&#39;] = isset($data[&#39;tran\_amt&#39;]) ? $data[&#39;tran\_amt&#39;] : null;
+    $this->container['tran_amt'] = isset($data['tran_amt']) ? $data['tran_amt'] : null;
 
-    $this-\&gt;container[&#39;tran\_tax&#39;] = isset($data[&#39;tran\_tax&#39;]) ? $data[&#39;tran\_tax&#39;] : null;
+    $this->container['tran_tax'] = isset($data['tran_tax']) ? $data['tran_tax'] : null;
 
-    $this-\&gt;container[&#39;tran\_inv&#39;] = isset($data[&#39;tran\_inv&#39;]) ? $data[&#39;tran\_inv&#39;] : null;
+    $this->container['tran_inv'] = isset($data['tran_inv']) ? $data['tran_inv'] : null;
 
-    $this-\&gt;container[&#39;tran\_po&#39;] = isset($data[&#39;tran\_po&#39;]) ? $data[&#39;tran\_po&#39;] : null;
+    $this->container['tran_po'] = isset($data['tran_po']) ? $data['tran_po'] : null;
 
-    $this-\&gt;container[&#39;tran\_c\_num&#39;] = isset($data[&#39;tran\_c\_num&#39;]) ? $data[&#39;tran\_c\_num&#39;] : null;
+    $this->container['tran_c_num'] = isset($data['tran_c_num']) ? $data['tran_c_num'] : null;
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = isset($data[&#39;tran\_note&#39;]) ? $data[&#39;tran\_note&#39;] : null;
+    $this->container['tran_note'] = isset($data['tran_note']) ? $data['tran_note'] : null;
 
-    $this-\&gt;container[&#39;card\_num&#39;] = isset($data[&#39;card\_num&#39;]) ? $data[&#39;card\_num&#39;] : null;
+    $this->container['card_num'] = isset($data['card_num']) ? $data['card_num'] : null;
 
-    $this-\&gt;container[&#39;card\_name&#39;] = isset($data[&#39;card\_name&#39;]) ? $data[&#39;card\_name&#39;] : null;
+    $this->container['card_name'] = isset($data['card_name']) ? $data['card_name'] : null;
 
-    $this-\&gt;container[&#39;card\_exp&#39;] = isset($data[&#39;card\_exp&#39;]) ? $data[&#39;card\_exp&#39;] : null;
+    $this->container['card_exp'] = isset($data['card_exp']) ? $data['card_exp'] : null;
 
-    $this-\&gt;container[&#39;avs\_street&#39;] = isset($data[&#39;avs\_street&#39;]) ? $data[&#39;avs\_street&#39;] : null;
+    $this->container['avs_street'] = isset($data['avs_street']) ? $data['avs_street'] : null;
 
-    $this-\&gt;container[&#39;avs\_zip&#39;] = isset($data[&#39;avs\_zip&#39;]) ? $data[&#39;avs\_zip&#39;] : null;
+    $this->container['avs_zip'] = isset($data['avs_zip']) ? $data['avs_zip'] : null;
 
-    $this-\&gt;container[&#39;cvv\_num&#39;] = isset($data[&#39;cvv\_num&#39;]) ? $data[&#39;cvv\_num&#39;] : null;
+    $this->container['cvv_num'] = isset($data['cvv_num']) ? $data['cvv_num'] : null;
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = isset($data[&#39;proc\_id&#39;]) ? $data[&#39;proc\_id&#39;] : null;
+    $this->container['proc_id'] = isset($data['proc_id']) ? $data['proc_id'] : null;
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = isset($data[&#39;proc\_resp&#39;]) ? $data[&#39;proc\_resp&#39;] : null;
+    $this->container['proc_resp'] = isset($data['proc_resp']) ? $data['proc_resp'] : null;
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = isset($data[&#39;proc\_code&#39;]) ? $data[&#39;proc\_code&#39;] : null;
+    $this->container['proc_code'] = isset($data['proc_code']) ? $data['proc_code'] : null;
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = isset($data[&#39;proc\_mess&#39;]) ? $data[&#39;proc\_mess&#39;] : null;
+    $this->container['proc_mess'] = isset($data['proc_mess']) ? $data['proc_mess'] : null;
 
-    $this-\&gt;container[&#39;avs\_code&#39;] = isset($data[&#39;avs\_code&#39;]) ? $data[&#39;avs\_code&#39;] : null;
+    $this->container['avs_code'] = isset($data['avs_code']) ? $data['avs_code'] : null;
 
-    $this-\&gt;container[&#39;avs\_resp&#39;] = isset($data[&#39;avs\_resp&#39;]) ? $data[&#39;avs\_resp&#39;] : null;
+    $this->container['avs_resp'] = isset($data['avs_resp']) ? $data['avs_resp'] : null;
 
-    $this-\&gt;container[&#39;cvv\_code&#39;] = isset($data[&#39;cvv\_code&#39;]) ? $data[&#39;cvv\_code&#39;] : null;
+    $this->container['cvv_code'] = isset($data['cvv_code']) ? $data['cvv_code'] : null;
 
-    $this-\&gt;container[&#39;cvv\_resp&#39;] = isset($data[&#39;cvv\_resp&#39;]) ? $data[&#39;cvv\_resp&#39;] : null;
+    $this->container['cvv_resp'] = isset($data['cvv_resp']) ? $data['cvv_resp'] : null;
 
-    $this-\&gt;container[&#39;items&#39;] = isset($data[&#39;items&#39;]) ? $data[&#39;items&#39;] : null;
+    $this->container['items'] = isset($data['items']) ? $data['items'] : null;
 
-    $this-\&gt;container[&#39;business\_name&#39;] = isset($data[&#39;business\_name&#39;]) ? $data[&#39;business\_name&#39;] : null;
+    $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
 
-    $this-\&gt;container[&#39;business\_address&#39;] = isset($data[&#39;business\_address&#39;]) ? $data[&#39;business\_address&#39;] : null;
+    $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
 
-    $this-\&gt;container[&#39;business\_address2&#39;] = isset($data[&#39;business\_address2&#39;]) ? $data[&#39;business\_address2&#39;] : null;
+    $this->container['business_address2'] = isset($data['business_address2']) ? $data['business_address2'] : null;
 
-    $this-\&gt;container[&#39;business\_city&#39;] = isset($data[&#39;business\_city&#39;]) ? $data[&#39;business\_city&#39;] : null;
+    $this->container['business_city'] = isset($data['business_city']) ? $data['business_city'] : null;
 
-    $this-\&gt;container[&#39;business\_state&#39;] = isset($data[&#39;business\_state&#39;]) ? $data[&#39;business\_state&#39;] : null;
+    $this->container['business_state'] = isset($data['business_state']) ? $data['business_state'] : null;
 
-    $this-\&gt;container[&#39;business\_zip&#39;] = isset($data[&#39;business\_zip&#39;]) ? $data[&#39;business\_zip&#39;] : null;
+    $this->container['business_zip'] = isset($data['business_zip']) ? $data['business_zip'] : null;
 
-    $this-\&gt;container[&#39;business\_country&#39;] = isset($data[&#39;business\_country&#39;]) ? $data[&#39;business\_country&#39;] : null;
+    $this->container['business_country'] = isset($data['business_country']) ? $data['business_country'] : null;
 
-    $this-\&gt;container[&#39;business\_website&#39;] = isset($data[&#39;business\_website&#39;]) ? $data[&#39;business\_website&#39;] : null;
+    $this->container['business_website'] = isset($data['business_website']) ? $data['business_website'] : null;
 
-    $this-\&gt;container[&#39;contact\_first\_name&#39;] = isset($data[&#39;contact\_first\_name&#39;]) ? $data[&#39;contact\_first\_name&#39;] : null;
+    $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_last\_name&#39;] = isset($data[&#39;contact\_last\_name&#39;]) ? $data[&#39;contact\_last\_name&#39;] : null;
+    $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_phone&#39;] = isset($data[&#39;contact\_phone&#39;]) ? $data[&#39;contact\_phone&#39;] : null;
+    $this->container['contact_phone'] = isset($data['contact_phone']) ? $data['contact_phone'] : null;
 
-    $this-\&gt;container[&#39;contact\_fax&#39;] = isset($data[&#39;contact\_fax&#39;]) ? $data[&#39;contact\_fax&#39;] : null;
+    $this->container['contact_fax'] = isset($data['contact_fax']) ? $data['contact_fax'] : null;
 
-    $this-\&gt;container[&#39;contact\_email&#39;] = isset($data[&#39;contact\_email&#39;]) ? $data[&#39;contact\_email&#39;] : null;
+    $this->container['contact_email'] = isset($data['contact_email']) ? $data['contact_email'] : null;
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = isset($data[&#39;contact\_title&#39;]) ? $data[&#39;contact\_title&#39;] : null;
+    $this->container['contact_title'] = isset($data['contact_title']) ? $data['contact_title'] : null;
 
-    $this-\&gt;container[&#39;ip&#39;] = isset($data[&#39;ip&#39;]) ? $data[&#39;ip&#39;] : null;
+    $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = isset($data[&#39;tax\_exempt&#39;]) ? $data[&#39;tax\_exempt&#39;] : null;
+    $this->container['tax_exempt'] = isset($data['tax_exempt']) ? $data['tax_exempt'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetTranSequence()
+    public functiongetTranSequence()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_sequence&#39;];
+    return $this->container['tran_sequence'];
 
     }
 
-    publicfunctionsetTranSequence($tran\_sequence)
+    public functionsetTranSequence($tran_sequence)
 
     {
 
-    $this-\&gt;container[&#39;tran\_sequence&#39;] = $tran\_sequence;
+    $this->container['tran_sequence'] = $tran_sequence;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranBatch()
+    public functiongetTranBatch()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_batch&#39;];
+    return $this->container['tran_batch'];
 
     }
 
-    publicfunctionsetTranBatch($tran\_batch)
+    public functionsetTranBatch($tran_batch)
 
     {
 
-    $this-\&gt;container[&#39;tran\_batch&#39;] = $tran\_batch;
+    $this->container['tran_batch'] = $tran_batch;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranModified()
+    public functiongetTranModified()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_modified&#39;];
+    return $this->container['tran_modified'];
 
     }
 
-    publicfunctionsetTranModified($tran\_modified)
+    public functionsetTranModified($tran_modified)
 
     {
 
-    $this-\&gt;container[&#39;tran\_modified&#39;] = $tran\_modified;
+    $this->container['tran_modified'] = $tran_modified;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranProcessed()
+    public functiongetTranProcessed()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_processed&#39;];
+    return $this->container['tran_processed'];
 
     }
 
-    publicfunctionsetTranProcessed($tran\_processed)
+    public functionsetTranProcessed($tran_processed)
 
     {
 
-    $this-\&gt;container[&#39;tran\_processed&#39;] = $tran\_processed;
+    $this->container['tran_processed'] = $tran_processed;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranSettled()
+    public functiongetTranSettled()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_settled&#39;];
+    return $this->container['tran_settled'];
 
     }
 
-    publicfunctionsetTranSettled($tran\_settled)
+    public functionsetTranSettled($tran_settled)
 
     {
 
-    $this-\&gt;container[&#39;tran\_settled&#39;] = $tran\_settled;
+    $this->container['tran_settled'] = $tran_settled;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSubmitTime()
+    public functiongetSubmitTime()
 
     {
 
-    return$this-\&gt;container[&#39;submit\_time&#39;];
+    return $this->container['submit_time'];
 
     }
 
-    publicfunctionsetSubmitTime($submit\_time)
+    public functionsetSubmitTime($submit_time)
 
     {
 
-    $this-\&gt;container[&#39;submit\_time&#39;] = $submit\_time;
+    $this->container['submit_time'] = $submit_time;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranType()
+    public functiongetTranType()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_type&#39;];
+    return $this->container['tran_type'];
 
     }
 
-    publicfunctionsetTranType($tran\_type)
+    public functionsetTranType($tran_type)
 
     {
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = $tran\_type;
+    $this->container['tran_type'] = $tran_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranAmt()
+    public functiongetTranAmt()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_amt&#39;];
+    return $this->container['tran_amt'];
 
     }
 
-    publicfunctionsetTranAmt($tran\_amt)
+    public functionsetTranAmt($tran_amt)
 
     {
 
-    $this-\&gt;container[&#39;tran\_amt&#39;] = $tran\_amt;
+    $this->container['tran_amt'] = $tran_amt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranTax()
+    public functiongetTranTax()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_tax&#39;];
+    return $this->container['tran_tax'];
 
     }
 
-    publicfunctionsetTranTax($tran\_tax)
+    public functionsetTranTax($tran_tax)
 
     {
 
-    $this-\&gt;container[&#39;tran\_tax&#39;] = $tran\_tax;
+    $this->container['tran_tax'] = $tran_tax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranInv()
+    public functiongetTranInv()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_inv&#39;];
+    return $this->container['tran_inv'];
 
     }
 
-    publicfunctionsetTranInv($tran\_inv)
+    public functionsetTranInv($tran_inv)
 
     {
 
-    $this-\&gt;container[&#39;tran\_inv&#39;] = $tran\_inv;
+    $this->container['tran_inv'] = $tran_inv;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranPo()
+    public functiongetTranPo()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_po&#39;];
+    return $this->container['tran_po'];
 
     }
 
-    publicfunctionsetTranPo($tran\_po)
+    public functionsetTranPo($tran_po)
 
     {
 
-    $this-\&gt;container[&#39;tran\_po&#39;] = $tran\_po;
+    $this->container['tran_po'] = $tran_po;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranCNum()
+    public functiongetTranCNum()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_c\_num&#39;];
+    return $this->container['tran_c_num'];
 
     }
 
-    publicfunctionsetTranCNum($tran\_c\_num)
+    public functionsetTranCNum($tran_c_num)
 
     {
 
-    $this-\&gt;container[&#39;tran\_c\_num&#39;] = $tran\_c\_num;
+    $this->container['tran_c_num'] = $tran_c_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranNote()
+    public functiongetTranNote()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_note&#39;];
+    return $this->container['tran_note'];
 
     }
 
-    publicfunctionsetTranNote($tran\_note)
+    public functionsetTranNote($tran_note)
 
     {
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = $tran\_note;
+    $this->container['tran_note'] = $tran_note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardNum()
+    public functiongetCardNum()
 
     {
 
-    return$this-\&gt;container[&#39;card\_num&#39;];
+    return $this->container['card_num'];
 
     }
 
-    publicfunctionsetCardNum($card\_num)
+    public functionsetCardNum($card_num)
 
     {
 
-    $this-\&gt;container[&#39;card\_num&#39;] = $card\_num;
+    $this->container['card_num'] = $card_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardName()
+    public functiongetCardName()
 
     {
 
-    return$this-\&gt;container[&#39;card\_name&#39;];
+    return $this->container['card_name'];
 
     }
 
-    publicfunctionsetCardName($card\_name)
+    public functionsetCardName($card_name)
 
     {
 
-    $this-\&gt;container[&#39;card\_name&#39;] = $card\_name;
+    $this->container['card_name'] = $card_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardExp()
+    public functiongetCardExp()
 
     {
 
-    return$this-\&gt;container[&#39;card\_exp&#39;];
+    return $this->container['card_exp'];
 
     }
 
-    publicfunctionsetCardExp($card\_exp)
+    public functionsetCardExp($card_exp)
 
     {
 
-    $this-\&gt;container[&#39;card\_exp&#39;] = $card\_exp;
+    $this->container['card_exp'] = $card_exp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsStreet()
+    public functiongetAvsStreet()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_street&#39;];
+    return $this->container['avs_street'];
 
     }
 
-    publicfunctionsetAvsStreet($avs\_street)
+    public functionsetAvsStreet($avs_street)
 
     {
 
-    $this-\&gt;container[&#39;avs\_street&#39;] = $avs\_street;
+    $this->container['avs_street'] = $avs_street;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsZip()
+    public functiongetAvsZip()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_zip&#39;];
+    return $this->container['avs_zip'];
 
     }
 
-    publicfunctionsetAvsZip($avs\_zip)
+    public functionsetAvsZip($avs_zip)
 
     {
 
-    $this-\&gt;container[&#39;avs\_zip&#39;] = $avs\_zip;
+    $this->container['avs_zip'] = $avs_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvNum()
+    public functiongetCvvNum()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_num&#39;];
+    return $this->container['cvv_num'];
 
     }
 
-    publicfunctionsetCvvNum($cvv\_num)
+    public functionsetCvvNum($cvv_num)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_num&#39;] = $cvv\_num;
+    $this->container['cvv_num'] = $cvv_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcId()
+    public functiongetProcId()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_id&#39;];
+    return $this->container['proc_id'];
 
     }
 
-    publicfunctionsetProcId($proc\_id)
+    public functionsetProcId($proc_id)
 
     {
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = $proc\_id;
+    $this->container['proc_id'] = $proc_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcResp()
+    public functiongetProcResp()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_resp&#39;];
+    return $this->container['proc_resp'];
 
     }
 
-    publicfunctionsetProcResp($proc\_resp)
+    public functionsetProcResp($proc_resp)
 
     {
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = $proc\_resp;
+    $this->container['proc_resp'] = $proc_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcCode()
+    public functiongetProcCode()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_code&#39;];
+    return $this->container['proc_code'];
 
     }
 
-    publicfunctionsetProcCode($proc\_code)
+    public functionsetProcCode($proc_code)
 
     {
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = $proc\_code;
+    $this->container['proc_code'] = $proc_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcMess()
+    public functiongetProcMess()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_mess&#39;];
+    return $this->container['proc_mess'];
 
     }
 
-    publicfunctionsetProcMess($proc\_mess)
+    public functionsetProcMess($proc_mess)
 
     {
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = $proc\_mess;
+    $this->container['proc_mess'] = $proc_mess;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsCode()
+    public functiongetAvsCode()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_code&#39;];
+    return $this->container['avs_code'];
 
     }
 
-    publicfunctionsetAvsCode($avs\_code)
+    public functionsetAvsCode($avs_code)
 
     {
 
-    $this-\&gt;container[&#39;avs\_code&#39;] = $avs\_code;
+    $this->container['avs_code'] = $avs_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsResp()
+    public functiongetAvsResp()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_resp&#39;];
+    return $this->container['avs_resp'];
 
     }
 
-    publicfunctionsetAvsResp($avs\_resp)
+    public functionsetAvsResp($avs_resp)
 
     {
 
-    $this-\&gt;container[&#39;avs\_resp&#39;] = $avs\_resp;
+    $this->container['avs_resp'] = $avs_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvCode()
+    public functiongetCvvCode()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_code&#39;];
+    return $this->container['cvv_code'];
 
     }
 
-    publicfunctionsetCvvCode($cvv\_code)
+    public functionsetCvvCode($cvv_code)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_code&#39;] = $cvv\_code;
+    $this->container['cvv_code'] = $cvv_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvResp()
+    public functiongetCvvResp()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_resp&#39;];
+    return $this->container['cvv_resp'];
 
     }
 
-    publicfunctionsetCvvResp($cvv\_resp)
+    public functionsetCvvResp($cvv_resp)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_resp&#39;] = $cvv\_resp;
+    $this->container['cvv_resp'] = $cvv_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetItems()
+    public functiongetItems()
 
     {
 
-    return$this-\&gt;container[&#39;items&#39;];
+    return $this->container['items'];
 
     }
 
-    publicfunctionsetItems($items)
+    public functionsetItems($items)
 
     {
 
-    $this-\&gt;container[&#39;items&#39;] = $items;
+    $this->container['items'] = $items;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessName()
+    public functiongetBusinessName()
 
     {
 
-    return$this-\&gt;container[&#39;business\_name&#39;];
+    return $this->container['business_name'];
 
     }
 
-    publicfunctionsetBusinessName($business\_name)
+    public functionsetBusinessName($business_name)
 
     {
 
-    $this-\&gt;container[&#39;business\_name&#39;] = $business\_name;
+    $this->container['business_name'] = $business_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessAddress()
+    public functiongetBusinessAddress()
 
     {
 
-    return$this-\&gt;container[&#39;business\_address&#39;];
+    return $this->container['business_address'];
 
     }
 
-    publicfunctionsetBusinessAddress($business\_address)
+    public functionsetBusinessAddress($business_address)
 
     {
 
-    $this-\&gt;container[&#39;business\_address&#39;] = $business\_address;
+    $this->container['business_address'] = $business_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessAddress2()
+    public functiongetBusinessAddress2()
 
     {
 
-    return$this-\&gt;container[&#39;business\_address2&#39;];
+    return $this->container['business_address2'];
 
     }
 
-    publicfunctionsetBusinessAddress2($business\_address2)
+    public functionsetBusinessAddress2($business_address2)
 
     {
 
-    $this-\&gt;container[&#39;business\_address2&#39;] = $business\_address2;
+    $this->container['business_address2'] = $business_address2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessCity()
+    public functiongetBusinessCity()
 
     {
 
-    return$this-\&gt;container[&#39;business\_city&#39;];
+    return $this->container['business_city'];
 
     }
 
-    publicfunctionsetBusinessCity($business\_city)
+    public functionsetBusinessCity($business_city)
 
     {
 
-    $this-\&gt;container[&#39;business\_city&#39;] = $business\_city;
+    $this->container['business_city'] = $business_city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessState()
+    public functiongetBusinessState()
 
     {
 
-    return$this-\&gt;container[&#39;business\_state&#39;];
+    return $this->container['business_state'];
 
     }
 
-    publicfunctionsetBusinessState($business\_state)
+    public functionsetBusinessState($business_state)
 
     {
 
-    $this-\&gt;container[&#39;business\_state&#39;] = $business\_state;
+    $this->container['business_state'] = $business_state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessZip()
+    public functiongetBusinessZip()
 
     {
 
-    return$this-\&gt;container[&#39;business\_zip&#39;];
+    return $this->container['business_zip'];
 
     }
 
-    publicfunctionsetBusinessZip($business\_zip)
+    public functionsetBusinessZip($business_zip)
 
     {
 
-    $this-\&gt;container[&#39;business\_zip&#39;] = $business\_zip;
+    $this->container['business_zip'] = $business_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessCountry()
+    public functiongetBusinessCountry()
 
     {
 
-    return$this-\&gt;container[&#39;business\_country&#39;];
+    return $this->container['business_country'];
 
     }
 
-    publicfunctionsetBusinessCountry($business\_country)
+    public functionsetBusinessCountry($business_country)
 
     {
 
-    $this-\&gt;container[&#39;business\_country&#39;] = $business\_country;
+    $this->container['business_country'] = $business_country;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessWebsite()
+    public functiongetBusinessWebsite()
 
     {
 
-    return$this-\&gt;container[&#39;business\_website&#39;];
+    return $this->container['business_website'];
 
     }
 
-    publicfunctionsetBusinessWebsite($business\_website)
+    public functionsetBusinessWebsite($business_website)
 
     {
 
-    $this-\&gt;container[&#39;business\_website&#39;] = $business\_website;
+    $this->container['business_website'] = $business_website;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactFirstName()
+    public functiongetContactFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_first\_name&#39;];
+    return $this->container['contact_first_name'];
 
     }
 
-    publicfunctionsetContactFirstName($contact\_first\_name)
+    public functionsetContactFirstName($contact_first_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_first\_name&#39;] = $contact\_first\_name;
+    $this->container['contact_first_name'] = $contact_first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactLastName()
+    public functiongetContactLastName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_last\_name&#39;];
+    return $this->container['contact_last_name'];
 
     }
 
-    publicfunctionsetContactLastName($contact\_last\_name)
+    public functionsetContactLastName($contact_last_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_last\_name&#39;] = $contact\_last\_name;
+    $this->container['contact_last_name'] = $contact_last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactPhone()
+    public functiongetContactPhone()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_phone&#39;];
+    return $this->container['contact_phone'];
 
     }
 
-    publicfunctionsetContactPhone($contact\_phone)
+    public functionsetContactPhone($contact_phone)
 
     {
 
-    $this-\&gt;container[&#39;contact\_phone&#39;] = $contact\_phone;
+    $this->container['contact_phone'] = $contact_phone;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactFax()
+    public functiongetContactFax()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_fax&#39;];
+    return $this->container['contact_fax'];
 
     }
 
-    publicfunctionsetContactFax($contact\_fax)
+    public functionsetContactFax($contact_fax)
 
     {
 
-    $this-\&gt;container[&#39;contact\_fax&#39;] = $contact\_fax;
+    $this->container['contact_fax'] = $contact_fax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactEmail()
+    public functiongetContactEmail()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_email&#39;];
+    return $this->container['contact_email'];
 
     }
 
-    publicfunctionsetContactEmail($contact\_email)
+    public functionsetContactEmail($contact_email)
 
     {
 
-    $this-\&gt;container[&#39;contact\_email&#39;] = $contact\_email;
+    $this->container['contact_email'] = $contact_email;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactTitle()
+    public functiongetContactTitle()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_title&#39;];
+    return $this->container['contact_title'];
 
     }
 
-    publicfunctionsetContactTitle($contact\_title)
+    public functionsetContactTitle($contact_title)
 
     {
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = $contact\_title;
+    $this->container['contact_title'] = $contact_title;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetIp()
+    public functiongetIp()
 
     {
 
-    return$this-\&gt;container[&#39;ip&#39;];
+    return $this->container['ip'];
 
     }
 
-    publicfunctionsetIp($ip)
+    public functionsetIp($ip)
 
     {
 
-    $this-\&gt;container[&#39;ip&#39;] = $ip;
+    $this->container['ip'] = $ip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTaxExempt()
+    public functiongetTaxExempt()
 
     {
 
-    return$this-\&gt;container[&#39;tax\_exempt&#39;];
+    return $this->container['tax_exempt'];
 
     }
 
-    publicfunctionsetTaxExempt($tax\_exempt)
+    public functionsetTaxExempt($tax_exempt)
 
     {
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = $tax\_exempt;
+    $this->container['tax_exempt'] = $tax_exempt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -6346,9 +6346,9 @@
 
 # Receipt
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -6360,219 +6360,219 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Receipt&#39;;
+    protectedstatic$swaggerModelName = 'Receipt';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;header&#39; =\&gt; &#39;\Swagger\Client\Model\ReceiptCustomLines&#39;,
+    'header' => '\Swagger\Client\Model\ReceiptCustomLines',
 
-    &#39;footer&#39; =\&gt; &#39;\Swagger\Client\Model\ReceiptCustomLines&#39;
+    'footer' => '\Swagger\Client\Model\ReceiptCustomLines'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;header&#39; =\&gt; null,
+    'header' => null,
 
-    &#39;footer&#39; =\&gt; null
+    'footer' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;header&#39; =\&gt; &#39;Header&#39;,
+    'header' => 'Header',
 
-    &#39;footer&#39; =\&gt; &#39;Footer&#39;
+    'footer' => 'Footer'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;header&#39; =\&gt; &#39;setHeader&#39;,
+    'header' => 'setHeader',
 
-    &#39;footer&#39; =\&gt; &#39;setFooter&#39;
+    'footer' => 'setFooter'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;header&#39; =\&gt; &#39;getHeader&#39;,
+    'header' => 'getHeader',
 
-    &#39;footer&#39; =\&gt; &#39;getFooter&#39;
+    'footer' => 'getFooter'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;header&#39;] = isset($data[&#39;header&#39;]) ? $data[&#39;header&#39;] : null;
+    $this->container['header'] = isset($data['header']) ? $data['header'] : null;
 
-    $this-\&gt;container[&#39;footer&#39;] = isset($data[&#39;footer&#39;]) ? $data[&#39;footer&#39;] : null;
+    $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetHeader()
+    public functiongetHeader()
 
     {
 
-    return$this-\&gt;container[&#39;header&#39;];
+    return $this->container['header'];
 
     }
 
-    publicfunctionsetHeader($header)
+    public functionsetHeader($header)
 
     {
 
-    $this-\&gt;container[&#39;header&#39;] = $header;
+    $this->container['header'] = $header;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFooter()
+    public functiongetFooter()
 
     {
 
-    return$this-\&gt;container[&#39;footer&#39;];
+    return $this->container['footer'];
 
     }
 
-    publicfunctionsetFooter($footer)
+    public functionsetFooter($footer)
 
     {
 
-    $this-\&gt;container[&#39;footer&#39;] = $footer;
+    $this->container['footer'] = $footer;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -6580,9 +6580,9 @@
 
 # ReceiptCustomLines
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -6594,279 +6594,279 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;ReceiptCustomLines&#39;;
+    protectedstatic$swaggerModelName = 'ReceiptCustomLines';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;custom\_line1&#39; =\&gt; &#39;string&#39;,
+    'custom_line1' => 'string',
 
-    &#39;custom\_line2&#39; =\&gt; &#39;string&#39;,
+    'custom_line2' => 'string',
 
-    &#39;custom\_line3&#39; =\&gt; &#39;string&#39;,
+    'custom_line3' => 'string',
 
-    &#39;custom\_line4&#39; =\&gt; &#39;string&#39;
+    'custom_line4' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;custom\_line1&#39; =\&gt; null,
+    'custom_line1' => null,
 
-    &#39;custom\_line2&#39; =\&gt; null,
+    'custom_line2' => null,
 
-    &#39;custom\_line3&#39; =\&gt; null,
+    'custom_line3' => null,
 
-    &#39;custom\_line4&#39; =\&gt; null
+    'custom_line4' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;custom\_line1&#39; =\&gt; &#39;CustomLine1&#39;,
+    'custom_line1' => 'CustomLine1',
 
-    &#39;custom\_line2&#39; =\&gt; &#39;CustomLine2&#39;,
+    'custom_line2' => 'CustomLine2',
 
-    &#39;custom\_line3&#39; =\&gt; &#39;CustomLine3&#39;,
+    'custom_line3' => 'CustomLine3',
 
-    &#39;custom\_line4&#39; =\&gt; &#39;CustomLine4&#39;
+    'custom_line4' => 'CustomLine4'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;custom\_line1&#39; =\&gt; &#39;setCustomLine1&#39;,
+    'custom_line1' => 'setCustomLine1',
 
-    &#39;custom\_line2&#39; =\&gt; &#39;setCustomLine2&#39;,
+    'custom_line2' => 'setCustomLine2',
 
-    &#39;custom\_line3&#39; =\&gt; &#39;setCustomLine3&#39;,
+    'custom_line3' => 'setCustomLine3',
 
-    &#39;custom\_line4&#39; =\&gt; &#39;setCustomLine4&#39;
+    'custom_line4' => 'setCustomLine4'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;custom\_line1&#39; =\&gt; &#39;getCustomLine1&#39;,
+    'custom_line1' => 'getCustomLine1',
 
-    &#39;custom\_line2&#39; =\&gt; &#39;getCustomLine2&#39;,
+    'custom_line2' => 'getCustomLine2',
 
-    &#39;custom\_line3&#39; =\&gt; &#39;getCustomLine3&#39;,
+    'custom_line3' => 'getCustomLine3',
 
-    &#39;custom\_line4&#39; =\&gt; &#39;getCustomLine4&#39;
+    'custom_line4' => 'getCustomLine4'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;custom\_line1&#39;] = isset($data[&#39;custom\_line1&#39;]) ? $data[&#39;custom\_line1&#39;] : null;
+    $this->container['custom_line1'] = isset($data['custom_line1']) ? $data['custom_line1'] : null;
 
-    $this-\&gt;container[&#39;custom\_line2&#39;] = isset($data[&#39;custom\_line2&#39;]) ? $data[&#39;custom\_line2&#39;] : null;
+    $this->container['custom_line2'] = isset($data['custom_line2']) ? $data['custom_line2'] : null;
 
-    $this-\&gt;container[&#39;custom\_line3&#39;] = isset($data[&#39;custom\_line3&#39;]) ? $data[&#39;custom\_line3&#39;] : null;
+    $this->container['custom_line3'] = isset($data['custom_line3']) ? $data['custom_line3'] : null;
 
-    $this-\&gt;container[&#39;custom\_line4&#39;] = isset($data[&#39;custom\_line4&#39;]) ? $data[&#39;custom\_line4&#39;] : null;
+    $this->container['custom_line4'] = isset($data['custom_line4']) ? $data['custom_line4'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetCustomLine1()
+    public functiongetCustomLine1()
 
     {
 
-    return$this-\&gt;container[&#39;custom\_line1&#39;];
+    return $this->container['custom_line1'];
 
     }
 
-    publicfunctionsetCustomLine1($custom\_line1)
+    public functionsetCustomLine1($custom_line1)
 
     {
 
-    $this-\&gt;container[&#39;custom\_line1&#39;] = $custom\_line1;
+    $this->container['custom_line1'] = $custom_line1;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomLine2()
+    public functiongetCustomLine2()
 
     {
 
-    return$this-\&gt;container[&#39;custom\_line2&#39;];
+    return $this->container['custom_line2'];
 
     }
 
-    publicfunctionsetCustomLine2($custom\_line2)
+    public functionsetCustomLine2($custom_line2)
 
     {
 
-    $this-\&gt;container[&#39;custom\_line2&#39;] = $custom\_line2;
+    $this->container['custom_line2'] = $custom_line2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomLine3()
+    public functiongetCustomLine3()
 
     {
 
-    return$this-\&gt;container[&#39;custom\_line3&#39;];
+    return $this->container['custom_line3'];
 
     }
 
-    publicfunctionsetCustomLine3($custom\_line3)
+    public functionsetCustomLine3($custom_line3)
 
     {
 
-    $this-\&gt;container[&#39;custom\_line3&#39;] = $custom\_line3;
+    $this->container['custom_line3'] = $custom_line3;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomLine4()
+    public functiongetCustomLine4()
 
     {
 
-    return$this-\&gt;container[&#39;custom\_line4&#39;];
+    return $this->container['custom_line4'];
 
     }
 
-    publicfunctionsetCustomLine4($custom\_line4)
+    public functionsetCustomLine4($custom_line4)
 
     {
 
-    $this-\&gt;container[&#39;custom\_line4&#39;] = $custom\_line4;
+    $this->container['custom_line4'] = $custom_line4;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -6874,9 +6874,9 @@
 
 # Record
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -6888,519 +6888,519 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Record&#39;;
+    protectedstatic$swaggerModelName = 'Record';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;response&#39; =\&gt; &#39;\Swagger\Client\Model\Response&#39;,
+    'response' => '\Swagger\Client\Model\Response',
 
-    &#39;id&#39; =\&gt; &#39;int&#39;,
+    'id' => 'int',
 
-    &#39;reference&#39; =\&gt; &#39;string&#39;,
+    'reference' => 'string',
 
-    &#39;business&#39; =\&gt; &#39;\Swagger\Client\Model\Business&#39;,
+    'business' => '\Swagger\Client\Model\Business',
 
-    &#39;contact&#39; =\&gt; &#39;\Swagger\Client\Model\Contact&#39;,
+    'contact' => '\Swagger\Client\Model\Contact',
 
-    &#39;po&#39; =\&gt; &#39;string&#39;,
+    'po' => 'string',
 
-    &#39;invoice&#39; =\&gt; &#39;string&#39;,
+    'invoice' => 'string',
 
-    &#39;customer&#39; =\&gt; &#39;string&#39;,
+    'customer' => 'string',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;bool&#39;,
+    'tax_exempt' => 'bool',
 
-    &#39;note&#39; =\&gt; &#39;string&#39;,
+    'note' => 'string',
 
-    &#39;credit\_cards&#39; =\&gt; &#39;\Swagger\Client\Model\VaultCreditCard[]&#39;,
+    'credit_cards' => '\Swagger\Client\Model\VaultCreditCard[]',
 
-    &#39;checks&#39; =\&gt; &#39;\Swagger\Client\Model\VaultCheck[]&#39;
+    'checks' => '\Swagger\Client\Model\VaultCheck[]'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;response&#39; =\&gt; null,
+    'response' => null,
 
-    &#39;id&#39; =\&gt; &#39;int32&#39;,
+    'id' => 'int32',
 
-    &#39;reference&#39; =\&gt; null,
+    'reference' => null,
 
-    &#39;business&#39; =\&gt; null,
+    'business' => null,
 
-    &#39;contact&#39; =\&gt; null,
+    'contact' => null,
 
-    &#39;po&#39; =\&gt; null,
+    'po' => null,
 
-    &#39;invoice&#39; =\&gt; null,
+    'invoice' => null,
 
-    &#39;customer&#39; =\&gt; null,
+    'customer' => null,
 
-    &#39;tax\_exempt&#39; =\&gt; null,
+    'tax_exempt' => null,
 
-    &#39;note&#39; =\&gt; null,
+    'note' => null,
 
-    &#39;credit\_cards&#39; =\&gt; null,
+    'credit_cards' => null,
 
-    &#39;checks&#39; =\&gt; null
+    'checks' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;response&#39; =\&gt; &#39;Response&#39;,
+    'response' => 'Response',
 
-    &#39;id&#39; =\&gt; &#39;ID&#39;,
+    'id' => 'ID',
 
-    &#39;reference&#39; =\&gt; &#39;Reference&#39;,
+    'reference' => 'Reference',
 
-    &#39;business&#39; =\&gt; &#39;Business&#39;,
+    'business' => 'Business',
 
-    &#39;contact&#39; =\&gt; &#39;Contact&#39;,
+    'contact' => 'Contact',
 
-    &#39;po&#39; =\&gt; &#39;PO&#39;,
+    'po' => 'PO',
 
-    &#39;invoice&#39; =\&gt; &#39;Invoice&#39;,
+    'invoice' => 'Invoice',
 
-    &#39;customer&#39; =\&gt; &#39;Customer&#39;,
+    'customer' => 'Customer',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;TaxExempt&#39;,
+    'tax_exempt' => 'TaxExempt',
 
-    &#39;note&#39; =\&gt; &#39;Note&#39;,
+    'note' => 'Note',
 
-    &#39;credit\_cards&#39; =\&gt; &#39;CreditCards&#39;,
+    'credit_cards' => 'CreditCards',
 
-    &#39;checks&#39; =\&gt; &#39;Checks&#39;
+    'checks' => 'Checks'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;response&#39; =\&gt; &#39;setResponse&#39;,
+    'response' => 'setResponse',
 
-    &#39;id&#39; =\&gt; &#39;setId&#39;,
+    'id' => 'setId',
 
-    &#39;reference&#39; =\&gt; &#39;setReference&#39;,
+    'reference' => 'setReference',
 
-    &#39;business&#39; =\&gt; &#39;setBusiness&#39;,
+    'business' => 'setBusiness',
 
-    &#39;contact&#39; =\&gt; &#39;setContact&#39;,
+    'contact' => 'setContact',
 
-    &#39;po&#39; =\&gt; &#39;setPo&#39;,
+    'po' => 'setPo',
 
-    &#39;invoice&#39; =\&gt; &#39;setInvoice&#39;,
+    'invoice' => 'setInvoice',
 
-    &#39;customer&#39; =\&gt; &#39;setCustomer&#39;,
+    'customer' => 'setCustomer',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;setTaxExempt&#39;,
+    'tax_exempt' => 'setTaxExempt',
 
-    &#39;note&#39; =\&gt; &#39;setNote&#39;,
+    'note' => 'setNote',
 
-    &#39;credit\_cards&#39; =\&gt; &#39;setCreditCards&#39;,
+    'credit_cards' => 'setCreditCards',
 
-    &#39;checks&#39; =\&gt; &#39;setChecks&#39;
+    'checks' => 'setChecks'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;response&#39; =\&gt; &#39;getResponse&#39;,
+    'response' => 'getResponse',
 
-    &#39;id&#39; =\&gt; &#39;getId&#39;,
+    'id' => 'getId',
 
-    &#39;reference&#39; =\&gt; &#39;getReference&#39;,
+    'reference' => 'getReference',
 
-    &#39;business&#39; =\&gt; &#39;getBusiness&#39;,
+    'business' => 'getBusiness',
 
-    &#39;contact&#39; =\&gt; &#39;getContact&#39;,
+    'contact' => 'getContact',
 
-    &#39;po&#39; =\&gt; &#39;getPo&#39;,
+    'po' => 'getPo',
 
-    &#39;invoice&#39; =\&gt; &#39;getInvoice&#39;,
+    'invoice' => 'getInvoice',
 
-    &#39;customer&#39; =\&gt; &#39;getCustomer&#39;,
+    'customer' => 'getCustomer',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;getTaxExempt&#39;,
+    'tax_exempt' => 'getTaxExempt',
 
-    &#39;note&#39; =\&gt; &#39;getNote&#39;,
+    'note' => 'getNote',
 
-    &#39;credit\_cards&#39; =\&gt; &#39;getCreditCards&#39;,
+    'credit_cards' => 'getCreditCards',
 
-    &#39;checks&#39; =\&gt; &#39;getChecks&#39;
+    'checks' => 'getChecks'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = isset($data[&#39;response&#39;]) ? $data[&#39;response&#39;] : null;
+    $this->container['response'] = isset($data['response']) ? $data['response'] : null;
 
-    $this-\&gt;container[&#39;id&#39;] = isset($data[&#39;id&#39;]) ? $data[&#39;id&#39;] : null;
+    $this->container['id'] = isset($data['id']) ? $data['id'] : null;
 
-    $this-\&gt;container[&#39;reference&#39;] = isset($data[&#39;reference&#39;]) ? $data[&#39;reference&#39;] : null;
+    $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
 
-    $this-\&gt;container[&#39;business&#39;] = isset($data[&#39;business&#39;]) ? $data[&#39;business&#39;] : null;
+    $this->container['business'] = isset($data['business']) ? $data['business'] : null;
 
-    $this-\&gt;container[&#39;contact&#39;] = isset($data[&#39;contact&#39;]) ? $data[&#39;contact&#39;] : null;
+    $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
 
-    $this-\&gt;container[&#39;po&#39;] = isset($data[&#39;po&#39;]) ? $data[&#39;po&#39;] : null;
+    $this->container['po'] = isset($data['po']) ? $data['po'] : null;
 
-    $this-\&gt;container[&#39;invoice&#39;] = isset($data[&#39;invoice&#39;]) ? $data[&#39;invoice&#39;] : null;
+    $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
 
-    $this-\&gt;container[&#39;customer&#39;] = isset($data[&#39;customer&#39;]) ? $data[&#39;customer&#39;] : null;
+    $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = isset($data[&#39;tax\_exempt&#39;]) ? $data[&#39;tax\_exempt&#39;] : null;
+    $this->container['tax_exempt'] = isset($data['tax_exempt']) ? $data['tax_exempt'] : null;
 
-    $this-\&gt;container[&#39;note&#39;] = isset($data[&#39;note&#39;]) ? $data[&#39;note&#39;] : null;
+    $this->container['note'] = isset($data['note']) ? $data['note'] : null;
 
-    $this-\&gt;container[&#39;credit\_cards&#39;] = isset($data[&#39;credit\_cards&#39;]) ? $data[&#39;credit\_cards&#39;] : null;
+    $this->container['credit_cards'] = isset($data['credit_cards']) ? $data['credit_cards'] : null;
 
-    $this-\&gt;container[&#39;checks&#39;] = isset($data[&#39;checks&#39;]) ? $data[&#39;checks&#39;] : null;
+    $this->container['checks'] = isset($data['checks']) ? $data['checks'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetResponse()
+    public functiongetResponse()
 
     {
 
-    return$this-\&gt;container[&#39;response&#39;];
+    return $this->container['response'];
 
     }
 
-    publicfunctionsetResponse($response)
+    public functionsetResponse($response)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = $response;
+    $this->container['response'] = $response;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetId()
+    public functiongetId()
 
     {
 
-    return$this-\&gt;container[&#39;id&#39;];
+    return $this->container['id'];
 
     }
 
-    publicfunctionsetId($id)
+    public functionsetId($id)
 
     {
 
-    $this-\&gt;container[&#39;id&#39;] = $id;
+    $this->container['id'] = $id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReference()
+    public functiongetReference()
 
     {
 
-    return$this-\&gt;container[&#39;reference&#39;];
+    return $this->container['reference'];
 
     }
 
-    publicfunctionsetReference($reference)
+    public functionsetReference($reference)
 
     {
 
-    $this-\&gt;container[&#39;reference&#39;] = $reference;
+    $this->container['reference'] = $reference;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusiness()
+    public functiongetBusiness()
 
     {
 
-    return$this-\&gt;container[&#39;business&#39;];
+    return $this->container['business'];
 
     }
 
-    publicfunctionsetBusiness($business)
+    public functionsetBusiness($business)
 
     {
 
-    $this-\&gt;container[&#39;business&#39;] = $business;
+    $this->container['business'] = $business;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContact()
+    public functiongetContact()
 
     {
 
-    return$this-\&gt;container[&#39;contact&#39;];
+    return $this->container['contact'];
 
     }
 
-    publicfunctionsetContact($contact)
+    public functionsetContact($contact)
 
     {
 
-    $this-\&gt;container[&#39;contact&#39;] = $contact;
+    $this->container['contact'] = $contact;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPo()
+    public functiongetPo()
 
     {
 
-    return$this-\&gt;container[&#39;po&#39;];
+    return $this->container['po'];
 
     }
 
-    publicfunctionsetPo($po)
+    public functionsetPo($po)
 
     {
 
-    $this-\&gt;container[&#39;po&#39;] = $po;
+    $this->container['po'] = $po;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetInvoice()
+    public functiongetInvoice()
 
     {
 
-    return$this-\&gt;container[&#39;invoice&#39;];
+    return $this->container['invoice'];
 
     }
 
-    publicfunctionsetInvoice($invoice)
+    public functionsetInvoice($invoice)
 
     {
 
-    $this-\&gt;container[&#39;invoice&#39;] = $invoice;
+    $this->container['invoice'] = $invoice;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomer()
+    public functiongetCustomer()
 
     {
 
-    return$this-\&gt;container[&#39;customer&#39;];
+    return $this->container['customer'];
 
     }
 
-    publicfunctionsetCustomer($customer)
+    public functionsetCustomer($customer)
 
     {
 
-    $this-\&gt;container[&#39;customer&#39;] = $customer;
+    $this->container['customer'] = $customer;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTaxExempt()
+    public functiongetTaxExempt()
 
     {
 
-    return$this-\&gt;container[&#39;tax\_exempt&#39;];
+    return $this->container['tax_exempt'];
 
     }
 
-    publicfunctionsetTaxExempt($tax\_exempt)
+    public functionsetTaxExempt($tax_exempt)
 
     {
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = $tax\_exempt;
+    $this->container['tax_exempt'] = $tax_exempt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNote()
+    public functiongetNote()
 
     {
 
-    return$this-\&gt;container[&#39;note&#39;];
+    return $this->container['note'];
 
     }
 
-    publicfunctionsetNote($note)
+    public functionsetNote($note)
 
     {
 
-    $this-\&gt;container[&#39;note&#39;] = $note;
+    $this->container['note'] = $note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCreditCards()
+    public functiongetCreditCards()
 
     {
 
-    return$this-\&gt;container[&#39;credit\_cards&#39;];
+    return $this->container['credit_cards'];
 
     }
 
-    publicfunctionsetCreditCards($credit\_cards)
+    public functionsetCreditCards($credit_cards)
 
     {
 
-    $this-\&gt;container[&#39;credit\_cards&#39;] = $credit\_cards;
+    $this->container['credit_cards'] = $credit_cards;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetChecks()
+    public functiongetChecks()
 
     {
 
-    return$this-\&gt;container[&#39;checks&#39;];
+    return $this->container['checks'];
 
     }
 
-    publicfunctionsetChecks($checks)
+    public functionsetChecks($checks)
 
     {
 
-    $this-\&gt;container[&#39;checks&#39;] = $checks;
+    $this->container['checks'] = $checks;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -7408,9 +7408,9 @@
 
 # Response
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -7422,219 +7422,219 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Response&#39;;
+    protectedstatic$swaggerModelName = 'Response';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;error&#39; =\&gt; &#39;bool&#39;,
+    'error' => 'bool',
 
-    &#39;message&#39; =\&gt; &#39;string&#39;
+    'message' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;error&#39; =\&gt; null,
+    'error' => null,
 
-    &#39;message&#39; =\&gt; null
+    'message' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;error&#39; =\&gt; &#39;Error&#39;,
+    'error' => 'Error',
 
-    &#39;message&#39; =\&gt; &#39;Message&#39;
+    'message' => 'Message'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;error&#39; =\&gt; &#39;setError&#39;,
+    'error' => 'setError',
 
-    &#39;message&#39; =\&gt; &#39;setMessage&#39;
+    'message' => 'setMessage'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;error&#39; =\&gt; &#39;getError&#39;,
+    'error' => 'getError',
 
-    &#39;message&#39; =\&gt; &#39;getMessage&#39;
+    'message' => 'getMessage'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;error&#39;] = isset($data[&#39;error&#39;]) ? $data[&#39;error&#39;] : null;
+    $this->container['error'] = isset($data['error']) ? $data['error'] : null;
 
-    $this-\&gt;container[&#39;message&#39;] = isset($data[&#39;message&#39;]) ? $data[&#39;message&#39;] : null;
+    $this->container['message'] = isset($data['message']) ? $data['message'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetError()
+    public functiongetError()
 
     {
 
-    return$this-\&gt;container[&#39;error&#39;];
+    return $this->container['error'];
 
     }
 
-    publicfunctionsetError($error)
+    public functionsetError($error)
 
     {
 
-    $this-\&gt;container[&#39;error&#39;] = $error;
+    $this->container['error'] = $error;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMessage()
+    public functiongetMessage()
 
     {
 
-    return$this-\&gt;container[&#39;message&#39;];
+    return $this->container['message'];
 
     }
 
-    publicfunctionsetMessage($message)
+    public functionsetMessage($message)
 
     {
 
-    $this-\&gt;container[&#39;message&#39;] = $message;
+    $this->container['message'] = $message;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -7642,9 +7642,9 @@
 
 # SearchVault
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -7656,279 +7656,279 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;SearchVault&#39;;
+    protectedstatic$swaggerModelName = 'SearchVault';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;reference&#39; =\&gt; &#39;string&#39;,
+    'reference' => 'string',
 
-    &#39;business\_name&#39; =\&gt; &#39;string&#39;,
+    'business_name' => 'string',
 
-    &#39;first\_name&#39; =\&gt; &#39;string&#39;,
+    'first_name' => 'string',
 
-    &#39;last\_name&#39; =\&gt; &#39;string&#39;
+    'last_name' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;reference&#39; =\&gt; null,
+    'reference' => null,
 
-    &#39;business\_name&#39; =\&gt; null,
+    'business_name' => null,
 
-    &#39;first\_name&#39; =\&gt; null,
+    'first_name' => null,
 
-    &#39;last\_name&#39; =\&gt; null
+    'last_name' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;reference&#39; =\&gt; &#39;Reference&#39;,
+    'reference' => 'Reference',
 
-    &#39;business\_name&#39; =\&gt; &#39;BusinessName&#39;,
+    'business_name' => 'BusinessName',
 
-    &#39;first\_name&#39; =\&gt; &#39;FirstName&#39;,
+    'first_name' => 'FirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;LastName&#39;
+    'last_name' => 'LastName'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;reference&#39; =\&gt; &#39;setReference&#39;,
+    'reference' => 'setReference',
 
-    &#39;business\_name&#39; =\&gt; &#39;setBusinessName&#39;,
+    'business_name' => 'setBusinessName',
 
-    &#39;first\_name&#39; =\&gt; &#39;setFirstName&#39;,
+    'first_name' => 'setFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;setLastName&#39;
+    'last_name' => 'setLastName'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;reference&#39; =\&gt; &#39;getReference&#39;,
+    'reference' => 'getReference',
 
-    &#39;business\_name&#39; =\&gt; &#39;getBusinessName&#39;,
+    'business_name' => 'getBusinessName',
 
-    &#39;first\_name&#39; =\&gt; &#39;getFirstName&#39;,
+    'first_name' => 'getFirstName',
 
-    &#39;last\_name&#39; =\&gt; &#39;getLastName&#39;
+    'last_name' => 'getLastName'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;reference&#39;] = isset($data[&#39;reference&#39;]) ? $data[&#39;reference&#39;] : null;
+    $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
 
-    $this-\&gt;container[&#39;business\_name&#39;] = isset($data[&#39;business\_name&#39;]) ? $data[&#39;business\_name&#39;] : null;
+    $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
 
-    $this-\&gt;container[&#39;first\_name&#39;] = isset($data[&#39;first\_name&#39;]) ? $data[&#39;first\_name&#39;] : null;
+    $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
 
-    $this-\&gt;container[&#39;last\_name&#39;] = isset($data[&#39;last\_name&#39;]) ? $data[&#39;last\_name&#39;] : null;
+    $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetReference()
+    public functiongetReference()
 
     {
 
-    return$this-\&gt;container[&#39;reference&#39;];
+    return $this->container['reference'];
 
     }
 
-    publicfunctionsetReference($reference)
+    public functionsetReference($reference)
 
     {
 
-    $this-\&gt;container[&#39;reference&#39;] = $reference;
+    $this->container['reference'] = $reference;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessName()
+    public functiongetBusinessName()
 
     {
 
-    return$this-\&gt;container[&#39;business\_name&#39;];
+    return $this->container['business_name'];
 
     }
 
-    publicfunctionsetBusinessName($business\_name)
+    public functionsetBusinessName($business_name)
 
     {
 
-    $this-\&gt;container[&#39;business\_name&#39;] = $business\_name;
+    $this->container['business_name'] = $business_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetFirstName()
+    public functiongetFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;first\_name&#39;];
+    return $this->container['first_name'];
 
     }
 
-    publicfunctionsetFirstName($first\_name)
+    public functionsetFirstName($first_name)
 
     {
 
-    $this-\&gt;container[&#39;first\_name&#39;] = $first\_name;
+    $this->container['first_name'] = $first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetLastName()
+    public functiongetLastName()
 
     {
 
-    return$this-\&gt;container[&#39;last\_name&#39;];
+    return $this->container['last_name'];
 
     }
 
-    publicfunctionsetLastName($last\_name)
+    public functionsetLastName($last_name)
 
     {
 
-    $this-\&gt;container[&#39;last\_name&#39;] = $last\_name;
+    $this->container['last_name'] = $last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -7936,9 +7936,9 @@
 
 # Settings
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -7950,459 +7950,459 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Settings&#39;;
+    protectedstatic$swaggerModelName = 'Settings';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;credit\_card\_transaction\_settings&#39; =\&gt; &#39;\Swagger\Client\Model\CreditCardTransactionSettings&#39;,
+    'credit_card_transaction_settings' => '\Swagger\Client\Model\CreditCardTransactionSettings',
 
-    &#39;check\_transaction\_settings&#39; =\&gt; &#39;\Swagger\Client\Model\CheckTransactionSettings&#39;,
+    'check_transaction_settings' => '\Swagger\Client\Model\CheckTransactionSettings',
 
-    &#39;business&#39; =\&gt; &#39;\Swagger\Client\Model\Business&#39;,
+    'business' => '\Swagger\Client\Model\Business',
 
-    &#39;main\_contact&#39; =\&gt; &#39;\Swagger\Client\Model\Contact&#39;,
+    'main_contact' => '\Swagger\Client\Model\Contact',
 
-    &#39;receipt40&#39; =\&gt; &#39;\Swagger\Client\Model\Receipt&#39;,
+    'receipt40' => '\Swagger\Client\Model\Receipt',
 
-    &#39;receipt80&#39; =\&gt; &#39;\Swagger\Client\Model\Receipt&#39;,
+    'receipt80' => '\Swagger\Client\Model\Receipt',
 
-    &#39;print\_signature\_line&#39; =\&gt; &#39;bool&#39;,
+    'print_signature_line' => 'bool',
 
-    &#39;response&#39; =\&gt; &#39;\Swagger\Client\Model\Response&#39;,
+    'response' => '\Swagger\Client\Model\Response',
 
-    &#39;account\_id&#39; =\&gt; &#39;string&#39;,
+    'account_id' => 'string',
 
-    &#39;copy\_email\_receipt&#39; =\&gt; &#39;\Swagger\Client\Model\FieldInfo&#39;
+    'copy_email_receipt' => '\Swagger\Client\Model\FieldInfo'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;credit\_card\_transaction\_settings&#39; =\&gt; null,
+    'credit_card_transaction_settings' => null,
 
-    &#39;check\_transaction\_settings&#39; =\&gt; null,
+    'check_transaction_settings' => null,
 
-    &#39;business&#39; =\&gt; null,
+    'business' => null,
 
-    &#39;main\_contact&#39; =\&gt; null,
+    'main_contact' => null,
 
-    &#39;receipt40&#39; =\&gt; null,
+    'receipt40' => null,
 
-    &#39;receipt80&#39; =\&gt; null,
+    'receipt80' => null,
 
-    &#39;print\_signature\_line&#39; =\&gt; null,
+    'print_signature_line' => null,
 
-    &#39;response&#39; =\&gt; null,
+    'response' => null,
 
-    &#39;account\_id&#39; =\&gt; null,
+    'account_id' => null,
 
-    &#39;copy\_email\_receipt&#39; =\&gt; null
+    'copy_email_receipt' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;credit\_card\_transaction\_settings&#39; =\&gt; &#39;CreditCardTransactionSettings&#39;,
+    'credit_card_transaction_settings' => 'CreditCardTransactionSettings',
 
-    &#39;check\_transaction\_settings&#39; =\&gt; &#39;CheckTransactionSettings&#39;,
+    'check_transaction_settings' => 'CheckTransactionSettings',
 
-    &#39;business&#39; =\&gt; &#39;Business&#39;,
+    'business' => 'Business',
 
-    &#39;main\_contact&#39; =\&gt; &#39;MainContact&#39;,
+    'main_contact' => 'MainContact',
 
-    &#39;receipt40&#39; =\&gt; &#39;Receipt40&#39;,
+    'receipt40' => 'Receipt40',
 
-    &#39;receipt80&#39; =\&gt; &#39;Receipt80&#39;,
+    'receipt80' => 'Receipt80',
 
-    &#39;print\_signature\_line&#39; =\&gt; &#39;PrintSignatureLine&#39;,
+    'print_signature_line' => 'PrintSignatureLine',
 
-    &#39;response&#39; =\&gt; &#39;Response&#39;,
+    'response' => 'Response',
 
-    &#39;account\_id&#39; =\&gt; &#39;AccountID&#39;,
+    'account_id' => 'AccountID',
 
-    &#39;copy\_email\_receipt&#39; =\&gt; &#39;CopyEmailReceipt&#39;
+    'copy_email_receipt' => 'CopyEmailReceipt'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;credit\_card\_transaction\_settings&#39; =\&gt; &#39;setCreditCardTransactionSettings&#39;,
+    'credit_card_transaction_settings' => 'setCreditCardTransactionSettings',
 
-    &#39;check\_transaction\_settings&#39; =\&gt; &#39;setCheckTransactionSettings&#39;,
+    'check_transaction_settings' => 'setCheckTransactionSettings',
 
-    &#39;business&#39; =\&gt; &#39;setBusiness&#39;,
+    'business' => 'setBusiness',
 
-    &#39;main\_contact&#39; =\&gt; &#39;setMainContact&#39;,
+    'main_contact' => 'setMainContact',
 
-    &#39;receipt40&#39; =\&gt; &#39;setReceipt40&#39;,
+    'receipt40' => 'setReceipt40',
 
-    &#39;receipt80&#39; =\&gt; &#39;setReceipt80&#39;,
+    'receipt80' => 'setReceipt80',
 
-    &#39;print\_signature\_line&#39; =\&gt; &#39;setPrintSignatureLine&#39;,
+    'print_signature_line' => 'setPrintSignatureLine',
 
-    &#39;response&#39; =\&gt; &#39;setResponse&#39;,
+    'response' => 'setResponse',
 
-    &#39;account\_id&#39; =\&gt; &#39;setAccountId&#39;,
+    'account_id' => 'setAccountId',
 
-    &#39;copy\_email\_receipt&#39; =\&gt; &#39;setCopyEmailReceipt&#39;
+    'copy_email_receipt' => 'setCopyEmailReceipt'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;credit\_card\_transaction\_settings&#39; =\&gt; &#39;getCreditCardTransactionSettings&#39;,
+    'credit_card_transaction_settings' => 'getCreditCardTransactionSettings',
 
-    &#39;check\_transaction\_settings&#39; =\&gt; &#39;getCheckTransactionSettings&#39;,
+    'check_transaction_settings' => 'getCheckTransactionSettings',
 
-    &#39;business&#39; =\&gt; &#39;getBusiness&#39;,
+    'business' => 'getBusiness',
 
-    &#39;main\_contact&#39; =\&gt; &#39;getMainContact&#39;,
+    'main_contact' => 'getMainContact',
 
-    &#39;receipt40&#39; =\&gt; &#39;getReceipt40&#39;,
+    'receipt40' => 'getReceipt40',
 
-    &#39;receipt80&#39; =\&gt; &#39;getReceipt80&#39;,
+    'receipt80' => 'getReceipt80',
 
-    &#39;print\_signature\_line&#39; =\&gt; &#39;getPrintSignatureLine&#39;,
+    'print_signature_line' => 'getPrintSignatureLine',
 
-    &#39;response&#39; =\&gt; &#39;getResponse&#39;,
+    'response' => 'getResponse',
 
-    &#39;account\_id&#39; =\&gt; &#39;getAccountId&#39;,
+    'account_id' => 'getAccountId',
 
-    &#39;copy\_email\_receipt&#39; =\&gt; &#39;getCopyEmailReceipt&#39;
+    'copy_email_receipt' => 'getCopyEmailReceipt'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;credit\_card\_transaction\_settings&#39;] = isset($data[&#39;credit\_card\_transaction\_settings&#39;]) ? $data[&#39;credit\_card\_transaction\_settings&#39;] : null;
+    $this->container['credit_card_transaction_settings'] = isset($data['credit_card_transaction_settings']) ? $data['credit_card_transaction_settings'] : null;
 
-    $this-\&gt;container[&#39;check\_transaction\_settings&#39;] = isset($data[&#39;check\_transaction\_settings&#39;]) ? $data[&#39;check\_transaction\_settings&#39;] : null;
+    $this->container['check_transaction_settings'] = isset($data['check_transaction_settings']) ? $data['check_transaction_settings'] : null;
 
-    $this-\&gt;container[&#39;business&#39;] = isset($data[&#39;business&#39;]) ? $data[&#39;business&#39;] : null;
+    $this->container['business'] = isset($data['business']) ? $data['business'] : null;
 
-    $this-\&gt;container[&#39;main\_contact&#39;] = isset($data[&#39;main\_contact&#39;]) ? $data[&#39;main\_contact&#39;] : null;
+    $this->container['main_contact'] = isset($data['main_contact']) ? $data['main_contact'] : null;
 
-    $this-\&gt;container[&#39;receipt40&#39;] = isset($data[&#39;receipt40&#39;]) ? $data[&#39;receipt40&#39;] : null;
+    $this->container['receipt40'] = isset($data['receipt40']) ? $data['receipt40'] : null;
 
-    $this-\&gt;container[&#39;receipt80&#39;] = isset($data[&#39;receipt80&#39;]) ? $data[&#39;receipt80&#39;] : null;
+    $this->container['receipt80'] = isset($data['receipt80']) ? $data['receipt80'] : null;
 
-    $this-\&gt;container[&#39;print\_signature\_line&#39;] = isset($data[&#39;print\_signature\_line&#39;]) ? $data[&#39;print\_signature\_line&#39;] : null;
+    $this->container['print_signature_line'] = isset($data['print_signature_line']) ? $data['print_signature_line'] : null;
 
-    $this-\&gt;container[&#39;response&#39;] = isset($data[&#39;response&#39;]) ? $data[&#39;response&#39;] : null;
+    $this->container['response'] = isset($data['response']) ? $data['response'] : null;
 
-    $this-\&gt;container[&#39;account\_id&#39;] = isset($data[&#39;account\_id&#39;]) ? $data[&#39;account\_id&#39;] : null;
+    $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
 
-    $this-\&gt;container[&#39;copy\_email\_receipt&#39;] = isset($data[&#39;copy\_email\_receipt&#39;]) ? $data[&#39;copy\_email\_receipt&#39;] : null;
+    $this->container['copy_email_receipt'] = isset($data['copy_email_receipt']) ? $data['copy_email_receipt'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetCreditCardTransactionSettings()
+    public functiongetCreditCardTransactionSettings()
 
     {
 
-    return$this-\&gt;container[&#39;credit\_card\_transaction\_settings&#39;];
+    return $this->container['credit_card_transaction_settings'];
 
     }
 
-    publicfunctionsetCreditCardTransactionSettings($credit\_card\_transaction\_settings)
+    public functionsetCreditCardTransactionSettings($credit_card_transaction_settings)
 
     {
 
-    $this-\&gt;container[&#39;credit\_card\_transaction\_settings&#39;] = $credit\_card\_transaction\_settings;
+    $this->container['credit_card_transaction_settings'] = $credit_card_transaction_settings;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckTransactionSettings()
+    public functiongetCheckTransactionSettings()
 
     {
 
-    return$this-\&gt;container[&#39;check\_transaction\_settings&#39;];
+    return $this->container['check_transaction_settings'];
 
     }
 
-    publicfunctionsetCheckTransactionSettings($check\_transaction\_settings)
+    public functionsetCheckTransactionSettings($check_transaction_settings)
 
     {
 
-    $this-\&gt;container[&#39;check\_transaction\_settings&#39;] = $check\_transaction\_settings;
+    $this->container['check_transaction_settings'] = $check_transaction_settings;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusiness()
+    public functiongetBusiness()
 
     {
 
-    return$this-\&gt;container[&#39;business&#39;];
+    return $this->container['business'];
 
     }
 
-    publicfunctionsetBusiness($business)
+    public functionsetBusiness($business)
 
     {
 
-    $this-\&gt;container[&#39;business&#39;] = $business;
+    $this->container['business'] = $business;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMainContact()
+    public functiongetMainContact()
 
     {
 
-    return$this-\&gt;container[&#39;main\_contact&#39;];
+    return $this->container['main_contact'];
 
     }
 
-    publicfunctionsetMainContact($main\_contact)
+    public functionsetMainContact($main_contact)
 
     {
 
-    $this-\&gt;container[&#39;main\_contact&#39;] = $main\_contact;
+    $this->container['main_contact'] = $main_contact;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReceipt40()
+    public functiongetReceipt40()
 
     {
 
-    return$this-\&gt;container[&#39;receipt40&#39;];
+    return $this->container['receipt40'];
 
     }
 
-    publicfunctionsetReceipt40($receipt40)
+    public functionsetReceipt40($receipt40)
 
     {
 
-    $this-\&gt;container[&#39;receipt40&#39;] = $receipt40;
+    $this->container['receipt40'] = $receipt40;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetReceipt80()
+    public functiongetReceipt80()
 
     {
 
-    return$this-\&gt;container[&#39;receipt80&#39;];
+    return $this->container['receipt80'];
 
     }
 
-    publicfunctionsetReceipt80($receipt80)
+    public functionsetReceipt80($receipt80)
 
     {
 
-    $this-\&gt;container[&#39;receipt80&#39;] = $receipt80;
+    $this->container['receipt80'] = $receipt80;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPrintSignatureLine()
+    public functiongetPrintSignatureLine()
 
     {
 
-    return$this-\&gt;container[&#39;print\_signature\_line&#39;];
+    return $this->container['print_signature_line'];
 
     }
 
-    publicfunctionsetPrintSignatureLine($print\_signature\_line)
+    public functionsetPrintSignatureLine($print_signature_line)
 
     {
 
-    $this-\&gt;container[&#39;print\_signature\_line&#39;] = $print\_signature\_line;
+    $this->container['print_signature_line'] = $print_signature_line;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetResponse()
+    public functiongetResponse()
 
     {
 
-    return$this-\&gt;container[&#39;response&#39;];
+    return $this->container['response'];
 
     }
 
-    publicfunctionsetResponse($response)
+    public functionsetResponse($response)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = $response;
+    $this->container['response'] = $response;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAccountId()
+    public functiongetAccountId()
 
     {
 
-    return$this-\&gt;container[&#39;account\_id&#39;];
+    return $this->container['account_id'];
 
     }
 
-    publicfunctionsetAccountId($account\_id)
+    public functionsetAccountId($account_id)
 
     {
 
-    $this-\&gt;container[&#39;account\_id&#39;] = $account\_id;
+    $this->container['account_id'] = $account_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCopyEmailReceipt()
+    public functiongetCopyEmailReceipt()
 
     {
 
-    return$this-\&gt;container[&#39;copy\_email\_receipt&#39;];
+    return $this->container['copy_email_receipt'];
 
     }
 
-    publicfunctionsetCopyEmailReceipt($copy\_email\_receipt)
+    public functionsetCopyEmailReceipt($copy_email_receipt)
 
     {
 
-    $this-\&gt;container[&#39;copy\_email\_receipt&#39;] = $copy\_email\_receipt;
+    $this->container['copy_email_receipt'] = $copy_email_receipt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -8410,9 +8410,9 @@
 
 # TerminalSettings
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -8424,399 +8424,399 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;TerminalSettings&#39;;
+    protectedstatic$swaggerModelName = 'TerminalSettings';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;id&#39; =\&gt; &#39;int&#39;,
+    'id' => 'int',
 
-    &#39;terminal\_id&#39; =\&gt; &#39;int&#39;,
+    'terminal_id' => 'int',
 
-    &#39;sec\_code&#39; =\&gt; &#39;string&#39;,
+    'sec_code' => 'string',
 
-    &#39;gateway\_terminal&#39; =\&gt; &#39;bool&#39;,
+    'gateway_terminal' => 'bool',
 
-    &#39;consumer\_credits&#39; =\&gt; &#39;bool&#39;,
+    'consumer_credits' => 'bool',
 
-    &#39;dl\_required&#39; =\&gt; &#39;bool&#39;,
+    'dl_required' => 'bool',
 
-    &#39;check\_verify&#39; =\&gt; &#39;bool&#39;,
+    'check_verify' => 'bool',
 
-    &#39;identity\_verify&#39; =\&gt; &#39;bool&#39;
+    'identity_verify' => 'bool'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;id&#39; =\&gt; &#39;int32&#39;,
+    'id' => 'int32',
 
-    &#39;terminal\_id&#39; =\&gt; &#39;int32&#39;,
+    'terminal_id' => 'int32',
 
-    &#39;sec\_code&#39; =\&gt; null,
+    'sec_code' => null,
 
-    &#39;gateway\_terminal&#39; =\&gt; null,
+    'gateway_terminal' => null,
 
-    &#39;consumer\_credits&#39; =\&gt; null,
+    'consumer_credits' => null,
 
-    &#39;dl\_required&#39; =\&gt; null,
+    'dl_required' => null,
 
-    &#39;check\_verify&#39; =\&gt; null,
+    'check_verify' => null,
 
-    &#39;identity\_verify&#39; =\&gt; null
+    'identity_verify' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;id&#39; =\&gt; &#39;ID&#39;,
+    'id' => 'ID',
 
-    &#39;terminal\_id&#39; =\&gt; &#39;Terminal\_ID&#39;,
+    'terminal_id' => 'Terminal_ID',
 
-    &#39;sec\_code&#39; =\&gt; &#39;SEC\_Code&#39;,
+    'sec_code' => 'SEC_Code',
 
-    &#39;gateway\_terminal&#39; =\&gt; &#39;Gateway\_Terminal&#39;,
+    'gateway_terminal' => 'Gateway_Terminal',
 
-    &#39;consumer\_credits&#39; =\&gt; &#39;Consumer\_Credits&#39;,
+    'consumer_credits' => 'Consumer_Credits',
 
-    &#39;dl\_required&#39; =\&gt; &#39;DL\_Required&#39;,
+    'dl_required' => 'DL_Required',
 
-    &#39;check\_verify&#39; =\&gt; &#39;Check\_Verify&#39;,
+    'check_verify' => 'Check_Verify',
 
-    &#39;identity\_verify&#39; =\&gt; &#39;Identity\_Verify&#39;
+    'identity_verify' => 'Identity_Verify'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;id&#39; =\&gt; &#39;setId&#39;,
+    'id' => 'setId',
 
-    &#39;terminal\_id&#39; =\&gt; &#39;setTerminalId&#39;,
+    'terminal_id' => 'setTerminalId',
 
-    &#39;sec\_code&#39; =\&gt; &#39;setSecCode&#39;,
+    'sec_code' => 'setSecCode',
 
-    &#39;gateway\_terminal&#39; =\&gt; &#39;setGatewayTerminal&#39;,
+    'gateway_terminal' => 'setGatewayTerminal',
 
-    &#39;consumer\_credits&#39; =\&gt; &#39;setConsumerCredits&#39;,
+    'consumer_credits' => 'setConsumerCredits',
 
-    &#39;dl\_required&#39; =\&gt; &#39;setDlRequired&#39;,
+    'dl_required' => 'setDlRequired',
 
-    &#39;check\_verify&#39; =\&gt; &#39;setCheckVerify&#39;,
+    'check_verify' => 'setCheckVerify',
 
-    &#39;identity\_verify&#39; =\&gt; &#39;setIdentityVerify&#39;
+    'identity_verify' => 'setIdentityVerify'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;id&#39; =\&gt; &#39;getId&#39;,
+    'id' => 'getId',
 
-    &#39;terminal\_id&#39; =\&gt; &#39;getTerminalId&#39;,
+    'terminal_id' => 'getTerminalId',
 
-    &#39;sec\_code&#39; =\&gt; &#39;getSecCode&#39;,
+    'sec_code' => 'getSecCode',
 
-    &#39;gateway\_terminal&#39; =\&gt; &#39;getGatewayTerminal&#39;,
+    'gateway_terminal' => 'getGatewayTerminal',
 
-    &#39;consumer\_credits&#39; =\&gt; &#39;getConsumerCredits&#39;,
+    'consumer_credits' => 'getConsumerCredits',
 
-    &#39;dl\_required&#39; =\&gt; &#39;getDlRequired&#39;,
+    'dl_required' => 'getDlRequired',
 
-    &#39;check\_verify&#39; =\&gt; &#39;getCheckVerify&#39;,
+    'check_verify' => 'getCheckVerify',
 
-    &#39;identity\_verify&#39; =\&gt; &#39;getIdentityVerify&#39;
+    'identity_verify' => 'getIdentityVerify'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;id&#39;] = isset($data[&#39;id&#39;]) ? $data[&#39;id&#39;] : null;
+    $this->container['id'] = isset($data['id']) ? $data['id'] : null;
 
-    $this-\&gt;container[&#39;terminal\_id&#39;] = isset($data[&#39;terminal\_id&#39;]) ? $data[&#39;terminal\_id&#39;] : null;
+    $this->container['terminal_id'] = isset($data['terminal_id']) ? $data['terminal_id'] : null;
 
-    $this-\&gt;container[&#39;sec\_code&#39;] = isset($data[&#39;sec\_code&#39;]) ? $data[&#39;sec\_code&#39;] : null;
+    $this->container['sec_code'] = isset($data['sec_code']) ? $data['sec_code'] : null;
 
-    $this-\&gt;container[&#39;gateway\_terminal&#39;] = isset($data[&#39;gateway\_terminal&#39;]) ? $data[&#39;gateway\_terminal&#39;] : null;
+    $this->container['gateway_terminal'] = isset($data['gateway_terminal']) ? $data['gateway_terminal'] : null;
 
-    $this-\&gt;container[&#39;consumer\_credits&#39;] = isset($data[&#39;consumer\_credits&#39;]) ? $data[&#39;consumer\_credits&#39;] : null;
+    $this->container['consumer_credits'] = isset($data['consumer_credits']) ? $data['consumer_credits'] : null;
 
-    $this-\&gt;container[&#39;dl\_required&#39;] = isset($data[&#39;dl\_required&#39;]) ? $data[&#39;dl\_required&#39;] : null;
+    $this->container['dl_required'] = isset($data['dl_required']) ? $data['dl_required'] : null;
 
-    $this-\&gt;container[&#39;check\_verify&#39;] = isset($data[&#39;check\_verify&#39;]) ? $data[&#39;check\_verify&#39;] : null;
+    $this->container['check_verify'] = isset($data['check_verify']) ? $data['check_verify'] : null;
 
-    $this-\&gt;container[&#39;identity\_verify&#39;] = isset($data[&#39;identity\_verify&#39;]) ? $data[&#39;identity\_verify&#39;] : null;
+    $this->container['identity_verify'] = isset($data['identity_verify']) ? $data['identity_verify'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetId()
+    public functiongetId()
 
     {
 
-    return$this-\&gt;container[&#39;id&#39;];
+    return $this->container['id'];
 
     }
 
-    publicfunctionsetId($id)
+    public functionsetId($id)
 
     {
 
-    $this-\&gt;container[&#39;id&#39;] = $id;
+    $this->container['id'] = $id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTerminalId()
+    public functiongetTerminalId()
 
     {
 
-    return$this-\&gt;container[&#39;terminal\_id&#39;];
+    return $this->container['terminal_id'];
 
     }
 
-    publicfunctionsetTerminalId($terminal\_id)
+    public functionsetTerminalId($terminal_id)
 
     {
 
-    $this-\&gt;container[&#39;terminal\_id&#39;] = $terminal\_id;
+    $this->container['terminal_id'] = $terminal_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSecCode()
+    public functiongetSecCode()
 
     {
 
-    return$this-\&gt;container[&#39;sec\_code&#39;];
+    return $this->container['sec_code'];
 
     }
 
-    publicfunctionsetSecCode($sec\_code)
+    public functionsetSecCode($sec_code)
 
     {
 
-    $this-\&gt;container[&#39;sec\_code&#39;] = $sec\_code;
+    $this->container['sec_code'] = $sec_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetGatewayTerminal()
+    public functiongetGatewayTerminal()
 
     {
 
-    return$this-\&gt;container[&#39;gateway\_terminal&#39;];
+    return $this->container['gateway_terminal'];
 
     }
 
-    publicfunctionsetGatewayTerminal($gateway\_terminal)
+    public functionsetGatewayTerminal($gateway_terminal)
 
     {
 
-    $this-\&gt;container[&#39;gateway\_terminal&#39;] = $gateway\_terminal;
+    $this->container['gateway_terminal'] = $gateway_terminal;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetConsumerCredits()
+    public functiongetConsumerCredits()
 
     {
 
-    return$this-\&gt;container[&#39;consumer\_credits&#39;];
+    return $this->container['consumer_credits'];
 
     }
 
-    publicfunctionsetConsumerCredits($consumer\_credits)
+    public functionsetConsumerCredits($consumer_credits)
 
     {
 
-    $this-\&gt;container[&#39;consumer\_credits&#39;] = $consumer\_credits;
+    $this->container['consumer_credits'] = $consumer_credits;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDlRequired()
+    public functiongetDlRequired()
 
     {
 
-    return$this-\&gt;container[&#39;dl\_required&#39;];
+    return $this->container['dl_required'];
 
     }
 
-    publicfunctionsetDlRequired($dl\_required)
+    public functionsetDlRequired($dl_required)
 
     {
 
-    $this-\&gt;container[&#39;dl\_required&#39;] = $dl\_required;
+    $this->container['dl_required'] = $dl_required;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckVerify()
+    public functiongetCheckVerify()
 
     {
 
-    return$this-\&gt;container[&#39;check\_verify&#39;];
+    return $this->container['check_verify'];
 
     }
 
-    publicfunctionsetCheckVerify($check\_verify)
+    public functionsetCheckVerify($check_verify)
 
     {
 
-    $this-\&gt;container[&#39;check\_verify&#39;] = $check\_verify;
+    $this->container['check_verify'] = $check_verify;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetIdentityVerify()
+    public functiongetIdentityVerify()
 
     {
 
-    return$this-\&gt;container[&#39;identity\_verify&#39;];
+    return $this->container['identity_verify'];
 
     }
 
-    publicfunctionsetIdentityVerify($identity\_verify)
+    public functionsetIdentityVerify($identity_verify)
 
     {
 
-    $this-\&gt;container[&#39;identity\_verify&#39;] = $identity\_verify;
+    $this->container['identity_verify'] = $identity_verify;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -8824,9 +8824,9 @@
 
 # Transaction
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -8838,1359 +8838,1359 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;Transaction&#39;;
+    protectedstatic$swaggerModelName = 'Transaction';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;submit\_time&#39; =\&gt; &#39;\DateTime&#39;,
+    'submit_time' => '\DateTime',
 
-    &#39;tran\_type&#39; =\&gt; &#39;string&#39;,
+    'tran_type' => 'string',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;double&#39;,
+    'tran_amt' => 'double',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;double&#39;,
+    'tran_tax' => 'double',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;string&#39;,
+    'tran_inv' => 'string',
 
-    &#39;tran\_po&#39; =\&gt; &#39;string&#39;,
+    'tran_po' => 'string',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;string&#39;,
+    'tran_c_num' => 'string',
 
-    &#39;tran\_note&#39; =\&gt; &#39;string&#39;,
+    'tran_note' => 'string',
 
-    &#39;card\_num&#39; =\&gt; &#39;string&#39;,
+    'card_num' => 'string',
 
-    &#39;card\_name&#39; =\&gt; &#39;string&#39;,
+    'card_name' => 'string',
 
-    &#39;card\_exp&#39; =\&gt; &#39;string&#39;,
+    'card_exp' => 'string',
 
-    &#39;card\_type&#39; =\&gt; &#39;string&#39;,
+    'card_type' => 'string',
 
-    &#39;avs\_street&#39; =\&gt; &#39;string&#39;,
+    'avs_street' => 'string',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;string&#39;,
+    'avs_zip' => 'string',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;string&#39;,
+    'cvv_num' => 'string',
 
-    &#39;proc\_id&#39; =\&gt; &#39;string&#39;,
+    'proc_id' => 'string',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;string&#39;,
+    'proc_resp' => 'string',
 
-    &#39;proc\_code&#39; =\&gt; &#39;string&#39;,
+    'proc_code' => 'string',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;string&#39;,
+    'proc_mess' => 'string',
 
-    &#39;avs\_code&#39; =\&gt; &#39;string&#39;,
+    'avs_code' => 'string',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;string&#39;,
+    'avs_resp' => 'string',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;string&#39;,
+    'cvv_code' => 'string',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;string&#39;,
+    'cvv_resp' => 'string',
 
-    &#39;items&#39; =\&gt; &#39;\Swagger\Client\Model\TransactionItem[]&#39;,
+    'items' => '\Swagger\Client\Model\TransactionItem[]',
 
-    &#39;business\_name&#39; =\&gt; &#39;string&#39;,
+    'business_name' => 'string',
 
-    &#39;business\_address&#39; =\&gt; &#39;string&#39;,
+    'business_address' => 'string',
 
-    &#39;business\_address2&#39; =\&gt; &#39;string&#39;,
+    'business_address2' => 'string',
 
-    &#39;business\_city&#39; =\&gt; &#39;string&#39;,
+    'business_city' => 'string',
 
-    &#39;business\_state&#39; =\&gt; &#39;string&#39;,
+    'business_state' => 'string',
 
-    &#39;business\_zip&#39; =\&gt; &#39;string&#39;,
+    'business_zip' => 'string',
 
-    &#39;business\_country&#39; =\&gt; &#39;string&#39;,
+    'business_country' => 'string',
 
-    &#39;business\_website&#39; =\&gt; &#39;string&#39;,
+    'business_website' => 'string',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;string&#39;,
+    'contact_first_name' => 'string',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;string&#39;,
+    'contact_last_name' => 'string',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;string&#39;,
+    'contact_phone' => 'string',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;string&#39;,
+    'contact_fax' => 'string',
 
-    &#39;contact\_email&#39; =\&gt; &#39;string&#39;,
+    'contact_email' => 'string',
 
-    &#39;contact\_title&#39; =\&gt; &#39;string&#39;,
+    'contact_title' => 'string',
 
-    &#39;ip&#39; =\&gt; &#39;string&#39;,
+    'ip' => 'string',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;bool&#39;
+    'tax_exempt' => 'bool'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;submit\_time&#39; =\&gt; &#39;date-time&#39;,
+    'submit_time' => 'date-time',
 
-    &#39;tran\_type&#39; =\&gt; null,
+    'tran_type' => null,
 
-    &#39;tran\_amt&#39; =\&gt; &#39;double&#39;,
+    'tran_amt' => 'double',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;double&#39;,
+    'tran_tax' => 'double',
 
-    &#39;tran\_inv&#39; =\&gt; null,
+    'tran_inv' => null,
 
-    &#39;tran\_po&#39; =\&gt; null,
+    'tran_po' => null,
 
-    &#39;tran\_c\_num&#39; =\&gt; null,
+    'tran_c_num' => null,
 
-    &#39;tran\_note&#39; =\&gt; null,
+    'tran_note' => null,
 
-    &#39;card\_num&#39; =\&gt; null,
+    'card_num' => null,
 
-    &#39;card\_name&#39; =\&gt; null,
+    'card_name' => null,
 
-    &#39;card\_exp&#39; =\&gt; null,
+    'card_exp' => null,
 
-    &#39;card\_type&#39; =\&gt; null,
+    'card_type' => null,
 
-    &#39;avs\_street&#39; =\&gt; null,
+    'avs_street' => null,
 
-    &#39;avs\_zip&#39; =\&gt; null,
+    'avs_zip' => null,
 
-    &#39;cvv\_num&#39; =\&gt; null,
+    'cvv_num' => null,
 
-    &#39;proc\_id&#39; =\&gt; null,
+    'proc_id' => null,
 
-    &#39;proc\_resp&#39; =\&gt; null,
+    'proc_resp' => null,
 
-    &#39;proc\_code&#39; =\&gt; null,
+    'proc_code' => null,
 
-    &#39;proc\_mess&#39; =\&gt; null,
+    'proc_mess' => null,
 
-    &#39;avs\_code&#39; =\&gt; null,
+    'avs_code' => null,
 
-    &#39;avs\_resp&#39; =\&gt; null,
+    'avs_resp' => null,
 
-    &#39;cvv\_code&#39; =\&gt; null,
+    'cvv_code' => null,
 
-    &#39;cvv\_resp&#39; =\&gt; null,
+    'cvv_resp' => null,
 
-    &#39;items&#39; =\&gt; null,
+    'items' => null,
 
-    &#39;business\_name&#39; =\&gt; null,
+    'business_name' => null,
 
-    &#39;business\_address&#39; =\&gt; null,
+    'business_address' => null,
 
-    &#39;business\_address2&#39; =\&gt; null,
+    'business_address2' => null,
 
-    &#39;business\_city&#39; =\&gt; null,
+    'business_city' => null,
 
-    &#39;business\_state&#39; =\&gt; null,
+    'business_state' => null,
 
-    &#39;business\_zip&#39; =\&gt; null,
+    'business_zip' => null,
 
-    &#39;business\_country&#39; =\&gt; null,
+    'business_country' => null,
 
-    &#39;business\_website&#39; =\&gt; null,
+    'business_website' => null,
 
-    &#39;contact\_first\_name&#39; =\&gt; null,
+    'contact_first_name' => null,
 
-    &#39;contact\_last\_name&#39; =\&gt; null,
+    'contact_last_name' => null,
 
-    &#39;contact\_phone&#39; =\&gt; null,
+    'contact_phone' => null,
 
-    &#39;contact\_fax&#39; =\&gt; null,
+    'contact_fax' => null,
 
-    &#39;contact\_email&#39; =\&gt; null,
+    'contact_email' => null,
 
-    &#39;contact\_title&#39; =\&gt; null,
+    'contact_title' => null,
 
-    &#39;ip&#39; =\&gt; null,
+    'ip' => null,
 
-    &#39;tax\_exempt&#39; =\&gt; null
+    'tax_exempt' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;submit\_time&#39; =\&gt; &#39;Submit\_Time&#39;,
+    'submit_time' => 'Submit_Time',
 
-    &#39;tran\_type&#39; =\&gt; &#39;Tran\_Type&#39;,
+    'tran_type' => 'Tran_Type',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;Tran\_Amt&#39;,
+    'tran_amt' => 'Tran_Amt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;Tran\_Tax&#39;,
+    'tran_tax' => 'Tran_Tax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;Tran\_Inv&#39;,
+    'tran_inv' => 'Tran_Inv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;Tran\_PO&#39;,
+    'tran_po' => 'Tran_PO',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;Tran\_CNum&#39;,
+    'tran_c_num' => 'Tran_CNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;Tran\_Note&#39;,
+    'tran_note' => 'Tran_Note',
 
-    &#39;card\_num&#39; =\&gt; &#39;Card\_Num&#39;,
+    'card_num' => 'Card_Num',
 
-    &#39;card\_name&#39; =\&gt; &#39;Card\_Name&#39;,
+    'card_name' => 'Card_Name',
 
-    &#39;card\_exp&#39; =\&gt; &#39;Card\_Exp&#39;,
+    'card_exp' => 'Card_Exp',
 
-    &#39;card\_type&#39; =\&gt; &#39;Card\_Type&#39;,
+    'card_type' => 'Card_Type',
 
-    &#39;avs\_street&#39; =\&gt; &#39;AVS\_Street&#39;,
+    'avs_street' => 'AVS_Street',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;AVS\_Zip&#39;,
+    'avs_zip' => 'AVS_Zip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;CVV\_Num&#39;,
+    'cvv_num' => 'CVV_Num',
 
-    &#39;proc\_id&#39; =\&gt; &#39;Proc\_ID&#39;,
+    'proc_id' => 'Proc_ID',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;Proc\_Resp&#39;,
+    'proc_resp' => 'Proc_Resp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;Proc\_Code&#39;,
+    'proc_code' => 'Proc_Code',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;Proc\_Mess&#39;,
+    'proc_mess' => 'Proc_Mess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;AVS\_Code&#39;,
+    'avs_code' => 'AVS_Code',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;AVS\_Resp&#39;,
+    'avs_resp' => 'AVS_Resp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;CVV\_Code&#39;,
+    'cvv_code' => 'CVV_Code',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;CVV\_Resp&#39;,
+    'cvv_resp' => 'CVV_Resp',
 
-    &#39;items&#39; =\&gt; &#39;Items&#39;,
+    'items' => 'Items',
 
-    &#39;business\_name&#39; =\&gt; &#39;Business\_Name&#39;,
+    'business_name' => 'Business_Name',
 
-    &#39;business\_address&#39; =\&gt; &#39;Business\_Address&#39;,
+    'business_address' => 'Business_Address',
 
-    &#39;business\_address2&#39; =\&gt; &#39;Business\_Address2&#39;,
+    'business_address2' => 'Business_Address2',
 
-    &#39;business\_city&#39; =\&gt; &#39;Business\_City&#39;,
+    'business_city' => 'Business_City',
 
-    &#39;business\_state&#39; =\&gt; &#39;Business\_State&#39;,
+    'business_state' => 'Business_State',
 
-    &#39;business\_zip&#39; =\&gt; &#39;Business\_Zip&#39;,
+    'business_zip' => 'Business_Zip',
 
-    &#39;business\_country&#39; =\&gt; &#39;Business\_Country&#39;,
+    'business_country' => 'Business_Country',
 
-    &#39;business\_website&#39; =\&gt; &#39;Business\_Website&#39;,
+    'business_website' => 'Business_Website',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;Contact\_FirstName&#39;,
+    'contact_first_name' => 'Contact_FirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;Contact\_LastName&#39;,
+    'contact_last_name' => 'Contact_LastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;Contact\_Phone&#39;,
+    'contact_phone' => 'Contact_Phone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;Contact\_Fax&#39;,
+    'contact_fax' => 'Contact_Fax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;Contact\_Email&#39;,
+    'contact_email' => 'Contact_Email',
 
-    &#39;contact\_title&#39; =\&gt; &#39;Contact\_Title&#39;,
+    'contact_title' => 'Contact_Title',
 
-    &#39;ip&#39; =\&gt; &#39;IP&#39;,
+    'ip' => 'IP',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;TaxExempt&#39;
+    'tax_exempt' => 'TaxExempt'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;submit\_time&#39; =\&gt; &#39;setSubmitTime&#39;,
+    'submit_time' => 'setSubmitTime',
 
-    &#39;tran\_type&#39; =\&gt; &#39;setTranType&#39;,
+    'tran_type' => 'setTranType',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;setTranAmt&#39;,
+    'tran_amt' => 'setTranAmt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;setTranTax&#39;,
+    'tran_tax' => 'setTranTax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;setTranInv&#39;,
+    'tran_inv' => 'setTranInv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;setTranPo&#39;,
+    'tran_po' => 'setTranPo',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;setTranCNum&#39;,
+    'tran_c_num' => 'setTranCNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;setTranNote&#39;,
+    'tran_note' => 'setTranNote',
 
-    &#39;card\_num&#39; =\&gt; &#39;setCardNum&#39;,
+    'card_num' => 'setCardNum',
 
-    &#39;card\_name&#39; =\&gt; &#39;setCardName&#39;,
+    'card_name' => 'setCardName',
 
-    &#39;card\_exp&#39; =\&gt; &#39;setCardExp&#39;,
+    'card_exp' => 'setCardExp',
 
-    &#39;card\_type&#39; =\&gt; &#39;setCardType&#39;,
+    'card_type' => 'setCardType',
 
-    &#39;avs\_street&#39; =\&gt; &#39;setAvsStreet&#39;,
+    'avs_street' => 'setAvsStreet',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;setAvsZip&#39;,
+    'avs_zip' => 'setAvsZip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;setCvvNum&#39;,
+    'cvv_num' => 'setCvvNum',
 
-    &#39;proc\_id&#39; =\&gt; &#39;setProcId&#39;,
+    'proc_id' => 'setProcId',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;setProcResp&#39;,
+    'proc_resp' => 'setProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;setProcCode&#39;,
+    'proc_code' => 'setProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;setProcMess&#39;,
+    'proc_mess' => 'setProcMess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;setAvsCode&#39;,
+    'avs_code' => 'setAvsCode',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;setAvsResp&#39;,
+    'avs_resp' => 'setAvsResp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;setCvvCode&#39;,
+    'cvv_code' => 'setCvvCode',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;setCvvResp&#39;,
+    'cvv_resp' => 'setCvvResp',
 
-    &#39;items&#39; =\&gt; &#39;setItems&#39;,
+    'items' => 'setItems',
 
-    &#39;business\_name&#39; =\&gt; &#39;setBusinessName&#39;,
+    'business_name' => 'setBusinessName',
 
-    &#39;business\_address&#39; =\&gt; &#39;setBusinessAddress&#39;,
+    'business_address' => 'setBusinessAddress',
 
-    &#39;business\_address2&#39; =\&gt; &#39;setBusinessAddress2&#39;,
+    'business_address2' => 'setBusinessAddress2',
 
-    &#39;business\_city&#39; =\&gt; &#39;setBusinessCity&#39;,
+    'business_city' => 'setBusinessCity',
 
-    &#39;business\_state&#39; =\&gt; &#39;setBusinessState&#39;,
+    'business_state' => 'setBusinessState',
 
-    &#39;business\_zip&#39; =\&gt; &#39;setBusinessZip&#39;,
+    'business_zip' => 'setBusinessZip',
 
-    &#39;business\_country&#39; =\&gt; &#39;setBusinessCountry&#39;,
+    'business_country' => 'setBusinessCountry',
 
-    &#39;business\_website&#39; =\&gt; &#39;setBusinessWebsite&#39;,
+    'business_website' => 'setBusinessWebsite',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;setContactFirstName&#39;,
+    'contact_first_name' => 'setContactFirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;setContactLastName&#39;,
+    'contact_last_name' => 'setContactLastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;setContactPhone&#39;,
+    'contact_phone' => 'setContactPhone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;setContactFax&#39;,
+    'contact_fax' => 'setContactFax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;setContactEmail&#39;,
+    'contact_email' => 'setContactEmail',
 
-    &#39;contact\_title&#39; =\&gt; &#39;setContactTitle&#39;,
+    'contact_title' => 'setContactTitle',
 
-    &#39;ip&#39; =\&gt; &#39;setIp&#39;,
+    'ip' => 'setIp',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;setTaxExempt&#39;
+    'tax_exempt' => 'setTaxExempt'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;submit\_time&#39; =\&gt; &#39;getSubmitTime&#39;,
+    'submit_time' => 'getSubmitTime',
 
-    &#39;tran\_type&#39; =\&gt; &#39;getTranType&#39;,
+    'tran_type' => 'getTranType',
 
-    &#39;tran\_amt&#39; =\&gt; &#39;getTranAmt&#39;,
+    'tran_amt' => 'getTranAmt',
 
-    &#39;tran\_tax&#39; =\&gt; &#39;getTranTax&#39;,
+    'tran_tax' => 'getTranTax',
 
-    &#39;tran\_inv&#39; =\&gt; &#39;getTranInv&#39;,
+    'tran_inv' => 'getTranInv',
 
-    &#39;tran\_po&#39; =\&gt; &#39;getTranPo&#39;,
+    'tran_po' => 'getTranPo',
 
-    &#39;tran\_c\_num&#39; =\&gt; &#39;getTranCNum&#39;,
+    'tran_c_num' => 'getTranCNum',
 
-    &#39;tran\_note&#39; =\&gt; &#39;getTranNote&#39;,
+    'tran_note' => 'getTranNote',
 
-    &#39;card\_num&#39; =\&gt; &#39;getCardNum&#39;,
+    'card_num' => 'getCardNum',
 
-    &#39;card\_name&#39; =\&gt; &#39;getCardName&#39;,
+    'card_name' => 'getCardName',
 
-    &#39;card\_exp&#39; =\&gt; &#39;getCardExp&#39;,
+    'card_exp' => 'getCardExp',
 
-    &#39;card\_type&#39; =\&gt; &#39;getCardType&#39;,
+    'card_type' => 'getCardType',
 
-    &#39;avs\_street&#39; =\&gt; &#39;getAvsStreet&#39;,
+    'avs_street' => 'getAvsStreet',
 
-    &#39;avs\_zip&#39; =\&gt; &#39;getAvsZip&#39;,
+    'avs_zip' => 'getAvsZip',
 
-    &#39;cvv\_num&#39; =\&gt; &#39;getCvvNum&#39;,
+    'cvv_num' => 'getCvvNum',
 
-    &#39;proc\_id&#39; =\&gt; &#39;getProcId&#39;,
+    'proc_id' => 'getProcId',
 
-    &#39;proc\_resp&#39; =\&gt; &#39;getProcResp&#39;,
+    'proc_resp' => 'getProcResp',
 
-    &#39;proc\_code&#39; =\&gt; &#39;getProcCode&#39;,
+    'proc_code' => 'getProcCode',
 
-    &#39;proc\_mess&#39; =\&gt; &#39;getProcMess&#39;,
+    'proc_mess' => 'getProcMess',
 
-    &#39;avs\_code&#39; =\&gt; &#39;getAvsCode&#39;,
+    'avs_code' => 'getAvsCode',
 
-    &#39;avs\_resp&#39; =\&gt; &#39;getAvsResp&#39;,
+    'avs_resp' => 'getAvsResp',
 
-    &#39;cvv\_code&#39; =\&gt; &#39;getCvvCode&#39;,
+    'cvv_code' => 'getCvvCode',
 
-    &#39;cvv\_resp&#39; =\&gt; &#39;getCvvResp&#39;,
+    'cvv_resp' => 'getCvvResp',
 
-    &#39;items&#39; =\&gt; &#39;getItems&#39;,
+    'items' => 'getItems',
 
-    &#39;business\_name&#39; =\&gt; &#39;getBusinessName&#39;,
+    'business_name' => 'getBusinessName',
 
-    &#39;business\_address&#39; =\&gt; &#39;getBusinessAddress&#39;,
+    'business_address' => 'getBusinessAddress',
 
-    &#39;business\_address2&#39; =\&gt; &#39;getBusinessAddress2&#39;,
+    'business_address2' => 'getBusinessAddress2',
 
-    &#39;business\_city&#39; =\&gt; &#39;getBusinessCity&#39;,
+    'business_city' => 'getBusinessCity',
 
-    &#39;business\_state&#39; =\&gt; &#39;getBusinessState&#39;,
+    'business_state' => 'getBusinessState',
 
-    &#39;business\_zip&#39; =\&gt; &#39;getBusinessZip&#39;,
+    'business_zip' => 'getBusinessZip',
 
-    &#39;business\_country&#39; =\&gt; &#39;getBusinessCountry&#39;,
+    'business_country' => 'getBusinessCountry',
 
-    &#39;business\_website&#39; =\&gt; &#39;getBusinessWebsite&#39;,
+    'business_website' => 'getBusinessWebsite',
 
-    &#39;contact\_first\_name&#39; =\&gt; &#39;getContactFirstName&#39;,
+    'contact_first_name' => 'getContactFirstName',
 
-    &#39;contact\_last\_name&#39; =\&gt; &#39;getContactLastName&#39;,
+    'contact_last_name' => 'getContactLastName',
 
-    &#39;contact\_phone&#39; =\&gt; &#39;getContactPhone&#39;,
+    'contact_phone' => 'getContactPhone',
 
-    &#39;contact\_fax&#39; =\&gt; &#39;getContactFax&#39;,
+    'contact_fax' => 'getContactFax',
 
-    &#39;contact\_email&#39; =\&gt; &#39;getContactEmail&#39;,
+    'contact_email' => 'getContactEmail',
 
-    &#39;contact\_title&#39; =\&gt; &#39;getContactTitle&#39;,
+    'contact_title' => 'getContactTitle',
 
-    &#39;ip&#39; =\&gt; &#39;getIp&#39;,
+    'ip' => 'getIp',
 
-    &#39;tax\_exempt&#39; =\&gt; &#39;getTaxExempt&#39;
+    'tax_exempt' => 'getTaxExempt'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;submit\_time&#39;] = isset($data[&#39;submit\_time&#39;]) ? $data[&#39;submit\_time&#39;] : null;
+    $this->container['submit_time'] = isset($data['submit_time']) ? $data['submit_time'] : null;
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = isset($data[&#39;tran\_type&#39;]) ? $data[&#39;tran\_type&#39;] : null;
+    $this->container['tran_type'] = isset($data['tran_type']) ? $data['tran_type'] : null;
 
-    $this-\&gt;container[&#39;tran\_amt&#39;] = isset($data[&#39;tran\_amt&#39;]) ? $data[&#39;tran\_amt&#39;] : null;
+    $this->container['tran_amt'] = isset($data['tran_amt']) ? $data['tran_amt'] : null;
 
-    $this-\&gt;container[&#39;tran\_tax&#39;] = isset($data[&#39;tran\_tax&#39;]) ? $data[&#39;tran\_tax&#39;] : null;
+    $this->container['tran_tax'] = isset($data['tran_tax']) ? $data['tran_tax'] : null;
 
-    $this-\&gt;container[&#39;tran\_inv&#39;] = isset($data[&#39;tran\_inv&#39;]) ? $data[&#39;tran\_inv&#39;] : null;
+    $this->container['tran_inv'] = isset($data['tran_inv']) ? $data['tran_inv'] : null;
 
-    $this-\&gt;container[&#39;tran\_po&#39;] = isset($data[&#39;tran\_po&#39;]) ? $data[&#39;tran\_po&#39;] : null;
+    $this->container['tran_po'] = isset($data['tran_po']) ? $data['tran_po'] : null;
 
-    $this-\&gt;container[&#39;tran\_c\_num&#39;] = isset($data[&#39;tran\_c\_num&#39;]) ? $data[&#39;tran\_c\_num&#39;] : null;
+    $this->container['tran_c_num'] = isset($data['tran_c_num']) ? $data['tran_c_num'] : null;
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = isset($data[&#39;tran\_note&#39;]) ? $data[&#39;tran\_note&#39;] : null;
+    $this->container['tran_note'] = isset($data['tran_note']) ? $data['tran_note'] : null;
 
-    $this-\&gt;container[&#39;card\_num&#39;] = isset($data[&#39;card\_num&#39;]) ? $data[&#39;card\_num&#39;] : null;
+    $this->container['card_num'] = isset($data['card_num']) ? $data['card_num'] : null;
 
-    $this-\&gt;container[&#39;card\_name&#39;] = isset($data[&#39;card\_name&#39;]) ? $data[&#39;card\_name&#39;] : null;
+    $this->container['card_name'] = isset($data['card_name']) ? $data['card_name'] : null;
 
-    $this-\&gt;container[&#39;card\_exp&#39;] = isset($data[&#39;card\_exp&#39;]) ? $data[&#39;card\_exp&#39;] : null;
+    $this->container['card_exp'] = isset($data['card_exp']) ? $data['card_exp'] : null;
 
-    $this-\&gt;container[&#39;card\_type&#39;] = isset($data[&#39;card\_type&#39;]) ? $data[&#39;card\_type&#39;] : null;
+    $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
 
-    $this-\&gt;container[&#39;avs\_street&#39;] = isset($data[&#39;avs\_street&#39;]) ? $data[&#39;avs\_street&#39;] : null;
+    $this->container['avs_street'] = isset($data['avs_street']) ? $data['avs_street'] : null;
 
-    $this-\&gt;container[&#39;avs\_zip&#39;] = isset($data[&#39;avs\_zip&#39;]) ? $data[&#39;avs\_zip&#39;] : null;
+    $this->container['avs_zip'] = isset($data['avs_zip']) ? $data['avs_zip'] : null;
 
-    $this-\&gt;container[&#39;cvv\_num&#39;] = isset($data[&#39;cvv\_num&#39;]) ? $data[&#39;cvv\_num&#39;] : null;
+    $this->container['cvv_num'] = isset($data['cvv_num']) ? $data['cvv_num'] : null;
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = isset($data[&#39;proc\_id&#39;]) ? $data[&#39;proc\_id&#39;] : null;
+    $this->container['proc_id'] = isset($data['proc_id']) ? $data['proc_id'] : null;
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = isset($data[&#39;proc\_resp&#39;]) ? $data[&#39;proc\_resp&#39;] : null;
+    $this->container['proc_resp'] = isset($data['proc_resp']) ? $data['proc_resp'] : null;
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = isset($data[&#39;proc\_code&#39;]) ? $data[&#39;proc\_code&#39;] : null;
+    $this->container['proc_code'] = isset($data['proc_code']) ? $data['proc_code'] : null;
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = isset($data[&#39;proc\_mess&#39;]) ? $data[&#39;proc\_mess&#39;] : null;
+    $this->container['proc_mess'] = isset($data['proc_mess']) ? $data['proc_mess'] : null;
 
-    $this-\&gt;container[&#39;avs\_code&#39;] = isset($data[&#39;avs\_code&#39;]) ? $data[&#39;avs\_code&#39;] : null;
+    $this->container['avs_code'] = isset($data['avs_code']) ? $data['avs_code'] : null;
 
-    $this-\&gt;container[&#39;avs\_resp&#39;] = isset($data[&#39;avs\_resp&#39;]) ? $data[&#39;avs\_resp&#39;] : null;
+    $this->container['avs_resp'] = isset($data['avs_resp']) ? $data['avs_resp'] : null;
 
-    $this-\&gt;container[&#39;cvv\_code&#39;] = isset($data[&#39;cvv\_code&#39;]) ? $data[&#39;cvv\_code&#39;] : null;
+    $this->container['cvv_code'] = isset($data['cvv_code']) ? $data['cvv_code'] : null;
 
-    $this-\&gt;container[&#39;cvv\_resp&#39;] = isset($data[&#39;cvv\_resp&#39;]) ? $data[&#39;cvv\_resp&#39;] : null;
+    $this->container['cvv_resp'] = isset($data['cvv_resp']) ? $data['cvv_resp'] : null;
 
-    $this-\&gt;container[&#39;items&#39;] = isset($data[&#39;items&#39;]) ? $data[&#39;items&#39;] : null;
+    $this->container['items'] = isset($data['items']) ? $data['items'] : null;
 
-    $this-\&gt;container[&#39;business\_name&#39;] = isset($data[&#39;business\_name&#39;]) ? $data[&#39;business\_name&#39;] : null;
+    $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
 
-    $this-\&gt;container[&#39;business\_address&#39;] = isset($data[&#39;business\_address&#39;]) ? $data[&#39;business\_address&#39;] : null;
+    $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
 
-    $this-\&gt;container[&#39;business\_address2&#39;] = isset($data[&#39;business\_address2&#39;]) ? $data[&#39;business\_address2&#39;] : null;
+    $this->container['business_address2'] = isset($data['business_address2']) ? $data['business_address2'] : null;
 
-    $this-\&gt;container[&#39;business\_city&#39;] = isset($data[&#39;business\_city&#39;]) ? $data[&#39;business\_city&#39;] : null;
+    $this->container['business_city'] = isset($data['business_city']) ? $data['business_city'] : null;
 
-    $this-\&gt;container[&#39;business\_state&#39;] = isset($data[&#39;business\_state&#39;]) ? $data[&#39;business\_state&#39;] : null;
+    $this->container['business_state'] = isset($data['business_state']) ? $data['business_state'] : null;
 
-    $this-\&gt;container[&#39;business\_zip&#39;] = isset($data[&#39;business\_zip&#39;]) ? $data[&#39;business\_zip&#39;] : null;
+    $this->container['business_zip'] = isset($data['business_zip']) ? $data['business_zip'] : null;
 
-    $this-\&gt;container[&#39;business\_country&#39;] = isset($data[&#39;business\_country&#39;]) ? $data[&#39;business\_country&#39;] : null;
+    $this->container['business_country'] = isset($data['business_country']) ? $data['business_country'] : null;
 
-    $this-\&gt;container[&#39;business\_website&#39;] = isset($data[&#39;business\_website&#39;]) ? $data[&#39;business\_website&#39;] : null;
+    $this->container['business_website'] = isset($data['business_website']) ? $data['business_website'] : null;
 
-    $this-\&gt;container[&#39;contact\_first\_name&#39;] = isset($data[&#39;contact\_first\_name&#39;]) ? $data[&#39;contact\_first\_name&#39;] : null;
+    $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_last\_name&#39;] = isset($data[&#39;contact\_last\_name&#39;]) ? $data[&#39;contact\_last\_name&#39;] : null;
+    $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
 
-    $this-\&gt;container[&#39;contact\_phone&#39;] = isset($data[&#39;contact\_phone&#39;]) ? $data[&#39;contact\_phone&#39;] : null;
+    $this->container['contact_phone'] = isset($data['contact_phone']) ? $data['contact_phone'] : null;
 
-    $this-\&gt;container[&#39;contact\_fax&#39;] = isset($data[&#39;contact\_fax&#39;]) ? $data[&#39;contact\_fax&#39;] : null;
+    $this->container['contact_fax'] = isset($data['contact_fax']) ? $data['contact_fax'] : null;
 
-    $this-\&gt;container[&#39;contact\_email&#39;] = isset($data[&#39;contact\_email&#39;]) ? $data[&#39;contact\_email&#39;] : null;
+    $this->container['contact_email'] = isset($data['contact_email']) ? $data['contact_email'] : null;
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = isset($data[&#39;contact\_title&#39;]) ? $data[&#39;contact\_title&#39;] : null;
+    $this->container['contact_title'] = isset($data['contact_title']) ? $data['contact_title'] : null;
 
-    $this-\&gt;container[&#39;ip&#39;] = isset($data[&#39;ip&#39;]) ? $data[&#39;ip&#39;] : null;
+    $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = isset($data[&#39;tax\_exempt&#39;]) ? $data[&#39;tax\_exempt&#39;] : null;
+    $this->container['tax_exempt'] = isset($data['tax_exempt']) ? $data['tax_exempt'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetSubmitTime()
+    public functiongetSubmitTime()
 
     {
 
-    return$this-\&gt;container[&#39;submit\_time&#39;];
+    return $this->container['submit_time'];
 
     }
 
-    publicfunctionsetSubmitTime($submit\_time)
+    public functionsetSubmitTime($submit_time)
 
     {
 
-    $this-\&gt;container[&#39;submit\_time&#39;] = $submit\_time;
+    $this->container['submit_time'] = $submit_time;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranType()
+    public functiongetTranType()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_type&#39;];
+    return $this->container['tran_type'];
 
     }
 
-    publicfunctionsetTranType($tran\_type)
+    public functionsetTranType($tran_type)
 
     {
 
-    $this-\&gt;container[&#39;tran\_type&#39;] = $tran\_type;
+    $this->container['tran_type'] = $tran_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranAmt()
+    public functiongetTranAmt()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_amt&#39;];
+    return $this->container['tran_amt'];
 
     }
 
-    publicfunctionsetTranAmt($tran\_amt)
+    public functionsetTranAmt($tran_amt)
 
     {
 
-    $this-\&gt;container[&#39;tran\_amt&#39;] = $tran\_amt;
+    $this->container['tran_amt'] = $tran_amt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranTax()
+    public functiongetTranTax()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_tax&#39;];
+    return $this->container['tran_tax'];
 
     }
 
-    publicfunctionsetTranTax($tran\_tax)
+    public functionsetTranTax($tran_tax)
 
     {
 
-    $this-\&gt;container[&#39;tran\_tax&#39;] = $tran\_tax;
+    $this->container['tran_tax'] = $tran_tax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranInv()
+    public functiongetTranInv()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_inv&#39;];
+    return $this->container['tran_inv'];
 
     }
 
-    publicfunctionsetTranInv($tran\_inv)
+    public functionsetTranInv($tran_inv)
 
     {
 
-    $this-\&gt;container[&#39;tran\_inv&#39;] = $tran\_inv;
+    $this->container['tran_inv'] = $tran_inv;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranPo()
+    public functiongetTranPo()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_po&#39;];
+    return $this->container['tran_po'];
 
     }
 
-    publicfunctionsetTranPo($tran\_po)
+    public functionsetTranPo($tran_po)
 
     {
 
-    $this-\&gt;container[&#39;tran\_po&#39;] = $tran\_po;
+    $this->container['tran_po'] = $tran_po;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranCNum()
+    public functiongetTranCNum()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_c\_num&#39;];
+    return $this->container['tran_c_num'];
 
     }
 
-    publicfunctionsetTranCNum($tran\_c\_num)
+    public functionsetTranCNum($tran_c_num)
 
     {
 
-    $this-\&gt;container[&#39;tran\_c\_num&#39;] = $tran\_c\_num;
+    $this->container['tran_c_num'] = $tran_c_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTranNote()
+    public functiongetTranNote()
 
     {
 
-    return$this-\&gt;container[&#39;tran\_note&#39;];
+    return $this->container['tran_note'];
 
     }
 
-    publicfunctionsetTranNote($tran\_note)
+    public functionsetTranNote($tran_note)
 
     {
 
-    $this-\&gt;container[&#39;tran\_note&#39;] = $tran\_note;
+    $this->container['tran_note'] = $tran_note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardNum()
+    public functiongetCardNum()
 
     {
 
-    return$this-\&gt;container[&#39;card\_num&#39;];
+    return $this->container['card_num'];
 
     }
 
-    publicfunctionsetCardNum($card\_num)
+    public functionsetCardNum($card_num)
 
     {
 
-    $this-\&gt;container[&#39;card\_num&#39;] = $card\_num;
+    $this->container['card_num'] = $card_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardName()
+    public functiongetCardName()
 
     {
 
-    return$this-\&gt;container[&#39;card\_name&#39;];
+    return $this->container['card_name'];
 
     }
 
-    publicfunctionsetCardName($card\_name)
+    public functionsetCardName($card_name)
 
     {
 
-    $this-\&gt;container[&#39;card\_name&#39;] = $card\_name;
+    $this->container['card_name'] = $card_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardExp()
+    public functiongetCardExp()
 
     {
 
-    return$this-\&gt;container[&#39;card\_exp&#39;];
+    return $this->container['card_exp'];
 
     }
 
-    publicfunctionsetCardExp($card\_exp)
+    public functionsetCardExp($card_exp)
 
     {
 
-    $this-\&gt;container[&#39;card\_exp&#39;] = $card\_exp;
+    $this->container['card_exp'] = $card_exp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardType()
+    public functiongetCardType()
 
     {
 
-    return$this-\&gt;container[&#39;card\_type&#39;];
+    return $this->container['card_type'];
 
     }
 
-    publicfunctionsetCardType($card\_type)
+    public functionsetCardType($card_type)
 
     {
 
-    $this-\&gt;container[&#39;card\_type&#39;] = $card\_type;
+    $this->container['card_type'] = $card_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsStreet()
+    public functiongetAvsStreet()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_street&#39;];
+    return $this->container['avs_street'];
 
     }
 
-    publicfunctionsetAvsStreet($avs\_street)
+    public functionsetAvsStreet($avs_street)
 
     {
 
-    $this-\&gt;container[&#39;avs\_street&#39;] = $avs\_street;
+    $this->container['avs_street'] = $avs_street;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsZip()
+    public functiongetAvsZip()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_zip&#39;];
+    return $this->container['avs_zip'];
 
     }
 
-    publicfunctionsetAvsZip($avs\_zip)
+    public functionsetAvsZip($avs_zip)
 
     {
 
-    $this-\&gt;container[&#39;avs\_zip&#39;] = $avs\_zip;
+    $this->container['avs_zip'] = $avs_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvNum()
+    public functiongetCvvNum()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_num&#39;];
+    return $this->container['cvv_num'];
 
     }
 
-    publicfunctionsetCvvNum($cvv\_num)
+    public functionsetCvvNum($cvv_num)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_num&#39;] = $cvv\_num;
+    $this->container['cvv_num'] = $cvv_num;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcId()
+    public functiongetProcId()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_id&#39;];
+    return $this->container['proc_id'];
 
     }
 
-    publicfunctionsetProcId($proc\_id)
+    public functionsetProcId($proc_id)
 
     {
 
-    $this-\&gt;container[&#39;proc\_id&#39;] = $proc\_id;
+    $this->container['proc_id'] = $proc_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcResp()
+    public functiongetProcResp()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_resp&#39;];
+    return $this->container['proc_resp'];
 
     }
 
-    publicfunctionsetProcResp($proc\_resp)
+    public functionsetProcResp($proc_resp)
 
     {
 
-    $this-\&gt;container[&#39;proc\_resp&#39;] = $proc\_resp;
+    $this->container['proc_resp'] = $proc_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcCode()
+    public functiongetProcCode()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_code&#39;];
+    return $this->container['proc_code'];
 
     }
 
-    publicfunctionsetProcCode($proc\_code)
+    public functionsetProcCode($proc_code)
 
     {
 
-    $this-\&gt;container[&#39;proc\_code&#39;] = $proc\_code;
+    $this->container['proc_code'] = $proc_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetProcMess()
+    public functiongetProcMess()
 
     {
 
-    return$this-\&gt;container[&#39;proc\_mess&#39;];
+    return $this->container['proc_mess'];
 
     }
 
-    publicfunctionsetProcMess($proc\_mess)
+    public functionsetProcMess($proc_mess)
 
     {
 
-    $this-\&gt;container[&#39;proc\_mess&#39;] = $proc\_mess;
+    $this->container['proc_mess'] = $proc_mess;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsCode()
+    public functiongetAvsCode()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_code&#39;];
+    return $this->container['avs_code'];
 
     }
 
-    publicfunctionsetAvsCode($avs\_code)
+    public functionsetAvsCode($avs_code)
 
     {
 
-    $this-\&gt;container[&#39;avs\_code&#39;] = $avs\_code;
+    $this->container['avs_code'] = $avs_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAvsResp()
+    public functiongetAvsResp()
 
     {
 
-    return$this-\&gt;container[&#39;avs\_resp&#39;];
+    return $this->container['avs_resp'];
 
     }
 
-    publicfunctionsetAvsResp($avs\_resp)
+    public functionsetAvsResp($avs_resp)
 
     {
 
-    $this-\&gt;container[&#39;avs\_resp&#39;] = $avs\_resp;
+    $this->container['avs_resp'] = $avs_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvCode()
+    public functiongetCvvCode()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_code&#39;];
+    return $this->container['cvv_code'];
 
     }
 
-    publicfunctionsetCvvCode($cvv\_code)
+    public functionsetCvvCode($cvv_code)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_code&#39;] = $cvv\_code;
+    $this->container['cvv_code'] = $cvv_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvResp()
+    public functiongetCvvResp()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_resp&#39;];
+    return $this->container['cvv_resp'];
 
     }
 
-    publicfunctionsetCvvResp($cvv\_resp)
+    public functionsetCvvResp($cvv_resp)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_resp&#39;] = $cvv\_resp;
+    $this->container['cvv_resp'] = $cvv_resp;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetItems()
+    public functiongetItems()
 
     {
 
-    return$this-\&gt;container[&#39;items&#39;];
+    return $this->container['items'];
 
     }
 
-    publicfunctionsetItems($items)
+    public functionsetItems($items)
 
     {
 
-    $this-\&gt;container[&#39;items&#39;] = $items;
+    $this->container['items'] = $items;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessName()
+    public functiongetBusinessName()
 
     {
 
-    return$this-\&gt;container[&#39;business\_name&#39;];
+    return $this->container['business_name'];
 
     }
 
-    publicfunctionsetBusinessName($business\_name)
+    public functionsetBusinessName($business_name)
 
     {
 
-    $this-\&gt;container[&#39;business\_name&#39;] = $business\_name;
+    $this->container['business_name'] = $business_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessAddress()
+    public functiongetBusinessAddress()
 
     {
 
-    return$this-\&gt;container[&#39;business\_address&#39;];
+    return $this->container['business_address'];
 
     }
 
-    publicfunctionsetBusinessAddress($business\_address)
+    public functionsetBusinessAddress($business_address)
 
     {
 
-    $this-\&gt;container[&#39;business\_address&#39;] = $business\_address;
+    $this->container['business_address'] = $business_address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessAddress2()
+    public functiongetBusinessAddress2()
 
     {
 
-    return$this-\&gt;container[&#39;business\_address2&#39;];
+    return $this->container['business_address2'];
 
     }
 
-    publicfunctionsetBusinessAddress2($business\_address2)
+    public functionsetBusinessAddress2($business_address2)
 
     {
 
-    $this-\&gt;container[&#39;business\_address2&#39;] = $business\_address2;
+    $this->container['business_address2'] = $business_address2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessCity()
+    public functiongetBusinessCity()
 
     {
 
-    return$this-\&gt;container[&#39;business\_city&#39;];
+    return $this->container['business_city'];
 
     }
 
-    publicfunctionsetBusinessCity($business\_city)
+    public functionsetBusinessCity($business_city)
 
     {
 
-    $this-\&gt;container[&#39;business\_city&#39;] = $business\_city;
+    $this->container['business_city'] = $business_city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessState()
+    public functiongetBusinessState()
 
     {
 
-    return$this-\&gt;container[&#39;business\_state&#39;];
+    return $this->container['business_state'];
 
     }
 
-    publicfunctionsetBusinessState($business\_state)
+    public functionsetBusinessState($business_state)
 
     {
 
-    $this-\&gt;container[&#39;business\_state&#39;] = $business\_state;
+    $this->container['business_state'] = $business_state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessZip()
+    public functiongetBusinessZip()
 
     {
 
-    return$this-\&gt;container[&#39;business\_zip&#39;];
+    return $this->container['business_zip'];
 
     }
 
-    publicfunctionsetBusinessZip($business\_zip)
+    public functionsetBusinessZip($business_zip)
 
     {
 
-    $this-\&gt;container[&#39;business\_zip&#39;] = $business\_zip;
+    $this->container['business_zip'] = $business_zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessCountry()
+    public functiongetBusinessCountry()
 
     {
 
-    return$this-\&gt;container[&#39;business\_country&#39;];
+    return $this->container['business_country'];
 
     }
 
-    publicfunctionsetBusinessCountry($business\_country)
+    public functionsetBusinessCountry($business_country)
 
     {
 
-    $this-\&gt;container[&#39;business\_country&#39;] = $business\_country;
+    $this->container['business_country'] = $business_country;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetBusinessWebsite()
+    public functiongetBusinessWebsite()
 
     {
 
-    return$this-\&gt;container[&#39;business\_website&#39;];
+    return $this->container['business_website'];
 
     }
 
-    publicfunctionsetBusinessWebsite($business\_website)
+    public functionsetBusinessWebsite($business_website)
 
     {
 
-    $this-\&gt;container[&#39;business\_website&#39;] = $business\_website;
+    $this->container['business_website'] = $business_website;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactFirstName()
+    public functiongetContactFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_first\_name&#39;];
+    return $this->container['contact_first_name'];
 
     }
 
-    publicfunctionsetContactFirstName($contact\_first\_name)
+    public functionsetContactFirstName($contact_first_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_first\_name&#39;] = $contact\_first\_name;
+    $this->container['contact_first_name'] = $contact_first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactLastName()
+    public functiongetContactLastName()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_last\_name&#39;];
+    return $this->container['contact_last_name'];
 
     }
 
-    publicfunctionsetContactLastName($contact\_last\_name)
+    public functionsetContactLastName($contact_last_name)
 
     {
 
-    $this-\&gt;container[&#39;contact\_last\_name&#39;] = $contact\_last\_name;
+    $this->container['contact_last_name'] = $contact_last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactPhone()
+    public functiongetContactPhone()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_phone&#39;];
+    return $this->container['contact_phone'];
 
     }
 
-    publicfunctionsetContactPhone($contact\_phone)
+    public functionsetContactPhone($contact_phone)
 
     {
 
-    $this-\&gt;container[&#39;contact\_phone&#39;] = $contact\_phone;
+    $this->container['contact_phone'] = $contact_phone;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactFax()
+    public functiongetContactFax()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_fax&#39;];
+    return $this->container['contact_fax'];
 
     }
 
-    publicfunctionsetContactFax($contact\_fax)
+    public functionsetContactFax($contact_fax)
 
     {
 
-    $this-\&gt;container[&#39;contact\_fax&#39;] = $contact\_fax;
+    $this->container['contact_fax'] = $contact_fax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactEmail()
+    public functiongetContactEmail()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_email&#39;];
+    return $this->container['contact_email'];
 
     }
 
-    publicfunctionsetContactEmail($contact\_email)
+    public functionsetContactEmail($contact_email)
 
     {
 
-    $this-\&gt;container[&#39;contact\_email&#39;] = $contact\_email;
+    $this->container['contact_email'] = $contact_email;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetContactTitle()
+    public functiongetContactTitle()
 
     {
 
-    return$this-\&gt;container[&#39;contact\_title&#39;];
+    return $this->container['contact_title'];
 
     }
 
-    publicfunctionsetContactTitle($contact\_title)
+    public functionsetContactTitle($contact_title)
 
     {
 
-    $this-\&gt;container[&#39;contact\_title&#39;] = $contact\_title;
+    $this->container['contact_title'] = $contact_title;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetIp()
+    public functiongetIp()
 
     {
 
-    return$this-\&gt;container[&#39;ip&#39;];
+    return $this->container['ip'];
 
     }
 
-    publicfunctionsetIp($ip)
+    public functionsetIp($ip)
 
     {
 
-    $this-\&gt;container[&#39;ip&#39;] = $ip;
+    $this->container['ip'] = $ip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTaxExempt()
+    public functiongetTaxExempt()
 
     {
 
-    return$this-\&gt;container[&#39;tax\_exempt&#39;];
+    return $this->container['tax_exempt'];
 
     }
 
-    publicfunctionsetTaxExempt($tax\_exempt)
+    public functionsetTaxExempt($tax_exempt)
 
     {
 
-    $this-\&gt;container[&#39;tax\_exempt&#39;] = $tax\_exempt;
+    $this->container['tax_exempt'] = $tax_exempt;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -10198,9 +10198,9 @@
 
 # TransactionItem
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -10212,489 +10212,489 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;TransactionItem&#39;;
+    protectedstatic$swaggerModelName = 'TransactionItem';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;tax\_included&#39; =\&gt; &#39;bool&#39;,
+    'tax_included' => 'bool',
 
-    &#39;credit&#39; =\&gt; &#39;bool&#39;,
+    'credit' => 'bool',
 
-    &#39;extended\_amount&#39; =\&gt; &#39;double&#39;,
+    'extended_amount' => 'double',
 
-    &#39;item\_number&#39; =\&gt; &#39;string&#39;,
+    'item_number' => 'string',
 
-    &#39;unit\_cost&#39; =\&gt; &#39;double&#39;,
+    'unit_cost' => 'double',
 
-    &#39;quantity&#39; =\&gt; &#39;int&#39;,
+    'quantity' => 'int',
 
-    &#39;description&#39; =\&gt; &#39;string&#39;,
+    'description' => 'string',
 
-    &#39;discount&#39; =\&gt; &#39;double&#39;,
+    'discount' => 'double',
 
-    &#39;tax&#39; =\&gt; &#39;double&#39;,
+    'tax' => 'double',
 
-    &#39;commodity\_code&#39; =\&gt; &#39;string&#39;,
+    'commodity_code' => 'string',
 
-    &#39;unit\_of\_measure&#39; =\&gt; &#39;string&#39;
+    'unit_of_measure' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;tax\_included&#39; =\&gt; null,
+    'tax_included' => null,
 
-    &#39;credit&#39; =\&gt; null,
+    'credit' => null,
 
-    &#39;extended\_amount&#39; =\&gt; &#39;double&#39;,
+    'extended_amount' => 'double',
 
-    &#39;item\_number&#39; =\&gt; null,
+    'item_number' => null,
 
-    &#39;unit\_cost&#39; =\&gt; &#39;double&#39;,
+    'unit_cost' => 'double',
 
-    &#39;quantity&#39; =\&gt; &#39;int32&#39;,
+    'quantity' => 'int32',
 
-    &#39;description&#39; =\&gt; null,
+    'description' => null,
 
-    &#39;discount&#39; =\&gt; &#39;double&#39;,
+    'discount' => 'double',
 
-    &#39;tax&#39; =\&gt; &#39;double&#39;,
+    'tax' => 'double',
 
-    &#39;commodity\_code&#39; =\&gt; null,
+    'commodity_code' => null,
 
-    &#39;unit\_of\_measure&#39; =\&gt; null
+    'unit_of_measure' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;tax\_included&#39; =\&gt; &#39;TaxIncluded&#39;,
+    'tax_included' => 'TaxIncluded',
 
-    &#39;credit&#39; =\&gt; &#39;Credit&#39;,
+    'credit' => 'Credit',
 
-    &#39;extended\_amount&#39; =\&gt; &#39;ExtendedAmount&#39;,
+    'extended_amount' => 'ExtendedAmount',
 
-    &#39;item\_number&#39; =\&gt; &#39;ItemNumber&#39;,
+    'item_number' => 'ItemNumber',
 
-    &#39;unit\_cost&#39; =\&gt; &#39;UnitCost&#39;,
+    'unit_cost' => 'UnitCost',
 
-    &#39;quantity&#39; =\&gt; &#39;Quantity&#39;,
+    'quantity' => 'Quantity',
 
-    &#39;description&#39; =\&gt; &#39;Description&#39;,
+    'description' => 'Description',
 
-    &#39;discount&#39; =\&gt; &#39;Discount&#39;,
+    'discount' => 'Discount',
 
-    &#39;tax&#39; =\&gt; &#39;Tax&#39;,
+    'tax' => 'Tax',
 
-    &#39;commodity\_code&#39; =\&gt; &#39;CommodityCode&#39;,
+    'commodity_code' => 'CommodityCode',
 
-    &#39;unit\_of\_measure&#39; =\&gt; &#39;UnitOfMeasure&#39;
+    'unit_of_measure' => 'UnitOfMeasure'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;tax\_included&#39; =\&gt; &#39;setTaxIncluded&#39;,
+    'tax_included' => 'setTaxIncluded',
 
-    &#39;credit&#39; =\&gt; &#39;setCredit&#39;,
+    'credit' => 'setCredit',
 
-    &#39;extended\_amount&#39; =\&gt; &#39;setExtendedAmount&#39;,
+    'extended_amount' => 'setExtendedAmount',
 
-    &#39;item\_number&#39; =\&gt; &#39;setItemNumber&#39;,
+    'item_number' => 'setItemNumber',
 
-    &#39;unit\_cost&#39; =\&gt; &#39;setUnitCost&#39;,
+    'unit_cost' => 'setUnitCost',
 
-    &#39;quantity&#39; =\&gt; &#39;setQuantity&#39;,
+    'quantity' => 'setQuantity',
 
-    &#39;description&#39; =\&gt; &#39;setDescription&#39;,
+    'description' => 'setDescription',
 
-    &#39;discount&#39; =\&gt; &#39;setDiscount&#39;,
+    'discount' => 'setDiscount',
 
-    &#39;tax&#39; =\&gt; &#39;setTax&#39;,
+    'tax' => 'setTax',
 
-    &#39;commodity\_code&#39; =\&gt; &#39;setCommodityCode&#39;,
+    'commodity_code' => 'setCommodityCode',
 
-    &#39;unit\_of\_measure&#39; =\&gt; &#39;setUnitOfMeasure&#39;
+    'unit_of_measure' => 'setUnitOfMeasure'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;tax\_included&#39; =\&gt; &#39;getTaxIncluded&#39;,
+    'tax_included' => 'getTaxIncluded',
 
-    &#39;credit&#39; =\&gt; &#39;getCredit&#39;,
+    'credit' => 'getCredit',
 
-    &#39;extended\_amount&#39; =\&gt; &#39;getExtendedAmount&#39;,
+    'extended_amount' => 'getExtendedAmount',
 
-    &#39;item\_number&#39; =\&gt; &#39;getItemNumber&#39;,
+    'item_number' => 'getItemNumber',
 
-    &#39;unit\_cost&#39; =\&gt; &#39;getUnitCost&#39;,
+    'unit_cost' => 'getUnitCost',
 
-    &#39;quantity&#39; =\&gt; &#39;getQuantity&#39;,
+    'quantity' => 'getQuantity',
 
-    &#39;description&#39; =\&gt; &#39;getDescription&#39;,
+    'description' => 'getDescription',
 
-    &#39;discount&#39; =\&gt; &#39;getDiscount&#39;,
+    'discount' => 'getDiscount',
 
-    &#39;tax&#39; =\&gt; &#39;getTax&#39;,
+    'tax' => 'getTax',
 
-    &#39;commodity\_code&#39; =\&gt; &#39;getCommodityCode&#39;,
+    'commodity_code' => 'getCommodityCode',
 
-    &#39;unit\_of\_measure&#39; =\&gt; &#39;getUnitOfMeasure&#39;
+    'unit_of_measure' => 'getUnitOfMeasure'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;tax\_included&#39;] = isset($data[&#39;tax\_included&#39;]) ? $data[&#39;tax\_included&#39;] : null;
+    $this->container['tax_included'] = isset($data['tax_included']) ? $data['tax_included'] : null;
 
-    $this-\&gt;container[&#39;credit&#39;] = isset($data[&#39;credit&#39;]) ? $data[&#39;credit&#39;] : null;
+    $this->container['credit'] = isset($data['credit']) ? $data['credit'] : null;
 
-    $this-\&gt;container[&#39;extended\_amount&#39;] = isset($data[&#39;extended\_amount&#39;]) ? $data[&#39;extended\_amount&#39;] : null;
+    $this->container['extended_amount'] = isset($data['extended_amount']) ? $data['extended_amount'] : null;
 
-    $this-\&gt;container[&#39;item\_number&#39;] = isset($data[&#39;item\_number&#39;]) ? $data[&#39;item\_number&#39;] : null;
+    $this->container['item_number'] = isset($data['item_number']) ? $data['item_number'] : null;
 
-    $this-\&gt;container[&#39;unit\_cost&#39;] = isset($data[&#39;unit\_cost&#39;]) ? $data[&#39;unit\_cost&#39;] : null;
+    $this->container['unit_cost'] = isset($data['unit_cost']) ? $data['unit_cost'] : null;
 
-    $this-\&gt;container[&#39;quantity&#39;] = isset($data[&#39;quantity&#39;]) ? $data[&#39;quantity&#39;] : null;
+    $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
 
-    $this-\&gt;container[&#39;description&#39;] = isset($data[&#39;description&#39;]) ? $data[&#39;description&#39;] : null;
+    $this->container['description'] = isset($data['description']) ? $data['description'] : null;
 
-    $this-\&gt;container[&#39;discount&#39;] = isset($data[&#39;discount&#39;]) ? $data[&#39;discount&#39;] : null;
+    $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
 
-    $this-\&gt;container[&#39;tax&#39;] = isset($data[&#39;tax&#39;]) ? $data[&#39;tax&#39;] : null;
+    $this->container['tax'] = isset($data['tax']) ? $data['tax'] : null;
 
-    $this-\&gt;container[&#39;commodity\_code&#39;] = isset($data[&#39;commodity\_code&#39;]) ? $data[&#39;commodity\_code&#39;] : null;
+    $this->container['commodity_code'] = isset($data['commodity_code']) ? $data['commodity_code'] : null;
 
-    $this-\&gt;container[&#39;unit\_of\_measure&#39;] = isset($data[&#39;unit\_of\_measure&#39;]) ? $data[&#39;unit\_of\_measure&#39;] : null;
+    $this->container['unit_of_measure'] = isset($data['unit_of_measure']) ? $data['unit_of_measure'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetTaxIncluded()
+    public functiongetTaxIncluded()
 
     {
 
-    return$this-\&gt;container[&#39;tax\_included&#39;];
+    return $this->container['tax_included'];
 
     }
 
-    publicfunctionsetTaxIncluded($tax\_included)
+    public functionsetTaxIncluded($tax_included)
 
     {
 
-    $this-\&gt;container[&#39;tax\_included&#39;] = $tax\_included;
+    $this->container['tax_included'] = $tax_included;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCredit()
+    public functiongetCredit()
 
     {
 
-    return$this-\&gt;container[&#39;credit&#39;];
+    return $this->container['credit'];
 
     }
 
-    publicfunctionsetCredit($credit)
+    public functionsetCredit($credit)
 
     {
 
-    $this-\&gt;container[&#39;credit&#39;] = $credit;
+    $this->container['credit'] = $credit;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetExtendedAmount()
+    public functiongetExtendedAmount()
 
     {
 
-    return$this-\&gt;container[&#39;extended\_amount&#39;];
+    return $this->container['extended_amount'];
 
     }
 
-    publicfunctionsetExtendedAmount($extended\_amount)
+    public functionsetExtendedAmount($extended_amount)
 
     {
 
-    $this-\&gt;container[&#39;extended\_amount&#39;] = $extended\_amount;
+    $this->container['extended_amount'] = $extended_amount;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetItemNumber()
+    public functiongetItemNumber()
 
     {
 
-    return$this-\&gt;container[&#39;item\_number&#39;];
+    return $this->container['item_number'];
 
     }
 
-    publicfunctionsetItemNumber($item\_number)
+    public functionsetItemNumber($item_number)
 
     {
 
-    $this-\&gt;container[&#39;item\_number&#39;] = $item\_number;
+    $this->container['item_number'] = $item_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetUnitCost()
+    public functiongetUnitCost()
 
     {
 
-    return$this-\&gt;container[&#39;unit\_cost&#39;];
+    return $this->container['unit_cost'];
 
     }
 
-    publicfunctionsetUnitCost($unit\_cost)
+    public functionsetUnitCost($unit_cost)
 
     {
 
-    $this-\&gt;container[&#39;unit\_cost&#39;] = $unit\_cost;
+    $this->container['unit_cost'] = $unit_cost;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetQuantity()
+    public functiongetQuantity()
 
     {
 
-    return$this-\&gt;container[&#39;quantity&#39;];
+    return $this->container['quantity'];
 
     }
 
-    publicfunctionsetQuantity($quantity)
+    public functionsetQuantity($quantity)
 
     {
 
-    $this-\&gt;container[&#39;quantity&#39;] = $quantity;
+    $this->container['quantity'] = $quantity;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDescription()
+    public functiongetDescription()
 
     {
 
-    return$this-\&gt;container[&#39;description&#39;];
+    return $this->container['description'];
 
     }
 
-    publicfunctionsetDescription($description)
+    public functionsetDescription($description)
 
     {
 
-    $this-\&gt;container[&#39;description&#39;] = $description;
+    $this->container['description'] = $description;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetDiscount()
+    public functiongetDiscount()
 
     {
 
-    return$this-\&gt;container[&#39;discount&#39;];
+    return $this->container['discount'];
 
     }
 
-    publicfunctionsetDiscount($discount)
+    public functionsetDiscount($discount)
 
     {
 
-    $this-\&gt;container[&#39;discount&#39;] = $discount;
+    $this->container['discount'] = $discount;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTax()
+    public functiongetTax()
 
     {
 
-    return$this-\&gt;container[&#39;tax&#39;];
+    return $this->container['tax'];
 
     }
 
-    publicfunctionsetTax($tax)
+    public functionsetTax($tax)
 
     {
 
-    $this-\&gt;container[&#39;tax&#39;] = $tax;
+    $this->container['tax'] = $tax;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCommodityCode()
+    public functiongetCommodityCode()
 
     {
 
-    return$this-\&gt;container[&#39;commodity\_code&#39;];
+    return $this->container['commodity_code'];
 
     }
 
-    publicfunctionsetCommodityCode($commodity\_code)
+    public functionsetCommodityCode($commodity_code)
 
     {
 
-    $this-\&gt;container[&#39;commodity\_code&#39;] = $commodity\_code;
+    $this->container['commodity_code'] = $commodity_code;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetUnitOfMeasure()
+    public functiongetUnitOfMeasure()
 
     {
 
-    return$this-\&gt;container[&#39;unit\_of\_measure&#39;];
+    return $this->container['unit_of_measure'];
 
     }
 
-    publicfunctionsetUnitOfMeasure($unit\_of\_measure)
+    public functionsetUnitOfMeasure($unit_of_measure)
 
     {
 
-    $this-\&gt;container[&#39;unit\_of\_measure&#39;] = $unit\_of\_measure;
+    $this->container['unit_of_measure'] = $unit_of_measure;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -10702,9 +10702,9 @@
 
 # TransactionType
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use \Swagger\Client\ObjectSerializer;
 
@@ -10712,31 +10712,31 @@
 
     {
 
-    const SALE = &#39;Sale&#39;;
+    const SALE = 'Sale';
 
-    const CREDIT = &#39;Credit&#39;;
+    const CREDIT = 'Credit';
 
-    const AUTHORIZATION = &#39;Authorization&#39;;
+    const AUTHORIZATION = 'Authorization';
 
-    const PRE\_AUTH = &#39;PreAuth&#39;;
+    const PRE_AUTH = 'PreAuth';
 
-    const POST\_AUTH = &#39;PostAuth&#39;;
+    const POST_AUTH = 'PostAuth';
 
-    const FORCE\_AUTH = &#39;ForceAuth&#39;;
+    const FORCE_AUTH = 'ForceAuth';
 
-    const VOID = &#39;Void&#39;;
+    const void = 'void ';
 
-    const QUERY = &#39;Query&#39;;
+    const QUERY = 'Query';
 
-    const VERIFY = &#39;Verify&#39;;
+    const VERIFY = 'Verify';
 
-    const MARK = &#39;Mark&#39;;
+    const MARK = 'Mark';
 
-    const \_RETURN = &#39;Return&#39;;
+    const _RETURN = 'Return';
 
-    const \_USE = &#39;Use&#39;;
+    const _USE = 'Use';
 
-    publicstaticfunctiongetAllowableEnumValues()
+    public staticfunctiongetAllowableEnumValues()
 
     {
 
@@ -10748,13 +10748,13 @@
 
     self::AUTHORIZATION,
 
-    self::PRE\_AUTH,
+    self::PRE_AUTH,
 
-    self::POST\_AUTH,
+    self::POST_AUTH,
 
-    self::FORCE\_AUTH,
+    self::FORCE_AUTH,
 
-    self::VOID,
+    self::void ,
 
     self::QUERY,
 
@@ -10762,9 +10762,9 @@
 
     self::MARK,
 
-    self::\_RETURN,
+    self::_RETURN,
 
-    self::\_USE,
+    self::_USE,
 
     ];
 
@@ -10774,9 +10774,9 @@
 
 # UpdateTransactionInfo
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -10788,279 +10788,279 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;UpdateTransactionInfo&#39;;
+    protectedstatic$swaggerModelName = 'UpdateTransactionInfo';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;invoice\_number&#39; =\&gt; &#39;string&#39;,
+    'invoice_number' => 'string',
 
-    &#39;customer\_number&#39; =\&gt; &#39;string&#39;,
+    'customer_number' => 'string',
 
-    &#39;po\_number&#39; =\&gt; &#39;string&#39;,
+    'po_number' => 'string',
 
-    &#39;note&#39; =\&gt; &#39;string&#39;
+    'note' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;invoice\_number&#39; =\&gt; null,
+    'invoice_number' => null,
 
-    &#39;customer\_number&#39; =\&gt; null,
+    'customer_number' => null,
 
-    &#39;po\_number&#39; =\&gt; null,
+    'po_number' => null,
 
-    &#39;note&#39; =\&gt; null
+    'note' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;invoice\_number&#39; =\&gt; &#39;InvoiceNumber&#39;,
+    'invoice_number' => 'InvoiceNumber',
 
-    &#39;customer\_number&#39; =\&gt; &#39;CustomerNumber&#39;,
+    'customer_number' => 'CustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;PONumber&#39;,
+    'po_number' => 'PONumber',
 
-    &#39;note&#39; =\&gt; &#39;Note&#39;
+    'note' => 'Note'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;invoice\_number&#39; =\&gt; &#39;setInvoiceNumber&#39;,
+    'invoice_number' => 'setInvoiceNumber',
 
-    &#39;customer\_number&#39; =\&gt; &#39;setCustomerNumber&#39;,
+    'customer_number' => 'setCustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;setPoNumber&#39;,
+    'po_number' => 'setPoNumber',
 
-    &#39;note&#39; =\&gt; &#39;setNote&#39;
+    'note' => 'setNote'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;invoice\_number&#39; =\&gt; &#39;getInvoiceNumber&#39;,
+    'invoice_number' => 'getInvoiceNumber',
 
-    &#39;customer\_number&#39; =\&gt; &#39;getCustomerNumber&#39;,
+    'customer_number' => 'getCustomerNumber',
 
-    &#39;po\_number&#39; =\&gt; &#39;getPoNumber&#39;,
+    'po_number' => 'getPoNumber',
 
-    &#39;note&#39; =\&gt; &#39;getNote&#39;
+    'note' => 'getNote'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = isset($data[&#39;invoice\_number&#39;]) ? $data[&#39;invoice\_number&#39;] : null;
+    $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = isset($data[&#39;customer\_number&#39;]) ? $data[&#39;customer\_number&#39;] : null;
+    $this->container['customer_number'] = isset($data['customer_number']) ? $data['customer_number'] : null;
 
-    $this-\&gt;container[&#39;po\_number&#39;] = isset($data[&#39;po\_number&#39;]) ? $data[&#39;po\_number&#39;] : null;
+    $this->container['po_number'] = isset($data['po_number']) ? $data['po_number'] : null;
 
-    $this-\&gt;container[&#39;note&#39;] = isset($data[&#39;note&#39;]) ? $data[&#39;note&#39;] : null;
+    $this->container['note'] = isset($data['note']) ? $data['note'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetInvoiceNumber()
+    public functiongetInvoiceNumber()
 
     {
 
-    return$this-\&gt;container[&#39;invoice\_number&#39;];
+    return $this->container['invoice_number'];
 
     }
 
-    publicfunctionsetInvoiceNumber($invoice\_number)
+    public functionsetInvoiceNumber($invoice_number)
 
     {
 
-    $this-\&gt;container[&#39;invoice\_number&#39;] = $invoice\_number;
+    $this->container['invoice_number'] = $invoice_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCustomerNumber()
+    public functiongetCustomerNumber()
 
     {
 
-    return$this-\&gt;container[&#39;customer\_number&#39;];
+    return $this->container['customer_number'];
 
     }
 
-    publicfunctionsetCustomerNumber($customer\_number)
+    public functionsetCustomerNumber($customer_number)
 
     {
 
-    $this-\&gt;container[&#39;customer\_number&#39;] = $customer\_number;
+    $this->container['customer_number'] = $customer_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetPoNumber()
+    public functiongetPoNumber()
 
     {
 
-    return$this-\&gt;container[&#39;po\_number&#39;];
+    return $this->container['po_number'];
 
     }
 
-    publicfunctionsetPoNumber($po\_number)
+    public functionsetPoNumber($po_number)
 
     {
 
-    $this-\&gt;container[&#39;po\_number&#39;] = $po\_number;
+    $this->container['po_number'] = $po_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNote()
+    public functiongetNote()
 
     {
 
-    return$this-\&gt;container[&#39;note&#39;];
+    return $this->container['note'];
 
     }
 
-    publicfunctionsetNote($note)
+    public functionsetNote($note)
 
     {
 
-    $this-\&gt;container[&#39;note&#39;] = $note;
+    $this->container['note'] = $note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -11068,9 +11068,9 @@
 
 # VaultCheck
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -11082,519 +11082,519 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;VaultCheck&#39;;
+    protectedstatic$swaggerModelName = 'VaultCheck';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;response&#39; =\&gt; &#39;\Swagger\Client\Model\Response&#39;,
+    'response' => '\Swagger\Client\Model\Response',
 
-    &#39;check\_id&#39; =\&gt; &#39;int&#39;,
+    'check_id' => 'int',
 
-    &#39;main&#39; =\&gt; &#39;bool&#39;,
+    'main' => 'bool',
 
-    &#39;check\_routing&#39; =\&gt; &#39;string&#39;,
+    'check_routing' => 'string',
 
-    &#39;check\_account&#39; =\&gt; &#39;string&#39;,
+    'check_account' => 'string',
 
-    &#39;check\_number&#39; =\&gt; &#39;string&#39;,
+    'check_number' => 'string',
 
-    &#39;check\_first\_name&#39; =\&gt; &#39;string&#39;,
+    'check_first_name' => 'string',
 
-    &#39;check\_last\_name&#39; =\&gt; &#39;string&#39;,
+    'check_last_name' => 'string',
 
-    &#39;note&#39; =\&gt; &#39;string&#39;,
+    'note' => 'string',
 
-    &#39;masked\_routing&#39; =\&gt; &#39;string&#39;,
+    'masked_routing' => 'string',
 
-    &#39;masked\_account&#39; =\&gt; &#39;string&#39;,
+    'masked_account' => 'string',
 
-    &#39;account\_type&#39; =\&gt; &#39;string&#39;
+    'account_type' => 'string'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;response&#39; =\&gt; null,
+    'response' => null,
 
-    &#39;check\_id&#39; =\&gt; &#39;int32&#39;,
+    'check_id' => 'int32',
 
-    &#39;main&#39; =\&gt; null,
+    'main' => null,
 
-    &#39;check\_routing&#39; =\&gt; null,
+    'check_routing' => null,
 
-    &#39;check\_account&#39; =\&gt; null,
+    'check_account' => null,
 
-    &#39;check\_number&#39; =\&gt; null,
+    'check_number' => null,
 
-    &#39;check\_first\_name&#39; =\&gt; null,
+    'check_first_name' => null,
 
-    &#39;check\_last\_name&#39; =\&gt; null,
+    'check_last_name' => null,
 
-    &#39;note&#39; =\&gt; null,
+    'note' => null,
 
-    &#39;masked\_routing&#39; =\&gt; null,
+    'masked_routing' => null,
 
-    &#39;masked\_account&#39; =\&gt; null,
+    'masked_account' => null,
 
-    &#39;account\_type&#39; =\&gt; null
+    'account_type' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;response&#39; =\&gt; &#39;Response&#39;,
+    'response' => 'Response',
 
-    &#39;check\_id&#39; =\&gt; &#39;CheckID&#39;,
+    'check_id' => 'CheckID',
 
-    &#39;main&#39; =\&gt; &#39;Main&#39;,
+    'main' => 'Main',
 
-    &#39;check\_routing&#39; =\&gt; &#39;CheckRouting&#39;,
+    'check_routing' => 'CheckRouting',
 
-    &#39;check\_account&#39; =\&gt; &#39;CheckAccount&#39;,
+    'check_account' => 'CheckAccount',
 
-    &#39;check\_number&#39; =\&gt; &#39;CheckNumber&#39;,
+    'check_number' => 'CheckNumber',
 
-    &#39;check\_first\_name&#39; =\&gt; &#39;CheckFirstName&#39;,
+    'check_first_name' => 'CheckFirstName',
 
-    &#39;check\_last\_name&#39; =\&gt; &#39;CheckLastName&#39;,
+    'check_last_name' => 'CheckLastName',
 
-    &#39;note&#39; =\&gt; &#39;Note&#39;,
+    'note' => 'Note',
 
-    &#39;masked\_routing&#39; =\&gt; &#39;MaskedRouting&#39;,
+    'masked_routing' => 'MaskedRouting',
 
-    &#39;masked\_account&#39; =\&gt; &#39;MaskedAccount&#39;,
+    'masked_account' => 'MaskedAccount',
 
-    &#39;account\_type&#39; =\&gt; &#39;AccountType&#39;
+    'account_type' => 'AccountType'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;response&#39; =\&gt; &#39;setResponse&#39;,
+    'response' => 'setResponse',
 
-    &#39;check\_id&#39; =\&gt; &#39;setCheckId&#39;,
+    'check_id' => 'setCheckId',
 
-    &#39;main&#39; =\&gt; &#39;setMain&#39;,
+    'main' => 'setMain',
 
-    &#39;check\_routing&#39; =\&gt; &#39;setCheckRouting&#39;,
+    'check_routing' => 'setCheckRouting',
 
-    &#39;check\_account&#39; =\&gt; &#39;setCheckAccount&#39;,
+    'check_account' => 'setCheckAccount',
 
-    &#39;check\_number&#39; =\&gt; &#39;setCheckNumber&#39;,
+    'check_number' => 'setCheckNumber',
 
-    &#39;check\_first\_name&#39; =\&gt; &#39;setCheckFirstName&#39;,
+    'check_first_name' => 'setCheckFirstName',
 
-    &#39;check\_last\_name&#39; =\&gt; &#39;setCheckLastName&#39;,
+    'check_last_name' => 'setCheckLastName',
 
-    &#39;note&#39; =\&gt; &#39;setNote&#39;,
+    'note' => 'setNote',
 
-    &#39;masked\_routing&#39; =\&gt; &#39;setMaskedRouting&#39;,
+    'masked_routing' => 'setMaskedRouting',
 
-    &#39;masked\_account&#39; =\&gt; &#39;setMaskedAccount&#39;,
+    'masked_account' => 'setMaskedAccount',
 
-    &#39;account\_type&#39; =\&gt; &#39;setAccountType&#39;
+    'account_type' => 'setAccountType'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;response&#39; =\&gt; &#39;getResponse&#39;,
+    'response' => 'getResponse',
 
-    &#39;check\_id&#39; =\&gt; &#39;getCheckId&#39;,
+    'check_id' => 'getCheckId',
 
-    &#39;main&#39; =\&gt; &#39;getMain&#39;,
+    'main' => 'getMain',
 
-    &#39;check\_routing&#39; =\&gt; &#39;getCheckRouting&#39;,
+    'check_routing' => 'getCheckRouting',
 
-    &#39;check\_account&#39; =\&gt; &#39;getCheckAccount&#39;,
+    'check_account' => 'getCheckAccount',
 
-    &#39;check\_number&#39; =\&gt; &#39;getCheckNumber&#39;,
+    'check_number' => 'getCheckNumber',
 
-    &#39;check\_first\_name&#39; =\&gt; &#39;getCheckFirstName&#39;,
+    'check_first_name' => 'getCheckFirstName',
 
-    &#39;check\_last\_name&#39; =\&gt; &#39;getCheckLastName&#39;,
+    'check_last_name' => 'getCheckLastName',
 
-    &#39;note&#39; =\&gt; &#39;getNote&#39;,
+    'note' => 'getNote',
 
-    &#39;masked\_routing&#39; =\&gt; &#39;getMaskedRouting&#39;,
+    'masked_routing' => 'getMaskedRouting',
 
-    &#39;masked\_account&#39; =\&gt; &#39;getMaskedAccount&#39;,
+    'masked_account' => 'getMaskedAccount',
 
-    &#39;account\_type&#39; =\&gt; &#39;getAccountType&#39;
+    'account_type' => 'getAccountType'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = isset($data[&#39;response&#39;]) ? $data[&#39;response&#39;] : null;
+    $this->container['response'] = isset($data['response']) ? $data['response'] : null;
 
-    $this-\&gt;container[&#39;check\_id&#39;] = isset($data[&#39;check\_id&#39;]) ? $data[&#39;check\_id&#39;] : null;
+    $this->container['check_id'] = isset($data['check_id']) ? $data['check_id'] : null;
 
-    $this-\&gt;container[&#39;main&#39;] = isset($data[&#39;main&#39;]) ? $data[&#39;main&#39;] : null;
+    $this->container['main'] = isset($data['main']) ? $data['main'] : null;
 
-    $this-\&gt;container[&#39;check\_routing&#39;] = isset($data[&#39;check\_routing&#39;]) ? $data[&#39;check\_routing&#39;] : null;
+    $this->container['check_routing'] = isset($data['check_routing']) ? $data['check_routing'] : null;
 
-    $this-\&gt;container[&#39;check\_account&#39;] = isset($data[&#39;check\_account&#39;]) ? $data[&#39;check\_account&#39;] : null;
+    $this->container['check_account'] = isset($data['check_account']) ? $data['check_account'] : null;
 
-    $this-\&gt;container[&#39;check\_number&#39;] = isset($data[&#39;check\_number&#39;]) ? $data[&#39;check\_number&#39;] : null;
+    $this->container['check_number'] = isset($data['check_number']) ? $data['check_number'] : null;
 
-    $this-\&gt;container[&#39;check\_first\_name&#39;] = isset($data[&#39;check\_first\_name&#39;]) ? $data[&#39;check\_first\_name&#39;] : null;
+    $this->container['check_first_name'] = isset($data['check_first_name']) ? $data['check_first_name'] : null;
 
-    $this-\&gt;container[&#39;check\_last\_name&#39;] = isset($data[&#39;check\_last\_name&#39;]) ? $data[&#39;check\_last\_name&#39;] : null;
+    $this->container['check_last_name'] = isset($data['check_last_name']) ? $data['check_last_name'] : null;
 
-    $this-\&gt;container[&#39;note&#39;] = isset($data[&#39;note&#39;]) ? $data[&#39;note&#39;] : null;
+    $this->container['note'] = isset($data['note']) ? $data['note'] : null;
 
-    $this-\&gt;container[&#39;masked\_routing&#39;] = isset($data[&#39;masked\_routing&#39;]) ? $data[&#39;masked\_routing&#39;] : null;
+    $this->container['masked_routing'] = isset($data['masked_routing']) ? $data['masked_routing'] : null;
 
-    $this-\&gt;container[&#39;masked\_account&#39;] = isset($data[&#39;masked\_account&#39;]) ? $data[&#39;masked\_account&#39;] : null;
+    $this->container['masked_account'] = isset($data['masked_account']) ? $data['masked_account'] : null;
 
-    $this-\&gt;container[&#39;account\_type&#39;] = isset($data[&#39;account\_type&#39;]) ? $data[&#39;account\_type&#39;] : null;
+    $this->container['account_type'] = isset($data['account_type']) ? $data['account_type'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetResponse()
+    public functiongetResponse()
 
     {
 
-    return$this-\&gt;container[&#39;response&#39;];
+    return $this->container['response'];
 
     }
 
-    publicfunctionsetResponse($response)
+    public functionsetResponse($response)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = $response;
+    $this->container['response'] = $response;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckId()
+    public functiongetCheckId()
 
     {
 
-    return$this-\&gt;container[&#39;check\_id&#39;];
+    return $this->container['check_id'];
 
     }
 
-    publicfunctionsetCheckId($check\_id)
+    public functionsetCheckId($check_id)
 
     {
 
-    $this-\&gt;container[&#39;check\_id&#39;] = $check\_id;
+    $this->container['check_id'] = $check_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMain()
+    public functiongetMain()
 
     {
 
-    return$this-\&gt;container[&#39;main&#39;];
+    return $this->container['main'];
 
     }
 
-    publicfunctionsetMain($main)
+    public functionsetMain($main)
 
     {
 
-    $this-\&gt;container[&#39;main&#39;] = $main;
+    $this->container['main'] = $main;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckRouting()
+    public functiongetCheckRouting()
 
     {
 
-    return$this-\&gt;container[&#39;check\_routing&#39;];
+    return $this->container['check_routing'];
 
     }
 
-    publicfunctionsetCheckRouting($check\_routing)
+    public functionsetCheckRouting($check_routing)
 
     {
 
-    $this-\&gt;container[&#39;check\_routing&#39;] = $check\_routing;
+    $this->container['check_routing'] = $check_routing;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckAccount()
+    public functiongetCheckAccount()
 
     {
 
-    return$this-\&gt;container[&#39;check\_account&#39;];
+    return $this->container['check_account'];
 
     }
 
-    publicfunctionsetCheckAccount($check\_account)
+    public functionsetCheckAccount($check_account)
 
     {
 
-    $this-\&gt;container[&#39;check\_account&#39;] = $check\_account;
+    $this->container['check_account'] = $check_account;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckNumber()
+    public functiongetCheckNumber()
 
     {
 
-    return$this-\&gt;container[&#39;check\_number&#39;];
+    return $this->container['check_number'];
 
     }
 
-    publicfunctionsetCheckNumber($check\_number)
+    public functionsetCheckNumber($check_number)
 
     {
 
-    $this-\&gt;container[&#39;check\_number&#39;] = $check\_number;
+    $this->container['check_number'] = $check_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckFirstName()
+    public functiongetCheckFirstName()
 
     {
 
-    return$this-\&gt;container[&#39;check\_first\_name&#39;];
+    return $this->container['check_first_name'];
 
     }
 
-    publicfunctionsetCheckFirstName($check\_first\_name)
+    public functionsetCheckFirstName($check_first_name)
 
     {
 
-    $this-\&gt;container[&#39;check\_first\_name&#39;] = $check\_first\_name;
+    $this->container['check_first_name'] = $check_first_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCheckLastName()
+    public functiongetCheckLastName()
 
     {
 
-    return$this-\&gt;container[&#39;check\_last\_name&#39;];
+    return $this->container['check_last_name'];
 
     }
 
-    publicfunctionsetCheckLastName($check\_last\_name)
+    public functionsetCheckLastName($check_last_name)
 
     {
 
-    $this-\&gt;container[&#39;check\_last\_name&#39;] = $check\_last\_name;
+    $this->container['check_last_name'] = $check_last_name;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNote()
+    public functiongetNote()
 
     {
 
-    return$this-\&gt;container[&#39;note&#39;];
+    return $this->container['note'];
 
     }
 
-    publicfunctionsetNote($note)
+    public functionsetNote($note)
 
     {
 
-    $this-\&gt;container[&#39;note&#39;] = $note;
+    $this->container['note'] = $note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMaskedRouting()
+    public functiongetMaskedRouting()
 
     {
 
-    return$this-\&gt;container[&#39;masked\_routing&#39;];
+    return $this->container['masked_routing'];
 
     }
 
-    publicfunctionsetMaskedRouting($masked\_routing)
+    public functionsetMaskedRouting($masked_routing)
 
     {
 
-    $this-\&gt;container[&#39;masked\_routing&#39;] = $masked\_routing;
+    $this->container['masked_routing'] = $masked_routing;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMaskedAccount()
+    public functiongetMaskedAccount()
 
     {
 
-    return$this-\&gt;container[&#39;masked\_account&#39;];
+    return $this->container['masked_account'];
 
     }
 
-    publicfunctionsetMaskedAccount($masked\_account)
+    public functionsetMaskedAccount($masked_account)
 
     {
 
-    $this-\&gt;container[&#39;masked\_account&#39;] = $masked\_account;
+    $this->container['masked_account'] = $masked_account;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAccountType()
+    public functiongetAccountType()
 
     {
 
-    return$this-\&gt;container[&#39;account\_type&#39;];
+    return $this->container['account_type'];
 
     }
 
-    publicfunctionsetAccountType($account\_type)
+    public functionsetAccountType($account_type)
 
     {
 
-    $this-\&gt;container[&#39;account\_type&#39;] = $account\_type;
+    $this->container['account_type'] = $account_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
@@ -11602,9 +11602,9 @@
 
 # VaultCreditCard
 
-    \&lt;?php
+    <?php
 
-    namespaceSwagger\Client\Model;
+    namespace Swagger\Client\Model;
 
     use\ArrayAccess;
 
@@ -11616,759 +11616,759 @@
 
     const DISCRIMINATOR = null;
 
-    protectedstatic$swaggerModelName = &#39;VaultCreditCard&#39;;
+    protectedstatic$swaggerModelName = 'VaultCreditCard';
 
     protectedstatic$swaggerTypes = [
 
-    &#39;magnetic\_tracks&#39; =\&gt; &#39;string&#39;,
+    'magnetic_tracks' => 'string',
 
-    &#39;track1&#39; =\&gt; &#39;string&#39;,
+    'track1' => 'string',
 
-    &#39;track2&#39; =\&gt; &#39;string&#39;,
+    'track2' => 'string',
 
-    &#39;number&#39; =\&gt; &#39;string&#39;,
+    'number' => 'string',
 
-    &#39;masked\_number&#39; =\&gt; &#39;string&#39;,
+    'masked_number' => 'string',
 
-    &#39;holder&#39; =\&gt; &#39;string&#39;,
+    'holder' => 'string',
 
-    &#39;exp\_date&#39; =\&gt; &#39;string&#39;,
+    'exp_date' => 'string',
 
-    &#39;cvv&#39; =\&gt; &#39;string&#39;,
+    'cvv' => 'string',
 
-    &#39;address&#39; =\&gt; &#39;string&#39;,
+    'address' => 'string',
 
-    &#39;city&#39; =\&gt; &#39;string&#39;,
+    'city' => 'string',
 
-    &#39;state&#39; =\&gt; &#39;string&#39;,
+    'state' => 'string',
 
-    &#39;zip&#39; =\&gt; &#39;string&#39;,
+    'zip' => 'string',
 
-    &#39;swiped&#39; =\&gt; &#39;bool&#39;,
+    'swiped' => 'bool',
 
-    &#39;type\_string&#39; =\&gt; &#39;string&#39;,
+    'type_string' => 'string',
 
-    &#39;cvv\_type&#39; =\&gt; &#39;\Swagger\Client\Model\CVVPresenceType&#39;,
+    'cvv_type' => '\Swagger\Client\Model\CVVPresenceType',
 
-    &#39;not\_present&#39; =\&gt; &#39;bool&#39;,
+    'not_present' => 'bool',
 
-    &#39;response&#39; =\&gt; &#39;\Swagger\Client\Model\Response&#39;,
+    'response' => '\Swagger\Client\Model\Response',
 
-    &#39;card\_id&#39; =\&gt; &#39;int&#39;,
+    'card_id' => 'int',
 
-    &#39;note&#39; =\&gt; &#39;string&#39;,
+    'note' => 'string',
 
-    &#39;main&#39; =\&gt; &#39;bool&#39;
+    'main' => 'bool'
 
     ];
 
     protectedstatic$swaggerFormats = [
 
-    &#39;magnetic\_tracks&#39; =\&gt; null,
+    'magnetic_tracks' => null,
 
-    &#39;track1&#39; =\&gt; null,
+    'track1' => null,
 
-    &#39;track2&#39; =\&gt; null,
+    'track2' => null,
 
-    &#39;number&#39; =\&gt; null,
+    'number' => null,
 
-    &#39;masked\_number&#39; =\&gt; null,
+    'masked_number' => null,
 
-    &#39;holder&#39; =\&gt; null,
+    'holder' => null,
 
-    &#39;exp\_date&#39; =\&gt; null,
+    'exp_date' => null,
 
-    &#39;cvv&#39; =\&gt; null,
+    'cvv' => null,
 
-    &#39;address&#39; =\&gt; null,
+    'address' => null,
 
-    &#39;city&#39; =\&gt; null,
+    'city' => null,
 
-    &#39;state&#39; =\&gt; null,
+    'state' => null,
 
-    &#39;zip&#39; =\&gt; null,
+    'zip' => null,
 
-    &#39;swiped&#39; =\&gt; null,
+    'swiped' => null,
 
-    &#39;type\_string&#39; =\&gt; null,
+    'type_string' => null,
 
-    &#39;cvv\_type&#39; =\&gt; null,
+    'cvv_type' => null,
 
-    &#39;not\_present&#39; =\&gt; null,
+    'not_present' => null,
 
-    &#39;response&#39; =\&gt; null,
+    'response' => null,
 
-    &#39;card\_id&#39; =\&gt; &#39;int32&#39;,
+    'card_id' => 'int32',
 
-    &#39;note&#39; =\&gt; null,
+    'note' => null,
 
-    &#39;main&#39; =\&gt; null
+    'main' => null
 
     ];
 
-    publicstaticfunctionswaggerTypes()
+    public staticfunctionswaggerTypes()
 
     {
 
-    returnself::$swaggerTypes;
+    return self::$swaggerTypes;
 
     }
 
-    publicstaticfunctionswaggerFormats()
+    public staticfunctionswaggerFormats()
 
     {
 
-    returnself::$swaggerFormats;
+    return self::$swaggerFormats;
 
     }
 
     protectedstatic$attributeMap = [
 
-    &#39;magnetic\_tracks&#39; =\&gt; &#39;MagneticTracks&#39;,
+    'magnetic_tracks' => 'MagneticTracks',
 
-    &#39;track1&#39; =\&gt; &#39;Track1&#39;,
+    'track1' => 'Track1',
 
-    &#39;track2&#39; =\&gt; &#39;Track2&#39;,
+    'track2' => 'Track2',
 
-    &#39;number&#39; =\&gt; &#39;Number&#39;,
+    'number' => 'Number',
 
-    &#39;masked\_number&#39; =\&gt; &#39;MaskedNumber&#39;,
+    'masked_number' => 'MaskedNumber',
 
-    &#39;holder&#39; =\&gt; &#39;Holder&#39;,
+    'holder' => 'Holder',
 
-    &#39;exp\_date&#39; =\&gt; &#39;ExpDate&#39;,
+    'exp_date' => 'ExpDate',
 
-    &#39;cvv&#39; =\&gt; &#39;CVV&#39;,
+    'cvv' => 'CVV',
 
-    &#39;address&#39; =\&gt; &#39;Address&#39;,
+    'address' => 'Address',
 
-    &#39;city&#39; =\&gt; &#39;City&#39;,
+    'city' => 'City',
 
-    &#39;state&#39; =\&gt; &#39;State&#39;,
+    'state' => 'State',
 
-    &#39;zip&#39; =\&gt; &#39;ZIP&#39;,
+    'zip' => 'ZIP',
 
-    &#39;swiped&#39; =\&gt; &#39;Swiped&#39;,
+    'swiped' => 'Swiped',
 
-    &#39;type\_string&#39; =\&gt; &#39;TypeString&#39;,
+    'type_string' => 'TypeString',
 
-    &#39;cvv\_type&#39; =\&gt; &#39;CVVType&#39;,
+    'cvv_type' => 'CVVType',
 
-    &#39;not\_present&#39; =\&gt; &#39;NotPresent&#39;,
+    'not_present' => 'NotPresent',
 
-    &#39;response&#39; =\&gt; &#39;Response&#39;,
+    'response' => 'Response',
 
-    &#39;card\_id&#39; =\&gt; &#39;CardID&#39;,
+    'card_id' => 'CardID',
 
-    &#39;note&#39; =\&gt; &#39;Note&#39;,
+    'note' => 'Note',
 
-    &#39;main&#39; =\&gt; &#39;Main&#39;
+    'main' => 'Main'
 
     ];
 
     protectedstatic$setters = [
 
-    &#39;magnetic\_tracks&#39; =\&gt; &#39;setMagneticTracks&#39;,
+    'magnetic_tracks' => 'setMagneticTracks',
 
-    &#39;track1&#39; =\&gt; &#39;setTrack1&#39;,
+    'track1' => 'setTrack1',
 
-    &#39;track2&#39; =\&gt; &#39;setTrack2&#39;,
+    'track2' => 'setTrack2',
 
-    &#39;number&#39; =\&gt; &#39;setNumber&#39;,
+    'number' => 'setNumber',
 
-    &#39;masked\_number&#39; =\&gt; &#39;setMaskedNumber&#39;,
+    'masked_number' => 'setMaskedNumber',
 
-    &#39;holder&#39; =\&gt; &#39;setHolder&#39;,
+    'holder' => 'setHolder',
 
-    &#39;exp\_date&#39; =\&gt; &#39;setExpDate&#39;,
+    'exp_date' => 'setExpDate',
 
-    &#39;cvv&#39; =\&gt; &#39;setCvv&#39;,
+    'cvv' => 'setCvv',
 
-    &#39;address&#39; =\&gt; &#39;setAddress&#39;,
+    'address' => 'setAddress',
 
-    &#39;city&#39; =\&gt; &#39;setCity&#39;,
+    'city' => 'setCity',
 
-    &#39;state&#39; =\&gt; &#39;setState&#39;,
+    'state' => 'setState',
 
-    &#39;zip&#39; =\&gt; &#39;setZip&#39;,
+    'zip' => 'setZip',
 
-    &#39;swiped&#39; =\&gt; &#39;setSwiped&#39;,
+    'swiped' => 'setSwiped',
 
-    &#39;type\_string&#39; =\&gt; &#39;setTypeString&#39;,
+    'type_string' => 'setTypeString',
 
-    &#39;cvv\_type&#39; =\&gt; &#39;setCvvType&#39;,
+    'cvv_type' => 'setCvvType',
 
-    &#39;not\_present&#39; =\&gt; &#39;setNotPresent&#39;,
+    'not_present' => 'setNotPresent',
 
-    &#39;response&#39; =\&gt; &#39;setResponse&#39;,
+    'response' => 'setResponse',
 
-    &#39;card\_id&#39; =\&gt; &#39;setCardId&#39;,
+    'card_id' => 'setCardId',
 
-    &#39;note&#39; =\&gt; &#39;setNote&#39;,
+    'note' => 'setNote',
 
-    &#39;main&#39; =\&gt; &#39;setMain&#39;
+    'main' => 'setMain'
 
     ];
 
     protectedstatic$getters = [
 
-    &#39;magnetic\_tracks&#39; =\&gt; &#39;getMagneticTracks&#39;,
+    'magnetic_tracks' => 'getMagneticTracks',
 
-    &#39;track1&#39; =\&gt; &#39;getTrack1&#39;,
+    'track1' => 'getTrack1',
 
-    &#39;track2&#39; =\&gt; &#39;getTrack2&#39;,
+    'track2' => 'getTrack2',
 
-    &#39;number&#39; =\&gt; &#39;getNumber&#39;,
+    'number' => 'getNumber',
 
-    &#39;masked\_number&#39; =\&gt; &#39;getMaskedNumber&#39;,
+    'masked_number' => 'getMaskedNumber',
 
-    &#39;holder&#39; =\&gt; &#39;getHolder&#39;,
+    'holder' => 'getHolder',
 
-    &#39;exp\_date&#39; =\&gt; &#39;getExpDate&#39;,
+    'exp_date' => 'getExpDate',
 
-    &#39;cvv&#39; =\&gt; &#39;getCvv&#39;,
+    'cvv' => 'getCvv',
 
-    &#39;address&#39; =\&gt; &#39;getAddress&#39;,
+    'address' => 'getAddress',
 
-    &#39;city&#39; =\&gt; &#39;getCity&#39;,
+    'city' => 'getCity',
 
-    &#39;state&#39; =\&gt; &#39;getState&#39;,
+    'state' => 'getState',
 
-    &#39;zip&#39; =\&gt; &#39;getZip&#39;,
+    'zip' => 'getZip',
 
-    &#39;swiped&#39; =\&gt; &#39;getSwiped&#39;,
+    'swiped' => 'getSwiped',
 
-    &#39;type\_string&#39; =\&gt; &#39;getTypeString&#39;,
+    'type_string' => 'getTypeString',
 
-    &#39;cvv\_type&#39; =\&gt; &#39;getCvvType&#39;,
+    'cvv_type' => 'getCvvType',
 
-    &#39;not\_present&#39; =\&gt; &#39;getNotPresent&#39;,
+    'not_present' => 'getNotPresent',
 
-    &#39;response&#39; =\&gt; &#39;getResponse&#39;,
+    'response' => 'getResponse',
 
-    &#39;card\_id&#39; =\&gt; &#39;getCardId&#39;,
+    'card_id' => 'getCardId',
 
-    &#39;note&#39; =\&gt; &#39;getNote&#39;,
+    'note' => 'getNote',
 
-    &#39;main&#39; =\&gt; &#39;getMain&#39;
+    'main' => 'getMain'
 
     ];
 
-    publicstaticfunctionattributeMap()
+    public staticfunctionattributeMap()
 
     {
 
-    returnself::$attributeMap;
+    return self::$attributeMap;
 
     }
 
-    publicstaticfunctionsetters()
+    public staticfunctionsetters()
 
     {
 
-    returnself::$setters;
+    return self::$setters;
 
     }
 
-    publicstaticfunctiongetters()
+    public staticfunctiongetters()
 
     {
 
-    returnself::$getters;
+    return self::$getters;
 
     }
 
-    publicfunctiongetModelName()
+    public functiongetModelName()
 
     {
 
-    returnself::$swaggerModelName;
+    return self::$swaggerModelName;
 
     }
 
     protected$container = [];
 
-    publicfunction\_\_construct(array$data = null)
+    public function__construct(array$data = null)
 
     {
 
-    $this-\&gt;container[&#39;magnetic\_tracks&#39;] = isset($data[&#39;magnetic\_tracks&#39;]) ? $data[&#39;magnetic\_tracks&#39;] : null;
+    $this->container['magnetic_tracks'] = isset($data['magnetic_tracks']) ? $data['magnetic_tracks'] : null;
 
-    $this-\&gt;container[&#39;track1&#39;] = isset($data[&#39;track1&#39;]) ? $data[&#39;track1&#39;] : null;
+    $this->container['track1'] = isset($data['track1']) ? $data['track1'] : null;
 
-    $this-\&gt;container[&#39;track2&#39;] = isset($data[&#39;track2&#39;]) ? $data[&#39;track2&#39;] : null;
+    $this->container['track2'] = isset($data['track2']) ? $data['track2'] : null;
 
-    $this-\&gt;container[&#39;number&#39;] = isset($data[&#39;number&#39;]) ? $data[&#39;number&#39;] : null;
+    $this->container['number'] = isset($data['number']) ? $data['number'] : null;
 
-    $this-\&gt;container[&#39;masked\_number&#39;] = isset($data[&#39;masked\_number&#39;]) ? $data[&#39;masked\_number&#39;] : null;
+    $this->container['masked_number'] = isset($data['masked_number']) ? $data['masked_number'] : null;
 
-    $this-\&gt;container[&#39;holder&#39;] = isset($data[&#39;holder&#39;]) ? $data[&#39;holder&#39;] : null;
+    $this->container['holder'] = isset($data['holder']) ? $data['holder'] : null;
 
-    $this-\&gt;container[&#39;exp\_date&#39;] = isset($data[&#39;exp\_date&#39;]) ? $data[&#39;exp\_date&#39;] : null;
+    $this->container['exp_date'] = isset($data['exp_date']) ? $data['exp_date'] : null;
 
-    $this-\&gt;container[&#39;cvv&#39;] = isset($data[&#39;cvv&#39;]) ? $data[&#39;cvv&#39;] : null;
+    $this->container['cvv'] = isset($data['cvv']) ? $data['cvv'] : null;
 
-    $this-\&gt;container[&#39;address&#39;] = isset($data[&#39;address&#39;]) ? $data[&#39;address&#39;] : null;
+    $this->container['address'] = isset($data['address']) ? $data['address'] : null;
 
-    $this-\&gt;container[&#39;city&#39;] = isset($data[&#39;city&#39;]) ? $data[&#39;city&#39;] : null;
+    $this->container['city'] = isset($data['city']) ? $data['city'] : null;
 
-    $this-\&gt;container[&#39;state&#39;] = isset($data[&#39;state&#39;]) ? $data[&#39;state&#39;] : null;
+    $this->container['state'] = isset($data['state']) ? $data['state'] : null;
 
-    $this-\&gt;container[&#39;zip&#39;] = isset($data[&#39;zip&#39;]) ? $data[&#39;zip&#39;] : null;
+    $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
 
-    $this-\&gt;container[&#39;swiped&#39;] = isset($data[&#39;swiped&#39;]) ? $data[&#39;swiped&#39;] : null;
+    $this->container['swiped'] = isset($data['swiped']) ? $data['swiped'] : null;
 
-    $this-\&gt;container[&#39;type\_string&#39;] = isset($data[&#39;type\_string&#39;]) ? $data[&#39;type\_string&#39;] : null;
+    $this->container['type_string'] = isset($data['type_string']) ? $data['type_string'] : null;
 
-    $this-\&gt;container[&#39;cvv\_type&#39;] = isset($data[&#39;cvv\_type&#39;]) ? $data[&#39;cvv\_type&#39;] : null;
+    $this->container['cvv_type'] = isset($data['cvv_type']) ? $data['cvv_type'] : null;
 
-    $this-\&gt;container[&#39;not\_present&#39;] = isset($data[&#39;not\_present&#39;]) ? $data[&#39;not\_present&#39;] : null;
+    $this->container['not_present'] = isset($data['not_present']) ? $data['not_present'] : null;
 
-    $this-\&gt;container[&#39;response&#39;] = isset($data[&#39;response&#39;]) ? $data[&#39;response&#39;] : null;
+    $this->container['response'] = isset($data['response']) ? $data['response'] : null;
 
-    $this-\&gt;container[&#39;card\_id&#39;] = isset($data[&#39;card\_id&#39;]) ? $data[&#39;card\_id&#39;] : null;
+    $this->container['card_id'] = isset($data['card_id']) ? $data['card_id'] : null;
 
-    $this-\&gt;container[&#39;note&#39;] = isset($data[&#39;note&#39;]) ? $data[&#39;note&#39;] : null;
+    $this->container['note'] = isset($data['note']) ? $data['note'] : null;
 
-    $this-\&gt;container[&#39;main&#39;] = isset($data[&#39;main&#39;]) ? $data[&#39;main&#39;] : null;
+    $this->container['main'] = isset($data['main']) ? $data['main'] : null;
 
     }
 
-    publicfunctionlistInvalidProperties()
+    public functionlistInvalidProperties()
 
     {
 
     $invalidProperties = [];
 
-    return$invalidProperties;
+    return $invalidProperties;
 
     }
 
-    publicfunctionvalid()
+    public functionvalid()
 
     {
 
-    returncount($this-\&gt;listInvalidProperties()) === 0;
+    return count($this->listInvalidProperties()) === 0;
 
     }
 
-    publicfunctiongetMagneticTracks()
+    public functiongetMagneticTracks()
 
     {
 
-    return$this-\&gt;container[&#39;magnetic\_tracks&#39;];
+    return $this->container['magnetic_tracks'];
 
     }
 
-    publicfunctionsetMagneticTracks($magnetic\_tracks)
+    public functionsetMagneticTracks($magnetic_tracks)
 
     {
 
-    $this-\&gt;container[&#39;magnetic\_tracks&#39;] = $magnetic\_tracks;
+    $this->container['magnetic_tracks'] = $magnetic_tracks;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTrack1()
+    public functiongetTrack1()
 
     {
 
-    return$this-\&gt;container[&#39;track1&#39;];
+    return $this->container['track1'];
 
     }
 
-    publicfunctionsetTrack1($track1)
+    public functionsetTrack1($track1)
 
     {
 
-    $this-\&gt;container[&#39;track1&#39;] = $track1;
+    $this->container['track1'] = $track1;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTrack2()
+    public functiongetTrack2()
 
     {
 
-    return$this-\&gt;container[&#39;track2&#39;];
+    return $this->container['track2'];
 
     }
 
-    publicfunctionsetTrack2($track2)
+    public functionsetTrack2($track2)
 
     {
 
-    $this-\&gt;container[&#39;track2&#39;] = $track2;
+    $this->container['track2'] = $track2;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNumber()
+    public functiongetNumber()
 
     {
 
-    return$this-\&gt;container[&#39;number&#39;];
+    return $this->container['number'];
 
     }
 
-    publicfunctionsetNumber($number)
+    public functionsetNumber($number)
 
     {
 
-    $this-\&gt;container[&#39;number&#39;] = $number;
+    $this->container['number'] = $number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMaskedNumber()
+    public functiongetMaskedNumber()
 
     {
 
-    return$this-\&gt;container[&#39;masked\_number&#39;];
+    return $this->container['masked_number'];
 
     }
 
-    publicfunctionsetMaskedNumber($masked\_number)
+    public functionsetMaskedNumber($masked_number)
 
     {
 
-    $this-\&gt;container[&#39;masked\_number&#39;] = $masked\_number;
+    $this->container['masked_number'] = $masked_number;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetHolder()
+    public functiongetHolder()
 
     {
 
-    return$this-\&gt;container[&#39;holder&#39;];
+    return $this->container['holder'];
 
     }
 
-    publicfunctionsetHolder($holder)
+    public functionsetHolder($holder)
 
     {
 
-    $this-\&gt;container[&#39;holder&#39;] = $holder;
+    $this->container['holder'] = $holder;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetExpDate()
+    public functiongetExpDate()
 
     {
 
-    return$this-\&gt;container[&#39;exp\_date&#39;];
+    return $this->container['exp_date'];
 
     }
 
-    publicfunctionsetExpDate($exp\_date)
+    public functionsetExpDate($exp_date)
 
     {
 
-    $this-\&gt;container[&#39;exp\_date&#39;] = $exp\_date;
+    $this->container['exp_date'] = $exp_date;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvv()
+    public functiongetCvv()
 
     {
 
-    return$this-\&gt;container[&#39;cvv&#39;];
+    return $this->container['cvv'];
 
     }
 
-    publicfunctionsetCvv($cvv)
+    public functionsetCvv($cvv)
 
     {
 
-    $this-\&gt;container[&#39;cvv&#39;] = $cvv;
+    $this->container['cvv'] = $cvv;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetAddress()
+    public functiongetAddress()
 
     {
 
-    return$this-\&gt;container[&#39;address&#39;];
+    return $this->container['address'];
 
     }
 
-    publicfunctionsetAddress($address)
+    public functionsetAddress($address)
 
     {
 
-    $this-\&gt;container[&#39;address&#39;] = $address;
+    $this->container['address'] = $address;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCity()
+    public functiongetCity()
 
     {
 
-    return$this-\&gt;container[&#39;city&#39;];
+    return $this->container['city'];
 
     }
 
-    publicfunctionsetCity($city)
+    public functionsetCity($city)
 
     {
 
-    $this-\&gt;container[&#39;city&#39;] = $city;
+    $this->container['city'] = $city;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetState()
+    public functiongetState()
 
     {
 
-    return$this-\&gt;container[&#39;state&#39;];
+    return $this->container['state'];
 
     }
 
-    publicfunctionsetState($state)
+    public functionsetState($state)
 
     {
 
-    $this-\&gt;container[&#39;state&#39;] = $state;
+    $this->container['state'] = $state;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetZip()
+    public functiongetZip()
 
     {
 
-    return$this-\&gt;container[&#39;zip&#39;];
+    return $this->container['zip'];
 
     }
 
-    publicfunctionsetZip($zip)
+    public functionsetZip($zip)
 
     {
 
-    $this-\&gt;container[&#39;zip&#39;] = $zip;
+    $this->container['zip'] = $zip;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetSwiped()
+    public functiongetSwiped()
 
     {
 
-    return$this-\&gt;container[&#39;swiped&#39;];
+    return $this->container['swiped'];
 
     }
 
-    publicfunctionsetSwiped($swiped)
+    public functionsetSwiped($swiped)
 
     {
 
-    $this-\&gt;container[&#39;swiped&#39;] = $swiped;
+    $this->container['swiped'] = $swiped;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetTypeString()
+    public functiongetTypeString()
 
     {
 
-    return$this-\&gt;container[&#39;type\_string&#39;];
+    return $this->container['type_string'];
 
     }
 
-    publicfunctionsetTypeString($type\_string)
+    public functionsetTypeString($type_string)
 
     {
 
-    $this-\&gt;container[&#39;type\_string&#39;] = $type\_string;
+    $this->container['type_string'] = $type_string;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCvvType()
+    public functiongetCvvType()
 
     {
 
-    return$this-\&gt;container[&#39;cvv\_type&#39;];
+    return $this->container['cvv_type'];
 
     }
 
-    publicfunctionsetCvvType($cvv\_type)
+    public functionsetCvvType($cvv_type)
 
     {
 
-    $this-\&gt;container[&#39;cvv\_type&#39;] = $cvv\_type;
+    $this->container['cvv_type'] = $cvv_type;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNotPresent()
+    public functiongetNotPresent()
 
     {
 
-    return$this-\&gt;container[&#39;not\_present&#39;];
+    return $this->container['not_present'];
 
     }
 
-    publicfunctionsetNotPresent($not\_present)
+    public functionsetNotPresent($not_present)
 
     {
 
-    $this-\&gt;container[&#39;not\_present&#39;] = $not\_present;
+    $this->container['not_present'] = $not_present;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetResponse()
+    public functiongetResponse()
 
     {
 
-    return$this-\&gt;container[&#39;response&#39;];
+    return $this->container['response'];
 
     }
 
-    publicfunctionsetResponse($response)
+    public functionsetResponse($response)
 
     {
 
-    $this-\&gt;container[&#39;response&#39;] = $response;
+    $this->container['response'] = $response;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetCardId()
+    public functiongetCardId()
 
     {
 
-    return$this-\&gt;container[&#39;card\_id&#39;];
+    return $this->container['card_id'];
 
     }
 
-    publicfunctionsetCardId($card\_id)
+    public functionsetCardId($card_id)
 
     {
 
-    $this-\&gt;container[&#39;card\_id&#39;] = $card\_id;
+    $this->container['card_id'] = $card_id;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetNote()
+    public functiongetNote()
 
     {
 
-    return$this-\&gt;container[&#39;note&#39;];
+    return $this->container['note'];
 
     }
 
-    publicfunctionsetNote($note)
+    public functionsetNote($note)
 
     {
 
-    $this-\&gt;container[&#39;note&#39;] = $note;
+    $this->container['note'] = $note;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctiongetMain()
+    public functiongetMain()
 
     {
 
-    return$this-\&gt;container[&#39;main&#39;];
+    return $this->container['main'];
 
     }
 
-    publicfunctionsetMain($main)
+    public functionsetMain($main)
 
     {
 
-    $this-\&gt;container[&#39;main&#39;] = $main;
+    $this->container['main'] = $main;
 
-    return$this;
+    return $this;
 
     }
 
-    publicfunctionoffsetExists($offset)
+    public functionoffsetExists($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]);
+    return isset($this->container[$offset]);
 
     }
 
-    publicfunctionoffsetGet($offset)
+    public functionoffsetGet($offset)
 
     {
 
-    returnisset($this-\&gt;container[$offset]) ? $this-\&gt;container[$offset] : null;
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
-    publicfunctionoffsetSet($offset, $value)
+    public functionoffsetSet($offset, $value)
 
     {
 
-    if (is\_null($offset)) {
+    if (is_null($offset)) {
 
-    $this-\&gt;container[] = $value;
+    $this->container[] = $value;
 
     } else {
 
-    $this-\&gt;container[$offset] = $value;
+    $this->container[$offset] = $value;
 
     }
 
     }
 
-    publicfunctionoffsetUnset($offset)
+    public functionoffsetUnset($offset)
 
     {
 
-    unset($this-\&gt;container[$offset]);
+    unset($this->container[$offset]);
 
     }
 
-    publicfunction\_\_toString()
+    public function__toString()
 
     {
 
-    if (defined(&#39;JSON\_PRETTY\_PRINT&#39;)) { // use JSON pretty print
+    if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
 
-    returnjson\_encode(
+    return json_encode(
 
     ObjectSerializer::sanitizeForSerialization($this),
 
-    JSON\_PRETTY\_PRINT
+    JSON_PRETTY_PRINT
 
     );
 
     }
 
-    returnjson\_encode(ObjectSerializer::sanitizeForSerialization($this));
+    return json_encode(ObjectSerializer::sanitizeForSerialization($this));
 
     }
 
