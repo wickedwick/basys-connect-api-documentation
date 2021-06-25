@@ -41,7 +41,7 @@ export default class CheckTransactionType {
    */
   Refund = 'Refund';
 
-  static constructFromObject(object) {
+  static constructFromObject (object) {
     return object;
   }
 }
