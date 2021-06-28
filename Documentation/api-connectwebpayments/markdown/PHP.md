@@ -874,606 +874,894 @@
 
 ## /api/v1/Vault/GetVaultRecord/{reference}
 
-    public function apiV1VaultGetVaultRecordReferenceGetAsync($reference, $account, $password)
+    protected function apiV1VaultGetVaultRecordReferenceGetRequest($reference, $account, $password)
     {
-        $return Type = '\Swagger\Client\Model\Record';
-        $request = $this->apiV1VaultGetVaultRecordReferenceGetRequest($reference, $account, $password);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($return Type) {
-                    $responseBody = $response->getBody();
-                    if ($return Type === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($return Type !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $return Type, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
+        // verify the required parameter 'reference' is set
+        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reference when calling apiV1VaultGetVaultRecordReferenceGet'
             );
+        }
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultGetVaultRecordReferenceGet'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultGetVaultRecordReferenceGet'
+            );
+        }
+
+        $resourcePath = '/api/v1/Vault/GetVaultRecord/{reference}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
+
+        // path params
+        if ($reference !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reference' . '}',
+                ObjectSerializer::toPathValue($reference),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
 ## /api/v1/Vault/SaveVault
 
-    public functionapiV1VaultSaveVaultPostAsyncWithHttpInfo($account, $password, $body = null)
-
+    protected function apiV1VaultSaveVaultCardVaultIDPostRequest($account, $password, $vault_id, $body = null)
     {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
+        // verify the required parameter 'vault_id' is set
+        if ($vault_id === null || (is_array($vault_id) && count($vault_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_id when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Response[]';
+        $resourcePath = '/api/v1/Vault/SaveVaultCard/{vaultID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultSaveVaultPostRequest($account, $password, $body);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultID' . '}',
+                ObjectSerializer::toPathValue($vault_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json', 'text/json', 'application/_*+json']
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
-    }
-
+ 
 ## /api/v1/Vault/SaveVaultCard/{vaultID}
 
-    public functionapiV1VaultSaveVaultCardVaultIDPostAsyncWithHttpInfo($account, $password, $vault_id, $body = null)
-
+    protected function apiV1VaultSaveVaultCardVaultIDPostRequest($account, $password, $vault_id, $body = null)
     {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
+        // verify the required parameter 'vault_id' is set
+        if ($vault_id === null || (is_array($vault_id) && count($vault_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_id when calling apiV1VaultSaveVaultCardVaultIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Response';
+        $resourcePath = '/api/v1/Vault/SaveVaultCard/{vaultID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultSaveVaultCardVaultIDPostRequest($account, $password, $vault_id, $body);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultID' . '}',
+                ObjectSerializer::toPathValue($vault_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json', 'text/json', 'application/_*+json']
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
-    }
-
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
 ## /api/v1/Vault/SearchVault
 
-    public functionapiV1VaultSearchVaultPostAsyncWithHttpInfo($account, $password, $body = null)
-
+    protected function apiV1VaultSearchVaultPostRequest($account, $password, $body = null)
     {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultSearchVaultPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultSearchVaultPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Record[]';
+        $resourcePath = '/api/v1/Vault/SearchVault';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultSearchVaultPostRequest($account, $password, $body);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json', 'text/json', 'application/_*+json']
+            );
+        }
 
-    ->then(
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    function ($response) use ($return Type) {
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    $responseBody = $response->getBody();
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    if ($return Type === '\SplFileObject') {
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    } else {
-
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
-    }
-
+ 
 ## /api/v1/Vault/DeleteVaultCardByID/{vaultCardID}
 
-    public functionapiV1VaultDeleteVaultCardByIDVaultCardIDPostAsyncWithHttpInfo($vault_card_id, $account, $password)
-
+    protected function apiV1VaultDeleteVaultCardByIDVaultCardIDPostRequest($vault_card_id, $account, $password)
     {
+        // verify the required parameter 'vault_card_id' is set
+        if ($vault_card_id === null || (is_array($vault_card_id) && count($vault_card_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_card_id when calling apiV1VaultDeleteVaultCardByIDVaultCardIDPost'
+            );
+        }
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultDeleteVaultCardByIDVaultCardIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultDeleteVaultCardByIDVaultCardIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Response';
+        $resourcePath = '/api/v1/Vault/DeleteVaultCardByID/{vaultCardID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultDeleteVaultCardByIDVaultCardIDPostRequest($vault_card_id, $account, $password);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_card_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultCardID' . '}',
+                ObjectSerializer::toPathValue($vault_card_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                []
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
-    }
-
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
 ## /api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}
 
-    public functionapiV1VaultDeleteVaultCheckByIDVaultCheckIDPostAsyncWithHttpInfo($vault_check_id, $account, $password)
-
+    protected function apiV1VaultDeleteVaultCheckByIDVaultCheckIDPostRequest($vault_check_id, $account, $password)
     {
+        // verify the required parameter 'vault_check_id' is set
+        if ($vault_check_id === null || (is_array($vault_check_id) && count($vault_check_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_check_id when calling apiV1VaultDeleteVaultCheckByIDVaultCheckIDPost'
+            );
+        }
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultDeleteVaultCheckByIDVaultCheckIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultDeleteVaultCheckByIDVaultCheckIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Response';
+        $resourcePath = '/api/v1/Vault/DeleteVaultCheckByID/{vaultCheckID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultDeleteVaultCheckByIDVaultCheckIDPostRequest($vault_check_id, $account, $password);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_check_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultCheckID' . '}',
+                ObjectSerializer::toPathValue($vault_check_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                []
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
-    }
-
+ 
 ## /api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}
 
-    public functionapiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostAsyncWithHttpInfo($account, $password, $vault_check_id, $body = null)
-
+    protected function apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostRequest($account, $password, $vault_check_id, $body = null)
     {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost'
+            );
+        }
+        // verify the required parameter 'vault_check_id' is set
+        if ($vault_check_id === null || (is_array($vault_check_id) && count($vault_check_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_check_id when calling apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\CheckTransaction';
+        $resourcePath = '/api/v1/Vault/SubmitCheckWithVaultCheckID/{vaultCheckID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultSubmitCheckWithVaultCheckIDVaultCheckIDPostRequest($account, $password, $vault_check_id, $body);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_check_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultCheckID' . '}',
+                ObjectSerializer::toPathValue($vault_check_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json', 'text/json', 'application/_*+json']
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
-    }
-
+ 
 ## /api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}
 
-    public functionapiV1VaultSubmitWithVaultCardIDVaultCardIDPostAsyncWithHttpInfo($account, $password, $vault_card_id, $body = null)
-
+    protected function apiV1VaultSubmitWithVaultCardIDVaultCardIDPostRequest($account, $password, $vault_card_id, $body = null)
     {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $account when calling apiV1VaultSubmitWithVaultCardIDVaultCardIDPost'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null || (is_array($password) && count($password) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling apiV1VaultSubmitWithVaultCardIDVaultCardIDPost'
+            );
+        }
+        // verify the required parameter 'vault_card_id' is set
+        if ($vault_card_id === null || (is_array($vault_card_id) && count($vault_card_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $vault_card_id when calling apiV1VaultSubmitWithVaultCardIDVaultCardIDPost'
+            );
+        }
 
-    $return Type = '\Swagger\Client\Model\Transaction';
+        $resourcePath = '/api/v1/Vault/SubmitWithVaultCardID/{vaultCardID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
 
-    $request = $this->apiV1VaultSubmitWithVaultCardIDVaultCardIDPostRequest($account, $password, $vault_card_id, $body);
+        // header params
+        if ($account !== null) {
+            $headerParams['Account'] = ObjectSerializer::toHeaderValue($account);
+        }
+        // header params
+        if ($password !== null) {
+            $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
+        }
 
-    return $this->client
+        // path params
+        if ($vault_card_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'vaultCardID' . '}',
+                ObjectSerializer::toPathValue($vault_card_id),
+                $resourcePath
+            );
+        }
 
-    ->sendAsync($request, $this->createHttpClientOption())
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
-    ->then(
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json', 'text/json', 'application/_*+json']
+            );
+        }
 
-    function ($response) use ($return Type) {
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
 
-    $responseBody = $response->getBody();
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
 
-    if ($return Type === '\SplFileObject') {
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
 
-    $content = $responseBody; //stream goes to serializer
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
 
-    } else {
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
 
-    $content = $responseBody->getContents();
-
-    if ($return Type !== 'string') {
-
-    $content = json_decode($content);
-
-    }
-
-    }
-
-    return [
-
-    ObjectSerializer::deserialize($content, $return Type, []),
-
-    $response->getStatusCode(),
-
-    $response->getHeaders()
-
-    ];
-
-    },
-
-    function ($exception) {
-
-    $response = $exception->getResponse();
-
-    $statusCode = $response->getStatusCode();
-
-    throw new ApiException(
-
-    sprintf(
-
-    '[%d] Error connecting to the API (%s)',
-
-    $statusCode,
-
-    $exception->getRequest()->getUri()
-
-    ),
-
-    $statusCode,
-
-    $response->getHeaders(),
-
-    $response->getBody()
-
-    );
-
-    }
-
-    );
-
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
 # VirtualTerminal API
